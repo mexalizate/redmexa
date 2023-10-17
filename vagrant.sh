@@ -85,7 +85,7 @@ if [ ! -x MailHog ]; then
 fi
 
 echo "## Migrate and populate test database..."
-(cd /vagrant && $POETRY_HOME/bin/poetry run ./manage.py migrate && ($POETRY_HOME/bin/poetry run ./manage.py load_fake_data || true)) &> /dev/null
+(cd /vagrant && $POETRY_HOME/bin/poetry run ./manage.py migrate && ($POETRY_HOME/bin/poetry run ./manage.py load_fake_data || true)) > /dev/null
 
 echo "## Create super user (address: admin@agir.local, password: password)"
 (cd /vagrant && (SUPERPERSON_PASSWORD="password" $POETRY_HOME/bin/poetry run ./manage.py createsuperperson --noinput --email admin@agir.local || true)) &> /dev/null
