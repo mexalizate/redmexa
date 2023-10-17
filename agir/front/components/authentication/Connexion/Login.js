@@ -101,7 +101,7 @@ const Login = () => {
 
   return (
     <ContainerConnexion>
-      <h1>Je me connecte</h1>
+      <h1>{_("Je me connecte")}</h1>
 
       <BlockSwitchLink>
         <span>Pas encore de compte ?</span>

@@ -468,8 +468,8 @@ AUTH_PASSWORD_VALIDATORS = [
 # applique la locale par défaut
 # https://docs.python.org/fr/3.6/library/locale.html#locale.setlocale
 locale.setlocale(locale.LC_ALL, "")
-LANGUAGE_CODE = "fr-fr"
-TIME_ZONE = "Europe/Paris"
+LANGUAGE_CODE = "es-mx"
+TIME_ZONE = "America/Mexico_City"
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True

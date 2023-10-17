@@ -236,6 +236,9 @@ module.exports = (type = CONFIG_TYPES.ES5) => ({
     components,
   ),
   plugins: [
+    new webpack.ProvidePlugin({
+      _: "gettext",
+    }),
     ...htmlPlugins(type),
     new MiniCssExtractPlugin({ filename: "[name]-[chunkhash].css" }),
     type !== CONFIG_TYPES.DEV &&
@@ -322,6 +325,16 @@ module.exports = (type = CONFIG_TYPES.ES5) => ({
     }?cv=6`,
     path: DISTPATH,
     clean: type === CONFIG_TYPES.DEV,
+  },
+  externals: {
+    gettext: "gettext",
+    ngettext: "ngettext",
+    interpolate: "interpolate",
+    get_format: "get_format",
+    gettext_noop: "gettext_noop",
+    pgettext: "pgettext",
+    npgettext: "npgettext",
+    pluralidx: "pluralidx",
   },
   module: {
     rules: [
