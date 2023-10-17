@@ -28,7 +28,7 @@ sudo systemctl restart systemd-journald
 
 echo "## Set locales..."
 # avoid some weird bugs with click when locale is not properly set
-sudo bash -c 'printf "fr_FR.UTF8 UTF-8\nen_US.UTF-8 UTF-8\nes_MX.UTF-8\n" > /etc/locale.gen'
+sudo bash -c 'printf "fr_FR.UTF8 UTF-8\nen_US.UTF-8 UTF-8\nes_MX.UTF-8 UTF-8\n" > /etc/locale.gen'
 sudo locale-gen
 sudo localectl set-locale LANG=es_MX.UTF-8
 
