@@ -90,10 +90,10 @@ if [ ! -x MailHog ]; then
 fi
 
 echo "## Migrate and populate test database..."
-(cd /vagrant && $POETRY_HOME/bin/poetry run ./manage.py migrate && ($POETRY_HOME/bin/poetry run ./manage.py load_fake_data || true)) > /dev/null
+(cd /vagrant && $POETRY_HOME/bin/poetry run python ./manage.py migrate && ($POETRY_HOME/bin/poetry run python ./manage.py load_fake_data || true)) > /dev/null
 
 echo "## Create super user (address: admin@agir.local, password: password)"
-(cd /vagrant && (SUPERPERSON_PASSWORD="password" $POETRY_HOME/bin/poetry run ./manage.py createsuperperson --noinput --email admin@agir.local || true)) &> /dev/null
+(cd /vagrant && (SUPERPERSON_PASSWORD="password" $POETRY_HOME/bin/poetry run python ./manage.py createsuperperson --noinput --email admin@agir.local || true)) &> /dev/null
 
 echo "## Install fonts"
 sudo /vagrant/install_fonts.sh
@@ -123,7 +123,7 @@ Description=fi-api celery worker
 
 [Service]
 WorkingDirectory=/vagrant
-ExecStart=$POETRY_HOME/bin/poetry run celery --app agir.api worker --concurrency 2 -Q celery
+ExecStart=$POETRY_HOME/bin/poetry run python celery --app agir.api worker --concurrency 2 -Q celery
 User=vagrant
 Group=vagrant
 Restart=on-failure
@@ -140,7 +140,7 @@ Description=fi-api celery worker
 
 [Service]
 WorkingDirectory=/vagrant
-ExecStart=$POETRY_HOME/bin/poetry run celery --app nuntius.celery worker --concurrency 2 -Q nuntius -n nuntius@%%h
+ExecStart=$POETRY_HOME/bin/poetry run python celery --app nuntius.celery worker --concurrency 2 -Q nuntius -n nuntius@%%h
 User=vagrant
 Group=vagrant
 Restart=on-failure
@@ -160,7 +160,7 @@ After=webpack.service
 User=vagrant
 Type=simple
 WorkingDirectory=/vagrant
-ExecStart=$POETRY_HOME/bin/poetry run ./manage.py runserver 0.0.0.0:8000
+ExecStart=$POETRY_HOME/bin/poetry run python ./manage.py runserver 0.0.0.0:8000
 StandardOutput=journal
 Restart=on-failure
 
