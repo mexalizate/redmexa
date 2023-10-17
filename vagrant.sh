@@ -28,9 +28,9 @@ sudo systemctl restart systemd-journald
 
 echo "## Set locales..."
 # avoid some weird bugs with click when locale is not properly set
-sudo bash -c 'printf "fr_FR.UTF8 UTF-8\nen_US.UTF-8 UTF-8\n" > /etc/locale.gen'
+sudo bash -c 'printf "fr_FR.UTF8 UTF-8\nen_US.UTF-8 UTF-8\nes_MX.UTF-8\n" > /etc/locale.gen'
 sudo locale-gen
-sudo localectl set-locale LANG=fr_FR.UTF-8
+sudo localectl set-locale LANG=es_MX.UTF-8
 
 echo "## Update packages"
 sudo apt-get update -qq &> /dev/null
@@ -57,6 +57,11 @@ fi
 
 echo "## Install python dependencies..."
 (cd /vagrant && $POETRY_HOME/bin/poetry install) &> /dev/null
+
+echo "## Install GNU gettext tools"
+if ! dpkg -s gettext &> /dev/null; then
+     sudo apt-get -yqq install gettext &> /dev/null
+fi
 
 echo "## Install wkhtmltopdf"
 if ! dpkg -s wkhtmltox &> /dev/null; then

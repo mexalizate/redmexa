@@ -468,16 +468,14 @@ AUTH_PASSWORD_VALIDATORS = [
 # applique la locale par défaut
 # https://docs.python.org/fr/3.6/library/locale.html#locale.setlocale
 locale.setlocale(locale.LC_ALL, "")
-
 LANGUAGE_CODE = "fr-fr"
-
 TIME_ZONE = "Europe/Paris"
-
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
+LOCALE_PATHS = [
+    "locale"
+]
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
