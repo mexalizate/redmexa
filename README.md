@@ -33,7 +33,12 @@ machine, and launch three more systemd services :
 
 You can access Django from [http://agir.local:8000][django-server]
 and Mailhog from [http://agir.local:8025][mailhog].
-Webpack dev server listens on port 3000.
+
+Once the vagrant machine and the django server are up, you must install frontend dependencies 
+through `npm clean-install` then build frontend assets either in development mode (by launching `npm run watch`) 
+or in production mode (with `npm run build`).   
+NB: Webpack dev server listens on port 3000, so be sure that the 3000 port is not being
+used.
 
 Initial migrations are automatically applied, and some fake data has been
 loaded up. You can connect directly connect to the [django admin][django-admin] using the
