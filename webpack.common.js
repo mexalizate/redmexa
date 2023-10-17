@@ -236,9 +236,6 @@ module.exports = (type = CONFIG_TYPES.ES5) => ({
     components,
   ),
   plugins: [
-    new webpack.ProvidePlugin({
-      _: "gettext",
-    }),
     ...htmlPlugins(type),
     new MiniCssExtractPlugin({ filename: "[name]-[chunkhash].css" }),
     type !== CONFIG_TYPES.DEV &&

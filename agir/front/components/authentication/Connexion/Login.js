@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React, { useCallback, useMemo, useState } from "react";
 import Button from "@agir/front/genericComponents/Button";
 import arrowRight from "@agir/front/genericComponents/images/arrow-right.svg";
