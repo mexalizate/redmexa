@@ -33,18 +33,19 @@ class SMSLengthTestCase(TestCase):
         res = compute_sms_length_information(
             "Simple SMS sans caractère spécial hors GSM7. Il doit faire quatre-vingt-huit caractères."
         )
-
+        # Each character takes 7 bits in the message. We divide by 8 and round up to obtain the number of bytes.
         self.assertEqual(res, MESSAGE_LENGTH("GSM7", ceil(88 * 7 / 8), 1))
 
         res = compute_sms_length_information(
-            "Ici j'ajoute juste des caractères spéciaux étendus genre {$^}. En tout quatre-vingt-huit"
+            "Ici j'ajoute juste des caractères spéciaux étendus genre {€^}. En tout quatre-vingt-huit"
         )
-
+        # Extended characters take as much space as 2 standard characters in GSM7-EXT format.
         self.assertEqual(res, MESSAGE_LENGTH("GSM7-EXT", ceil((88 + 4) * 7 / 8), 1))
 
         res = compute_sms_length_information(
             "Enfin ici ça va dépoter avec du UTF16 ŸÔâ. Cinquante-sept"
         )
+        # UCS-2 format uses two bytes per character for all characters
         self.assertEqual(res, MESSAGE_LENGTH("UCS-2", 57 * 2, 1))
 
 
