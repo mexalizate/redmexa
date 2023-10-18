@@ -84,7 +84,7 @@ const AmountStep = (props) => {
   const endDateString = useMemo(
     () =>
       DateTime.fromJSDate(new Date(endDate))
-        .setLocale("fr")
+        .setLocale("es-MX")
         .toFormat("MMMM yyyy"),
     [endDate],
   );

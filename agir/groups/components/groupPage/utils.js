@@ -40,13 +40,13 @@ export const parseDiscountCodes = (discountCodes) => {
       expiration,
       month: expirationDateTime
         .minus({ months: 1 })
-        .setLocale("fr-FR")
+        .setLocale("es-MX")
         .toFormat("LLLL")
         .toLowerCase(),
-      date: expirationMonthStart.setLocale("fr-FR").toFormat("dd MMMM yyyy"),
+      date: expirationMonthStart.setLocale("es-MX").toFormat("dd MMMM yyyy"),
       dateExact: expirationDateTime
         .minus({ day: 1 })
-        .setLocale("fr-FR")
+        .setLocale("es-MX")
         .toFormat("dd MMMM yyyy"),
       isEarly,
     };

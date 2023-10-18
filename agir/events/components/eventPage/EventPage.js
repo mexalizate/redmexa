@@ -102,15 +102,15 @@ export const ConnectedEventPage = (props) => {
     }
     const start =
       typeof eventData.startTime === "string"
-        ? DateTime.fromISO(eventData.startTime).setLocale("fr")
+        ? DateTime.fromISO(eventData.startTime).setLocale("es-MX")
         : typeof eventData.startTime === "number"
-        ? DateTime.fromMillis(eventData.startTime).setLocale("fr")
+        ? DateTime.fromMillis(eventData.startTime).setLocale("es-MX")
         : null;
     const end =
       typeof eventData.endTime === "string"
-        ? DateTime.fromISO(eventData.endTime).setLocale("fr")
+        ? DateTime.fromISO(eventData.endTime).setLocale("es-MX")
         : typeof eventData.endTime === "number"
-        ? DateTime.fromMillis(eventData.endTime).setLocale("fr")
+        ? DateTime.fromMillis(eventData.endTime).setLocale("es-MX")
         : null;
     const schedule = Interval.fromDateTimes(start, end);
     const isPast = end < DateTime.local();
