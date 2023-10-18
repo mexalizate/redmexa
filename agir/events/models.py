@@ -829,9 +829,9 @@ class Event(
                 return None
 
         if min_price == max_price:
-            display = "{} €".format(floatformat(min_price / 100, 2))
+            display = "{} $".format(floatformat(min_price / 100, 2))
         else:
-            display = "de {} à {} €".format(
+            display = "de {} à {} $".format(
                 floatformat(min_price / 100, 2), floatformat(max_price / 100, 2)
             )
 

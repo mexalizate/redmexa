@@ -100,7 +100,7 @@ const SpendingRequestDetails = (props) => {
     [spendingDate],
   );
   const spendingRequestAmount = useMemo(
-    () => (amount ? displayPrice(amount, true) : "— €"),
+    () => (amount ? displayPrice(amount, true) : "— $"),
     [amount],
   );
 

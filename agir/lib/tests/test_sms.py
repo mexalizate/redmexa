@@ -37,7 +37,7 @@ class SMSLengthTestCase(TestCase):
         self.assertEqual(res, MESSAGE_LENGTH("GSM7", ceil(88 * 7 / 8), 1))
 
         res = compute_sms_length_information(
-            "Ici j'ajoute juste des caractères spéciaux étendus genre {€^}. En tout quatre-vingt-huit"
+            "Ici j'ajoute juste des caractères spéciaux étendus genre {$^}. En tout quatre-vingt-huit"
         )
 
         self.assertEqual(res, MESSAGE_LENGTH("GSM7-EXT", ceil((88 + 4) * 7 / 8), 1))

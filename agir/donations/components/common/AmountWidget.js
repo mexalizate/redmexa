@@ -106,7 +106,7 @@ const AmountWidget = (props) => {
     [onChangeAmount],
   );
 
-  const unit = paymentTiming === MONTHLY_PAYMENT ? "€/mois" : "€";
+  const unit = paymentTiming === MONTHLY_PAYMENT ? "$/mois" : "$";
 
   return (
     <StyledAmountWidget>
