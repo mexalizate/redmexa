@@ -473,9 +473,7 @@ TIME_ZONE = "America/Mexico_City"
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
-LOCALE_PATHS = [
-    "locale"
-]
+LOCALE_PATHS = ["locale"]
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/

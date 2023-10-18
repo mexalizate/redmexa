@@ -40,7 +40,9 @@ class HardLoginRequiredMixin(AccessMixin):
 
 class VerifiedContactPhoneRequiredMixin(AccessMixin):
     unverified_phone_redirect_target = front_url_lazy("send_validation_sms")
-    unverified_phone_message = _("Vous devez ajouter et verifier un numéro de téléphone avant de pouvoir continuer")
+    unverified_phone_message = _(
+        "Vous devez ajouter et verifier un numéro de téléphone avant de pouvoir continuer"
+    )
 
     def dispatch(self, request, *args, **kwargs):
         if not is_hard_logged(request):
@@ -54,8 +56,13 @@ class VerifiedContactPhoneRequiredMixin(AccessMixin):
             )
         person = request.user.person
 
-        if not person.contact_phone or not person.contact_phone_status == person.CONTACT_PHONE_VERIFIED:
-            messages.add_message(request, messages.WARNING, self.unverified_phone_message)
+        if (
+            not person.contact_phone
+            or not person.contact_phone_status == person.CONTACT_PHONE_VERIFIED
+        ):
+            messages.add_message(
+                request, messages.WARNING, self.unverified_phone_message
+            )
             return HttpResponseRedirect(self.unverified_phone_redirect_target)
 
         return super().dispatch(request, *args, **kwargs)

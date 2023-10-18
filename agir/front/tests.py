@@ -40,7 +40,7 @@ class PagesLoadingTestCase(TestCase):
             "test@test.com",
             create_role=True,
             contact_phone="+33600000000",
-            contact_phone_status=Person.CONTACT_PHONE_VERIFIED
+            contact_phone_status=Person.CONTACT_PHONE_VERIFIED,
         )
         self.client.force_login(self.person.role)
 
