@@ -124,6 +124,44 @@ This will have {{ myvar }} inside.
 {% endblocktranslate %}
 ```
 
+#### Marking part of a string for translation with f-strings
+
+Whenever only part of a string should be translated (because it is surrounded by HTML tags for instance), f-strings 
+may be used:
+
+```python
+text = "<strong>Attention à la valeur de ce champ</strong>"
+```
+
+Might be marked with translation like this:
+
+```python
+text = f"<strong>{_('Attention à la valeur de ce champ')}</strong>"
+```
+
+There are however limitations with f-strings: different string separators have to be used between the braces, and 
+the outside separator or backslashes cannot appear inside the braces.
+
+For instance that string might be harder to translate because there is a single quote in the text:
+
+```python
+# original text
+text = "<strong>Répondre à l'appel</strong>
+
+# this does not work because backslashes cannot be used inside the braces
+text = f"<strong>{_('Répondre à l\'appel')}</strong>"
+
+# this does not work because the external separator cannot appear inside the braces
+text = f'<strong>{_("Répondre à l'appel")}</strong>'
+
+# this work, thanks to the triple quotes, but it is cumbersome
+text = f"""<strong>{_("Répondre à l'appel")}</strong>"""
+
+# this is an alternative solution that will work in every case
+text = _("Répondre à l'appel")
+text = f"<strong>{text}</strong>"
+```
+
 ### In javascript code
 
 Import the pseudo-module `gettext` to get access to the translation function:
