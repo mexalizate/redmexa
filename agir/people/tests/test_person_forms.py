@@ -565,7 +565,7 @@ class SubmissionFormatTestCase(TestCase):
                     "title": "Une partie",
                     "data": [
                         {"label": "Prénom", "value": "Salomé"},
-                        {"label": "Date", "value": "2 de Mayo 2050 a las 00:00"},
+                        {"label": "Date", "value": "2 de Mayo de 2050 a las 00:00"},
                         {"label": "Tel.", "value": "+33 6 12 34 56 78"},
                         {
                             "label": "Fichier",
