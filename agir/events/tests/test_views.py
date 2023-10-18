@@ -973,7 +973,7 @@ class PricingTestCase(TestCase):
         self.assertEqual(self.event.get_price_display(), None)
 
         self.event.payment_parameters = {"price": 1000}
-        self.assertEqual(self.event.get_price_display(), "10,00 €")
+        self.assertEqual(self.event.get_price_display(), "10.00 €")
 
         self.event.payment_parameters = {"free_pricing": "value"}
         self.assertEqual(self.event.get_price_display(), "Prix libre")
@@ -989,14 +989,14 @@ class PricingTestCase(TestCase):
                 }
             ]
         }
-        self.assertEqual(self.event.get_price_display(), "de 1,00 à 2,00 €")
+        self.assertEqual(self.event.get_price_display(), "de 1.00 à 2.00 €")
 
         self.event.payment_parameters["price"] = 1000
-        self.assertEqual(self.event.get_price_display(), "de 11,00 à 12,00 €")
+        self.assertEqual(self.event.get_price_display(), "de 11.00 à 12.00 €")
 
         self.event.payment_parameters["free_pricing"] = "value"
         self.assertEqual(
-            self.event.get_price_display(), "de 11,00 à 12,00 € + montant libre"
+            self.event.get_price_display(), "de 11.00 à 12.00 € + montant libre"
         )
 
     def test_simple_pricing_event(self):

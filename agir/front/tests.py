@@ -16,7 +16,7 @@ from ..polls.models import Poll, PollOption, PollChoice
 class NavbarTestCase(TestCase):
     def setUp(self):
         self.person = Person.objects.create_insoumise(
-            "test@test.com", display_name="Arthur Machin", create_role=True
+            "test@test.com", display_name="Salomé Machin", create_role=True
         )
 
         self.group = SupportGroup.objects.create(name="group")
@@ -31,12 +31,17 @@ class NavbarTestCase(TestCase):
         response = self.client.get("/api/session/")
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertIn(b"Arthur Machin", response.content)
+        self.assertIn(b"Salomé Machin", response.content)
 
 
 class PagesLoadingTestCase(TestCase):
     def setUp(self):
-        self.person = Person.objects.create_insoumise("test@test.com", create_role=True)
+        self.person = Person.objects.create_insoumise(
+            "test@test.com",
+            create_role=True,
+            contact_phone="+33600000000",
+            contact_phone_status=Person.CONTACT_PHONE_VERIFIED
+        )
         self.client.force_login(self.person.role)
 
         now = timezone.now()

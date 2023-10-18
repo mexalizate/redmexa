@@ -99,7 +99,7 @@ class ViewsTestCase(TestCase):
             },
         )
         self.assertEqual(res.status_code, status.HTTP_200_OK)
-        self.assertFormError(res, "form", "conseil", "Ce champ est obligatoire.")
+        self.assertFormError(res, "form", "conseil", "Este campo es requerido.")
 
         res = self.client.post(
             reverse("elus:modifier_mandat_municipal", args=(mandat.id,)),

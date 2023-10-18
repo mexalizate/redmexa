@@ -544,7 +544,7 @@ class SubmissionFormatTestCase(TestCase):
             form=self.form,
             person=self.person,
             data={
-                "first_name": "Arthur",
+                "first_name": "Salomé",
                 "date": self.some_date,
                 "phone_number": "+33612345678",
                 "file": "test/truc.pdf",
@@ -564,8 +564,8 @@ class SubmissionFormatTestCase(TestCase):
                 {
                     "title": "Une partie",
                     "data": [
-                        {"label": "Prénom", "value": "Arthur"},
-                        {"label": "Date", "value": "2 mai 2050 00:00"},
+                        {"label": "Prénom", "value": "Salomé"},
+                        {"label": "Date", "value": "2 de Mayo 2050 a las 00:00"},
                         {"label": "Tel.", "value": "+33 6 12 34 56 78"},
                         {
                             "label": "Fichier",
