@@ -460,7 +460,7 @@ urlpatterns = [
     # https://lafranceinsoumise.fr/
     path("homepage/", RedirectView.as_view(url=settings.MAIN_DOMAIN), name="homepage"),
     # I18N
-    path('jsi18n/', JavaScriptCatalog.as_view(), name='javascript-catalog'),
+    path("jsi18n/", JavaScriptCatalog.as_view(), name="javascript-catalog"),
     # old urls
     re_path("^old(.*)$", views.NBUrlsView.as_view(), name="old_urls"),
 ]

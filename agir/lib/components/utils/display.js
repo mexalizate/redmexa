@@ -24,7 +24,7 @@ export function parsePrice(s) {
   return null;
 }
 
-export function displayPrice(n, forceCents = false, unit = "€") {
+export function displayPrice(n, forceCents = false, unit = "$") {
   let price =
     !forceCents && n % 100 === 0
       ? `${displayNumber(n / 100, 0)}`

@@ -2,6 +2,7 @@ import re
 from unittest import mock
 from unittest.mock import patch
 
+from agir.lib.utils import front_url
 from django.core import mail
 from django.test import TestCase
 from django.utils import timezone
@@ -112,13 +113,39 @@ class SupportGroupPageTestCase(SupportGroupMixin, TestCase):
 class ManageSupportGroupTestCase(SupportGroupMixin, TestCase):
     @mock.patch.object(SupportGroupForm, "geocoding_task")
     @mock.patch("agir.groups.forms.send_support_group_creation_notification")
-    def test_can_create_group(
+    def test_cannot_create_group_with_unverified_phone_number(
+        self,
+        _patched_send_support_group_creation_notification,
+        _patched_geocode_support_group,
+    ):
+        self.person.contact_phone = ""
+        self.person.save()
+        self.client.force_login(self.person.role)
+
+        response = self.client.get(reverse("create_group"))
+        self.assertEqual(response.status_code, status.HTTP_302_FOUND)
+        self.assertEqual(response.url, front_url("send_validation_sms"))
+
+        self.person.contact_phone = "+33600000000"
+        self.person.contact_phone_status = Person.CONTACT_PHONE_UNVERIFIED
+        self.person.save()
+        self.client.force_login(self.person.role)
+
+        response = self.client.get(reverse("create_group"))
+        self.assertEqual(response.status_code, status.HTTP_302_FOUND)
+        self.assertEqual(response.url, front_url("send_validation_sms"))
+
+    @mock.patch.object(SupportGroupForm, "geocoding_task")
+    @mock.patch("agir.groups.forms.send_support_group_creation_notification")
+    def test_can_create_group_with_verified_phone_number(
         self,
         patched_send_support_group_creation_notification,
         patched_geocode_support_group,
     ):
+        self.person.contact_phone = "+33600000000"
+        self.person.contact_phone_status = Person.CONTACT_PHONE_VERIFIED
+        self.person.save()
         self.client.force_login(self.person.role)
-
         # get create page
         response = self.client.get(reverse("create_group"))
         self.assertEqual(response.status_code, status.HTTP_200_OK)

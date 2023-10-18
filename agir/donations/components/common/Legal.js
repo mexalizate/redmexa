@@ -32,7 +32,7 @@ const Legal = () => {
       <strong>Premier alinéa de l’article 11-5 :</strong> Les personnes qui ont
       versé un don ou consenti un prêt à un ou plusieurs partis ou groupements
       politiques en violation des articles 11-3-1 et 11-4 sont punies de trois
-      ans d’emprisonnement et de 45 000 € d’amende.
+      ans d’emprisonnement et de 45 000 $ d’amende.
     </p>
   );
 };

@@ -185,7 +185,7 @@ class Command(LoggingCommand):
         entetes = wb.add_format({"bold": True, "align": "center", **default_style})
         bordures = wb.add_format(default_style)
         montant = wb.add_format(
-            {"num_format": "# ##0.00 [$€-40C];-# ##0.00 [$€-40C]", **default_style}
+            {"num_format": "# ##0.00 [$$-40C];-# ##0.00 [$$-40C]", **default_style}
         )
         date = wb.add_format({"num_format": "dd/mm/yyyy", **default_style})
 

@@ -249,7 +249,7 @@ class ProfileFormTestCase(TestCase):
             reverse("personal_information"),
             {
                 **self.sample_data,
-                "first_name": "Arthur",
+                "first_name": "Salomé",
                 "last_name": "Cheysson",
                 **address_fields,
             },
