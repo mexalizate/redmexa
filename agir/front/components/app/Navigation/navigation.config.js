@@ -1,9 +1,11 @@
-{
-  "menuLinks": [
+import _ from "gettext";
+
+const config = {
+  menuLinks : [
     {
       "id": "events",
       "icon": "calendar",
-      "title": "Événements",
+      "title": _("Événements"),
       "route": "events",
       "desktop": true,
       "mobile": true
@@ -11,7 +13,7 @@
     {
       "id": "actionTools",
       "icon": "flag",
-      "title": "Agir",
+      "title": _("Agir"),
       "route": "actionTools",
       "desktop": false,
       "mobile": true,
@@ -20,7 +22,7 @@
     {
       "id": "groups",
       "icon": "users",
-      "title": "Groupes",
+      "title": _("Groupes"),
       "route": "groups",
       "desktop": true,
       "mobile": true,
@@ -29,7 +31,7 @@
     {
       "id": "messages",
       "icon": "mail",
-      "title": "Messages",
+      "title": _("Messages"),
       "route": "messages",
       "unreadMessageBadge": true,
       "desktop": true,
@@ -38,7 +40,7 @@
     {
       "id": "activities",
       "icon": "bell",
-      "title": "Notifications",
+      "title": _("Notifications"),
       "route": "activities",
       "unreadActivityBadge": true,
       "desktop": true,
@@ -47,7 +49,7 @@
     {
       "id": "settings",
       "icon": "settings",
-      "title": "Paramètres",
+      "title": _("Paramètres"),
       "route": "personalInformation",
       "desktop": true,
       "mobile": false
@@ -56,38 +58,40 @@
   "secondaryLinks": [
     {
       "id": "news",
-      "title": "Actualité de la France insoumise",
+      "title": _("Actualité de la France insoumise"),
       "route": "news"
     },
     {
       "id": "eventMap",
-      "title": "Carte des événements",
+      "title": _("Carte des événements"),
       "route": "eventMap"
     },
     {
       "id": "groupMap",
-      "title": "Carte des groupes",
+      "title": _("Carte des groupes"),
       "route": "groupMap"
     },
     {
       "id": "donations",
-      "title": "Faire un don",
+      "title": _("Faire un don"),
       "route": "donations"
     },
     {
       "id": "help",
-      "title": "Besoin d'aide ?",
+      "title": _("Besoin d'aide ?"),
       "route": "help"
     },
     {
       "id": "contact",
-      "title": "Contact",
+      "title": _("Contact"),
       "route": "contact"
     },
     {
       "id": "logout",
-      "title": "Déconnexion",
+      "title": _("Déconnexion"),
       "route": "logout"
     }
   ]
 }
+
+export default config;
