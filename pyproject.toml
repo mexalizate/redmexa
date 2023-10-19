@@ -26,16 +26,16 @@ django-otp = "==1.*"  # 2FA in admin
 django-filter = "==22.*"  # add useful filters
 django-oauth-toolkit = "==1.*"  # add OAuth server
 rules = "==3.*"  # add useful authorization rules
-django-reversion = "==5.*"  # versioning of models
+django-reversion = "==6.*"  # versioning of models
 ## Django Rest Framework
 djangorestframework = "==3.*,>=3.10"
 djangorestframework-gis = "==0.17"
 ## adapters for third-party systems
-django-redis = "==5.*"
+django-redis = "==6.*"
 psycopg2 = "*"
 django-prometheus = "==2.*"
 # celery
-celery = "==5.*"
+celery = "==6.*"
 celery-prometheus-exporter = "==1.*"
 # redis
 redis = ">=3.2.0"
@@ -43,7 +43,7 @@ hiredis = "==2.*"
 # HTTP
 requests = "==2.*"
 # HTML
-bleach = "==5.*"  # sanitize HTML
+bleach = "==6.*"  # sanitize HTML
 "html2text" = "==2020.*"  # transforms HTML to text (used for plain text versions of HTML emails)
 markdown = "==3.*"  # convert markdown text to HTML (should be deprecated)
 # image handling
