@@ -101,14 +101,14 @@ const Login = () => {
 
   return (
     <ContainerConnexion>
-      <h1>Je me connecte</h1>
+      <h1>{_("Je me connecte")}</h1>
 
       <BlockSwitchLink>
-        <span>Pas encore de compte ?</span>
+        <span>{_("Pas encore de compte ?")}</span>
         &nbsp;
         <span>
           <Link route="signup" state={{ ...(location.state || {}), next }}>
-            Je m'inscris
+            {_("Je m'inscris")}
           </Link>
         </span>
       </BlockSwitchLink>
@@ -151,7 +151,7 @@ const Login = () => {
             <StaticToast>
               {error.detail} <br />
               <Link route="codeLogin">
-                Accéder à la page pour demander son code
+                {_("Accéder à la page pour demander son code")}
               </Link>
             </StaticToast>
           )}
@@ -172,7 +172,7 @@ const Login = () => {
 
           {!showMore ? (
             <ShowMore onClick={handleShowMore}>
-              Se connecter avec un autre{" "}
+              {_("Se connecter avec un autre")}{" "}
               <InlineBlock>
                 e-mail{" "}
                 <img
