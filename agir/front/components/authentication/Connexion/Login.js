@@ -46,7 +46,7 @@ const InlineBlock = styled.span`
 const ToastNotConnected = () => {
   return (
     <StaticToast>
-      Vous devez vous connecter pour accéder à cette page
+      {_("Vous devez vous connecter pour accéder à cette page")}
     </StaticToast>
   );
 };
@@ -166,7 +166,7 @@ const Login = () => {
                   fontSize: "14px",
                 }}
               >
-                OU
+                {_("OU")}
               </div>
             </>
           )}
@@ -210,7 +210,7 @@ const Login = () => {
                   fontSize: "14px",
                 }}
               >
-                OU
+                {_("OU")}
               </div>
               <LoginFacebook />
             </>

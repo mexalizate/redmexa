@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React, { useCallback, useState } from "react";
 import { useHistory, useLocation } from "react-router-dom";
 import styled from "styled-components";
@@ -134,22 +135,22 @@ const SignUp = () => {
     >
       {location.state?.from === "event" ? (
         <h1 style={{ fontSize: "26px" }}>
-          Je m’inscris pour participer à l’événement
+          {_("Je m’inscris pour participer à l’événement")}
         </h1>
       ) : location.state?.from === "group" ? (
         <h1 style={{ fontSize: "26px" }}>
-          Je m’inscris pour rejoindre le groupe
+          {_("Je m’inscris pour rejoindre le groupe")}
         </h1>
       ) : (
-        <h1>Je m'inscris</h1>
+        <h1>{_("Je m'inscris")}</h1>
       )}
 
       <BlockSwitchLink>
-        <span>Déjà inscrit·e ?</span>
+        <span>{_("Déjà inscrit·e ?")}</span>
         &nbsp;
         <span>
           <Link route="login" state={location.state}>
-            Je me connecte
+            {_("Je me connecte")}
           </Link>
         </span>
       </BlockSwitchLink>
@@ -181,7 +182,7 @@ const SignUp = () => {
               onClick={showCountryField}
               disabled={isLoading}
             >
-              J'habite à l'étranger
+              {_("J'habite à l'étranger")}
             </CountryToggle>
           ) : null}
         </div>
@@ -205,14 +206,14 @@ const SignUp = () => {
           name="rgpd"
           label={
             <>
-              J'accepte que mes informations soient traitées par Action
-              Populaire, conformément à la&nbsp;
+              {_("J'accepte que mes informations soient traitées par Action")}
+              {_("Populaire, conformément à la")}
               <a
                 href="https://infos.actionpopulaire.fr/mentions-legales/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                politique de conservation des données
+                {_("politique de conservation des données")}
               </a>
             </>
           }
@@ -234,8 +235,8 @@ const SignUp = () => {
         disabled={isLoading}
       >
         {location.state?.from === "event"
-          ? "Je participe !"
-          : "Créer mon compte"}
+          ? _("Je participe !")
+          : _("Créer mon compte")}
       </Button>
     </form>
   );

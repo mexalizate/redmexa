@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React from "react";
 import LogoAP from "@agir/front/genericComponents/LogoAP";
 import bgDesktop from "@agir/front/genericComponents/images/login_bg_desktop.svg";
@@ -52,9 +53,9 @@ const LeftBlockDesktop = () => {
           />
         </Link>
         <Title>
-          Le réseau social d’action{" "}
+          {_("Le réseau social d’action")}{" "}
           <InlineBlock>
-            de la France insoumise et de la <em>NUPES</em>
+            {_("de la France insoumise et de la")} <em>{_("NUPES")}</em>
           </InlineBlock>
         </Title>
       </div>

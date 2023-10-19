@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
@@ -88,22 +89,22 @@ const SoftLoginModalContent = (props) => {
   if (type === ANONYMOUS_TO_SOFT_LOGIN_CONNECTION) {
     return (
       <StyledModalContent>
-        <h3>Bonjour {username}</h3>
+        <h3>{_("Bonjour")} {username}</h3>
         <h6>{user.email}</h6>
         <Spacer size="0.625rem" />
-        <p>Êtes-vous bien {username}&nbsp;?</p>
+        <p>{_("Êtes-vous bien")} {username}&nbsp;?</p>
         <p>
-          Vous avez été connecté·e automatiquement car vous avez suivi un lien
-          qui lui a été envoyé par email.
+          {_("Vous avez été connecté·e automatiquement car vous avez suivi un lien")}
+          {_("qui lui a été envoyé par email.")}
         </p>
         <Spacer size=".5rem" />
         <div>
           <Button wrap block onClick={onClose} color="primary">
-            Je suis {username}
+            {_("Je suis")} {username}
           </Button>
           <Spacer size="0.5rem" />
           <Button block link href={routeConfig.logout.getLink()}>
-            Ce n'est pas moi
+            {_("Ce n'est pas moi")}
           </Button>
         </div>
       </StyledModalContent>
@@ -113,29 +114,29 @@ const SoftLoginModalContent = (props) => {
   if (type === LOGGED_IN_TO_SOFT_LOGIN_CONNECTION) {
     return (
       <StyledModalContent>
-        <h3>Validez votre identité</h3>
+        <h3>{_("Validez votre identité")}</h3>
         <Spacer size="0.625rem" />
         <p>
-          <strong>Vous êtes déjà connecté en tant que&nbsp;:</strong>
+          <strong>{_("Vous êtes déjà connecté en tant que :")}</strong>
           <br />
           {username} <em>({user.email})</em>
         </p>
         <p>
           <strong>
-            Vous avez cliqué sur un lien qui est sur le point de vous connecter
-            au compte de&nbsp;:
+           {(" Vous avez cliqué sur un lien qui est sur le point de vous connecter") }
+            {_("au compte de :")}
           </strong>
           <br />
           {softLoginUserName} <em>({softLoginUserEmail})</em>
         </p>
-        <p>Validez votre identité :</p>
+        <p>{_("Validez votre identité :")}</p>
         <Spacer size=".5rem" />
         <footer>
           <Button wrap onClick={onClose}>
-            Je suis {username}
+            {_("Je suis")} {username}
           </Button>
           <Button wrap link href={softLoginURL}>
-            Je suis {softLoginUserName}
+            {_("Je suis")} {softLoginUserName}
           </Button>
         </footer>
       </StyledModalContent>
