@@ -1,11 +1,13 @@
 import { DateTime, Interval } from "luxon";
 
+import I18N from "@agir/lib/i18n";
+
 import { displayHumanDate, displayInterval } from "./time";
 
 const date = (s) =>
-  DateTime.fromFormat(s, "d/M H:mm", { zone: "Europe/Paris" })
+  DateTime.fromFormat(s, "d/M H:mm", { zone: I18N.timezone })
     .set({ year: 2021 })
-    .setLocale("es-MX");
+    .setLocale(I18N.locale);
 
 test("displayDate des dates relatives pour des dates proches", () => {
   const relativeTo = date("20/3 12:00"); // sábado 20 marzo 2021, 12:00

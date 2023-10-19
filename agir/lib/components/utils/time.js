@@ -1,6 +1,8 @@
 import { DateTime, Interval } from "luxon";
 import { instanceOf } from "prop-types";
 
+import I18N from "@agir/lib/i18n";
+
 const HOUR_ONLY_FORMAT = {
   hour: "numeric",
   minute: "2-digit",
@@ -20,8 +22,8 @@ const OTHER_YEAR_FORMAT = {
 
 export function dateFromISOString(isostring, zone) {
   return zone
-    ? DateTime.fromISO(isostring, { zone }).setLocale("es-MX")
-    : DateTime.fromISO(isostring).setLocale("es-MX");
+    ? DateTime.fromISO(isostring, { zone }).setLocale(I18N.locale)
+    : DateTime.fromISO(isostring).setLocale(I18N.locale);
 }
 
 export function displayHumanDay(datetime, relativeTo, interval) {
@@ -95,11 +97,11 @@ export function displayHumanDate(datetime, relativeTo) {
 
 export const displayHumanDateString = (datetime, relativeTo) => {
   datetime = new Date(datetime);
-  datetime = DateTime.fromJSDate(datetime).setLocale("es-MX");
+  datetime = DateTime.fromJSDate(datetime).setLocale(I18N.locale);
 
   if (relativeTo) {
     relativeTo = new Date(relativeTo);
-    relativeTo = DateTime.fromJSDate(relativeTo).setLocale("es-MX");
+    relativeTo = DateTime.fromJSDate(relativeTo).setLocale(I18N.locale);
   }
 
   return displayHumanDate(datetime, relativeTo);
@@ -107,7 +109,7 @@ export const displayHumanDateString = (datetime, relativeTo) => {
 
 export function displayInterval(interval, relativeTo) {
   if (relativeTo === undefined) {
-    relativeTo = DateTime.local().setLocale("es-MX");
+    relativeTo = DateTime.local().setLocale(I18N.locale);
   }
 
   const fromNowInterval =
@@ -145,10 +147,10 @@ export function displayInterval(interval, relativeTo) {
 
 export function displayIntervalStart(interval, relativeTo) {
   if (relativeTo === undefined) {
-    relativeTo = DateTime.local().setLocale("es-MX");
+    relativeTo = DateTime.local().setLocale(I18N.locale);
   }
-  const startDate = interval.start.setLocale("es-MX");
-  const endDate = interval.end.setLocale("es-MX");
+  const startDate = interval.start.setLocale(I18N.locale);
+  const endDate = interval.end.setLocale(I18N.locale);
   const scheduleCalendarDays = interval.count("days");
 
   const dayPartFormat = {
@@ -174,11 +176,11 @@ export function displayIntervalStart(interval, relativeTo) {
 
 export function displayIntervalEnd(interval, relativeTo) {
   if (relativeTo === undefined) {
-    relativeTo = DateTime.local().setLocale("es-MX");
+    relativeTo = DateTime.local().setLocale(I18N.locale);
   }
 
   const startDate = DateTime.now();
-  const endDate = interval.end.setLocale("es-MX");
+  const endDate = interval.end.setLocale(I18N.locale);
   const beforeEnd = Interval.fromISO(`${startDate}/${endDate}`);
   const diffBetween = beforeEnd.count("days");
 
@@ -215,7 +217,7 @@ const units = ["year", "month", "week", "day", "hour", "minute", "second"];
 
 export const simpleDate = (datetimeString, hideCurrentYear = true) => {
   let dateTime = new Date(datetimeString);
-  dateTime = DateTime.fromJSDate(dateTime).setLocale("es-MX");
+  dateTime = DateTime.fromJSDate(dateTime).setLocale(I18N.locale);
   return dateTime.toLocaleString({
     year:
       hideCurrentYear && new Date().getFullYear() === dateTime.get("year")
@@ -228,7 +230,7 @@ export const simpleDate = (datetimeString, hideCurrentYear = true) => {
 
 export const simpleDateTime = (datetimeString, hideCurrentYear = true) => {
   let dateTime = new Date(datetimeString);
-  dateTime = DateTime.fromJSDate(dateTime).setLocale("es-MX");
+  dateTime = DateTime.fromJSDate(dateTime).setLocale(I18N.locale);
   return dateTime.toLocaleString({
     year:
       hideCurrentYear && new Date().getFullYear() === dateTime.get("year")
@@ -244,13 +246,13 @@ export const simpleDateTime = (datetimeString, hideCurrentYear = true) => {
 export const timeAgo = (date, maxUnit = units[0]) => {
   try {
     let dateTime = new Date(date);
-    dateTime = DateTime.fromJSDate(dateTime).setLocale("es-MX");
+    dateTime = DateTime.fromJSDate(dateTime).setLocale(I18N.locale);
     const diff = dateTime.diffNow().shiftTo(...units);
     const unit = units.find((unit) => diff.get(unit) !== 0) || "second";
     if (maxUnit && units.indexOf(maxUnit) > units.indexOf(unit)) {
       return simpleDate(date);
     }
-    const relativeFormatter = new Intl.RelativeTimeFormat("fr", {
+    const relativeFormatter = new Intl.RelativeTimeFormat(I18N.datetimeLocale, {
       numeric: "auto",
     });
     return relativeFormatter.format(Math.trunc(diff.as(unit)), unit);
@@ -262,7 +264,7 @@ export const timeAgo = (date, maxUnit = units[0]) => {
 export const displayShortDate = (datetime) => {
   try {
     let date = new Date(datetime);
-    date = DateTime.fromJSDate(date).setLocale("es-MX");
+    date = DateTime.fromJSDate(date).setLocale(I18N.locale);
     return date.toFormat("dd/LL");
   } catch (e) {
     return datetime;

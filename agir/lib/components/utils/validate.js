@@ -1,6 +1,8 @@
 import parsePhoneNumber from "libphonenumber-js";
 import { validate } from "validate.js";
 
+import I18N from "@agir/lib/i18n";
+
 validate.formatters.cleanMessage = (errors) => {
   const result = {};
   const formattedError = errors.reverse().reduce(
@@ -38,7 +40,7 @@ validate.extend(validate.validators.datetime, {
 validate.validators.phone = (value, { message }) => {
   let phoneNumber;
   try {
-    phoneNumber = parsePhoneNumber(value, "FR");
+    phoneNumber = parsePhoneNumber(value, I18N.country);
   } catch (e) {
     return message;
   }

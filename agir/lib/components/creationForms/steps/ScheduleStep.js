@@ -1,6 +1,8 @@
 import React from "react";
 import Datetime from "react-datetime";
-import "moment/locale/fr";
+
+import "@agir/lib/i18n/moment";
+import I18N from "@agir/lib/i18n";
 
 import "react-datetime/css/react-datetime.css";
 
@@ -52,7 +54,7 @@ export default class ScheduleStep extends FormStep {
             >
               <label className="control-label">Début de l'événement</label>
               <Datetime
-                locale="fr"
+                locale={I18N.datetimeLocale}
                 onChange={this.setField("startTime")}
                 value={fields.startTime}
               />
@@ -65,7 +67,7 @@ export default class ScheduleStep extends FormStep {
             >
               <label className="control-label">Fin de l'événement</label>
               <Datetime
-                locale="fr"
+                locale={I18N.datetimeLocale}
                 onChange={this.setField("endTime")}
                 value={fields.endTime}
               />

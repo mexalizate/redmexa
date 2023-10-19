@@ -1,3 +1,4 @@
+import I18N from "@agir/lib/i18n";
 import validate from "@agir/lib/utils/validate";
 
 export const SINGLE_TIME_PAYMENT = "S";
@@ -18,8 +19,8 @@ export const INITIAL_DATA = {
   locationAddress1: "",
   locationAddress2: "",
   locationCity: "",
-  locationCountry: "FR",
-  nationality: "FR",
+  locationCountry: I18N.country,
+  nationality: I18N.country,
   frenchResident: true,
   departement: "",
 

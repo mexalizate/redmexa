@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import React, { useMemo } from "react";
 import styled from "styled-components";
 
+import I18N from "@agir/lib/i18n";
 import style from "@agir/front/genericComponents/_variables.scss";
 
 import { PageFadeIn } from "@agir/front/genericComponents/PageFadeIn";
@@ -11,7 +12,6 @@ import Skeleton from "@agir/front/genericComponents/Skeleton";
 import Button from "@agir/front/genericComponents/Button";
 import Card from "@agir/front/genericComponents/Card";
 import EventCard from "@agir/front/genericComponents/EventCard";
-import { RawFeatherIcon } from "@agir/front/genericComponents/FeatherIcon";
 
 const StyledList = styled.div`
   padding-bottom: 1.5rem;
@@ -55,8 +55,8 @@ const GroupEventList = (props) => {
               ? {
                   ...event,
                   schedule: Interval.fromDateTimes(
-                    DateTime.fromISO(event.startTime).setLocale("es-MX"),
-                    DateTime.fromISO(event.endTime).setLocale("es-MX"),
+                    DateTime.fromISO(event.startTime).setLocale(I18N.locale),
+                    DateTime.fromISO(event.endTime).setLocale(I18N.locale),
                   ),
                 }
               : null,

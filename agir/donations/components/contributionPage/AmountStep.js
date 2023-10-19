@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import React, { useMemo, useState } from "react";
 import styled from "styled-components";
 
+import I18N from "@agir/lib/i18n";
 import { getReminder } from "@agir/donations/common/allocations.config";
 
 import AmountWidget from "@agir/donations/common/AmountWidget";
@@ -84,7 +85,7 @@ const AmountStep = (props) => {
   const endDateString = useMemo(
     () =>
       DateTime.fromJSDate(new Date(endDate))
-        .setLocale("es-MX")
+        .setLocale(I18N.locale)
         .toFormat("MMMM yyyy"),
     [endDate],
   );

@@ -3,6 +3,7 @@ import React, { useCallback, useMemo } from "react";
 import styled from "styled-components";
 import useSWR from "swr";
 
+import I18N from "@agir/lib/i18n";
 import style from "@agir/front/genericComponents/_variables.scss";
 
 import ActionButtons from "@agir/front/app/ActionButtons/ActionButtons";
@@ -108,8 +109,8 @@ const Agenda = () => {
         ? rsvped.map((event) => ({
             ...event,
             schedule: Interval.fromDateTimes(
-              DateTime.fromISO(event.startTime).setLocale("es-MX"),
-              DateTime.fromISO(event.endTime).setLocale("es-MX"),
+              DateTime.fromISO(event.startTime).setLocale(I18N.locale),
+              DateTime.fromISO(event.endTime).setLocale(I18N.locale),
             ),
           }))
         : [],

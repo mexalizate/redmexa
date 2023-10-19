@@ -1,5 +1,7 @@
 import React from "react";
 
+import I18N from "@agir/lib/i18n";
+
 import LocationItem from "./LocationItem";
 
 export default {
@@ -26,7 +28,7 @@ Default.args = {
     address2: "au fond à gauche",
     city: "Paris",
     zip: "75002",
-    country: "FR",
+    country: I18N.country,
   },
 };
 

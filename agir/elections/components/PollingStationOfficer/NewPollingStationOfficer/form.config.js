@@ -1,3 +1,4 @@
+import I18N from "@agir/lib/i18n";
 import validate from "@agir/lib/utils/validate";
 
 const INITIAL_DATA = {
@@ -7,7 +8,7 @@ const INITIAL_DATA = {
   birthName: "",
   birthDate: "",
   birthCity: "",
-  birthCountry: "FR",
+  birthCountry: I18N.country,
   votingCirconscriptionLegislative: null,
   votingLocation: null,
   pollingStation: "",
@@ -18,7 +19,7 @@ const INITIAL_DATA = {
   address2: "",
   zip: "",
   city: "",
-  country: "FR",
+  country: I18N.country,
   email: "",
   phone: "",
   remarks: "",

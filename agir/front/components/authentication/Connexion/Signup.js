@@ -2,6 +2,7 @@ import React, { useCallback, useState } from "react";
 import { useHistory, useLocation } from "react-router-dom";
 import styled from "styled-components";
 
+import I18N from "@agir/lib/i18n";
 import style from "@agir/front/genericComponents/_variables.scss";
 
 import { BlockSwitchLink } from "./styledComponents";
@@ -69,7 +70,7 @@ const InputGroup = styled.div`
 const defaultData = {
   email: "",
   postalCode: "",
-  country: "FR",
+  country: I18N.country,
 };
 
 const SignUp = () => {

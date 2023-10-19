@@ -1,11 +1,22 @@
-import countries from "localized-countries/data/fr";
+import countries from "localized-countries/data/es_MX";
 
 import PropTypes from "prop-types";
 import React, { useCallback, useMemo } from "react";
 
 import SelectField from "@agir/front/formComponents/SelectField";
 
-const FIRST_COUNTRY_CODES = ["FR", "PT", "DZ", "MA", "TR", "IT", "GB", "ES"];
+const FIRST_COUNTRY_CODES = [
+  "MX",
+  "US",
+  "FR",
+  "PT",
+  "DZ",
+  "MA",
+  "TR",
+  "IT",
+  "GB",
+  "ES",
+];
 
 const FIRST_COUNTRIES = FIRST_COUNTRY_CODES.map((countryCode) => ({
   value: countryCode,

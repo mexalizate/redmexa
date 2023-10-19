@@ -1,7 +1,10 @@
+import { DateTime } from "luxon";
 import React from "react";
 
 import EventLocationCard from "./EventLocationCard";
-import { DateTime } from "luxon";
+
+import I18N from "@agir/lib/i18n";
+
 import {
   decorateArgs,
   reorganize,
@@ -39,7 +42,7 @@ const Template = decorateArgs(
 
 export const Default = Template.bind({});
 Default.args = {
-  timezone: "Europe/Paris",
+  timezone: I18N.timezone,
   startTime: DateTime.local().plus({ days: 1 }).toMillis(),
   duration: 2,
   locationName: "Place de la République",

@@ -50,7 +50,7 @@ Empty.args = {
 export const Filled = Template.bind({});
 Filled.args = {
   ...Empty.args,
-  value: "+33600000000",
+  value: "+52600000000",
 };
 
 export const WithHelpText = Template.bind({});

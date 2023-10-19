@@ -1,6 +1,8 @@
 import { DateTime } from "luxon";
 import React from "react";
 
+import I18N from "@agir/lib/i18n";
+
 import TimezoneField from "./TimezoneField";
 import DateTimeField from "./DateTimeField";
 
@@ -47,7 +49,7 @@ Empty.args = {
 export const Filled = Template.bind({});
 Filled.args = {
   ...Empty.args,
-  value: "Europe/Paris",
+  value: I18N.timezone,
 };
 
 export const WithHelpText = Template.bind({});
