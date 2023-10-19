@@ -145,7 +145,7 @@ def depense_type(type, label):
                         (
                             (
                                 reverse("admin:gestion_depense_change", args=(d.id,)),
-                                f"{d.numero} ({d.montant} €)",
+                                f"{d.numero} ({d.montant} $)",
                             )
                             for d in dep
                         ),

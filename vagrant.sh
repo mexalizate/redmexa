@@ -28,9 +28,9 @@ sudo systemctl restart systemd-journald
 
 echo "## Set locales..."
 # avoid some weird bugs with click when locale is not properly set
-sudo bash -c 'printf "fr_FR.UTF8 UTF-8\nen_US.UTF-8 UTF-8\n" > /etc/locale.gen'
+sudo bash -c 'printf "fr_FR.UTF8 UTF-8\nen_US.UTF-8 UTF-8\nes_MX.UTF-8 UTF-8\n" > /etc/locale.gen'
 sudo locale-gen
-sudo localectl set-locale LANG=fr_FR.UTF-8
+sudo localectl set-locale LANG=es_MX.UTF-8
 
 echo "## Update packages"
 sudo apt-get update -qq &> /dev/null
@@ -57,6 +57,11 @@ fi
 
 echo "## Install python dependencies..."
 (cd /vagrant && $POETRY_HOME/bin/poetry install) &> /dev/null
+
+echo "## Install GNU gettext tools"
+if ! dpkg -s gettext &> /dev/null; then
+     sudo apt-get -yqq install gettext &> /dev/null
+fi
 
 echo "## Install wkhtmltopdf"
 if ! dpkg -s wkhtmltox &> /dev/null; then
@@ -85,10 +90,10 @@ if [ ! -x MailHog ]; then
 fi
 
 echo "## Migrate and populate test database..."
-(cd /vagrant && $POETRY_HOME/bin/poetry run ./manage.py migrate && ($POETRY_HOME/bin/poetry run ./manage.py load_fake_data || true)) &> /dev/null
+(cd /vagrant && $POETRY_HOME/bin/poetry run python ./manage.py migrate && ($POETRY_HOME/bin/poetry run python ./manage.py load_fake_data || true)) > /dev/null
 
 echo "## Create super user (address: admin@agir.local, password: password)"
-(cd /vagrant && (SUPERPERSON_PASSWORD="password" $POETRY_HOME/bin/poetry run ./manage.py createsuperperson --noinput --email admin@agir.local || true)) &> /dev/null
+(cd /vagrant && (SUPERPERSON_PASSWORD="password" $POETRY_HOME/bin/poetry run python ./manage.py createsuperperson --noinput --email admin@agir.local || true)) &> /dev/null
 
 echo "## Install fonts"
 sudo /vagrant/install_fonts.sh
@@ -118,7 +123,7 @@ Description=fi-api celery worker
 
 [Service]
 WorkingDirectory=/vagrant
-ExecStart=$POETRY_HOME/bin/poetry run celery --app agir.api worker --concurrency 2 -Q celery
+ExecStart=$POETRY_HOME/bin/poetry run python celery --app agir.api worker --concurrency 2 -Q celery
 User=vagrant
 Group=vagrant
 Restart=on-failure
@@ -135,7 +140,7 @@ Description=fi-api celery worker
 
 [Service]
 WorkingDirectory=/vagrant
-ExecStart=$POETRY_HOME/bin/poetry run celery --app nuntius.celery worker --concurrency 2 -Q nuntius -n nuntius@%%h
+ExecStart=$POETRY_HOME/bin/poetry run python celery --app nuntius.celery worker --concurrency 2 -Q nuntius -n nuntius@%%h
 User=vagrant
 Group=vagrant
 Restart=on-failure
@@ -155,7 +160,7 @@ After=webpack.service
 User=vagrant
 Type=simple
 WorkingDirectory=/vagrant
-ExecStart=$POETRY_HOME/bin/poetry run ./manage.py runserver 0.0.0.0:8000
+ExecStart=$POETRY_HOME/bin/poetry run python ./manage.py runserver 0.0.0.0:8000
 StandardOutput=journal
 Restart=on-failure
 

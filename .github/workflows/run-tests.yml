@@ -50,14 +50,14 @@ jobs:
           file: .github/Dockerfile
           platforms: linux/amd64
           push: true
-          tags: ghcr.io/lafranceinsoumise/actionpopulaire.fr/agir-test-image:latest
+          tags: ghcr.io/jorggr/actionpopulaire.fr/agir-test-image:latest
 
   python-tests:
     name: Django
     needs: docker-build
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/lafranceinsoumise/actionpopulaire.fr/agir-test-image:latest
+      image: ghcr.io/jorggr/actionpopulaire.fr/agir-test-image:latest
       credentials:
         username: ${{ github.repository_owner }}
         password: ${{ secrets.GITHUB_TOKEN }}

@@ -10,7 +10,7 @@ from django_otp.admin import OTPAdminAuthenticationForm, OTPAdminSite
 
 class PersonAuthenticationForm(OTPAdminAuthenticationForm):
     username = forms.EmailField(
-        label=_("Adresse email"), widget=forms.EmailInput(attrs={"autofocus": True})
+        label=_("Email address"), widget=forms.EmailInput(attrs={"autofocus": True})
     )
 
     password = forms.CharField(

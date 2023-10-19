@@ -35,7 +35,7 @@ const StyledAllocationOption = styled.label`
 
     &::after {
       font-family: monospace;
-      content: "€";
+      content: "$";
       position: absolute;
       right: 0.5rem;
       top: 50%;
@@ -103,7 +103,7 @@ const AllocationWidget = (props) => {
     groupId,
     fixedRatio,
     error,
-    unit = "€",
+    unit = "$",
     disabled,
     onChange,
   } = props;

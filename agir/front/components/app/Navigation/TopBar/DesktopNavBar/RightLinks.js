@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useRef, useState } from "react";
 import styled from "styled-components";
@@ -96,14 +97,6 @@ const CounterIconLink = styled(IconLink)`
   }
 `;
 
-const TabletIconLink = styled(IconLink)`
-  display: none;
-
-  @media (max-width: ${(props) => props.theme.collapseTablet}px) {
-    display: inline-flex;
-  }
-`;
-
 const StyledWrapper = styled(PageFadeIn)`
   height: 100%;
   display: flex;
@@ -112,14 +105,8 @@ const StyledWrapper = styled(PageFadeIn)`
 `;
 
 const RightLinks = (props) => {
-  const {
-    isLoading,
-    hasLayout,
-    user,
-    path,
-    unreadActivityCount,
-    unreadMessageCount,
-  } = props;
+  const { isLoading, user, path, unreadActivityCount, unreadMessageCount } =
+    props;
 
   const userMenuLink = useRef();
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
@@ -134,11 +121,11 @@ const RightLinks = (props) => {
     <StyledWrapper ready={!isLoading} style={{ position: "relative" }}>
       {!user ? (
         <>
-          <StyledLink route="help">Aide</StyledLink>
+          <StyledLink route="help">{_("Aide")}</StyledLink>
           <Spacer size="1.5rem" />
-          <StyledLink route="login">Connexion</StyledLink>
+          <StyledLink route="login">{_("Connexion")}</StyledLink>
           <Spacer size="1.5rem" />
-          <StyledLink route="signup">Inscription</StyledLink>
+          <StyledLink route="signup">{_("Inscription")}</StyledLink>
         </>
       ) : (
         <>

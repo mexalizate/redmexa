@@ -37,6 +37,7 @@ from agir.authentication.view_mixins import (
     HardLoginRequiredMixin,
     GlobalOrObjectPermissionRequiredMixin,
     VerifyLinkSignatureMixin,
+    VerifiedContactPhoneRequiredMixin,
 )
 from agir.front.view_mixins import ChangeLocationBaseView
 from agir.groups.actions.pressero import is_pressero_enabled, redirect_to_pressero
@@ -123,10 +124,13 @@ class SupportGroupManagementView(RedirectView):
         return reverse("view_group_settings", kwargs={"pk": supportgroup.pk})
 
 
-class CreateSupportGroupView(HardLoginRequiredMixin, TemplateView):
+class CreateSupportGroupView(VerifiedContactPhoneRequiredMixin, TemplateView):
     template_name = "groups/create.html"
     per_type_animation_limit = 2
     available_types = ((SupportGroup.TYPE_LOCAL_GROUP, "Groupe local"),)
+    unverified_phone_message = _(
+        "Un numéro de téléphone vérifié est obligatoire pour pouvoir créer un groupe."
+    )
 
     def get_context_data(self, **kwargs):
         person = self.request.user.person

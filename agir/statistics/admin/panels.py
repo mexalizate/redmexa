@@ -57,7 +57,7 @@ class StatisticsModelAdmin(admin.ModelAdmin):
                     and key in self.model.CURRENCY_FIELDS
                 ):
                     value = round(value / 100)
-                    unit = " €"
+                    unit = " $"
                 key = self.model._meta.get_field(key).verbose_name
                 if self.relative_aggregates:
                     value = f"{value : >+n}{unit}"

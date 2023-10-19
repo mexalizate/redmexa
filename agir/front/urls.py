@@ -2,9 +2,10 @@ from django.conf import settings
 from django.contrib.sitemaps.views import sitemap, index as sitemap_index
 from django.urls import reverse_lazy, path, re_path, include
 from django.views.generic import RedirectView
+from django.views.i18n import JavaScriptCatalog
 
-from . import views
 from . import api_views
+from . import views
 from ..front.sitemaps import sitemaps
 
 supportgroup_settings_patterns = [
@@ -458,6 +459,8 @@ urlpatterns = [
     path("nsp/referral/", views.NSPReferralView.as_view(), name="nsp_referral"),
     # https://lafranceinsoumise.fr/
     path("homepage/", RedirectView.as_view(url=settings.MAIN_DOMAIN), name="homepage"),
+    # I18N
+    path("jsi18n/", JavaScriptCatalog.as_view(), name="javascript-catalog"),
     # old urls
     re_path("^old(.*)$", views.NBUrlsView.as_view(), name="old_urls"),
 ]

@@ -1,4 +1,4 @@
-{% load static %}
+{% load static i18n %}
 <!doctype html>
 <html lang="fr-FR" prefix="og: http://ogp.me/ns#">
 <head>
@@ -93,6 +93,10 @@
     window.Agir.hideFeedbackButton = true;
   </script>
 {% endif %}
+
+<!-- JavaScript I18N -->
+{% get_current_language as LANGUAGE_CODE %}
+<script src="{% url 'javascript-catalog' %}?LANG={{LANGUAGE_CODE}}"></script>
 
 {% block app_bundles %}
   {% include "front/legacyPages.bundle.html"%}

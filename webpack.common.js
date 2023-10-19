@@ -323,6 +323,16 @@ module.exports = (type = CONFIG_TYPES.ES5) => ({
     path: DISTPATH,
     clean: type === CONFIG_TYPES.DEV,
   },
+  externals: {
+    gettext: "gettext",
+    ngettext: "ngettext",
+    interpolate: "interpolate",
+    get_format: "get_format",
+    gettext_noop: "gettext_noop",
+    pgettext: "pgettext",
+    npgettext: "npgettext",
+    pluralidx: "pluralidx",
+  },
   module: {
     rules: [
       {
