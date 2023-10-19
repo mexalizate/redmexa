@@ -137,7 +137,7 @@ export const Footer = (props) => {
               ) : (
                 <Link route="login">{_("Se connecter")}</Link>
               )}
-              <Link route="help">{_("Besoin d'aide&nbsp;?")}</Link>
+              <Link route="help">{_("Besoin d'aide ?")}</Link>
               <Link route="legal">{_("Mentions légales")}</Link>
               <Link route="contact">{_("Contact")}</Link>
             </p>
