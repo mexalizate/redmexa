@@ -147,7 +147,7 @@ export const Footer = (props) => {
             <h3>{_("Le programme")}</h3>
             <p>
               <Link route="nupesPlatform" target="_blank">
-                Le programme de la{" "}
+                {_("Le programme de la")}{" "}
                 <abbr title="Nouvelle Union Populaire Écologique et sociale">
                   NUPES
                 </abbr>
