@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-18 18:52-0600\n"
+"POT-Creation-Date: 2023-10-18 19:45-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,16 +39,12 @@ msgid "Liens utiles"
 msgstr "Enlaces útiles"
 
 #: agir/front/components/app/Footer/Footer.js:141
-#, fuzzy
-#| msgid "Je me connecte"
 msgid "Se déconnecter"
 msgstr "Cerrar sesión"
 
 #: agir/front/components/app/Footer/Footer.js:143
 #: agir/front/components/app/Homepage/HomeFooter.js:59
 #: agir/front/components/app/Homepage/MobileHome.js:60
-#, fuzzy
-#| msgid "Je me connecte"
 msgid "Se connecter"
 msgstr "Conectarme"
 
@@ -72,6 +68,10 @@ msgstr "El Programa"
 #: agir/front/components/app/Footer/Footer.js:155
 msgid "Le programme de la"
 msgstr "El programa de la"
+
+#: agir/front/components/app/Footer/Footer.js:167
+msgid "Les autres sites"
+msgstr ""
 
 #: agir/front/components/app/Footer/Footer.js:170
 msgid "La"
@@ -133,8 +133,8 @@ msgid "d'autres membres"
 msgstr "a otras personas"
 
 #: agir/front/components/app/Homepage/HomeActions.js:78
-msgid "y actúen juntos"
-msgstr ""
+msgid "et agissez ensemble !"
+msgstr "a otras personas y actúen juntas"
 
 #: agir/front/components/app/Homepage/HomeActions.js:80
 msgid "Voir les groupes"
@@ -189,8 +189,9 @@ msgstr "y las estrategias del movimiento"
 msgid ""
 "Action Populaire est le réseau social d’action de la France Insoumise. Pour "
 "retrouver l’actualité, rendez-vous sur nos sites :"
-msgstr "Red Mexa reúne a las y los mexican@s en el mundo que quieren un México" 
-"unido y progresista. ¡Participa!"
+msgstr ""
+"Red Mexa reúne a las y los mexican@s en el mundo que quieren un Méxicounido "
+"y progresista. ¡Participa!"
 
 #: agir/front/components/app/Homepage/HomeExternalLinks.js:97
 msgid "logo de la France insoumise"

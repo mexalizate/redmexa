@@ -164,7 +164,7 @@ export const Footer = (props) => {
           </div>
 
           <div>
-            <h3>Les autres sites</h3>
+            <h3>{_("Les autres sites")}</h3>
             <p>
               <Link route="nupes" target="_blank">
                 {_("La")}{" "}
