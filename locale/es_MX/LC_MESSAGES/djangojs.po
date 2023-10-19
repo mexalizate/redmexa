@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-17 19:58+0200\n"
+"POT-Creation-Date: 2023-10-18 18:52-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,6 +18,237 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: agir/front/components/authentication/Connexion/Login.js:104
+#: agir/front/components/app/Footer/Footer.js:128
+msgid "Faire un don"
+msgstr ""
+
+#: agir/front/components/app/Footer/Footer.js:129
+msgid "Carte des événements"
+msgstr ""
+
+#: agir/front/components/app/Footer/Footer.js:130
+msgid "Carte des groupes"
+msgstr ""
+
+#: agir/front/components/app/Footer/Footer.js:132
+msgid "Commander du matériel"
+msgstr ""
+
+#: agir/front/components/app/Footer/Footer.js:138
+msgid "Liens utiles"
+msgstr ""
+
+#: agir/front/components/app/Footer/Footer.js:141
+#, fuzzy
+#| msgid "Je me connecte"
+msgid "Se déconnecter"
+msgstr "Conectarme"
+
+#: agir/front/components/app/Footer/Footer.js:143
+#: agir/front/components/app/Homepage/HomeFooter.js:59
+#: agir/front/components/app/Homepage/MobileHome.js:60
+#, fuzzy
+#| msgid "Je me connecte"
+msgid "Se connecter"
+msgstr "Conectarme"
+
+#: agir/front/components/app/Footer/Footer.js:145
+msgid "Besoin d'aide ?"
+msgstr ""
+
+#: agir/front/components/app/Footer/Footer.js:146
+msgid "Mentions légales"
+msgstr ""
+
+#: agir/front/components/app/Footer/Footer.js:147
+msgid "Contact"
+msgstr ""
+
+#: agir/front/components/app/Footer/Footer.js:152
+#: agir/front/components/app/Footer/Footer.js:161
+msgid "Le programme"
+msgstr ""
+
+#: agir/front/components/app/Footer/Footer.js:155
+msgid "Le programme de la"
+msgstr ""
+
+#: agir/front/components/app/Footer/Footer.js:170
+msgid "La"
+msgstr ""
+
+#: agir/front/components/app/Footer/Footer.js:177
+msgid "Le blog de"
+msgstr ""
+
+#: agir/front/components/app/Footer/FooterBanner.js:149
+msgid "Agissez dans votre ville !"
+msgstr ""
+
+#: agir/front/components/app/Footer/FooterBanner.js:153
+msgid "est le réseau social d’action de"
+msgstr ""
+
+#: agir/front/components/app/Footer/FooterBanner.js:159
+msgid "Créer mon compte"
+msgstr ""
+
+#: agir/front/components/app/Footer/FooterBanner.js:163
+msgid "Vous avez déjà un compte ?"
+msgstr ""
+
+#: agir/front/components/app/Footer/FooterBanner.js:164
+#: agir/front/components/app/Homepage/DesktopHome.js:97
+#: agir/front/components/app/IntroApp.js:359
+#: agir/front/components/authentication/Connexion/Login.js:105
 msgid "Je me connecte"
 msgstr "Conectarme"
+
+#: agir/front/components/app/Homepage/DesktopHome.js:85
+#: agir/front/components/app/Homepage/MobileHome.js:49
+msgid "Passez à l'action !"
+msgstr ""
+
+#: agir/front/components/app/Homepage/DesktopHome.js:88
+#: agir/front/components/app/Homepage/MobileHome.js:52
+msgid "Action Populaire est le réseau social d'action de la France insoumise."
+msgstr ""
+
+#: agir/front/components/app/Homepage/DesktopHome.js:93
+#: agir/front/components/app/IntroApp.js:351
+msgid "Je crée mon compte"
+msgstr ""
+
+#: agir/front/components/app/Homepage/HomeActions.js:72
+msgid "manifestation"
+msgstr ""
+
+#: agir/front/components/app/Homepage/HomeActions.js:74
+#: agir/front/components/app/IntroApp.js:197
+msgid "Rencontrez"
+msgstr ""
+
+#: agir/front/components/app/Homepage/HomeActions.js:76
+msgid "d'autres membres"
+msgstr ""
+
+#: agir/front/components/app/Homepage/HomeActions.js:78
+msgid "et agissez ensemble !"
+msgstr ""
+
+#: agir/front/components/app/Homepage/HomeActions.js:80
+msgid "Voir les groupes"
+msgstr ""
+
+#: agir/front/components/app/Homepage/HomeActions.js:87
+msgid "distribution de tracts"
+msgstr ""
+
+#: agir/front/components/app/Homepage/HomeActions.js:89
+#: agir/front/components/app/IntroApp.js:202
+msgid "Agissez concrètement"
+msgstr ""
+
+#: agir/front/components/app/Homepage/HomeActions.js:90
+msgid "formez-vous et convainquez des gens près de chez vous !"
+msgstr ""
+
+#: agir/front/components/app/Homepage/HomeActions.js:91
+msgid "Lire les fiches pratiques"
+msgstr ""
+
+#: agir/front/components/app/Homepage/HomeActions.js:98
+msgid "le premier cahier du programme l'Avenir en Commun"
+msgstr ""
+
+#: agir/front/components/app/Homepage/HomeActions.js:100
+msgid "Organisez"
+msgstr ""
+
+#: agir/front/components/app/Homepage/HomeActions.js:103
+msgid "Créez un groupe d'action, commandez du matériel, tracts et affiches !"
+msgstr ""
+
+#: agir/front/components/app/Homepage/HomeActions.js:106
+msgid "Passer à l'action"
+msgstr ""
+
+#: agir/front/components/app/Homepage/HomeExternalLinks.js:85
+msgid "Retrouver"
+msgstr ""
+
+#: agir/front/components/app/Homepage/HomeExternalLinks.js:85
+msgid "l'actualité"
+msgstr ""
+
+#: agir/front/components/app/Homepage/HomeExternalLinks.js:86
+msgid "et les campagnes du mouvement"
+msgstr ""
+
+#: agir/front/components/app/Homepage/HomeExternalLinks.js:90
+msgid ""
+"Action Populaire est le réseau social d’action de la France Insoumise. Pour "
+"retrouver l’actualité, rendez-vous sur nos sites :"
+msgstr ""
+
+#: agir/front/components/app/Homepage/HomeExternalLinks.js:97
+msgid "logo de la France insoumise"
+msgstr ""
+
+#: agir/front/components/app/Homepage/HomeExternalLinks.js:106
+msgid "logo de la Nouvelle Union Populaire Écologique et Sociale"
+msgstr ""
+
+#: agir/front/components/app/Homepage/HomeExternalLinks.js:115
+msgid "logo de l'insoumission"
+msgstr ""
+
+#: agir/front/components/app/Homepage/HomeFooter.js:52
+msgid "Passez à l'action !"
+msgstr ""
+
+#: agir/front/components/app/Homepage/HomeFooter.js:55
+#: agir/front/components/app/Homepage/MobileHome.js:56
+msgid "S'inscrire"
+msgstr ""
+
+#: agir/front/components/app/IntroApp.js:198
+msgid "d'autres membres et agissez ensemble !"
+msgstr ""
+
+#: agir/front/components/app/IntroApp.js:204
+msgid ""
+"participez aux actions, diffusez notre programme et commandez du matériel"
+msgstr ""
+
+#: agir/front/components/app/IntroApp.js:209
+msgid "Rejoignez ou créez"
+msgstr ""
+
+#: agir/front/components/app/IntroApp.js:210
+msgid "un groupe d'action autour de vous !"
+msgstr ""
+
+#: agir/front/components/app/IntroApp.js:377
+msgid "Rechercher une action"
+msgstr ""
+
+#: agir/front/components/app/IntroApp.js:381
+msgid "Continuer"
+msgstr ""
+
+#: agir/front/components/app/Navigation/TopBar/DesktopNavBar/RightLinks.js:124
+msgid "Aide"
+msgstr ""
+
+#: agir/front/components/app/Navigation/TopBar/DesktopNavBar/RightLinks.js:126
+msgid "Connexion"
+msgstr ""
+
+#: agir/front/components/app/Navigation/TopBar/DesktopNavBar/RightLinks.js:128
+msgid "Inscription"
+msgstr ""
+
+#: agir/front/components/app/Navigation/TopBar/DesktopNavBar/SearchBar.js:115
+msgid "Rechercher un groupe ou une action"
+msgstr ""

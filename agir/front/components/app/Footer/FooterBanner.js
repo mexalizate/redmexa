@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React from "react";
 import styled from "styled-components";
 
@@ -145,21 +146,22 @@ export const FooterBanner = () => {
   return (
     <StyledBanner>
       <FooterForm>
-        <h3>Agissez dans votre ville !</h3>
+        <h3>{_("Agissez dans votre ville !")}</h3>
         <article>
           <p>
-            <strong>Action Populaire</strong> est le réseau social d’action de
-            la France insoumise et de la <em>NUPES</em>.
+            <strong>Action Populaire</strong>{" "}
+            {_("est le réseau social d’action de")}
+            la France insoumise.
           </p>
         </article>
         <div>
           <Button link color="secondary" route="signup">
-            Créer mon compte
+            {_("Créer mon compte")}
           </Button>
         </div>
         <p>
-          Vous avez déjà un compte&nbsp;?
-          <Link route="login">Je me connecte</Link>
+          {_("Vous avez déjà un compte ?")}
+          <Link route="login">{_("Je me connecte")}</Link>
         </p>
       </FooterForm>
     </StyledBanner>

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-17 19:58+0200\n"
+"POT-Creation-Date: 2023-10-18 18:52-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -86,6 +86,12 @@ msgstr ""
 msgid ""
 "Designates whether this user should be treated as active. Unselect this "
 "instead of deleting accounts."
+msgstr ""
+
+#: agir/authentication/view_mixins.py:44
+msgid ""
+"Vous devez ajouter et verifier un numéro de téléphone avant de pouvoir "
+"continuer"
 msgstr ""
 
 #: agir/carte/models.py:91 agir/lib/models.py:211
@@ -1440,7 +1446,12 @@ msgstr ""
 msgid "Les informations de votre groupe d'action ont été changées"
 msgstr ""
 
-#: agir/groups/views/management_views.py:250
+#: agir/groups/views/management_views.py:132
+msgid ""
+"Un numéro de téléphone vérifié est obligatoire pour pouvoir créer un groupe."
+msgstr ""
+
+#: agir/groups/views/management_views.py:254
 #, python-format
 msgid ""
 "Le transfert de %d membre(s) vers « %s » a été effectué. Ces dernier·ère·s "
@@ -1448,7 +1459,7 @@ msgid ""
 "mail."
 msgstr ""
 
-#: agir/groups/views/management_views.py:295
+#: agir/groups/views/management_views.py:299
 msgid "{} n'est plus un gestionnaire du groupe."
 msgstr ""
 
