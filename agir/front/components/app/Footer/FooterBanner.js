@@ -149,9 +149,9 @@ export const FooterBanner = () => {
         <h3>{_("Agissez dans votre ville !")}</h3>
         <article>
           <p>
-            <strong>Action Populaire</strong>{" "}
+            <strong>{_("Action Populaire")}</strong>{" "}
             {_("est le réseau social d’action de")}
-            la France insoumise.
+            {_("la France insoumise.")}
           </p>
         </article>
         <div>

@@ -119,7 +119,7 @@ export const Footer = (props) => {
             <LogoAP />
           </div>
           <div>
-            <h3>Action populaire</h3>
+            <h3>{_("Action populaire")}</h3>
             <p>
               <Link route="donationLanding">{_("Faire un don")}</Link>
               <Link route="eventMap">{_("Carte des événements")}</Link>
@@ -150,7 +150,7 @@ export const Footer = (props) => {
               <Link route="nupesPlatform" target="_blank">
                 {_("Le programme de la")}{" "}
                 <abbr title="Nouvelle Union Populaire Écologique et sociale">
-                  NUPES
+                  {_("NUPES")}
                 </abbr>
               </Link>
               <Link route="programme" target="_blank">
@@ -164,8 +164,8 @@ export const Footer = (props) => {
             <p>
               <Link route="nupes" target="_blank">
                 {_("La")}{" "}
-                <abbr title="Nouvelle Union Populaire Écologique et sociale">
-                  NUPES
+                <abbr title={_("Nouvelle Union Populaire Écologique et sociale")}>
+                  {_("NUPES")}
                 </abbr>
               </Link>
               <Link route="lafranceinsoumise">{_("La France insoumise")}</Link>
