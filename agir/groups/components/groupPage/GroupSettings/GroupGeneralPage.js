@@ -4,6 +4,7 @@ import useSWR from "swr";
 
 import { useToast } from "@agir/front/globalContext/hooks.js";
 
+import I18N from "@agir/lib/i18n";
 import style from "@agir/front/genericComponents/_variables.scss";
 
 import Button from "@agir/front/genericComponents/Button";
@@ -167,10 +168,7 @@ const GroupGeneralPage = (props) => {
               <span style={{ color: style.black700 }}>
                 En important une image, je certifie être le propriétaire des
                 droits et accepte de la partager sous licence libre{" "}
-                <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/fr/">
-                  Creative Commons CC-BY-NC 3.0
-                </a>
-                .
+                <a href={I18N.ccLicenseLink}>Creative Commons CC-BY-NC 3.0</a>.
               </span>
             }
             onChange={handleCheckImageLicence}

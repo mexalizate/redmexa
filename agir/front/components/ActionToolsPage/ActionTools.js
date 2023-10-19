@@ -94,7 +94,7 @@ export const ActionTools = () => {
             Pour que le mouvement puisse financer ses frais de fonctionnement,
             organiser des actions et s’équiper en matériel, vous pouvez
             contribuer financièrement de manière ponctuelle ou mensuellement.
-            Chaque euro compte.
+            Chaque peso compte.
           </span>
           <span
             css={`

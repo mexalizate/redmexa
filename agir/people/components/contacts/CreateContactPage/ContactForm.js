@@ -14,6 +14,8 @@ import TextField from "@agir/front/formComponents/TextField";
 import HowTo from "./HowTo";
 import NoGroupCard from "./NoGroupCard";
 
+import I18N from "@agir/lib/i18n";
+
 import { searchGroups } from "@agir/groups/utils/api";
 import { scrollToError } from "@agir/front/app/utils";
 import {
@@ -125,7 +127,7 @@ export const ContactForm = (props) => {
       if (name === LIAISON_NEWSLETTER.value) {
         newState["address"] = checked ? "" : undefined;
         newState["city"] = checked ? "" : undefined;
-        newState["country"] = checked ? "FR" : undefined;
+        newState["country"] = checked ? I18N.country : undefined;
       }
       return newState;
     });

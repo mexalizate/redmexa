@@ -1,13 +1,15 @@
 import Cleave from "cleave.js/react";
+import parsePhoneNumber from "libphonenumber-js";
 import PropTypes from "prop-types";
-import React, { forwardRef } from "react";
+import React, { forwardRef, useCallback } from "react";
 import styled from "styled-components";
 
+import I18N from "@agir/lib/i18n";
 import style from "@agir/front/genericComponents/_variables.scss";
 
 import FeatherIcon from "@agir/front/genericComponents/FeatherIcon";
 
-import "cleave.js/dist/addons/cleave-phone.fr";
+import "@agir/lib/i18n/cleave";
 
 const StyledLabel = styled.span``;
 const StyledHelpText = styled.span``;
@@ -79,6 +81,23 @@ const StyledField = styled.label`
 const PhoneField = forwardRef((props, ref) => {
   const { id, onChange, value = "", error, label, helpText, ...rest } = props;
 
+  const handleChange = useCallback(
+    (e) => {
+      const parsedValue = parsePhoneNumber(e.target.value, I18N.country);
+      onChange({
+        ...e,
+        target: {
+          ...e.target,
+          value:
+            parsedValue && parsedValue.isValid()
+              ? parsedValue.number
+              : e.target.value,
+        },
+      });
+    },
+    [onChange],
+  );
+
   return (
     <StyledField
       htmlFor={id}
@@ -94,10 +113,10 @@ const PhoneField = forwardRef((props, ref) => {
           type="phone"
           htmlRef={ref}
           id={id}
-          options={{ phone: true, phoneRegionCode: "FR" }}
+          options={{ phone: true, phoneRegionCode: I18N.country }}
           name="phone"
           value={value || ""}
-          onChange={onChange}
+          onChange={handleChange}
           onInit={(owner) => {
             owner.lastInputValue = value || "";
           }}

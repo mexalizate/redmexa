@@ -5,7 +5,9 @@ import DatePanel from "react-multi-date-picker/plugins/date_panel";
 import TimePicker from "react-multi-date-picker/plugins/time_picker";
 import styled from "styled-components";
 
+import I18N from "@agir/lib/i18n";
 import style from "@agir/front/genericComponents/_variables.scss";
+
 import { useResponsiveMemo } from "@agir/front/genericComponents/grid";
 import { getIconDataUrl } from "@agir/front/genericComponents/Button/utils";
 
@@ -207,29 +209,8 @@ const StyledCalendar = styled(Calendar)`
 const locale = {
   ...gregorian_en,
   name: "gregorian_fr",
-  months: [
-    ["Janvier", "Janv"],
-    ["Février", "Fevr"],
-    ["Mars", "Mars"],
-    ["Avril", "Avr"],
-    ["Mai", "Mai"],
-    ["Juin", "Juin"],
-    ["Juillet", "Juil"],
-    ["Août", "Août"],
-    ["Septembre", "Sept"],
-    ["Octobre", "Oct"],
-    ["Novembre", "Nov"],
-    ["Décembre", "Déc"],
-  ],
-  weekDays: [
-    ["Samedi", "S"],
-    ["Dimanche", "D"],
-    ["Lundi", "L"],
-    ["Mardi", "M"],
-    ["Mercredi", "M"],
-    ["Jeudi", "J"],
-    ["Vendredi", "V"],
-  ],
+  months: I18N.months,
+  weekDays: I18N.weekDays,
 };
 
 const convertIsoDateOffset = (date) => {

@@ -1,6 +1,6 @@
 import { Picker } from "emoji-mart";
 import EMOJI_SET_DATA from "@emoji-mart/data/sets/14/twitter";
-import FRENCH_I18N from "@emoji-mart/data/i18n/fr";
+import LOCALE from "@agir/lib/i18n/@emoji-mart";
 
 import PropTypes from "prop-types";
 import React, { useCallback, useEffect, useRef, useState } from "react";
@@ -138,7 +138,7 @@ const NimblePicker = (props) => {
   useEffect(() => {
     new Picker({
       ref,
-      i18n: FRENCH_I18N,
+      i18n: LOCALE,
       data: EMOJI_SET_DATA,
       title: "",
       previewPosition: "none",

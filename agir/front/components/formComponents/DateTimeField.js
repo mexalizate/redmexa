@@ -10,11 +10,12 @@ import React, {
 import Datetime from "react-datetime";
 import styled from "styled-components";
 
+import I18N from "@agir/lib/i18n";
 import style from "@agir/front/genericComponents/_variables.scss";
 
 import FeatherIcon from "@agir/front/genericComponents/FeatherIcon";
 
-import "moment/locale/fr";
+import "@agir/lib/i18n/moment";
 import "react-datetime/css/react-datetime.css";
 
 const StyledLabel = styled.span``;
@@ -231,7 +232,7 @@ const DateTimeField = (props) => {
         {type.includes("date") ? (
           <StyledInput
             $type="date"
-            locale="fr"
+            locale={I18N.datetimeLocale}
             inputProps={{
               ...rest,
               onInput,
@@ -247,7 +248,7 @@ const DateTimeField = (props) => {
         {type.includes("time") ? (
           <StyledInput
             $type="time"
-            locale="fr"
+            locale={I18N.datetimeLocale}
             inputProps={{
               ...rest,
               onInput,

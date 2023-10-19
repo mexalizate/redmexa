@@ -42,7 +42,7 @@ export const UpdateAddressModal = (props) => {
     address2: initialData?.address2 || "",
     zip: initialData?.zip || "",
     city: initialData?.city || "",
-    country: initialData?.country || "FR",
+    country: initialData?.country || "MX",
   });
 
   const handleSubmit = (e) => {

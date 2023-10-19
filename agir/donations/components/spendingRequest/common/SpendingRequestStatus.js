@@ -50,7 +50,7 @@ export const STATUS_CONFIG = {
   // TO_PAY
   T: {
     id: "T",
-    icon: "euro-sign",
+    icon: "dollar-sign",
     label: "Décomptée de l'allocation du groupe, à payer",
     shortLabel: "Validée, en attente de paiement",
     color: "redNSP",

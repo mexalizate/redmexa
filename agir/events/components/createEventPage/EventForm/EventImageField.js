@@ -1,6 +1,8 @@
 import PropTypes from "prop-types";
 import React, { useCallback } from "react";
 
+import I18N from "@agir/lib/i18n";
+
 import CheckboxField from "@agir/front/formComponents/CheckboxField";
 import ImageField from "@agir/front/formComponents/ImageField";
 import Spacer from "@agir/front/genericComponents/Spacer";
@@ -66,7 +68,7 @@ const EventImageField = (props) => {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="https://creativecommons.org/licenses/by-nc-sa/3.0/fr/"
+                  href={I18N.ccLicenseLink}
                 >
                   Creative Commons CC-BY-NC 3.0
                 </a>

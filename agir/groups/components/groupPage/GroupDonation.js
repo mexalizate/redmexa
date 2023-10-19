@@ -19,7 +19,7 @@ const GroupFacts = (props) => {
         s’équiper en matériel, vous pouvez contribuer financièrement de manière
         ponctuelle ou mensuellement.
       </p>
-      <p>Chaque euro compte.</p>
+      <p>Chaque peso compte.</p>
       <Button
         route="contributions"
         params={{ group: id }}

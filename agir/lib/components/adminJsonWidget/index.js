@@ -2,6 +2,7 @@ import JsonEditor from "jsoneditor";
 
 import "jsoneditor/dist/jsoneditor.css";
 
+import I18N from "@agir/lib/i18n";
 import onDOMReady from "@agir/lib/utils/onDOMReady";
 
 const DEFAULT_TEMPLATES = [
@@ -81,7 +82,7 @@ const initAdminJsonWidget = () => {
     }
 
     const editor = new JsonEditor(e, {
-      language: "fr-FR",
+      language: I18N.baseLocale,
       onChangeText: (content) => {
         document.getElementById(`id_${e.dataset.fieldname}`).value = content;
       },

@@ -13,6 +13,8 @@ import makeSearchControl from "./searchControl";
 import getFormatPopups from "./itemPopups";
 
 import logger from "@agir/lib/utils/logger";
+import I18N from "@agir/lib/i18n";
+
 const log = logger(__filename);
 
 const OFFSET = 0.00005;
@@ -115,7 +117,11 @@ class Display {
       if (!source) {
         continue;
       }
-      if (hideInactive && !item.is_active && item.location_country === "FR") {
+      if (
+        hideInactive &&
+        !item.is_active &&
+        item.location_country === I18N.country
+      ) {
         source.hasFeature(feature) &&
           source.removeFeature(source.getFeatureById(item.id));
         continue;

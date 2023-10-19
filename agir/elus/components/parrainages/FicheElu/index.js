@@ -15,6 +15,7 @@ import {
 import { creerRechercheParrainage } from "../queries";
 import Formulaire from "./Formulaire";
 import { MarginBlock, Error } from "../utils";
+import I18N from "@agir/lib/i18n";
 
 const HorairesList = styled.ul`
   list-style-type: none;
@@ -204,7 +205,7 @@ const ColonneCentree = styled.div`
 
 const FicheElu = ({ elu, onStatusChange }) => {
   const mairie = elu.mairie;
-  const distance = elu.distance?.toLocaleString?.("fr-FR", {
+  const distance = elu.distance?.toLocaleString?.(I18N.locale, {
     maximumFractionDigits: 1,
   });
 

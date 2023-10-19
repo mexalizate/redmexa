@@ -3,6 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import useSWR from "swr";
 
+import I18N from "@agir/lib/i18n";
 import style from "@agir/front/genericComponents/_variables.scss";
 
 import Button from "@agir/front/genericComponents/Button";
@@ -44,9 +45,9 @@ const GroupFinancePage = (props) => {
       </StyledTitle>
       <PageFadeIn ready={!!data} wait={<DonationSkeleton />}>
         <p style={{ fontSize: "2rem", margin: 0 }}>
-          {new Intl.NumberFormat("fr-FR", {
+          {new Intl.NumberFormat(I18N.locale, {
             style: "currency",
-            currency: "EUR",
+            currency: I18N.currency,
           }).format(data?.donation / 100)}
         </p>
         <Spacer size=".5rem" />

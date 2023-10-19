@@ -7,6 +7,7 @@ import { useToast } from "@agir/front/globalContext/hooks";
 import * as api from "@agir/events/common/api";
 
 import style from "@agir/front/genericComponents/_variables.scss";
+import I18N from "@agir/lib/i18n";
 
 import Button from "@agir/front/genericComponents/Button";
 import Spacer from "@agir/front/genericComponents/Spacer";
@@ -38,7 +39,7 @@ const EventLocation = (props) => {
     address2: "",
     zip: "",
     city: "",
-    country: "FR",
+    country: I18N.country,
   });
 
   const [errors, setErrors] = useState({});
@@ -120,7 +121,7 @@ const EventLocation = (props) => {
       {errors.global && (
         <p
           css={`
-            color: ${(props) => props.theme.redNSP};
+            color: ${({ theme }) => theme.redNSP};
             margin: 0;
           `}
         >

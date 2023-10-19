@@ -2,6 +2,8 @@ import React from "react";
 
 import ConfirmContact from "./ConfirmContact";
 
+import I18N from "@agir/lib/i18n";
+
 export default {
   component: ConfirmContact,
   title: "CreateContactPage/ConfirmContact",
@@ -30,7 +32,7 @@ Default.args = {
     },
     hasGroupNotifications: true,
     address: "25 passage Dubail",
-    city: "Paris",
-    country: "FR",
+    city: "Ciudad de Mexico",
+    country: I18N.country,
   },
 };
