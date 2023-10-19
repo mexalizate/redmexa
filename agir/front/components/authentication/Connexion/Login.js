@@ -174,7 +174,7 @@ const Login = () => {
             <ShowMore onClick={handleShowMore}>
               {_("Se connecter avec un autre")}{" "}
               <InlineBlock>
-                e-mail{" "}
+                {_("e-mail")}{" "}
                 <img
                   src={chevronDown}
                   width="24"
