@@ -139,18 +139,18 @@ const RightLinks = (props) => {
           </Popin>
           <IconLink route="events" $active={routeConfig.events.match(path)}>
             <FeatherIcon name="home" />
-            <span>Accueil</span>
+            <span>{_("Accueil")}</span>
           </IconLink>
           <IconLink
             route="actionTools"
             $active={routeConfig.actionTools.match(path)}
           >
             <FeatherIcon name="flag" />
-            <span>Agir</span>
+            <span>{_("Agir")}</span>
           </IconLink>
           <IconLink route="groups" $active={routeConfig.groups.match(path)}>
             <FeatherIcon name="users" />
-            <span>Groupes</span>
+            <span>{_("Groupes")}</span>
           </IconLink>
           <CounterIconLink
             route="activities"
@@ -160,7 +160,7 @@ const RightLinks = (props) => {
               <FeatherIcon name="bell" />
               <CounterBadge value={unreadActivityCount} />
             </i>
-            <span>Notifications</span>
+            <span>{_("Notifications")}</span>
           </CounterIconLink>
           <CounterIconLink
             route="messages"
@@ -170,7 +170,7 @@ const RightLinks = (props) => {
               <FeatherIcon name="mail" />
               <CounterBadge value={unreadMessageCount} />
             </i>
-            <span>Messages</span>
+            <span>{_("Messages")}</span>
           </CounterIconLink>
           <IconLink as="button" onClick={openUserMenu} ref={userMenuLink}>
             <Avatar

@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
@@ -82,14 +83,14 @@ const Layout = (props) => {
       </MainColumn>
       <RightColumn>
         <div>
-          <h4>Moyens d'action</h4>
+          <h4>{_("Moyens d'action")}</h4>
           <ActionButtons />
         </div>
         <Spacer size="2rem" />
         {Array.isArray(events) && events.length > 0 ? (
           <>
             <div>
-              <h4>Mes événements prévus</h4>
+              <h4>{_("Mes événements prévus")}</h4>
               <UpcomingEvents orientation="vertical" events={events} />
             </div>
             <Spacer size="2rem" />

@@ -46,7 +46,7 @@ const InlineBlock = styled.span`
 const ToastNotConnected = () => {
   return (
     <StaticToast>
-      Vous devez vous connecter pour accéder à cette page
+      {_("Vous devez vous connecter pour accéder à cette page")}
     </StaticToast>
   );
 };
@@ -105,11 +105,11 @@ const Login = () => {
       <h1>{_("Je me connecte")}</h1>
 
       <BlockSwitchLink>
-        <span>Pas encore de compte ?</span>
+        <span>{_("Pas encore de compte ?")}</span>
         &nbsp;
         <span>
           <Link route="signup" state={{ ...(location.state || {}), next }}>
-            Je m'inscris
+            {_("Je m'inscris")}
           </Link>
         </span>
       </BlockSwitchLink>
@@ -152,7 +152,7 @@ const Login = () => {
             <StaticToast>
               {error.detail} <br />
               <Link route="codeLogin">
-                Accéder à la page pour demander son code
+                {_("Accéder à la page pour demander son code")}
               </Link>
             </StaticToast>
           )}
@@ -166,16 +166,16 @@ const Login = () => {
                   fontSize: "14px",
                 }}
               >
-                OU
+                {_("OU")}
               </div>
             </>
           )}
 
           {!showMore ? (
             <ShowMore onClick={handleShowMore}>
-              Se connecter avec un autre{" "}
+              {_("Se connecter avec un autre")}{" "}
               <InlineBlock>
-                e-mail{" "}
+                {_("e-mail")}{" "}
                 <img
                   src={chevronDown}
                   width="24"
@@ -210,7 +210,7 @@ const Login = () => {
                   fontSize: "14px",
                 }}
               >
-                OU
+                {_("OU")}
               </div>
               <LoginFacebook />
             </>

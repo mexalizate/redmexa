@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
@@ -58,10 +59,9 @@ const DeviceNotificationSubscription = (props) => {
       </Hide>
 
       <StyledWrapper>
-        <h2>Activer les notifications</h2>
+        <h2>{_("Activer les notifications")}</h2>
         <p>
-          Ne ratez pas les actions près de chez vous et recevez les annonces du
-          mouvement.
+          {_("Ne ratez pas les actions près de chez vous et recevez les annonces du mouvement.")}
         </p>
         <img
           src={notificationIllustration}
@@ -70,10 +70,10 @@ const DeviceNotificationSubscription = (props) => {
           aria-hidden="true"
         />
         <Button color="primary" onClick={onSubscribe}>
-          Activer
+          {_("Activer")}
         </Button>
-        <Button onClick={onDismiss}>Pas maintenant</Button>
-        <footer>Vous pourrez changer à tout moment</footer>
+        <Button onClick={onDismiss}>{_("Pas maintenant")}</Button>
+        <footer>{_("Vous pourrez changer à tout moment")}</footer>
         {subscriptionError && (
           <footer style={{ color: style.redNSP }}>{subscriptionError}</footer>
         )}

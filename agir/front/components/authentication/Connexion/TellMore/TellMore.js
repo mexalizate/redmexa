@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
@@ -102,19 +103,19 @@ const DEFAULT_DATA = {
 };
 const MANDAT_OPTIONS = [
   {
-    label: "Mandat municipal",
+    label: _("Mandat municipal"),
     value: "municipal",
   },
   {
-    label: "Mandat départemental",
+    label: _("Mandat départemental"),
     value: "departemental",
   },
   {
-    label: "Mandat régional",
+    label: _("Mandat régional"),
     value: "regional",
   },
   {
-    label: "Mandat consulaire",
+    label: _("Mandat consulaire"),
     value: "consulaire",
   },
 ];
@@ -213,7 +214,7 @@ const TellMore = ({ dismiss }) => {
         <LeftBlock>
           <img
             src={helloDesktop}
-            alt="Bienvenue"
+            alt={_("Bienvenue")}
             width="217"
             height="227"
             style={{ width: "220px", paddingRight: "60px" }}
@@ -221,12 +222,11 @@ const TellMore = ({ dismiss }) => {
         </LeftBlock>
         <MainBlock onSubmit={handleSubmit}>
           <div style={{ width: "100%", maxWidth: "517px" }}>
-            <h1>Je complète mon profil</h1>
-            <h2>Complétez les informations vous concernant</h2>
+            <h1>{_("Je complète mon profil")}</h1>
+            <h2>{_("Complétez les informations vous concernant")}</h2>
             <TextField
               label="Nom public"
-              helpText="Le nom que pourront voir les membres avec qui vous interagissez.
-              Indiquez par exemple votre prénom ou un pseudonyme."
+              helpText={_("Le nom que pourront voir les membres avec qui vous interagissez. Indiquez par exemple votre prénom ou un pseudonyme.")}
               error={error && error.displayName}
               name="displayName"
               placeholder="Mathilde P."
@@ -258,7 +258,7 @@ const TellMore = ({ dismiss }) => {
                 <TextField
                   label={
                     <>
-                      Nom <span style={{ fontWeight: 400 }}>(facultatif)</span>
+                      {_("Nom")} <span style={{ fontWeight: 400 }}>(facultatif)</span>
                     </>
                   }
                   id="lastName"
@@ -274,7 +274,7 @@ const TellMore = ({ dismiss }) => {
             <InputGroup>
               <div>
                 <TextField
-                  label="Code postal"
+                  label={_("Code postal")}
                   id="zip"
                   error={error && error.zip}
                   name="zip"
@@ -288,9 +288,9 @@ const TellMore = ({ dismiss }) => {
               </div>
               <div>
                 <PhoneField
-                  label={
+                  label={-
                     <>
-                      Numéro de téléphone{" "}
+                      {_("Numéro de téléphone")}{" "}
                       <span style={{ fontWeight: 400 }}>(facultatif)</span>
                     </>
                   }
@@ -318,7 +318,7 @@ const TellMore = ({ dismiss }) => {
               <>
                 <div>
                   <SelectField
-                    label="Mandat"
+                    label={_("Mandat")}
                     name="mandat"
                     value={MANDAT_OPTIONS.find(
                       (option) => option.value === formData.mandat,
@@ -342,7 +342,7 @@ const TellMore = ({ dismiss }) => {
                 marginBottom: "2rem",
               }}
             >
-              Enregistrer
+              {_("Enregistrer")}
             </Button>
             {formData.mandat === null && (
               <Hide $under style={{ paddingBottom: "79px" }}></Hide>

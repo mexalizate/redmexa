@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import styled from "styled-components";
@@ -161,7 +162,7 @@ const CampaignOption = (props) => {
   }, [value, onChange]);
   return (
     <RadioBlock onClick={handleChange} $checked={selected}>
-      <img src={img} width="114" height="114" alt="Jean-Luc Mélenchon" />
+      <img src={img} width="114" height="114" alt={_("Jean-Luc Mélenchon")} />
       <span>{label}</span>
       <InputRadio>
         {selected ? (
@@ -260,11 +261,10 @@ const ChooseNewsletters = ({ user, dismiss }) => {
         </div>
       </Hide>
       <Container onSubmit={handleSubmit}>
-        <h2>Recevez l'actualité de la France insoumise</h2>
+        <h2>{_("Recevez l'actualité de la France insoumise")}</h2>
         <Spacer size="1rem" />
         <p>
-          Choisissez parmi la liste ci-dessous les lettres d'information du
-          mouvement auxquelles vous souhaitez vous abonner
+          {_("Choisissez parmi la liste ci-dessous les lettres d'information du mouvement auxquelles vous souhaitez vous abonner")}
         </p>
         <Spacer size="2rem" />
         <div style={{ textAlign: "left" }}>
@@ -279,11 +279,11 @@ const ChooseNewsletters = ({ user, dismiss }) => {
         </div>
         <Spacer size="2rem" />
         <Button color="primary" type="submit" disabled={submitted}>
-          Continuer
+          {_("Continuer")}
         </Button>
         <Spacer size="1rem" />
         <Button type="button" onClick={dismiss} disabled={submitted}>
-          Passer cette étape
+          {_("Passer cette étape")}
         </Button>
       </Container>
     </div>

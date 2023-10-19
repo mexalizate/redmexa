@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React from "react";
 import { RawFeatherIcon } from "@agir/front/genericComponents/FeatherIcon";
 import styled from "styled-components";
@@ -38,18 +39,16 @@ const CodeSignup = () => {
     <Container>
       <RawFeatherIcon name="mail" width="41px" height="41px" />
       <h1>
-        Plus qu’une étape pour <br />
-        rejoindre l’action !
+        {_("Plus qu’une étape pour")} <br />
+        {_("rejoindre l’action !")}
       </h1>
       <div style={{ marginTop: "2rem" }}>
         <p>
-          Cliquez sur le lien que nous vous avons envoyé à{" "}
-          <strong>{location.state?.email}</strong> pour valider votre
-          inscription.
+          {_("Cliquez sur le lien que nous vous avons envoyé à")}{" "}
+          <strong>{location.state?.email}</strong> {_("pour valider votre inscription.")}
         </p>
         <p style={{ marginBottom: "0" }}>
-          Si l’adresse e-mail n’est pas reconnue, il vous sera proposé de vous
-          inscrire.
+          {_("Si l’adresse e-mail n’est pas reconnue, il vous sera proposé de vous inscrire.")}
         </p>
       </div>
     </Container>

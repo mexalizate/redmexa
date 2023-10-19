@@ -1,5 +1,4 @@
 import React from "react";
-
 import logoMobile from "@agir/front/genericComponents/logos/action-populaire_mini.svg";
 import { Hide } from "@agir/front/genericComponents/grid";
 import Signup from "./Signup";

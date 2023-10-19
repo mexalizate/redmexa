@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useMemo } from "react";
 import styled from "styled-components";
@@ -51,20 +52,20 @@ const AuthenticatedLogin = ({ user }) => {
     <>
       <TopBar />
       <StyledWrapper>
-        <h2>Vous êtes déjà connecté</h2>
+        <h2>{_("Vous êtes déjà connecté")}</h2>
         <Spacer size="1rem" />
         <p>
-          Vous êtes déjà connecté·e à votre
+          {_("Vous êtes déjà connecté·e à votre")}
           <br />
-          compte <strong>{user.email}</strong>
+          {_("compte")} <strong>{user.email}</strong>
         </p>
         <Spacer size="2rem" />
         <Button link route="events" color="secondary">
-          Revenir à l’accueil
+          {_("Revenir à l’accueil")}
         </Button>
         <Spacer size="3.25rem" />
         <p>
-          Mauvais compte&nbsp;? <Link route="logout">Se déconnecter</Link>
+          {_("Mauvais compte&nbsp;? ")}<Link route="logout">{_("Se déconnecter")}</Link>
         </p>
       </StyledWrapper>
     </>

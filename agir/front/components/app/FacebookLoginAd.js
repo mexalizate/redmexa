@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React from "react";
 import styled from "styled-components";
 import useSWR from "swr";
@@ -44,10 +45,9 @@ const FacebookLoginAd = () => {
         style={{ height: "32px", marginBottom: "6px" }}
         alt="Facebook"
       />
-      <h6>Facilitez vos prochaines connexions</h6>
+      <h6>{_("Facilitez vos prochaines connexions")}</h6>
       <p>
-        Connectez votre compte à Facebook maintenant pour ne pas avoir à taper
-        de code la prochaine fois.
+        {_("Connectez votre compte à Facebook maintenant pour ne pas avoir à taper de code la prochaine fois.")}
       </p>
       <Button
         style={{ margin: "16px 0" }}
@@ -62,10 +62,10 @@ const FacebookLoginAd = () => {
           width="16"
           height="16"
         />
-        Connecter le compte
+       {_(" Connecter le compte")}
       </Button>
       <DismissMessage href="#" onClick={dismissCallback}>
-        Ne plus afficher ce message
+        {_("Ne plus afficher ce message")}
       </DismissMessage>
     </FacebookLoginContainer>
   ) : null;
