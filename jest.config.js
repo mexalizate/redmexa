@@ -4,6 +4,7 @@ module.exports = {
     "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
       "<rootDir>/jest/fileMock.js",
     "^@agir/([a-zA-Z0-9_]+)/(.*)$": "<rootDir>/agir/$1/components/$2",
+    "^gettext$": "<rootDir>/jest/gettextMock.js",
   },
   transformIgnorePatterns: [
     "/node_modules/(?!@babel/runtime-corejs3/helpers/esm/|path-to-regexp-es|uuid)",
