@@ -5,6 +5,7 @@ module.exports = {
   addons: ["@storybook/addon-links", "@storybook/addon-essentials"],
   staticDirs: ["../.storybook/public"],
   webpackFinal: (config) => {
+    config.externals = baseConfig.externals;
     config.module.rules.push({
       test: /\.scss$/,
       exclude: [/theme\/theme.scss/],
