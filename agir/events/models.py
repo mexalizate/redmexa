@@ -425,13 +425,13 @@ class Event(
     VISIBILITY_ORGANIZER = "O"
     VISIBILITY_PUBLIC = "P"
     VISIBILITY_CHOICES = (
-        (VISIBILITY_ADMIN, "Caché"),
-        (VISIBILITY_ORGANIZER, "Visible par les organisateurs"),
-        (VISIBILITY_PUBLIC, "Public"),
+        (VISIBILITY_ADMIN, _("Caché")),
+        (VISIBILITY_ORGANIZER, _("Visible par les organisateurs")),
+        (VISIBILITY_PUBLIC, _("Public")),
     )
 
     visibility = models.CharField(
-        "Visibilité",
+        _("Visibilité"),
         max_length=1,
         choices=VISIBILITY_CHOICES,
         default=VISIBILITY_PUBLIC,
@@ -439,7 +439,7 @@ class Event(
 
     subtype = models.ForeignKey(
         "EventSubtype",
-        verbose_name="Sous-type",
+        verbose_name=_("Sous-type"),
         related_name="events",
         on_delete=models.PROTECT,
         default=get_default_subtype,
@@ -450,7 +450,7 @@ class Event(
     start_time = CustomDateTimeField(_("date et heure de début"), blank=False)
     end_time = CustomDateTimeField(_("date et heure de fin"), blank=False)
     timezone = models.CharField(
-        "Fuseau horaire",
+        _("Fuseau horaire"),
         max_length=255,
         choices=((name, name) for name in pytz.all_timezones),
         default=timezone.get_default_timezone().zone,
@@ -459,12 +459,12 @@ class Event(
     )
 
     max_participants = models.IntegerField(
-        "Nombre maximum de participants", blank=True, null=True
+        _("Nombre maximum de participants"), blank=True, null=True
     )
     allow_guests = models.BooleanField(
-        "Autoriser les participant⋅e⋅s à inscrire des invité⋅e⋅s", default=False
+        _("Autoriser les participant⋅e⋅s à inscrire des invité⋅e⋅s"), default=False
     )
-    facebook = FacebookEventField("Événement correspondant sur Facebook", blank=True)
+    facebook = FacebookEventField(_("Événement correspondant sur Facebook"), blank=True)
 
     attendees = models.ManyToManyField(
         "people.Person", related_name="events", through="RSVP"
@@ -503,12 +503,12 @@ class Event(
     )
 
     report_summary_sent = models.BooleanField(
-        "Le mail de compte-rendu a été envoyé", default=False
+        _("Le mail de compte-rendu a été envoyé"), default=False
     )
 
     subscription_form = models.OneToOneField(
         "people.PersonForm",
-        verbose_name="Formulaire d'inscription",
+        verbose_name=_("Formulaire d'inscription"),
         related_name="subscription_form_event",
         related_query_name="subscription_form_event",
         null=True,
@@ -518,7 +518,7 @@ class Event(
 
     volunteer_application_form = models.OneToOneField(
         "people.PersonForm",
-        verbose_name="Formulaire d'appel à volontaires",
+        verbose_name=_("Formulaire d'appel à volontaires"),
         help_text="Si un formulaire existe, son lien sera affiché sur la page de l'événement et dans les e-mails de "
         "confirmation de participation.",
         related_name="volunteer_application_form_event",
@@ -536,29 +536,31 @@ class Event(
     )
 
     lien_feuille_externe = models.URLField(
-        verbose_name="Lien vers une feuille de calcul externe",
-        help_text="Une feuille de calcul externe à mettre à jour avec les participants à l'événement.",
+        verbose_name=_("Lien vers une feuille de calcul externe"),
+        help_text=_("Une feuille de calcul externe à mettre à jour avec les participants à l'événement."),
         blank=True,
     )
 
     scanner_event = models.IntegerField(
-        "L'ID de l'événement sur le logiciel de tickets", blank=True, null=True
+        _("L'ID de l'événement sur le logiciel de tickets"), blank=True, null=True
     )
     scanner_category = models.IntegerField(
-        "La catégorie que doivent avoir les tickets sur scanner", blank=True, null=True
+        _("La catégorie que doivent avoir les tickets sur scanner"), blank=True, null=True
     )
 
-    enable_jitsi = models.BooleanField("Activer la visio-conférence", default=False)
+    enable_jitsi = models.BooleanField(_("Activer la visio-conférence"), default=False)
 
     participation_template = models.TextField(
         _("Template pour la page de participation"), blank=True, null=True
     )
 
     do_not_list = models.BooleanField(
-        "Ne pas lister l'événement",
+        _("Ne pas lister l'événement"),
         default=False,
-        help_text="L'événement n'apparaîtra pas sur la carte, ni sur le calendrier "
-        "et ne sera pas cherchable via la recherche interne ou les moteurs de recherche.",
+        help_text=_(
+            "L'événement n'apparaîtra pas sur la carte, ni sur le calendrier "
+            "et ne sera pas cherchable via la recherche interne ou les moteurs de recherche."
+        ),
     )
 
     meta = JSONField(
@@ -572,13 +574,13 @@ class Event(
     FOR_USERS_INSOUMIS = "I"
     FOR_USERS_2022 = "2"
     FOR_USERS_CHOICES = (
-        (FOR_USERS_ALL, "Tous les utilisateurs"),
-        (FOR_USERS_INSOUMIS, "Les insoumis⋅es"),
-        (FOR_USERS_2022, "Les signataires « Nous Sommes Pour ! »"),
+        (FOR_USERS_ALL, _("Tous les utilisateurs")),
+        (FOR_USERS_INSOUMIS, _("Les insoumis⋅es")),
+        (FOR_USERS_2022, _("Les signataires « Nous Sommes Pour ! »")),
     )
 
     for_users = models.CharField(
-        "Utilisateur⋅ices de la plateforme concerné⋅es par l'événement",
+        _("Utilisateur⋅ices de la plateforme concerné⋅es par l'événement"),
         default=FOR_USERS_ALL,
         max_length=1,
         blank=False,
@@ -586,35 +588,35 @@ class Event(
     )
 
     online_url = models.URLField(
-        "Url de visio-conférence",
+        _("Url de visio-conférence"),
         default="",
         blank=True,
     )
 
     suggestion_segment = models.ForeignKey(
         to="mailing.Segment",
-        verbose_name="Segment de suggestion",
+        verbose_name=_("Segment de suggestion"),
         on_delete=models.SET_NULL,
         related_name="suggested_events",
         related_query_name="suggested_event",
         null=True,
         blank=True,
-        help_text=("Segment des personnes auquel cet événement sera suggéré."),
+        help_text=_("Segment des personnes auquel cet événement sera suggéré."),
     )
 
     attendant_notice = models.TextField(
-        "Note pour les participants",
+        _("Note pour les participants"),
         null=False,
         blank=True,
         default="",
-        help_text=(
+        help_text=_(
             "Note montrée aux participants à un événements et est envoyé dans l'e-mail de confirmation de participation"
         ),
     )
 
     event_speakers = models.ManyToManyField(
         "event_requests.EventSpeaker",
-        verbose_name="Intervenant·es",
+        verbose_name=_("Intervenant·es"),
         related_name="events",
         related_query_name="event",
         blank=True,
@@ -622,7 +624,7 @@ class Event(
 
     email_campaign = models.OneToOneField(
         "nuntius.Campaign",
-        verbose_name="Campagne e-mail",
+        verbose_name=_("Campagne e-mail"),
         related_name="event",
         related_query_name="event",
         blank=True,
@@ -880,9 +882,9 @@ class Event(
         start_time = self.local_start_time.strftime(df)
         end_time = self.local_end_time.strftime(df)
 
-        details = f"{self.description}<p><a href={self.get_absolute_url()}>Page de l'événement</a></p>"
+        details = f"""{self.description}<p><a href={self.get_absolute_url()}>{_("Page de l'événement")}</a></p>"""
         if self.online_url:
-            details += f"<p><a href={self.online_url}>Rejoindre en ligne</a></p>"
+            details += f"<p><a href={self.online_url}>{_('Rejoindre en ligne')}</a></p>"
 
         query = {
             "action": "TEMPLATE",
@@ -1066,7 +1068,7 @@ class EventSubtype(BaseSubtype):
     default_description = DescriptionField(
         verbose_name=_("description par défaut"),
         blank=True,
-        help_text="La description par défaut pour les événements de ce sous-type.",
+        help_text=_("La description par défaut pour les événements de ce sous-type."),
         allowed_tags=settings.ADMIN_ALLOWED_TAGS,
     )
 
@@ -1079,14 +1081,14 @@ class EventSubtype(BaseSubtype):
     )
 
     has_priority = models.BooleanField(
-        "Le sous-type d'événement est prioritaire",
+        _("Le sous-type d'événement est prioritaire"),
         default=False,
-        help_text="Le sous-type d'événement apparaîtra en premier dans la liste des sous-types disponibles, "
-        "par exemple lors de la création d'un événement.",
+        help_text=_("Le sous-type d'événement apparaîtra en premier dans la liste des sous-types disponibles, "
+        "par exemple lors de la création d'un événement."),
     )
 
     related_project_type = models.CharField(
-        verbose_name="Type de projet de gestion associé",
+        verbose_name=_("Type de projet de gestion associé"),
         choices=TypeProjet.choices,
         max_length=10,
         blank=True,
@@ -1094,7 +1096,7 @@ class EventSubtype(BaseSubtype):
     )
 
     required_documents = ArrayField(
-        verbose_name="Attestations requi" "ses",
+        verbose_name=_("Attestations requises"),
         base_field=models.CharField(
             choices=EVENT_SUBTYPE_REQUIRED_DOCUMENT_TYPE_CHOICES,
             max_length=10,
@@ -1106,9 +1108,11 @@ class EventSubtype(BaseSubtype):
 
     report_person_form = models.ForeignKey(
         "people.PersonForm",
-        verbose_name="Formulaire de bilan",
-        help_text="Les organisateur·ices des événements de ce type seront invité·es à remplir ce formulaire une fois "
-        "l'événement terminé",
+        verbose_name=_("Formulaire de bilan"),
+        help_text=_(
+            "Les organisateur·ices des événements de ce type seront invité·es à remplir ce formulaire une fois "
+            "l'événement terminé"
+        ),
         related_name="event_subtype",
         related_query_name="event_subtype",
         null=True,
@@ -1117,43 +1121,51 @@ class EventSubtype(BaseSubtype):
     )
 
     is_editable = models.BooleanField(
-        "Les événements de ce sous-type seront modifiables",
+        _("Les événements de ce sous-type seront modifiables"),
         default=True,
-        help_text="Les événements de ce sous-type pourront être modifiés par les organisateur·ices, "
-        "et non seulement par les administrateur·ices",
+        help_text=_(
+            "Les événements de ce sous-type pourront être modifiés par les organisateur·ices, "
+            "et non seulement par les administrateur·ices"
+        ),
     )
 
     is_acceptable_for_group_certification = models.BooleanField(
-        "Accepté pour la certification",
+        _("Accepté pour la certification"),
         default=True,
-        help_text="Les événements récents de ce sous-type seront pris en compte (ou non) pour ouvrir "
-        "le droit à un groupe d'action à la certification",
+        help_text=_(
+            "Les événements récents de ce sous-type seront pris en compte (ou non) pour ouvrir "
+            "le droit à un groupe d'action à la certification"
+        ),
     )
 
     for_organizer_group_members_only = models.BooleanField(
-        "Réservé aux membres des groupes organisateurs",
+        _("Réservé aux membres des groupes organisateurs"),
         default=False,
-        help_text="Seulement les membres des groupes organisateurs pourront rejoindre les événements de ce type",
+        help_text=_("Seulement les membres des groupes organisateurs pourront rejoindre les événements de ce type"),
     )
 
     unauthorized_message = models.TextField(
-        "Note pour les personnes non autorisées",
+        _("Note pour les personnes non autorisées"),
         blank=True,
         null=False,
         default="",
-        help_text="Cette note sera affichée sur la page de l'événement aux personnes qui n'ont pas le droit "
-        "de participer à un événement de ce type",
+        help_text=_(
+            "Cette note sera affichée sur la page de l'événement aux personnes qui n'ont pas le droit "
+            "de participer à un événement de ce type"
+        ),
     )
 
     for_supportgroup_type = models.CharField(
-        "Organisation réservé au type de groupe",
+        _("Organisation réservé au type de groupe"),
         max_length=1,
         null=True,
         blank=True,
         default=None,
         choices=SupportGroup.TYPE_CHOICES,
-        help_text="Seulement les gestionnaires et animateur·ices des groupes du type sélectionné "
-        "pourront créer des événements de ce type.",
+        help_text=_(
+            "Seulement les gestionnaires et animateur·ices des groupes du type sélectionné "
+            "pourront créer des événements de ce type."
+        ),
     )
 
     for_supportgroups = models.ManyToManyField(
@@ -1161,28 +1173,34 @@ class EventSubtype(BaseSubtype):
         limit_choices_to={"published": True},
         blank=True,
         default=None,
-        verbose_name="Organisations réservé à certains groupes",
-        help_text="Seulement les gestionnaires et animateur·ices des groupes sélectionnés "
-        "pourront créer des événements de ce type.",
+        verbose_name=_("Organisations réservé à certains groupes"),
+        help_text=_(
+            "Seulement les gestionnaires et animateur·ices des groupes sélectionnés "
+            "pourront créer des événements de ce type."
+        ),
     )
 
     is_coorganizable = models.BooleanField(
-        "Co-organisation avec d'autres groupes d'action autorisée",
+        _("Co-organisation avec d'autres groupes d'action autorisée"),
         default=True,
-        help_text="Les organisateur·ices pourront inviter d'autres groupes d'action à co-organiser les "
-        "événements de ce type.",
+        help_text=_(
+            "Les organisateur·ices pourront inviter d'autres groupes d'action à co-organiser les "
+            "événements de ce type."
+        ),
     )
 
     campaign_template = models.ForeignKey(
         "nuntius.Campaign",
-        verbose_name="Modèle de campagne e-mail",
+        verbose_name=_("Modèle de campagne e-mail"),
         related_name="event_subtypes",
         related_query_name="event_subytpe",
         blank=True,
         null=True,
         on_delete=models.SET_NULL,
-        help_text="Si une campagne a été sélectionné, celle-ci pourra être utilisée comme modèle pour créer "
-        "automatiquement une campagne pour un événement de ce type.",
+        help_text=_(
+            "Si une campagne a été sélectionné, celle-ci pourra être utilisée comme modèle pour créer "
+            "automatiquement une campagne pour un événement de ce type."
+        ),
     )
 
     class Meta:
@@ -1212,7 +1230,7 @@ class Calendar(ImageMixin):
 
     name = models.CharField(_("titre"), max_length=255)
     slug = models.SlugField(_("slug"), unique=True)
-    archived = models.BooleanField("Calendrier archivé", default=False)
+    archived = models.BooleanField(_("Calendrier archivé"), default=False)
 
     parent = models.ForeignKey(
         "Calendar",
@@ -1310,12 +1328,12 @@ class GroupAttendee(ExportModelOperationsMixin("group_attendee"), TimeStampedMod
 
     class Meta:
         db_table = "group_attendee"
-        verbose_name = "Groupe participant"
-        verbose_name_plural = "Groupes participants"
+        verbose_name = _("Groupe participant")
+        verbose_name_plural = _("Groupes participants")
         unique_together = ("event", "group")
 
     def __str__(self):
-        return "{group} participe à l'événement --> {event} | Par {organizer}".format(
+        return _("{group} participe à l'événement --> {event} | Par {organizer}").format(
             group=self.group, event=self.event, organizer=self.organizer
         )
 
@@ -1402,7 +1420,7 @@ class RSVP(ExportModelOperationsMixin("rsvp"), TimeStampedModel):
             guest.status == RSVP.STATUS_AWAITING_PAYMENT
             for guest in self.identified_guests.all()
         ):
-            info = info + " paiement(s) en attente"
+            info = info + _(" paiement(s) en attente")
 
         return info
 
@@ -1477,7 +1495,7 @@ class OrganizerConfig(ExportModelOperationsMixin("organizer_config"), models.Mod
             membership_type__gte=Membership.MEMBERSHIP_TYPE_MANAGER,
         ).exists():
             raise ValidationError(
-                {"as_group": "Le groupe doit être un groupe que vous gérez."}
+                {"as_group": _("Le groupe doit être un groupe que vous gérez.")}
             )
 
 
@@ -1525,7 +1543,7 @@ class JitsiMeeting(models.Model):
         validators=[
             RegexValidator(
                 re.compile(r"^[a-z0-9-_]+$"),
-                "Seulement des lettres minuscules, des chiffres, des _ et des -.",
+                _("Seulement des lettres minuscules, des chiffres, des _ et des -."),
                 "invalid",
             )
         ],
@@ -1537,8 +1555,8 @@ class JitsiMeeting(models.Model):
         blank=True,
         related_name="jitsi_meetings",
     )
-    start_time = models.DateTimeField("Début effectif", null=True, blank=True)
-    end_time = models.DateTimeField("Fin effective", null=True, blank=True)
+    start_time = models.DateTimeField(_("Début effectif"), null=True, blank=True)
+    end_time = models.DateTimeField(_("Fin effective"), null=True, blank=True)
 
     @property
     def link(self):
@@ -1557,15 +1575,15 @@ class Invitation(TimeStampedModel):
     STATUS_REFUSED = "refused"
 
     STATUSES = (
-        (STATUS_PENDING, "En attente"),
-        (STATUS_ACCEPTED, "Acceptée"),
-        (STATUS_REFUSED, "Refusée"),
+        (STATUS_PENDING, _("En attente")),
+        (STATUS_ACCEPTED, _("Acceptée")),
+        (STATUS_REFUSED, _("Refusée")),
     )
 
     person_sender = models.ForeignKey(
         "people.Person",
         on_delete=models.CASCADE,
-        verbose_name="Personne qui émet l'invitation",
+        verbose_name=_("Personne qui émet l'invitation"),
     )
     person_recipient = models.ForeignKey(
         "people.Person",
@@ -1573,7 +1591,7 @@ class Invitation(TimeStampedModel):
         null=True,
         blank=True,
         related_name="invitation_response",
-        verbose_name="Personne qui répond à l'invitation",
+        verbose_name=_("Personne qui répond à l'invitation"),
     )
     event = models.ForeignKey(
         "events.Event",
