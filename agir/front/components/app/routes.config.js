@@ -5,6 +5,7 @@ import logger from "@agir/lib/utils/logger";
 
 import { AUTHENTICATION } from "@agir/front/authentication/common";
 import { relativeToAbsoluteURL } from "@agir/lib/utils/url";
+import externalRoutes from "@agir/front/globalContext/nonReactRoutes.config";
 
 import RouteComponents from "./routes.components";
 export const BASE_PATH = "/";
@@ -222,6 +223,15 @@ export const routeConfig = {
       routeParams: {
         activePanel: "finance",
       },
+    },
+  }),
+  redirectToCreateGroup: new RouteConfig({
+    id: "redirectToCreateGroup",
+    path: "/groupes/creer/",
+    exact: true,
+    neededAuthentication: AUTHENTICATION.SOFT,
+    redirectTo: {
+      href: externalRoutes.createGroup,
     },
   }),
   groupDetails: new RouteConfig({

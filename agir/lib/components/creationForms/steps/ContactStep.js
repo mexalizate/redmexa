@@ -15,7 +15,23 @@ class ContactStep extends FormStep {
   }
 
   isValidated() {
-    return [this.validateEmail(), this.validatePhone()].every((c) => c);
+    return [
+      this.validateName(),
+      this.validateEmail(),
+      this.validatePhone(),
+    ].every((c) => c);
+  }
+
+  validateName() {
+    const { name } = this.props.fields;
+
+    if (!name || name === "") {
+      this.setError("name", "Vous devez indiquer le nom du contact");
+      return false;
+    }
+
+    this.clearError("name");
+    return true;
   }
 
   validateEmail() {
@@ -99,13 +115,14 @@ class ContactStep extends FormStep {
         </div>
         <div className="col-md-6">
           <div className={"form-group" + (errors.name ? " has-error" : "")}>
-            <label>Nom du contact (facultatif)</label>
+            <label>Nom du contact</label>
             <input
               className="form-control"
               name="name"
               type="text"
               value={name || ""}
               onChange={this.handleInputChange}
+              required
             />
             {this.showError("name")}
           </div>

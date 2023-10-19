@@ -311,10 +311,10 @@ class SupportGroup(
     }
 
     TYPE_DISABLED_DESCRIPTION = {
-        TYPE_LOCAL_GROUP: "✅ Vous animez déjà deux groupes locaux",
-        TYPE_THEMATIC: "✅ Vous animez déjà deux groupes thématiques",
-        TYPE_FUNCTIONAL: "✅ Vous animez déjà deux groupes fonctionnels",
-        TYPE_BOUCLE_DEPARTEMENTALE: "✅ Il n'est pas possible de créer de boucle départementale vous-même",
+        TYPE_LOCAL_GROUP: "✅ Il n'est possible d'animer que deux groupes par personne.",
+        TYPE_THEMATIC: "✅ Il n'est possible d'animer que deux groupes par personne.",
+        TYPE_FUNCTIONAL: "✅ Il n'est possible d'animer que deux groupes par personne.",
+        TYPE_BOUCLE_DEPARTEMENTALE: "✅ Il n'est possible d'animer que deux groupes par personne.",
     }
 
     MEMBERSHIP_LIMIT = 30
