@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React, { useCallback, useRef, useState } from "react";
 import styled from "styled-components";
 
@@ -111,7 +112,7 @@ const SearchBar = () => {
       <SearchBarInput
         ref={inputRef}
         required
-        placeholder="Rechercher un groupe ou une action"
+        placeholder={_("Rechercher un groupe ou une action")}
         type="text"
         name="q"
         onFocus={handleFocus}

@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React from "react";
 
 import styled from "styled-components";
@@ -48,14 +49,14 @@ const StyledFooter = styled.main`
 const HomeFooter = () => {
   return (
     <StyledFooter>
-      <h2>Passez&nbsp;à l'action&nbsp;!</h2>
+      <h2>{_("Passez à l'action !")}</h2>
       <Spacer size="2rem" />
       <Button link to="/inscription/" color="tertiary">
-        S'inscrire
+        {_("S'inscrire")}
       </Button>
       <Spacer size="1rem" />
       <Button link to="/connexion/" color="primary">
-        Se connecter
+        {_("Se connecter")}
       </Button>
     </StyledFooter>
   );

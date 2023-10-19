@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React, { useState } from "react";
 import styled from "styled-components";
 
@@ -81,18 +82,19 @@ const Home = () => {
   return (
     <StyledHome>
       <header>
-        <h2>Passez à l'action&nbsp;!</h2>
+        <h2>{_("Passez à l'action !")}</h2>
         <h5>
-          Action Populaire est le réseau social d'action de la France insoumise
-          et de la <em>NUPES</em>.
+          {_(
+            "Action Populaire est le réseau social d'action de la France insoumise.",
+          )}
         </h5>
         <div>
           <Button color="primary" link route="signup">
-            Je crée mon compte
+            {_("Je crée mon compte")}
           </Button>
           <Spacer size="1rem" />
           <Button color="white" link route="login">
-            Je me connecte
+            {_("Je me connecte")}
           </Button>
         </div>
       </header>
