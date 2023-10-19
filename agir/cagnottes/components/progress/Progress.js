@@ -8,7 +8,7 @@ import lfiNupesLogo from "@agir/front/genericComponents/logos/lfi-nupes.svg";
 const formatCurrency = (amount) =>
   `${Math.floor(amount / 100)
     .toString()
-    .replace(/\B(?=(\d{3})+(?!\d))/g, " ")} €`;
+    .replace(/\B(?=(\d{3})+(?!\d))/g, " ")} $`;
 
 const getTarget = (amount, goals) => {
   let target = goals.find((goal) => amount < goal);

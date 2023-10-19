@@ -87,7 +87,7 @@ class Command(BaseCommand):
         unit = ""
         if currency:
             value = round(value / 100)
-            unit = " €"
+            unit = " $"
 
         if relative:
             self.log(f" {bullet} {label} : <b>{value : >+n}{unit}</b>")

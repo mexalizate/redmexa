@@ -22,24 +22,24 @@ jobs:
           pr_allow_empty: true
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Tell the team the workflow has succeeded
-        if: ${{ !failure() && steps.pr.outputs.pr_number != '' }}
-        uses: appleboy/telegram-action@master
-        with:
-          to: ${{ secrets.TELEGRAM_CHAT_ID }}
-          token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          message: |
-            ✔️ Successfully created pull request to staging after production branch update!
-            #${{ steps.pr.outputs.pr_number }}: ${{ steps.pr.outputs.pr_url }}
+      # - name: Tell the team the workflow has succeeded
+      #   if: ${{ !failure() && steps.pr.outputs.pr_number != '' }}
+      #   uses: appleboy/telegram-action@master
+      #   with:
+      #     to: ${{ secrets.TELEGRAM_CHAT_ID }}
+      #     token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      #     message: |
+      #       ✔️ Successfully created pull request to staging after production branch update!
+      #       #${{ steps.pr.outputs.pr_number }}: ${{ steps.pr.outputs.pr_url }}
 
-      - name: Tell the team the workflow has failed
-        if: ${{ failure() }}
-        uses: appleboy/telegram-action@master
-        with:
-          to: ${{ secrets.TELEGRAM_CHAT_ID }}
-          token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          message: |
-            ❌ Creating pull request to staging after production branch update failed!
+      # - name: Tell the team the workflow has failed
+      #   if: ${{ failure() }}
+      #   uses: appleboy/telegram-action@master
+      #   with:
+      #     to: ${{ secrets.TELEGRAM_CHAT_ID }}
+      #     token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      #     message: |
+      #       ❌ Creating pull request to staging after production branch update failed!
 
       - name: Enable Pull Request Automerge
         if: ${{ steps.pr.outputs.pr_number != '' }}

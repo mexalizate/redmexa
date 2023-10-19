@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
@@ -124,7 +125,7 @@ export const Footer = (props) => {
               <Link route="eventMap">{_("Carte des événements")}</Link>
               <Link route="groupMap">{_("Carte des groupes")}</Link>
               <Link route="materiel" target="_blank">
-               {_(" Commander du matériel")}
+                {_("Commander du matériel")}
               </Link>
             </p>
           </div>
@@ -137,7 +138,7 @@ export const Footer = (props) => {
               ) : (
                 <Link route="login">{_("Se connecter")}</Link>
               )}
-              <Link route="help">{_("Besoin d'aide ?")}</Link>
+              <Link route="help">{_("Besoin d'aide ?")}</Link>
               <Link route="legal">{_("Mentions légales")}</Link>
               <Link route="contact">{_("Contact")}</Link>
             </p>
@@ -153,7 +154,7 @@ export const Footer = (props) => {
                 </abbr>
               </Link>
               <Link route="programme" target="_blank">
-                {_("Le programme l'Avenir en commun")}
+                {_("Le programme")} l'Avenir en commun
               </Link>
             </p>
           </div>
@@ -162,14 +163,14 @@ export const Footer = (props) => {
             <h3>{_("Les autres sites")}</h3>
             <p>
               <Link route="nupes" target="_blank">
-                La{" "}
+                {_("La")}{" "}
                 <abbr title="Nouvelle Union Populaire Écologique et sociale">
                   NUPES
                 </abbr>
               </Link>
-              <Link route="lafranceinsoumise">{_("La France insoumise")}</Link>
-              <Link route="linsoumission">{_("L'insoumission")}</Link>
-              <Link route="jlmBlog">{_("Le blog de Jean-Luc Mélenchon")}</Link>
+              <Link route="lafranceinsoumise">La France insoumise</Link>
+              <Link route="linsoumission">L'insoumission</Link>
+              <Link route="jlmBlog">{_("Le blog de")} Jean-Luc Mélenchon</Link>
             </p>
           </div>
 

@@ -187,7 +187,7 @@ class BaseDonorForm(MetaFieldsMixin, LegacySubscribedMixin, forms.ModelForm):
                         / 100,
                         2,
                     )
-                    + " €"
+                    + " $"
                 ),
             )
         )

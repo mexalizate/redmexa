@@ -96,7 +96,7 @@ class AllocationModelMixin(models.Model):
         if not isinstance(self.amount, int):
             return "-"
 
-        return "{} €".format(floatformat(self.amount / 100, 2))
+        return "{} $".format(floatformat(self.amount / 100, 2))
 
     class Meta:
         abstract = True
@@ -141,7 +141,7 @@ class OperationModelMixin(TimeStampedModel):
         if not isinstance(self.amount, int):
             return "-"
 
-        return "{} €".format(floatformat(self.amount / 100, 2))
+        return "{} $".format(floatformat(self.amount / 100, 2))
 
     class Meta:
         abstract = True

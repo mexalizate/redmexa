@@ -113,7 +113,7 @@ class Payment(ExportModelOperationsMixin("payment"), TimeStampedModel, LocationM
     def get_price_display(self):
         if not isinstance(self.price, int):
             return "-"
-        return "{} €".format(floatformat(self.price / 100, 2))
+        return "{} $".format(floatformat(self.price / 100, 2))
 
     get_price_display.short_description = "Prix"
 

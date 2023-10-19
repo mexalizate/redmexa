@@ -56,7 +56,7 @@ def display_price(price, price_in_cents=True):
     """
     if price_in_cents:
         price = price / 100
-    return "{}\u00A0€".format(floatformat(price, 2))
+    return "{}\u00A0$".format(floatformat(price, 2))
 
 
 def display_allocations(allocations):
@@ -72,14 +72,14 @@ def display_allocations(allocations):
             group_id = allocation.get("group")
             try:
                 group = SupportGroup.objects.get(pk=group_id)
-                strings.append(f"{amount/100}€ vers {group.name}")
+                strings.append(f"{amount/100}$ vers {group.name}")
             except SupportGroup.DoesNotExist:
-                strings.append(f"{amount/100}€ vers {group_id}")
+                strings.append(f"{amount/100}$ vers {group_id}")
         elif allocation_type == AllocationModelMixin.TYPE_DEPARTEMENT:
             departement = allocation.get("departement")
-            strings.append(f"{amount / 100}€ vers le département {departement}")
+            strings.append(f"{amount / 100}$ vers le département {departement}")
         elif allocation_type == AllocationModelMixin.TYPE_CNS:
-            strings.append(f"{amount / 100}€ vers la caisse nationale de solidarité")
+            strings.append(f"{amount / 100}$ vers la caisse nationale de solidarité")
 
     return display_liststring(strings)
 

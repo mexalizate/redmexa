@@ -92,9 +92,9 @@ export const formatEvent = (event) => {
   try {
     const startDateTime = DateTime.fromJSDate(
       new Date(event.startTime),
-    ).setLocale("fr");
+    ).setLocale("es-MX");
     const endDateTime = DateTime.fromJSDate(new Date(event.endTime)).setLocale(
-      "fr",
+      "es-MX",
     );
     return {
       ...event,
