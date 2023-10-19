@@ -1096,7 +1096,7 @@ class EventSubtype(BaseSubtype):
     )
 
     required_documents = ArrayField(
-        verbose_name=_("Attestations requies"),
+        verbose_name=_("Attestations requises"),
         base_field=models.CharField(
             choices=EVENT_SUBTYPE_REQUIRED_DOCUMENT_TYPE_CHOICES,
             max_length=10,
@@ -1333,8 +1333,8 @@ class GroupAttendee(ExportModelOperationsMixin("group_attendee"), TimeStampedMod
         unique_together = ("event", "group")
 
     def __str__(self):
-        return "{group} {inter_paticipe} --> {event} | Par {organizer}".format(
-            group=self.group, inter_paticipe=_("participe à l'événement"), event=self.event, organizer=self.organizer
+        return _("{group} participe à l'événement --> {event} | Par {organizer}").format(
+            group=self.group, event=self.event, organizer=self.organizer
         )
 
 
