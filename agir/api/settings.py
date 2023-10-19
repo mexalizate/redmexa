@@ -150,6 +150,7 @@ INSTALLED_APPS = [
     "agir.activity.apps.ActivityConfig",
     "agir.notifications",
     "agir.municipales.apps.MunicipalesConfig",
+    "agir.geodata",
     "agir.legacy",
     "agir.telegram",
     "agir.elus.apps.ElusConfig",
