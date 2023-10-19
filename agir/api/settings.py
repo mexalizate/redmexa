@@ -468,16 +468,12 @@ AUTH_PASSWORD_VALIDATORS = [
 # applique la locale par défaut
 # https://docs.python.org/fr/3.6/library/locale.html#locale.setlocale
 locale.setlocale(locale.LC_ALL, "")
-
-LANGUAGE_CODE = "fr-fr"
-
-TIME_ZONE = "Europe/Paris"
-
+LANGUAGE_CODE = "es-mx"
+TIME_ZONE = "America/Mexico_City"
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
+LOCALE_PATHS = ["locale"]
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
@@ -496,16 +492,16 @@ MEDIA_URL = "/media/"
 
 MEDIA_ROOT = os.environ.get("MEDIA_ROOT", "media")
 
-if not DEBUG:
-    DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
-    AWS_DEFAULT_ACL = "public-read"
-    AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
-    AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
-    AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME", "agir")
-    AWS_S3_REGION_NAME = os.environ.get("AWS_S3_REGION_NAME")
-    AWS_S3_ENDPOINT_URL = os.environ.get("AWS_S3_ENDPOINT_URL")
-    AWS_QUERYSTRING_AUTH = False
-    AWS_S3_CUSTOM_DOMAIN = os.environ.get("AWS_S3_CUSTOM_DOMAIN")
+# if not DEBUG:
+#     DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+#     AWS_DEFAULT_ACL = "public-read"
+#     AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
+#     AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
+#     AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME", "agir")
+#     AWS_S3_REGION_NAME = os.environ.get("AWS_S3_REGION_NAME")
+#     AWS_S3_ENDPOINT_URL = os.environ.get("AWS_S3_ENDPOINT_URL")
+#     AWS_QUERYSTRING_AUTH = False
+#     AWS_S3_CUSTOM_DOMAIN = os.environ.get("AWS_S3_CUSTOM_DOMAIN")
 
 # Authentication
 
@@ -845,20 +841,20 @@ SYSTEMPAY_AFCP2022_CERTIFICATE = os.environ.get(
 )
 
 
-DONATION_MINIMUM = 1 * 100  # 1 €
-DONATION_MAXIMUM = 4600 * 100  # 4600 €
+DONATION_MINIMUM = 1 * 100  # 1 $
+DONATION_MAXIMUM = 4600 * 100  # 4600 $
 DONATION_MATOMO_GOAL = os.environ.get("DONATION_MATOMO_GOAL")
 
-MONTHLY_DONATION_MINIMUM = 1 * 100  # 1 €
-MONTHLY_DONATION_MAXIMUM = 400 * 100  # 400 €
+MONTHLY_DONATION_MINIMUM = 1 * 100  # 1 $
+MONTHLY_DONATION_MAXIMUM = 400 * 100  # 400 $
 MONTHLY_DONATION_DAY = 8
 MONTHLY_DONATION_MATOMO_GOAL = os.environ.get("MONTHLY_DONATION_MATOMO_GOAL")
 
 CONTRIBUTION_DONATION_DAY = 2
 CONTRIBUTION_MATOMO_GOAL = os.environ.get("CONTRIBUTION_MATOMO_GOAL")
 
-LOAN_MINIMUM = 400 * 100  # 400 €
-LOAN_MAXIMUM = 100_000 * 100  # 100 000 €
+LOAN_MINIMUM = 400 * 100  # 400 $
+LOAN_MAXIMUM = 100_000 * 100  # 100 000 $
 LOAN_MAXIMUM_TOTAL = 207_119_700
 LOAN_MAXIMUM_THANK_YOU_PAGE = (
     "https://lafranceinsoumise.fr/2019/04/07/succes-de-lemprunt-populaire/"

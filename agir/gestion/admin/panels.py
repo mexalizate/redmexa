@@ -265,7 +265,7 @@ class DocumentAdmin(BaseGestionModelAdmin, VersionAdmin):
                     (
                         (
                             reverse("admin:gestion_depense_change", args=(d.id,)),
-                            f"{d.numero} — {d.titre} — {d.montant} €",
+                            f"{d.numero} — {d.titre} — {d.montant} $",
                         )
                         for d in ds
                     ),

@@ -10,7 +10,7 @@ const don = {
   maxAmountWarning: (
     <span>
       Erreur de montant&nbsp;: les dons versés par une personne physique ne
-      peuvent excéder <strong>7500 €</strong> par an pour un ou des partis ou
+      peuvent excéder <strong>7500 $</strong> par an pour un ou des partis ou
       groupements politiques
     </span>
   ),

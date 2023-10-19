@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
@@ -162,7 +163,7 @@ export const Footer = (props) => {
             <h3>{_("Les autres sites")}</h3>
             <p>
               <Link route="nupes" target="_blank">
-                La{" "}
+                {_("La")}{" "}
                 <abbr title="Nouvelle Union Populaire Écologique et sociale">
                   NUPES
                 </abbr>

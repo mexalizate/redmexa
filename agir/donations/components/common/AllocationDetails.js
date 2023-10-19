@@ -33,7 +33,7 @@ const AllocationDetails = (props) => {
   if (!Array.isArray(allocations) || allocations.length === 0) {
     return null;
   }
-  const unit = byMonth ? "€/mois" : "€";
+  const unit = byMonth ? "$/mois" : "$";
   return (
     <StyledAllocationDetails>
       Je fais un don de{" "}

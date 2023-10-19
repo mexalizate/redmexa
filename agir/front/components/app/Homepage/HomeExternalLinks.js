@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React from "react";
 
 import styled from "styled-components";
@@ -81,19 +82,19 @@ const HomeExternalLinks = () => {
   return (
     <StyledArticle>
       <h4>
-        <span>Retrouver</span> l'actualité{" "}
-        <span>et les campagnes du mouvement</span>
+        <span>{_("Retrouver")}</span> {_("l'actualité")}{" "}
+        <span>{_("et les campagnes du mouvement")}</span>
       </h4>
       <p>
-        Action Populaire est le réseau social d’action de la France Insoumise et
-        de la <em>NUPES</em>. Pour retrouver l’actualité, rendez-vous sur nos
-        sites&nbsp;:
+        {_(
+          "Action Populaire est le réseau social d’action de la France Insoumise. Pour retrouver l’actualité, rendez-vous sur nos sites :",
+        )}
       </p>
       <nav>
         <a href="https://lafranceinsoumise.fr/">
           <img
             src={lfiLogo}
-            alt="logo de la France insoumise"
+            alt={_("logo de la France insoumise")}
             width="136"
             height="51"
           />
@@ -102,7 +103,7 @@ const HomeExternalLinks = () => {
         <a href="https://nupes-2022.fr">
           <img
             src={nupesLogo}
-            alt="logo de la Nouvelle Union Populaire Écologique et Sociale"
+            alt={_("logo de la Nouvelle Union Populaire Écologique et Sociale")}
             width="200"
             height="67"
           />
@@ -111,7 +112,7 @@ const HomeExternalLinks = () => {
         <a href="https://linsoumission.fr">
           <img
             src={linsoumissionLogo}
-            alt="logo de l'insoumission"
+            alt={_("logo de l'insoumission")}
             width="176"
             height="48"
           />

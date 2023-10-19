@@ -55,8 +55,8 @@ const GroupEventList = (props) => {
               ? {
                   ...event,
                   schedule: Interval.fromDateTimes(
-                    DateTime.fromISO(event.startTime).setLocale("fr"),
-                    DateTime.fromISO(event.endTime).setLocale("fr"),
+                    DateTime.fromISO(event.startTime).setLocale("es-MX"),
+                    DateTime.fromISO(event.endTime).setLocale("es-MX"),
                   ),
                 }
               : null,

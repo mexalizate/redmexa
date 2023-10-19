@@ -50,9 +50,9 @@ class Command(BaseCommand):
                 message += (
                     f"Pour l'événement <b>{event.name} il y a {event.participants} participants, "
                     f"dont {event.participants_confirmes} confirmés</b>\n"
-                    "Le montant total des paiements est de <b>{:.2f}€</b>\n"
-                    "Le montant moyen par participant est de <b>{:.2f}€</b>\n"
-                    "Le montant moyen par participant inscrits après le {} est de <b>{:.2f}€</b>\n\n".format(
+                    "Le montant total des paiements est de <b>{:.2f}$</b>\n"
+                    "Le montant moyen par participant est de <b>{:.2f}$</b>\n"
+                    "Le montant moyen par participant inscrits après le {} est de <b>{:.2f}$</b>\n\n".format(
                         amount / 100,
                         average / 100,
                         modification_price_date.strftime("%d %B %Y"),

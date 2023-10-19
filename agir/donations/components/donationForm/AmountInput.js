@@ -45,7 +45,7 @@ const AmountInput = ({ placeholder, onChange, value, disabled }) => {
         }}
         value={text}
       />
-      <InputGroup.Addon>€</InputGroup.Addon>
+      <InputGroup.Addon>$</InputGroup.Addon>
     </InputGroup>
   );
 };

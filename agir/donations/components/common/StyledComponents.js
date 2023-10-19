@@ -152,7 +152,7 @@ export const StyledButtonLabel = styled.label`
 
   &::after {
     display: flex;
-    content: "€";
+    content: "$";
     background-color: white;
     height: 2.25rem;
     align-items: center;

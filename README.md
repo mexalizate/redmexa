@@ -12,15 +12,15 @@
 ## Vagrant installation
 
 You can use Vagrant to create a virtual machine running the project out of the box.
-You need to have Vagrant and VirtualBox installed on your computer. 
+You need to have Vagrant and VirtualBox installed on your computer.
 
 
 If this is not already installed, install vagrant-hostmanager plugin :
-```bash 
+```bash
 $ vagrant plugin install vagrant-hostmanager
 ```
 Then just launch the box :
-```bash 
+```bash
 $ vagrant up
 ```
 
@@ -33,7 +33,12 @@ machine, and launch three more systemd services :
 
 You can access Django from [http://agir.local:8000][django-server]
 and Mailhog from [http://agir.local:8025][mailhog].
-Webpack dev server listens on port 3000.
+
+Once the vagrant machine and the django server are up, you must install frontend dependencies
+through `npm clean-install` then build frontend assets either in development mode (by launching `npm run watch`)
+or in production mode (with `npm run build`).
+NB: Webpack dev server listens on port 3000, so be sure that the 3000 port is not being
+used.
 
 Initial migrations are automatically applied, and some fake data has been
 loaded up. You can connect directly connect to the [django admin][django-admin] using the
@@ -68,39 +73,21 @@ be ran from inside the `/vagrant` folder in the vagrant box).
 $ black agir/
 $ node_modules/.bin/eslint --fix agir/
 $ poetry run ./manage.py test
-``` 
-
-# Mise à jour suite au squashing des migrations du 7 janvier 2021
-
-Si vous avez un environnement de développement déjà en place avant le 7 janvier,
-vous devez réaliser les opérations suivantes pour qu'il reste fonctionnel.
-
-Assurez-vous de d'abord réaliser toutes les migrations jusqu'au commit c5e16d4be173.
-Ensuite, dans une console django, exécutez le script suivant :
-
-```python
-from django.db import connection
-
-QUERY = """
-INSERT INTO django_migrations (app, name, applied)
-VALUES 
-('people', '0001_creer_modeles', NOW()),
-('people', '0002_objets_initiaux', NOW()),
-('people', '0003_segments', NOW()),
-('payments', '0001_creer_modeles', NOW()),
-('groups', '0001_creer_modeles', NOW()),
-('groups', '0002_creer_sous_types', NOW()),
-('events', '0001_creer_modeles', NOW()),
-('events', '0002_objets_initiaux_et_recherche', NOW());
-"""
-
-with connection.cursor() as cursor:
-    cursor.execute(QUERY)
 ```
 
-Les nouvelles migrations seront ainsi considérées comme déjà exécutées.
+## I18N
 
+Translation files can be automatically generated in the `locale` folder by launching the custom command
+```bash
+$ poetry run ./manage.py make_all_messages -l es_MX
+```
 
-[django-server]: http://agir.local:8000/
-[mailhog]: http://agir.local:8025/
-[django-admin]: http://agir.local:8000/admin/
+This will generate one translation file for django code (`locale/[language_code]/LC_MESSAGES/django.po`) and one for javascript code (`locale/[language_code]/LC_MESSAGES/djangojs.po`).
+
+It is possible to specify translation ids in python and javascript files with `_() / gettext()` or another function from [the django translation package](https://docs.djangoproject.com/en/3.2/topics/i18n/translation/).
+
+Once `.po` translation files are filled, they can be made available for usage through the django server by compiling them into `.mo` files with the command:
+```bash
+$ poetry run ./manage.py compile_all_messages -l es_MX
+```
+This should usually be integrated to and automatically done during the deployment process.
