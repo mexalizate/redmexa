@@ -22,12 +22,12 @@ from agir.donations.spending_requests import (
 )
 from agir.events.models import Event
 from agir.events.serializers import EventListSerializer
+from agir.geodata.geocoding import FRENCH_COUNTRY_CODES
 from agir.groups.models import SupportGroup
 from agir.groups.serializers import SupportGroupSerializer
 from agir.lib.data import departements_choices
 from agir.lib.display import display_price
 from agir.lib.export import snakecase_to_camelcase
-from agir.lib.geo import FRENCH_COUNTRY_CODES
 from agir.lib.serializers import (
     IBANSerializerField,
     BICSerializerField,
@@ -36,7 +36,6 @@ from agir.lib.serializers import (
 from agir.lib.serializers import PhoneField
 from agir.payments import payment_modes
 from agir.people.models import Person
-from agir.people.serializers import PersonSerializer
 
 SINGLE_TIME = "S"
 MONTHLY = "M"

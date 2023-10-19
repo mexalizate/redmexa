@@ -9,7 +9,7 @@ from django.utils.html import _json_script_escapes
 from django.utils.safestring import mark_safe
 from django.utils.translation import gettext_lazy as _
 
-from .geo import geocode_element
+from agir.geodata.geocoding import geocode_element
 from .models import LocationMixin
 
 

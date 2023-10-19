@@ -12,6 +12,7 @@ from django.utils.translation import gettext_lazy as _
 
 from agir.activity.models import Activity
 from agir.authentication.tokens import subscription_confirmation_token_generator
+from agir.geodata.geocoding import geocode_element
 from agir.groups.models import Membership
 from agir.lib.celery import (
     emailing_task,
@@ -19,7 +20,6 @@ from agir.lib.celery import (
     http_task,
 )
 from agir.lib.display import str_summary
-from agir.lib.geo import geocode_element
 from agir.lib.google_sheet import (
     parse_sheet_link,
     copy_array_to_sheet,

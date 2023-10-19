@@ -12,10 +12,10 @@ from django.utils.safestring import mark_safe
 from reversion.admin import VersionAdmin
 
 from agir.events.models import Event
+from agir.geodata.geocoding import FRENCH_COUNTRY_CODES
 from agir.lib.admin.panels import AddRelatedLinkMixin
 from agir.lib.admin.utils import display_list_of_links
 from agir.lib.display import display_price
-from agir.lib.geo import FRENCH_COUNTRY_CODES
 from .base import BaseGestionModelAdmin
 from .depenses import DepenseListMixin
 from .filters import (

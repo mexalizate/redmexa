@@ -6,7 +6,7 @@ from phonenumber_field import formfields
 from phonenumber_field.modelfields import PhoneNumberDescriptor, PhoneNumberField
 from phonenumber_field.phonenumber import to_python
 
-from agir.lib.geo import FRENCH_COUNTRY_CODES
+from agir.geodata.geocoding import FRENCH_COUNTRY_CODES
 
 
 class MandatesField(JSONField):

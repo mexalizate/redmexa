@@ -12,6 +12,7 @@ from django.utils.translation import gettext_lazy as _
 
 from agir.activity.models import Activity
 from agir.events.models import Event, OrganizerConfig
+from agir.geodata.geocoding import geocode_element
 from agir.groups.display import genrer_membership
 from agir.groups.models import SupportGroup, Membership
 from agir.lib.celery import (
@@ -19,7 +20,6 @@ from agir.lib.celery import (
     post_save_task,
     http_task,
 )
-from agir.lib.geo import geocode_element
 from agir.lib.html import sanitize_html
 from agir.lib.mailing import send_mosaico_email, send_template_email
 from agir.lib.utils import clean_subject_email

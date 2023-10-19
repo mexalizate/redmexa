@@ -1,17 +1,15 @@
 import json
+from functools import wraps
 from pathlib import Path
 from unittest.mock import patch, Mock
 
 import requests
-from functools import wraps
-
 from django.test import TestCase
 
-from agir.lib.geo import geocode_france, get_commune
+from agir.geodata.geocoding import geocode_france, get_commune
 from agir.lib.models import LocationMixin
 from agir.lib.tests.utils import import_communes_test_data
 from agir.people.models import Person
-
 
 JSON_DIR = Path(__file__).parent / "geoban_json"
 DATA_DIR = Path(__file__).parent / "data"

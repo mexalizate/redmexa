@@ -1,24 +1,22 @@
 import logging
-
 import re
+
 import requests
 from data_france.models import CodePostal, Commune
 from django.contrib.gis.geos import Point
 from unidecode import unidecode
 
-from .data import code_postal_vers_code_departement
-from .models import LocationMixin
+from agir.lib.data import code_postal_vers_code_departement
+from agir.lib.models import LocationMixin
 
 logger = logging.getLogger(__name__)
+
 
 NON_DIGIT = re.compile("[^\d]+")
 NON_WORD = re.compile("[^\w]+")
 MULTIPLE_SPACES = re.compile("\s\s+")
-
 BAN_ENDPOINT = "https://api-adresse.data.gouv.fr/search"
 NOMINATIM_ENDPOINT = "https://nominatim.openstreetmap.org/"
-
-# source: https://www.iso.org/obp/ui/#iso:code:3166:FR
 FRENCH_COUNTRY_CODES = [
     "FR",  # France métropolitaine
     "GP",  # Guadeloupe
@@ -36,7 +34,7 @@ FRENCH_COUNTRY_CODES = [
 ]
 
 
-def normaliser_nom_ville(s):
+def normalize_city_name(s):
     return MULTIPLE_SPACES.sub(" ", NON_WORD.sub(" ", unidecode(s.strip()))).lower()
 
 
@@ -185,12 +183,12 @@ def geocode_data_france(item):
                 return
 
             if nb_communes > 1 and item.location_city:
-                nom_normalise = normaliser_nom_ville(item.location_city)
+                nom_normalise = normalize_city_name(item.location_city)
                 try:
                     commune = next(
                         v
                         for v in code_postal.communes.all()
-                        if normaliser_nom_ville(v.nom) == nom_normalise
+                        if normalize_city_name(v.nom) == nom_normalise
                     )
                     if commune.geometry:
                         item.location_citycode = commune.code
@@ -228,11 +226,11 @@ def geocode_data_france(item):
 
     # pas de code postal
     if item.location_city:
-        nom_normalise = normaliser_nom_ville(item.location_city)
+        nom_normalise = normalize_city_name(item.location_city)
         communes = [
             c
             for c in Commune.objects.search(item.location_city)
-            if normaliser_nom_ville(c.nom_complet) == nom_normalise
+            if normalize_city_name(c.nom_complet) == nom_normalise
         ]
 
         if len(communes) == 1:
@@ -379,21 +377,21 @@ def get_commune(item):
             if nb_communes == 1:
                 commune = code_postal.communes.get()
             if nb_communes > 1 and item.location_city:
-                nom_normalise = normaliser_nom_ville(item.location_city)
+                nom_normalise = normalize_city_name(item.location_city)
                 try:
                     commune = next(
                         v
                         for v in code_postal.communes.all()
-                        if normaliser_nom_ville(v.nom) == nom_normalise
+                        if normalize_city_name(v.nom) == nom_normalise
                     )
                 except StopIteration:
                     pass
     if item.location_city:
-        nom_normalise = normaliser_nom_ville(item.location_city)
+        nom_normalise = normalize_city_name(item.location_city)
         communes = [
             c
             for c in Commune.objects.search(item.location_city)
-            if normaliser_nom_ville(c.nom_complet) == nom_normalise
+            if normalize_city_name(c.nom_complet) == nom_normalise
         ]
         if len(communes) == 1:
             commune = communes[0]
