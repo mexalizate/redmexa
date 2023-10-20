@@ -448,6 +448,15 @@ class Person(
         blank=True,
     )
 
+    municipio = models.ForeignKey(
+        to="geodata.MexicanMunicipio",
+        verbose_name=_("Municipalité d'origine au Mexique"),
+        on_delete=models.SET_NULL,
+        related_name="+",
+        null=True,
+        blank=True,
+    )
+
     subscribed_sms = models.BooleanField(
         _("Recevoir les SMS d'information"),
         default=True,
