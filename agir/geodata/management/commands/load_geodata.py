@@ -121,6 +121,26 @@ ON CONFLICT(zip_code_id, county_id) DO UPDATE SET
  weight = excluded.weight;
 """
 
+UPDATE_SEARCH_INDEXES = """
+UPDATE geodata_mexicanmunicipio AS m
+SET search =
+   setweight(to_tsvector('places' :: regconfig, m.name), 'A')
+|| setweight(to_tsvector('places' :: regconfig, m.code), 'A')
+|| setweight(to_tsvector('places' :: regconfig, s.name), 'B')
+FROM geodata_mexicanstate AS s
+WHERE s.id = m.state_id;
+
+
+UPDATE geodata_uscounty AS c
+SET search =
+   setweight(to_tsvector('places' :: regconfig, c.full_name), 'A')
+|| setweight(to_tsvector('places' :: regconfig, c.code), 'A')
+|| setweight(to_tsvector('places' :: regconfig, s.name), 'B')
+|| setweight(to_tsvector('places' :: regconfig, s.code_usps), 'B')
+FROM geodata_usstate AS s
+WHERE s.id = c.state_id;
+"""
+
 FILE_TO_TABLE = [
     ("mexico_estados.csv.gz", "temp_mexicanstate"),
     ("mexico_municipios.csv.gz", "temp_mexicanmunicipio"),
@@ -157,3 +177,4 @@ class Command(BaseCommand):
             cursor.execute(UPDATE_US_COUNTIES)
             cursor.execute(UPDATE_US_ZIPCODES)
             cursor.execute(UPDATE_US_ZIPCODES_COUNTIES)
+            cursor.execute(UPDATE_SEARCH_INDEXES)

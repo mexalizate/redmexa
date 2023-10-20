@@ -22,5 +22,6 @@ urlpatterns = [
     path("cagnottes/", include("agir.cagnottes.urls")),
     path("ilb/", include("agir.ilb.urls")),
     path("carte/", include("agir.carte.urls")),
+    path("geodata/", include("agir.geodata.urls")),
     path("data-france/", include("data_france.urls")),
 ]

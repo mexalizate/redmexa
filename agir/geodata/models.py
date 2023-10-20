@@ -1,5 +1,25 @@
 from django.contrib.gis.db import models
+from django.contrib.postgres.indexes import GinIndex
+from django.contrib.postgres.search import SearchVectorField, SearchRank
 from django.utils.translation import gettext_lazy as _
+
+from agir.lib.search import PrefixSearchQuery
+
+
+class SearchQueryset(models.QuerySet):
+    def search(self, terms: str):
+        """Do a full text search in the queryset
+
+        :param terms: research terms
+        :return: original queryset, filtered and sorted according to relevance
+        """
+        query = PrefixSearchQuery(terms, config="places")
+
+        return (
+            self.filter(search=query)
+            .annotate(rank=SearchRank(models.F("search"), query, normalization=8))
+            .order_by("-rank")
+        )
 
 
 class MexicanState(models.Model):
@@ -24,6 +44,8 @@ class MexicanMunicipio(models.Model):
         MUNICIPIO = "M", _("Municipio")
         DEMARCACION = "D", _("Demarcacíon territorial")
 
+    objects = SearchQueryset.as_manager()
+
     code = models.CharField(
         verbose_name=_("Code"), max_length=5, editable=False, unique=True
     )
@@ -41,8 +63,13 @@ class MexicanMunicipio(models.Model):
     )
 
     geometry = models.MultiPolygonField(
-        verbose_name=_("Geometry"), geography=True, srid=4326  # WGS84, GPS coordinates
+        verbose_name=_("Geometry"),
+        geography=True,
+        srid=4326,  # WGS84, GPS coordinates
+        spatial_index=True,
     )
+
+    search = SearchVectorField(null=True)
 
     def __str__(self):
         return f"{self.name} ({self.state.name})"
@@ -50,6 +77,7 @@ class MexicanMunicipio(models.Model):
     class Meta:
         verbose_name = _("Mexican Municipio")
         ordering = ("code",)
+        indexes = (GinIndex(fields=["search"]),)
 
 
 class USState(models.Model):
@@ -100,6 +128,8 @@ class USState(models.Model):
 
 
 class USCounty(models.Model):
+    objects = SearchQueryset.as_manager()
+
     code = models.CharField(
         verbose_name=_("ANSI code"),
         help_text=_(
@@ -132,8 +162,13 @@ class USCounty(models.Model):
     )
 
     geometry = models.MultiPolygonField(
-        verbose_name=_("Geometry"), geography=True, srid=4326  # WGS84, GPS coordinates
+        verbose_name=_("Geometry"),
+        geography=True,
+        srid=4326,  # WGS84, GPS coordinates
+        spatial_index=True,
     )
+
+    search = SearchVectorField(null=True)
 
     def __str__(self):
         return f"{self.full_name} ({self.state.name})"
@@ -142,6 +177,7 @@ class USCounty(models.Model):
         ordering = ("code",)
         verbose_name = _("US county")
         verbose_name_plural = _("US counties")
+        indexes = (GinIndex(fields=["search"]),)
 
 
 class USZipCode(models.Model):
@@ -160,7 +196,11 @@ class USZipCode(models.Model):
     )
 
     coordinates = models.PointField(
-        verbose_name=_("average coordinates"), geography=True, srid=4326, editable=False
+        verbose_name=_("average coordinates"),
+        geography=True,
+        srid=4326,
+        editable=False,
+        spatial_index=True,
     )
 
     counties = models.ManyToManyField(

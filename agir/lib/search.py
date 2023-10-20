@@ -18,7 +18,13 @@ def escape_query(text, re_escape_chars):
     by the backend database
     """
     text = force_str(text)
-    text = re_escape_chars.sub(" ", text)  # Replace harmful characters with space.
+    text = re_escape_chars.sub(
+        " ", text
+    ).strip()  # Replace harmful characters with space.
+
+    if not text:
+        return ""
+
     words = text.split()
     query = " & ".join("$${0}$$".format(word) for word in words)
     if query:
