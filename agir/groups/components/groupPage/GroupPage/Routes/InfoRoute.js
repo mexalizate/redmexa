@@ -11,7 +11,6 @@ import GroupContactCard from "@agir/groups/groupPage/GroupContactCard";
 import GroupDescription from "@agir/groups/groupPage/GroupDescription";
 import GroupLinks from "@agir/groups/groupPage/GroupLinks";
 import GroupFacts from "@agir/groups/groupPage/GroupFacts";
-import GroupDonation from "@agir/groups/groupPage/GroupDonation";
 import GroupSuggestions from "@agir/groups/groupPage/GroupSuggestions";
 import GroupOrders from "@agir/groups/groupPage/GroupOrders";
 
@@ -67,7 +66,6 @@ const MobileInfoRoute = (props) => {
       <GroupLinks {...group} editLinkTo={groupSettingsLinks?.links} />
       <GroupFacts {...group} />
       <GroupLocation {...group} groupSettingsLinks={groupSettingsLinks} />
-      <GroupDonation {...group} />
       <StyledShareCard>
         <ShareCard
           url={group.routes?.details}

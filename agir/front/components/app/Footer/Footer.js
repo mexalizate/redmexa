@@ -121,11 +121,10 @@ export const Footer = (props) => {
           <div>
             <h3>{_("Action populaire")}</h3>
             <p>
-              <Link route="donationLanding">{_("Faire un don")}</Link>
               <Link route="eventMap">{_("Carte des événements")}</Link>
               <Link route="groupMap">{_("Carte des groupes")}</Link>
               <Link route="materiel" target="_blank">
-               {_(" Commander du matériel")}
+                {_(" Commander du matériel")}
               </Link>
             </p>
           </div>
@@ -164,7 +163,9 @@ export const Footer = (props) => {
             <p>
               <Link route="nupes" target="_blank">
                 {_("La")}{" "}
-                <abbr title={_("Nouvelle Union Populaire Écologique et sociale")}>
+                <abbr
+                  title={_("Nouvelle Union Populaire Écologique et sociale")}
+                >
                   {_("NUPES")}
                 </abbr>
               </Link>

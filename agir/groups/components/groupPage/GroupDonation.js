@@ -4,7 +4,7 @@ import React from "react";
 import Card from "./GroupPageCard";
 import Button from "@agir/front/genericComponents/Button";
 
-const GroupFacts = (props) => {
+const GroupDonation = (props) => {
   const { id, isCertified } = props;
 
   if (!isCertified) {
@@ -42,8 +42,8 @@ const GroupFacts = (props) => {
   );
 };
 
-GroupFacts.propTypes = {
+GroupDonation.propTypes = {
   id: PropTypes.string.isRequired,
   isCertified: PropTypes.bool,
 };
-export default GroupFacts;
+export default GroupDonation;

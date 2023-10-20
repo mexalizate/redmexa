@@ -6,7 +6,6 @@ import style from "@agir/front/genericComponents/_variables.scss";
 import { useSelector } from "@agir/front/globalContext/GlobalContext";
 import { getIsSessionLoaded } from "@agir/front/globalContext/reducers";
 
-import TokTokCard from "@agir/events/TokTok/TokTokCard";
 import Link from "@agir/front/app/Link";
 import { RawFeatherIcon } from "@agir/front/genericComponents/FeatherIcon";
 import { Container, Hide } from "@agir/front/genericComponents/grid";
@@ -113,10 +112,6 @@ const InfoBlock = (props) => (
         Consulter le centre d'aide
       </Link>
     </div>
-    <Hide $under>
-      <Spacer size="1.5rem" />
-      <TokTokCard />
-    </Hide>
   </StyledInfoBlock>
 );
 

@@ -70,7 +70,6 @@ const GroupCard = ({
   displayDescription,
   displayMembership,
   isEmbedded = false,
-  isCertified,
   backLink,
 }) => {
   const history = useHistory();
@@ -178,17 +177,6 @@ const GroupCard = ({
         >
           Voir le groupe
         </Button>
-        {isCertified && (
-          <Button
-            link
-            key="fund"
-            icon="trending-up"
-            route="contributions"
-            params={{ group: id }}
-          >
-            Financer
-          </Button>
-        )}
         {isManager && (
           <Button
             key="manage"

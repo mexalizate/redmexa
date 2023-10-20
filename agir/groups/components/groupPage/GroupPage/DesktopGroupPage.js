@@ -12,7 +12,6 @@ import Skeleton from "@agir/front/genericComponents/Skeleton";
 import GroupBanner from "@agir/groups/groupPage/GroupBanner";
 import GroupContactCard from "@agir/groups/groupPage/GroupContactCard";
 import GroupDescription from "@agir/groups/groupPage/GroupDescription";
-import GroupDonation from "@agir/groups/groupPage/GroupDonation";
 import GroupFacts from "@agir/groups/groupPage/GroupFacts";
 import GroupLinks from "@agir/groups/groupPage/GroupLinks";
 import GroupOrders from "@agir/groups/groupPage/GroupOrders";
@@ -178,7 +177,6 @@ const DesktopGroupPage = (props) => {
               ) : null}
               <GroupLinks {...group} editLinkTo={groupSettingsLinks?.links} />
               <GroupFacts {...group} />
-              <GroupDonation {...group} />
             </div>
           </Column>
         </Row>

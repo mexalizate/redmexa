@@ -4,12 +4,9 @@ import styled from "styled-components";
 
 import Button from "@agir/front/genericComponents/Button";
 import PageFadeIn from "@agir/front/genericComponents/PageFadeIn";
-import Spacer from "@agir/front/genericComponents/Spacer";
 
 import JoinAGroupCard from "./JoinAGroupCard";
 import ActionTools from "./ActionTools";
-import DonateCard from "./DonateCard";
-import TokTokCard from "@agir/events/TokTok/TokTokCard";
 
 const StyledButtons = styled.div`
   display: flex;
@@ -51,7 +48,7 @@ const MainContainer = styled.div`
 `;
 
 const DesktopActionToolsPage = (props) => {
-  const { firstName, donationAmount, hasGroups, city, commune } = props;
+  const { firstName, hasGroups, city, commune } = props;
 
   return (
     <MainContainer>
@@ -69,25 +66,11 @@ const DesktopActionToolsPage = (props) => {
             Nous contacter
           </Button>
         </StyledButtons>
-        <h2>
-          <small>Nouveau</small>
-          <br />
-          Carte du porte-à-porte
-        </h2>
-        <TokTokCard />
         <PageFadeIn ready={typeof hasGroups !== "undefined"}>
           {!hasGroups && (
             <>
               <h2>Conseillé pour {firstName || "vous"}</h2>
               <JoinAGroupCard city={city} commune={commune} />
-            </>
-          )}
-        </PageFadeIn>
-        <PageFadeIn ready={typeof donationAmount !== "undefined"}>
-          {donationAmount && (
-            <>
-              <h2>Financer la campagne</h2>
-              <DonateCard amount={donationAmount} />
             </>
           )}
         </PageFadeIn>

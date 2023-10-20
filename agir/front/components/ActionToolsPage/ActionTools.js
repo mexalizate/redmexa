@@ -82,38 +82,6 @@ export const ActionTools = () => {
         <i
           aria-hidden="true"
           css={`
-            background-color: #fd3d66;
-            color: ${({ theme }) => theme.white};
-          `}
-        >
-          <RawFeatherIcon name="heart" />
-        </i>
-        <span>
-          <strong>Financer les actions du mouvement</strong>
-          <span>
-            Pour que le mouvement puisse financer ses frais de fonctionnement,
-            organiser des actions et s’équiper en matériel, vous pouvez
-            contribuer financièrement de manière ponctuelle ou mensuellement.
-            Chaque peso compte.
-          </span>
-          <span
-            css={`
-              display: inline-flex;
-              flex-wrap: wrap;
-              gap: 0.5rem;
-              margin-top: 0.25rem;
-            `}
-          >
-            <Button small link route="donationLanding">
-              En savoir plus sur le financement
-            </Button>
-          </span>
-        </span>
-      </StyledCardItem>
-      <StyledCardItem as="span">
-        <i
-          aria-hidden="true"
-          css={`
             background-color: ${({ theme }) => theme.primary500};
             color: ${({ theme }) => theme.white};
           `}
@@ -162,39 +130,6 @@ export const ActionTools = () => {
           </span>
         </span>
         <RawFeatherIcon aria-hidden="true" name="chevron-right" />
-      </StyledCardItem>
-      <StyledCardItem as="span">
-        <i
-          aria-hidden="true"
-          css={`
-            background-color: #00ace0;
-            color: ${({ theme }) => theme.white};
-          `}
-        >
-          <RawFeatherIcon name="radio" />
-        </i>
-        <span>
-          <strong>Organiser une réunion publique</strong>
-          <span>
-            Demandez l'organisation d'une réunion publique, avec la présence
-            d'un·e député·e ou eurodéputé·e.
-          </span>
-          <span
-            css={`
-              display: inline-flex;
-              flex-wrap: wrap;
-              gap: 0.5rem;
-              margin-top: 0.25rem;
-            `}
-          >
-            <Button small link route="publicMeetingRequest">
-              Faire une demande de réunion publique
-            </Button>
-            <Button small link route="publicMeetingHelp">
-              En savoir plus
-            </Button>
-          </span>
-        </span>
       </StyledCardItem>
       <StyledCardItem route="cafePopulaireRequest">
         <i
@@ -245,65 +180,6 @@ export const ActionTools = () => {
           </span>
         </span>
         <RawFeatherIcon aria-hidden="true" name="chevron-right" />
-      </StyledCardItem>
-      <StyledCardItem as="span">
-        <i
-          aria-hidden="true"
-          css={`
-            background-color: ${({ theme }) => theme.PULBleu};
-            color: ${({ theme }) => theme.white};
-          `}
-        >
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M19.5 21V1.5H4.5V21"
-              stroke="white"
-              strokeWidth="2.25"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <line
-              x1="2.625"
-              y1="21.375"
-              x2="21.375"
-              y2="21.375"
-              stroke="white"
-              strokeWidth="2.25"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <circle cx="15" cy="10.5" r="1.5" fill="white" />
-          </svg>
-        </i>
-        <span>
-          <strong>TokTok - Carte du porte-à-porte</strong>
-          <span>
-            Ciblez les quartiers lorsque vous préparez vos actions grâce aux
-            indications sur la carte et indiquez les portes auxquelles vous avez
-            toqué
-          </span>
-          <span
-            css={`
-              display: inline-flex;
-              flex-wrap: wrap;
-              gap: 0.5rem;
-              margin-top: 0.25rem;
-            `}
-          >
-            <Button small link route="toktokPreview">
-              En savoir plus
-            </Button>
-            <Button small link route="toktok" icon="external-link">
-              Ouvrir la carte
-            </Button>
-          </span>
-        </span>
       </StyledCardItem>
     </StyledCard>
   );

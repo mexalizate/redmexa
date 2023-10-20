@@ -101,36 +101,6 @@ const Routes = {
       /* webpackChunkName: "r-createcontactpage" */ "@agir/people/contacts/CreateContactPage"
     ),
   ),
-  DonationLandingPage: lazy(() =>
-    import(
-      /* webpackChunkName: "r-donationlandingpage" */ "@agir/donations/DonationLandingPage"
-    ),
-  ),
-  DonationPage: lazy(() =>
-    import(
-      /* webpackChunkName: "r-donationpage" */ "@agir/donations/donationPage/DonationPage"
-    ),
-  ),
-  ExternalDonationPage: lazy(() =>
-    import(
-      /* webpackChunkName: "r-externalDonationPage" */ "@agir/donations/externalDonationPage/ExternalDonationPage"
-    ),
-  ),
-  DonationSuccessPage: lazy(() =>
-    import(
-      /* webpackChunkName: "r-donationSuccessPage" */ "@agir/donations/donationSuccessPage/DonationSuccessPage"
-    ),
-  ),
-  ContributionPage: lazy(() =>
-    import(
-      /* webpackChunkName: "r-contributionpage" */ "@agir/donations/contributionPage/ContributionPage"
-    ),
-  ),
-  ContributionSuccessPage: lazy(() =>
-    import(
-      /* webpackChunkName: "r-contributionSuccessPage" */ "@agir/donations/contributionSuccessPage/ContributionSuccessPage"
-    ),
-  ),
   ActionToolsPage: lazy(() =>
     import(
       /* webpackChunkName: "r-actiontoolspage" */ "@agir/front/ActionToolsPage/ActionToolsPage"
@@ -151,69 +121,14 @@ const Routes = {
       /* webpackChunkName: "r-searcheventpage" */ "@agir/front/SearchPage/SearchEventPage"
     ),
   ),
-  NewVotingProxyRequest: lazy(() =>
-    import(
-      /* webpackChunkName: "r-newvotingproxyrequest" */ "@agir/voting_proxies/VotingProxyRequest/NewVotingProxyRequest"
-    ),
-  ),
-  NewVotingProxy: lazy(() =>
-    import(
-      /* webpackChunkName: "r-newvotingproxy" */ "@agir/voting_proxies/VotingProxy/NewVotingProxy"
-    ),
-  ),
-  ReplyToVotingProxyRequests: lazy(() =>
-    import(
-      /* webpackChunkName: "r-replytovotingproxyrequests" */ "@agir/voting_proxies/VotingProxy/ReplyToVotingProxyRequests"
-    ),
-  ),
-  VotingProxyRequestDetails: lazy(() =>
-    import(
-      /* webpackChunkName: "r-votingproxyrequestdetails" */ "@agir/voting_proxies/VotingProxyRequest/VotingProxyRequestDetails"
-    ),
-  ),
   TestErrorPage: lazy(() =>
     import(
       /* webpackChunkName: "r-testerrorpage" */ "@agir/front/errorPage/TestErrorPage"
     ),
   ),
-  TokTokPreview: lazy(() =>
-    import(
-      /* webpackChunkName: "r-toktokpreview" */ "@agir/events/TokTok/TokTokPreview"
-    ),
-  ),
-  NewPollingStationOfficer: lazy(() =>
-    import(
-      /* webpackChunkName: "r-newpollingstationofficer" */ "@agir/elections/PollingStationOfficer/NewPollingStationOfficer"
-    ),
-  ),
-  EventSpeakerPage: lazy(() =>
-    import(
-      /* webpackChunkName: "r-eventspeakerpage" */ "@agir/event_requests/EventSpeakerPage/EventSpeakerPage"
-    ),
-  ),
   FaIcons: lazy(() =>
     import(
       /* webpackChunkName: "r-faicons" */ "@agir/front/genericComponents/FaIcons"
-    ),
-  ),
-  CreateSpendingRequest: lazy(() =>
-    import(
-      /* webpackChunkName: "r-createspendingrequest" */ "@agir/donations/spendingRequest/createSpendingRequestPage"
-    ),
-  ),
-  EditSpendingRequest: lazy(() =>
-    import(
-      /* webpackChunkName: "r-editspendingrequest" */ "@agir/donations/spendingRequest/editSpendingRequestPage"
-    ),
-  ),
-  SpendingRequestDetails: lazy(() =>
-    import(
-      /* webpackChunkName: "r-spendingrequestdetails" */ "@agir/donations/spendingRequest/spendingRequestPage"
-    ),
-  ),
-  SpendingRequestHistory: lazy(() =>
-    import(
-      /* webpackChunkName: "r-spendingrequesthistory" */ "@agir/donations/spendingRequest/spendingRequestPage/SpendingRequestHistoryPage"
     ),
   ),
 };
