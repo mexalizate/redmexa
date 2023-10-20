@@ -1,5 +1,6 @@
 from functools import partial
 
+import numpy
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Field, Div
 from crispy_forms.layout import Fieldset
@@ -409,30 +410,9 @@ class ContactForm(LegacySubscribedMixin, ContactPhoneNumberMixin, forms.ModelFor
         fields = ("contact_phone", "subscribed_sms", "subscribed")
 
 
-class ActivityAndSkillsForm(MetaFieldsMixin, TagMixin, forms.ModelForm):
+class ActivityAndSkillsForm(TagMixin, forms.ModelForm):
     tags = skills_tags
     tag_model_class = PersonTag
-    meta_fields = [
-        "occupation",
-        "associations",
-        "unions",
-        "party",
-        "party_responsibility",
-        "other",
-    ]
-
-    occupation = forms.CharField(max_length=200, label=_("Métier"), required=False)
-    associations = forms.CharField(
-        max_length=200, label=_("Engagements associatifs"), required=False
-    )
-    unions = forms.CharField(
-        max_length=200, label=_("Engagements syndicaux"), required=False
-    )
-    party = forms.CharField(max_length=60, label=_("Parti politique"), required=False)
-    party_responsibility = forms.CharField(max_length=100, label=False, required=False)
-    other = forms.CharField(
-        max_length=200, label=_("Autres engagements"), required=False
-    )
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -440,6 +420,8 @@ class ActivityAndSkillsForm(MetaFieldsMixin, TagMixin, forms.ModelForm):
         self.helper = FormHelper()
         self.helper.form_method = "POST"
         self.helper.add_input(Submit("submit", "Enregistrer mes informations"))
+
+        tag_cols = numpy.array_split([tag for tag, desc in skills_tags], 3)
 
         self.helper.layout = Layout(
             Row(
@@ -449,24 +431,9 @@ class ActivityAndSkillsForm(MetaFieldsMixin, TagMixin, forms.ModelForm):
                         nous utilisons les informations saisies dans ce formulaire.</p>"""
                     )
                 ),
-                ThirdCol(
-                    "occupation",
-                    "associations",
-                    "unions",
-                    Field("party", placeholder="Nom du parti"),
-                    Field("party_responsibility", placeholder="Responsabilité"),
-                ),
-                ThirdCol(
-                    HTML("<label>Savoir-faire</label>"),
-                    *(tag for tag, desc in skills_tags[0 : int(len(skills_tags) / 2)]),
-                ),
-                ThirdCol(
-                    *(
-                        tag
-                        for tag, desc in skills_tags[
-                            int(len(skills_tags) / 2) : int(len(skills_tags))
-                        ]
-                    )
+                FullCol(
+                    *(ThirdCol(*tags) for tags in tag_cols),
+                    css_class="padbottommore",
                 ),
             )
         )
