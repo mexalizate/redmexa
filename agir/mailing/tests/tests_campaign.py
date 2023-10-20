@@ -19,11 +19,9 @@ class SendCampaignActionTestCase(TestCase):
             "no_newsletters@agir.test", newsletters=[]
         )
         self.segment_with_newsletters = Segment.objects.create(
-            newsletters=[Person.Newsletter.LFI_REGULIERE.value], is_2022=None
+            newsletters=[Person.Newsletter.LFI_REGULIERE.value]
         )
-        self.segment_without_newsletters = Segment.objects.create(
-            newsletters=[], is_2022=None
-        )
+        self.segment_without_newsletters = Segment.objects.create(newsletters=[])
         self.assertIn(
             self.user_without_newsletters,
             self.segment_without_newsletters.get_subscribers_queryset(),
