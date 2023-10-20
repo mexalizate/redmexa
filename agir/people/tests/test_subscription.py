@@ -15,6 +15,12 @@ from rest_framework.test import APITestCase
 from agir.clients.models import Client
 from agir.lib.http import add_query_params_to_url
 from agir.lib.utils import generate_token_params
+from agir.people.actions.subscription import (
+    SUBSCRIPTION_TYPE_ACTIVIST,
+    SUBSCRIPTION_TYPE_CAMPAIGN,
+    SUBSCRIPTION_SUCCESS_REDIRECT,
+    SUBSCRIPTIONS_EMAILS,
+)
 from agir.people.models import Person, generate_referrer_id
 from agir.people.tasks import send_confirmation_email
 
@@ -53,7 +59,7 @@ class APISubscriptionTestCase(WordpressClientMixin, APITestCase):
             "location_zip": "75001",
             "contact_phone": "06 98 45 78 45",
             "metadata": {"universite": "Université Paris"},
-            "type": "LJI",
+            "type": SUBSCRIPTION_TYPE_CAMPAIGN,
             "referrer": generate_referrer_id(),
         }
         response = self.client.post(
@@ -75,7 +81,7 @@ class APISubscriptionTestCase(WordpressClientMixin, APITestCase):
             "last_name": "Ballade",
             "location_zip": "75001",
             "contact_phone": "06 98 45 78 45",
-            "type": "NSP",
+            "type": SUBSCRIPTION_TYPE_ACTIVIST,
             "metadata": {"universite": "Université Paris"},
             "referrer": generate_referrer_id(),
         }
@@ -98,7 +104,7 @@ class APISubscriptionTestCase(WordpressClientMixin, APITestCase):
             "last_name": "Polo",
             "location_zip": "75004",
             "contact_phone": "",
-            "type": "NSP",
+            "type": SUBSCRIPTION_TYPE_ACTIVIST,
             "metadata": {"universite": "Université Paris"},
         }
         response = self.client.post(
@@ -109,7 +115,6 @@ class APISubscriptionTestCase(WordpressClientMixin, APITestCase):
         send_confirmation_email.assert_not_called()
 
         person.refresh_from_db()
-        self.assertTrue(person.is_political_support)
         self.assertEqual(person.first_name, "Marc")
         self.assertEqual(person.last_name, "Polo")
         self.assertEqual(person.location_zip, "75001")
@@ -126,6 +131,7 @@ class SubscriptionConfirmationTestCase(TestCase):
             "email": "guillaume@email.com",
             "location_zip": "75001",
             "metadata": {"universite": "Université Paris"},
+            "type": SUBSCRIPTION_TYPE_CAMPAIGN,
         }
 
         send_confirmation_email(**data)
@@ -141,9 +147,7 @@ class SubscriptionConfirmationTestCase(TestCase):
         response = self.client.get(url_with_params)
         self.assertEqual(response.status_code, status.HTTP_302_FOUND)
         self.assertTrue(
-            response.url.startswith(
-                "https://lafranceinsoumise.fr/bienvenue/",
-            )
+            response.url.startswith(SUBSCRIPTION_SUCCESS_REDIRECT[data["type"]])
         )
 
         # check that the person has been created
@@ -157,19 +161,24 @@ class SubscriptionConfirmationTestCase(TestCase):
             "email": "person@server.fr",
             "location_zip": "75001",
             "metadata": {"universite": "Université Paris"},
+            "type": SUBSCRIPTION_TYPE_CAMPAIGN,
         }
 
         send_confirmation_email(**data)
 
         self.assertEqual(len(mail.outbox), 1)
-        self.assertRegex(mail.outbox[0].body, r"vous êtes déjà avec nous !")
+        self.assertEqual(
+            mail.outbox[0].subject,
+            SUBSCRIPTIONS_EMAILS[data["type"]]["already_subscribed"].subject,
+        )
 
-    def test_can_subscribe_with_nsp(self):
+    def test_can_subscribe_with_campaign(self):
         data = {
             "email": "personne@organisation.pays",
             "location_zip": "20322",
             "location_country": "VE",
-            "type": "NSP",
+            "type": SUBSCRIPTION_TYPE_CAMPAIGN,
+            "origin": "claudializate.mx",
         }
         send_confirmation_email(**data)
 
@@ -193,20 +202,23 @@ class SubscriptionConfirmationTestCase(TestCase):
         p = Person.objects.get_by_natural_key("personne@organisation.pays")
         p.ensure_role_exists()
 
-        self.assertTrue(p.is_political_support)
         self.assertEqual(p.location_country, "VE")
 
         subscription_time = datetime.fromisoformat(
-            p.meta["subscriptions"]["NSP"]["date"]
+            p.meta["subscriptions"][SUBSCRIPTION_TYPE_CAMPAIGN]["date"]
         )
 
         self.assertTrue(avant <= subscription_time <= apres)
+        self.assertEqual(
+            data["origin"],
+            p.meta["subscriptions"][SUBSCRIPTION_TYPE_CAMPAIGN]["origin"],
+        )
 
     def test_can_subscribe_with_metadata(self):
         data = {
             "email": "personne@organisation.pays",
             "location_zip": "20322",
-            "type": "LJI",
+            "type": SUBSCRIPTION_TYPE_ACTIVIST,
             "metadata": {"universite": "Montaigne", "niveau": "licence"},
         }
 
@@ -220,11 +232,9 @@ class SubscriptionConfirmationTestCase(TestCase):
         self.assertIsNotNone(match)
         url_with_params = match.group(0)
 
-        avant = timezone.now()
         response = self.client.get(
             url_with_params + "&android=1"
         )  # we add &android=1 cause it should work also in app
-        apres = timezone.now()
 
         self.assertEqual(response.status_code, status.HTTP_302_FOUND)
 
@@ -232,9 +242,8 @@ class SubscriptionConfirmationTestCase(TestCase):
         p = Person.objects.get_by_natural_key("personne@organisation.pays")
         p.ensure_role_exists()
 
-        self.assertTrue(p.is_political_support)
         self.assertEqual(
-            p.meta["subscriptions"]["LJI"]["metadata"],
+            p.meta["subscriptions"][SUBSCRIPTION_TYPE_ACTIVIST]["metadata"],
             {"universite": "Montaigne", "niveau": "licence"},
         )
 

@@ -70,10 +70,10 @@ def events_to_dicts(queryset, timezone=None):
             for og in e.organizer_configs.all()
         )
 
-        d["link"] = settings.FRONT_DOMAIN + reverse(
+        d["link"] = settings.PLATFORM_FRONT_DOMAIN + reverse(
             "manage_event", urlconf=front_urls, args=[e.id]
         )
-        d["admin_link"] = settings.API_DOMAIN + reverse(
+        d["admin_link"] = settings.PLATFORM_ADMIN_DOMAIN + reverse(
             "admin:events_event_change", args=[e.id]
         )
 

@@ -458,7 +458,9 @@ urlpatterns = [
     path("nsp/", views.NSPView.as_view(), name="nsp"),
     path("nsp/referral/", views.NSPReferralView.as_view(), name="nsp_referral"),
     # https://lafranceinsoumise.fr/
-    path("homepage/", RedirectView.as_view(url=settings.MAIN_DOMAIN), name="homepage"),
+    path(
+        "homepage/", RedirectView.as_view(url=settings.CAMPAIGN_DOMAIN), name="homepage"
+    ),
     # I18N
     path("jsi18n/", JavaScriptCatalog.as_view(), name="javascript-catalog"),
     # old urls

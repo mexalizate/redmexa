@@ -217,7 +217,7 @@ class PersonFormDisplay:
             person_fields = [
                 format_html(
                     person_field_template,
-                    link=settings.API_DOMAIN
+                    link=settings.PLATFORM_ADMIN_DOMAIN
                     + reverse(
                         "admin:people_person_change",
                         args=(submission.person_id,),

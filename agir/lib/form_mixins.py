@@ -308,7 +308,7 @@ class MetaFieldsMixin:
             except NumberParseException:
                 return value
         elif isinstance(field, forms.FileField):
-            url = settings.FRONT_DOMAIN + settings.MEDIA_URL + value
+            url = settings.PLATFORM_FRONT_DOMAIN + settings.MEDIA_URL + value
             if html:
                 return format_html('<a href="{}">Accéder au fichier</a>', url)
             else:

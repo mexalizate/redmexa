@@ -7,6 +7,7 @@ from push_notifications.models import GCMDevice, APNSDevice
 from agir.groups.models import Membership, SupportGroup
 from agir.lib.data import code_postal_vers_code_departement, departements_par_code
 from agir.payments.models import Payment
+from agir.people.actions.subscription import SUBSCRIPTION_TYPE_PLATFORM
 from agir.people.models import Person
 from agir.presidentielle2022.apps import Presidentielle2022Config
 
@@ -64,8 +65,8 @@ def get_statistics_for_queryset(original_queryset):
         if (
             person.meta
             and "subscriptions" in person.meta
-            and "AP" in person.meta["subscriptions"]
-            and "subscriber" in person.meta["subscriptions"]["AP"]
+            and SUBSCRIPTION_TYPE_PLATFORM in person.meta["subscriptions"]
+            and "subscriber" in person.meta["subscriptions"][SUBSCRIPTION_TYPE_PLATFORM]
         ):
             stats["contacts"] += 1
         if person.role:

@@ -934,7 +934,7 @@ class Event(
 
     def get_meta_image(self):
         if hasattr(self, "image") and self.image:
-            return urljoin(settings.FRONT_DOMAIN, self.image.url)
+            return urljoin(settings.PLATFORM_FRONT_DOMAIN, self.image.url)
 
         # Use content hash as cache key for the auto-generated meta image
         content = ":".join(
@@ -962,7 +962,7 @@ class Event(
         event_image = self.image.storage.url(image.name)
 
         if not is_absolute_url(event_image):
-            event_image = settings.FRONT_DOMAIN + event_image
+            event_image = settings.PLATFORM_FRONT_DOMAIN + event_image
 
         return event_image
 

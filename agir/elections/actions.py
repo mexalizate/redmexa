@@ -7,7 +7,7 @@ from agir.elections.tasks import send_new_polling_station_officer_to_campaign_ma
 from agir.lib.tasks import geocode_person
 from agir.people.actions.subscription import (
     SUBSCRIPTIONS_EMAILS,
-    SUBSCRIPTION_TYPE_AP,
+    SUBSCRIPTION_TYPE_PLATFORM,
 )
 from agir.people.models import Person
 
@@ -66,11 +66,14 @@ def create_or_update_polling_station_officer(data):
             )
         )
 
-        if is_new_person and "welcome" in SUBSCRIPTIONS_EMAILS[SUBSCRIPTION_TYPE_AP]:
+        if (
+            is_new_person
+            and "welcome" in SUBSCRIPTIONS_EMAILS[SUBSCRIPTION_TYPE_PLATFORM]
+        ):
             from agir.people.tasks import send_welcome_mail
 
             transaction.on_commit(
-                partial(send_welcome_mail.delay, person.pk, SUBSCRIPTION_TYPE_AP)
+                partial(send_welcome_mail.delay, person.pk, SUBSCRIPTION_TYPE_PLATFORM)
             )
 
         data.update(

@@ -37,7 +37,11 @@ class RedirectToMixin:
         # http:// or https://
         allowed_hosts = {
             s.strip("/").rsplit("/", 1)[-1]
-            for s in [settings.MAIN_DOMAIN, settings.API_DOMAIN, settings.FRONT_DOMAIN]
+            for s in [
+                settings.CAMPAIGN_DOMAIN,
+                settings.PLATFORM_ADMIN_DOMAIN,
+                settings.PLATFORM_FRONT_DOMAIN,
+            ]
         }
         url_is_safe = url_has_allowed_host_and_scheme(
             url=redirect_to,

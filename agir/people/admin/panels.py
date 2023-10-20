@@ -34,6 +34,10 @@ from agir.lib.admin.panels import CenterOnFranceMixin, DisplayContactPhoneMixin
 from agir.lib.admin.utils import display_link
 from agir.lib.utils import generate_token_params, front_url
 from agir.people.actions.stats import get_statistics_for_queryset
+from agir.people.actions.subscription import (
+    SUBSCRIPTION_TYPE_PLATFORM,
+    SUBSCRIPTION_TYPE_CAMPAIGN,
+)
 from agir.people.admin import filters
 from agir.people.admin.actions import (
     export_people_to_csv,
@@ -471,12 +475,16 @@ class PersonAdmin(DisplayContactPhoneMixin, CenterOnFranceMixin, OSMGeoAdmin):
         queryset = cl.get_queryset(request)
         statistics = get_statistics_for_queryset(queryset)
         chart_data = (
-            queryset.exclude(meta__subscriptions__NSP__date__isnull=True)
+            queryset.exclude(
+                **{
+                    f"meta__subscriptions__{SUBSCRIPTION_TYPE_CAMPAIGN}__date__isnull": True
+                }
+            )
             .annotate(
                 subscription_datetime=Func(
                     "meta",
                     Value("subscriptions"),
-                    Value("NSP"),
+                    Value(SUBSCRIPTION_TYPE_CAMPAIGN),
                     Value("date"),
                     function="jsonb_extract_path_text",
                 )
@@ -986,7 +994,9 @@ class ContactAdmin(admin.ModelAdmin):
     is_liaison.boolean = True
 
     def subscriber(self, obj):
-        subscriber_id = obj.meta["subscriptions"]["AP"]["subscriber"]
+        subscriber_id = obj.meta["subscriptions"][SUBSCRIPTION_TYPE_PLATFORM][
+            "subscriber"
+        ]
         subscriber = Person.objects.filter(pk=subscriber_id).first()
         if subscriber:
             return format_html(

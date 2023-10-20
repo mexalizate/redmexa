@@ -14,10 +14,11 @@ from agir.authentication.utils import hard_login
 from agir.front.view_mixins import SimpleOpengraphMixin
 from agir.lib.tasks import geocode_person
 from agir.people.actions.subscription import (
-    SUBSCRIPTION_TYPE_LFI,
+    SUBSCRIPTION_TYPE_CAMPAIGN,
     SUBSCRIPTIONS_EMAILS,
     subscription_success_redirect_url,
     save_subscription_information,
+    SUBSCRIPTION_TYPE_PLATFORM,
 )
 from agir.people.forms import AnonymousUnsubscribeForm
 from agir.people.models import Person
@@ -83,6 +84,8 @@ class ConfirmSubscriptionView(View):
         "last_name",
         "contact_phone",
         "type",
+        "origin",
+        "metadata",
         "referer",
         "referrer",
         "mandat",
@@ -91,7 +94,7 @@ class ConfirmSubscriptionView(View):
         "next",
     ]
     show_already_created_message = True
-    default_type = SUBSCRIPTION_TYPE_LFI
+    default_type = SUBSCRIPTION_TYPE_PLATFORM
 
     @never_cache
     def get(self, request, *args, **kwargs):
@@ -118,7 +121,7 @@ class ConfirmSubscriptionView(View):
             self.error_template,
             {
                 "message": message,
-                "show_retry": self.default_type == SUBSCRIPTION_TYPE_LFI,
+                "show_retry": self.default_type == SUBSCRIPTION_TYPE_CAMPAIGN,
             },
         )
 
@@ -141,7 +144,9 @@ class ConfirmSubscriptionView(View):
             if metadata:
                 params["metadata"] = metadata
 
-            save_subscription_information(self.person, self.type, params, new=True)
+            save_subscription_information(
+                self.person, self.type, params, new=not already_created
+            )
 
         if already_created and self.show_already_created_message:
             messages.add_message(
