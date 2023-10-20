@@ -1,4 +1,5 @@
 import _ from "gettext";
+
 import React, { lazy as reactLazy, useEffect, useMemo, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useIsOffline } from "@agir/front/offline/hooks";

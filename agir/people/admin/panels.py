@@ -147,6 +147,7 @@ class PersonAdmin(DisplayContactPhoneMixin, CenterOnFranceMixin, OSMGeoAdmin):
                     "location_country",
                     "location_citycode",
                     "action_radius",
+                    "municipio",
                     "coordinates",
                     "coordinates_type",
                     "coordinates_value",
@@ -200,7 +201,7 @@ class PersonAdmin(DisplayContactPhoneMixin, CenterOnFranceMixin, OSMGeoAdmin):
 
     inlines = (PersonQualificationInline, MembershipInline, EmailInline)
 
-    autocomplete_fields = ("tags",)
+    autocomplete_fields = ("tags", "municipio")
 
     # doit être non vide pour afficher le formulaire de recherche,
     # mais n'est en réalité pas utilisé pour déterminer les champs

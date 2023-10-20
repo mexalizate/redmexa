@@ -1,0 +1,15 @@
+{% include "custom_fields/includes/progress_style.html" %}
+<input
+  type="hidden"
+  name="{{ widget.name }}"
+  {% if widget.value %}value="{{ widget.value }}"{% endif %}
+  {% include "django/forms/widgets/attrs.html" %}
+>
+<script>
+  document
+  .querySelectorAll('input[data-component="{{ widget_component }}"]')
+  .forEach((field) => {
+    field.parentNode.classList.add("progress");
+  });
+</script>
+{% include "lib/mexicanMunicipioField.bundle.html" %}

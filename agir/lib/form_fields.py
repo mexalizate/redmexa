@@ -21,6 +21,8 @@ from django.utils.translation import gettext_lazy as _, ngettext_lazy
 from django_countries import countries
 from phonenumber_field.phonenumber import PhoneNumber
 
+from agir.geodata.models import MexicanMunicipio
+from agir.geodata.serializers import MexicanMunicipioSerializer
 from agir.lib.iban import IBAN, to_iban
 from agir.lib.time import dehumanize_naturaltime
 from agir.lib.validators import (
@@ -517,3 +519,54 @@ class MultiDateTimeField(MultiTemporaFieldMixin, forms.DateTimeField):
 
     def __str__(self):
         return "MultiDateTimeField"
+
+
+class MexicanMunicipioWidget(forms.Widget):
+    template_name = "custom_fields/mexican_municipio_widget.html"
+    component = "MexicanMunicipioField"
+
+    def __init__(self, attrs=None):
+        attrs = attrs or {}
+        attrs["data-component"] = self.component
+        super().__init__(attrs=attrs)
+
+    def format_value(self, value):
+        if value is None:
+            return ""
+
+        return json.dumps(MexicanMunicipioSerializer(value).data)
+
+    def get_context(self, name, value, attrs):
+        context = super().get_context(name, value, attrs)
+        context["component"] = self.component
+        return context
+
+
+class MexicanMunicipioField(forms.CharField):
+    widget = MexicanMunicipioWidget
+
+    def get_municipio(self, value):
+        try:
+            if isinstance(value, int):
+                return MexicanMunicipio.objects.get(pk=value)
+            return MexicanMunicipio.objects.get(code=value)
+        except (ValueError, MexicanMunicipio.DoesNotExist):
+            raise ValidationError(_("Municipio inconnu"))
+
+    def to_python(self, value):
+        if value in self.empty_values:
+            return None
+
+        return self.get_municipio(value)
+
+    def prepare_value(self, value):
+        if value == "" or value is None:
+            return None
+
+        if isinstance(value, MexicanMunicipio):
+            return value
+
+        try:
+            return self.get_municipio(value)
+        except ValidationError:
+            return None
