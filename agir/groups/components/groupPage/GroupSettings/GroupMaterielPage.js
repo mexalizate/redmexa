@@ -9,29 +9,15 @@ import Button from "@agir/front/genericComponents/Button";
 import Spacer from "@agir/front/genericComponents/Spacer.js";
 import HeaderPanel from "@agir/front/genericComponents/ObjectManagement/HeaderPanel";
 
-import DiscountCode from "./DiscountCode";
-
 import { StyledTitle } from "@agir/front/genericComponents/ObjectManagement/styledComponents";
 
 import { useGroup } from "@agir/groups/groupPage/hooks/group.js";
-import { parseDiscountCodes } from "../utils";
-
-const StyledDiscountCodeList = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 1rem;
-`;
 
 const GroupMaterielPage = (props) => {
   const { onBack, illustration, groupPk } = props;
   const group = useGroup(groupPk);
 
   const ordersURL = useMemo(() => group?.routes?.orders || "", [group]);
-  const [discountCodes, specialDiscountCodes] = useMemo(
-    () => parseDiscountCodes(group?.discountCodes),
-    [group],
-  );
-
   return (
     <>
       <HeaderPanel onBack={onBack} illustration={illustration} />
@@ -62,15 +48,6 @@ const GroupMaterielPage = (props) => {
           </p>
         </>
       )}
-      <Spacer size="2rem" />
-      <StyledDiscountCodeList>
-        {specialDiscountCodes.map((discountCode) => (
-          <DiscountCode key={discountCode.code} {...discountCode} />
-        ))}
-        {discountCodes.map((discountCode) => (
-          <DiscountCode key={discountCode.code} {...discountCode} />
-        ))}
-      </StyledDiscountCodeList>
     </>
   );
 };

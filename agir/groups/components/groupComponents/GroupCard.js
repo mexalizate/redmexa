@@ -64,7 +64,6 @@ const GroupCard = ({
   isManager,
   typeLabel,
   labels,
-  discountCodes,
   displayGroupLogo,
   displayType,
   displayDescription,
@@ -149,8 +148,6 @@ const GroupCard = ({
         </div>
       )}
 
-      <DiscountCodes discountCodes={discountCodes} />
-
       <StyledRow gutter={6} style={{ paddingTop: ".5rem" }}>
         {!isEmbedded && !isMember && (
           <Button
@@ -210,7 +207,6 @@ GroupCard.propTypes = {
   isManager: PropTypes.bool,
   typeLabel: PropTypes.string,
   labels: PropTypes.arrayOf(PropTypes.string),
-  discountCodes: PropTypes.array,
   routes: PropTypes.object,
   displayGroupLogo: PropTypes.bool,
   displayType: PropTypes.bool,

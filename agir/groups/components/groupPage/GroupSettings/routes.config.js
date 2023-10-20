@@ -125,8 +125,7 @@ export const routeConfig = {
     label: "Matériel",
     icon: "shopping-bag",
     Component: GroupSettingsMateriel,
-    isActive: (group) =>
-      Array.isArray(group.discountCodes) && group.discountCodes.length > 0,
+    isActive: true,
     menuGroup: 1,
   },
   general: {
