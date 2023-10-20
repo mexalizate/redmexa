@@ -45,7 +45,9 @@ class BasicOpenGraphMixin(SimpleOpengraphMixin):
     meta_title = "Action Populaire"
     meta_description = "Action Populaire est le réseau social d'action de la France insoumise et de la NUPES."
     meta_type = "website"
-    meta_image = urljoin(settings.FRONT_DOMAIN, static("front/assets/og_image_NSP.jpg"))
+    meta_image = urljoin(
+        settings.PLATFORM_FRONT_DOMAIN, static("front/assets/og_image_NSP.jpg")
+    )
 
 
 ## BASE VIEWS
@@ -241,7 +243,7 @@ class AlreadyContributorRedirectView(RedirectView):
 class ContributionView(BaseAppCachedView):
     meta_title = "Devenir financeur·euse de la France insoumise"
     meta_image = urljoin(
-        settings.FRONT_DOMAIN, static("front/og-image/contributions.png")
+        settings.PLATFORM_FRONT_DOMAIN, static("front/og-image/contributions.png")
     )
     meta_description = (
         "Pour financer les dépenses liées à l’organisation d’événements, à l’achat de matériel, au"
@@ -459,7 +461,7 @@ class NBUrlsView(View):
 
 class NSPView(RedirectView):
     def get_redirect_url(self, *args, **kwargs):
-        url = settings.NSP_DOMAIN
+        url = settings.ACTIVIST_DOMAIN
         if self.request.user.is_authenticated:
             person = self.request.user.person
             if person.is_2022:
@@ -480,7 +482,7 @@ class NSPView(RedirectView):
 
 class NSPReferralView(SoftLoginRequiredMixin, RedirectView):
     def get_redirect_url(self, *args, **kwargs):
-        url = f"{settings.NSP_DOMAIN}/je-partage-mon-lien/"
+        url = f"{settings.ACTIVIST_DOMAIN}/je-partage-mon-lien/"
 
         params = generate_token_params(self.request.user.person)
         params["_p"] = params.pop("p")
@@ -514,7 +516,9 @@ class VotingProxyView(PostElectionRedirectView):
         "aux élections législatives le 12 et 19 juin 2022."
     )
     meta_type = "website"
-    meta_image = urljoin(settings.FRONT_DOMAIN, static("front/assets/og_image_vp.jpg"))
+    meta_image = urljoin(
+        settings.PLATFORM_FRONT_DOMAIN, static("front/assets/og_image_vp.jpg")
+    )
 
 
 class VotingProxyRequestView(PostElectionRedirectView):
@@ -524,7 +528,9 @@ class VotingProxyRequestView(PostElectionRedirectView):
         "l'Union Populaire aux élections législatives du 12 et 19 juin 2022."
     )
     meta_type = "website"
-    meta_image = urljoin(settings.FRONT_DOMAIN, static("front/assets/og_image_vpr.jpg"))
+    meta_image = urljoin(
+        settings.PLATFORM_FRONT_DOMAIN, static("front/assets/og_image_vpr.jpg")
+    )
 
 
 class PollingStationOfficerView(PostElectionRedirectView):
@@ -534,7 +540,9 @@ class PollingStationOfficerView(PostElectionRedirectView):
         "et de délégué⋅es dans le plus grand nombre de bureaux de vote de la circonscription."
     )
     meta_type = "website"
-    meta_image = urljoin(settings.FRONT_DOMAIN, static("front/assets/og_image_pso.jpg"))
+    meta_image = urljoin(
+        settings.PLATFORM_FRONT_DOMAIN, static("front/assets/og_image_pso.jpg")
+    )
 
 
 class EventSpeakerView(SoftLoginRequiredMixin, ReactBaseView):

@@ -6,7 +6,7 @@ from agir.authentication.tokens import subscription_confirmation_token_generator
 from agir.lib.celery import emailing_task
 from agir.lib.mailing import send_mosaico_email, send_template_email
 from agir.lib.utils import front_url
-from agir.people.actions.subscription import SUBSCRIPTION_TYPE_AP
+from agir.people.actions.subscription import SUBSCRIPTION_TYPE_PLATFORM
 
 
 def interleave_spaces(s, n=3):
@@ -33,13 +33,13 @@ def send_login_email(email, short_code, expiry_time):
 
 
 @emailing_task()
-def send_no_account_email(email, subscription_type=SUBSCRIPTION_TYPE_AP, **kwargs):
+def send_no_account_email(
+    email, subscription_type=SUBSCRIPTION_TYPE_PLATFORM, **kwargs
+):
     subscription_token = subscription_confirmation_token_generator.make_token(
         email=email, type=subscription_type, **kwargs
     )
-    confirm_subscription_url = front_url(
-        "subscription_confirm", auto_login=False, nsp=False
-    )
+    confirm_subscription_url = front_url("subscription_confirm", auto_login=False)
     query_args = {
         "email": email,
         "type": subscription_type,

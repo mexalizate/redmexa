@@ -8,10 +8,8 @@ import helloDesktop from "@agir/front/genericComponents/images/hello-desktop.svg
 
 import Link from "@agir/front/app/Link";
 import Button from "@agir/front/genericComponents/Button";
-import CheckboxField from "@agir/front/formComponents/CheckboxField";
 import { Hide } from "@agir/front/genericComponents/grid";
 import PhoneField from "@agir/front/formComponents/PhoneField";
-import SelectField from "@agir/front/formComponents/SelectField";
 import TextField from "@agir/front/formComponents/TextField";
 import LogoAP from "@agir/front/genericComponents/LogoAP";
 import Spacer from "@agir/front/genericComponents/Spacer";
@@ -99,26 +97,7 @@ const DEFAULT_DATA = {
   lastName: "",
   contactPhone: "",
   zip: "",
-  mandat: null,
 };
-const MANDAT_OPTIONS = [
-  {
-    label: _("Mandat municipal"),
-    value: "municipal",
-  },
-  {
-    label: _("Mandat départemental"),
-    value: "departemental",
-  },
-  {
-    label: _("Mandat régional"),
-    value: "regional",
-  },
-  {
-    label: _("Mandat consulaire"),
-    value: "consulaire",
-  },
-];
 
 const TellMore = ({ dismiss }) => {
   const [formData, setFormData] = useState(DEFAULT_DATA);
@@ -143,10 +122,6 @@ const TellMore = ({ dismiss }) => {
       lastName: data.lastName || DEFAULT_DATA.lastName,
       contactPhone: data.contactPhone || DEFAULT_DATA.contactPhone,
       zip: data.zip || DEFAULT_DATA.zip,
-      mandat:
-        Array.isArray(data.mandat) && data.mandat.length > 0
-          ? data.mandat[0]
-          : null,
     });
     setExistingData({ firstName: !!data.firstName, lastName: !!data.lastName });
   }, []);
@@ -165,17 +140,6 @@ const TellMore = ({ dismiss }) => {
       ...formData,
       contactPhone: value,
     }));
-  }, []);
-
-  const toggleShowMandat = useCallback(() => {
-    setFormData((formData) => ({
-      ...formData,
-      mandat: formData.mandat ? null : MANDAT_OPTIONS[0].value,
-    }));
-  }, []);
-
-  const handleChangeMandat = useCallback((option) => {
-    setFormData((formData) => ({ ...formData, mandat: option.value }));
   }, []);
 
   const handleSubmit = useCallback(
@@ -226,7 +190,9 @@ const TellMore = ({ dismiss }) => {
             <h2>{_("Complétez les informations vous concernant")}</h2>
             <TextField
               label="Nom public"
-              helpText={_("Le nom que pourront voir les membres avec qui vous interagissez. Indiquez par exemple votre prénom ou un pseudonyme.")}
+              helpText={_(
+                "Le nom que pourront voir les membres avec qui vous interagissez. Indiquez par exemple votre prénom ou un pseudonyme.",
+              )}
               error={error && error.displayName}
               name="displayName"
               placeholder="Mathilde P."
@@ -258,7 +224,8 @@ const TellMore = ({ dismiss }) => {
                 <TextField
                   label={
                     <>
-                      {_("Nom")} <span style={{ fontWeight: 400 }}>(facultatif)</span>
+                      {_("Nom")}{" "}
+                      <span style={{ fontWeight: 400 }}>(facultatif)</span>
                     </>
                   }
                   id="lastName"
@@ -288,10 +255,12 @@ const TellMore = ({ dismiss }) => {
               </div>
               <div>
                 <PhoneField
-                  label={-
+                  label={
                     <>
                       {_("Numéro de téléphone")}{" "}
-                      <span style={{ fontWeight: 400 }}>(facultatif)</span>
+                      <span style={{ fontWeight: 400 }}>
+                        ({_("facultatif")})
+                      </span>
                     </>
                   }
                   id="contactPhone"
@@ -304,33 +273,6 @@ const TellMore = ({ dismiss }) => {
                 <Spacer size="1rem" />
               </div>
             </InputGroup>
-            <div>
-              <CheckboxField
-                name="mandat"
-                label="Je suis élu·e"
-                value={formData.mandat !== null}
-                onChange={toggleShowMandat}
-                disabled={isLoading}
-              />
-              <Spacer size="1rem" />
-            </div>
-            {formData.mandat !== null && (
-              <>
-                <div>
-                  <SelectField
-                    label={_("Mandat")}
-                    name="mandat"
-                    value={MANDAT_OPTIONS.find(
-                      (option) => option.value === formData.mandat,
-                    )}
-                    options={MANDAT_OPTIONS}
-                    onChange={handleChangeMandat}
-                    disabled={isLoading}
-                  />
-                </div>
-                <Spacer size="1rem" />
-              </>
-            )}
             <Button
               type="submit"
               color="primary"
@@ -344,9 +286,7 @@ const TellMore = ({ dismiss }) => {
             >
               {_("Enregistrer")}
             </Button>
-            {formData.mandat === null && (
-              <Hide $under style={{ paddingBottom: "79px" }}></Hide>
-            )}
+            <Hide as={Spacer} $under size="79px" />
           </div>
         </MainBlock>
       </div>

@@ -52,4 +52,4 @@ def autres_pieces(reglement):
 
 
 def gestion_admin_link(instance):
-    return f"{settings.API_DOMAIN}{get_admin_link(instance)}"
+    return f"{settings.PLATFORM_ADMIN_DOMAIN}{get_admin_link(instance)}"

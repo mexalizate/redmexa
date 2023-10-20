@@ -3,8 +3,8 @@ from django.conf import settings
 
 def basic_information(request):
     return {
-        "MAIN_DOMAIN": settings.MAIN_DOMAIN,
-        "API_DOMAIN": settings.API_DOMAIN,
-        "FRONT_DOMAIN": settings.FRONT_DOMAIN,
+        "CAMPAIGN_DOMAIN": settings.CAMPAIGN_DOMAIN,
+        "PLATFORM_ADMIN_DOMAIN": settings.PLATFORM_ADMIN_DOMAIN,
+        "PLATFORM_FRONT_DOMAIN": settings.PLATFORM_FRONT_DOMAIN,
         "MAP_DOMAIN": settings.MAP_DOMAIN,
     }

@@ -91,7 +91,7 @@ def admin_url(viewname, args=None, kwargs=None, query=None, absolute=True):
 
     url = reverse(viewname, args=args, kwargs=kwargs, urlconf="agir.api.admin_urls")
     if absolute:
-        url = urljoin(settings.API_DOMAIN, url)
+        url = urljoin(settings.PLATFORM_ADMIN_DOMAIN, url)
     if query:
         url = add_query_params_to_url(url, query)
     return url

@@ -6,7 +6,6 @@ from django.db import transaction
 from django.utils import timezone
 
 from agir.authentication.tokens import subscription_confirmation_token_generator
-from agir.elus.models import types_elus, StatutMandat, MandatMunicipal
 from agir.groups.models import Membership
 from agir.lib.http import add_query_params_to_url
 from agir.people.models import Person
@@ -23,106 +22,94 @@ class SubscriptionMessageInfo:
     from_email: str = settings.EMAIL_FROM
 
 
-SUBSCRIPTION_TYPE_LFI = "LFI"
-SUBSCRIPTION_TYPE_NSP = "NSP"
+# The folllowing parameters will defined subscription profile and associated workflow
+SUBSCRIPTION_TYPE_PLATFORM = "PLA"
+SUBSCRIPTION_TYPE_CAMPAIGN = "CAM"
+SUBSCRIPTION_TYPE_ACTIVIST = "ACT"
 SUBSCRIPTION_TYPE_EXTERNAL = "EXT"
 SUBSCRIPTION_TYPE_ADMIN = "ADM"
-SUBSCRIPTION_TYPE_AP = "AP"
-SUBSCRIPTION_TYPE_LJI = "LJI"
 
+# Here we set the type of subscription profile that will define the subscription flow for the user
+# This values will also be used as key, to store subscription metadata to the person "meta" field
 SUBSCRIPTION_TYPE_CHOICES = (
-    (
-        SUBSCRIPTION_TYPE_LFI,
-        "LFI",
-    ),
-    (
-        SUBSCRIPTION_TYPE_NSP,
-        "NSP",
-    ),
+    (SUBSCRIPTION_TYPE_PLATFORM, "Platform"),
+    (SUBSCRIPTION_TYPE_CAMPAIGN, "Campaign"),
+    (SUBSCRIPTION_TYPE_ACTIVIST, "Activist"),
     (SUBSCRIPTION_TYPE_EXTERNAL, "Externe"),
-    (SUBSCRIPTION_TYPE_AP, "Action Populaire"),
-    (SUBSCRIPTION_TYPE_LJI, "Les jeunes insoumis"),
+    (SUBSCRIPTION_TYPE_ADMIN, "Admin"),
 )
-SUBSCRIPTION_FIELD = {
-    # TODO: Vérifier ce qui est encore utilisé et ce qui ne l'est plus
-    SUBSCRIPTION_TYPE_LFI: "is_political_support",
-    SUBSCRIPTION_TYPE_NSP: "is_political_support",
-    SUBSCRIPTION_TYPE_LJI: "is_political_support",
+# Here we set a default origin (website or app) for a profile in case the subscription payload data will not define one.
+SUBSCRIPTION_DEFAULT_ORIGIN = {
+    SUBSCRIPTION_TYPE_PLATFORM: "redmexa.com",
+    SUBSCRIPTION_TYPE_CAMPAIGN: "claudializate.com",
+    SUBSCRIPTION_TYPE_ACTIVIST: "redmigrantes.com",
 }
-
+# Here we set the specificications for the emails to be sent to the new user for each profile workflow
+#
+# Three emails can be configured:
+# - "already_subscribed": the message sent to someone trying to subscribe and who already has an account
+# - "confirmation": the message sent to ask the new user to confirm his/her email address
+# - "welcome": the message sent once the email address has been validated and the subscription successfully completed
+#
+# For each email, we can specify the email template code, subject and from address
 SUBSCRIPTIONS_EMAILS = {
-    SUBSCRIPTION_TYPE_LFI: {
+    SUBSCRIPTION_TYPE_PLATFORM: {
+        "already_subscribed": SubscriptionMessageInfo(
+            code="SUBSCRIPTION__PLATFORM__ALREADY_SUBSCRIBED_MESSAGE",
+            subject="Vous êtes déjà inscrit·e !",
+        ),
         "confirmation": SubscriptionMessageInfo(
-            code="SUBSCRIPTION_CONFIRMATION_LFI_MESSAGE",
+            code="SUBSCRIPTION__PLATFORM__CONFIRMATION_MESSAGE",
+            subject="Plus qu'un clic pour vous inscrire",
+        ),
+    },
+    SUBSCRIPTION_TYPE_CAMPAIGN: {
+        "already_subscribed": SubscriptionMessageInfo(
+            "SUBSCRIPTION__CAMPAIGN__ALREADY_SUBSCRIBED_MESSAGE",
+            "Vous êtes déjà inscrit·e !",
+        ),
+        "confirmation": SubscriptionMessageInfo(
+            code="SUBSCRIPTION__CAMPAIGN__CONFIRMATION_MESSAGE",
             subject="Plus qu'un clic pour vous inscrire",
             from_email=settings.EMAIL_FROM_LFI,
         ),
-        "already_subscribed": SubscriptionMessageInfo(
-            "ALREADY_SUBSCRIBED_LFI_MESSAGE",
-            "Vous êtes déjà inscrit·e !",
-        ),
         "welcome": SubscriptionMessageInfo(
-            "WELCOME_LFI_MESSAGE", "Bienvenue sur la plateforme de la France insoumise"
+            "SUBSCRIPTION__CAMPAIGN__WELCOME_MESSAGE",
+            "Bienvenue sur la plateforme de la France insoumise",
         ),
     },
-    SUBSCRIPTION_TYPE_NSP: {
+    SUBSCRIPTION_TYPE_ACTIVIST: {
         "confirmation": SubscriptionMessageInfo(
-            code="SUBSCRIPTION_CONFIRMATION_NSP_MESSAGE",
+            code="SUBSCRIPTION__ACTIVIST__CONFIRMATION_MESSAGE",
             subject="Confirmez votre e-mail pour valider votre signature !",
             from_email=settings.EMAIL_FROM_MELENCHON_2022,
         )
     },
-    SUBSCRIPTION_TYPE_LJI: {
-        "confirmation": SubscriptionMessageInfo(
-            code="SUBSCRIPTION_CONFIRMATION_LFI_MESSAGE",
-            subject="Plus qu'un clic pour vous inscrire",
-            from_email="Les Jeunes Insoumis·es <nepasrepondre@lafranceinsoumise.fr>",
-        ),
-        "already_subscribed": SubscriptionMessageInfo(
-            "ALREADY_SUBSCRIBED_LFI_MESSAGE",
-            "Vous êtes déjà inscrit·e !",
-        ),
-        "welcome": SubscriptionMessageInfo(
-            "WELCOME_LFI_MESSAGE",
-            "Bienvenue sur la plateforme de la France insoumise et des Jeunes Insoumis·es !",
-        ),
-    },
     SUBSCRIPTION_TYPE_EXTERNAL: {},
-    SUBSCRIPTION_TYPE_AP: {
-        "already_subscribed": SubscriptionMessageInfo(
-            code="EXISTING_EMAIL_SUBSCRIPTION",
-            subject="Vous êtes déjà inscrit·e !",
-        ),
-        "confirmation": SubscriptionMessageInfo(
-            code="SUBSCRIPTION_CONFIRMATION_MESSAGE",
-            subject="Plus qu'un clic pour vous inscrire",
-        ),
-    },
+    SUBSCRIPTION_TYPE_ADMIN: {},
 }
-
-SUBSCRIPTION_NEWSLETTERS = {
-    SUBSCRIPTION_TYPE_LFI: {*Person.MAIN_NEWSLETTER_CHOICES},
-    SUBSCRIPTION_TYPE_LJI: {
-        *Person.MAIN_NEWSLETTER_CHOICES,
-        Person.Newsletter.LFI_LJI.value,
-    },
-    SUBSCRIPTION_TYPE_NSP: set(),
-    SUBSCRIPTION_TYPE_EXTERNAL: set(),
-    SUBSCRIPTION_TYPE_AP: set(),
-}
-
+# Here we set the URL of the page to which the user will be redirected right after entering his/her data
+# This page should warn the user that he/she will receive an email to validate his/her email address
 SUBSCRIPTION_EMAIL_SENT_REDIRECT = {
-    SUBSCRIPTION_TYPE_LFI: f"{settings.MAIN_DOMAIN}/consulter-vos-emails/",
-    SUBSCRIPTION_TYPE_LJI: f"{settings.MAIN_DOMAIN}/consulter-vos-emails/",
-    SUBSCRIPTION_TYPE_NSP: f"{settings.NSP_DOMAIN}/validez-votre-e-mail/",
-    SUBSCRIPTION_TYPE_AP: f"{settings.FRONT_DOMAIN}/inscription/code/",
+    SUBSCRIPTION_TYPE_CAMPAIGN: f"{settings.CAMPAIGN_DOMAIN}/consulter-vos-emails/",
+    SUBSCRIPTION_TYPE_ACTIVIST: f"{settings.ACTIVIST_DOMAIN}/validez-votre-e-mail/",
+    SUBSCRIPTION_TYPE_PLATFORM: f"{settings.PLATFORM_FRONT_DOMAIN}/inscription/code/",
 }
-
+# Here we set the URL of the page to which the user will be redirected right after validating his/her email address
+# by following the validation link received by email.
 SUBSCRIPTION_SUCCESS_REDIRECT = {
-    SUBSCRIPTION_TYPE_LFI: f"{settings.MAIN_DOMAIN}/bienvenue/",
-    SUBSCRIPTION_TYPE_LJI: f"{settings.MAIN_DOMAIN}/bienvenue/",
-    SUBSCRIPTION_TYPE_NSP: f"{settings.NSP_DOMAIN}/signature-confirmee/",
-    SUBSCRIPTION_TYPE_AP: f"{settings.FRONT_DOMAIN}/bienvenue/",
+    SUBSCRIPTION_TYPE_CAMPAIGN: f"{settings.CAMPAIGN_DOMAIN}/bienvenue/",
+    SUBSCRIPTION_TYPE_ACTIVIST: f"{settings.ACTIVIST_DOMAIN}/signature-confirmee/",
+    SUBSCRIPTION_TYPE_PLATFORM: f"{settings.PLATFORM_FRONT_DOMAIN}/bienvenue/",
+}
+# Here we set the newsletters choices that will automatically be activated for the new user upon
+# subscription based on profile (from Person.Newsletter choices)
+SUBSCRIPTION_NEWSLETTERS = {
+    SUBSCRIPTION_TYPE_PLATFORM: set(),
+    SUBSCRIPTION_TYPE_CAMPAIGN: set(),
+    SUBSCRIPTION_TYPE_ACTIVIST: set(),
+    SUBSCRIPTION_TYPE_ADMIN: set(),
+    SUBSCRIPTION_TYPE_EXTERNAL: set(),
 }
 
 
@@ -136,12 +123,15 @@ def save_subscription_information(person, type, data, new=False):
 
     person.newsletters = list(SUBSCRIPTION_NEWSLETTERS[type].union(person.newsletters))
 
-    if type in SUBSCRIPTION_FIELD and not getattr(person, SUBSCRIPTION_FIELD[type]):
-        setattr(person, SUBSCRIPTION_FIELD[type], True)
-
     subscriptions = person.meta.setdefault("subscriptions", {})
+
     if type not in subscriptions:
-        subscriptions[type] = {"date": timezone.now().isoformat()}
+        # Save subscription date and origin
+        date = timezone.now().isoformat()
+        default_source = SUBSCRIPTION_DEFAULT_ORIGIN.get(type, None)
+        origin = data.get("origin", default_source)
+        subscriptions[type] = {"date": date, "origin": origin}
+
         if referrer_id := data.get("referrer", data.get("referer")):
             try:
                 referrer = Person.objects.get(referrer_id=referrer_id)
@@ -162,26 +152,11 @@ def save_subscription_information(person, type, data, new=False):
                     )
                 )
 
-    # on fusionne les éventuelles metadata
+    # Save subscription metadata
     if data.get("metadata"):
         subscriptions[type].setdefault("metadata", {}).update(data["metadata"])
 
-    if data.get("mandat"):
-        subscriptions[type]["mandat"] = data["mandat"]
-
-    with transaction.atomic():
-        if data.get("mandat"):
-            defaults = {"statut": StatutMandat.INSCRIPTION_VIA_PROFIL}
-            if data["mandat"] == "maire":
-                defaults["mandat"] = MandatMunicipal.MANDAT_MAIRE
-                data["mandat"] = "municipal"
-            model = types_elus[data["mandat"]]
-            try:
-                model.objects.get_or_create(person=person, defaults=defaults)
-            except model.MultipleObjectsReturned:
-                pass
-
-        person.save()
+    person.save()
 
 
 def subscription_success_redirect_url(type, id, data):
@@ -201,7 +176,7 @@ CONTACT_PERSON_UPDATABLE_FIELDS = (
     "location_country",
     "newsletters",
 )
-DATE_2022_LIAISON_META_PROPERTY = "2022_liaison_since"
+LIAISON_SINCE_META_PROPERTY = "liaison_since"
 
 
 def save_contact_information(data):
@@ -238,7 +213,7 @@ def save_contact_information(data):
             # Create a new person if none exists for the email
             data["meta"] = {
                 "subscriptions": {
-                    SUBSCRIPTION_TYPE_AP: {
+                    SUBSCRIPTION_TYPE_PLATFORM: {
                         "date": timezone.now().isoformat(),
                         "subscriber": str(data.pop("subscriber").id),
                     }
@@ -247,10 +222,8 @@ def save_contact_information(data):
             person = Person.objects.create_person(data.pop("email", ""), **data)
             is_new = True
 
-        if person.is_liaison and not person.meta.get(
-            DATE_2022_LIAISON_META_PROPERTY, None
-        ):
-            person.meta[DATE_2022_LIAISON_META_PROPERTY] = timezone.now().isoformat(
+        if person.is_liaison and not person.meta.get(LIAISON_SINCE_META_PROPERTY, None):
+            person.meta[LIAISON_SINCE_META_PROPERTY] = timezone.now().isoformat(
                 timespec="seconds"
             )
             person.save()

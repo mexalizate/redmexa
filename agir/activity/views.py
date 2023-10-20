@@ -223,10 +223,10 @@ def follow_activity_link(request, pk):
     allowed_hosts = {
         s.strip("/").rsplit("/", 1)[-1]
         for s in [
-            settings.MAIN_DOMAIN,
-            settings.API_DOMAIN,
-            settings.FRONT_DOMAIN,
-            settings.NSP_DOMAIN,
+            settings.CAMPAIGN_DOMAIN,
+            settings.PLATFORM_ADMIN_DOMAIN,
+            settings.PLATFORM_FRONT_DOMAIN,
+            settings.ACTIVIST_DOMAIN,
             "https://infos.actionpopulaire.fr",
         ]
     }

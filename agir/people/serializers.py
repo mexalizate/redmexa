@@ -14,7 +14,7 @@ from agir.lib.serializers import FlexibleFieldsMixin, PhoneField, CurrentPersonF
 from agir.lib.utils import is_absolute_url
 from . import models
 from .actions.subscription import (
-    SUBSCRIPTION_TYPE_LFI,
+    SUBSCRIPTION_TYPE_CAMPAIGN,
     SUBSCRIPTION_TYPE_CHOICES,
     subscription_success_redirect_url,
     save_subscription_information,
@@ -66,7 +66,9 @@ class PersonTagSerializer(serializers.ModelSerializer):
 
 class SubscriptionRequestSerializer(serializers.Serializer):
     type = serializers.ChoiceField(
-        choices=SUBSCRIPTION_TYPE_CHOICES, default=SUBSCRIPTION_TYPE_LFI, required=False
+        choices=SUBSCRIPTION_TYPE_CHOICES,
+        default=SUBSCRIPTION_TYPE_CAMPAIGN,
+        required=False,
     )
 
     email = serializers.EmailField(
@@ -93,10 +95,10 @@ class SubscriptionRequestSerializer(serializers.Serializer):
         choices=("municipal", "maire", "departemental", "regional", "consulaire"),
         required=False,
     )
-
     metadata = serializers.DictField(
         required=False, allow_empty=True, child=serializers.CharField(allow_blank=False)
     )
+    origin = serializers.CharField(required=False, allow_blank=True, allow_null=True)
 
     next = serializers.CharField(required=False, allow_blank=True, write_only=True)
 
@@ -105,10 +107,10 @@ class SubscriptionRequestSerializer(serializers.Serializer):
     PERSON_FIELDS = ["location_zip", "first_name", "last_name", "contact_phone"]
 
     def validate_email(self, value):
-        if not subscription_mail_bucket.has_tokens(value):
-            raise serializers.ValidationError(
-                "Si vous n'avez pas encore reçu votre email de validation, attendez quelques instants."
-            )
+        # if not subscription_mail_bucket.has_tokens(value):
+        #     raise serializers.ValidationError(
+        #         "Si vous n'avez pas encore reçu votre email de validation, attendez quelques instants."
+        #     )
         return value
 
     def validate_contact_phone(self, value):

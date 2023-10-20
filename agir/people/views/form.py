@@ -45,7 +45,9 @@ class BasePeopleFormView(UpdateView, ObjectOpengraphMixin):
     def get_meta_image(self):
         if self.person_form_instance.meta_image:
             return self.person_form_instance.meta_image.url
-        return urljoin(settings.FRONT_DOMAIN, static("front/assets/og_image_NSP.jpg"))
+        return urljoin(
+            settings.PLATFORM_FRONT_DOMAIN, static("front/assets/og_image_NSP.jpg")
+        )
 
     def get_success_url(self):
         return reverse(

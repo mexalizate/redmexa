@@ -28,6 +28,7 @@ from .utils.certification import (
 )
 from .utils.supportgroup import get_supportgroup_routes
 from ..front.serializer_utils import RoutesField
+from ..people.actions.subscription import SUBSCRIPTION_TYPE_PLATFORM
 from ..people.models import Person
 
 
@@ -518,18 +519,22 @@ class MemberPersonalInformationSerializer(serializers.ModelSerializer):
 
     def get_subscriber(self, membership):
         meta = membership.person.meta
+
         if (
             not meta
             or "subscriptions" not in meta
-            or "AP" not in meta["subscriptions"]
-            or "subscriber" not in meta["subscriptions"]["AP"]
+            or SUBSCRIPTION_TYPE_PLATFORM not in meta["subscriptions"]
+            or "subscriber" not in meta["subscriptions"][SUBSCRIPTION_TYPE_PLATFORM]
         ):
             return None
+
         subscriber = Person.objects.filter(
-            id=meta["subscriptions"]["AP"]["subscriber"]
+            id=meta["subscriptions"][SUBSCRIPTION_TYPE_PLATFORM]["subscriber"]
         ).first()
+
         if not subscriber:
             return None
+
         return subscriber.display_name
 
     def get_isLiaison(self, membership):

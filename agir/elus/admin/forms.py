@@ -12,7 +12,7 @@ from agir.elus.models import (
 )
 from agir.lib.data import FRANCE_COUNTRY_CODES
 from agir.people.actions.subscription import (
-    SUBSCRIPTION_TYPE_NSP,
+    SUBSCRIPTION_TYPE_ACTIVIST,
     SUBSCRIPTION_TYPE_ADMIN,
 )
 from agir.people.models import PersonEmail, Person
@@ -155,7 +155,7 @@ class MandatForm(forms.ModelForm):
                 "subscriptions": {SUBSCRIPTION_TYPE_ADMIN: {"date": now, "how": "élus"}}
             }
             if self.cleaned_data.get("signataire_appel"):
-                meta["subscriptions"][SUBSCRIPTION_TYPE_NSP] = {"mandat": "manuel"}
+                meta["subscriptions"][SUBSCRIPTION_TYPE_ACTIVIST] = {"mandat": "manuel"}
 
             self.instance.person = Person.objects.create_person(
                 cleaned_data["new_email"],
@@ -176,16 +176,16 @@ class MandatForm(forms.ModelForm):
                     signataire = cleaned_data["signataire_appel"]
                     deja_signataire = (
                         person.meta.get("subscriptions", {})
-                        .get(SUBSCRIPTION_TYPE_NSP, {})
+                        .get(SUBSCRIPTION_TYPE_ACTIVIST, {})
                         .get("mandat")
                         is not None
                     )
                     if signataire and not deja_signataire:
                         person.meta.setdefault("subscriptions", {}).setdefault(
-                            SUBSCRIPTION_TYPE_NSP, {}
+                            SUBSCRIPTION_TYPE_ACTIVIST, {}
                         )["mandat"] = "manuel"
                     elif not signataire and deja_signataire:
-                        del person.meta["subscriptions"][SUBSCRIPTION_TYPE_NSP][
+                        del person.meta["subscriptions"][SUBSCRIPTION_TYPE_ACTIVIST][
                             "mandat"
                         ]
 

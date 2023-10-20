@@ -79,10 +79,10 @@ def groups_to_dicts(queryset):
 
         d["referents"] = " / ".join(referents)
 
-        d["link"] = settings.FRONT_DOMAIN + reverse(
+        d["link"] = settings.PLATFORM_FRONT_DOMAIN + reverse(
             "manage_group", urlconf="agir.api.front_urls", args=[g.id]
         )
-        d["admin_link"] = settings.API_DOMAIN + reverse(
+        d["admin_link"] = settings.PLATFORM_ADMIN_DOMAIN + reverse(
             "admin:groups_supportgroup_change",
             urlconf="agir.api.admin_urls",
             args=[g.id],
@@ -97,13 +97,13 @@ def memberships_to_dict(queryset):
     for m in queryset:
         d = {k: v for k, v in zip(REFERENT_SIMPLE_FIELDS, referent_extractor(m.person))}
         d["group_name"] = m.supportgroup.name
-        d["admin_link"] = settings.API_DOMAIN + reverse(
+        d["admin_link"] = settings.PLATFORM_ADMIN_DOMAIN + reverse(
             "admin:people_person_change", args=[m.person_id]
         )
-        d["group_link"] = settings.FRONT_DOMAIN + reverse(
+        d["group_link"] = settings.PLATFORM_FRONT_DOMAIN + reverse(
             "manage_group", urlconf=front_urls, args=[m.supportgroup_id]
         )
-        d["group_admin_link"] = settings.API_DOMAIN + reverse(
+        d["group_admin_link"] = settings.PLATFORM_ADMIN_DOMAIN + reverse(
             "admin:groups_supportgroup_change", args=[m.supportgroup_id]
         )
 

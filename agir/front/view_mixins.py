@@ -85,7 +85,7 @@ class ObjectOpengraphMixin(SimpleOpengraphMixin):
         url = static("front/assets/og_image_NSP.jpg")
         if hasattr(self.object, "image") and self.object.image:
             url = self.object.image.url
-        return urljoin(settings.FRONT_DOMAIN, url)
+        return urljoin(settings.PLATFORM_FRONT_DOMAIN, url)
 
 
 class ChangeLocationBaseView(UpdateView):

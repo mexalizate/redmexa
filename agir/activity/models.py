@@ -586,7 +586,7 @@ class PushAnnouncement(BaseAPIResource):
 
         image_url = self.image.storage.url(self.image.name)
         if not is_absolute_url(image_url):
-            image_url = settings.FRONT_DOMAIN + image_url
+            image_url = settings.PLATFORM_FRONT_DOMAIN + image_url
 
         return image_url
 

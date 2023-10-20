@@ -493,7 +493,7 @@ class SupportGroup(
 
     def get_meta_image(self):
         if hasattr(self, "image") and self.image:
-            return urljoin(settings.FRONT_DOMAIN, self.image.url)
+            return urljoin(settings.PLATFORM_FRONT_DOMAIN, self.image.url)
 
         # Use content hash as cache key for the auto-generated meta image
         content = ":".join(

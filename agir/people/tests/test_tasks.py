@@ -1,6 +1,7 @@
 from django.test import TestCase
 from django.core import mail
 
+from agir.people.actions.subscription import SUBSCRIPTION_TYPE_CAMPAIGN
 from agir.people.models import Person
 from agir.people import tasks
 
@@ -10,7 +11,7 @@ class PeopleTasksTestCase(TestCase):
         self.person = Person.objects.create_insoumise("me@me.org", create_role=True)
 
     def test_welcome_mail(self):
-        tasks.send_welcome_mail(self.person.pk, type="LFI")
+        tasks.send_welcome_mail(self.person.pk, type=SUBSCRIPTION_TYPE_CAMPAIGN)
 
         self.assertEqual(len(mail.outbox), 1)
         self.assertEqual(mail.outbox[0].recipients(), [self.person.email])
@@ -27,7 +28,7 @@ class PeopleTasksTestCase(TestCase):
         )
         person.role.is_active = False
         person.role.save()
-        tasks.send_welcome_mail(person.pk, type="LFI")
+        tasks.send_welcome_mail(person.pk, type=SUBSCRIPTION_TYPE_CAMPAIGN)
 
         self.assertEqual(len(mail.outbox), 0)
 
@@ -36,6 +37,6 @@ class PeopleTasksTestCase(TestCase):
             "inactiverole@me.org", create_role=False
         )
         person.save()
-        tasks.send_welcome_mail(person.pk, type="LFI")
+        tasks.send_welcome_mail(person.pk, type=SUBSCRIPTION_TYPE_CAMPAIGN)
 
         self.assertEqual(len(mail.outbox), 1)

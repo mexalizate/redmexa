@@ -15,7 +15,7 @@ from agir.lib.tasks import geocode_person
 from agir.people.actions.subscription import (
     save_subscription_information,
     SUBSCRIPTIONS_EMAILS,
-    SUBSCRIPTION_TYPE_AP,
+    SUBSCRIPTION_TYPE_PLATFORM,
 )
 from agir.people.models import Person
 from agir.voting_proxies import tasks
@@ -80,7 +80,7 @@ def create_or_update_voting_proxy(data):
 
         person_data["newsletters"] = data.pop("newsletters", [])
         save_subscription_information(
-            person, SUBSCRIPTION_TYPE_AP, person_data, new=is_new_person
+            person, SUBSCRIPTION_TYPE_PLATFORM, person_data, new=is_new_person
         )
 
         # Update person address if needed
@@ -106,10 +106,10 @@ def create_or_update_voting_proxy(data):
         ]:
             voting_proxy.status = VotingProxy.STATUS_CREATED
             voting_proxy.save()
-    if is_new_person and "welcome" in SUBSCRIPTIONS_EMAILS[SUBSCRIPTION_TYPE_AP]:
+    if is_new_person and "welcome" in SUBSCRIPTIONS_EMAILS[SUBSCRIPTION_TYPE_PLATFORM]:
         from agir.people.tasks import send_welcome_mail
 
-        send_welcome_mail.delay(person.pk, type=SUBSCRIPTION_TYPE_AP)
+        send_welcome_mail.delay(person.pk, type=SUBSCRIPTION_TYPE_PLATFORM)
 
     geocode_person.delay(person.pk)
     data.update(

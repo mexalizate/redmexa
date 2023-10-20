@@ -148,7 +148,7 @@ class PersonQueryset(models.QuerySet):
         return self.filter(Q(role__apnsdevice=None) & Q(role__gcmdevice=None))
 
     def liaisons(self, from_date=None, to_date=None):
-        from agir.people.actions.subscription import DATE_2022_LIAISON_META_PROPERTY
+        from agir.people.actions.subscription import LIAISON_SINCE_META_PROPERTY
 
         liaison_form_submissions = (
             PersonFormSubmission.objects.filter(
@@ -163,7 +163,7 @@ class PersonQueryset(models.QuerySet):
             liaison_date=Coalesce(
                 Subquery(liaison_form_submissions[:1]),
                 Cast(
-                    KeyTextTransform(DATE_2022_LIAISON_META_PROPERTY, "meta"),
+                    KeyTextTransform(LIAISON_SINCE_META_PROPERTY, "meta"),
                     DateTimeField(),
                 ),
                 "created",
