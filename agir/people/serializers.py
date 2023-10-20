@@ -276,7 +276,7 @@ class PersonMandatField(serializers.Field):
         return data
 
 
-class PersonSerializer(FlexibleFieldsMixin, serializers.ModelSerializer):
+class PersonSerializer(serializers.ModelSerializer, FlexibleFieldsMixin):
     id = serializers.UUIDField(read_only=True)
     email = serializers.EmailField(read_only=True)
 
@@ -333,7 +333,9 @@ class PersonSerializer(FlexibleFieldsMixin, serializers.ModelSerializer):
     city = serializers.CharField(
         required=False, allow_blank=True, source="location_city"
     )
-    country = CountryField(required=False, allow_blank=False, default="FR")
+    country = CountryField(
+        required=False, allow_blank=False, default="MX", source="location_country"
+    )
     actionRadius = serializers.IntegerField(
         source="action_radius", required=False, min_value=1, max_value=500
     )

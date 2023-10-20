@@ -207,15 +207,15 @@ const ConnectedUpdateAddressModal = () => {
       }
       setErrors(null);
       setIsUpdating(true);
-      const { error } = await updateProfile(data);
+      const { data: userData, error } = await updateProfile(data);
       setIsUpdating(false);
       if (error) {
         setErrors(error);
         return;
       }
-      mutate("/api/session/", (session) => ({
+      await mutate((session) => ({
         ...session,
-        user: { ...session.user, zip },
+        user: { ...session.user, ...userData },
       }));
 
       close();
