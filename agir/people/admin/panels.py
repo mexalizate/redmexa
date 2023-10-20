@@ -24,7 +24,6 @@ from django.utils.translation import gettext_lazy as _
 from rangefilter.filters import DateRangeFilter
 
 from agir.authentication.models import Role
-from agir.elus.models import types_elus
 from agir.lib.admin.filters import (
     DepartementListFilter,
     RegionListFilter,
@@ -129,7 +128,7 @@ class PersonAdmin(DisplayContactPhoneMixin, CenterOnFranceMixin, OSMGeoAdmin):
         ),
         (
             _("Profil"),
-            {"fields": ("gender", "date_of_birth", "tags", "mandats", "image")},
+            {"fields": ("gender", "date_of_birth", "tags", "image")},
         ),
         (
             _("Contact et adresse"),
@@ -177,7 +176,6 @@ class PersonAdmin(DisplayContactPhoneMixin, CenterOnFranceMixin, OSMGeoAdmin):
         "location_departement_id",
         "coordinates_type",
         "coordinates_value",
-        "mandats",
         "location_citycode",
         "form_submissions_link",
         "rsvp_link",
@@ -374,29 +372,6 @@ class PersonAdmin(DisplayContactPhoneMixin, CenterOnFranceMixin, OSMGeoAdmin):
             add_email_link=reverse("admin:people_person_addemail", args=[obj.pk]),
             options=options,
         )
-
-    def mandats(self, obj):
-        if obj is None:
-            return "-"
-
-        mandats = []
-
-        for attr, model in list(types_elus.items()):
-            for m in model.objects.filter(person=obj):
-                mandats.append(
-                    (
-                        reverse(
-                            f"admin:elus_mandat{attr.replace('_', '')}_change",
-                            args=(m.id,),
-                        ),
-                        m.titre_complet(conseil_avant=True),
-                    )
-                )
-
-        if not mandats:
-            return "-"
-
-        return format_html_join(mark_safe("<br>"), '<a href="{}">{}</a>', mandats)
 
     def form_submissions_link(self, obj):
         return format_html(

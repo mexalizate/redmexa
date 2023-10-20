@@ -212,7 +212,6 @@ class ProfileFormTestCase(TestCase):
             "location_zip": "75002",
             "location_country": "FR",
             "contact_phone": "+33612345678",
-            "mandates": "[]",
         }
 
         self.person = Person.objects.create_insoumise(

@@ -88,7 +88,6 @@ class ConfirmSubscriptionView(View):
         "metadata",
         "referer",
         "referrer",
-        "mandat",
         "android",
         "ios",
         "next",

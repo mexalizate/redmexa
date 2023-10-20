@@ -27,13 +27,6 @@ export const NEWSLETTERS = {
     selected: true,
     visible: true,
   },
-  ELUES: {
-    label: "Les informations destinées aux élu·es",
-    value: "ELUES",
-    visible: (person) =>
-      !!person &&
-      (person.newsletters.includes("ELUES") || person.membreReseauElus),
-  },
   LFI_jeunes_insoumise: {
     label: "Les informations destinées aux Jeunes insoumis·es",
     value: "LFI_jeunes_insoumises",

@@ -41,9 +41,8 @@ from agir.lib.models import (
 from agir.lib.search import PrefixSearchQuery
 from agir.lib.utils import generate_token_params, resize_and_autorotate
 from . import metrics
-from .model_fields import MandatesField, ValidatedPhoneNumberField
+from .model_fields import ValidatedPhoneNumberField
 from .person_forms.models import *
-from ..elus.models import StatutMandat
 from ..events.models import CustomDateTimeField
 from ..lib.display import genrer
 from ..lib.form_fields import CustomJSONEncoder
@@ -105,42 +104,6 @@ class PersonQueryset(models.QuerySet):
             return self.filter(q)
         else:
             return self.filter(q | Q(contact_phone__icontains=query[1:]))
-
-    def annotate_elus(self, current=True, status=None):
-        from agir.elus.models import types_elus
-
-        annotations = {
-            f"elu_{label}": klass.objects.filter(person_id=models.OuterRef("id"))
-            for label, klass in types_elus.items()
-        }
-
-        if status:
-            annotations = {
-                label: subq.filter(statut=status) for label, subq in annotations.items()
-            }
-        else:
-            annotations = {
-                label: subq.exclude(statut=StatutMandat.FAUX)
-                for label, subq in annotations.items()
-            }
-
-        if current:
-            today = timezone.now().date()
-            annotations = {
-                label: subq.filter(dates__contains=today)
-                for label, subq in annotations.items()
-            }
-
-        return self.annotate(
-            **{label: models.Exists(subq) for label, subq in annotations.items()}
-        )
-
-    def elus(self, current=True):
-        from agir.elus.models import types_elus
-
-        return self.annotate_elus(current).filter(
-            reduce(or_, (Q(**{f"elu_{label}": True}) for label in types_elus))
-        )
 
     def app(self, installed=True):
         if installed:
@@ -413,28 +376,6 @@ class Person(
 
     is_political_support = models.BooleanField(_("Soutien politique"), default=False)
 
-    MEMBRE_RESEAU_INCONNU = "I"
-    MEMBRE_RESEAU_SOUHAITE = "S"
-    MEMBRE_RESEAU_OUI = "O"
-    MEMBRE_RESEAU_NON = "N"
-    MEMBRE_RESEAU_EXCLUS = "E"
-    MEMBRE_RESEAU_CHOICES = (
-        (MEMBRE_RESEAU_INCONNU, "Inconnu / Non pertinent"),
-        (MEMBRE_RESEAU_SOUHAITE, "Souhaite faire partie du réseau des élus"),
-        (MEMBRE_RESEAU_OUI, "Fait partie du réseau des élus"),
-        (MEMBRE_RESEAU_NON, "Ne souhaite pas faire partie du réseau des élus"),
-        (MEMBRE_RESEAU_EXCLUS, "Exclus du réseau"),
-    )
-    membre_reseau_elus = models.CharField(
-        _("Membre du réseau des élus"),
-        max_length=1,
-        blank=False,
-        null=False,
-        choices=MEMBRE_RESEAU_CHOICES,
-        default=MEMBRE_RESEAU_INCONNU,
-        help_text="Pertinent uniquement si la personne a un ou plusieurs mandats électoraux.",
-    )
-
     Newsletter = NewsletterChoices
 
     MAIN_NEWSLETTER_CHOICES = (
@@ -554,8 +495,6 @@ class Person(
         _("Genre"), max_length=1, blank=True, choices=GENDER_CHOICES
     )
     date_of_birth = models.DateField(_("Date de naissance"), null=True, blank=True)
-
-    mandates = MandatesField(_("Mandats électoraux"), default=list, blank=True)
 
     meta = JSONField(
         _("Autres données"), default=dict, blank=True, encoder=CustomJSONEncoder

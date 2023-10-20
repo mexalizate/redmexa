@@ -27,19 +27,7 @@ def presentation_liste(liste):
         ),
     )
 
-    liste_comptes = format_html_join(
-        mark_safe("<br>"),
-        '<a href="{}">{}</a> <a href="{}" class="button">créer un mandat pour cette personne</a>',
-        (
-            (
-                reverse("admin:people_person_change", args=[p.pk]),
-                str(p),
-                reverse("admin:elus_mandatmunicipal_add")
-                + f"?person={p.pk}&commune={code}",
-            )
-            for p in people
-        ),
-    )
+    liste_comptes = ""
 
     return format_html(
         "<p>{liste_candidats}</p><p>{liste_comptes}</p>",

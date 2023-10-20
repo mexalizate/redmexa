@@ -9,10 +9,6 @@ from phonenumber_field.phonenumber import to_python
 from agir.geodata.geocoding import FRENCH_COUNTRY_CODES
 
 
-class MandatesField(JSONField):
-    pass
-
-
 class ValidatedPhoneNumberDescriptor(PhoneNumberDescriptor):
     def __init__(self, field, validation_field_name, unverified_value):
         super().__init__(field)

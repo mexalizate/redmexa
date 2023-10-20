@@ -109,7 +109,6 @@ const OTHER_ENTRIES = [
   "cagnottes/progress",
   "donations/donationForm",
   "donations/spendingRequestLib",
-  "elus/parrainages",
   "front/legacyPages",
   "front/richEditor",
   "groups/groupSelector",

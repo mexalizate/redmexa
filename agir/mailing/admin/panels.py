@@ -119,21 +119,6 @@ class SegmentAdmin(CenterOnFranceMixin, OSMGeoAdmin):
                 )
             },
         ),
-        (
-            "Réseau des élus",
-            {
-                "fields": (
-                    "elu",
-                    "elu_status",
-                    "elu_municipal",
-                    "elu_departemental",
-                    "elu_regional",
-                    "elu_consulaire",
-                    "elu_depute",
-                    "elu_depute_europeen",
-                )
-            },
-        ),
         ("Combiner des segments", {"fields": ("add_segments", "exclude_segments")}),
         ("Abonnés", {"fields": ("subscribers_count",)}),
     )
@@ -162,7 +147,6 @@ class SegmentAdmin(CenterOnFranceMixin, OSMGeoAdmin):
         list_filters.TagListFilter,
         list_filters.ExcludedTagListFilter,
         list_filters.QualificationListFilter,
-        ("elu", admin.EmptyFieldListFilter),
     )
     list_display = (
         "name",
@@ -170,7 +154,6 @@ class SegmentAdmin(CenterOnFranceMixin, OSMGeoAdmin):
         "supportgroup_subtypes_list",
         "tags_list",
         "subscriber_list_link",
-        "has_elu",
     )
 
     @admin.display(description="Types de groupe")
@@ -216,10 +199,6 @@ class SegmentAdmin(CenterOnFranceMixin, OSMGeoAdmin):
             reverse("admin:people_person_changelist"),
             str(instance.pk),
         )
-
-    @admin.display(description="Elu·es", boolean=True)
-    def has_elu(self, instance):
-        return bool(instance.elu)
 
     class Media:
         pass

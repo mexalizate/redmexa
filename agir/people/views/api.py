@@ -98,7 +98,6 @@ class PersonProfileAPIView(RetrieveUpdateAPIView):
                 "country",
                 "contactPhone",
                 "isPoliticalSupport",
-                "mandat",
                 "newsletters",
                 "actionRadius",
                 "hasLocation",

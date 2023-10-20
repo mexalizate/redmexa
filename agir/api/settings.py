@@ -155,7 +155,6 @@ INSTALLED_APPS = [
     "agir.geodata",
     "agir.legacy",
     "agir.telegram",
-    "agir.elus.apps.ElusConfig",
     "agir.gestion.apps.GestionConfig",
     "agir.presidentielle2022",
     "agir.voting_proxies",
