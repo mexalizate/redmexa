@@ -90,6 +90,8 @@ class Migration(migrations.Migration):
                         on_delete=django.db.models.deletion.PROTECT,
                         to="geodata.mexicanstate",
                         verbose_name="State",
+                        related_name="municipios",
+                        related_query_name="municipio",
                     ),
                 ),
             ],
