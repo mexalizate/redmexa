@@ -19,9 +19,9 @@ urlpatterns = [
     path("", include("agir.voting_proxies.urls")),
     path("", include("agir.elections.urls")),
     path("", include("agir.event_requests.urls")),
+    path("", include("agir.geodata.urls")),
     path("cagnottes/", include("agir.cagnottes.urls")),
     path("ilb/", include("agir.ilb.urls")),
     path("carte/", include("agir.carte.urls")),
-    path("geodata/", include("agir.geodata.urls")),
     path("data-france/", include("data_france.urls")),
 ]

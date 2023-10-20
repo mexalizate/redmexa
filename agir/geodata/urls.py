@@ -6,12 +6,12 @@ app_name = "geodata"
 
 urlpatterns = [
     path(
-        "search/mexican_municipio/",
+        "api/geodata/search/mexican_municipio/",
         views.MexicanMunicipioSearchView.as_view(),
         name="search_mexican_municipio",
     ),
     path(
-        "search/us_county/",
+        "api/geodata/search/us_county/",
         views.USCountySearchView.as_view(),
         name="search_us_county",
     ),
