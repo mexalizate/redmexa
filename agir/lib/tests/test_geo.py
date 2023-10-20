@@ -19,7 +19,7 @@ def with_json_response(file_name):
     def wrapper_maker(func):
         @wraps(func)
         def wrapper(*args, **kwargs):
-            with patch("agir.lib.geo.requests") as requests:
+            with patch("agir.geodata.geocoding.requests") as requests:
                 res = requests.get.return_value = Mock()
                 res.status_code = 200
                 with open(JSON_DIR / file_name) as file:
@@ -34,7 +34,7 @@ def with_json_response(file_name):
 def with_no_request(f=None):
     def wrapper_maker(func):
         def wrapper(*args, **kwargs):
-            with patch("agir.lib.geo.requests") as requests_patch:
+            with patch("agir.geodata.geocoding.requests") as requests_patch:
                 res = requests_patch.get.side_effect = requests.ConnectionError
                 func(*args, **kwargs)
 

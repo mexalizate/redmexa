@@ -346,7 +346,7 @@ class VotingProxyCreateAPITestCase(APITestCase):
         self.assertIn("zip", res.data)
         self.assertIn("city", res.data)
 
-    @patch("agir.lib.geo.geocode_element", autospec=True)
+    @patch("agir.geodata.geocoding.geocode_element", autospec=True)
     def test_can_create_with_valid_data(self, geocode_france):
         data = {**self.valid_data}
         self.assertEqual(
@@ -369,7 +369,7 @@ class VotingProxyCreateAPITestCase(APITestCase):
             1,
         )
 
-    @patch("agir.lib.geo.geocode_element", autospec=True)
+    @patch("agir.geodata.geocoding.geocode_element", autospec=True)
     def test_can_update_with_valid_data(self, geocode_france):
         VotingProxy.objects.create(
             **{
