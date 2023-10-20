@@ -1,19 +1,16 @@
 from datetime import timedelta
 
 from django.contrib.gis.db.models import MultiPolygonField
-from django.contrib.postgres.fields import DateRangeField
 from django.db import models
-from django.db.models import Q, Sum
+from django.db.models import Q
 from django.utils.timezone import now
+from django.utils.translation import gettext_lazy as _
 from django_countries.fields import CountryField
 from nuntius.models import BaseSegment, CampaignSentStatusType
 
-from agir.elus.models import StatutMandat
 from agir.events.models import RSVP
 from agir.groups.models import Membership, SupportGroup
-from agir.lib import data
 from agir.lib.model_fields import ChoiceArrayField
-from agir.payments.model_fields import AmountField
 from agir.payments.models import Subscription, Payment
 from agir.people.models import (
     Person,
@@ -23,7 +20,7 @@ from agir.people.models import (
 __all__ = ["Segment"]
 
 
-DATE_HELP_TEXT = (
+DATE_HELP_TEXT = _(
     "Écrivez en toute lettre JJ/MM/AAAA plutôt qu'avec le widget, ça ira plus vite."
 )
 
@@ -43,60 +40,58 @@ class Segment(BaseSegment, models.Model):
     GA_STATUS_MANAGER = "M"
     GA_STATUS_REFERENT = "R"
     GA_STATUS_CHOICES = (
-        (GA_STATUS_NOT_MEMBER, "Non membres de GA"),
-        (GA_STATUS_MEMBER, "Membres de GA"),
-        (GA_STATUS_MANAGER, "Animateur·ices et gestionnaires de GA"),
-        (GA_STATUS_REFERENT, "Animateur·ices de GA"),
+        (GA_STATUS_NOT_MEMBER, _("Non membres de GA")),
+        (GA_STATUS_MEMBER, _("Membres de GA")),
+        (GA_STATUS_MANAGER, _("Animateur·ices et gestionnaires de GA")),
+        (GA_STATUS_REFERENT, _("Animateur·ices de GA")),
     )
 
-    name = models.CharField("Nom", max_length=255)
+    name = models.CharField(_("Nom"), max_length=255)
 
     tags = models.ManyToManyField(
         "people.PersonTag",
-        help_text="Limiter le segment aux personnes ayant les tags sélectionnés",
+        help_text=_("Limiter le segment aux personnes ayant les tags sélectionnés"),
         blank=True,
     )
     excluded_tags = models.ManyToManyField(
         "people.PersonTag",
-        verbose_name="Tags à exclure",
-        help_text="Limite le segment aux personnes n'ayant pas les tags sélectionnés "
-        "(l'exclusion d'un tag aura la précédence sur son inclusion)",
+        verbose_name=_("Tags à exclure"),
+        help_text=_(
+            "Limite le segment aux personnes n'ayant pas les tags sélectionnés "
+            "(l'exclusion d'un tag aura la précédence sur son inclusion)"
+        ),
         related_name="+",
         blank=True,
     )
 
     qualifications = models.ManyToManyField(
         "people.Qualification",
-        verbose_name="Type de statut",
+        verbose_name=_("Type de statut"),
         blank=True,
     )
     person_qualification_status = ChoiceArrayField(
         models.CharField(choices=PersonQualification.Status.choices, max_length=1),
-        verbose_name="État du statut",
-        help_text="Si un type de statut est indiqué, limiter aux personnes dont les statuts de ce type sont dans l'un des états choisis",
+        verbose_name=_("État du statut"),
+        help_text=_(
+            "Si un type de statut est indiqué, limiter aux personnes dont les statuts de ce type sont dans l'un des états choisis"
+        ),
         default=list,
         blank=True,
         null=False,
     )
 
     is_political_support = models.BooleanField(
-        "Soutiens politiques", null=True, blank=True, default=None
-    )
-    is_2022 = models.BooleanField(
-        "Soutiens Mélenchon 2022", null=True, blank=True, default=None
-    )
-    is_insoumise = models.BooleanField(
-        "Anciens soutiens de la France insoumise", null=True, blank=True, default=None
+        _("Soutiens politiques"), null=True, blank=True, default=None
     )
 
     newsletters = ChoiceArrayField(
         models.CharField(choices=Person.Newsletter.choices, max_length=255),
         default=default_newsletters,
-        help_text="Inclure les personnes abonnées aux newsletters suivantes.",
+        help_text=_("Inclure les personnes abonnées aux newsletters suivantes."),
         blank=True,
     )
     supportgroup_status = models.CharField(
-        "Limiter aux membres de groupes ayant ce statut",
+        _("Limiter aux membres de groupes ayant ce statut"),
         max_length=1,
         choices=GA_STATUS_CHOICES,
         blank=True,
@@ -107,59 +102,63 @@ class Segment(BaseSegment, models.Model):
     )
     supportgroups = models.ManyToManyField(
         "groups.SupportGroup",
-        verbose_name="Limiter aux membres d'un de ces groupes",
+        verbose_name=_("Limiter aux membres d'un de ces groupes"),
         blank=True,
     )
     supportgroup_types = ChoiceArrayField(
         models.CharField(
             choices=SupportGroup.TYPE_CHOICES, max_length=len(SupportGroup.TYPE_CHOICES)
         ),
-        verbose_name="Limiter aux membres des groupes d'un ces types",
+        verbose_name=_("Limiter aux membres des groupes d'un ces types"),
         default=list,
         blank=True,
     )
     supportgroup_subtypes = models.ManyToManyField(
         "groups.SupportGroupSubtype",
-        verbose_name="Limiter aux membres des groupes d'un de ces sous-types",
+        verbose_name=_("Limiter aux membres des groupes d'un de ces sous-types"),
         blank=True,
-        help_text="Ce filtre ne sera pas appliqué lorsque le filtre "
-        "'Limiter aux membres d'un de ces groupes' est actif",
+        help_text=_(
+            "Ce filtre ne sera pas appliqué lorsque le filtre "
+            "'Limiter aux membres d'un de ces groupes' est actif"
+        ),
     )
     events = models.ManyToManyField(
         "events.Event",
-        verbose_name="Limiter aux participant⋅e⋅s à un des événements",
+        verbose_name=_("Limiter aux participant⋅e⋅s à un des événements"),
         blank=True,
     )
     excluded_events = models.ManyToManyField(
         "events.Event",
-        verbose_name="Exclure les participant⋅e⋅s à un des événements",
+        verbose_name=_("Exclure les participant⋅e⋅s à un des événements"),
         related_name="+",
         related_query_name="+",
         blank=True,
     )
     events_subtypes = models.ManyToManyField(
         "events.EventSubtype",
-        verbose_name="Limiter aux participant⋅e⋅s à un événements de ce type",
+        verbose_name=_("Limiter aux participant⋅e⋅s à un événements de ce type"),
         blank=True,
     )
     events_start_date = models.DateTimeField(
-        "Limiter aux participant⋅e⋅s à des événements commençant après cette date",
+        _("Limiter aux participant⋅e⋅s à des événements commençant après cette date"),
         blank=True,
         null=True,
     )
     events_end_date = models.DateTimeField(
-        "Limiter aux participant⋅e⋅s à des événements terminant avant cette date",
+        _("Limiter aux participant⋅e⋅s à des événements terminant avant cette date"),
         blank=True,
         null=True,
     )
     events_organizer = models.BooleanField(
-        "Limiter aux organisateurices (sans effet si pas d'autres filtres événements)",
+        _(
+            "Limiter aux organisateurices (sans effet si pas d'autres filtres événements)"
+        ),
         blank=True,
         default=False,
     )
 
     draw_status = models.BooleanField(
-        "Limiter aux gens dont l'inscription au tirage au sort est",
+        _("Limiter aux gens dont l'inscription au tirage au sort est"),
         null=True,
         blank=True,
         default=None,
@@ -167,46 +166,45 @@ class Segment(BaseSegment, models.Model):
 
     forms = models.ManyToManyField(
         "people.PersonForm",
-        verbose_name="A répondu à au moins un de ces formulaires",
+        verbose_name=_("A répondu à au moins un de ces formulaires"),
         blank=True,
         related_name="+",
     )
 
     polls = models.ManyToManyField(
         "polls.Poll",
-        verbose_name="A participé à au moins une de ces consultations",
+        verbose_name=_("A participé à au moins une de ces consultations"),
         blank=True,
         related_name="+",
     )
 
-    countries = CountryField("Limiter aux pays", multiple=True, blank=True)
-    departements = ChoiceArrayField(
-        models.CharField(choices=data.departements_choices, max_length=3),
-        verbose_name="Limiter aux départements (calcul à partir du code postal)",
-        default=list,
-        blank=True,
-    )
+    countries = CountryField(_("Limiter aux pays"), multiple=True, blank=True)
+
     area = MultiPolygonField(
-        "Limiter à un territoire définit manuellement", blank=True, null=True
+        _("Limiter à un territoire définit manuellement"), blank=True, null=True
     )
 
     campaigns = models.ManyToManyField(
         "nuntius.Campaign",
         related_name="+",
-        verbose_name="Limiter aux personnes ayant reçu une des campagnes",
+        verbose_name=_("Limiter aux personnes ayant reçu une des campagnes"),
         blank=True,
     )
 
     last_open = models.IntegerField(
-        "Limiter aux personnes ayant ouvert un email envoyé au court de derniers jours",
-        help_text="Indiquer le nombre de jours",
+        _(
+            "Limiter aux personnes ayant ouvert un email envoyé au court de derniers jours"
+        ),
+        help_text=_("Indiquer le nombre de jours"),
         blank=True,
         null=True,
     )
 
     last_click = models.IntegerField(
-        "Limiter aux personnes ayant cliqué dans un email envoyé au court des derniers jours",
-        help_text="Indiquer le nombre de jours",
+        _(
+            "Limiter aux personnes ayant cliqué dans un email envoyé au court des derniers jours"
+        ),
+        help_text=_("Indiquer le nombre de jours"),
         blank=True,
         null=True,
     )
@@ -217,120 +215,59 @@ class Segment(BaseSegment, models.Model):
     FEEDBACK_NOT_CLICKED = 4
     FEEDBACK_OPEN_NOT_CLICKED = 5
     FEEDBACK_CHOICES = (
-        (FEEDBACK_OPEN, "Personnes ayant ouvert"),
-        (FEEDBACK_CLICKED, "Personnes ayant cliqué"),
-        (FEEDBACK_NOT_OPEN, "Personnes n'ayant pas ouvert"),
-        (FEEDBACK_NOT_CLICKED, "Personnes n'ayant pas cliqué"),
-        (FEEDBACK_OPEN_NOT_CLICKED, "Personnes ayant ouvert mais pas cliqué"),
+        (FEEDBACK_OPEN, _("Personnes ayant ouvert")),
+        (FEEDBACK_CLICKED, _("Personnes ayant cliqué")),
+        (FEEDBACK_NOT_OPEN, _("Personnes n'ayant pas ouvert")),
+        (FEEDBACK_NOT_CLICKED, _("Personnes n'ayant pas cliqué")),
+        (FEEDBACK_OPEN_NOT_CLICKED, _("Personnes ayant ouvert mais pas cliqué")),
     )
 
     campaigns_feedback = models.PositiveSmallIntegerField(
-        "Limiter en fonction de la réaction à ces campagnes",
+        _("Limiter en fonction de la réaction à ces campagnes"),
         blank=True,
         null=True,
         choices=FEEDBACK_CHOICES,
-        help_text="Aucun effet si aucune campagne n'est sélectionnée dans le champ précédent",
+        help_text=_(
+            "Aucun effet si aucune campagne n'est sélectionnée dans le champ précédent"
+        ),
     )
 
     registration_date = models.DateTimeField(
-        "Limiter aux membres inscrit⋅e⋅s après cette date", blank=True, null=True
+        _("Limiter aux membres inscrit⋅e⋅s après cette date"), blank=True, null=True
     )
 
     registration_date_before = models.DateTimeField(
-        "Limiter aux membres inscrit⋅e⋅s avant cette date", blank=True, null=True
+        _("Limiter aux membres inscrit⋅e⋅s avant cette date"), blank=True, null=True
     )
 
     registration_duration = models.IntegerField(
-        "Limiter aux membres inscrit⋅e⋅s depuis au moins un certain nombre d'heures",
-        help_text="Indiquer le nombre d'heures",
+        _("Limiter aux membres inscrit⋅e⋅s depuis au moins un certain nombre d'heures"),
+        help_text=_("Indiquer le nombre d'heures"),
         blank=True,
         null=True,
     )
 
     last_login = models.DateTimeField(
-        "Limiter aux membres s'étant connecté⋅e pour la dernière fois après cette date",
+        _(
+            "Limiter aux membres s'étant connecté⋅e pour la dernière fois après cette date"
+        ),
         blank=True,
         null=True,
     )
 
     gender = models.CharField(
-        "Genre", max_length=1, blank=True, choices=Person.GENDER_CHOICES
+        _("Genre"), max_length=1, blank=True, choices=Person.GENDER_CHOICES
     )
 
     born_after = models.DateField(
-        "Personnes nées après le", blank=True, null=True, help_text=DATE_HELP_TEXT
+        _("Personnes nées après le"), blank=True, null=True, help_text=DATE_HELP_TEXT
     )
     born_before = models.DateField(
-        "Personnes nées avant le", blank=True, null=True, help_text=DATE_HELP_TEXT
-    )
-
-    donation_after = models.DateField(
-        "A fait au moins un don (don mensuel inclus) après le",
-        blank=True,
-        null=True,
-        help_text=DATE_HELP_TEXT,
-    )
-    donation_not_after = models.DateField(
-        "N'a pas fait de don (don mensuel inclus) depuis le",
-        blank=True,
-        null=True,
-        help_text=DATE_HELP_TEXT,
-    )
-    donation_total_min = AmountField(
-        "Montant total des dons supérieur ou égal à", blank=True, null=True
-    )
-    donation_total_max = AmountField(
-        "Montant total des dons inférieur ou égal à", blank=True, null=True
-    )
-    donation_total_range = DateRangeField(
-        "Pour le filtre de montant total, prendre uniquement en compte les dons entre ces deux dates",
-        blank=True,
-        null=True,
-        help_text="Écrire sous la forme JJ/MM/AAAA. La date de début est incluse, pas la date de fin.",
+        _("Personnes nées avant le"), blank=True, null=True, help_text=DATE_HELP_TEXT
     )
 
     subscription = models.BooleanField(
         "A une souscription mensuelle active", blank=True, null=True
-    )
-
-    ELUS_NON = "N"
-    ELUS_MEMBRE_RESEAU = "M"
-    ELUS_REFERENCE = "R"
-    ELUS_SAUF_EXCLUS = "E"
-    ELUS_CHOICES = (
-        ("", "Peu importe"),
-        (ELUS_MEMBRE_RESEAU, "Uniquement les membres du réseau des élu·es"),
-        (ELUS_SAUF_EXCLUS, "Tous les élu·es, sauf les exclus du réseau"),
-        (
-            ELUS_REFERENCE,
-            "Les membres du réseau plus tout ceux à qui on a pas encore demandé",
-        ),
-    )
-
-    elu = models.CharField(
-        "Est un·e élu·e", max_length=1, choices=ELUS_CHOICES, blank=True
-    )
-    elu_status = models.CharField(
-        "Statut",
-        max_length=3,
-        choices=StatutMandat.choices,
-        default=None,
-        null=True,
-        blank=True,
-        help_text="Indique la qualité de l'information d'un·e élu⋅e, indépendamment des questions politiques et de"
-        " son appartenance au réseau des élus. Une valeur « Vérifié » signifie que : 1) il a été vérifié que le mandat"
-        " existe réellement et 2) le compte éventuellement associé appartient bien à la personne élue.",
-    )
-
-    elu_municipal = models.BooleanField("Avec un mandat municipal", default=True)
-    elu_departemental = models.BooleanField(
-        "Avec un mandat départemental", default=True
-    )
-    elu_regional = models.BooleanField("Avec un mandat régional", default=True)
-    elu_consulaire = models.BooleanField("Avec un mandat consulaire", default=True)
-    elu_depute = models.BooleanField("Avec un mandat de député", default=True)
-    elu_depute_europeen = models.BooleanField(
-        "avec un mandat de député européen", default=True
     )
 
     exclude_segments = models.ManyToManyField(
@@ -505,46 +442,6 @@ class Segment(BaseSegment, models.Model):
 
         return query
 
-    def apply_mandat_filters(self, query):
-        if not self.elu:
-            return query
-
-        if self.elu == Segment.ELUS_MEMBRE_RESEAU:
-            query &= Q(membre_reseau_elus=Person.MEMBRE_RESEAU_OUI)
-        elif self.elu == Segment.ELUS_SAUF_EXCLUS:
-            query &= ~Q(membre_reseau_elus=Person.MEMBRE_RESEAU_EXCLUS)
-        elif self.elu == Segment.ELUS_REFERENCE:
-            query &= ~Q(
-                membre_reseau_elus__in=[
-                    Person.MEMBRE_RESEAU_EXCLUS,
-                    Person.MEMBRE_RESEAU_NON,
-                ]
-            )
-
-        elu_filters = [
-            Q(**{elu_filter: True})
-            for elu_filter in [
-                "elu_municipal",
-                "elu_departemental",
-                "elu_regional",
-                "elu_consulaire",
-                "elu_depute",
-                "elu_depute_europeen",
-            ]
-            if getattr(self, elu_filter)
-        ]
-
-        if not elu_filters:
-            return query
-
-        q_mandats = Q()
-        for elu_filter in elu_filters:
-            q_mandats |= elu_filter
-
-        query &= q_mandats
-
-        return query
-
     def get_subscribers_q(self):
         # ne pas inclure les rôles inactifs dans les envois de mail
         q = ~Q(role__is_active=False)
@@ -555,16 +452,6 @@ class Segment(BaseSegment, models.Model):
 
         if self.is_political_support is not None:
             q = q & Q(is_political_support=self.is_political_support)
-
-        if self.is_insoumise:
-            q = q & Q(meta__political_support__is_insoumise=True)
-        elif self.is_insoumise == False:
-            q = q & ~Q(meta__political_support__is_insoumise=True)
-
-        if self.is_2022:
-            q = q & Q(meta__political_support__is_2022=True)
-        elif self.is_2022 == False:
-            q = q & ~Q(meta__political_support__is_2022=True)
 
         q = self.apply_tag_filters(q)
 
@@ -624,9 +511,6 @@ class Segment(BaseSegment, models.Model):
         if len(self.countries) > 0:
             q = q & Q(location_country__in=self.countries)
 
-        if len(self.departements) > 0:
-            q = q & Q(data.filtre_departements(*self.departements))
-
         if self.area is not None:
             q = q & Q(coordinates__intersects=self.area)
 
@@ -651,54 +535,16 @@ class Segment(BaseSegment, models.Model):
         if self.born_before is not None:
             q = q & Q(date_of_birth__lt=self.born_before)
 
-        if self.donation_after is not None:
-            q = q & Q(payments__created__gt=self.donation_after, **DONATION_FILTER)
-
-        if self.donation_not_after is not None:
-            q = q & ~Q(payments__created__gt=self.donation_not_after, **DONATION_FILTER)
-
-        if self.donation_total_min or self.donation_total_max:
-            donation_range = (
-                {
-                    "payments__created__gt": self.donation_total_range.lower,
-                    "payments__created__lt": self.donation_total_range.upper,
-                }
-                if self.donation_total_range
-                else {}
-            )
-            annotated_qs = Person.objects.annotate(
-                donation_total=Sum(
-                    "payments__price", filter=Q(**DONATION_FILTER, **donation_range)
-                )
-            )
-
-            if self.donation_total_min:
-                annotated_qs = annotated_qs.filter(
-                    donation_total__gte=self.donation_total_min
-                )
-
-            if self.donation_total_max:
-                annotated_qs = annotated_qs.filter(
-                    donation_total__lte=self.donation_total_max
-                )
-
-            q = q & Q(id__in=annotated_qs.values_list("id"))
-
         if self.subscription is not None:
             if self.subscription:
                 q = q & Q(subscriptions__status=Subscription.STATUS_ACTIVE)
             else:
                 q = q & ~Q(subscriptions__status=Subscription.STATUS_ACTIVE)
 
-        q = self.apply_mandat_filters(q)
-
         return q
 
     def _get_own_filters_queryset(self):
         qs = Person.objects.all()
-
-        if self.elu:
-            qs = qs.annotate_elus(status=self.elu_status)
 
         return qs.filter(self.get_subscribers_q()).filter(emails___bounced=False)
 
@@ -724,9 +570,6 @@ class Segment(BaseSegment, models.Model):
 
     def is_subscriber(self, person):
         qs = Person.objects.filter(pk=person.pk)
-        if self.elu:
-            qs = qs.annotate_elus()
-
         qs = qs.filter(self.get_subscribers_q())
         is_subscriber = qs.exists()
 
