@@ -13,6 +13,7 @@ from django.utils.html import format_html
 from django.utils.translation import gettext_lazy as _
 
 from agir.lib.form_components import HalfCol, FullCol, ThirdCol, TwoThirdCol
+from agir.lib.form_fields import MexicanMunicipioField
 from agir.lib.form_mixins import TagMixin, MetaFieldsMixin, ImageFormMixin
 from agir.lib.forms import MediaInHead
 from agir.lib.models import RE_FRENCH_ZIPCODE
@@ -41,6 +42,10 @@ def cut_list(list, parts):
 
 class PersonalInformationsForm(ImageFormMixin, forms.ModelForm):
     image_field = "image"
+    municipio = MexicanMunicipioField(
+        label=_("Municipalité mexicaine d'origine"),
+        required=False,
+    )
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -137,6 +142,7 @@ class PersonalInformationsForm(ImageFormMixin, forms.ModelForm):
                             Field("action_radius", min=1, max=500, step=1),
                             css_class="field-with-help",
                         ),
+                        FullCol("municipio"),
                     ),
                 ),
                 HalfCol(
@@ -149,29 +155,33 @@ class PersonalInformationsForm(ImageFormMixin, forms.ModelForm):
     def clean(self):
         super().clean()
 
-        if self.cleaned_data.get("location_country") == "FR":
-            if self.cleaned_data["location_zip"] == "":
-                self.add_error(
-                    "location_zip",
-                    forms.ValidationError(
-                        self.fields["location_zip"].error_messages["required"],
-                        code="required",
-                    ),
-                )
-            elif not RE_FRENCH_ZIPCODE.match(self.cleaned_data["location_zip"]):
-                self.add_error(
-                    "location_zip",
-                    forms.ValidationError(
-                        _("Merci d'indiquer un code postal valide"), code="invalid"
-                    ),
-                )
+        if self.cleaned_data["location_zip"] == "":
+            self.add_error(
+                "location_zip",
+                forms.ValidationError(
+                    self.fields["location_zip"].error_messages["required"],
+                    code="required",
+                ),
+            )
+
+        if self.cleaned_data.get(
+            "location_country"
+        ) == "FR" and not RE_FRENCH_ZIPCODE.match(self.cleaned_data["location_zip"]):
+            self.add_error(
+                "location_zip",
+                forms.ValidationError(
+                    _("Merci d'indiquer un code postal valide"), code="invalid"
+                ),
+            )
 
         return self.cleaned_data
 
     def _save_m2m(self):
         super()._save_m2m()
+
         if not self.instance.should_relocate_when_address_changed():
             return
+
         if any(field in self.changed_data for field in self.instance.GEOCODING_FIELDS):
             transaction.on_commit(partial(geocode_person.delay, self.instance.pk))
 
@@ -190,6 +200,7 @@ class PersonalInformationsForm(ImageFormMixin, forms.ModelForm):
             "location_zip",
             "location_country",
             "action_radius",
+            "municipio",
         )
 
 

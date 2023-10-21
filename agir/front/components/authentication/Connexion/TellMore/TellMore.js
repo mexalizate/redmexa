@@ -3,18 +3,23 @@ import PropTypes from "prop-types";
 import React, { useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
 
+import I18N from "@agir/lib/i18n";
 import style from "@agir/front/genericComponents/_variables.scss";
 import helloDesktop from "@agir/front/genericComponents/images/hello-desktop.svg";
 
 import Link from "@agir/front/app/Link";
-import Button from "@agir/front/genericComponents/Button";
-import { Hide } from "@agir/front/genericComponents/grid";
+import MexicanMunicipioField, {
+  formatMexicanMunicipioOption,
+} from "@agir/front/formComponents/MexicanMunicipioField";
 import PhoneField from "@agir/front/formComponents/PhoneField";
+import CountryField from "@agir/front/formComponents/CountryField";
 import TextField from "@agir/front/formComponents/TextField";
+import Button from "@agir/front/genericComponents/Button";
 import LogoAP from "@agir/front/genericComponents/LogoAP";
 import Spacer from "@agir/front/genericComponents/Spacer";
+import { Hide } from "@agir/front/genericComponents/grid";
 
-import { updateProfile, getProfile } from "@agir/front/authentication/api";
+import { getProfile, updateProfile } from "@agir/front/authentication/api";
 import generateLogger from "@agir/lib/utils/logger";
 
 const logger = generateLogger(__filename);
@@ -97,6 +102,7 @@ const DEFAULT_DATA = {
   lastName: "",
   contactPhone: "",
   zip: "",
+  country: I18N.country,
 };
 
 const TellMore = ({ dismiss }) => {
@@ -122,6 +128,8 @@ const TellMore = ({ dismiss }) => {
       lastName: data.lastName || DEFAULT_DATA.lastName,
       contactPhone: data.contactPhone || DEFAULT_DATA.contactPhone,
       zip: data.zip || DEFAULT_DATA.zip,
+      country: data.country || DEFAULT_DATA.country,
+      municipio: data.municipio && formatMexicanMunicipioOption(data.municipio),
     });
     setExistingData({ firstName: !!data.firstName, lastName: !!data.lastName });
   }, []);
@@ -139,6 +147,20 @@ const TellMore = ({ dismiss }) => {
     setFormData((formData) => ({
       ...formData,
       contactPhone: value,
+    }));
+  }, []);
+
+  const handleChangeMunicipio = useCallback((value) => {
+    setFormData((formData) => ({
+      ...formData,
+      municipio: value,
+    }));
+  }, []);
+
+  const handleChangeCountry = useCallback((value) => {
+    setFormData((formData) => ({
+      ...formData,
+      country: value,
     }));
   }, []);
 
@@ -273,6 +295,32 @@ const TellMore = ({ dismiss }) => {
                 <Spacer size="1rem" />
               </div>
             </InputGroup>
+            <CountryField
+              label={_("Pays")}
+              id="country"
+              name="country"
+              placeholder=""
+              onChange={handleChangeCountry}
+              value={formData.country}
+              disabled={isLoading}
+              required
+            />
+            <Spacer size="1rem" />
+            <MexicanMunicipioField
+              label={
+                <>
+                  {_("Municipalité mexicaine d'origine")}{" "}
+                  <span style={{ fontWeight: 400 }}>(facultatif)</span>
+                </>
+              }
+              id="municipio"
+              name="municipio"
+              placeholder=""
+              onChange={handleChangeMunicipio}
+              value={formData.municipio}
+              disabled={isLoading}
+            />
+            <Spacer size="1rem" />
             <Button
               type="submit"
               color="primary"

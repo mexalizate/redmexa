@@ -22,6 +22,8 @@ from .actions.subscription import (
 )
 from .models import Person
 from .tasks import send_confirmation_email
+from ..geodata.models import MexicanMunicipio
+from ..geodata.serializers import MexicanMunicipioSerializer
 from ..groups.models import SupportGroup
 from ..lib.tasks import geocode_person
 from ..lib.token_bucket import TokenBucket
@@ -287,11 +289,23 @@ class PersonSerializer(serializers.ModelSerializer, FlexibleFieldsMixin):
         source="action_radius", required=False, min_value=1, max_value=500
     )
     hasLocation = serializers.BooleanField(source="has_location", read_only=True)
+    municipio = MexicanMunicipioSerializer(required=False, read_only=True)
+    municipioCode = serializers.SlugRelatedField(
+        queryset=MexicanMunicipio.objects.all(),
+        slug_field="code",
+        write_only=True,
+        allow_null=True,
+    )
 
     def update(self, instance, validated_data):
+        if "municipioCode" in validated_data:
+            validated_data["municipio"] = validated_data["municipioCode"]
+
         instance = super().update(instance, validated_data)
+
         if any(field in validated_data for field in instance.GEOCODING_FIELDS):
             transaction.on_commit(partial(geocode_person.delay, instance.pk))
+
         return instance
 
     class Meta:
@@ -315,6 +329,8 @@ class PersonSerializer(serializers.ModelSerializer, FlexibleFieldsMixin):
             "country",
             "actionRadius",
             "hasLocation",
+            "municipio",
+            "municipioCode",
         )
 
 
