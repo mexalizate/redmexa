@@ -26,7 +26,7 @@ const searchMexicanMunicipio = async (searchTerm) => {
   return result;
 };
 
-const formatOption = (option) => ({
+export const formatMexicanMunicipioOption = (option) => ({
   value: option.code,
   label: `${option.name} (${option.state})`,
   icon: "mountain-city:solid",
@@ -42,14 +42,16 @@ const MexicanMunicipio = (props) => {
     setOptions(undefined);
     const { data, _error } = await searchMexicanMunicipio(searchTerm);
     setIsLoading(false);
-    const results = data.map(formatOption);
+    const results = data.map(formatMexicanMunicipioOption);
     setOptions(results);
 
     return results;
   }, 600);
 
   useEffect(() => {
-    initialValue && onChange && onChange(formatOption(initialValue));
+    initialValue &&
+      onChange &&
+      onChange(formatMexicanMunicipioOption(initialValue));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [initialValue]);
 
