@@ -266,8 +266,18 @@ class Segment(BaseSegment, models.Model):
         _("Personnes nées avant le"), blank=True, null=True, help_text=DATE_HELP_TEXT
     )
 
-    subscription = models.BooleanField(
-        "A une souscription mensuelle active", blank=True, null=True
+    state_of_origin = models.ManyToManyField(
+        to="geodata.MexicanState",
+        verbose_name=_("État mexicain d'origine"),
+        related_name="+",
+        blank=True,
+    )
+
+    municipio_of_origin = models.ManyToManyField(
+        to="geodata.MexicanMunicipio",
+        verbose_name=_("Municipio mexican d'origine"),
+        related_name="+",
+        blank=True,
     )
 
     exclude_segments = models.ManyToManyField(
@@ -442,6 +452,18 @@ class Segment(BaseSegment, models.Model):
 
         return query
 
+    def apply_mexican_origin_filter(self, q):
+        state_ids = self.state_of_origin.values_list("id", flat=True)
+        municipio_ids = self.municipio_of_origin.values_list("id", flat=True)
+
+        if state_ids:
+            q = q & Q(municipio__state_id__in=state_ids)
+
+        if municipio_ids:
+            q = q & Q(municipio_id__in=municipio_ids)
+
+        return q
+
     def get_subscribers_q(self):
         # ne pas inclure les rôles inactifs dans les envois de mail
         q = ~Q(role__is_active=False)
@@ -460,6 +482,8 @@ class Segment(BaseSegment, models.Model):
         q = self.apply_supportgroup_filters(q)
 
         q = self.apply_event_filters(q)
+
+        q = self.apply_mexican_origin_filter(q)
 
         if self.draw_status is not None:
             q = q & Q(draw_participation=self.draw_status)
@@ -534,12 +558,6 @@ class Segment(BaseSegment, models.Model):
 
         if self.born_before is not None:
             q = q & Q(date_of_birth__lt=self.born_before)
-
-        if self.subscription is not None:
-            if self.subscription:
-                q = q & Q(subscriptions__status=Subscription.STATUS_ACTIVE)
-            else:
-                q = q & ~Q(subscriptions__status=Subscription.STATUS_ACTIVE)
 
         return q
 

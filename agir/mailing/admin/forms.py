@@ -8,9 +8,6 @@ class SegmentAdminForm(ModelForm):
         self.fields["countries"].widget = FilteredSelectMultiple(
             "pays", False, choices=self.fields["countries"].choices
         )
-        self.fields["departements"].widget = FilteredSelectMultiple(
-            "départements", False, choices=self.fields["departements"].choices
-        )
 
     class Meta:
         widgets = {
