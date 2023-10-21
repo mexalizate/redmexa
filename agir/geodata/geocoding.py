@@ -6,6 +6,7 @@ from data_france.models import CodePostal, Commune
 from django.contrib.gis.geos import Point
 from unidecode import unidecode
 
+from agir.geodata.models import USZipCode
 from agir.lib.data import code_postal_vers_code_departement
 from agir.lib.models import LocationMixin
 
@@ -17,6 +18,8 @@ NON_WORD = re.compile("[^\w]+")
 MULTIPLE_SPACES = re.compile("\s\s+")
 BAN_ENDPOINT = "https://api-adresse.data.gouv.fr/search"
 NOMINATIM_ENDPOINT = "https://nominatim.openstreetmap.org/"
+
+
 FRENCH_COUNTRY_CODES = [
     "FR",  # France métropolitaine
     "GP",  # Guadeloupe
@@ -33,12 +36,22 @@ FRENCH_COUNTRY_CODES = [
     "WF",  # Wallis-et-Futuna
 ]
 
+US_COUNTRY_CODES = [
+    "US",
+    "AS",  # American Samoa
+    "GU",  # Guam
+    "MP",  # Northern Mariana Islands
+    "PR",  # Puerto Rico
+    "UM",  # United States Minor Outlying Islands
+    "VI",  # Virgin Islands, U.S.
+]
+
 
 def normalize_city_name(s):
     return MULTIPLE_SPACES.sub(" ", NON_WORD.sub(" ", unidecode(s.strip()))).lower()
 
 
-def normalize_french_zip_code(zip_code):
+def remove_non_digit(zip_code):
     return NON_DIGIT.sub("", zip_code.strip())
 
 
@@ -47,7 +60,11 @@ def is_geocodable(item):
 
 
 def is_in_france(item):
-    return not item.location_country or item.location_country in FRENCH_COUNTRY_CODES
+    return item.location_country in FRENCH_COUNTRY_CODES
+
+
+def is_in_united_states(item):
+    return not item.location_country or item.location_country in US_COUNTRY_CODES
 
 
 def geocode_element(item):
@@ -62,6 +79,10 @@ def geocode_element(item):
         item.coordinates_type = LocationMixin.COORDINATES_NO_POSITION
         return
 
+    if is_in_united_states(item):
+        geocode_us(item)
+        return
+
     if is_in_france(item):
         geocode_france(item)
         return
@@ -69,35 +90,48 @@ def geocode_element(item):
     geocode_internationally(item)
 
 
-def get_results_from_ban(query):
+def geocode_us(item):
+    item.location_zip = remove_non_digit(item.location_zip)
+
+    if item.location_address1 or item.location_address2 or item.location_city:
+        if geocode_internationally(item):
+            return
+
+    if item.location_zip:
+        geocode_american_zip(item)
+
+
+def geocode_american_zip(item):
     try:
-        res = requests.get(BAN_ENDPOINT, params=query, timeout=(5, 10))
-    except requests.RequestException:
-        logger.warning(
-            f"Network error while geocoding '{query!r}' with BAN", exc_info=True
-        )
-        raise
+        z = USZipCode.objects.select_related("state").get(code=item.location_zip)
+    except USZipCode.DoesNotExist:
+        return
+    else:
+        item.coordinates = z.coordinates
+        item.coordinates_type = LocationMixin.COORDINATES_UNKNOWN_PRECISION
+        item.location_state = z.state.name
 
-    if 400 <= res.status_code < 500:
-        # Erreur dans les données fournies, probablement un code postal incorrect
-        # on ne peut pas localiser et ça ne sert à rien de réessayer.
-        return None
-    elif 500 <= res.status_code < 600:
-        # erreur côté serveur, il y a des chances que ça remarche en réessayant
-        raise requests.HTTPError("Erreur côté serveur", response=res)
 
-    try:
-        results = res.json()
-    except ValueError:
-        logger.warning(
-            f"Invalid JSON while geocoding '{query!r}' with BAN", exc_info=True
-        )
-        raise
+def geocode_france(item):
+    """Trouver la localisation géographique d'un item
 
-    if "features" not in results:
-        logger.warning(f"Incorrect result from BAN for address '{query!r}'")
-        return None
-    return results
+    Si on a juste un code postal ou une ville, on utilise les coordonnées données
+    par data_france.
+
+    Dans le cas où on a une adresse plus précise, on peut aller interroger la BAN.
+    """
+
+    # Normalize location_zip field
+    item.location_zip = remove_non_digit(item.location_zip)
+
+    # First reset coordinate fields to avoid asynchronisation
+    item.coordinates = None
+    item.coordinates_type = LocationMixin.COORDINATES_NOT_FOUND
+
+    # Try to geolocate with BAN if the full address is given
+    if not geocode_ban(item):
+        # Fallback to data france if address is incomplete or no BAN result has been found
+        geocode_data_france(item)
 
 
 def geocode_ban(item):
@@ -158,11 +192,42 @@ def geocode_ban(item):
     return False
 
 
+def get_results_from_ban(query):
+    try:
+        res = requests.get(BAN_ENDPOINT, params=query, timeout=(5, 10))
+    except requests.RequestException:
+        logger.warning(
+            f"Network error while geocoding '{query!r}' with BAN", exc_info=True
+        )
+        raise
+
+    if 400 <= res.status_code < 500:
+        # Erreur dans les données fournies, probablement un code postal incorrect
+        # on ne peut pas localiser et ça ne sert à rien de réessayer.
+        return None
+    elif 500 <= res.status_code < 600:
+        # erreur côté serveur, il y a des chances que ça remarche en réessayant
+        raise requests.HTTPError("Erreur côté serveur", response=res)
+
+    try:
+        results = res.json()
+    except ValueError:
+        logger.warning(
+            f"Invalid JSON while geocoding '{query!r}' with BAN", exc_info=True
+        )
+        raise
+
+    if "features" not in results:
+        logger.warning(f"Incorrect result from BAN for address '{query!r}'")
+        return None
+    return results
+
+
 def geocode_data_france(item):
     if item.location_zip:
         try:
             code_postal = CodePostal.objects.get(
-                code=normalize_french_zip_code(item.location_zip)
+                code=remove_non_digit(item.location_zip)
             )
         except CodePostal.DoesNotExist:
             pass
@@ -276,28 +341,6 @@ def geocode_data_france(item):
     item.coordinates_type = LocationMixin.COORDINATES_NOT_FOUND
 
 
-def geocode_france(item):
-    """Trouver la localisation géographique d'un item
-
-    Si on a juste un code postal ou une ville, on utilise les coordonnées données
-    par data_france.
-
-    Dans le cas où on a une adresse plus précise, on peut aller interroger la BAN.
-    """
-
-    # Normalize location_zip field
-    item.location_zip = normalize_french_zip_code(item.location_zip)
-
-    # First reset coordinate fields to avoid asynchronisation
-    item.coordinates = None
-    item.coordinates_type = LocationMixin.COORDINATES_NOT_FOUND
-
-    # Try to geolocate with BAN if the full address is given
-    if not geocode_ban(item):
-        # Fallback to data france if address is incomplete or no BAN result has been found
-        geocode_data_france(item)
-
-
 def geocode_internationally(item):
     """Find location of an item with its address for non French addresses
 
@@ -326,10 +369,7 @@ def geocode_internationally(item):
         res = requests.get(
             NOMINATIM_ENDPOINT,
             params=query,
-            headers={
-                "User-Agent": "La France insoumise events platform (if there is any problem with "
-                "our usage please contact us at site@lafranceinsoumise.fr)"
-            },
+            headers={"User-Agent": "RedMexa (alertas@redmexa.com)"},
         )
         res.raise_for_status()
         results = res.json()
@@ -349,11 +389,11 @@ def geocode_internationally(item):
     if results:
         item.coordinates = Point(float(results[0]["lon"]), float(results[0]["lat"]))
         item.coordinates_type = LocationMixin.COORDINATES_UNKNOWN_PRECISION
-        return
+        return True
     else:
         item.coordinates = None
         item.coordinates_type = LocationMixin.COORDINATES_NOT_FOUND
-        return
+        return False
 
 
 def get_commune(item):

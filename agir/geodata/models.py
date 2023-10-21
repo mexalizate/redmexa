@@ -203,6 +203,15 @@ class USZipCode(models.Model):
         spatial_index=True,
     )
 
+    state = models.ForeignKey(
+        to=USState,
+        related_name="zip_codes",
+        related_query_name="zip_code",
+        editable=False,
+        on_delete=models.PROTECT,
+        null=True,
+    )
+
     counties = models.ManyToManyField(
         to=USCounty,
         related_name="zip_codes",

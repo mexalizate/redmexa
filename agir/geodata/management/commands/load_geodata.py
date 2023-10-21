@@ -38,6 +38,7 @@ CREATE TEMPORARY TABLE temp_uscounty (
 CREATE TEMPORARY TABLE temp_uszipcode (
   code text,
   official_city text,
+  state_usps text,
   timezone text,
   coordinates geometry
 );
@@ -99,11 +100,14 @@ ON CONFLICT(code) DO UPDATE SET
 """
 
 UPDATE_US_ZIPCODES = """
-INSERT INTO geodata_uszipcode (code, official_city, timezone, coordinates)
-SELECT code, official_city, timezone, coordinates
-FROM temp_uszipcode
+INSERT INTO geodata_uszipcode (code, official_city, state_id, timezone, coordinates)
+SELECT z.code, z.official_city, s.id, z.timezone, z.coordinates
+FROM temp_uszipcode AS z
+JOIN geodata_usstate AS s
+ON s.code_usps = z.state_usps
 ON CONFLICT(code) DO UPDATE SET
   official_city = excluded.official_city,
+  state_id = excluded.state_id,
   timezone = excluded.timezone,
   coordinates = excluded.coordinates;
 """

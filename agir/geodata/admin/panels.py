@@ -82,10 +82,11 @@ class USCountyAdmin(WithFullTextSearch, ImmutableModelAdmin):
 
 @admin.register(models.USZipCode)
 class USZipCodeAdmin(ImmutableModelAdmin):
-    list_display = ("code", "official_city")
+    list_display = ("code", "official_city", "state_link")
     fields = (
         "code",
         "official_city",
+        "state_link",
         "coordinates_as_widget",
         "counties_list",
     )
