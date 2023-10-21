@@ -17,6 +17,7 @@ from agir.api.redis import using_separate_redis_server
 from agir.events.models import Event, EventSubtype
 from agir.people.actions.validation_codes import _initialize_buckets
 from agir.people.models import Person, PersonValidationSMS, generate_code
+from agir.people.tags import action_tags
 from agir.people.tasks import (
     send_confirmation_change_email,
     send_confirmation_merge_account,
@@ -222,11 +223,11 @@ class ProfileFormTestCase(TestCase):
 
     def test_can_add_tag(self):
         response = self.client.post(
-            reverse("skills"), {**self.sample_data, "info blogueur": "on"}
+            reverse("skills"), {**self.sample_data, action_tags[0]: "on"}
         )
 
         self.assertEqual(response.status_code, 302)
-        self.assertIn("info blogueur", [tag.label for tag in self.person.tags.all()])
+        self.assertIn(action_tags[0][1], [tag.label for tag in self.person.tags.all()])
 
     @mock.patch("django.db.transaction.on_commit")
     def test_can_change_address(self, on_commit):

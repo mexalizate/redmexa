@@ -294,6 +294,7 @@ MERGE_STRATEGIES = {
     "action_radius": None,
     "document": merge_reassign_related,
     "own_spending_request": merge_reassign_related,
+    "municipio": merge_nullable,
 }
 
 
