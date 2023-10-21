@@ -56,7 +56,6 @@ class Command(BaseCommand):
         parser.add_argument("-R", "--region", type=region_argument)
         parser.add_argument("-S", "--segment", type=segment_argument)
         parser.add_argument("-a", "--at", type=datetime_argument)
-        parser.add_argument("-T", "--exclude-telegram", action="store_true")
         parser.add_argument("-s", "--sentfile", type=FileType(mode="r"))
         parser.add_argument("-E", "--export-file", type=FileType(mode="w"))
 
@@ -89,7 +88,6 @@ class Command(BaseCommand):
         segment,
         sentfile,
         at,
-        exclude_telegram,
         export_file,
         **options,
     ):
@@ -132,9 +130,6 @@ class Command(BaseCommand):
 
             if distance is not None:
                 ps = ps.filter(distance__lte=distance)
-
-            if exclude_telegram:
-                ps = ps.exclude(meta__has_telegram=True)
 
             res = list(
                 drop_duplicate_numbers(

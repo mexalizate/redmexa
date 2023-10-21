@@ -154,7 +154,6 @@ INSTALLED_APPS = [
     "agir.municipales.apps.MunicipalesConfig",
     "agir.geodata",
     "agir.legacy",
-    "agir.telegram",
     "agir.gestion.apps.GestionConfig",
     "agir.presidentielle2022",
     "agir.elections",
@@ -983,10 +982,6 @@ BANNER_CONFIG = {"thumbnail": (400, 250), "banner": (1200, 400)}
 
 JITSI_GROUP_SIZE = 5
 JITSI_SERVERS = os.environ.get("JITSI_SERVERS", "visio.lafranceinsoumise.fr").split(",")
-
-# telegram
-TELEGRAM_API_ID = os.environ.get("TELEGRAM_API_ID")
-TELEGRAM_API_HASH = os.environ.get("TELEGRAM_API_HASH")
 
 
 # Municipales

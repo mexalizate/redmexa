@@ -65,7 +65,6 @@ sepaxml = "==2.*"
 social-auth-app-django = "==4.*"
 # data wrangling
 glom = "*"
-pyrogram = "==2.*"
 tgcrypto = "*"
 tenacity = "*"
 pandas = "==1.*"
