@@ -254,8 +254,8 @@ class ManageNewslettersAPIViewTestCase(WordpressClientMixin, TestCase):
         self.person = Person.objects.create_person(
             email="a@b.c",
             newsletters=[
-                Person.Newsletter.LFI_REGULIERE.value,
-                Person.Newsletter.ILB.value,
+                Person.Newsletter.CAMPAIGN.value,
+                Person.Newsletter.ACTIVIST.value,
             ],
             create_role=True,
         )
@@ -267,8 +267,8 @@ class ManageNewslettersAPIViewTestCase(WordpressClientMixin, TestCase):
                 {
                     "id": str(self.person.id),
                     "newsletters": {
-                        Person.Newsletter.LFI_EXCEPTIONNELLE.value: True,
-                        Person.Newsletter.ILB.value: False,
+                        Person.Newsletter.ACTIVIST.value: True,
+                        Person.Newsletter.CAMPAIGN.value: False,
                     },
                 }
             ),
@@ -280,8 +280,7 @@ class ManageNewslettersAPIViewTestCase(WordpressClientMixin, TestCase):
         self.assertCountEqual(
             self.person.newsletters,
             [
-                Person.Newsletter.LFI_REGULIERE.value,
-                Person.Newsletter.LFI_EXCEPTIONNELLE.value,
+                Person.Newsletter.ACTIVIST.value,
             ],
         )
 
@@ -293,8 +292,8 @@ class ManageNewslettersAPIViewTestCase(WordpressClientMixin, TestCase):
                 {
                     "id": str(self.person.id),
                     "newsletters": {
-                        Person.Newsletter.LFI_EXCEPTIONNELLE.value: True,
-                        Person.Newsletter.ILB.value: False,
+                        Person.Newsletter.ACTIVIST.value: True,
+                        Person.Newsletter.ACTIVIST.value: False,
                     },
                 }
             ),
@@ -310,8 +309,8 @@ class ManageNewslettersAPIViewTestCase(WordpressClientMixin, TestCase):
                 {
                     "id": str(self.person.id),
                     "newsletters": {
-                        Person.Newsletter.LFI_EXCEPTIONNELLE.value: True,
-                        Person.Newsletter.ILB.value: False,
+                        Person.Newsletter.ACTIVIST.value: True,
+                        Person.Newsletter.ACTIVIST.value: False,
                     },
                 }
             ),

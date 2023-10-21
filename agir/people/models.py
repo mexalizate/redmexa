@@ -121,7 +121,7 @@ class PersonQueryset(models.QuerySet):
             .values("created")
         )
         liaisons = self.filter(
-            newsletters__overlap=[Person.Newsletter.LFI_LIAISONS.value]
+            newsletters__overlap=[Person.Newsletter.LIAISONS.value]
         ).annotate(
             liaison_date=Coalesce(
                 Subquery(liaison_form_submissions[:1]),
@@ -330,21 +330,9 @@ def generate_referrer_id():
 
 
 class NewsletterChoices(models.TextChoices):
-    LFI_REGULIERE = (
-        "LFI_reguliere",
-        "Les informations régulières de la France insoumise",
-    )
-    LFI_EXCEPTIONNELLE = (
-        "LFI_exceptionnelle",
-        "Les informations exceptionnelles de la France insoumise",
-    )
-    LFI_LJI = (
-        "LFI_jeunes_insoumises",
-        "Les informations destinées aux Jeunes insoumis·es",
-    )
-    LFI_LIAISONS = "LFI_liaisons", "Correspondant·es d'immeuble ou de rue"
-    ILB = "ILB", "Les informations de l'Institut La Boétie"
-    ELUES = "ELUES", "Les informations destinées aux élu·es"
+    CAMPAIGN = "CAM", "Newsletter Claudializate"
+    ACTIVIST = "ACT", "Newsletter Red Migrante"
+    LIAISONS = "LIA", "Correspondant·es d'immeuble ou de rue"
 
 
 class Person(
@@ -378,10 +366,7 @@ class Person(
 
     Newsletter = NewsletterChoices
 
-    MAIN_NEWSLETTER_CHOICES = (
-        Newsletter.LFI_REGULIERE.value,
-        Newsletter.LFI_EXCEPTIONNELLE.value,
-    )
+    MAIN_NEWSLETTER_CHOICES = (Newsletter.CAMPAIGN.value,)
 
     newsletters = ChoiceArrayField(
         models.CharField(choices=Newsletter.choices, max_length=255),
@@ -711,7 +696,7 @@ class Person(
 
     @property
     def is_liaison(self):
-        return self.Newsletter.LFI_LIAISONS.value in self.newsletters
+        return self.Newsletter.LIAISONS.value in self.newsletters
 
     @is_liaison.setter
     def is_liaison(self, value):
@@ -719,10 +704,10 @@ class Person(
             return
 
         if value:
-            self.newsletters.append(self.Newsletter.LFI_LIAISONS.value)
+            self.newsletters.append(self.Newsletter.LIAISONS.value)
             return
 
-        self.newsletters.remove(self.Newsletter.LFI_LIAISONS.value)
+        self.newsletters.remove(self.Newsletter.LIAISONS.value)
 
     def get_full_name(self):
         """

@@ -164,9 +164,11 @@ class PersonalInformationsForm(ImageFormMixin, forms.ModelForm):
                 ),
             )
 
-        if self.cleaned_data.get(
-            "location_country"
-        ) == "FR" and not RE_FRENCH_ZIPCODE.match(self.cleaned_data["location_zip"]):
+        if (
+            self.cleaned_data.get("location_country") == "FR"
+            and self.cleaned_data.get("location_zip") == "FR"
+            and not RE_FRENCH_ZIPCODE.match(self.cleaned_data["location_zip"])
+        ):
             self.add_error(
                 "location_zip",
                 forms.ValidationError(

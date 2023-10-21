@@ -295,6 +295,7 @@ class PersonSerializer(serializers.ModelSerializer, FlexibleFieldsMixin):
         slug_field="code",
         write_only=True,
         allow_null=True,
+        required=False,
     )
 
     def update(self, instance, validated_data):

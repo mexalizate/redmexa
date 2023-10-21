@@ -88,10 +88,8 @@ def create_person():
         "is_political_support": fake.boolean(),
         "newsletters": random.sample(
             [
-                Person.Newsletter.LFI_REGULIERE.value,
-                Person.Newsletter.LFI_EXCEPTIONNELLE.value,
-                Person.Newsletter.ILB.value,
-                Person.Newsletter.LFI_LJI.value,
+                Person.Newsletter.CAMPAIGN.value,
+                Person.Newsletter.ACTIVIST.value,
             ],
             k=random.randint(1, 4),
         ),
