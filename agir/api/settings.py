@@ -157,7 +157,6 @@ INSTALLED_APPS = [
     "agir.telegram",
     "agir.gestion.apps.GestionConfig",
     "agir.presidentielle2022",
-    "agir.voting_proxies",
     "agir.elections",
     "agir.legislatives2022.apps.Legislatives2022Config",
     "agir.cagnottes.apps.CagnottesConfig",
@@ -927,12 +926,6 @@ PRESSERO_SITE = os.environ.get("PRESSERO_SITE", "").rstrip("/")
 PRESSERO_APPROBATOR_ID = os.environ.get("PRESSERO_APPROBATOR_ID")
 PRESSERO_GROUP_ID = os.environ.get("PRESSERO_GROUP_ID")
 
-# djan
-DJAN_URL = {
-    "LFI": "https://la-fi.fr",
-    "M2022": "https://m2022.fr",
-}
-DJAN_API_KEY = os.environ.get("DJAN_API_KEY")
 
 # nuntius
 NUNTIUS_REDIS_CONNECTION_GETTER = "agir.api.redis.get_auth_redis_client"

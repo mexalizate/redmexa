@@ -77,19 +77,6 @@ def resize_and_autorotate(file_name, variations, storage=default_storage):
     return True
 
 
-def shorten_url(url, secret=False, djan_url_type="LFI"):
-    djan_url = settings.DJAN_URL[djan_url_type]
-    response = requests.post(
-        f"{djan_url}/api/shorten",
-        params={
-            "token": settings.DJAN_API_KEY,
-        },
-        data={"url": url, "length": 10 if secret else 5},
-    )
-    response.raise_for_status()
-    return response.text
-
-
 def get_client_ip(request):
     if settings.TRUST_X_FORWARDED_FOR:
         x_forwarded_for = request.META.get("HTTP_X_FORWARDED_FOR")

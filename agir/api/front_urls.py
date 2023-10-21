@@ -15,7 +15,6 @@ urlpatterns = [
     path("", include("agir.msgs.urls")),
     path("", include("agir.notifications.urls")),
     path("", include("agir.presidentielle2022.urls")),
-    path("", include("agir.voting_proxies.urls")),
     path("", include("agir.elections.urls")),
     path("", include("agir.event_requests.urls")),
     path("", include("agir.geodata.urls")),
