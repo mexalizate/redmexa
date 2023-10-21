@@ -128,12 +128,13 @@ let _cachedOtherEntryFiles;
 const getOtherEntryFiles = (compilation) => {
   _cachedOtherEntryFiles =
     _cachedOtherEntryFiles ||
-    OTHER_ENTRIES.map((name) =>
-      compilation.namedChunkGroups
-        .get(name)
-        .chunks.map((c) => Array.from(c.files))
-        .flat(),
-    )
+    OTHER_ENTRIES.filter((name) => compilation.namedChunkGroups.get(name))
+      .map((name) =>
+        compilation.namedChunkGroups
+          .get(name)
+          .chunks.map((c) => Array.from(c.files))
+          .flat(),
+      )
       .flat()
       .filter((file) => !getAppEntryFiles(compilation).includes(file));
 
