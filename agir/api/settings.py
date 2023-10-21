@@ -1041,6 +1041,3 @@ ILB_DONS_URL = os.environ.get("ILB_DONS_URL", "https://institutlaboetie.fr/don/"
 ILB_DONS_REMERCIEMENTS_URL = os.environ.get(
     "ILB_DONS_REMERCIEMENTS_URL", "https://institutlaboetie.fr/don/merci/"
 )
-
-MATERIEL_REST_API_USERNAME = os.environ.get("MATERIEL_REST_API_USERNAME")
-MATERIEL_REST_API_PASSWORD = os.environ.get("MATERIEL_REST_API_PASSWORD")
