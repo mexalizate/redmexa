@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React from "react";
 
 import FileCard from "./FileCard";
@@ -14,10 +15,10 @@ const Template = (args) => <FileCard {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  title: "Fichier super-utile",
-  text: "Format PDF - 250 Kio",
+  title: _("Fichier super-utile"),
+  text: _("Format PDF - 250 Kio"),
   icon: "tv",
-  downloadLabel: "Télécharger le fichier",
+  downloadLabel: _("Télécharger le fichier"),
   downloadIcon: "Download",
   route: "attestationAssurance",
 };

@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
@@ -91,9 +92,9 @@ export const DownloadApp = ({ onClick }) => (
     </div>
     <AppLogo src={logo} width="52" height="52" alt="Logo Action Populaire" />
     <Content>
-      <Title>ACTION POPULAIRE</Title>
+      <Title>{_("ACTION POPULAIRE")}</Title>
       <Description>
-        Téléchargez l’appli des actions près{" "}
+        {_("Téléchargez l’appli des actions près")}{" "}
         <InlineBlock>de chez vous</InlineBlock>
       </Description>
     </Content>

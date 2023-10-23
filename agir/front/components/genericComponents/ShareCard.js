@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useCallback, useRef, useState } from "react";
 import styled from "styled-components";
@@ -127,7 +128,7 @@ const ShareCard = (props) => {
         onClick={copyUrl}
       />
       <Button small icon={copied ? "check" : "copy"} onClick={copyUrl}>
-        Copier le lien
+        {_("Copier le lien")}
       </Button>
     </StyledCard>
   );

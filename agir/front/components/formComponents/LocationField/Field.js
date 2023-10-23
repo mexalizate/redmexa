@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
@@ -100,7 +101,7 @@ const LocationField = (props) => {
   return (
     <StyledField>
       <TextField
-        label="Nom du lieu"
+        label={_("Nom du lieu")}
         name="name"
         value={name}
         onChange={handleChange}
@@ -110,7 +111,7 @@ const LocationField = (props) => {
         helpText={help && help.name}
       />
       <TextField
-        label="Adresse du lieu"
+        label={_("Adresse du lieu")}
         autoComplete="address-line1"
         name="address1"
         value={address1}
@@ -139,7 +140,7 @@ const LocationField = (props) => {
         </div>
       )}
       <TextField
-        label="Code postal"
+        label={_("Code postal")}
         name="zip"
         autoComplete="postal-code"
         value={zip}
@@ -150,7 +151,7 @@ const LocationField = (props) => {
         helpText={help && help.zip}
       />
       <TextField
-        label="Commune"
+        label={_("Commune")}
         name="city"
         autoComplete="city"
         value={city}
@@ -161,7 +162,7 @@ const LocationField = (props) => {
         helpText={help && help.city}
       />
       <CountryField
-        label="Pays"
+        label={_("Pays")}
         name="country"
         autoComplete="country-name"
         placeholder=""

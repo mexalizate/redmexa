@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, {
   useCallback,
@@ -562,7 +563,7 @@ const MessageCard = (props) => {
 
   let subject = getMessageSubject(message);
   if (isOrganizerMessage && !subject) {
-    subject = `Message privé avec les animateur⋅ices de '${group.name}'`;
+    subject = _(`Message privé avec les animateur⋅ices de '${group.name}'`);
   }
 
   return (
@@ -586,8 +587,8 @@ const MessageCard = (props) => {
             <StyledPrivateVisibility>
               <RawFeatherIcon name={"eye"} style={{ paddingRight: "6px" }} />
               <div>
-                Cette discussion privée se déroule entre{" "}
-                {message.author.displayName} et les animateur·ices du groupe{" "}
+                {_("Cette discussion privée se déroule entre")}{" "}
+                {message.author.displayName} {_("et les animateur·ices du groupe")}{" "}
                 <StyledGroupLink to={groupURL}>{group.name}</StyledGroupLink>
               </div>
             </StyledPrivateVisibility>
@@ -613,7 +614,7 @@ const MessageCard = (props) => {
               {!!encodedMessageURL && (
                 <InlineMenu triggerIconName="share-2" triggerSize="1rem">
                   <StyledInlineMenuItems>
-                    <span>Partager avec d’autres membres du groupe&nbsp;:</span>
+                    <span>{_("Partager avec d’autres membres du groupe :")}</span>
                     <a href={`https://t.me/share/url?url=${encodedMessageURL}`}>
                       <FaTelegram color={style.primary500} />
                       Telegram
@@ -645,7 +646,7 @@ const MessageCard = (props) => {
                           name="edit-2"
                           color={style.primary500}
                         />
-                        Modifier
+                        {_("Modifier")}
                       </button>
                     )}
                     {canDelete && (
@@ -657,7 +658,7 @@ const MessageCard = (props) => {
                     {canReport && (
                       <button onClick={handleReport} disabled={isLoading}>
                         <RawFeatherIcon name="flag" color={style.primary500} />
-                        Signaler
+                        {_("Signaler")}
                       </button>
                     )}
                   </StyledInlineMenuItems>
@@ -679,7 +680,7 @@ const MessageCard = (props) => {
                     width="1rem"
                     height="1rem"
                   />
-                  {commentsCount - comments.length} commentaires précédents
+                  {commentsCount - comments.length} {_("commentaires précédents")}
                 </StyledLoadComments>
               )}
               {comments.map((comment) => (
@@ -728,7 +729,7 @@ const MessageCard = (props) => {
           {withBottomButton && (
             <div style={{ textAlign: "center" }}>
               <Button small onClick={handleClick}>
-                Rejoindre la conversation
+                {_("Rejoindre la conversation")}
               </Button>
             </div>
           )}

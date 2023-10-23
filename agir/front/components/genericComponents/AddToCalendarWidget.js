@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useState } from "react";
 import styled from "styled-components";
@@ -110,7 +111,7 @@ const AddToCalendarWidget = (props) => {
             <>
               <CalendarLink href={routes.calendarExport}>
                 <LogoIcon aria-hidden="true" $icon={outlookLogo} />
-                Sur Outlook
+                {_("Sur Outlook")}
               </CalendarLink>
               {isIOS ? (
                 <CalendarLink
@@ -125,7 +126,7 @@ const AddToCalendarWidget = (props) => {
                     width="1rem"
                     height="1rem"
                   />
-                  Télécharger le .ics
+                  {_("Télécharger le .ics")}
                 </CalendarLink>
               ) : (
                 <CalendarLink
@@ -138,7 +139,7 @@ const AddToCalendarWidget = (props) => {
                     width="1rem"
                     height="1rem"
                   />
-                  Télécharger le .ics
+                  {_("Télécharger le .ics")}
                 </CalendarLink>
               )}
             </>

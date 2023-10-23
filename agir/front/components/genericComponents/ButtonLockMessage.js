@@ -1,4 +1,5 @@
 /* eslint-disable react/display-name */
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useCallback, useMemo, useState } from "react";
 import styled from "styled-components";
@@ -55,8 +56,8 @@ const ButtonLockMessage = ({ message }) => {
     mutate(`/api/groupes/messages/${messagePk}/`);
     sendToast(
       locked
-        ? "Le fil de conversation est verrouillé"
-        : "Le fil de conversation est déverrouillé",
+        ? _("Le fil de conversation est verrouillé")
+        : _("Le fil de conversation est déverrouillé"),
       "INFO",
       { autoClose: true },
     );
@@ -75,7 +76,7 @@ const ButtonLockMessage = ({ message }) => {
           loading={loading}
           onClick={() => !loading && setIsModalOpen(true)}
         >
-          {isLocked ? "Déverrouiller" : "Verrouiller"}
+          {isLocked ? _("Déverrouiller") : _("Verrouiller")}
         </Button>
       ) : (
         <StyledButton
@@ -100,13 +101,12 @@ const ButtonLockMessage = ({ message }) => {
         <Spacer size="1rem" />
         {!isLocked ? (
           <>
-            Plus personne ne pourra y répondre.
+            {_("Plus personne ne pourra y répondre.")}
             <Spacer size="0.5rem" />
-            Les gestionnaires du groupe pourront déverrouiller la conversation
-            n'importe quand.
+            {_("Les gestionnaires du groupe pourront déverrouiller la conversation n'importe quand.")}
           </>
         ) : (
-          "Les participant·es pourront de nouveau y écrire des réponses"
+          _("Les participant·es pourront de nouveau y écrire des réponses")
         )}
       </ModalConfirmation>
     </>

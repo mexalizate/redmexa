@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useCallback, useMemo } from "react";
 import styled from "styled-components";
@@ -186,17 +187,16 @@ const EventStep = (props) => {
 
   return (
     <StyledWrapper>
-      <h4>Associer un événement au message&nbsp;?</h4>
+      <h4>{_("Associer un événement au message ?")}</h4>
       {hasEmailWarning && (
         <StyledWarning>
           <span>
-            Les membres et abonné·es de votre groupe&nbsp;
-            <strong>recevront un e-mail</strong> avec le contenu de votre
-            message et <strong>pourront y répondre&nbsp;!</strong>
+            {_("Les membres et abonné·es de votre groupe")}
+            <strong>{_("recevront un e-mail")}</strong> {_("avec le contenu de votre message et")} <strong>
+              {_("pourront y répondre!")}</strong>
           </span>
           <span>
-            (Il ne recevront pas d’e-mails pour chaque commentaire ou
-            modification de messages)
+            {_("(Il ne recevront pas d’e-mails pour chaque commentaire ou modification de messages)")}
           </span>
         </StyledWarning>
       )}

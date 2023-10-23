@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React, { useState, useCallback } from "react";
 
 import SearchAndSelectField from "./SearchAndSelectField";
@@ -77,10 +78,10 @@ const defaultOptions = TIMEZONES.map((tz) => ({ label: tz, value: tz }));
 export const Default = Template.bind({});
 Default.args = {
   value: "",
-  placeholder: "Choisir un fuseau horaire",
+  placeholder: _("Choisir un fuseau horaire"),
   type: "text",
   id: "timezone",
-  label: "Fuseau horaire",
+  label: _("Fuseau horaire"),
   error: "",
   disabled: false,
   defaultOptions,
@@ -105,7 +106,7 @@ Loading.args = {
 export const WithHelpText = Template.bind({});
 WithHelpText.args = {
   ...Filled.args,
-  helpText: "Texte d'aide si necessaire",
+  helpText: _("Texte d'aide si necessaire"),
 };
 
 export const Focused = Template.bind({});
@@ -117,7 +118,7 @@ Focused.args = {
 export const WithValidationError = Template.bind({});
 WithValidationError.args = {
   ...Filled.args,
-  error: "Texte d’erreur sur le champ",
+  error: _("Texte d’erreur sur le champ"),
 };
 
 export const Disabled = Template.bind({});

@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { forwardRef, useCallback, useMemo, useRef } from "react";
 
@@ -125,7 +126,7 @@ const ImageField = forwardRef((props, ref) => {
           />
           <Button type="button" wrap onClick={handleClick} disabled={disabled}>
             <RawFeatherIcon name="camera" style={{ marginRight: "0.5rem" }} />
-            {imageName ? "Remplacer l'image" : "Ajouter une image"}
+            {imageName ? _("Remplacer l'image") : _("Ajouter une image")}
           </Button>
           {imageName && (
             <Button
@@ -134,7 +135,7 @@ const ImageField = forwardRef((props, ref) => {
               onClick={deleteImage}
               style={{ marginTop: 0 }}
             >
-              Supprimer l'image
+             {_(" Supprimer l'image")}
             </Button>
           )}
         </label>

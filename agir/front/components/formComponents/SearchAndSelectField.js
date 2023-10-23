@@ -1,3 +1,4 @@
+import _ from "gettext";
 import Async from "react-select/async";
 import { components } from "react-select";
 import PropTypes from "prop-types";
@@ -274,14 +275,14 @@ const SearchAndSelectField = (props) => {
     ...rest
   } = props;
 
-  const loadingMessage = useCallback(() => "Recherche...", []);
+  const loadingMessage = useCallback(() => _("Recherche..."), []);
   const noOptionsMessage = useCallback(
     ({ inputValue }) =>
       inputValue.length < minSearchTermLength
         ? `Entrez au moins ${minSearchTermLength} lettre${
             minSearchTermLength > 1 ? "s" : ""
           } pour chercher`
-        : "Pas de résultats",
+        : _("Pas de résultats"),
     [minSearchTermLength],
   );
 

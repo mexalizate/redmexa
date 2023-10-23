@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React from "react";
 
 import SelectField from "./SelectField";
@@ -55,10 +56,10 @@ const options = [
 export const Default = Template.bind({});
 Default.args = {
   value: "",
-  placeholder: "Choisir une couleur",
+  placeholder:_( "Choisir une couleur"),
   type: "text",
   id: "color",
-  label: "Couleur",
+  label: _("Couleur"),
   error: "",
   disabled: false,
   options,
@@ -93,7 +94,7 @@ Loading.args = {
 export const WithHelpText = Template.bind({});
 WithHelpText.args = {
   ...Filled.args,
-  helpText: "Texte d'aide si necessaire",
+  helpText: _("Texte d'aide si necessaire"),
 };
 
 export const Focused = Template.bind({});
@@ -105,7 +106,7 @@ Focused.args = {
 export const WithValidationError = Template.bind({});
 WithValidationError.args = {
   ...Filled.args,
-  error: "Texte d’erreur sur le champ",
+  error: _("Texte d’erreur sur le champ"),
 };
 
 export const Disabled = Template.bind({});

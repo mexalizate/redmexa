@@ -33,7 +33,7 @@ Empty.args = {
   value: "",
   type: "text",
   id: "field",
-  label: "Montant",
+  label: _("Montant"),
   error: "",
   disabled: false,
   currency: true,
@@ -50,7 +50,7 @@ Filled.args = {
 export const WithHelpText = Template.bind({});
 WithHelpText.args = {
   ...Filled.args,
-  helpText: "Texte d'aide si necessaire",
+  helpText: _("Texte d'aide si necessaire"),
 };
 
 export const Focused = Template.bind({});
@@ -62,7 +62,7 @@ Focused.args = {
 export const WithValidationError = Template.bind({});
 WithValidationError.args = {
   ...Filled.args,
-  error: "Texte d’erreur sur le champ",
+  error: _("Texte d’erreur sur le champ"),
 };
 
 export const Disabled = Template.bind({});

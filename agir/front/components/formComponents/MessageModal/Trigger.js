@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
@@ -122,7 +123,7 @@ export const FloatingTrigger = (props) => {
         height="1rem"
         strokeWidth={3}
       />
-      <span>{label || "Nouveau message"}</span>
+      <span>{label || _("Nouveau message")}</span>
     </StyledFloatingButton>
   );
 };
@@ -139,7 +140,7 @@ const Trigger = (props) => {
         height="13px"
         strokeWidth={3}
       />
-      <span>{label || "Envoyer un message au groupe"}</span>
+      <span>{label || _("Envoyer un message au groupe")}</span>
     </StyledButton>
   );
 };

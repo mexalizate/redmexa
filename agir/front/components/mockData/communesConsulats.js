@@ -1,3 +1,6 @@
+import _ from "gettext";
+
+const communesConsulats = 
 [
   {
     "id": 7,
@@ -319,4 +322,7 @@
     "departement": "07",
     "countries": null
   }
-]
+]; 
+
+
+export default communesConsulats;
