@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React from "react";
 import shortUUID from "short-uuid";
 
@@ -41,7 +42,7 @@ const Template = ({ message, html, type }) => {
 
 export const Default = Template.bind({});
 Default.args = {
-  message: 'Toast ! <a href="#"><b>Avec</b> un lien</a>.',
+  message: _('Toast ! <a href="#"><b>Avec</b> un lien</a>.'),
   html: true,
   type: Object.keys(TOAST_TYPES)[0],
 };

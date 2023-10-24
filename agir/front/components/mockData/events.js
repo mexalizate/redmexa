@@ -1,8 +1,10 @@
+import _ from "gettext";
+const events = 
 [
   {
     "id": "fb32fc5d-add3-472c-a119-bf2511d4008d",
     "url": "http://agir.local:8000/evenements/fb32fc5d-add3-472c-a119-bf2511d4008d/",
-    "name": "Front supérieur étouffer écrire.",
+    "name": _("Front supérieur étouffer écrire."),
     "hasSubscriptionForm": false,
     "description": "",
     "compteRendu": "",
@@ -84,7 +86,7 @@
   {
     "id": "819cbe27-910e-4074-b50a-4ae644e8751d",
     "url": "http://agir.local:8000/evenements/819cbe27-910e-4074-b50a-4ae644e8751d/",
-    "name": "Signe âge songer pont quart être as.",
+    "name": _("Signe âge songer pont quart être as."),
     "hasSubscriptionForm": false,
     "description": "",
     "compteRendu": "",
@@ -110,8 +112,8 @@
     },
     "subtype": {
       "id": 6,
-      "label": "diffusion-tracts",
-      "description": "Diffusion de tracts",
+      "label": _("diffusion-tracts"),
+      "description": _("Diffusion de tracts"),
       "color": "#c2306c",
       "icon": null,
       "iconName": "exclamation",
@@ -138,7 +140,7 @@
     "groups": [
       {
         "id": "432a5071-3b8c-4bbc-9501-a3f9fd48f70e",
-        "name": "Groupe de la rue Manin",
+        "name": _("Groupe de la rue Manin"),
         "description": "",
         "typeLabel": "Groupe local",
         "eventCount": 13,
@@ -165,7 +167,7 @@
   },
   {
     "id": "bc4ad094-fd3d-46ed-9b93-74d0a236c0ef",
-    "name": "Café",
+    "name": _("Café"),
     "hasSubscriptionForm": false,
     "compteRendu": "",
     "illustration": null,
@@ -204,8 +206,8 @@
     "distance": 1559.83507278,
     "subtype": {
       "id": 4,
-      "label": "autre evenement",
-      "description": "Tout autre type d'événement",
+      "label": _("autre evenement"),
+      "description": _("Tout autre type d'événement"),
       "color": "#49b37d",
       "icon": null,
       "iconName": "info",
@@ -214,7 +216,7 @@
   },
   {
     "id": "7c460d99-0495-4121-84d4-500dbdf4d09a",
-    "name": "Savoir pierre politique grain.",
+    "name": _("Savoir pierre politique grain."),
     "hasSubscriptionForm": false,
     "compteRendu": "",
     "illustration": null,
@@ -259,8 +261,8 @@
     "distance": 14163.72012066,
     "subtype": {
       "id": 3,
-      "label": "autre action publique",
-      "description": "Autre type d'action publique",
+      "label": _("autre action publique"),
+      "description": _("Autre type d'action publique"),
       "color": "#C9462C",
       "icon": null,
       "iconName": "cog",
@@ -269,7 +271,7 @@
   },
   {
     "id": "f01ace28-6bcc-40ee-82cc-2665e757abdf",
-    "name": "Event !",
+    "name": _("Event !"),
     "hasSubscriptionForm": false,
     "compteRendu": "",
     "illustration": null,
@@ -277,7 +279,7 @@
     "endTime": "2021-01-02T00:00:00+01:00",
     "timezone": "Europe/Paris",
     "location": {
-      "name": "Café",
+      "name": _("Café"),
       "address1": "1 rue manin",
       "address2": "",
       "zip": "75019",
@@ -314,8 +316,8 @@
     "distance": 1409.07713407,
     "subtype": {
       "id": 3,
-      "label": "autre action publique",
-      "description": "Autre type d'action publique",
+      "label": _("autre action publique"),
+      "description": _("Autre type d'action publique"),
       "color": "#C9462C",
       "icon": null,
       "iconName": "cog",
@@ -372,8 +374,8 @@
     "distance": 1409.07713407,
     "subtype": {
       "id": 3,
-      "label": "autre action publique",
-      "description": "Autre type d'action publique",
+      "label": _("autre action publique"),
+      "description": _("Autre type d'action publique"),
       "color": "#C9462C",
       "icon": null,
       "iconName": "cog",
@@ -434,7 +436,7 @@
   },
   {
     "id": "aa7d4a57-4e84-4dd1-a1aa-c796ea0a8d7c",
-    "name": "L'événement des gens super cools ! (sauf toi)",
+    "name": _("L'événement des gens super cools ! (sauf toi)"),
     "hasSubscriptionForm": false,
     "compteRendu": "",
     "illustration": {
@@ -475,15 +477,15 @@
     "groups": [
       {
         "id": "b04e1433-7dda-452b-9de8-e50655a3e1cb",
-        "name": "Groupe des gens super cools !",
+        "name": _("Groupe des gens super cools !"),
         "isMember": true
       }
     ],
     "distance": 4670.90360139,
     "subtype": {
       "id": 7,
-      "label": "Ouvert m^ aux non-insoumis comme la vot. nucléaire",
-      "description": "Ouvert m^ aux non-insoumis comme la vot. nucléaire",
+      "label": _("Ouvert m^ aux non-insoumis comme la vot. nucléaire"),
+      "description": _("Ouvert m^ aux non-insoumis comme la vot. nucléaire"),
       "color": "#49b37d",
       "icon": null,
       "iconName": "calendar",
@@ -533,15 +535,15 @@
     "groups": [
       {
         "id": "b04e1433-7dda-452b-9de8-e50655a3e1cb",
-        "name": "Groupe des gens super cools !",
+        "name": _("Groupe des gens super cools !"),
         "isMember": true
       }
     ],
     "distance": 4670.90360139,
     "subtype": {
       "id": 6,
-      "label": "Événement ultime",
-      "description": "Événement ultime",
+      "label": _("Événement ultime"),
+      "description": _("Événement ultime"),
       "color": "#6925aa",
       "icon": null,
       "iconName": "thermometer",
@@ -561,7 +563,7 @@
     "endTime": "2021-05-30T17:13:00+02:00",
     "timezone": "Europe/Paris",
     "location": {
-      "name": "Là où on boit du jus de fruit",
+      "name": _("Là où on boit du jus de fruit"),
       "address1": "Le Prévoyant",
       "address2": "3e étage vraiment à gauche",
       "zip": "93230",
@@ -591,15 +593,15 @@
     "groups": [
       {
         "id": "ad7ebd7c-cef4-4f84-90e4-4d2943c5e6a9",
-        "name": "Groupe électrogène",
+        "name": _("Groupe électrogène"),
         "isMember": true
       }
     ],
     "distance": 5887.4998412,
     "subtype": {
       "id": 6,
-      "label": "Événement ultime",
-      "description": "Événement ultime",
+      "label": _("Événement ultime"),
+      "description": _("Événement ultime"),
       "color": "#6925aa",
       "icon": null,
       "iconName": "thermometer",
@@ -652,15 +654,15 @@
     "groups": [
       {
         "id": "ad7ebd7c-cef4-4f84-90e4-4d2943c5e6a9",
-        "name": "Groupe électrogène",
+        "name":_( "Groupe électrogène"),
         "isMember": true
       }
     ],
     "distance": 6761014.43006774,
     "subtype": {
       "id": 6,
-      "label": "Événement ultime",
-      "description": "Événement ultime",
+      "label": _("Événement ultime"),
+      "description": _("Événement ultime"),
       "color": "#6925aa",
       "icon": null,
       "iconName": "thermometer",
@@ -710,15 +712,15 @@
     "groups": [
       {
         "id": "ad7ebd7c-cef4-4f84-90e4-4d2943c5e6a9",
-        "name": "Groupe électrogène",
+        "name": _("Groupe électrogène"),
         "isMember": true
       }
     ],
     "distance": 5882.30422673,
     "subtype": {
       "id": 6,
-      "label": "Événement ultime",
-      "description": "Événement ultime",
+      "label": _("Événement ultime"),
+      "description": _("Événement ultime"),
       "color": "#6925aa",
       "icon": null,
       "iconName": "thermometer",
@@ -768,15 +770,15 @@
     "groups": [
       {
         "id": "755e460f-9cf1-499e-952a-522fa8629852",
-        "name": "G.R.O.U.P.E.",
+        "name": _("G.R.O.U.P.E."),
         "isMember": true
       }
     ],
     "distance": 1352.05896568,
     "subtype": {
       "id": 6,
-      "label": "Événement ultime",
-      "description": "Événement ultime",
+      "label": _("Événement ultime"),
+      "description": _("Événement ultime"),
       "color": "#6925aa",
       "icon": null,
       "iconName": "thermometer",
@@ -826,15 +828,15 @@
     "groups": [
       {
         "id": "b667b448-feac-4722-b232-e613b12b49c9",
-        "name": "Groupe sanguin II",
+        "name": _("Groupe sanguin II"),
         "isMember": true
       }
     ],
     "distance": 1352.05896568,
     "subtype": {
       "id": 6,
-      "label": "Événement ultime",
-      "description": "Événement ultime",
+      "label": _("Événement ultime"),
+      "description": _("Événement ultime"),
       "color": "#6925aa",
       "icon": null,
       "iconName": "thermometer",
@@ -884,15 +886,15 @@
     "groups": [
       {
         "id": "755e460f-9cf1-499e-952a-522fa8629852",
-        "name": "G.R.O.U.P.E.",
+        "name": _("G.R.O.U.P.E."),
         "isMember": true
       }
     ],
     "distance": 1352.05896568,
     "subtype": {
       "id": 6,
-      "label": "Événement ultime",
-      "description": "Événement ultime",
+      "label": _("Événement ultime"),
+      "description": _("Événement ultime"),
       "color": "#6925aa",
       "icon": null,
       "iconName": "thermometer",
@@ -942,15 +944,15 @@
     "groups": [
       {
         "id": "755e460f-9cf1-499e-952a-522fa8629852",
-        "name": "G.R.O.U.P.E.",
+        "name": _("G.R.O.U.P.E."),
         "isMember": true
       }
     ],
     "distance": 1352.05896568,
     "subtype": {
       "id": 6,
-      "label": "Événement ultime",
-      "description": "Événement ultime",
+      "label": _("Événement ultime"),
+      "description": _("Événement ultime"),
       "color": "#6925aa",
       "icon": null,
       "iconName": "thermometer",
@@ -997,15 +999,15 @@
     "groups": [
       {
         "id": "b667b448-feac-4722-b232-e613b12b49c9",
-        "name": "Groupe sanguin II",
+        "name": _("Groupe sanguin II"),
         "isMember": true
       }
     ],
     "distance": 1352.05896568,
     "subtype": {
       "id": 5,
-      "label": "Sous-type de test",
-      "description": "Sous-type de test",
+      "label": _("Sous-type de test"),
+      "description": _("Sous-type de test"),
       "color": "#000000",
       "icon": null,
       "iconName": "info",
@@ -1058,19 +1060,21 @@
     "groups": [
       {
         "id": "755e460f-9cf1-499e-952a-522fa8629852",
-        "name": "G.R.O.U.P.E.",
+        "name": _("G.R.O.U.P.E."),
         "isMember": true
       }
     ],
     "distance": 12672232.52683594,
     "subtype": {
       "id": 6,
-      "label": "Événement ultime",
-      "description": "Événement ultime",
+      "label": _("Événement ultime"),
+      "description": _("Événement ultime"),
       "color": "#6925aa",
       "icon": null,
       "iconName": "thermometer",
       "type": "G"
     }
   }
-]
+]; 
+
+export default events;

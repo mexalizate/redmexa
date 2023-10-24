@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React, { useState } from "react";
 
 import { useLocation } from "react-router-dom";
@@ -38,7 +39,7 @@ export const SearchEventPage = () => {
       <InputSearch
         inputSearch={search}
         updateSearch={(e) => setSearch(e.target.value)}
-        placeholder="Rechercher un événement"
+        placeholder={_("Rechercher un événement")}
       />
 
       <SearchTooShort search={search} />
@@ -71,7 +72,7 @@ export const SearchEventPage = () => {
           {!!errors?.length && (
             <>
               <Spacer size="1rem" />
-              {errors?.name || "Une erreur est apparue ! :("}
+              {errors?.name || _("Une erreur est apparue ! :(")}
             </>
           )}
 

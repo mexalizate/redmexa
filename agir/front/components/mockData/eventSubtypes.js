@@ -1,8 +1,10 @@
-[
+
+import _ from "gettext";
+const eventSubtypes = [
   {
     "id": 57,
-    "label": "action-solidarite",
-    "description": "Action de solidarité",
+    "label": _("action-solidarite"),
+    "description": _("Action de solidarité"),
     "color": "#C9462C",
     "icon": null,
     "iconName": "handshake-o",
@@ -12,8 +14,8 @@
   },
   {
     "id": 136,
-    "label": "actions-jeunes",
-    "description": "actions jeunes",
+    "label": _("actions-jeunes"),
+    "description": _("actions jeunes"),
     "color": "#c2306c",
     "icon": null,
     "iconName": "exclamation",
@@ -23,8 +25,8 @@
   },
   {
     "id": 56,
-    "label": "atelier-pancartes",
-    "description": "Atelier de fabrication de pancartes",
+    "label": _("atelier-pancartes"),
+    "description": _("Atelier de fabrication de pancartes"),
     "color": "#0098B6",
     "icon": null,
     "iconName": "paint-brush",
@@ -34,8 +36,8 @@
   },
   {
     "id": 13,
-    "label": "autre-evenement",
-    "description": "Autre",
+    "label": _("autre-evenement"),
+    "description": _("Autre"),
     "color": "#49b37d",
     "icon": null,
     "iconName": "calendar",
@@ -45,8 +47,8 @@
   },
   {
     "id": 3,
-    "label": "autre action publique",
-    "description": "Autre type d'action publique",
+    "label": _("autre action publique"),
+    "description": _("Autre type d'action publique"),
     "color": "#C9462C",
     "icon": null,
     "iconName": "exclamation",
@@ -56,8 +58,8 @@
   },
   {
     "id": 1,
-    "label": "autre reunion groupe",
-    "description": "Autre type de réunion de groupe",
+    "label": _("autre reunion groupe"),
+    "description": _("Autre type de réunion de groupe"),
     "color": "#00B400",
     "icon": null,
     "iconName": "comments",
@@ -67,8 +69,8 @@
   },
   {
     "id": 2,
-    "label": "autre reunion publique",
-    "description": "Autre type de réunion publique",
+    "label": _("autre reunion publique"),
+    "description": _("Autre type de réunion publique"),
     "color": "#0098B6",
     "icon": null,
     "iconName": "cutlery",
@@ -78,8 +80,8 @@
   },
   {
     "id": 12,
-    "label": "collage",
-    "description": "Collage d'affiches",
+    "label": _("collage"),
+    "description": _("Collage d'affiches"),
     "color": "#C9462C",
     "icon": null,
     "iconName": "paint-brush",
@@ -89,8 +91,8 @@
   },
   {
     "id": 14,
-    "label": "covoiturage",
-    "description": "Covoiturage",
+    "label": _("covoiturage"),
+    "description": _("Covoiturage"),
     "color": "#49b37d",
     "icon": null,
     "iconName": "car",
@@ -100,8 +102,8 @@
   },
   {
     "id": 132,
-    "label": "depart-commun",
-    "description": "Départ commun pour une manifestation/un rassemblement",
+    "label": _("depart-commun"),
+    "description": _("Départ commun pour une manifestation/un rassemblement"),
     "color": "#F53B3B",
     "icon": null,
     "iconName": "thumb-tack",
@@ -111,8 +113,8 @@
   },
   {
     "id": 37,
-    "label": "diffusion-programme",
-    "description": "Diffusion de notre programme",
+    "label": _("diffusion-programme"),
+    "description": _("Diffusion de notre programme"),
     "color": "#00acee",
     "icon": null,
     "iconName": "book",
@@ -122,8 +124,8 @@
   },
   {
     "id": 6,
-    "label": "diffusion-tracts",
-    "description": "Diffusion de tracts",
+    "label": _("diffusion-tracts"),
+    "description": _("Diffusion de tracts"),
     "color": "#c2306c",
     "icon": null,
     "iconName": "exclamation",
@@ -133,8 +135,8 @@
   },
   {
     "id": 31,
-    "label": "ecoute-collective",
-    "description": "Écoute collective",
+    "label": _("ecoute-collective"),
+    "description": _("Écoute collective"),
     "color": "#0098B6",
     "icon": null,
     "iconName": "desktop",
@@ -144,8 +146,8 @@
   },
   {
     "id": 51,
-    "label": "fête-locale",
-    "description": "Fête locale",
+    "label": _("fête-locale"),
+    "description": _("Fête locale"),
     "color": "#0098B6",
     "icon": null,
     "iconName": "star-half-o",
@@ -155,8 +157,8 @@
   },
   {
     "id": 52,
-    "label": "formations",
-    "description": "Formations",
+    "label": _("formations"),
+    "description": _("Formations"),
     "color": "#3b5998",
     "icon": null,
     "iconName": "book",
@@ -166,8 +168,8 @@
   },
   {
     "id": 41,
-    "label": "pique-nique",
-    "description": "Pique-nique, apéro citoyen",
+    "label": _("pique-nique"),
+    "description": _("Pique-nique, apéro citoyen"),
     "color": "#C9462C",
     "icon": null,
     "iconName": "cutlery",
@@ -177,8 +179,8 @@
   },
   {
     "id": 5,
-    "label": "inscription-listes",
-    "description": "Point d'inscriptions sur les listes électorales",
+    "label": _("inscription-listes"),
+    "description": _("Point d'inscriptions sur les listes électorales"),
     "color": "#0098B6",
     "icon": null,
     "iconName": "edit",
@@ -188,8 +190,8 @@
   },
   {
     "id": 135,
-    "label": "point-infos-retraites",
-    "description": "Points d'infos retraites",
+    "label": _("point-infos-retraites"),
+    "description": _("Points d'infos retraites"),
     "color": "#390080",
     "icon": null,
     "iconName": "info",
@@ -199,8 +201,8 @@
   },
   {
     "id": 9,
-    "label": "porte-a-porte",
-    "description": "Porte-à-porte",
+    "label": _("porte-a-porte"),
+    "description": _("Porte-à-porte"),
     "color": "#F53B3B",
     "icon": null,
     "iconName": "building",
@@ -210,8 +212,8 @@
   },
   {
     "id": 54,
-    "label": "projection-debat",
-    "description": "Projection-débat",
+    "label": _("projection-debat"),
+    "description": _("Projection-débat"),
     "color": "#00b400",
     "icon": null,
     "iconName": "film",
@@ -221,8 +223,8 @@
   },
   {
     "id": 11,
-    "label": "reunion-publique",
-    "description": "Réunion publique",
+    "label": _("reunion-publique"),
+    "description": _("Réunion publique"),
     "color": "#e14b35",
     "icon": null,
     "iconName": "bullhorn",
@@ -232,8 +234,8 @@
   },
   {
     "id": 7,
-    "label": "reunion-groupe",
-    "description": "Réunion régulière du groupe",
+    "label": _("reunion-groupe"),
+    "description": _("Réunion régulière du groupe"),
     "color": "#4a64ac",
     "icon": null,
     "iconName": "comments",
@@ -243,8 +245,8 @@
   },
   {
     "id": 131,
-    "label": "session-appels-collective",
-    "description": "Session d’appels collective",
+    "label": _("session-appels-collective"),
+    "description": _("Session d’appels collective"),
     "color": "#F4ED0F",
     "icon": null,
     "iconName": "phone",
@@ -254,8 +256,8 @@
   },
   {
     "id": 22,
-    "label": "soiree-accueil",
-    "description": "Soirée d'accueil des nouveaux membres",
+    "label": _("soiree-accueil"),
+    "description": _("Soirée d'accueil des nouveaux membres"),
     "color": "#4a64ac",
     "icon": null,
     "iconName": "calendar",
@@ -265,8 +267,8 @@
   },
   {
     "id": 43,
-    "label": "soiree-electorale",
-    "description": "Soirée électorale",
+    "label": _("soiree-electorale"),
+    "description": _("Soirée électorale"),
     "color": "#3b5998",
     "icon": null,
     "iconName": "envelope-open",
@@ -276,8 +278,8 @@
   },
   {
     "id": 16,
-    "label": "soutien",
-    "description": "Soutien à une manifestation, un rassemblement",
+    "label": _("soutien"),
+    "description": _("Soutien à une manifestation, un rassemblement"),
     "color": "#c9462c",
     "icon": null,
     "iconName": "calendar",
@@ -287,8 +289,8 @@
   },
   {
     "id": 4,
-    "label": "autre evenement",
-    "description": "Tout autre type d'événement",
+    "label": _("autre evenement"),
+    "description": _("Tout autre type d'événement"),
     "color": "#49b37d",
     "icon": null,
     "iconName": "calendar",
@@ -296,4 +298,6 @@
     "needsDocuments": false,
     "isVisible": true
   }
-]
+]; 
+
+export default eventSubtypes;

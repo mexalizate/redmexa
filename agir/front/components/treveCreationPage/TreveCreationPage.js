@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React from "react";
 import styled from "styled-components";
 
@@ -41,18 +42,15 @@ export const TreveCreationPage = () => {
     <PageStyle>
       <Container>
         <h1 style={{ textAlign: "center", fontSize: "26px" }}>
-          Trève électorale
+         {_(" Trève électorale")}
         </h1>
         <span>
-          Le week-end du 1er tour de l’élection présidentielle, la loi nous
-          oblige à ne pas mettre à jour les sites de la
-          campagne&nbsp;présidentielle.
+          {_("Le week-end du 1er tour de l’élection présidentielle, la loi nous oblige à ne pas mettre à jour les sites de la campagne&nbsp;présidentielle.")}
           <Spacer size="1rem" />
-          Jusqu’à dimanche à 20h, vous ne pouvez pas créer d’événement
-          ou&nbsp;de&nbsp;groupe.
+          {_("Jusqu’à dimanche à 20h, vous ne pouvez pas créer d’événement ou de groupe.")}
           <Spacer size="1rem" />
-          Ce dimanche, soyons nombreux et nombreuses à voter pour{" "}
-          <InlineBlock>Jean-Luc Mélenchon !</InlineBlock>
+         {_(" Ce dimanche, soyons nombreux et nombreuses à voter pour")}{" "}
+          <InlineBlock>{_("Jean-Luc Mélenchon !")}</InlineBlock>
         </span>
         <Button
           style={{ maxWidth: 450, marginTop: "2rem" }}
@@ -61,7 +59,7 @@ export const TreveCreationPage = () => {
           link
           href="https://www.service-public.fr/particuliers/vosdroits/services-en-ligne-et-formulaires/ISE"
         >
-          Je trouve mon bureau de&nbsp;vote
+          {_("Je trouve mon bureau de vote")}
         </Button>
         <Button
           style={{ maxWidth: 450, marginTop: "1rem" }}
@@ -70,7 +68,7 @@ export const TreveCreationPage = () => {
           wrap
           href="https://infos.actionpopulaire.fr/2022/04/08/treve-electorale/"
         >
-          Agir durant le week-end des&nbsp;élections
+          {_("Agir durant le week-end des élections")}
         </Button>
       </Container>
     </PageStyle>

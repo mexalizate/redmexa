@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 import { animated, useSpring } from "@react-spring/web";
@@ -60,7 +61,7 @@ export const DonateCard = (props) => {
 
   return (
     <StyledCard>
-      <h4>Je fais un don pour la campagne</h4>
+      <h4>{_("Je fais un don pour la campagne")}</h4>
       <animated.p>
         <animated.span>
           {animatedAmount.to((x) => formatCurrency(x.toFixed(0)))}
@@ -84,7 +85,7 @@ export const DonateCard = (props) => {
         />
       </svg>
       <Button link route="donations" icon="heart" color="whiteRed">
-        Je fais un don
+        {_("Je fais un don")}
       </Button>
     </StyledCard>
   );

@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
@@ -43,21 +44,21 @@ const MobileActionToolsPage = (props) => {
       <StyledPage>
         <StyledButtons>
           <Button link route="help">
-            Centre d'aide
+            {_("Centre d'aide")}
           </Button>
           <Button link route="contact">
-            Nous contacter
+            {_("Nous contacter")}
           </Button>
         </StyledButtons>
         <PageFadeIn ready={typeof hasGroups !== "undefined"}>
           {!hasGroups && (
             <>
-              <h2>Conseillé pour {firstName || "vous"}</h2>
+              <h2>{_("Conseillé pour")} {firstName || "vous"}</h2>
               <JoinAGroupCard city={city} commune={commune} />
             </>
           )}
         </PageFadeIn>
-        <h2>Méthodes d'action</h2>
+        <h2>{_("Méthodes d'action")}</h2>
         <ActionTools />
       </StyledPage>
       <BottomBar active="actionTools" />
