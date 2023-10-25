@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useMemo } from "react";
 import styled from "styled-components";
@@ -40,10 +41,10 @@ const GroupOrders = (props) => {
   const orderURL = routes && routes.orders;
 
   return isManager ? (
-    <StyledCard title="Commander du matériel" outlined>
+    <StyledCard title={_("Commander du matériel")} outlined>
       {orderURL ? (
         <Button link href={orderURL} color="primary" small>
-          Commander du matériel
+          {_("Commander du matériel")}
         </Button>
       ) : null}
     </StyledCard>

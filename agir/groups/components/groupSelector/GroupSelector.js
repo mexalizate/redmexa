@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React from "react";
 
 import Async from "react-select/async";
@@ -53,8 +54,8 @@ const GroupSelector = ({
       loadingMessage={() => "Recherche..."}
       noOptionsMessage={({ inputValue }) =>
         inputValue.length < 3
-          ? "Entrez au moins 3 lettres pour chercher un groupe"
-          : "Pas de résultats"
+          ? _("Entrez au moins 3 lettres pour chercher un groupe")
+          : _("Pas de résultats")
       }
       placeholder="Choisissez un groupe..."
     >

@@ -1,3 +1,4 @@
+import _ from "gettext";
 import moment from "moment";
 import PropTypes from "prop-types";
 import React, { useCallback, useEffect, useState } from "react";
@@ -173,7 +174,7 @@ const DateField = (props) => {
         </div>
         <div>
           <SelectField
-            label="Durée"
+            label={_("Durée")}
             value={duration?.value ? duration : EVENT_DEFAULT_DURATIONS[4]}
             onChange={updateDuration}
             options={EVENT_DEFAULT_DURATIONS}
@@ -182,7 +183,7 @@ const DateField = (props) => {
         </div>
         {hasTimezone ? (
           <TimezoneField
-            label="Fuseau horaire"
+            label={_("Fuseau horaire")}
             value={timezone}
             onChange={onChangeTimezone}
             disabled={disabled}
@@ -199,7 +200,7 @@ const DateField = (props) => {
         {!duration?.value && (
           <div>
             <DateTimeField
-              label="Date et heure de fin"
+              label={_("Date et heure de fin")}
               value={endTime}
               onChange={updateEndTime}
               disabled={disabled}

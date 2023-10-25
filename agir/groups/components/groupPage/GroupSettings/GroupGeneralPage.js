@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useState, useMemo, useEffect, useCallback } from "react";
 import useSWR from "swr";
@@ -71,7 +72,7 @@ const GroupGeneralPage = (props) => {
         setErrors((errors) => ({
           ...errors,
           image:
-            "Vous devez acceptez les licences pour envoyer votre image en conformité.",
+            _("Vous devez acceptez les licences pour envoyer votre image en conformité."),
         }));
         setIsLoading(false);
         return;
@@ -88,7 +89,7 @@ const GroupGeneralPage = (props) => {
         setErrors(res.error);
         return;
       }
-      sendToast("Informations mises à jour", "SUCCESS", { autoClose: true });
+      sendToast(_("Informations mises à jour"), "SUCCESS", { autoClose: true });
       mutate((group) => {
         return { ...group, ...res.data };
       });
@@ -116,14 +117,14 @@ const GroupGeneralPage = (props) => {
   return (
     <form onSubmit={handleSubmit}>
       <HeaderPanel onBack={onBack} illustration={illustration} />
-      <StyledTitle>Général</StyledTitle>
+      <StyledTitle>{_("Général")}</StyledTitle>
 
       <Spacer size="1rem" />
 
       <TextField
         id="name"
         name="name"
-        label="Nom du groupe*"
+        label={_("Nom du groupe*")}
         onChange={handleChange}
         value={formData.name}
         error={errors?.name}
@@ -134,20 +135,18 @@ const GroupGeneralPage = (props) => {
       <RichTextField
         id="description"
         name="description"
-        label="Description du groupe*"
+        label={_("Description du groupe*")}
         placeholder=""
         onChange={handleDescriptionChange}
         value={formData.description}
         error={errors?.description}
       />
 
-      <h4>Image de la bannière</h4>
+      <h4>{_("Image de la bannière")}</h4>
       <span style={{ color: style.black700 }}>
-        Elle apparaîtra sur la page sur les réseaux sociaux.
+        {_("Elle apparaîtra sur la page sur les réseaux sociaux.")}
         <br />
-        Utilisez une image à peu près deux fois plus large que haute. Elle doit
-        faire au minimum 1200px de large et 630px de haut pour une qualité
-        optimale.
+        {_("Utilisez une image à peu près deux fois plus large que haute. Elle doit faire au minimum 1200px de large et 630px de haut pour une qualité optimale.")}
       </span>
 
       <Spacer size="1.5rem" />
@@ -166,9 +165,8 @@ const GroupGeneralPage = (props) => {
             value={hasCheckedImageLicence}
             label={
               <span style={{ color: style.black700 }}>
-                En important une image, je certifie être le propriétaire des
-                droits et accepte de la partager sous licence libre{" "}
-                <a href={I18N.ccLicenseLink}>Creative Commons CC-BY-NC 3.0</a>.
+                {_("En important une image, je certifie être le propriétaire des droits et accepte de la partager sous licence libre")}{" "}
+                <a href={I18N.ccLicenseLink}>{_("Creative Commons CC-BY-NC 3.0")}</a>.
               </span>
             }
             onChange={handleCheckImageLicence}
@@ -178,7 +176,7 @@ const GroupGeneralPage = (props) => {
 
       <Spacer size="2rem" />
       <Button type="submit" color="secondary" wrap disabled={isLoading}>
-        Enregistrer
+        {_("Enregistrer")}
       </Button>
     </form>
   );

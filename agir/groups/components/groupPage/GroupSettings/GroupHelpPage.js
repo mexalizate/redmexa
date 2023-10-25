@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 
@@ -19,27 +20,26 @@ const GroupHelpPage = (props) => {
       <StyledTitle>Ressources</StyledTitle>
       <Spacer size="1rem" />
       <span style={{ color: style.black700 }}>
-        Retrouvez ici la liste des ressources qui pourront vous être utiles pour
-        l'animation et la gestion de votre groupe.
+        {_("Retrouvez ici la liste des ressources qui pourront vous être utiles pour l'animation et la gestion de votre groupe.")}
       </span>
       <Spacer size="1rem" />
-      <StyledTitle>Centre d'aide</StyledTitle>
+      <StyledTitle>{_("Centre d'aide")}</StyledTitle>
       <Spacer size=".5rem" />
       <HelpCenterCard type="group" />
       <Spacer size="1rem" />
-      <StyledTitle>Documents</StyledTitle>
+      <StyledTitle>{_("Documents")}</StyledTitle>
       <Spacer size=".5rem" />
       <FileCard
-        title="Attestation d'assurance de la France insoumise"
-        text="Document utile en cas de réservation d'une salle pour les événements publics"
+        title={_("Attestation d'assurance de la France insoumise")}
+        text={_("Document utile en cas de réservation d'une salle pour les événements publics")}
         icon="file-text"
         route="attestationAssurance"
         downloadLabel="Télécharger l'attestation"
       />
       <Spacer size="1rem" />
       <FileCard
-        title="Charte des groupes d'action"
-        text="La charte que tous les animateurs et toutes les animatrices de groupe s’engagent à respecter."
+        title={_("Charte des groupes d'action")}
+        text={_("La charte que tous les animateurs et toutes les animatrices de groupe s’engagent à respecter.")}
         icon="file-text"
         route="charteEquipes"
         downloadLabel="Voir la charte"
@@ -47,8 +47,8 @@ const GroupHelpPage = (props) => {
       />
       <Spacer size="1rem" />
       <FileCard
-        title="Livret de l’animateur·rice"
-        text="Un guide pratique qui répond à la plupart des intérrogations concernant l'animation d'un groupe d'action."
+        title={_("Livret de l’animateur·rice")}
+        text={_("Un guide pratique qui répond à la plupart des intérrogations concernant l'animation d'un groupe d'action.")}
         icon="file-text"
         route="livretAnimateurice"
         downloadLabel="Télécharger le livret"

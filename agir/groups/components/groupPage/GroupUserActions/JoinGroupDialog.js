@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useState } from "react";
 
@@ -29,11 +30,10 @@ export const JoinGroup = (props) => {
       return (
         <StyledDialog>
           <header>
-            <h3>Rejoindre {groupName}</h3>
+            <h3>{_("Rejoindre")} {groupName}</h3>
           </header>
           <article>
-            Les animateur·ices seront informé·es de votre arrivée et vous
-            pourrez rencontrer les membres du groupe&nbsp;!
+            {_("Les animateur·ices seront informé·es de votre arrivée et vous pourrez rencontrer les membres du groupe&nbsp;!")}
           </article>
           <footer>
             <Button
@@ -44,10 +44,10 @@ export const JoinGroup = (props) => {
               block
               wrap
             >
-              Je rejoins&nbsp;!
+             {_(" Je rejoins&nbsp;!")}
             </Button>
             <Button disabled={isLoading} onClick={onClose} block wrap>
-              Annuler
+             {_(" Annuler")}
             </Button>
           </footer>
         </StyledDialog>
@@ -74,18 +74,16 @@ export const JoinGroup = (props) => {
       return (
         <StyledDialog>
           <header>
-            <h3>Bienvenue dans le groupe, {personName}&nbsp;!&nbsp;👍</h3>
+            <h3>{_("Bienvenue dans le groupe,")} {personName}&nbsp;!&nbsp;👍</h3>
           </header>
           <article>
             <strong>
-              Faites la rencontre avec {referentNames} qui animent ce groupe.
+              {_("Faites la rencontre avec")} {referentNames} {_("qui animent ce groupe.")}
             </strong>
             <Spacer size=".5rem" />
-            Partagez vos coordonnées (nom complet, téléphone et adresse) avec
-            eux pour qu'ils puissent prendre contact avec vous.
+            {_("Partagez vos coordonnées (nom complet, téléphone et adresse) avec eux pour qu'ils puissent prendre contact avec vous.")}
             <Spacer size=".5rem" />
-            Vous pourrez retirer cette autorisation à tout moment. C'est
-            maintenant que tout se joue&nbsp;!
+            {_("Vous pourrez retirer cette autorisation à tout moment. C'est maintenant que tout se joue&nbsp;!")}
           </article>
           <footer>
             <Button
@@ -95,7 +93,7 @@ export const JoinGroup = (props) => {
               block
               wrap
             >
-              Partager mes coordonnées avec {referentNames}
+              {_("Partager mes coordonnées avec")} {referentNames}
             </Button>
             <Button
               disabled={isLoading}
@@ -103,7 +101,7 @@ export const JoinGroup = (props) => {
               block
               wrap
             >
-              Passer cette étape
+              {_("Passer cette étape")}
             </Button>
           </footer>
         </StyledDialog>
@@ -113,16 +111,16 @@ export const JoinGroup = (props) => {
       return (
         <StyledDialog>
           <header>
-            <h3>Présentez-vous&nbsp;!</h3>
+            <h3>{_("Présentez-vous&nbsp;!")}</h3>
           </header>
           <article>
             <strong>
               {personalInfoConsent
-                ? "C’est noté, les gestionnaires du groupe pourront vous contacter sur la messagerie d’Action Populaire, par e-mail et par téléphone."
-                : "C’est noté, les gestionnaires du groupe pourront vous contacter sur la messagerie d’Action Populaire et par e-mail."}
+                ? _("C’est noté, les gestionnaires du groupe pourront vous contacter sur la messagerie d’Action Populaire, par e-mail et par téléphone.")
+                : _("C’est noté, les gestionnaires du groupe pourront vous contacter sur la messagerie d’Action Populaire et par e-mail.")}
             </strong>
             <Spacer size=".5rem" />
-            Envoyez-leur un message pour vous présenter&nbsp;:
+            {_("Envoyez-leur un message pour vous présenter&nbsp;:")}
             <Spacer size="1rem" />
             <footer>
               {openMessageModal ? (
@@ -133,7 +131,7 @@ export const JoinGroup = (props) => {
                   onClick={openMessageModal}
                   icon="mail"
                 >
-                  Je me présente&nbsp;!
+                  {_("Je me présente&nbsp;!")}
                 </Button>
               ) : (
                 <ShareLink
@@ -144,7 +142,7 @@ export const JoinGroup = (props) => {
                 />
               )}
               <Button disabled={isLoading} onClick={onClose} block wrap>
-                Plus tard
+                {_("Plus tard")}
               </Button>
             </footer>
           </article>

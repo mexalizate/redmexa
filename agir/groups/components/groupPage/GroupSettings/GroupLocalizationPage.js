@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useState, useEffect, useCallback } from "react";
 import styled from "styled-components";
@@ -58,7 +59,7 @@ const GroupLocalizationPage = (props) => {
         setErrors(res.error?.location);
         return;
       }
-      sendToast("Informations mises à jour", "SUCCESS", { autoClose: true });
+      sendToast(_("Informations mises à jour"), "SUCCESS", { autoClose: true });
       mutate((group) => {
         return { ...group, ...res.data };
       });
@@ -86,7 +87,7 @@ const GroupLocalizationPage = (props) => {
             setConfig(false);
           }}
         />
-        <StyledTitle>Personnaliser la localisation</StyledTitle>
+        <StyledTitle>{_("Personnaliser la localisation")}</StyledTitle>
 
         <Spacer size="1rem" />
         <StyledMapConfig center={group?.location?.coordinates?.coordinates} />
@@ -94,7 +95,7 @@ const GroupLocalizationPage = (props) => {
         <Spacer size="2rem" />
         <div style={{ display: "flex", justifyContent: "center" }}>
           <Button color="secondary" wrap disabled={isLoading}>
-            Enregistrer les informations
+            {_("Enregistrer les informations")}
           </Button>
         </div>
       </>
@@ -115,17 +116,15 @@ const GroupLocalizationPage = (props) => {
         Personnaliser la localisation sur la carte
       </Button> */}
       <Button link small wrap href={group?.routes?.geolocate}>
-        Personnaliser la localisation sur la carte
+       {_(" Personnaliser la localisation sur la carte")}
       </Button>
       <Spacer size="1rem" />
 
       <span style={{ color: style.black700 }}>
-        Si vous ne souhaitez pas rendre votre adresse personnelle publique,
-        indiquez un endroit à proximité (café, mairie...)
+        {_("Si vous ne souhaitez pas rendre votre adresse personnelle publique, indiquez un endroit à proximité (café, mairie...)")}
         <Spacer size="0.5rem" />
         <strong>
-          Merci d'indiquer une adresse précise avec numéro de rue, sans quoi le
-          groupe n'apparaîtra pas sur la carte.
+          {_("Merci d'indiquer une adresse précise avec numéro de rue, sans quoi le groupe n'apparaîtra pas sur la carte.")}
         </strong>
       </span>
 
@@ -141,7 +140,7 @@ const GroupLocalizationPage = (props) => {
 
       <Spacer size="2rem" />
       <Button type="submit" color="secondary" wrap disabled={isLoading}>
-        Enregistrer
+        {_("Enregistrer")}
       </Button>
 
       {/* <hr />

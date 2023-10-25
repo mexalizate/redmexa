@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 
@@ -18,7 +19,7 @@ const AgendaRoute = ({
 }) => (
   <>
     {Array.isArray(upcomingEvents) && upcomingEvents.length > 0 ? (
-      <GroupEventList title="Événements à venir" events={upcomingEvents} />
+      <GroupEventList title={_("Événements à venir")} events={upcomingEvents} />
     ) : null}
     {Array.isArray(pastEvents) && pastEvents.length > 0 ? (
       <GroupEventList

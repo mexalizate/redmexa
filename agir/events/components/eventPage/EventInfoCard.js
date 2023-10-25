@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useMemo } from "react";
 
@@ -85,7 +86,7 @@ const EventInfoCard = (props) => {
           color="primary"
           backLink={backLink}
         >
-          Créer un événement similaire
+          {_("Créer un événement similaire")}
         </Button>
       )}
     </Card>

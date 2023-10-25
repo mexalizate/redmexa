@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
@@ -44,10 +45,9 @@ const ProjectStatusCard = (props) => {
   if (!hasRequiredDocuments) {
     return (
       <StyledCard $pending>
-        <h4>Votre événement privé ne nécessite pas de documents</h4>
+        <h4>{_("Votre événement privé ne nécessite pas de documents")}</h4>
         <p>
-          Vous avez changé le type de l’événement. Dans le cadre d’un événement
-          privé, vous n’avez pas besoin d’envoyer de document.
+          {_("Vous avez changé le type de l’événement. Dans le cadre d’un événement privé, vous n’avez pas besoin d’envoyer de document.")}
         </p>
       </StyledCard>
     );
@@ -57,12 +57,10 @@ const ProjectStatusCard = (props) => {
     return (
       <StyledCard $pending>
         <h4>
-          Vous avez indiqué qu'aucun document n'était nécessaire pour cet
-          événement public
+          {_("Vous avez indiqué qu'aucun document n'était nécessaire pour cet événement public")}
         </h4>
         <p>
-          Vous pouvez ajouter autant de documents que nécessaire jusqu'à la
-          relecture par le secrétariat général.
+          {_("Vous pouvez ajouter autant de documents que nécessaire jusqu'à la relecture par le secrétariat général.")}
         </p>
       </StyledCard>
     );
@@ -71,10 +69,9 @@ const ProjectStatusCard = (props) => {
   if (step === "pending" && !hasMissingDocuments) {
     return (
       <StyledCard $pending>
-        <h4>Vos documents sont en relecture par le secrétariat général</h4>
+        <h4>{_("Vos documents sont en relecture par le secrétariat général")}</h4>
         <p>
-          Vous pouvez en ajouter encore autant que nécessaire jusqu’à leur
-          relecture.
+          {_("Vous pouvez en ajouter encore autant que nécessaire jusqu’à leur relecture.")}
         </p>
       </StyledCard>
     );
@@ -83,10 +80,9 @@ const ProjectStatusCard = (props) => {
   if (step === "archived") {
     return (
       <StyledCard>
-        <h4>Événement archivé</h4>
+        <h4>{_("Événement archivé")}</h4>
         <p>
-          Le secrétariat général a relu et validé les documents de votre
-          événement
+          {_("Le secrétariat général a relu et validé les documents de votre événement")}
         </p>
       </StyledCard>
     );
@@ -95,10 +91,9 @@ const ProjectStatusCard = (props) => {
   if (step === "refused") {
     return (
       <StyledCard>
-        <h4>Événement public refusé</h4>
+        <h4>{_("Événement public refusé")}</h4>
         <p>
-          Veuillez prendre contact avec le secréatariat général pour plus
-          d’informations
+          {_("Veuillez prendre contact avec le secréatariat général pour plus d’informations")}
         </p>
       </StyledCard>
     );

@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 
@@ -12,7 +13,7 @@ const GroupMembershipLimitReminderCard = (props) => {
   const SupportGroup = group ? (
     <Link
       to={routeConfig.groupDetails.getLink({ groupPk: group.id })}
-      backLink="activities"
+      backLink={_("activities")}
     >
       {group.name}
     </Link>
@@ -23,35 +24,30 @@ const GroupMembershipLimitReminderCard = (props) => {
       return (
         <GenericCardContainer {...props}>
           <strong>
-            Action requise&nbsp;: votre groupe ne respecte plus la{" "}
+            {_("Action requise&nbsp;: votre groupe ne respecte plus la")}{" "}
             <Link
               href={`/activite/${id}/lien/`}
               params={{ next: routes.charteEquipes }}
             >
-              charte des groupes d'action
+              {_("charte des groupes d'action")}
             </Link>
           </strong>
           <br />
-          {SupportGroup} a atteint {membershipCount} membres actifs&nbsp;! Il
-          est maintenant impossible que des nouvelles personnes la rejoignent.
-          Divisez votre groupe en groupes plus petits maintenant pour renforcer
-          le réseau d’action.
+          {SupportGroup} a atteint {membershipCount} {_("membres actifs&nbsp;! Il est maintenant impossible que des nouvelles personnes la rejoignent. Divisez votre groupe en groupes plus petits maintenant pour renforcer le réseau d’action.")}
         </GenericCardContainer>
       );
     case 1:
     case 2:
       return (
         <GenericCardContainer {...props}>
-          <strong>Votre groupe est trop nombreux</strong>
+          <strong>{_("Votre groupe est trop nombreux")}</strong>
           <br />
-          {SupportGroup} compte plus de {membershipCount - 1} membres
-          actifs&nbsp;! Il est temps de vous diviser en plusieurs groupes pour
-          permettre une plus grande répartition de l’action.{" "}
+          {SupportGroup} {_("compte plus de")} {membershipCount - 1} {_("membres actifs&nbsp;! Il est temps de vous diviser en plusieurs groupes pour permettre une plus grande répartition de l’action.")}{" "}
           <Link
             href={`/activite/${id}/lien/`}
             params={{ next: routes.groupTransferHelp }}
           >
-            En savoir plus sur la division des groupes
+            {_("En savoir plus sur la division des groupes")}
           </Link>
         </GenericCardContainer>
       );
@@ -59,18 +55,15 @@ const GroupMembershipLimitReminderCard = (props) => {
       return (
         <GenericCardContainer {...props}>
           <strong>
-            Gardez un oeil sur le nombre de membres de votre groupe
+            {_("Gardez un oeil sur le nombre de membres de votre groupe")}
           </strong>
           <br />
-          {SupportGroup} a dépassé les {membershipCount - 1} membres actifs !
-          Afin que chacun·e puisse s'impliquer et pour permettre une plus grande
-          répartition de votre action, nous vous invitons à diviser votre
-          groupe.{" "}
+          {SupportGroup} {_("a dépassé les")} {membershipCount - 1} {_("membres actifs ! Afin que chacun·e puisse s'impliquer et pour permettre une plus grande répartition de votre action, nous vous invitons à diviser votre groupe.")}{" "}
           <Link
             href={`/activite/${id}/lien/`}
             params={{ next: routes.groupTransferHelp }}
           >
-            En savoir plus sur la division des groupes
+            {_("En savoir plus sur la division des groupes")}
           </Link>
         </GenericCardContainer>
       );
@@ -78,13 +71,10 @@ const GroupMembershipLimitReminderCard = (props) => {
       return (
         <GenericCardContainer {...props}>
           <strong>
-            Bravo, vous êtes maintenant {membershipCount || "nombreux·ses"} dans
-            votre groupe&nbsp;!
+            {_("Bravo, vous êtes maintenant")} {membershipCount || "nombreux·ses"} {_("dans votre groupe&nbsp;!")}
           </strong>
           <br />
-          {SupportGroup} a atteint le nombre idéal de membres actifs. Désormais,
-          favorisez la création d'autres groupes autour de chez vous par
-          d’autres membres, de manière à renforcer le réseau d'action.
+          {SupportGroup} {_("a atteint le nombre idéal de membres actifs. Désormais, favorisez la création d'autres groupes autour de chez vous par d’autres membres, de manière à renforcer le réseau d'action.")}
         </GenericCardContainer>
       );
   }

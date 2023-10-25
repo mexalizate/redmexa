@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React from "react";
 
 import SentDocumentsCard from "./SentDocumentsCard";
@@ -19,13 +20,13 @@ Default.args = {
     {
       id: "a",
       type: "ABC",
-      name: "Prêt de retro-projecteur",
+      name: _("Prêt de retro-projecteur"),
       file: "#docABC",
     },
     {
       id: "b",
       type: "CBA",
-      name: "Attestation de règlement des consommations",
+      name: _("Attestation de règlement des consommations"),
       file: "#docCBA",
     },
   ],

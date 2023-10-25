@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useMemo } from "react";
 
@@ -33,22 +34,22 @@ export const ReferentMainPanel = (props) => {
 
   return (
     <>
-      <StyledTitle>Animateurs et animatrices</StyledTitle>
+      <StyledTitle>{_("Animateurs et animatrices")}</StyledTitle>
       <span style={{ color: style.black700 }}>
-        Les animateur·ices organisent la vie du groupe.
+        {_("Les animateur·ices organisent la vie du groupe.")}
       </span>
       <Spacer size=".5rem" />
       <span style={{ color: style.black700 }}>
-        Pour respecter la{" "}
+        {_("Pour respecter la")}{" "}
         <a href="https://infos.actionpopulaire.fr/charte-des-groupes-action-populaire/">
-          charte des groupes d'actions
+          {_("charte des groupes d'actions")}
         </a>
-        , votre groupe doit être animé à parité de genre.
+        {_(", votre groupe doit être animé à parité de genre.")}
       </span>
       <Spacer size="1.5rem" />
       <GroupMemberList
         members={referents}
-        addButtonLabel="Ajouter votre binôme"
+        addButtonLabel={_("Ajouter votre binôme")}
         onAdd={
           referents.length < 2 && members.length > 1 ? addReferent : undefined
         }
@@ -68,7 +69,7 @@ export const ReferentMainPanel = (props) => {
             style={{ paddingTop: "3px" }}
           />
           <Spacer size="0.5rem" />
-          Changer l'animation du groupe
+          {_("Changer l'animation du groupe")}
         </a>
       )}
       {routes?.animationChangeRequest && routes?.referentResignmentRequest && (
@@ -86,19 +87,18 @@ export const ReferentMainPanel = (props) => {
             style={{ paddingTop: "3px" }}
           />
           <Spacer size="0.5rem" />
-          Je ne souhaite plus animer mon groupe
+          {_("Je ne souhaite plus animer mon groupe")}
         </a>
       )}
       {(routes?.animationChangeRequest ||
         routes?.referentResignmentRequest) && <Spacer size="1.5rem" />}
       <StyledTitle>Gestionnaires</StyledTitle>
       <span style={{ color: style.black700 }}>
-        Ajoutez des gestionnaires pour vous assister sur Action Populaire.
+        {_("Ajoutez des gestionnaires pour vous assister sur Action Populaire.")}
       </span>
       <Spacer size="0.5rem" />
       <span style={{ color: style.black700 }}>
-        Ces derniers ont accès à la liste des membres, peuvent modifier les
-        informations et créer des événements au nom du groupe.
+        {_("Ces derniers ont accès à la liste des membres, peuvent modifier les informations et créer des événements au nom du groupe.")}
       </span>
       <Spacer size="1.5rem" />
       <GroupMemberList
@@ -112,7 +112,7 @@ export const ReferentMainPanel = (props) => {
         <>
           <hr />
           <a href={routes.deleteGroup} style={{ color: style.redNSP }}>
-            Supprimer le groupe
+            {_("Supprimer le groupe")}
           </a>
         </>
       )}

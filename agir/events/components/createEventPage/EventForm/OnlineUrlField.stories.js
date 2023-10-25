@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React, { useState } from "react";
 import OnlineUrlField from "./OnlineUrlField";
 
@@ -23,8 +24,8 @@ export const Default = Template.bind({});
 
 Default.args = {
   name: "visioConf",
-  label: "Visio-conférence",
-  placeholder: "URL de la visio-conférence (facultatif)",
+  label: _("Visio-conférence"),
+  placeholder: _("URL de la visio-conférence (facultatif)"),
   error: "",
 };
 

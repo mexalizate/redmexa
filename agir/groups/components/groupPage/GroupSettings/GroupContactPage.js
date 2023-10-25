@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useState, useEffect, useCallback } from "react";
 import useSWR from "swr";
@@ -53,7 +54,7 @@ const GroupContactPage = (props) => {
         setErrors(res.error?.contact);
         return;
       }
-      sendToast("Informations mises à jour", "SUCCESS", { autoClose: true });
+      sendToast(_("Informations mises à jour"), "SUCCESS", { autoClose: true });
       mutate((group) => {
         return { ...group, ...res.data };
       });
@@ -69,17 +70,16 @@ const GroupContactPage = (props) => {
   return (
     <form onSubmit={handleSubmit}>
       <HeaderPanel onBack={onBack} illustration={illustration} />
-      <StyledTitle>Moyens de contact</StyledTitle>
+      <StyledTitle>{_("Moyens de contact")}</StyledTitle>
 
       <Spacer size="1rem" />
 
       <span style={{ color: style.black700 }}>
-        Ces informations seront affichées en public.
+        {_("Ces informations seront affichées en public.")}
       </span>
       <Spacer size="0.5rem" />
       <span style={{ color: style.black700 }}>
-        Conseillé : créez une adresse e-mail pour votre groupe et n’utilisez pas
-        une adresse personnelle.
+        {_("Conseillé : créez une adresse e-mail pour votre groupe et n’utilisez pas une adresse personnelle.")}
       </span>
 
       <Spacer size="2rem" />
@@ -87,7 +87,7 @@ const GroupContactPage = (props) => {
       <TextField
         id="name"
         name="name"
-        label="Personnes à contacter*"
+        label={_("Personnes à contacter*")}
         onChange={handleChange}
         value={contact?.name}
         error={errors?.name}
@@ -99,7 +99,7 @@ const GroupContactPage = (props) => {
         id="email"
         name="email"
         type="email"
-        label={"Adresse e-mail du groupe"}
+        label={_("Adresse e-mail du groupe")}
         onChange={handleChange}
         value={contact?.email}
         error={errors?.email}
@@ -110,7 +110,7 @@ const GroupContactPage = (props) => {
       <TextField
         id="phone"
         name="phone"
-        label="Numéro de téléphone à contacter*"
+        label={_("Numéro de téléphone à contacter*")}
         onChange={handleChange}
         value={contact?.phone}
         error={errors?.phone}
@@ -120,7 +120,7 @@ const GroupContactPage = (props) => {
 
       <CheckboxField
         name="hidePhone"
-        label="Cacher le numéro de téléphone"
+        label={_("Cacher le numéro de téléphone")}
         value={contact?.hidePhone}
         error={errors?.hidePhone}
         onChange={handleCheckboxChange}
@@ -128,7 +128,7 @@ const GroupContactPage = (props) => {
 
       <Spacer size="2rem" />
       <Button color="secondary" type="submit" disabled={isLoading}>
-        Enregistrer
+        {_("Enregistrer")}
       </Button>
     </form>
   );

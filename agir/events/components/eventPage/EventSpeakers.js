@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
@@ -65,7 +66,7 @@ const EventSpeakers = ({ eventSpeakers, ...rest }) => {
 
   return (
     <StyledCard {...rest}>
-      <h5>Intervenant·e{eventSpeakers.length > 1 && "s"}&nbsp;:</h5>
+      <h5>{_("Intervenant·e")}{eventSpeakers.length > 1 && "s"}&nbsp;:</h5>
       {eventSpeakers.map((speaker) => (
         <StyledEventSpeaker key={speaker.id}>
           <Avatar displayName={speaker.name} image={speaker.image} />

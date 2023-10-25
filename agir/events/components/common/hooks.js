@@ -1,3 +1,4 @@
+import _ from "gettext";
 import { useMemo } from "react";
 import useSWR from "swr";
 
@@ -19,7 +20,7 @@ export const useEventFormOptions = () => {
         {
           id: null,
           value: null,
-          label: "À titre individuel",
+          label: _("À titre individuel"),
           contact: eventOptions.defaultContact,
         },
       ];

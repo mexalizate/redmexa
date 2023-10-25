@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
@@ -43,14 +44,14 @@ export const ReportFormCard = (props) => {
       <h5>{title}</h5>
       {submitted ? (
         <p>
-          <FeatherIcon inline name="check" /> Vous avez répondu à ce formulaire
+          <FeatherIcon inline name="check" /> {_("Vous avez répondu à ce formulaire")}
         </p>
       ) : (
         <p dangerouslySetInnerHTML={{ __html: description }} />
       )}
       {!submitted && (
         <Button link small color="primary" href={url}>
-          Je complète
+          {_("Je complète")}
         </Button>
       )}
     </StyledReportCard>

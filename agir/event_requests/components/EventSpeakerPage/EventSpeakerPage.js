@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React from "react";
 import styled from "styled-components";
 
@@ -79,8 +80,8 @@ const EventSpeakerPage = () => {
   if (!isLoading && !speaker) {
     return (
       <ErrorPage
-        title="Vous n'êtes pas autorisé·e à accéder à cette page"
-        subtitle="Si vous êtes arrivé·e ici en suivant un lien reçu par e-mail, vérifiez que vous êtes bien connecté·e avec le compte correspondant à la même adresse e-mail."
+        title={_("Vous n'êtes pas autorisé·e à accéder à cette page")}
+        subtitle={_("Si vous êtes arrivé·e ici en suivant un lien reçu par e-mail, vérifiez que vous êtes bien connecté·e avec le compte correspondant à la même adresse e-mail.")}
         icon={<RawFeatherIcon name="lock" />}
         hasTopBar={false}
         hasReload={false}
@@ -98,15 +99,15 @@ const EventSpeakerPage = () => {
     <PageFadeIn ready={!isLoading}>
       <StyledPage>
         <Hide $over as="h3">
-          Demandes d'événements
+          {_("Demandes d'événements")}
         </Hide>
         <main>
           <section>
             <Hide $under as="h3">
-              Demandes d'événements
+              {_("Demandes d'événements")}
             </Hide>
             {!hasAnswerable && !hasUnanswerable ? (
-              <p>Vous n'avez pas encore reçu de demandes d'événement.</p>
+              <p>{_("Vous n'avez pas encore reçu de demandes d'événement.")}</p>
             ) : (
               <>
                 <h4>Demandes en cours</h4>
@@ -117,13 +118,13 @@ const EventSpeakerPage = () => {
                     ))}
                   </StyledRequestCardList>
                 ) : (
-                  <p>Vous n'avez pas de demande à traiter.</p>
+                  <p>{_("Vous n'avez pas de demande à traiter.")}</p>
                 )}
 
                 {hasUnanswerable && (
                   <>
                     <Spacer size="1.5rem" />
-                    <h4>Demandes passées</h4>
+                    <h4>{_("Demandes passées")}</h4>
                     <StyledRequestCardList>
                       {requests.unanswerable.map((request) => (
                         <EventRequestCard key={request.id} {...request} />
@@ -136,7 +137,7 @@ const EventSpeakerPage = () => {
           </section>
           <Hide $under={!hasEvents} as="aside">
             <PageFadeIn ready={!isLoadingEvents}>
-              <h4>Vos événements à venir</h4>
+              <h4>{_("Vos événements à venir")}</h4>
               {hasEvents ? (
                 <UpcomingEvents
                   orientation={upcomingEventOrientation}
@@ -144,7 +145,7 @@ const EventSpeakerPage = () => {
                   backLink="eventSpeaker"
                 />
               ) : (
-                <p>Vous n'avez pas d'événements à venir</p>
+                <p>{_("Vous n'avez pas d'événements à venir")}</p>
               )}
             </PageFadeIn>
           </Hide>

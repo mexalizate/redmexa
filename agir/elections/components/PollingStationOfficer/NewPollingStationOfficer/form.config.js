@@ -1,3 +1,4 @@
+import _ from "gettext";
 import I18N from "@agir/lib/i18n";
 import validate from "@agir/lib/utils/validate";
 
@@ -54,18 +55,18 @@ export const POLLING_STATION_OFFICER_CONSTRAINTS = {
     length: {
       maximum: 255,
       tooLong:
-        "La valeur de ce champ ne peut pas dépasser les %{count} caractères",
+        _("La valeur de ce champ ne peut pas dépasser les %{count} caractères"),
     },
   },
   lastName: {
     presence: {
       allowEmpty: false,
-      message: "Ce champ ne peut être vide.",
+      message: _("Ce champ ne peut être vide."),
     },
     length: {
       maximum: 255,
       tooLong:
-        "La valeur de ce champ ne peut pas dépasser les %{count} caractères",
+        _("La valeur de ce champ ne peut pas dépasser les %{count} caractères"),
     },
   },
   birthName: {
@@ -74,50 +75,50 @@ export const POLLING_STATION_OFFICER_CONSTRAINTS = {
     },
     length: {
       maximum: 255,
-      tooLong: "Assurez-vous que ce champ comporte au plus 255 caractères.",
+      tooLong: _("Assurez-vous que ce champ comporte au plus 255 caractères."),
     },
   },
   gender: {
     presence: {
       allowEmpty: false,
-      message: "Ce champ ne peut être vide.",
+      message: _("Ce champ ne peut être vide."),
     },
   },
   birthDate: {
     presence: {
       allowEmpty: false,
-      message: "Ce champ ne peut être vide.",
+      message: _("Ce champ ne peut être vide."),
     },
     date: {
-      message: "Indiquez une date valide",
+      message: _("Indiquez une date valide"),
     },
   },
   birthCity: {
     presence: {
       allowEmpty: false,
-      message: "Ce champ ne peut être vide.",
+      message:_( "Ce champ ne peut être vide."),
     },
     length: {
       maximum: 255,
       tooLong:
-        "La valeur de ce champ ne peut pas dépasser les %{count} caractères",
+        _("La valeur de ce champ ne peut pas dépasser les %{count} caractères"),
     },
   },
   birthCountry: {
     presence: {
       allowEmpty: false,
-      message: "Ce champ ne peut être vide.",
+      message: _("Ce champ ne peut être vide."),
     },
   },
   address1: {
     presence: {
       allowEmpty: false,
-      message: "Ce champ ne peut être vide.",
+      message: _("Ce champ ne peut être vide."),
     },
     length: {
       maximum: 255,
       tooLong:
-        "La valeur de ce champ ne peut pas dépasser les %{count} caractères",
+        _("La valeur de ce champ ne peut pas dépasser les %{count} caractères"),
     },
   },
   address2: {
@@ -127,75 +128,75 @@ export const POLLING_STATION_OFFICER_CONSTRAINTS = {
     length: {
       maximum: 255,
       tooLong:
-        "La valeur de ce champ ne peut pas dépasser les %{count} caractères",
+        _("La valeur de ce champ ne peut pas dépasser les %{count} caractères"),
     },
   },
   zip: {
     presence: {
       allowEmpty: false,
-      message: "Ce champ ne peut être vide.",
+      message: _("Ce champ ne peut être vide."),
     },
     length: {
       maximum: 20,
       tooLong:
-        "La valeur de ce champ ne peut pas dépasser les %{count} caractères",
+        _("La valeur de ce champ ne peut pas dépasser les %{count} caractères"),
     },
   },
   city: {
     presence: {
       allowEmpty: false,
-      message: "Ce champ ne peut être vide.",
+      message: _("Ce champ ne peut être vide."),
     },
     length: {
       maximum: 255,
       tooLong:
-        "La valeur de ce champ ne peut pas dépasser les %{count} caractères",
+        _("La valeur de ce champ ne peut pas dépasser les %{count} caractères"),
     },
   },
   country: {
     presence: {
       allowEmpty: false,
-      message: "Ce champ ne peut être vide.",
+      message: _("Ce champ ne peut être vide."),
     },
   },
   votingLocation: {
     presence: {
       allowEmpty: false,
-      message: "Cette sélection ne peut être vide.",
+      message: _("Cette sélection ne peut être vide."),
     },
   },
   pollingStation: {
     presence: {
       allowEmpty: false,
-      message: "Ce champ est obligatoire",
+      message: _("Ce champ est obligatoire"),
     },
     length: {
       maximum: 255,
       tooLong:
-        "La valeur de ce champ ne peut pas dépasser les %{count} caractères",
+        _("La valeur de ce champ ne peut pas dépasser les %{count} caractères"),
     },
   },
   voterId: {
     presence: {
       allowEmpty: false,
-      message: "Ce champ est obligatoire",
+      message: _("Ce champ est obligatoire"),
     },
     length: {
       maximum: 255,
       tooLong:
-        "La valeur de ce champ ne peut pas dépasser les %{count} caractères",
+        _("La valeur de ce champ ne peut pas dépasser les %{count} caractères"),
     },
   },
   votingCirconscriptionLegislative: {
     presence: {
       allowEmpty: false,
-      message: "Ce champ est obligatoire",
+      message: _("Ce champ est obligatoire"),
     },
   },
   role: {
     presence: {
       allowEmpty: false,
-      message: "Cette sélection ne peut être vide.",
+      message: _("Cette sélection ne peut être vide."),
     },
   },
   hasMobility: {
@@ -204,7 +205,7 @@ export const POLLING_STATION_OFFICER_CONSTRAINTS = {
   availableVotingDates: {
     presence: {
       allowEmpty: false,
-      message: "Cette sélection ne peut être vide.",
+      message: _("Cette sélection ne peut être vide."),
     },
   },
   email: {
@@ -213,7 +214,7 @@ export const POLLING_STATION_OFFICER_CONSTRAINTS = {
       message: "Ce champ ne peut être vide.",
     },
     email: {
-      message: "Saisissez une adresse e-mail valide.",
+      message: _("Saisissez une adresse e-mail valide."),
     },
   },
   phone: {
@@ -222,7 +223,7 @@ export const POLLING_STATION_OFFICER_CONSTRAINTS = {
       message: "Ce champ ne peut être vide.",
     },
     phone: {
-      message: "Saisissez un numéro de téléphone valide.",
+      message: _("Saisissez un numéro de téléphone valide."),
     },
   },
   remarks: {
@@ -231,7 +232,7 @@ export const POLLING_STATION_OFFICER_CONSTRAINTS = {
     },
     length: {
       maximum: 255,
-      tooLong: "Assurez-vous que ce champ comporte au plus 255 caractères.",
+      tooLong: _("Assurez-vous que ce champ comporte au plus 255 caractères."),
     },
   },
 };

@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useCallback, useMemo, useState } from "react";
 import { useHistory, useLocation } from "react-router-dom";
@@ -96,10 +97,10 @@ const ContactButton = (props) => {
         <ModalConfirmation
           shouldShow={messageModalOpen}
           onClose={handleMessageClose}
-          title="Contactez les animateur·ices du groupe"
+          title={_("Contactez les animateur·ices du groupe")}
         >
           <div>
-            Vous pouvez contacter les animateur·ices du groupe par e-mail&nbsp;:
+           {_(" Vous pouvez contacter les animateur·ices du groupe par e-mail :")}
             <Spacer size="1rem" />
             <ShareLink
               label="Copier"

@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useCallback, useMemo } from "react";
 import { useHistory, useRouteMatch } from "react-router-dom";
@@ -215,7 +216,7 @@ const SubtypeField = (props) => {
             type="button"
             disabled={disabled}
           >
-            {value ? "Modifier" : "+ d'options"}
+            {value ? _("Modifier") : _("+ d'options")}
           </StyledPanelTrigger>
         )}
         {!!info && (

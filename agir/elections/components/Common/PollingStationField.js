@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { usePrevious } from "react-use";
@@ -72,7 +73,7 @@ const AbroadPollingStationField = (props) => {
   return (
     <SelectField
       {...props}
-      placeholder="Chercher un bureau de vote"
+      placeholder={_("Chercher un bureau de vote")}
       value={selected}
       options={options}
       onChange={handleChange}
@@ -103,11 +104,11 @@ const PollingStationField = ({ isAbroad, ...rest }) => {
   return isAbroad ? (
     <AbroadPollingStationField
       helpText={HelpText}
-      label="Bureau de vote"
+      label={_("Bureau de vote")}
       {...rest}
     />
   ) : (
-    <TextField helpText={HelpText} label="Bureau de vote" {...rest} />
+    <TextField helpText={HelpText} label={_("Bureau de vote")} {...rest} />
   );
 };
 

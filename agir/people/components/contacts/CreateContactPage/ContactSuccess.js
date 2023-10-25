@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
@@ -61,18 +62,17 @@ const ContactSuccess = (props) => {
       <p>{`Merci pour votre aide ${user?.firstName || ""}`.trim()}&nbsp;!</p>
       {data?.group?.name ? (
         <p>
-          Les gestionnaires et animateur·ices du groupe{" "}
-          <strong>{data.group.name}</strong> pourront accéder aux informations
-          du nouveau contact dans la gestion de leur groupe
+          {_("Les gestionnaires et animateur·ices du groupe")}{" "}
+          <strong>{data.group.name}</strong> {_("pourront accéder aux informations du nouveau contact dans la gestion de leur groupe")}
         </p>
       ) : null}
       <Spacer size="2.5rem" />
       <footer>
         <Button onClick={onReset} color="primary">
-          Ajouter un nouveau contact
+          {_("Ajouter un nouveau contact")}
         </Button>
         <Button link route="events">
-          Fermer
+          {_("Fermer")}
         </Button>
       </footer>
     </StyledWrapper>

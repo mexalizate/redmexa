@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React from "react";
 
 import GroupLocation from "./GroupLocation";
@@ -33,7 +34,7 @@ const Template = (args) => {
 
 export const Default = Template.bind({});
 Default.args = {
-  name: "Comités d'appui et de travail pour une Vienne Insoumise",
+  name: _("Comités d'appui et de travail pour une Vienne Insoumise"),
   locationName: "Le café de la gare",
   locationAddress1: "1 Place de la République",
   locationAddress2: "Au fond à gauche",

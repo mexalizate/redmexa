@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useState, useEffect, useCallback } from "react";
 import useSWR, { mutate } from "swr";
@@ -78,12 +79,10 @@ const EventContact = (props) => {
   return (
     <form onSubmit={handleSubmit}>
       <HeaderPanel onBack={onBack} illustration={illustration} />
-      <StyledTitle>Moyens de contact</StyledTitle>
+      <StyledTitle>{_("Moyens de contact")}</StyledTitle>
 
       <span style={{ color: style.black700 }}>
-        Ces informations seront affichées en public. Conseillé : créez une
-        adresse e-mail pour votre groupe et n’utilisez pas une adresse
-        personnelle.
+        {_("Ces informations seront affichées en public. Conseillé : créez une adresse e-mail pour votre groupe et n’utilisez pas une adresse personnelle.")}
       </span>
 
       <Spacer size="1rem" />
@@ -91,7 +90,7 @@ const EventContact = (props) => {
       <TextField
         id="name"
         name="name"
-        label="Nom de la/les personnes à contacter*"
+        label={_("Nom de la/les personnes à contacter*")}
         onChange={handleChange}
         value={contact.name}
         error={errors?.name}
@@ -104,7 +103,7 @@ const EventContact = (props) => {
         id="email"
         name="email"
         type="email"
-        label="Adresse e-mail à contacter*"
+        label={_("Adresse e-mail à contacter*")}
         onChange={handleChange}
         value={contact.email}
         error={errors?.email}
@@ -116,7 +115,7 @@ const EventContact = (props) => {
       <TextField
         id="phone"
         name="phone"
-        label="Numéro de téléphone à contacter*"
+        label={_("Numéro de téléphone à contacter*")}
         onChange={handleChange}
         value={contact.phone}
         error={errors?.phone}
@@ -127,7 +126,7 @@ const EventContact = (props) => {
 
       <CheckboxField
         name="hidePhone"
-        label="Cacher le numéro de téléphone"
+        label={_("Cacher le numéro de téléphone")}
         value={contact?.hidePhone}
         error={errors?.hidePhone}
         onChange={handleCheckboxChange}
@@ -136,7 +135,7 @@ const EventContact = (props) => {
 
       <Spacer size="2rem" />
       <Button color="secondary" wrap disabled={isDisabled} type="submit">
-        Enregistrer
+        {_("Enregistrer")}
       </Button>
     </form>
   );

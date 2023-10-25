@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useMemo, Fragment } from "react";
 import styled from "styled-components";
@@ -130,10 +131,10 @@ export const AgendaRoutePreview = (props) => {
             {nextEvents.length > 0 && (
               <>
                 <h3>
-                  <span>À venir</span>
+                  <span>{_("À venir")}</span>
                   {goToAgendaTab && (
                     <button onClick={goToAgendaTab}>
-                      Agenda{" "}
+                      {_("Agenda")}{" "}
                       <RawFeatherIcon
                         name="arrow-right"
                         width="1rem"
@@ -159,12 +160,12 @@ export const AgendaRoutePreview = (props) => {
               <>
                 <h3>
                   <span>
-                    Dernier{lastEvents.length > 1 ? "s" : ""} événement
+                    {_("Dernier")}{lastEvents.length > 1 ? "s" : ""} {_("événement")}
                     {lastEvents.length > 1 ? "s" : ""}
                   </span>
                   {goToAgendaTab && (
                     <button onClick={goToAgendaTab}>
-                      Agenda{" "}
+                      {_("Agenda")}{" "}
                       <RawFeatherIcon
                         name="arrow-right"
                         width="1rem"
@@ -205,7 +206,7 @@ export const MessagesRoutePreview = (props) => {
     <RoutePreview>
       <PageFadeIn ready={!isLoadingMessages} wait={<Skeleton boxes={1} />}>
         <h3>
-          <span>Derniers messages</span>
+          <span>{_("Derniers messages")}</span>
           {goToMessagesTab && (
             <button onClick={goToMessagesTab}>
               Messages{" "}

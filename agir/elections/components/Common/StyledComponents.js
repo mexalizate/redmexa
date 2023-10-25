@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React from "react";
 import styled from "styled-components";
 
@@ -144,9 +145,9 @@ export const MailTo = () => (
       }
     `}
   >
-    Besoin d'aide&nbsp;? Une question&nbsp;?
+    {_("Besoin d'aide ? Une question ?")}
     <br />
-    Écrivez-nous à l'adresse{" "}
+    {_("Écrivez-nous à l'adresse")}{" "}
     <Link href="mailto:procurations@actionpopulaire.fr">
       procurations@actionpopulaire.fr
     </Link>

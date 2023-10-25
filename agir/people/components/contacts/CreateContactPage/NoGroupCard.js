@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React from "react";
 import styled from "styled-components";
 
@@ -51,18 +52,17 @@ const NoGroupCard = () => {
       <div>
         <RawFeatherIcon name="alert-triangle" />
         <p>
-          <strong>Vous ne faites partie d’aucun groupe d’action.</strong>{" "}
-          Rejoignez ou créez un groupe pour pouvoir abonner les soutiens que
-          vous obtenez à votre groupe
+          <strong>{_("Vous ne faites partie d’aucun groupe d’action.")}</strong>{" "}
+          {_("Rejoignez ou créez un groupe pour pouvoir abonner les soutiens que vous obtenez à votre groupe")}
         </p>
       </div>
       <footer>
         <Button link route="createGroup" color="primary">
-          Créer un groupe
+          {_("Créer un groupe")}
         </Button>
         <InlineSpacer size=".5rem" />
         <Button link route="groups">
-          Voir les groupes
+          {_("Voir les groupes")}
         </Button>
       </footer>
     </StyledCard>

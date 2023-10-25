@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useMemo } from "react";
 import styled from "styled-components";
@@ -130,7 +131,7 @@ const GroupMemberCard = (props) => {
   const [_, handleCopy] = useCopyToClipboard(
     email,
     2000,
-    "L'adresse e-mail a été copié.",
+    _("L'adresse e-mail a été copié."),
   );
 
   const role = useMemo(
@@ -169,7 +170,7 @@ const GroupMemberCard = (props) => {
             </span>
           ) : null}
           {email ? (
-            <button type="button" title="Copier l'adresse" onClick={handleCopy}>
+            <button type="button" title={_("Copier l'adresse")} onClick={handleCopy}>
               <FeatherIcon small name="mail" />
               <strong>{email}</strong>
             </button>
@@ -188,7 +189,7 @@ const GroupMemberCard = (props) => {
             <FeatherIcon small name="clock" />
 
             {membershipType === MEMBERSHIP_TYPES.FOLLOWER
-              ? `Contact ${subscriber ? "ajouté" : "depuis"} ${
+              ? `Contact ${subscriber ? _("ajouté") : _("depuis")} ${
                   timeAgo(created, "day").split(" à ")[0]
                 }
             ${subscriber ? ` par ${subscriber}` : ""}`

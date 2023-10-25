@@ -1,3 +1,4 @@
+import _ from "gettext";
 import _sortBy from "lodash/sortBy";
 import PropTypes from "prop-types";
 import React, { useCallback, useMemo, useState } from "react";
@@ -117,7 +118,7 @@ const GroupMemberList = ({
               label="Filter"
               value={search}
               onChange={handleSearch}
-              placeholder="Filtrer par nom ou e-mail"
+              placeholder={_("Filtrer par nom ou e-mail")}
             />
           )}
           {sortable && searchable && <Spacer size="0.5rem" />}

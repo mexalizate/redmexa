@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
@@ -73,7 +74,7 @@ const OnlineUrlCard = (props) => {
             target="_blank"
             color="secondary"
           >
-            Rejoindre en ligne
+            {_("Rejoindre en ligne")}
           </Button>
           <span>{onlineUrl}</span>
         </figcaption>

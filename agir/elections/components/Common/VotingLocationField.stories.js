@@ -1,3 +1,4 @@
+import _ from "gettext";
 import { rest } from "msw";
 import React, { useState } from "react";
 
@@ -41,7 +42,7 @@ export const Default = Template.bind({});
 Default.args = {
   id: "location",
   name: "location",
-  label: "Lieu",
-  helpText: "Cherchez en commencant par un 'A'",
+  label: _("Lieu"),
+  helpText: _("Cherchez en commencant par un 'A'"),
   error: "",
 };

@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useMemo } from "react";
 import styled from "styled-components";
@@ -143,19 +144,19 @@ const CertificationStatus = (props) => {
           progress={checkedCriteria.length / criteria.length}
         />
         <p>
-          <strong>Certification du groupe</strong>
+          <strong>{_("Certification du groupe")}</strong>
           <br />
           <span>
             {checkedCriteria.length}/{criteria.length}{" "}
             {checkedCriteria.length <= 1
-              ? "condition remplie"
-              : "conditions remplies"}
+              ? _("condition remplie")
+              : _("conditions remplies")}
           </span>
         </p>
       </div>
       <Spacer size="1rem" />
       <Button small link to={certificationPanelRoute}>
-        En savoir plus
+        {_("En savoir plus")}
       </Button>
     </StyledCard>
   );

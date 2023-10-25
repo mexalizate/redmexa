@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useCallback, useState } from "react";
 import { useHistory } from "react-router-dom";
@@ -122,8 +123,8 @@ const ConnectedUserActions = (props) => {
     if (response?.error?.error_code === "group_last_referent") {
       sendToast(
         <>
-          Désolé, vous ne pouvez pas quitter le groupe <strong>{name}</strong>,
-          car vous en êtes l'animateur·ice.
+          {_("Désolé, vous ne pouvez pas quitter le groupe")} <strong>{name}</strong>,
+          {_("car vous en êtes l'animateur·ice.")}
         </>,
         "ERROR",
         {
@@ -144,7 +145,7 @@ const ConnectedUserActions = (props) => {
     }));
     sendToast(
       <>
-        Vous avez quitté le groupe <strong>{name}</strong>.
+        {_("Vous avez quitté le groupe")} <strong>{name}</strong>.
       </>,
       "SUCCESS",
       {

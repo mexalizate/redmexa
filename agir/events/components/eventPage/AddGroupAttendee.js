@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useState } from "react";
 import styled from "styled-components";
@@ -138,7 +139,7 @@ const AddGroupAttendee = ({ id, groups, groupsAttendees }) => {
     <>
       {!!managingGroups?.length && (
         <Button onClick={showModalJoinAsGroup}>
-          Participer avec mon groupe
+          {_("Participer avec mon groupe")}
         </Button>
       )}
       <ResponsiveLayout
@@ -160,15 +161,12 @@ const AddGroupAttendee = ({ id, groups, groupsAttendees }) => {
           <div>
             {!groupJoined ? (
               <>
-                <h2>Participer avec mon groupe</h2>
-                Ajoutez un groupe dont vous êtes gestionnaire comme participant
-                à l’événement.
+                <h2>{_("Participer avec mon groupe")}</h2>
+               {_(" Ajoutez un groupe dont vous êtes gestionnaire comme participant à l’événement.")}
                 <Spacer size="0.5rem" />
-                L’événement sera ajouté à l’agenda du groupe.
+                {_("L’événement sera ajouté à l’agenda du groupe.")}
                 <Spacer size="0.5rem" />
-                Les groupes participants n'ont pas de droit d'organisation de
-                l'événement. Seuls les groupes co-organisateurs peuvent inviter
-                d'autres groupes à co-organiser.
+                {_("Les groupes participants n'ont pas de droit d'organisation de l'événement. Seuls les groupes co-organisateurs peuvent inviter d'autres groupes à co-organiser.")}
                 <Spacer size="1rem" />
                 {managingGroups.map((group) => (
                   <GroupItem
@@ -189,14 +187,11 @@ const AddGroupAttendee = ({ id, groups, groupsAttendees }) => {
             ) : (
               <>
                 <h2 style={{ color: style.green500 }}>
-                  Votre groupe participe à l’évémenent&nbsp;!
+                  {_("Votre groupe participe à l’évémenent&nbsp;!")}
                 </h2>
-                <b>{groupJoined.name}</b> est désormais indiqué comme
-                participant à l’événement.
+                <b>{groupJoined.name}</b> {_("est désormais indiqué comme participant à l’événement.")}
                 <Spacer size="1rem" />
-                Tous les membres du groupe présents doivent également indiquer
-                leur présence individuelle sur Action Populaire pour aider les
-                organisateur·ices à définir le nombre de participants.
+                {_("Tous les membres du groupe présents doivent également indiquer leur présence individuelle sur Action Populaire pour aider les organisateur·ices à définir le nombre de participants.")}
                 <Spacer size="1rem" />
                 <Button onClick={closeModalJoin}>Compris</Button>
               </>

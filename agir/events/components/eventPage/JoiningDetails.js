@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React from "react";
 import PropTypes from "prop-types";
 
@@ -61,9 +62,9 @@ const RSVP = ({ hasPrice, eventPk, rsvpRoute }) => (
     <StyledContent>
       <div>
         {rsvpRoute ? (
-          <Link route={rsvpRoute}>Vous participez à l'événement</Link>
+          <Link route={rsvpRoute}>{_("Vous participez à l'événement")}</Link>
         ) : (
-          "Vous participez à l'événement"
+          _("Vous participez à l'événement")
         )}
       </div>
       {!hasPrice && <QuitEventButton eventPk={eventPk} />}
@@ -86,7 +87,7 @@ const GroupRSVP = ({ eventPk, group, backLink }) => (
     />
     <StyledContent>
       <div>
-        Votre groupe&nbsp;
+        {_("Votre groupe")}&nbsp;
         <Link
           route="groupDetails"
           routeParams={{ groupPk: group.id }}
@@ -94,7 +95,7 @@ const GroupRSVP = ({ eventPk, group, backLink }) => (
         >
           {group.name}
         </Link>
-        &nbsp;participe à l'événement
+        &nbsp;{_("participe à l'événement")}
       </div>
       {group.isManager && <QuitEventButton eventPk={eventPk} group={group} />}
     </StyledContent>

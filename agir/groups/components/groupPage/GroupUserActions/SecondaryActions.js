@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useState, useCallback } from "react";
 import styled from "styled-components";
@@ -70,12 +71,12 @@ const SecondaryActions = ({
       )}
       <button type="button" onClick={handleShareOpen}>
         <RawFeatherIcon name="share-2" width="1.5rem" height="1.5rem" />
-        <span>Partager</span>
+        <span>{_("Partager")}</span>
       </button>
       <ModalConfirmation
         shouldShow={isShareOpen}
         onClose={handleShareClose}
-        title="Partager le groupe"
+        title={_("Partager le groupe")}
       >
         <ShareContentUrl url={routes.details} />
       </ModalConfirmation>

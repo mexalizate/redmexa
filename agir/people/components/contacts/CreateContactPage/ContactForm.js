@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import styled from "styled-components";
@@ -65,7 +66,7 @@ const formatGroupOptions = (groups) =>
         {
           id: null,
           value: "",
-          label: "Ne pas ajouter à un groupe",
+          label: _("Ne pas ajouter à un groupe"),
         },
       ]
     : null;
@@ -207,8 +208,7 @@ export const ContactForm = (props) => {
       <h3>Nouveau contact</h3>
       <Spacer size="0.5rem" />
       <em>
-        &laquo;&nbsp;Souhaitez-vous nous laisser votre
-        contact&nbsp;?&nbsp;&raquo;
+        &laquo;&nbsp;{_("Souhaitez-vous nous laisser votre contact")}&nbsp;?&nbsp;&raquo;
       </em>
       <Spacer data-scroll="firstName" size="1.5rem" />
       <TextField
@@ -262,12 +262,11 @@ export const ContactForm = (props) => {
         onChange={handleChange}
         value={data.phone}
         disabled={isLoading}
-        helpText={<em>Facultatif si une adresse e-mail a été renseignée</em>}
+        helpText={<em>{_("Facultatif si une adresse e-mail a été renseignée")}</em>}
       />
       <Spacer data-scroll="newsletters" size="2rem" />
       <h4>
-        &laquo;&nbsp;Souhaitez-vous rejoindre la France
-        insoumise&nbsp;?&nbsp;&raquo;
+        &laquo;&nbsp;{_("Souhaitez-vous rejoindre la France insoumise")}&nbsp;?&nbsp;&raquo;
       </h4>
       <CheckboxField
         label="Je souhaite rejoindre la France insoumise"
@@ -278,7 +277,7 @@ export const ContactForm = (props) => {
         disabled={isLoading}
       />
       <Spacer data-scroll="newsletters" size="1.5rem" />
-      <h4>Souhaitez-vous recevoir&nbsp;:</h4>
+      <h4>{_("Souhaitez-vous recevoir :")}</h4>
       {newsletterOptions.map((option) => (
         <React.Fragment key={option.value}>
           <CheckboxField
@@ -294,8 +293,8 @@ export const ContactForm = (props) => {
       ))}
       <Spacer data-scroll="group" size="1.5rem" />
       <SearchAndSelectField
-        label="Groupe auquel ajouter le contact"
-        placeholder="Choisissez un groupe d'action"
+        label={_("Groupe auquel ajouter le contact")}
+        placeholder={_("Choisissez un groupe d'action")}
         onChange={handleSelectGroup}
         onSearch={handleSearchGroup}
         isLoading={typeof groupOptions === "undefined"}
@@ -323,19 +322,16 @@ export const ContactForm = (props) => {
         <>
           <Spacer size="1.5rem" />
           <h4>
-            Souhaitez-vous devenir correspondant·e pour votre immeuble ou votre
-            village&nbsp;?
+            {("Souhaitez-vous devenir correspondant·e pour votre immeuble ou votre village ?")}
           </h4>
           <p>
             <em>
-              &laquo;&nbsp;Nous vous enverrons des informations et du matériel
-              pour diffuser nos propositions et actions auprès de vos voisins et
-              voisines&nbsp;&raquo;
+              &laquo;&nbsp;{("Nous vous enverrons des informations et du matériel pour diffuser nos propositions et actions auprès de vos voisins et voisines")}&nbsp;&raquo;
             </em>
           </p>
           <Spacer size=".5rem" />
           <CheckboxField
-            label="Devenir correspondant·e de l'immeuble ou du village"
+            label={_("Devenir correspondant·e de l'immeuble ou du village")}
             onChange={handleCheckNewsletter}
             value={data.newsletters.includes(LIAISON_NEWSLETTER.value)}
             id={LIAISON_NEWSLETTER.value}
@@ -348,11 +344,10 @@ export const ContactForm = (props) => {
         <>
           <Spacer data-scroll="address" size="1rem" />
           <TextField
-            label="Numéro et nom de la rue"
+            label={_("Numéro et nom de la rue")}
             helpText={
               <em>
-                Pour pouvoir vous envoyer des informations en tant que
-                correspondant·e
+                {_("Pour pouvoir vous envoyer des informations en tant que correspondant·e")}
               </em>
             }
             id="address"
@@ -365,7 +360,7 @@ export const ContactForm = (props) => {
           />
           <Spacer data-scroll="city" size="1rem" />
           <TextField
-            label="Nom de la commune"
+            label={_("Nom de la commune")}
             id="city"
             name="city"
             error={errors?.city}
@@ -403,7 +398,7 @@ export const ContactForm = (props) => {
         </p>
       )}
       <Button block type="submit" color="primary" disabled={isLoading}>
-        Suivant
+        {_("Suivant")}
       </Button>
     </StyledForm>
   );

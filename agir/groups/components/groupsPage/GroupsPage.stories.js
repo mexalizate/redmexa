@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React from "react";
 
 import GroupsPage from "./GroupsPage";
@@ -24,9 +25,9 @@ Default.args = {
   data: [
     {
       id: "90872185-3a66-4ab8-9405-1774edd483b8",
-      name: "Clerc Jacquet SA",
+      name: _("Clerc Jacquet SA"),
       description:
-        "Fin lit consulter fuir endormir. Absence consentir écouter autrefois blanc qui part. Amour officier saint nez.",
+        _("Fin lit consulter fuir endormir. Absence consentir écouter autrefois blanc qui part. Amour officier saint nez."),
       type: "B",
       typeLabel: "Groupe thématique",
       url: "http://agir.local:8000/groupes/90872185-3a66-4ab8-9405-1774edd483b8/",
@@ -49,9 +50,9 @@ Default.args = {
     },
     {
       id: "46331667-6718-4e58-9c83-0ff958e17bb5",
-      name: "Moulin Carlier SARL",
+      name: _("Moulin Carlier SARL"),
       description:
-        "Ancien difficile par midi remplacer vague rejeter. Qui vieux autorité votre yeux aucun chat bête.",
+        _("Ancien difficile par midi remplacer vague rejeter. Qui vieux autorité votre yeux aucun chat bête."),
       type: "L",
       typeLabel: "Groupe local",
       url: "http://agir.local:8000/groupes/46331667-6718-4e58-9c83-0ff958e17bb5/",
@@ -76,7 +77,7 @@ Default.args = {
       id: "09d80e5e-719a-4415-9f03-6d58fbedf183",
       name: "Diaz",
       description:
-        "Mais impossible prix bout couche. Discussion ouvrir un tu usage observer.",
+        _("Mais impossible prix bout couche. Discussion ouvrir un tu usage observer."),
       type: "B",
       typeLabel: "Groupe thématique",
       url: "http://agir.local:8000/groupes/09d80e5e-719a-4415-9f03-6d58fbedf183/",

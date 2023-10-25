@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useCallback } from "react";
 
@@ -15,13 +16,13 @@ const OrganizerGroupField = (props) => {
 
   return (
     <SelectField
-      label="Organisateur"
+      label={_("Organisateur")}
       id={name}
       name={name}
       value={value}
       onChange={handleChange}
       options={options}
-      placeholder="Choisissez un organisateur"
+      placeholder={_("Choisissez un organisateur")}
       required={required}
       disabled={disabled}
       error={error}

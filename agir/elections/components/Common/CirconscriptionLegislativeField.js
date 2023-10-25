@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useEffect, useMemo } from "react";
 
@@ -42,7 +43,7 @@ const CirconscriptionLegislativeField = (props) => {
     <SelectField
       helpText={
         <span>
-          Vous pouvez vérifier votre circonscription d'inscription sur le site{" "}
+          {_("Vous pouvez vérifier votre circonscription d'inscription sur le site")}{" "}
           <a
             href={getCirconscriptionLegislativeSearchLink(votingLocation)}
             target="_blank"
@@ -52,7 +53,7 @@ const CirconscriptionLegislativeField = (props) => {
           </a>
         </span>
       }
-      placeholder="Chercher un circonscription"
+      placeholder={_("Chercher un circonscription")}
       {...rest}
       value={typeof value === "string" ? null : value}
       options={byDepartement}

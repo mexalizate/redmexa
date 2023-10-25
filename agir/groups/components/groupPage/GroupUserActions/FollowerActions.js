@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useCallback, useState } from "react";
 import styled from "styled-components";
@@ -32,7 +33,7 @@ const FollowerActions = ({ isLoading, onJoin, onEdit, onQuit }) => {
           icon="chevron-down"
           rightIcon
         >
-          Vous êtes abonné·e
+         {_(" Vous êtes abonné·e")}
         </Button>
         <ResponsiveLayout
           MobileLayout={BottomSheet}
@@ -46,13 +47,13 @@ const FollowerActions = ({ isLoading, onJoin, onEdit, onQuit }) => {
             <li>
               <button type="button" onClick={onEdit}>
                 <RawFeatherIcon name="lock" width="1rem" height="1rem" />
-                Préférences de confidentialité
+                {_("Préférences de confidentialité")}
               </button>
             </li>
             <li>
               <button type="button" onClick={onQuit}>
                 <RawFeatherIcon name="x" width="1rem" height="1rem" />
-                Arrêter d’être abonné·e
+                {_("Arrêter d’être abonné·e")}
               </button>
             </li>
           </StyledMenuList>
@@ -65,7 +66,7 @@ const FollowerActions = ({ isLoading, onJoin, onEdit, onQuit }) => {
         disabled={isLoading}
         icon="plus"
       >
-        Rejoindre
+        {_("Rejoindre")}
       </Button>
     </StyledWrapper>
   );

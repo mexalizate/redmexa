@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React from "react";
 
 import { MEMBERSHIP_TYPES } from "@agir/groups/utils/group";
@@ -62,9 +63,9 @@ Default.args = {
   membershipType: MEMBERSHIP_TYPES.MEMBER,
   subscriber: "John Doe",
   meta: {
-    description: "Animateur·ice de groupe d'action",
+    description: _("Animateur·ice de groupe d'action"),
     group_id: "12345",
-    group_name: "Groupe d'action des îles Kerguelen",
+    group_name: _("Groupe d'action des îles Kerguelen"),
   },
 };
 

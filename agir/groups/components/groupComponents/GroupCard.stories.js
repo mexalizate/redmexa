@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React from "react";
 
 import GroupCard from "./GroupCard";
@@ -29,7 +30,7 @@ const setRoutes = ({ fund, manage, ...args }) => ({
 
 const Template = decorateArgs(setRoutes, GroupCard);
 
-const DEFAULT_DESCRIPTION = `
+const DEFAULT_DESCRIPTION = _(`
 <p>I hate yogurt. It's just stuff with bits in. You hate me; you want to kill me! Well, go on! Kill me! KILL ME! You've swallowed a planet! The way I see it, every life is a pile of good things and bad things.…hey.…the good things don't always soften the bad things; but vice-versa the bad things don't necessarily spoil the good things and make them unimportant.</p>
 <ol>
     <li>The way I see it, every life is a pile of good things and bad things.…hey.…the good things don't always soften the bad things; but vice-versa the bad things don't necessarily spoil the good things and make them unimportant.</li><li>It's art! A statement on modern society, 'Oh Ain't Modern Society Awful?'!</li><li>All I've got to do is pass as an ordinary human being. Simple. What could possibly go wrong?</li>
@@ -38,7 +39,7 @@ const DEFAULT_DESCRIPTION = `
 <ul>
     <li>They're not aliens, they're Earth…liens!</li><li>I am the last of my species, and I know how that weighs on the heart so don't lie to me!</li><li>You hate me; you want to kill me! Well, go on! Kill me! KILL ME!</li>
 </ul>
-`;
+`);
 
 const today = DateTime.local();
 
@@ -50,7 +51,7 @@ Default.args = {
   eventCount: 7,
   membersCount: 14,
   typeLabel: "Groupe fonctionnel",
-  labels: ["Groupe certifié", "Espace opérationnel"],
+  labels: [_("Groupe certifié"), _("Espace opérationnel")],
   fund: true,
   manage: true,
   displayGroupLogo: true,

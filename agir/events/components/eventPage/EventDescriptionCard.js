@@ -1,3 +1,4 @@
+import _ from "gettext";
 import { DateTime } from "luxon";
 import React from "react";
 import PropTypes from "prop-types";
@@ -78,10 +79,7 @@ const EventDescriptionCard = ({
           ) : (
             canEdit && (
               <p>
-                <strong>Ajoutez une description !</strong> Donner tous les
-                informations nécessaires aux participants de votre événement.
-                Comment accéder au lieu, quel est le programme, les liens pour
-                être tenu au courant... {!image && "Et ajoutez une image\xa0!"}
+                <strong>{_("Ajoutez une description !")}</strong> {_("Donner tous les informations nécessaires aux participants de votre événement. Comment accéder au lieu, quel est le programme, les liens pour être tenu au courant...")} {!image && "Et ajoutez une image\xa0!"}
               </p>
             )
           )}
@@ -93,13 +91,13 @@ const EventDescriptionCard = ({
               link
               to={routeConfig.eventSettings.getLink({ eventPk: id })}
             >
-              {description ? "Modifier la" : "Ajouter une"} description
+              {description ? _("Modifier la") : _("Ajouter une")} {_("description")}
             </Button>
             <Button
               link
               to={routeConfig.eventSettings.getLink({ eventPk: id })}
             >
-              {image ? "Changer l'" : "Ajouter une "}image d'illustration
+              {image ? _("Changer l'") : _("Ajouter une ")}{_("image d'illustration")}
             </Button>
           </StyledActionButtons>
         )}

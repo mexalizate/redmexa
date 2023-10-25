@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
@@ -110,14 +111,14 @@ const RequiredDocumentCard = (props) => {
               color={onDismiss ? "primary" : "default"}
             >
               <RawFeatherIcon name="upload" style={{ marginRight: "0.5rem" }} />
-              Ajouter un justificatif
+              {_("Ajouter un justificatif")}
             </Button>
             {onDismiss && (
               <>
                 <InlineSpacer size="1rem" />
                 <Button color="secondary" onClick={() => onDismiss(type)}>
                   <RawFeatherIcon name="x" style={{ marginRight: "0.5rem" }} />
-                  Non applicable
+                  {_("Non applicable")}
                 </Button>
               </>
             )}

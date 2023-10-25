@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useCallback, useState } from "react";
 import styled from "styled-components";
@@ -80,7 +81,7 @@ const ContactField = (props) => {
       ) : (
         <>
           <TextField
-            label="Nom de la personne à contacter"
+            label={_("Nom de la personne à contacter")}
             name="name"
             autoComplete="name"
             value={name}
@@ -101,8 +102,8 @@ const ContactField = (props) => {
             error={error && error.email}
           />
           <PhoneField
-            label="Numéro de téléphone de contact"
-            helpText="Obligatoire pour que l’équipe de coordination puisse vous contacter mais peut être caché aux participant·e·s."
+            label={_("Numéro de téléphone de contact")}
+            helpText={_("Obligatoire pour que l’équipe de coordination puisse vous contacter mais peut être caché aux participant·e·s.")}
             name="phone"
             autoComplete="tel"
             value={phone}
@@ -114,7 +115,7 @@ const ContactField = (props) => {
         </>
       )}
       <CheckboxField
-        label="Cacher le numéro de téléphone"
+        label={_("Cacher le numéro de téléphone")}
         name="hidePhone"
         onChange={handleChangeHidePhone}
         disabled={disabled}

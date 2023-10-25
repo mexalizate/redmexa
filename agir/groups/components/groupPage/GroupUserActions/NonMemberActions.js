@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
@@ -33,7 +34,7 @@ const NonMemberActions = (props) => {
         onClick={onJoin}
         icon="plus"
       >
-        Rejoindre
+       {_(" Rejoindre")}
       </Button>
       {isOpen && (
         <Button
@@ -43,7 +44,7 @@ const NonMemberActions = (props) => {
           onClick={onFollow}
           icon="rss"
         >
-          Suivre
+         {_("Suivre")}
         </Button>
       )}
     </StyledWrapper>

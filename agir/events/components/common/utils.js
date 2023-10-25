@@ -1,3 +1,4 @@
+import _ from "gettext";
 import { DateTime, Interval } from "luxon";
 
 import I18N from "@agir/lib/i18n";
@@ -29,35 +30,35 @@ export const EVENT_DEFAULT_DURATIONS = [
 
 export const EVENT_TYPES = {
   A: {
-    label: "Action publique",
+    label: _("Action publique"),
     description:
       "Une action qui se déroulera dans un lieu public et qui aura comme objectif principal  d'aller à la rencontre ou d'atteindre des personnes extérieures à la France insoumise",
   },
   M: {
-    label: "Événement public",
+    label: _("Événement public"),
     description:
       "Un événement ouvert à tous les publics, au-delà des membres du groupe, mais qui aura lieu dans un lieu privé. Par exemple, un événement public avec un orateur, une projection ou un concert",
   },
   G: {
-    label: "Réunion privée de groupe",
+    label: _("Réunion privée de groupe"),
     description:
       "Une réunion qui concerne principalement les membres du groupes, et non le public de façon générale. Par exemple, la réunion hebdomadaire du groupe, une réunion de travail, ou l'audition d'une association",
   },
   O: {
-    label: "Autre",
+    label: _("Autre"),
     description:
-      "Tout autre type d'événement qui ne rentre pas dans les autres catégories",
+      _("Tout autre type d'événement qui ne rentre pas dans les autres catégories"),
   },
 };
 
 export const PRIVATE_EVENT_SUBTYPE_INFO =
-  "Seuls les membres des groupes organisateurs pourront participer à l'événement.";
+  _("Seuls les membres des groupes organisateurs pourront participer à l'événement.");
 
 export const FOR_GROUP_TYPE_EVENT_SUBTYPE_INFO =
-  "Ce type d'événement est reservé aux groupes du type « :type ».";
+  _("Ce type d'événement est reservé aux groupes du type « :type ».");
 
 export const FOR_GROUPS_EVENT_SUBTYPE_INFO =
-  "Ce type d'événement est reservé aux groupes suivants : ";
+  _("Ce type d'événement est reservé aux groupes suivants : ");
 
 export const getEventSubtypeInfo = (subtype) => {
   let info = "";

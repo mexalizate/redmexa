@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React, { useCallback, useEffect, useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import useSWR from "swr";
@@ -106,7 +107,7 @@ const CreateContactPage = () => {
           {step === 0 && (
             <>
               <BackButton disabled={isLoading} link route="events">
-                Retour à l'accueil
+                {_("Retour à l'accueil")}
               </BackButton>
               <ContactForm
                 onSubmit={submitForm}

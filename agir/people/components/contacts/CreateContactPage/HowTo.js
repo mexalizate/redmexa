@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useState } from "react";
 import { animated, useSpring } from "@react-spring/web";
@@ -108,7 +109,7 @@ export const HowTo = (props) => {
     >
       <div {...bind}>
         <StyledHeader type="button" onClick={isCollapsed ? open : close}>
-          <strong>Comment ça marche</strong>
+          <strong>{_("Comment ça marche")}</strong>
           <animated.span style={{ transform }}>
             <RawFeatherIcon name="chevron-down" />
           </animated.span>
@@ -117,28 +118,24 @@ export const HowTo = (props) => {
           <li>
             <RawFeatherIcon strokeWidth={2} name="check-square" />
             <span>
-              <strong>Faites rejoindre Action populaire</strong> à de nouvelles
-              personnes&nbsp;!
+              <strong>{_("Faites rejoindre Action populaire")}</strong> {_("à de nouvelles personnes !")}
             </span>
           </li>
           <li>
             <RawFeatherIcon strokeWidth={2} name="rss" />
             <span>
-              <strong>Obtenez des contacts pour votre groupe d’action</strong>
+              <strong>{_("Obtenez des contacts pour votre groupe d’action")}</strong>
               <br />
-              Les contacts sont enregistrés et visibles dans la partie gestion
-              du groupe pour les gestionnaires et animateur·ices
+              {_("Les contacts sont enregistrés et visibles dans la partie gestion du groupe pour les gestionnaires et animateur·ices")}
             </span>
           </li>
           <li>
             <RawFeatherIcon strokeWidth={2} name="map-pin" />
             <span>
               <strong>
-                Essayez de recruter des correspondant·es d’immeuble ou de
-                village,
+                {_("Essayez de recruter des correspondant·es d’immeuble ou de village,")}
               </strong>{" "}
-              qui pourront diffuser nos propositions et inciter leurs voisins à
-              aller voter
+              {_("qui pourront diffuser nos propositions et inciter leurs voisins à aller voter")}
             </span>
           </li>
         </StyledBody>
@@ -148,7 +145,7 @@ export const HowTo = (props) => {
             type="button"
             onClick={close}
           >
-            Compris
+            {_("Compris")}
           </Button>
         </StyledFooter>
       </div>

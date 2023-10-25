@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
@@ -30,13 +31,13 @@ const GroupMemberFacts = (props) => {
       <h4>À propos</h4>
       <li>
         {isPoliticalSupport
-          ? "Soutien politique de la France insoumise"
-          : "N’est pas encore soutien politique de la France insoumise"}
+          ? _("Soutien politique de la France insoumise")
+          : _("N’est pas encore soutien politique de la France insoumise")}
       </li>
       <li>
         {hasGroupNotifications
-          ? "Est abonné·e à l’actualité de votre groupe"
-          : "N'est pas abonné·e à l’actualité de votre groupe"}
+          ? _("Est abonné·e à l’actualité de votre groupe")
+          : _("N'est pas abonné·e à l’actualité de votre groupe")}
       </li>
       {isLiaison && <li>Correspondant·e de son immeuble</li>}
     </StyledList>

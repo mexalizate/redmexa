@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React from "react";
 
 import RequiredDocumentModal from "./RequiredDocumentModal";
@@ -21,9 +22,9 @@ export const WithErrors = Template.bind({});
 WithErrors.args = {
   ...Default.args,
   errors: {
-    file: "Ce quoi ce fichier ?",
+    file: _("Ce quoi ce fichier ?"),
     name: "Nope !",
-    description: "Cette description ne va pas du tout!",
+    description: _("Cette description ne va pas du tout!"),
   },
 };
 
