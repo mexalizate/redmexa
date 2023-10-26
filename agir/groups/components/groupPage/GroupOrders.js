@@ -36,33 +36,11 @@ const StyledCard = styled(Card)`
 `;
 
 const GroupOrders = (props) => {
-  const { isManager, discountCodes, routes } = props;
+  const { isManager, routes } = props;
   const orderURL = routes && routes.orders;
-  const [codes, specialCodes] = useMemo(
-    () => parseDiscountCodes(discountCodes),
-    [discountCodes],
-  );
 
   return isManager ? (
     <StyledCard title="Commander du matériel" outlined>
-      <StyledList>
-        {specialCodes.map(({ label, code, expiration }) => (
-          <li key={code}>
-            <strong>🎟️&nbsp;{label}</strong>
-            <br />
-            {code} <span>(exp. {expiration})</span>
-          </li>
-        ))}
-      </StyledList>
-      <StyledList>
-        {codes.map(({ code, expiration, month }) => (
-          <li key={code}>
-            <strong>Code du mois de {month}</strong>
-            <br />
-            {code} <span>(exp. {expiration})</span>
-          </li>
-        ))}
-      </StyledList>
       {orderURL ? (
         <Button link href={orderURL} color="primary" small>
           Commander du matériel
@@ -73,12 +51,6 @@ const GroupOrders = (props) => {
 };
 
 GroupOrders.propTypes = {
-  discountCodes: PropTypes.arrayOf(
-    PropTypes.shape({
-      code: PropTypes.string,
-      expiration: PropTypes.string,
-    }),
-  ),
   isManager: PropTypes.bool,
   routes: PropTypes.shape({
     orders: PropTypes.string,

@@ -1,10 +1,8 @@
 from urllib.parse import quote
 from uuid import UUID
 
-
 from django.contrib import messages
 from django.db import IntegrityError
-from django.db.models import Case, When, Q, F, Value, CharField
 from django.http import HttpResponseRedirect
 from django.template.response import TemplateResponse
 from django.urls import reverse_lazy, reverse
@@ -21,11 +19,9 @@ from agir.authentication.view_mixins import (
     HardLoginRequiredMixin,
 )
 from agir.authentication.views import RedirectToMixin
-from agir.elus.models import types_elus, MandatMunicipal
 from agir.people.forms import (
     SendValidationSMSForm,
     CodeValidationForm,
-    MembreReseauElusForm,
 )
 from agir.people.models import Person
 
@@ -216,56 +212,4 @@ class CodeValidationView(
             )
 
         person.save()
-        return super().form_valid(form)
-
-
-@method_decorator(never_cache, name="get")
-class MandatsView(SoftLoginRequiredMixin, UpdateView):
-    template_name = "people/profile/mandats.html"
-    form_class = MembreReseauElusForm
-    success_url = reverse_lazy("mandats")
-
-    def get_object(self, queryset=None):
-        return self.request.user.person
-
-    def get_context_data(self, **kwargs):
-        person = self.request.user.person
-
-        mandats = []
-        for type, model in types_elus.items():
-            qs = model.objects.filter(person=person)
-            if type == "municipal":
-                qs = qs.annotate(
-                    epci=Case(
-                        When(
-                            ~Q(communautaire=MandatMunicipal.MANDAT_EPCI_PAS_DE_MANDAT),
-                            then=F("conseil__epci__nom"),
-                        ),
-                        default=None,
-                        output_field=CharField(),
-                    )
-                )
-            else:
-                qs = qs.annotate(epci=Value(None, output_field=CharField()))
-
-            mandats.extend(qs)
-
-        if not mandats or person.membre_reseau_elus == Person.MEMBRE_RESEAU_EXCLUS:
-            kwargs["form"] = None
-
-        return super().get_context_data(
-            **kwargs,
-            mandats=mandats,
-            person=person,
-        )
-
-    def form_invalid(self, form):
-        return super().form_invalid(form)
-
-    def form_valid(self, form):
-        messages.add_message(
-            request=self.request,
-            level=messages.SUCCESS,
-            message="Merci, votre choix a été pris en compte",
-        )
         return super().form_valid(form)

@@ -3,7 +3,8 @@ import PropTypes from "prop-types";
 import React, { useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
 import { DateTime } from "luxon";
-import "moment/locale/fr";
+
+import "@agir/lib/i18n/moment";
 
 import DateTimeField from "@agir/front/formComponents/DateTimeField";
 import { useResponsiveMemo } from "@agir/front/genericComponents/grid";

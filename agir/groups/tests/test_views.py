@@ -156,6 +156,7 @@ class ManageSupportGroupTestCase(SupportGroupMixin, TestCase):
                 "name": "New name",
                 "type": "L",
                 "subtypes": ["groupe local"],
+                "contact_name": "Ro",
                 "contact_email": "a@fhezfe.fr",
                 "contact_phone": "+33606060606",
                 "contact_hide_phone": "on",

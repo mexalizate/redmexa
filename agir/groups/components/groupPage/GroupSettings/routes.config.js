@@ -5,7 +5,6 @@ import {
 } from "@agir/front/app/routes.config";
 
 import illustrationManage from "@agir/front/genericComponents/images/group_members.svg";
-import illustrationFinance from "@agir/front/genericComponents/images/group_financement.svg";
 import illustrationGeneral from "@agir/front/genericComponents/images/group_general.svg";
 import illustrationContact from "@agir/front/genericComponents/images/group_contact.svg";
 import illustrationLinks from "@agir/front/genericComponents/images/group_links.svg";
@@ -34,11 +33,6 @@ const GroupSettingsManage = lazy(() =>
 const GroupSettingsMateriel = lazy(() =>
   import(
     /* webpackChunkName: "r-groupsettingsmateriel" */ "@agir/groups/groupPage/GroupSettings/GroupMaterielPage"
-  ),
-);
-const GroupSettingsFinance = lazy(() =>
-  import(
-    /* webpackChunkName: "r-groupsettingsfinance" */ "@agir/groups/groupPage/GroupSettings/GroupFinancePage"
   ),
 );
 const GroupSettingsGeneral = lazy(() =>
@@ -131,19 +125,7 @@ export const routeConfig = {
     label: "Matériel",
     icon: "shopping-bag",
     Component: GroupSettingsMateriel,
-    isActive: (group) =>
-      Array.isArray(group.discountCodes) && group.discountCodes.length > 0,
-    menuGroup: 1,
-  },
-  finance: {
-    id: "finance",
-    path: "finance/",
-    exact: true,
-    label: "Caisse du groupe",
-    icon: "briefcase",
-    Component: GroupSettingsFinance,
-    illustration: illustrationFinance,
-    isActive: (group) => group.isFinanceable,
+    isActive: true,
     menuGroup: 1,
   },
   general: {

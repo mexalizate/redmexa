@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useRef, useState } from "react";
 import styled from "styled-components";
@@ -96,14 +97,6 @@ const CounterIconLink = styled(IconLink)`
   }
 `;
 
-const TabletIconLink = styled(IconLink)`
-  display: none;
-
-  @media (max-width: ${(props) => props.theme.collapseTablet}px) {
-    display: inline-flex;
-  }
-`;
-
 const StyledWrapper = styled(PageFadeIn)`
   height: 100%;
   display: flex;
@@ -112,14 +105,8 @@ const StyledWrapper = styled(PageFadeIn)`
 `;
 
 const RightLinks = (props) => {
-  const {
-    isLoading,
-    hasLayout,
-    user,
-    path,
-    unreadActivityCount,
-    unreadMessageCount,
-  } = props;
+  const { isLoading, user, path, unreadActivityCount, unreadMessageCount } =
+    props;
 
   const userMenuLink = useRef();
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
@@ -134,11 +121,11 @@ const RightLinks = (props) => {
     <StyledWrapper ready={!isLoading} style={{ position: "relative" }}>
       {!user ? (
         <>
-          <StyledLink route="help">Aide</StyledLink>
+          <StyledLink route="help">{_("Aide")}</StyledLink>
           <Spacer size="1.5rem" />
-          <StyledLink route="login">Connexion</StyledLink>
+          <StyledLink route="login">{_("Connexion")}</StyledLink>
           <Spacer size="1.5rem" />
-          <StyledLink route="signup">Inscription</StyledLink>
+          <StyledLink route="signup">{_("Inscription")}</StyledLink>
         </>
       ) : (
         <>
@@ -152,18 +139,18 @@ const RightLinks = (props) => {
           </Popin>
           <IconLink route="events" $active={routeConfig.events.match(path)}>
             <FeatherIcon name="home" />
-            <span>Accueil</span>
+            <span>{_("Accueil")}</span>
           </IconLink>
           <IconLink
             route="actionTools"
             $active={routeConfig.actionTools.match(path)}
           >
             <FeatherIcon name="flag" />
-            <span>Agir</span>
+            <span>{_("Agir")}</span>
           </IconLink>
           <IconLink route="groups" $active={routeConfig.groups.match(path)}>
             <FeatherIcon name="users" />
-            <span>Groupes</span>
+            <span>{_("Groupes")}</span>
           </IconLink>
           <CounterIconLink
             route="activities"
@@ -173,7 +160,7 @@ const RightLinks = (props) => {
               <FeatherIcon name="bell" />
               <CounterBadge value={unreadActivityCount} />
             </i>
-            <span>Notifications</span>
+            <span>{_("Notifications")}</span>
           </CounterIconLink>
           <CounterIconLink
             route="messages"
@@ -183,7 +170,7 @@ const RightLinks = (props) => {
               <FeatherIcon name="mail" />
               <CounterBadge value={unreadMessageCount} />
             </i>
-            <span>Messages</span>
+            <span>{_("Messages")}</span>
           </CounterIconLink>
           <IconLink as="button" onClick={openUserMenu} ref={userMenuLink}>
             <Avatar

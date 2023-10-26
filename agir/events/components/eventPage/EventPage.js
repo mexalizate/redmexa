@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import React, { Suspense, useEffect, useMemo } from "react";
 import useSWR from "swr";
 
+import I18N from "@agir/lib/i18n";
 import { lazy } from "@agir/front/app/utils";
 
 import * as api from "@agir/events/common/api";
@@ -102,15 +103,15 @@ export const ConnectedEventPage = (props) => {
     }
     const start =
       typeof eventData.startTime === "string"
-        ? DateTime.fromISO(eventData.startTime).setLocale("fr")
+        ? DateTime.fromISO(eventData.startTime).setLocale(I18N.locale)
         : typeof eventData.startTime === "number"
-        ? DateTime.fromMillis(eventData.startTime).setLocale("fr")
+        ? DateTime.fromMillis(eventData.startTime).setLocale(I18N.locale)
         : null;
     const end =
       typeof eventData.endTime === "string"
-        ? DateTime.fromISO(eventData.endTime).setLocale("fr")
+        ? DateTime.fromISO(eventData.endTime).setLocale(I18N.locale)
         : typeof eventData.endTime === "number"
-        ? DateTime.fromMillis(eventData.endTime).setLocale("fr")
+        ? DateTime.fromMillis(eventData.endTime).setLocale(I18N.locale)
         : null;
     const schedule = Interval.fromDateTimes(start, end);
     const isPast = end < DateTime.local();

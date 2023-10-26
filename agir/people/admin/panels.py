@@ -24,7 +24,6 @@ from django.utils.translation import gettext_lazy as _
 from rangefilter.filters import DateRangeFilter
 
 from agir.authentication.models import Role
-from agir.elus.models import types_elus
 from agir.lib.admin.filters import (
     DepartementListFilter,
     RegionListFilter,
@@ -34,6 +33,10 @@ from agir.lib.admin.panels import CenterOnFranceMixin, DisplayContactPhoneMixin
 from agir.lib.admin.utils import display_link
 from agir.lib.utils import generate_token_params, front_url
 from agir.people.actions.stats import get_statistics_for_queryset
+from agir.people.actions.subscription import (
+    SUBSCRIPTION_TYPE_PLATFORM,
+    SUBSCRIPTION_TYPE_CAMPAIGN,
+)
 from agir.people.admin import filters
 from agir.people.admin.actions import (
     export_people_to_csv,
@@ -125,13 +128,14 @@ class PersonAdmin(DisplayContactPhoneMixin, CenterOnFranceMixin, OSMGeoAdmin):
         ),
         (
             _("Profil"),
-            {"fields": ("gender", "date_of_birth", "tags", "mandats", "image")},
+            {"fields": ("gender", "date_of_birth", "tags", "image")},
         ),
         (
             _("Contact et adresse"),
             {
                 "fields": (
                     "contact_phone",
+                    "contact_phone_status",
                     "location_name",
                     "location_address1",
                     "location_address2",
@@ -142,6 +146,7 @@ class PersonAdmin(DisplayContactPhoneMixin, CenterOnFranceMixin, OSMGeoAdmin):
                     "location_country",
                     "location_citycode",
                     "action_radius",
+                    "municipio",
                     "coordinates",
                     "coordinates_type",
                     "coordinates_value",
@@ -172,7 +177,6 @@ class PersonAdmin(DisplayContactPhoneMixin, CenterOnFranceMixin, OSMGeoAdmin):
         "location_departement_id",
         "coordinates_type",
         "coordinates_value",
-        "mandats",
         "location_citycode",
         "form_submissions_link",
         "rsvp_link",
@@ -195,7 +199,7 @@ class PersonAdmin(DisplayContactPhoneMixin, CenterOnFranceMixin, OSMGeoAdmin):
 
     inlines = (PersonQualificationInline, MembershipInline, EmailInline)
 
-    autocomplete_fields = ("tags",)
+    autocomplete_fields = ("tags", "municipio")
 
     # doit être non vide pour afficher le formulaire de recherche,
     # mais n'est en réalité pas utilisé pour déterminer les champs
@@ -370,29 +374,6 @@ class PersonAdmin(DisplayContactPhoneMixin, CenterOnFranceMixin, OSMGeoAdmin):
             options=options,
         )
 
-    def mandats(self, obj):
-        if obj is None:
-            return "-"
-
-        mandats = []
-
-        for attr, model in list(types_elus.items()):
-            for m in model.objects.filter(person=obj):
-                mandats.append(
-                    (
-                        reverse(
-                            f"admin:elus_mandat{attr.replace('_', '')}_change",
-                            args=(m.id,),
-                        ),
-                        m.titre_complet(conseil_avant=True),
-                    )
-                )
-
-        if not mandats:
-            return "-"
-
-        return format_html_join(mark_safe("<br>"), '<a href="{}">{}</a>', mandats)
-
     def form_submissions_link(self, obj):
         return format_html(
             '<a href="{}?person_id={}" class="button">Voir les formulaires remplis</a>',
@@ -470,12 +451,16 @@ class PersonAdmin(DisplayContactPhoneMixin, CenterOnFranceMixin, OSMGeoAdmin):
         queryset = cl.get_queryset(request)
         statistics = get_statistics_for_queryset(queryset)
         chart_data = (
-            queryset.exclude(meta__subscriptions__NSP__date__isnull=True)
+            queryset.exclude(
+                **{
+                    f"meta__subscriptions__{SUBSCRIPTION_TYPE_CAMPAIGN}__date__isnull": True
+                }
+            )
             .annotate(
                 subscription_datetime=Func(
                     "meta",
                     Value("subscriptions"),
-                    Value("NSP"),
+                    Value(SUBSCRIPTION_TYPE_CAMPAIGN),
                     Value("date"),
                     function="jsonb_extract_path_text",
                 )
@@ -985,7 +970,9 @@ class ContactAdmin(admin.ModelAdmin):
     is_liaison.boolean = True
 
     def subscriber(self, obj):
-        subscriber_id = obj.meta["subscriptions"]["AP"]["subscriber"]
+        subscriber_id = obj.meta["subscriptions"][SUBSCRIPTION_TYPE_PLATFORM][
+            "subscriber"
+        ]
         subscriber = Person.objects.filter(pk=subscriber_id).first()
         if subscriber:
             return format_html(

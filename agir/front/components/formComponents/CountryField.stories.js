@@ -1,5 +1,7 @@
 import React from "react";
 
+import I18N from "@agir/lib/i18n";
+
 import CountryField from "./CountryField";
 
 export default {
@@ -45,7 +47,7 @@ Empty.args = {
 export const Filled = Template.bind({});
 Filled.args = {
   ...Empty.args,
-  value: "FR",
+  value: I18N.country,
 };
 
 export const WithHelpText = Template.bind({});

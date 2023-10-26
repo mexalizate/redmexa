@@ -38,23 +38,6 @@ class Command(BaseCommand):
             ),
         }
 
-        self.materiel_statistics = {
-            "model": MaterielStatistics,
-            "instant": MaterielStatistics.objects.values(
-                *MaterielStatistics.AGGREGATABLE_FIELDS
-            ).latest(),
-            "last_week": MaterielStatistics.objects.aggregate_for_last_week(),
-            "last_week_progress": (
-                MaterielStatistics.objects.aggregate_for_last_week_progress()
-            ),
-            "current_month": MaterielStatistics.objects.aggregate_for_current_month(
-                date=week_start
-            ),
-            "current_year": MaterielStatistics.objects.aggregate_for_current_year(
-                date=week_start
-            ),
-        }
-
     def start_section(self, label, value=None):
         self.section_item_count = 0
         line = f"{label}"
@@ -235,9 +218,3 @@ class Command(BaseCommand):
 
         self.print_section_title("Gros envois d'emails ( >10000 personnes )")
         self.print_largest_campaigns(week_start, week_end)
-
-        self.print_section_title("Site matériel")
-        self.print_flux("total_orders", stats=self.materiel_statistics)
-        self.print_flux("total_items", stats=self.materiel_statistics)
-        self.print_flux("total_sales", stats=self.materiel_statistics, currency=True)
-        self.print_flux("total_discount", stats=self.materiel_statistics, currency=True)

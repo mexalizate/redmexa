@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React from "react";
 import Button from "@agir/front/genericComponents/Button";
 import facebookImg from "@agir/front/genericComponents/images/facebook_circle.svg";
@@ -16,7 +17,7 @@ const LoginFacebook = (props) => {
   return (
     <ButtonFacebook {...props} link color="choose" href={routes.facebookLogin}>
       <img src={facebookImg} width="24" height="24" />
-      &nbsp; Connexion avec Facebook
+      {_("  Connexion avec Facebook")}
     </ButtonFacebook>
   );
 };

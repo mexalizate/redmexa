@@ -201,7 +201,7 @@ class EventRsvpPersonFormDisplay(PersonFormDisplay):
                     format_html(
                         '{} <a href="{}" target="_blank"title="Voir le détail">&#128269;</a>',
                         self.get_submission_rsvp_or_guest(s).get_status_display(),
-                        settings.API_DOMAIN
+                        settings.PLATFORM_ADMIN_DOMAIN
                         + reverse(
                             "admin:payments_payment_change",
                             args=(self.get_submission_rsvp_or_guest(s).payment_id,),
@@ -218,7 +218,7 @@ class EventRsvpPersonFormDisplay(PersonFormDisplay):
                     r.append(
                         format_html(
                             '<a href="{}" target="_blank">{}</a>',
-                            settings.API_DOMAIN
+                            settings.PLATFORM_ADMIN_DOMAIN
                             + reverse(
                                 "admin:people_person_change",
                                 args=(s.rsvp_guest.rsvp.person.pk,),
@@ -1050,7 +1050,6 @@ class EventSubtypeAdmin(admin.ModelAdmin):
         background = obj.color or "#f4ed0f"
         color = "white" if obj.color else "#000000"
         split = obj.icon_name.split(":")
-        print(split)
         icon_name = split.pop(0)
         icon_variant = split.pop(0) if split else "solid"
         marker_style = (

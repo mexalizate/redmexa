@@ -86,21 +86,3 @@ class AbsoluteStatisticsAdmin(StatisticsModelAdmin):
         "created",
         "modified",
     )
-
-
-@admin.register(models.MaterielStatistics)
-class MaterielStatisticsAdmin(StatisticsModelAdmin):
-    list_display = (
-        "date",
-        "total_orders",
-        "total_items",
-        "total_sales",
-        "net_sales",
-        "average_sales",
-        "total_tax",
-        "total_shipping",
-        "total_refunds",
-        "total_discount",
-        "created",
-        "modified",
-    )

@@ -41,9 +41,8 @@ from agir.lib.models import (
 from agir.lib.search import PrefixSearchQuery
 from agir.lib.utils import generate_token_params, resize_and_autorotate
 from . import metrics
-from .model_fields import MandatesField, ValidatedPhoneNumberField
+from .model_fields import ValidatedPhoneNumberField
 from .person_forms.models import *
-from ..elus.models import StatutMandat
 from ..events.models import CustomDateTimeField
 from ..lib.display import genrer
 from ..lib.form_fields import CustomJSONEncoder
@@ -106,49 +105,13 @@ class PersonQueryset(models.QuerySet):
         else:
             return self.filter(q | Q(contact_phone__icontains=query[1:]))
 
-    def annotate_elus(self, current=True, status=None):
-        from agir.elus.models import types_elus
-
-        annotations = {
-            f"elu_{label}": klass.objects.filter(person_id=models.OuterRef("id"))
-            for label, klass in types_elus.items()
-        }
-
-        if status:
-            annotations = {
-                label: subq.filter(statut=status) for label, subq in annotations.items()
-            }
-        else:
-            annotations = {
-                label: subq.exclude(statut=StatutMandat.FAUX)
-                for label, subq in annotations.items()
-            }
-
-        if current:
-            today = timezone.now().date()
-            annotations = {
-                label: subq.filter(dates__contains=today)
-                for label, subq in annotations.items()
-            }
-
-        return self.annotate(
-            **{label: models.Exists(subq) for label, subq in annotations.items()}
-        )
-
-    def elus(self, current=True):
-        from agir.elus.models import types_elus
-
-        return self.annotate_elus(current).filter(
-            reduce(or_, (Q(**{f"elu_{label}": True}) for label in types_elus))
-        )
-
     def app(self, installed=True):
         if installed:
             return self.exclude(Q(role__apnsdevice=None) & Q(role__gcmdevice=None))
         return self.filter(Q(role__apnsdevice=None) & Q(role__gcmdevice=None))
 
     def liaisons(self, from_date=None, to_date=None):
-        from agir.people.actions.subscription import DATE_2022_LIAISON_META_PROPERTY
+        from agir.people.actions.subscription import LIAISON_SINCE_META_PROPERTY
 
         liaison_form_submissions = (
             PersonFormSubmission.objects.filter(
@@ -158,12 +121,12 @@ class PersonQueryset(models.QuerySet):
             .values("created")
         )
         liaisons = self.filter(
-            newsletters__overlap=[Person.Newsletter.LFI_LIAISONS.value]
+            newsletters__overlap=[Person.Newsletter.LIAISONS.value]
         ).annotate(
             liaison_date=Coalesce(
                 Subquery(liaison_form_submissions[:1]),
                 Cast(
-                    KeyTextTransform(DATE_2022_LIAISON_META_PROPERTY, "meta"),
+                    KeyTextTransform(LIAISON_SINCE_META_PROPERTY, "meta"),
                     DateTimeField(),
                 ),
                 "created",
@@ -367,21 +330,9 @@ def generate_referrer_id():
 
 
 class NewsletterChoices(models.TextChoices):
-    LFI_REGULIERE = (
-        "LFI_reguliere",
-        "Les informations régulières de la France insoumise",
-    )
-    LFI_EXCEPTIONNELLE = (
-        "LFI_exceptionnelle",
-        "Les informations exceptionnelles de la France insoumise",
-    )
-    LFI_LJI = (
-        "LFI_jeunes_insoumises",
-        "Les informations destinées aux Jeunes insoumis·es",
-    )
-    LFI_LIAISONS = "LFI_liaisons", "Correspondant·es d'immeuble ou de rue"
-    ILB = "ILB", "Les informations de l'Institut La Boétie"
-    ELUES = "ELUES", "Les informations destinées aux élu·es"
+    CAMPAIGN = "CAM", "Newsletter Claudializate"
+    ACTIVIST = "ACT", "Newsletter Red Migrante"
+    LIAISONS = "LIA", "Correspondant·es d'immeuble ou de rue"
 
 
 class Person(
@@ -413,38 +364,22 @@ class Person(
 
     is_political_support = models.BooleanField(_("Soutien politique"), default=False)
 
-    MEMBRE_RESEAU_INCONNU = "I"
-    MEMBRE_RESEAU_SOUHAITE = "S"
-    MEMBRE_RESEAU_OUI = "O"
-    MEMBRE_RESEAU_NON = "N"
-    MEMBRE_RESEAU_EXCLUS = "E"
-    MEMBRE_RESEAU_CHOICES = (
-        (MEMBRE_RESEAU_INCONNU, "Inconnu / Non pertinent"),
-        (MEMBRE_RESEAU_SOUHAITE, "Souhaite faire partie du réseau des élus"),
-        (MEMBRE_RESEAU_OUI, "Fait partie du réseau des élus"),
-        (MEMBRE_RESEAU_NON, "Ne souhaite pas faire partie du réseau des élus"),
-        (MEMBRE_RESEAU_EXCLUS, "Exclus du réseau"),
-    )
-    membre_reseau_elus = models.CharField(
-        _("Membre du réseau des élus"),
-        max_length=1,
-        blank=False,
-        null=False,
-        choices=MEMBRE_RESEAU_CHOICES,
-        default=MEMBRE_RESEAU_INCONNU,
-        help_text="Pertinent uniquement si la personne a un ou plusieurs mandats électoraux.",
-    )
-
     Newsletter = NewsletterChoices
 
-    MAIN_NEWSLETTER_CHOICES = (
-        Newsletter.LFI_REGULIERE.value,
-        Newsletter.LFI_EXCEPTIONNELLE.value,
-    )
+    MAIN_NEWSLETTER_CHOICES = (Newsletter.CAMPAIGN.value,)
 
     newsletters = ChoiceArrayField(
         models.CharField(choices=Newsletter.choices, max_length=255),
         default=list,
+        blank=True,
+    )
+
+    municipio = models.ForeignKey(
+        to="geodata.MexicanMunicipio",
+        verbose_name=_("Municipalité d'origine au Mexique"),
+        on_delete=models.SET_NULL,
+        related_name="+",
+        null=True,
         blank=True,
     )
 
@@ -545,8 +480,6 @@ class Person(
         _("Genre"), max_length=1, blank=True, choices=GENDER_CHOICES
     )
     date_of_birth = models.DateField(_("Date de naissance"), null=True, blank=True)
-
-    mandates = MandatesField(_("Mandats électoraux"), default=list, blank=True)
 
     meta = JSONField(
         _("Autres données"), default=dict, blank=True, encoder=CustomJSONEncoder
@@ -763,7 +696,7 @@ class Person(
 
     @property
     def is_liaison(self):
-        return self.Newsletter.LFI_LIAISONS.value in self.newsletters
+        return self.Newsletter.LIAISONS.value in self.newsletters
 
     @is_liaison.setter
     def is_liaison(self, value):
@@ -771,10 +704,10 @@ class Person(
             return
 
         if value:
-            self.newsletters.append(self.Newsletter.LFI_LIAISONS.value)
+            self.newsletters.append(self.Newsletter.LIAISONS.value)
             return
 
-        self.newsletters.remove(self.Newsletter.LFI_LIAISONS.value)
+        self.newsletters.remove(self.Newsletter.LIAISONS.value)
 
     def get_full_name(self):
         """

@@ -1,5 +1,7 @@
 import { DateTime, Interval } from "luxon";
 
+import I18N from "@agir/lib/i18n";
+
 export const DOOR2DOOR_EVENT_SUBTYPE_LABEL = "porte-a-porte";
 
 export const EVENT_DEFAULT_DURATIONS = [
@@ -92,9 +94,9 @@ export const formatEvent = (event) => {
   try {
     const startDateTime = DateTime.fromJSDate(
       new Date(event.startTime),
-    ).setLocale("fr");
+    ).setLocale(I18N.locale);
     const endDateTime = DateTime.fromJSDate(new Date(event.endTime)).setLocale(
-      "fr",
+      I18N.locale,
     );
     return {
       ...event,

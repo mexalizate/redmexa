@@ -8,13 +8,12 @@ from rest_framework import serializers
 from rest_framework.exceptions import ValidationError
 from rest_framework.validators import UniqueValidator
 
-from agir.elus.models import MandatMunicipal, StatutMandat, types_elus
 from agir.lib.data import french_zipcode_to_country_code, FRANCE_COUNTRY_CODES
 from agir.lib.serializers import FlexibleFieldsMixin, PhoneField, CurrentPersonField
 from agir.lib.utils import is_absolute_url
 from . import models
 from .actions.subscription import (
-    SUBSCRIPTION_TYPE_LFI,
+    SUBSCRIPTION_TYPE_CAMPAIGN,
     SUBSCRIPTION_TYPE_CHOICES,
     subscription_success_redirect_url,
     save_subscription_information,
@@ -23,6 +22,8 @@ from .actions.subscription import (
 )
 from .models import Person
 from .tasks import send_confirmation_email
+from ..geodata.models import MexicanMunicipio
+from ..geodata.serializers import MexicanMunicipioSerializer
 from ..groups.models import SupportGroup
 from ..lib.tasks import geocode_person
 from ..lib.token_bucket import TokenBucket
@@ -66,7 +67,9 @@ class PersonTagSerializer(serializers.ModelSerializer):
 
 class SubscriptionRequestSerializer(serializers.Serializer):
     type = serializers.ChoiceField(
-        choices=SUBSCRIPTION_TYPE_CHOICES, default=SUBSCRIPTION_TYPE_LFI, required=False
+        choices=SUBSCRIPTION_TYPE_CHOICES,
+        default=SUBSCRIPTION_TYPE_CAMPAIGN,
+        required=False,
     )
 
     email = serializers.EmailField(
@@ -89,14 +92,10 @@ class SubscriptionRequestSerializer(serializers.Serializer):
         allow_blank=True,
     )
     contact_phone = PhoneNumberField(required=False, allow_blank=True)
-    mandat = serializers.ChoiceField(
-        choices=("municipal", "maire", "departemental", "regional", "consulaire"),
-        required=False,
-    )
-
     metadata = serializers.DictField(
         required=False, allow_empty=True, child=serializers.CharField(allow_blank=False)
     )
+    origin = serializers.CharField(required=False, allow_blank=True, allow_null=True)
 
     next = serializers.CharField(required=False, allow_blank=True, write_only=True)
 
@@ -105,10 +104,10 @@ class SubscriptionRequestSerializer(serializers.Serializer):
     PERSON_FIELDS = ["location_zip", "first_name", "last_name", "contact_phone"]
 
     def validate_email(self, value):
-        if not subscription_mail_bucket.has_tokens(value):
-            raise serializers.ValidationError(
-                "Si vous n'avez pas encore reçu votre email de validation, attendez quelques instants."
-            )
+        # if not subscription_mail_bucket.has_tokens(value):
+        #     raise serializers.ValidationError(
+        #         "Si vous n'avez pas encore reçu votre email de validation, attendez quelques instants."
+        #     )
         return value
 
     def validate_contact_phone(self, value):
@@ -228,55 +227,7 @@ class PersonNewsletterListField(serializers.ListField):
     child = serializers.ChoiceField(choices=Person.Newsletter.choices)
 
 
-class PersonMandatField(serializers.Field):
-    requires_context = True
-    types = tuple(types_elus.keys())
-    choices = dict([(mandat, mandat) for mandat in types_elus.keys()])
-    default_error_messages = {
-        "invalid": "Le type de mandat n'est pas valide",
-    }
-
-    def get_defaults(self, mandat_type):
-        defaults = {"statut": StatutMandat.INSCRIPTION_VIA_PROFIL}
-        if mandat_type == "maire":
-            defaults["mandat"] = MandatMunicipal.MANDAT_MAIRE
-        return defaults
-
-    def get_value(self, dictionary):
-        return dictionary
-
-    def get_attribute(self, instance):
-        return instance
-
-    def to_representation(self, person):
-        return [
-            mandat
-            for mandat in self.types
-            if types_elus[mandat]
-            .objects.filter(person=person, **self.get_defaults(mandat))
-            .exists()
-        ]
-
-    def to_internal_value(self, data):
-        if not data.get("mandat", None):
-            return None
-
-        mandat_type = data.pop("mandat")
-
-        if not mandat_type in self.types:
-            return self.fail("invalid", data=data)
-        try:
-            types_elus[mandat_type].objects.get_or_create(
-                person=self.context["request"].user.person,
-                defaults=self.get_defaults(mandat_type),
-            )
-        except types_elus[mandat_type].MultipleObjectsReturned:
-            pass
-
-        return data
-
-
-class PersonSerializer(FlexibleFieldsMixin, serializers.ModelSerializer):
+class PersonSerializer(serializers.ModelSerializer, FlexibleFieldsMixin):
     id = serializers.UUIDField(read_only=True)
     email = serializers.EmailField(read_only=True)
 
@@ -315,8 +266,6 @@ class PersonSerializer(FlexibleFieldsMixin, serializers.ModelSerializer):
         source="is_political_support", required=False
     )
 
-    mandat = PersonMandatField(required=False)
-
     referrerId = serializers.CharField(source="referrer_id", required=False)
 
     newsletters = PersonNewsletterListField(required=False, allow_empty=True)
@@ -333,16 +282,31 @@ class PersonSerializer(FlexibleFieldsMixin, serializers.ModelSerializer):
     city = serializers.CharField(
         required=False, allow_blank=True, source="location_city"
     )
-    country = CountryField(required=False, allow_blank=False, default="FR")
+    country = CountryField(
+        required=False, allow_blank=False, default="MX", source="location_country"
+    )
     actionRadius = serializers.IntegerField(
         source="action_radius", required=False, min_value=1, max_value=500
     )
     hasLocation = serializers.BooleanField(source="has_location", read_only=True)
+    municipio = MexicanMunicipioSerializer(required=False, read_only=True)
+    municipioCode = serializers.SlugRelatedField(
+        queryset=MexicanMunicipio.objects.all(),
+        slug_field="code",
+        write_only=True,
+        allow_null=True,
+        required=False,
+    )
 
     def update(self, instance, validated_data):
+        if "municipioCode" in validated_data:
+            validated_data["municipio"] = validated_data["municipioCode"]
+
         instance = super().update(instance, validated_data)
+
         if any(field in validated_data for field in instance.GEOCODING_FIELDS):
             transaction.on_commit(partial(geocode_person.delay, instance.pk))
+
         return instance
 
     class Meta:
@@ -364,9 +328,10 @@ class PersonSerializer(FlexibleFieldsMixin, serializers.ModelSerializer):
             "zip",
             "city",
             "country",
-            "mandat",
             "actionRadius",
             "hasLocation",
+            "municipio",
+            "municipioCode",
         )
 
 

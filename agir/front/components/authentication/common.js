@@ -1,3 +1,4 @@
+import _ from "gettext";
 import Cookies from "js-cookie";
 
 export const AUTHENTICATION = {
@@ -14,46 +15,26 @@ const BOOKMARKED_EMAILS_COOKIE_OPTIONS = {
 };
 
 export const NEWSLETTERS = {
-  LFI_reguliere: {
-    label:
-      "Les informations régulières de la France insoumise, dont la lettre d'information hébdomadaire",
-    value: "LFI_reguliere",
+  CAMPAIGN: {
+    label: _("Les informations de Claudializate"),
+    value: "CAM",
     selected: true,
     visible: true,
   },
-  LFI_exceptionnelle: {
-    label: "Les informations exceptionnelles de la France insoumise",
-    value: "LFI_exceptionnelle",
+  ACTIVIST: {
+    label: _("Les informations de Red Migrante"),
+    value: "ACT",
     selected: true,
     visible: true,
   },
-  ELUES: {
-    label: "Les informations destinées aux élu·es",
-    value: "ELUES",
-    visible: (person) =>
-      !!person &&
-      (person.newsletters.includes("ELUES") || person.membreReseauElus),
-  },
-  LFI_jeunes_insoumise: {
-    label: "Les informations destinées aux Jeunes insoumis·es",
-    value: "LFI_jeunes_insoumises",
-    selected: false,
-    visible: true,
-  },
-  LFI_liaisons: {
-    label: "Correspondant·es d'immeuble ou de rue",
-    value: "LFI_liaisons",
+  LIAISONS: {
+    label: _("Correspondant·es d'immeuble ou de rue"),
+    value: "LIA",
     visible: false,
-  },
-  ILB: {
-    label: "Les informations de l'Institut La Boétie",
-    value: "ILB",
-    selected: false,
-    visible: true,
   },
 };
 
-export const LIAISON_NEWSLETTER = NEWSLETTERS.LFI_liaisons;
+export const LIAISON_NEWSLETTER = NEWSLETTERS.LIAISONS;
 
 export const NEWSLETTER_OPTIONS = Object.values(NEWSLETTERS);
 

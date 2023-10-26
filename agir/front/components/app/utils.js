@@ -1,3 +1,5 @@
+import _ from "gettext";
+
 import React, { lazy as reactLazy, useEffect, useMemo, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useIsOffline } from "@agir/front/offline/hooks";
@@ -22,7 +24,7 @@ export const lazy = (lazyImport, fallback) => {
                 ? err.message
                 : typeof err === "string"
                 ? err
-                : "Lazy loading failed.";
+                : _("Lazy loading failed.");
               throw new Error(message);
             }
             setError(err.toString());
@@ -34,7 +36,7 @@ export const lazy = (lazyImport, fallback) => {
                   <h2>Erreur</h2>
                   <p>
                     {process.env.NODE_ENV === "production"
-                      ? "Nous n'avons pas pu charger cette page."
+                      ? _("Nous n'avons pas pu charger cette page.")
                       : err.toString()}
                   </p>
                 </div>

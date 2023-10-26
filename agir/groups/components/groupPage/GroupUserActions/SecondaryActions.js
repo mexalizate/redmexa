@@ -49,7 +49,6 @@ const StyledContainer = styled.div`
 const SecondaryActions = ({
   id,
   contact,
-  isCertified,
   isMessagingEnabled,
   routes,
   referents,
@@ -68,12 +67,6 @@ const SecondaryActions = ({
           isMessagingEnabled={isMessagingEnabled}
           autoOpen
         />
-      )}
-      {isCertified && (
-        <StyledLink route="contributions" params={{ group: id }}>
-          <RawFeatherIcon name="upload" width="1.5rem" height="1.5rem" />
-          <span>Financer</span>
-        </StyledLink>
       )}
       <button type="button" onClick={handleShareOpen}>
         <RawFeatherIcon name="share-2" width="1.5rem" height="1.5rem" />

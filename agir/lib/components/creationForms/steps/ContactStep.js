@@ -1,7 +1,10 @@
 import React from "react";
 import parsePhoneNumber from "libphonenumber-js";
 import Cleave from "cleave.js/react";
-import "cleave.js/dist/addons/cleave-phone.fr";
+
+import "@agir/lib/i18n/cleave";
+
+import I18N from "@agir/lib/i18n";
 
 import FormStep from "./FormStep";
 
@@ -12,7 +15,23 @@ class ContactStep extends FormStep {
   }
 
   isValidated() {
-    return [this.validateEmail(), this.validatePhone()].every((c) => c);
+    return [
+      this.validateName(),
+      this.validateEmail(),
+      this.validatePhone(),
+    ].every((c) => c);
+  }
+
+  validateName() {
+    const { name } = this.props.fields;
+
+    if (!name || name === "") {
+      this.setError("name", "Vous devez indiquer le nom du contact");
+      return false;
+    }
+
+    this.clearError("name");
+    return true;
   }
 
   validateEmail() {
@@ -47,7 +66,7 @@ class ContactStep extends FormStep {
     let phoneNumber;
 
     try {
-      phoneNumber = parsePhoneNumber(phone, "FR");
+      phoneNumber = parsePhoneNumber(phone, I18N.country);
     } catch (e) {
       this.setError("phone", "Ce numéro de téléphone n'est pas valide");
       return false;
@@ -58,6 +77,7 @@ class ContactStep extends FormStep {
       return false;
     }
 
+    this.setField("phone")(phoneNumber.number);
     this.clearError("phone");
     return true;
   }
@@ -95,13 +115,14 @@ class ContactStep extends FormStep {
         </div>
         <div className="col-md-6">
           <div className={"form-group" + (errors.name ? " has-error" : "")}>
-            <label>Nom du contact (facultatif)</label>
+            <label>Nom du contact</label>
             <input
               className="form-control"
               name="name"
               type="text"
               value={name || ""}
               onChange={this.handleInputChange}
+              required
             />
             {this.showError("name")}
           </div>
@@ -125,7 +146,7 @@ class ContactStep extends FormStep {
                 className={"form-group" + (errors.phone ? " has-error" : "")}
               >
                 <Cleave
-                  options={{ phone: true, phoneRegionCode: "FR" }}
+                  options={{ phone: true, phoneRegionCode: I18N.country }}
                   className="form-control"
                   name="phone"
                   value={phone || ""}

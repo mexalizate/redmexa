@@ -1,10 +1,12 @@
 const webpackConfig = require("../webpack.common");
 const baseConfig = webpackConfig(webpackConfig.CONFIG_TYPES.DEV);
+
 module.exports = {
   stories: ["../agir/*/components/**/*.stories.js"],
   addons: ["@storybook/addon-links", "@storybook/addon-essentials"],
   staticDirs: ["../.storybook/public"],
   webpackFinal: (config) => {
+    config.externals = baseConfig.externals;
     config.module.rules.push({
       test: /\.scss$/,
       exclude: [/theme\/theme.scss/],

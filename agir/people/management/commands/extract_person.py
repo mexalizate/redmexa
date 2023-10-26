@@ -24,7 +24,10 @@ def field_expression(f):
     elif isinstance(f, CountryField):
         return (f.name, str)
     elif isinstance(f, StdImageField):
-        return (f.name, lambda u: settings.FRONT_DOMAIN + settings.MEDIA_URL + u.url)
+        return (
+            f.name,
+            lambda u: settings.PLATFORM_FRONT_DOMAIN + settings.MEDIA_URL + u.url,
+        )
     elif f.name == "password":
         return Literal("(caché)")
 

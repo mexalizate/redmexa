@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React, {
   useCallback,
   useEffect,
@@ -193,23 +194,20 @@ const StyledWrapper = styled.div`
 const items = [
   {
     header: img1,
-    title: "Rencontrez",
-    body: <>d'autres membres et agissez ensemble&nbsp;!</>,
+    title: _("Rencontrez"),
+    body: _("d'autres membres et agissez ensemble !"),
   },
   {
     header: img2,
-    title: "Agissez concrètement",
-    body: (
-      <>
-        participez aux actions, diffusez notre programme et commandez du
-        matériel
-      </>
+    title: _("Agissez concrètement"),
+    body: _(
+      "participez aux actions, diffusez notre programme et commandez du matériel",
     ),
   },
   {
     header: img3,
-    title: "Rejoignez ou créez",
-    body: "un groupe d'action autour de vous !",
+    title: _("Rejoignez ou créez"),
+    body: _("un groupe d'action autour de vous !"),
   },
   {},
 ];
@@ -350,7 +348,7 @@ const IntroApp2 = () => {
                       route="signup"
                       style={{ marginTop: "0" }}
                     >
-                      Je crée mon compte
+                      {_("Je crée mon compte")}
                     </StyledButton>
                     <StyledButton
                       color="secondary"
@@ -358,7 +356,7 @@ const IntroApp2 = () => {
                       link
                       route="login"
                     >
-                      Je me connecte
+                      {_("Je me connecte")}
                     </StyledButton>
                   </>
                 )}
@@ -376,11 +374,11 @@ const IntroApp2 = () => {
                 height="1rem"
                 strokeWidth={2}
               />
-              <span>Rechercher une action</span>
+              <span>{_("Rechercher une action")}</span>
             </StyledSearchLink>
           ) : (
             <StyledButton color="secondary" onClick={handleNext}>
-              Continuer
+              {_("Continuer")}
             </StyledButton>
           )}
         </StyledActions>

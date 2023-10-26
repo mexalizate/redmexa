@@ -28,10 +28,10 @@ from agir.authentication.view_mixins import (
 )
 from agir.carte.models import StaticMapImage
 from agir.front.view_mixins import FilterView
+from agir.geodata.geocoding import get_commune
 from agir.groups.actions.notifications import someone_joined_notification
 from agir.groups.filters import GroupFilterSet
 from agir.groups.models import SupportGroup, Membership, SupportGroupSubtype
-from agir.lib.geo import get_commune
 from agir.lib.tasks import create_static_map_image_from_coordinates
 from agir.lib.utils import front_url
 

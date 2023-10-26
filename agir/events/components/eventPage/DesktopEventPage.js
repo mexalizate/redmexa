@@ -3,18 +3,15 @@ import PropTypes from "prop-types";
 import React, { useMemo } from "react";
 import styled from "styled-components";
 
-import { DOOR2DOOR_EVENT_SUBTYPE_LABEL } from "@agir/events/common/utils";
 import { useSelector } from "@agir/front/globalContext/GlobalContext";
 import { getUser } from "@agir/front/globalContext/reducers";
 
 import EventInfoCard from "@agir/events/eventPage/EventInfoCard";
-import TokTokCard from "@agir/events/TokTok/TokTokCard";
 import BackLink from "@agir/front/app/Navigation/BackLink";
 import Card from "@agir/front/genericComponents/Card";
 import ContactCard from "@agir/front/genericComponents/ContactCard";
 import { Column, Container, Row } from "@agir/front/genericComponents/grid";
 import ShareCard from "@agir/front/genericComponents/ShareCard";
-import Spacer from "@agir/front/genericComponents/Spacer";
 import {
   GroupsJoiningCard,
   GroupsOrganizingCard,
@@ -113,12 +110,6 @@ const DesktopEventPage = (props) => {
                 eventSpeakers={eventSpeakers}
               />
               {isManager && <ReportFormCard eventPk={id} />}
-              {logged && subtype.label === DOOR2DOOR_EVENT_SUBTYPE_LABEL && (
-                <>
-                  <Spacer size="1rem" />
-                  <TokTokCard flex />
-                </>
-              )}
               <OnlineUrlCard
                 youtubeVideoID={props.youtubeVideoID}
                 onlineUrl={props.onlineUrl}

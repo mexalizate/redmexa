@@ -5,6 +5,8 @@ import set from "lodash/fp/set";
 import has from "lodash/fp/has";
 import unset from "lodash/fp/unset";
 
+import I18N from "@agir/lib/i18n";
+
 /**
  * Permet de prétraiter des arguments pour un composant React dans une story
  *
@@ -48,8 +50,8 @@ export const scheduleFromStartTimeAndDuration = (target) => (args) => {
       `${targetPrefix}schedule`,
       Interval.after(
         DateTime.fromMillis(+startTime, {
-          zone: "Europe/Paris",
-          locale: "fr",
+          zone: I18N.timezone,
+          locale: I18N.datetimeLocale,
         }),
         Duration.fromObject({ hours: duration }),
       ),

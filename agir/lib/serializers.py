@@ -8,10 +8,9 @@ from rest_framework.serializers import BaseSerializer
 from rest_framework_gis.fields import GeometryField
 
 from agir.carte.models import StaticMapImage
-from agir.lib.geo import get_commune
+from agir.geodata.geocoding import FRENCH_COUNTRY_CODES, get_commune
 from .data import code_postal_vers_code_departement
 from .export import dict_to_camelcase, dict_to_snakecase
-from .geo import FRENCH_COUNTRY_CODES
 from .iban import to_iban, to_bic
 from .tasks import create_static_map_image_from_coordinates
 from .validators import (

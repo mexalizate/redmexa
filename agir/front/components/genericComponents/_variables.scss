@@ -1,5 +1,8 @@
 $white: #fff;
 
+// Color scales can be generated from the main color (usually 500) here:
+// http://mcg.mbitson.com/
+
 $black1000: #000a2c;
 $black700: #4f4f4f;
 $black500: #777777;
@@ -8,15 +11,27 @@ $black100: #dfdfdf;
 $black50: #eeeeee;
 $black25: #fafafa;
 
-$primary600: #4d26b9;
-$primary500: #571aff;
-$primary150: #cbbfec;
-$primary100: #e9e1ff;
-$primary50: #f6f2fc;
+$primary50: #ece2e6;
+$primary100: #d0b8c2;
+$primary150: #b18899;
+$primary300: #915870;
+$primary400: #7a3551;
+$primary500: #621132;
+$primary600: #5a0f2d;
+$primary700: #500c26;
+$primary800: #460a1f;
+$primary900: #340513;
 
-$secondary600: #f5e30f;
-$secondary500: #f4ed0f;
-$secondary100: #fcfbd9;
+$secondary50: #fffcfd;
+$secondary100: #fff7fb;
+$secondary200: #fff1f8;
+$secondary300: #ffebf5;
+$secondary400: #ffe7f2;
+$secondary500: #ffe3f0;
+$secondary600: #ffe0ee;
+$secondary700: #ffdcec;
+$secondary800: #ffd8e9;
+$secondary900: #ffd0e5;
 
 $green500: #16a460;
 $green200: #b4ffdb;

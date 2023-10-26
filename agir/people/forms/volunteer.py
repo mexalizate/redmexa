@@ -16,7 +16,9 @@ class VolunteerForm(ContactPhoneNumberMixin, TagMixin, forms.ModelForm):
         (
             tag,
             format_html(
-                "<strong>{}</strong><br><small><em>{}</em></small>", title, description
+                "<span class='padmore'><strong>{}</strong><br><small><em>{}</em></small></span>",
+                title,
+                description,
             ),
         )
         for _, tags in action_tags.items()
@@ -29,20 +31,17 @@ class VolunteerForm(ContactPhoneNumberMixin, TagMixin, forms.ModelForm):
 
         self.helper = FormHelper()
         self.helper.form_method = "POST"
-        self.helper.add_input(Submit("submit", _("M'enregistrer comme volontaire")))
-
+        self.helper.add_input(
+            Submit(
+                "submit", _("Enregistrer mes informations"), css_class="margintopmore"
+            )
+        )
         self.helper.layout = Layout(
             Row(
-                HalfCol(
+                FullCol(
                     Fieldset(
-                        "Agir près de chez vous",
-                        *(tag for tag, title, desc in action_tags["nearby"])
-                    )
-                ),
-                HalfCol(
-                    Fieldset(
-                        "Agir sur internet",
-                        *(tag for tag, title, desc in action_tags["internet"])
+                        _("Agissez près de chez vous !"),
+                        *(tag for tag, title, desc in action_tags["actions"])
                     )
                 ),
             )

@@ -37,8 +37,6 @@ class SegmentAdmin(CenterOnFranceMixin, OSMGeoAdmin):
                     "tags",
                     "excluded_tags",
                     "is_political_support",
-                    "is_2022",
-                    "is_insoumise",
                 )
             },
         ),
@@ -86,7 +84,7 @@ class SegmentAdmin(CenterOnFranceMixin, OSMGeoAdmin):
                 )
             },
         ),
-        ("Géographie", {"fields": ("countries", "departements", "area")}),
+        ("Géographie", {"fields": ("countries", "area")}),
         (
             "Historique d'utilisation",
             {
@@ -104,40 +102,20 @@ class SegmentAdmin(CenterOnFranceMixin, OSMGeoAdmin):
         ),
         (
             "Informations personnelles",
-            {"fields": ("gender", "born_after", "born_before")},
-        ),
-        (
-            "Historique des dons",
             {
                 "fields": (
-                    "donation_after",
-                    "donation_not_after",
-                    "donation_total_min",
-                    "donation_total_max",
-                    "donation_total_range",
-                    "subscription",
-                )
-            },
-        ),
-        (
-            "Réseau des élus",
-            {
-                "fields": (
-                    "elu",
-                    "elu_status",
-                    "elu_municipal",
-                    "elu_departemental",
-                    "elu_regional",
-                    "elu_consulaire",
-                    "elu_depute",
-                    "elu_depute_europeen",
+                    "gender",
+                    "born_after",
+                    "born_before",
+                    "state_of_origin",
+                    "municipio_of_origin",
                 )
             },
         ),
         ("Combiner des segments", {"fields": ("add_segments", "exclude_segments")}),
         ("Abonnés", {"fields": ("subscribers_count",)}),
     )
-    map_template = "custom_fields/french_area_widget.html"
+    # map_template = "custom_fields/french_area_widget.html"
     autocomplete_fields = (
         "tags",
         "excluded_tags",
@@ -152,6 +130,8 @@ class SegmentAdmin(CenterOnFranceMixin, OSMGeoAdmin):
         "add_segments",
         "forms",
         "polls",
+        "state_of_origin",
+        "municipio_of_origin",
     )
     readonly_fields = ("subscribers_count",)
     ordering = ("name",)
@@ -162,7 +142,6 @@ class SegmentAdmin(CenterOnFranceMixin, OSMGeoAdmin):
         list_filters.TagListFilter,
         list_filters.ExcludedTagListFilter,
         list_filters.QualificationListFilter,
-        ("elu", admin.EmptyFieldListFilter),
     )
     list_display = (
         "name",
@@ -170,7 +149,6 @@ class SegmentAdmin(CenterOnFranceMixin, OSMGeoAdmin):
         "supportgroup_subtypes_list",
         "tags_list",
         "subscriber_list_link",
-        "has_elu",
     )
 
     @admin.display(description="Types de groupe")
@@ -216,10 +194,6 @@ class SegmentAdmin(CenterOnFranceMixin, OSMGeoAdmin):
             reverse("admin:people_person_changelist"),
             str(instance.pk),
         )
-
-    @admin.display(description="Elu·es", boolean=True)
-    def has_elu(self, instance):
-        return bool(instance.elu)
 
     class Media:
         pass

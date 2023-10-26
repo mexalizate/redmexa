@@ -2,6 +2,8 @@ import React from "react";
 
 import LocationItems from "./LocationItems";
 
+import I18N from "@agir/lib/i18n";
+
 export default {
   component: LocationItems,
   title: "LocationField/LocationItems",
@@ -28,7 +30,7 @@ Default.args = {
       address2: "au fond à gauche",
       city: "Paris",
       zip: "75002",
-      country: "FR",
+      country: I18N.country,
     },
     {
       id: "2",
@@ -37,7 +39,7 @@ Default.args = {
       address2: "au fond à gauche",
       city: "Paris",
       zip: "75002",
-      country: "FR",
+      country: I18N.country,
     },
     {
       id: "3",
@@ -46,7 +48,7 @@ Default.args = {
       address2: "au fond à gauche",
       city: "Paris",
       zip: "75002",
-      country: "FR",
+      country: I18N.country,
     },
   ],
 };

@@ -26,15 +26,19 @@ class CreateGroupForm extends React.Component {
       types: props.types,
     };
 
-    if (state.types.length === 1 && !state.types[0].disabled) {
+    if (
+      !state.disabled &&
+      state.types.length === 1 &&
+      !state.types[0].disabled
+    ) {
       state.fields.type = state.types[0].id;
+
       const subtypes = this.props.subtypes.filter(
         (s) => s.type === state.types[0].id,
       );
 
       if (subtypes.length < 2) {
         state.fields.subtypes = subtypes.map((s) => s.label);
-
         state.skipType = true;
       }
     }
@@ -72,6 +76,8 @@ class CreateGroupForm extends React.Component {
       name: "Un groupe pour quoi ?",
       component: (
         <GroupTypeStep
+          disabled={this.props.disabled}
+          disabledMessage={this.props.disabledMessage}
           setFields={this.setFields}
           fields={this.state.fields}
           subtypes={this.props.subtypes}
@@ -91,6 +97,8 @@ CreateGroupForm.propTypes = {
   initial: PropTypes.object,
   subtypes: PropTypes.array,
   types: PropTypes.array,
+  disabled: PropTypes.bool,
+  disabledMessage: PropTypes.string,
 };
 
 class GroupTypeStep extends FormStep {
@@ -132,10 +140,15 @@ class GroupTypeStep extends FormStep {
   }
 
   render() {
-    const { fields } = this.props;
+    const { fields, disabled, disabledMessage } = this.props;
 
     return (
       <div className="row padtopmore padbottommore">
+        {disabled && disabledMessage && (
+          <div className="col-xs-12 alert alert-danger text-center">
+            {disabledMessage || "Vous ne pouvez plus créer de groupe !"}
+          </div>
+        )}
         <div className="col-sm-4">
           <h3>Quel type de groupe voulez-vous créer&nbsp;?</h3>
           <p>
@@ -183,7 +196,7 @@ class GroupTypeStep extends FormStep {
               >
                 <strong>{type.label}</strong>
                 {type.description}
-                {type.disabled ? (
+                {type.disabledDescription ? (
                   <>
                     <br />
                     <br />

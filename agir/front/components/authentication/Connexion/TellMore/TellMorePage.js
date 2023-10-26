@@ -1,26 +1,21 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { Redirect, useRouteMatch, useLocation } from "react-router-dom";
+import { Redirect, useRouteMatch } from "react-router-dom";
 import useSWRImmutable from "swr/immutable";
 
 import { useCustomAnnouncement } from "@agir/activity/common/hooks";
-import { usePush } from "@agir/notifications/push/subscriptions";
-import { routeConfig } from "@agir/front/app/routes.config";
 import { useMobileApp } from "@agir/front/app/hooks";
+import { routeConfig } from "@agir/front/app/routes.config";
+import { usePush } from "@agir/notifications/push/subscriptions";
 
-import TellMore from "./TellMore";
-import ChooseCampaign from "./ChooseCampaign";
 import ChooseNewsletters from "./ChooseNewsletters";
 import DeviceNotificationSubscription from "./DeviceNotificationSubscription";
+import TellMore from "./TellMore";
 
 const TellMorePage = () => {
-  const location = useLocation();
   const isTellMorePage = useRouteMatch(routeConfig.tellMore.getLink());
 
   const { data: session } = useSWRImmutable("/api/session/");
   const { available, isSubscribed, subscribe, ready, errorMessage } = usePush();
-
-  const [hasCampaign, dismissCampaign, campaignIsLoading] =
-    useCustomAnnouncement("chooseCampaign", false);
 
   const [hasNewsletters, dismissNewsletters, newslettersAreLoading] =
     useCustomAnnouncement("ChooseNewsletters", false);
@@ -52,26 +47,12 @@ const TellMorePage = () => {
     };
   }, [hasDeviceNotificationSubscription, isMobileApp, ready]);
 
-  if (!isTellMorePage && (hasCampaign || hasNewsletters || hasTellMore)) {
+  if (!isTellMorePage && (hasNewsletters || hasTellMore)) {
     return <Redirect to={routeConfig.tellMore.getLink()} />;
   }
 
-  if (
-    !isTellMorePage ||
-    campaignIsLoading ||
-    tellMoreIsLoading ||
-    newslettersAreLoading
-  ) {
+  if (!isTellMorePage || tellMoreIsLoading || newslettersAreLoading) {
     return null;
-  }
-
-  if (hasCampaign) {
-    return (
-      <ChooseCampaign
-        fromSignup={location.hash && location.hash.includes("agir_id")}
-        dismiss={dismissCampaign}
-      />
-    );
   }
 
   if (hasNewsletters) {

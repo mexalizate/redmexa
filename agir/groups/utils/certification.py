@@ -4,8 +4,8 @@ from django.db.models import Count
 from django.utils import timezone
 
 from agir.events.models import Event
+from agir.geodata.geocoding import FRENCH_COUNTRY_CODES
 from agir.groups.models import Membership, SupportGroup, SupportGroupSubtype
-from agir.lib.geo import FRENCH_COUNTRY_CODES
 
 CERTIFICATION_CRITERIA_LABELS = {
     "gender": {

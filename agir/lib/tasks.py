@@ -2,9 +2,9 @@ from django.contrib.gis.geos import Point
 from django.db import IntegrityError
 
 from agir.carte.models import StaticMapImage
+from agir.geodata.geocoding import geocode_element
 from agir.people.models import Person
 from .celery import http_task
-from .geo import geocode_element
 
 __all__ = ["geocode_person", "create_static_map_image_from_coordinates"]
 

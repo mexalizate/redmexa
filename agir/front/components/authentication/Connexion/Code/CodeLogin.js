@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React, {
   useCallback,
   useEffect,
@@ -153,7 +154,7 @@ const CodeConnexion = () => {
     <Container onSubmit={handleSubmit}>
       <RawFeatherIcon name="mail" width="41px" height="41px" />
 
-      <h1>Un code de connexion vous a été envoyé par e-mail</h1>
+      <h1>{_("Un code de connexion vous a été envoyé par e-mail")}</h1>
 
       {location.state && location.state.code && (
         <LocalCode onDoubleClick={() => setCode(location.state.code)}>
@@ -163,13 +164,12 @@ const CodeConnexion = () => {
 
       {isAuto ? (
         <p style={{ marginTop: "2rem" }}>
-          Validez le code de connexion qui vous a été envoyé par e-mail pour
-          accéder à cette page
+          {_("Validez le code de connexion qui vous a été envoyé par e-mail pour accéder à cette page")}
         </p>
       ) : (
         <>
           <p style={{ marginTop: "2rem" }}>
-            Entrez le code de connexion que nous avons envoyé{" "}
+            {_("Entrez le code de connexion que nous avons envoyé")}{" "}
             {location.state && location.state.email && (
               <>
                 à <strong>{location.state.email}</strong>
@@ -177,8 +177,7 @@ const CodeConnexion = () => {
             )}
           </p>
           <p style={{ marginBottom: "0" }}>
-            Si l’adresse e-mail n’est pas reconnue, il vous sera proposé de vous
-            inscrire.
+           {_(" Si l’adresse e-mail n’est pas reconnue, il vous sera proposé de vous inscrire.")}
           </p>
         </>
       )}
@@ -200,7 +199,7 @@ const CodeConnexion = () => {
           loading={isLoading}
           style={{ height: 40 }}
         >
-          Valider
+         {_(" Valider")}
         </Button>
       </Form>
     </Container>

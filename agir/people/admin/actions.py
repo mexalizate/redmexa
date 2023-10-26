@@ -9,7 +9,7 @@ from django.template.response import TemplateResponse
 
 from agir.lib.admin.form_fields import AutocompleteSelectModel
 from agir.people.actions.export import liaisons_to_csv_response, people_to_csv_response
-from agir.people.actions.subscription import DATE_2022_LIAISON_META_PROPERTY
+from agir.people.actions.subscription import LIAISON_SINCE_META_PROPERTY
 from agir.people.models import PersonTag, Person
 
 
@@ -39,7 +39,7 @@ def remove_from_liaisons(modeladmin, request, queryset):
     updates = []
     for person in queryset:
         person.is_liaison = False
-        person.meta[DATE_2022_LIAISON_META_PROPERTY] = None
+        person.meta[LIAISON_SINCE_META_PROPERTY] = None
         updates.append(person)
 
     Person.objects.bulk_update(updates, fields=("newsletters", "meta"))

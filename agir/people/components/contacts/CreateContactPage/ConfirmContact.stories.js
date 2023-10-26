@@ -2,6 +2,8 @@ import React from "react";
 
 import ConfirmContact from "./ConfirmContact";
 
+import I18N from "@agir/lib/i18n";
+
 export default {
   component: ConfirmContact,
   title: "CreateContactPage/ConfirmContact",
@@ -21,7 +23,7 @@ Default.args = {
     email: "foo@bar.com",
     phone: "06 00 00 00 00",
     isPoliticalSupport: true,
-    newsletters: ["LFI_reguliere", "LFI_exceptionnelle", "LFI_liaison"],
+    newsletters: ["CAMPAIGN", "ACTIVIST", "LIAISONS"],
     group: {
       id: "a1a1",
       value: "a1a1a",
@@ -30,7 +32,7 @@ Default.args = {
     },
     hasGroupNotifications: true,
     address: "25 passage Dubail",
-    city: "Paris",
-    country: "FR",
+    city: "Ciudad de Mexico",
+    country: I18N.country,
   },
 };

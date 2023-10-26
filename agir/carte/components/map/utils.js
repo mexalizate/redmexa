@@ -1,5 +1,6 @@
 import FontFaceOnload from "fontfaceonload";
 
+import I18N from "@agir/lib/i18n";
 import {
   addQueryStringParams,
   parseQueryStringParams,
@@ -76,7 +77,7 @@ export const OVERSEAS_COUNTRY_CODE_TO_DEPARTEMENT = {
 };
 
 export const getDefaultBoundsForUser = (user) => {
-  if (["FR", "BL", "MF"].includes(user?.country) && user?.zip) {
+  if ([I18N.country].includes(user?.country) && user?.zip) {
     return JSON.stringify({ code_postal: user.zip });
   }
   if (OVERSEAS_COUNTRY_CODE_TO_DEPARTEMENT[user?.country]) {

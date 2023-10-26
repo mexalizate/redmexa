@@ -537,7 +537,9 @@ class Event(
 
     lien_feuille_externe = models.URLField(
         verbose_name=_("Lien vers une feuille de calcul externe"),
-        help_text=_("Une feuille de calcul externe à mettre à jour avec les participants à l'événement."),
+        help_text=_(
+            "Une feuille de calcul externe à mettre à jour avec les participants à l'événement."
+        ),
         blank=True,
     )
 
@@ -545,7 +547,9 @@ class Event(
         _("L'ID de l'événement sur le logiciel de tickets"), blank=True, null=True
     )
     scanner_category = models.IntegerField(
-        _("La catégorie que doivent avoir les tickets sur scanner"), blank=True, null=True
+        _("La catégorie que doivent avoir les tickets sur scanner"),
+        blank=True,
+        null=True,
     )
 
     enable_jitsi = models.BooleanField(_("Activer la visio-conférence"), default=False)
@@ -930,7 +934,7 @@ class Event(
 
     def get_meta_image(self):
         if hasattr(self, "image") and self.image:
-            return urljoin(settings.FRONT_DOMAIN, self.image.url)
+            return urljoin(settings.PLATFORM_FRONT_DOMAIN, self.image.url)
 
         # Use content hash as cache key for the auto-generated meta image
         content = ":".join(
@@ -958,7 +962,7 @@ class Event(
         event_image = self.image.storage.url(image.name)
 
         if not is_absolute_url(event_image):
-            event_image = settings.FRONT_DOMAIN + event_image
+            event_image = settings.PLATFORM_FRONT_DOMAIN + event_image
 
         return event_image
 
@@ -1083,8 +1087,10 @@ class EventSubtype(BaseSubtype):
     has_priority = models.BooleanField(
         _("Le sous-type d'événement est prioritaire"),
         default=False,
-        help_text=_("Le sous-type d'événement apparaîtra en premier dans la liste des sous-types disponibles, "
-        "par exemple lors de la création d'un événement."),
+        help_text=_(
+            "Le sous-type d'événement apparaîtra en premier dans la liste des sous-types disponibles, "
+            "par exemple lors de la création d'un événement."
+        ),
     )
 
     related_project_type = models.CharField(
@@ -1141,7 +1147,9 @@ class EventSubtype(BaseSubtype):
     for_organizer_group_members_only = models.BooleanField(
         _("Réservé aux membres des groupes organisateurs"),
         default=False,
-        help_text=_("Seulement les membres des groupes organisateurs pourront rejoindre les événements de ce type"),
+        help_text=_(
+            "Seulement les membres des groupes organisateurs pourront rejoindre les événements de ce type"
+        ),
     )
 
     unauthorized_message = models.TextField(
@@ -1333,9 +1341,9 @@ class GroupAttendee(ExportModelOperationsMixin("group_attendee"), TimeStampedMod
         unique_together = ("event", "group")
 
     def __str__(self):
-        return _("{group} participe à l'événement --> {event} | Par {organizer}").format(
-            group=self.group, event=self.event, organizer=self.organizer
-        )
+        return _(
+            "{group} participe à l'événement --> {event} | Par {organizer}"
+        ).format(group=self.group, event=self.event, organizer=self.organizer)
 
 
 class RSVP(ExportModelOperationsMixin("rsvp"), TimeStampedModel):

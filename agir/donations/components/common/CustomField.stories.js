@@ -5,6 +5,8 @@ import CustomField from "@agir/donations/common/CustomField";
 import TextField from "@agir/front/formComponents/TextField";
 import CountryField from "@agir/front/formComponents/CountryField";
 
+import I18N from "@agir/lib/i18n";
+
 export default {
   component: CustomField,
   title: "Donations/CustomField",
@@ -23,7 +25,7 @@ const TemplateTextField = (args) => {
 };
 
 const TemplateCountryField = (args) => {
-  const [formData, setFormData] = useState({ country: "FR" });
+  const [formData, setFormData] = useState({ country: I18N.country });
 
   const handleChangeCountry = (country) => {
     setFormData((formData) => ({ ...formData, country: country }));

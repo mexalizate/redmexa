@@ -126,7 +126,8 @@ class SupportGroupManagementView(RedirectView):
 
 class CreateSupportGroupView(VerifiedContactPhoneRequiredMixin, TemplateView):
     template_name = "groups/create.html"
-    per_type_animation_limit = 2
+    max_groups_for_referent_number = 2
+    max_groups_for_referent_per_type_number = None
     available_types = ((SupportGroup.TYPE_LOCAL_GROUP, "Groupe local"),)
     unverified_phone_message = _(
         "Un numéro de téléphone vérifié est obligatoire pour pouvoir créer un groupe."
@@ -149,16 +150,24 @@ class CreateSupportGroupView(VerifiedContactPhoneRequiredMixin, TemplateView):
 
         types = []
 
+        disabled = (
+            person.memberships.active().referents().count()
+            >= self.max_groups_for_referent_number
+        )
+
         for type_id, label in self.available_types:
-            disabled = self.per_type_animation_limit <= (
-                SupportGroup.objects.active()
-                .filter(
-                    type=type_id,
-                    memberships__person=person,
-                    memberships__membership_type__gte=Membership.MEMBERSHIP_TYPE_REFERENT,
+            type_disabled = False
+            if self.max_groups_for_referent_per_type_number:
+                type_disabled = self.max_groups_for_referent_per_type_number <= (
+                    SupportGroup.objects.active()
+                    .filter(
+                        type=type_id,
+                        memberships__person=person,
+                        memberships__membership_type__gte=Membership.MEMBERSHIP_TYPE_REFERENT,
+                    )
+                    .count()
                 )
-                .count()
-            )
+
             types.append(
                 {
                     "id": type_id,
@@ -166,18 +175,30 @@ class CreateSupportGroupView(VerifiedContactPhoneRequiredMixin, TemplateView):
                     "description": SupportGroup.TYPE_DESCRIPTION[type_id],
                     "disabledDescription": SupportGroup.TYPE_DISABLED_DESCRIPTION[
                         type_id
-                    ],
-                    "disabled": disabled,
+                    ]
+                    if type_disabled
+                    else "",
+                    "disabled": disabled or type_disabled,
                 }
             )
 
         subtypes = [
             dict_to_camelcase(s.get_subtype_information())
-            for s in subtypes_qs.filter(type__in=[type["id"] for type in types])
+            for s in subtypes_qs.filter(
+                type__in=[t["id"] for t in types if not t["disabled"]]
+            )
         ]
 
         return super().get_context_data(
-            props={"initial": initial, "subtypes": subtypes, "types": types}, **kwargs
+            props={
+                "initial": initial,
+                "subtypes": subtypes,
+                "types": types,
+                "disabled": disabled,
+                "disabledMessage": f"Vous ne pouvez plus créer de nouveau groupe car vous avez atteint la limite "
+                f"de création ({self.max_groups_for_referent_number} groupes par personne).",
+            },
+            **kwargs,
         )
 
 

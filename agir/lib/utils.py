@@ -40,15 +40,12 @@ def front_url(
     query=None,
     absolute=True,
     auto_login=True,
-    nsp=False,
     urlconf="agir.api.front_urls",
     **kwargs,
 ):
     url = reverse(*args, urlconf=urlconf, **kwargs)
-    if absolute and not nsp:
-        url = urljoin(settings.FRONT_DOMAIN, url)
-    if absolute and nsp:
-        url = urljoin(settings.NSP_AGIR_DOMAIN, url)
+    if absolute:
+        url = urljoin(settings.PLATFORM_FRONT_DOMAIN, url)
     if query:
         url = add_query_params_to_url(url, query)
     return AutoLoginUrl(url) if auto_login else url
@@ -78,19 +75,6 @@ def resize_and_autorotate(file_name, variations, storage=default_storage):
 
     # Allow default render variations
     return True
-
-
-def shorten_url(url, secret=False, djan_url_type="LFI"):
-    djan_url = settings.DJAN_URL[djan_url_type]
-    response = requests.post(
-        f"{djan_url}/api/shorten",
-        params={
-            "token": settings.DJAN_API_KEY,
-        },
-        data={"url": url, "length": 10 if secret else 5},
-    )
-    response.raise_for_status()
-    return response.text
 
 
 def get_client_ip(request):

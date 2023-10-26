@@ -123,7 +123,7 @@ Description=fi-api celery worker
 
 [Service]
 WorkingDirectory=/vagrant
-ExecStart=$POETRY_HOME/bin/poetry run python celery --app agir.api worker --concurrency 2 -Q celery
+ExecStart=$POETRY_HOME/bin/poetry run celery --app agir.api worker --concurrency 2 -Q celery
 User=vagrant
 Group=vagrant
 Restart=on-failure
@@ -140,7 +140,7 @@ Description=fi-api celery worker
 
 [Service]
 WorkingDirectory=/vagrant
-ExecStart=$POETRY_HOME/bin/poetry run python celery --app nuntius.celery worker --concurrency 2 -Q nuntius -n nuntius@%%h
+ExecStart=$POETRY_HOME/bin/poetry run celery --app nuntius.celery worker --concurrency 2 -Q nuntius -n nuntius@%%h
 User=vagrant
 Group=vagrant
 Restart=on-failure

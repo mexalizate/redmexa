@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-17 19:58+0200\n"
+"POT-Creation-Date: 2023-10-18 19:45-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -86,6 +86,12 @@ msgstr ""
 msgid ""
 "Designates whether this user should be treated as active. Unselect this "
 "instead of deleting accounts."
+msgstr ""
+
+#: agir/authentication/view_mixins.py:44
+msgid ""
+"Vous devez ajouter et verifier un numéro de téléphone avant de pouvoir "
+"continuer"
 msgstr ""
 
 #: agir/carte/models.py:91 agir/lib/models.py:211
@@ -341,7 +347,7 @@ msgid "Type de dépense"
 msgstr ""
 
 #: agir/donations/models.py:397 agir/events/admin/panels.py:54
-#: agir/events/models.py:1372 agir/events/models.py:1422
+#: agir/events/models.py:1390 agir/events/models.py:1440
 msgid "Statut"
 msgstr ""
 
@@ -433,7 +439,7 @@ msgstr ""
 msgid "Type de document"
 msgstr ""
 
-#: agir/donations/models.py:700 agir/events/models.py:1501
+#: agir/donations/models.py:700 agir/events/models.py:1519
 msgid "Fichier"
 msgstr ""
 
@@ -654,7 +660,7 @@ msgstr ""
 msgid "Compte-rendu"
 msgstr ""
 
-#: agir/events/admin/panels.py:340
+#: agir/events/admin/panels.py:340 agir/events/models.py:619
 msgid "Intervenant·es"
 msgstr ""
 
@@ -763,12 +769,48 @@ msgstr ""
 msgid "Le nom de l'événement"
 msgstr ""
 
+#: agir/events/models.py:428
+msgid "Caché"
+msgstr ""
+
+#: agir/events/models.py:429
+msgid "Visible par les organisateurs"
+msgstr ""
+
+#: agir/events/models.py:430
+msgid "Public"
+msgstr ""
+
+#: agir/events/models.py:434
+msgid "Visibilité"
+msgstr ""
+
+#: agir/events/models.py:442
+msgid "Sous-type"
+msgstr ""
+
 #: agir/events/models.py:450 agir/people/models.py:1022
 msgid "date et heure de début"
 msgstr ""
 
 #: agir/events/models.py:451 agir/people/models.py:1023
 msgid "date et heure de fin"
+msgstr ""
+
+#: agir/events/models.py:453
+msgid "Fuseau horaire"
+msgstr ""
+
+#: agir/events/models.py:462
+msgid "Nombre maximum de participants"
+msgstr ""
+
+#: agir/events/models.py:465
+msgid "Autoriser les participant⋅e⋅s à inscrire des invité⋅e⋅s"
+msgstr ""
+
+#: agir/events/models.py:467
+msgid "Événement correspondant sur Facebook"
 msgstr ""
 
 #: agir/events/models.py:486
@@ -791,184 +833,440 @@ msgid ""
 "photos."
 msgstr ""
 
+#: agir/events/models.py:506
+msgid "Le mail de compte-rendu a été envoyé"
+msgstr ""
+
+#: agir/events/models.py:511
+msgid "Formulaire d'inscription"
+msgstr ""
+
+#: agir/events/models.py:521
+msgid "Formulaire d'appel à volontaires"
+msgstr ""
+
 #: agir/events/models.py:532
 msgid "Paramètres de paiement"
+msgstr ""
+
+#: agir/events/models.py:539
+msgid "Lien vers une feuille de calcul externe"
+msgstr ""
+
+#: agir/events/models.py:540
+msgid ""
+"Une feuille de calcul externe à mettre à jour avec les participants à "
+"l'événement."
+msgstr ""
+
+#: agir/events/models.py:545
+msgid "L'ID de l'événement sur le logiciel de tickets"
+msgstr ""
+
+#: agir/events/models.py:548
+msgid "La catégorie que doivent avoir les tickets sur scanner"
+msgstr ""
+
+#: agir/events/models.py:551
+msgid "Activer la visio-conférence"
 msgstr ""
 
 #: agir/events/models.py:554
 msgid "Template pour la page de participation"
 msgstr ""
 
-#: agir/events/models.py:565
+#: agir/events/models.py:558
+msgid "Ne pas lister l'événement"
+msgstr ""
+
+#: agir/events/models.py:561
+msgid ""
+"L'événement n'apparaîtra pas sur la carte, ni sur le calendrier et ne sera "
+"pas cherchable via la recherche interne ou les moteurs de recherche."
+msgstr ""
+
+#: agir/events/models.py:567
 msgid "Informations supplémentaires."
 msgstr ""
 
-#: agir/events/models.py:634
+#: agir/events/models.py:577
+msgid "Tous les utilisateurs"
+msgstr ""
+
+#: agir/events/models.py:578
+msgid "Les insoumis⋅es"
+msgstr ""
+
+#: agir/events/models.py:579
+msgid "Les signataires « Nous Sommes Pour ! »"
+msgstr ""
+
+#: agir/events/models.py:583
+msgid "Utilisateur⋅ices de la plateforme concerné⋅es par l'événement"
+msgstr ""
+
+#: agir/events/models.py:591
+msgid "Url de visio-conférence"
+msgstr ""
+
+#: agir/events/models.py:598
+msgid "Segment de suggestion"
+msgstr ""
+
+#: agir/events/models.py:604
+msgid "Segment des personnes auquel cet événement sera suggéré."
+msgstr ""
+
+#: agir/events/models.py:608
+msgid "Note pour les participants"
+msgstr ""
+
+#: agir/events/models.py:613
+msgid ""
+"Note montrée aux participants à un événements et est envoyé dans l'e-mail de "
+"confirmation de participation"
+msgstr ""
+
+#: agir/events/models.py:627
+msgid "Campagne e-mail"
+msgstr ""
+
+#: agir/events/models.py:636
 msgid "événement"
 msgstr ""
 
-#: agir/events/models.py:635
+#: agir/events/models.py:637
 msgid "événements"
 msgstr ""
 
-#: agir/events/models.py:641
+#: agir/events/models.py:643
 msgid "Peut éditer tous les événements"
 msgstr ""
 
-#: agir/events/models.py:642
+#: agir/events/models.py:644
 msgid "Peut voir les événements non publiés"
 msgstr ""
 
-#: agir/events/models.py:770
+#: agir/events/models.py:772
 #, python-brace-format
 msgid "le {date}, de {start_hour} à {end_hour}"
 msgstr ""
 
-#: agir/events/models.py:777
+#: agir/events/models.py:779
 #, python-brace-format
 msgid "du {start_date}, {start_time} au {end_date}, {end_time}"
 msgstr ""
 
-#: agir/events/models.py:791
+#: agir/events/models.py:793
 #, python-brace-format
 msgid "le {date} à {time}"
 msgstr ""
 
-#: agir/events/models.py:807
+#: agir/events/models.py:809
 msgid "La date de fin de l'événement doit être postérieure à sa date de début."
 msgstr ""
 
-#: agir/events/models.py:1025
+#: agir/events/models.py:1027
 msgid "Réunion privée de groupe"
 msgstr ""
 
-#: agir/events/models.py:1026
+#: agir/events/models.py:1028
 msgid "Événement public"
 msgstr ""
 
-#: agir/events/models.py:1027
+#: agir/events/models.py:1029
 msgid "Action publique"
 msgstr ""
 
-#: agir/events/models.py:1028
+#: agir/events/models.py:1030
 msgid "Autre"
 msgstr ""
 
-#: agir/events/models.py:1040
+#: agir/events/models.py:1042
 msgid ""
 "Une réunion qui concerne principalement les membres du groupes, et non le "
 "public de façon générale. Par exemple, la réunion hebdomadaire du groupe, "
 "une réunion de travail, ou l'audition d'une association"
 msgstr ""
 
-#: agir/events/models.py:1045
+#: agir/events/models.py:1047
 msgid ""
 "Un événement ouvert à tous les publics, au-delà des membres du groupe, mais "
 "qui aura lieu dans un lieu privé. Par exemple, un événement public avec un "
 "orateur, une projection ou un concert."
 msgstr ""
 
-#: agir/events/models.py:1050
+#: agir/events/models.py:1052
 msgid ""
 "Une action qui se déroulera dans un lieu public et qui aura comme objectif "
 "principal d'aller à la rencontre ou d'atteindre des personnes extérieures à "
 "la FI"
 msgstr ""
 
-#: agir/events/models.py:1054
+#: agir/events/models.py:1056
 msgid ""
 "Tout autre type d'événement qui ne rentre pas dans les catégories ci-dessus."
 msgstr ""
 
-#: agir/events/models.py:1064
+#: agir/events/models.py:1066
 msgid "Type d'événement"
 msgstr ""
 
-#: agir/events/models.py:1067
+#: agir/events/models.py:1069
 msgid "description par défaut"
 msgstr ""
 
-#: agir/events/models.py:1074
+#: agir/events/models.py:1071
+msgid "La description par défaut pour les événements de ce sous-type."
+msgstr ""
+
+#: agir/events/models.py:1076
 msgid "image par défaut"
 msgstr ""
 
-#: agir/events/models.py:1078
+#: agir/events/models.py:1080
 msgid "L'image associée par défaut à un événement de ce sous-type."
 msgstr ""
 
-#: agir/events/models.py:1189
+#: agir/events/models.py:1084
+msgid "Le sous-type d'événement est prioritaire"
+msgstr ""
+
+#: agir/events/models.py:1086
+msgid ""
+"Le sous-type d'événement apparaîtra en premier dans la liste des sous-types "
+"disponibles, par exemple lors de la création d'un événement."
+msgstr ""
+
+#: agir/events/models.py:1091
+msgid "Type de projet de gestion associé"
+msgstr ""
+
+#: agir/events/models.py:1099
+msgid "Attestations requises"
+msgstr ""
+
+#: agir/events/models.py:1111
+msgid "Formulaire de bilan"
+msgstr ""
+
+#: agir/events/models.py:1113
+msgid ""
+"Les organisateur·ices des événements de ce type seront invité·es à remplir "
+"ce formulaire une fois l'événement terminé"
+msgstr ""
+
+#: agir/events/models.py:1124
+msgid "Les événements de ce sous-type seront modifiables"
+msgstr ""
+
+#: agir/events/models.py:1127
+msgid ""
+"Les événements de ce sous-type pourront être modifiés par les "
+"organisateur·ices, et non seulement par les administrateur·ices"
+msgstr ""
+
+#: agir/events/models.py:1133
+msgid "Accepté pour la certification"
+msgstr ""
+
+#: agir/events/models.py:1136
+msgid ""
+"Les événements récents de ce sous-type seront pris en compte (ou non) pour "
+"ouvrir le droit à un groupe d'action à la certification"
+msgstr ""
+
+#: agir/events/models.py:1142
+msgid "Réservé aux membres des groupes organisateurs"
+msgstr ""
+
+#: agir/events/models.py:1144
+msgid ""
+"Seulement les membres des groupes organisateurs pourront rejoindre les "
+"événements de ce type"
+msgstr ""
+
+#: agir/events/models.py:1148 agir/people/person_forms/models.py:148
+#: agir/polls/models.py:69
+msgid "Note pour les personnes non autorisées"
+msgstr ""
+
+#: agir/events/models.py:1153
+msgid ""
+"Cette note sera affichée sur la page de l'événement aux personnes qui n'ont "
+"pas le droit de participer à un événement de ce type"
+msgstr ""
+
+#: agir/events/models.py:1159
+msgid "Organisation réservé au type de groupe"
+msgstr ""
+
+#: agir/events/models.py:1166
+msgid ""
+"Seulement les gestionnaires et animateur·ices des groupes du type "
+"sélectionné pourront créer des événements de ce type."
+msgstr ""
+
+#: agir/events/models.py:1176
+msgid "Organisations réservé à certains groupes"
+msgstr ""
+
+#: agir/events/models.py:1178
+msgid ""
+"Seulement les gestionnaires et animateur·ices des groupes sélectionnés "
+"pourront créer des événements de ce type."
+msgstr ""
+
+#: agir/events/models.py:1184
+msgid "Co-organisation avec d'autres groupes d'action autorisée"
+msgstr ""
+
+#: agir/events/models.py:1187
+msgid ""
+"Les organisateur·ices pourront inviter d'autres groupes d'action à co-"
+"organiser les événements de ce type."
+msgstr ""
+
+#: agir/events/models.py:1194
+msgid "Modèle de campagne e-mail"
+msgstr ""
+
+#: agir/events/models.py:1201
+msgid ""
+"Si une campagne a été sélectionné, celle-ci pourra être utilisée comme "
+"modèle pour créer automatiquement une campagne pour un événement de ce type."
+msgstr ""
+
+#: agir/events/models.py:1207
 msgid "Sous-type d'événement"
 msgstr ""
 
-#: agir/events/models.py:1190
+#: agir/events/models.py:1208
 msgid "Sous-types d'événement"
 msgstr ""
 
-#: agir/events/models.py:1213
+#: agir/events/models.py:1231
 msgid "titre"
 msgstr ""
 
-#: agir/events/models.py:1214
+#: agir/events/models.py:1232
 msgid "slug"
 msgstr ""
 
-#: agir/events/models.py:1230
+#: agir/events/models.py:1233
+msgid "Calendrier archivé"
+msgstr ""
+
+#: agir/events/models.py:1248
 msgid "Les utilisateurs peuvent ajouter des événements"
 msgstr ""
 
-#: agir/events/models.py:1234 agir/lib/models.py:319 agir/lib/models.py:506
+#: agir/events/models.py:1252 agir/lib/models.py:319 agir/lib/models.py:506
 #: agir/people/models.py:1021
 msgid "description"
 msgstr ""
 
-#: agir/events/models.py:1236
+#: agir/events/models.py:1254
 msgid "Saisissez une description (HTML accepté)"
 msgstr ""
 
-#: agir/events/models.py:1240
+#: agir/events/models.py:1258
 msgid "bannière"
 msgstr ""
 
-#: agir/events/models.py:1249
+#: agir/events/models.py:1267
 msgid "Agenda"
 msgstr ""
 
-#: agir/events/models.py:1272
+#: agir/events/models.py:1290
 msgid ""
 "Impossible d'utiliser ce calendrier comme parent : cela excéderait la "
 "profondeur maximale autorisée."
 msgstr ""
 
-#: agir/events/models.py:1289
+#: agir/events/models.py:1307
 msgid "Élément de calendrier"
 msgstr ""
 
-#: agir/events/models.py:1334
-msgid "En attente du paiement"
+#: agir/events/models.py:1331
+msgid "Groupe participant"
 msgstr ""
 
-#: agir/events/models.py:1335
-msgid "Inscription confirmée"
+#: agir/events/models.py:1332
+msgid "Groupes participants"
 msgstr ""
 
 #: agir/events/models.py:1336
+#, python-brace-format
+msgid "{group} participe à l'événement --> {event} | Par {organizer}"
+msgstr ""
+
+#: agir/events/models.py:1352
+msgid "En attente du paiement"
+msgstr ""
+
+#: agir/events/models.py:1353
+msgid "Inscription confirmée"
+msgstr ""
+
+#: agir/events/models.py:1354
 msgid "Inscription annulée"
 msgstr ""
 
-#: agir/events/models.py:1348
+#: agir/events/models.py:1366
 msgid "nombre d'invités supplémentaires"
 msgstr ""
 
-#: agir/events/models.py:1380 agir/events/models.py:1467
+#: agir/events/models.py:1398 agir/events/models.py:1485
 msgid "Recevoir les notifications"
 msgstr ""
 
-#: agir/events/models.py:1442
+#: agir/events/models.py:1423
+msgid " paiement(s) en attente"
+msgstr ""
+
+#: agir/events/models.py:1460
 msgid "Créateur de l'événement"
 msgstr ""
 
-#: agir/events/models.py:1508
+#: agir/events/models.py:1498
+msgid "Le groupe doit être un groupe que vous gérez."
+msgstr ""
+
+#: agir/events/models.py:1526
 msgid "légende"
+msgstr ""
+
+#: agir/events/models.py:1546
+msgid "Seulement des lettres minuscules, des chiffres, des _ et des -."
+msgstr ""
+
+#: agir/events/models.py:1558
+msgid "Début effectif"
+msgstr ""
+
+#: agir/events/models.py:1559
+msgid "Fin effective"
+msgstr ""
+
+#: agir/events/models.py:1578
+msgid "En attente"
+msgstr ""
+
+#: agir/events/models.py:1579
+msgid "Acceptée"
+msgstr ""
+
+#: agir/events/models.py:1580
+msgid "Refusée"
+msgstr ""
+
+#: agir/events/models.py:1586
+msgid "Personne qui émet l'invitation"
+msgstr ""
+
+#: agir/events/models.py:1594
+msgid "Personne qui répond à l'invitation"
 msgstr ""
 
 #: agir/events/tasks.py:66
@@ -1440,7 +1738,12 @@ msgstr ""
 msgid "Les informations de votre groupe d'action ont été changées"
 msgstr ""
 
-#: agir/groups/views/management_views.py:250
+#: agir/groups/views/management_views.py:132
+msgid ""
+"Un numéro de téléphone vérifié est obligatoire pour pouvoir créer un groupe."
+msgstr ""
+
+#: agir/groups/views/management_views.py:254
 #, python-format
 msgid ""
 "Le transfert de %d membre(s) vers « %s » a été effectué. Ces dernier·ère·s "
@@ -1448,7 +1751,7 @@ msgid ""
 "mail."
 msgstr ""
 
-#: agir/groups/views/management_views.py:295
+#: agir/groups/views/management_views.py:299
 msgid "{} n'est plus un gestionnaire du groupe."
 msgstr ""
 
@@ -2408,10 +2711,6 @@ msgstr ""
 msgid ""
 "Note montrée à l'utilisateur qui essaye d'accéder au formulaire après sa "
 "date de fermeture."
-msgstr ""
-
-#: agir/people/person_forms/models.py:148 agir/polls/models.py:69
-msgid "Note pour les personnes non autorisées"
 msgstr ""
 
 #: agir/people/person_forms/models.py:151 agir/polls/models.py:72

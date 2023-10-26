@@ -5,14 +5,16 @@ import "tinymce/models/dom";
 import "tinymce/icons/default";
 import "tinymce/themes/silver";
 
-// Localisation française
-import "tinymce-i18n/langs/fr_FR";
-
 // Plugins
 import "tinymce/plugins/link";
 import "tinymce/plugins/autolink";
 import "tinymce/plugins/image";
 import "tinymce/plugins/lists";
+
+// Localisation
+import "@agir/lib/i18n/tinymce";
+
+import I18N from "@agir/lib/i18n";
 import onDOMReady from "@agir/lib/utils/onDOMReady";
 
 /**
@@ -30,7 +32,7 @@ const config = {
   toolbar: "bold italic | blocks | link image | bullist numlist",
   menubar: false,
   statusbar: false,
-  language: "fr_FR",
+  language: I18N.datetimeLocale,
   block_formats: "Paragraphe=p;Titre=h2;Sous-titre=h3;Petit titre=h4",
   skin: "oxide",
   skin_url: "/static/components/skins/ui/oxide",

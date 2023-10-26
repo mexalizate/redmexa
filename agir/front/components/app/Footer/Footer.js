@@ -1,16 +1,13 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
-
 import style from "@agir/front/genericComponents/_variables.scss";
-
 import AppStore from "@agir/front/genericComponents/AppStore";
 import Link from "@agir/front/app/Link";
 import LogoAP from "@agir/front/genericComponents/LogoAP";
 import Spacer from "@agir/front/genericComponents/Spacer";
-
 import FooterBanner from "./FooterBanner";
-
 const StyledAppStore = styled(AppStore)``;
 const StyledFooter = styled.div`
   width: 100%;
@@ -122,58 +119,59 @@ export const Footer = (props) => {
             <LogoAP />
           </div>
           <div>
-            <h3>Action populaire</h3>
+            <h3>{_("Action populaire")}</h3>
             <p>
-              <Link route="donationLanding">Faire un don</Link>
-              <Link route="eventMap">Carte des événements</Link>
-              <Link route="groupMap">Carte des groupes</Link>
+              <Link route="eventMap">{_("Carte des événements")}</Link>
+              <Link route="groupMap">{_("Carte des groupes")}</Link>
               <Link route="materiel" target="_blank">
-                Commander du matériel
+                {_(" Commander du matériel")}
               </Link>
             </p>
           </div>
 
           <div>
-            <h3>Liens utiles</h3>
+            <h3>{_("Liens utiles")}</h3>
             <p>
               {isSignedIn ? (
-                <Link route="logout">Se déconnecter</Link>
+                <Link route="logout">{_("Se déconnecter")}</Link>
               ) : (
-                <Link route="login">Se connecter</Link>
+                <Link route="login">{_("Se connecter")}</Link>
               )}
-              <Link route="help">Besoin d'aide&nbsp;?</Link>
-              <Link route="legal">Mentions légales</Link>
-              <Link route="contact">Contact</Link>
+              <Link route="help">{_("Besoin d'aide ?")}</Link>
+              <Link route="legal">{_("Mentions légales")}</Link>
+              <Link route="contact">{_("Contact")}</Link>
             </p>
           </div>
 
           <div>
-            <h3>Le programme</h3>
+            <h3>{_("Le programme")}</h3>
             <p>
               <Link route="nupesPlatform" target="_blank">
-                Le programme de la{" "}
+                {_("Le programme de la")}{" "}
                 <abbr title="Nouvelle Union Populaire Écologique et sociale">
-                  NUPES
+                  {_("NUPES")}
                 </abbr>
               </Link>
               <Link route="programme" target="_blank">
-                Le programme l'Avenir en commun
+                {_("Le programme l'Avenir en commun")}
               </Link>
             </p>
           </div>
 
           <div>
-            <h3>Les autres sites</h3>
+            <h3>{_("Les autres sites")}</h3>
             <p>
               <Link route="nupes" target="_blank">
-                La{" "}
-                <abbr title="Nouvelle Union Populaire Écologique et sociale">
-                  NUPES
+                {_("La")}{" "}
+                <abbr
+                  title={_("Nouvelle Union Populaire Écologique et sociale")}
+                >
+                  {_("NUPES")}
                 </abbr>
               </Link>
-              <Link route="lafranceinsoumise">La France insoumise</Link>
-              <Link route="linsoumission">L'insoumission</Link>
-              <Link route="jlmBlog">Le blog de Jean-Luc Mélenchon</Link>
+              <Link route="lafranceinsoumise">{_("La France insoumise")}</Link>
+              <Link route="linsoumission">{_("L'insoumission")}</Link>
+              <Link route="jlmBlog">{_("Le blog de Jean-Luc Mélenchon")}</Link>
             </p>
           </div>
 

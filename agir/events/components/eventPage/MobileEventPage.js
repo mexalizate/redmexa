@@ -26,11 +26,9 @@ import OnlineUrlCard from "./OnlineUrlCard";
 import RenderIfVisible from "@agir/front/genericComponents/RenderIfVisible";
 import ShareCard from "@agir/front/genericComponents/ShareCard";
 import EventMessages from "./EventMessages";
-import TokTokCard from "@agir/events/TokTok/TokTokCard";
 import { useSelector } from "@agir/front/globalContext/GlobalContext";
 import { getUser } from "@agir/front/globalContext/reducers";
 
-import { DOOR2DOOR_EVENT_SUBTYPE_LABEL } from "@agir/events/common/utils";
 import EventSpeakers from "./EventSpeakers";
 
 const CardLikeSection = styled.section``;
@@ -182,9 +180,6 @@ const MobileEventPage = (props) => {
         >
           <EventHeader {...props} />
           {isManager && <ReportFormCard eventPk={id} />}
-          {logged && subtype.label === DOOR2DOOR_EVENT_SUBTYPE_LABEL && (
-            <TokTokCard />
-          )}
         </Card>
       </StyledMain>
 

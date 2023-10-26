@@ -21,6 +21,7 @@ const VotingLocationField = (props) => {
       icon: choice.type === "commune" ? "location-dot" : "globe:regular",
     }));
     setOptions(results);
+
     return results;
   }, 600);
 

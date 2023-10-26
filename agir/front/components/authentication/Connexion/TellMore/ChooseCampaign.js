@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useCallback, useState } from "react";
 import styled from "styled-components";
@@ -111,22 +112,22 @@ const ChooseCampaign = ({ fromSignup, dismiss }) => {
               width="1rem"
               style={{ marginRight: "12px" }}
             />
-            Votre compte a été créé
+            {_("Votre compte a été créé")}
           </div>
         )}
         <LogoFI height="114px" />
         <Spacer size="2rem" />
         <h2>
-          <span>Souhaitez-vous rejoindre</span>{" "}
-          <span>la France insoumise&nbsp;?</span>
+          <span>{_("Souhaitez-vous rejoindre")}</span>{" "}
+          <span>{_("la France insoumise ?")}</span>
         </h2>
         <Spacer size="2rem" />
         <Button color="primary" type="submit" disabled={submitted}>
-          Je rejoins !
+          {_("Je rejoins !")}
         </Button>
         <Spacer size="1rem" />
         <Button type="button" onClick={dismiss}>
-          Passer cette étape
+          {_("Passer cette étape")}
         </Button>
       </Container>
     </div>

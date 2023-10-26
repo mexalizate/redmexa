@@ -3,7 +3,6 @@ from django.urls import path, include
 urlpatterns = [
     path("", include("agir.front.urls")),
     path("", include("agir.people.urls")),
-    path("", include("agir.elus.urls")),
     path("", include("agir.groups.urls")),
     path("", include("agir.events.urls")),
     path("", include("agir.payments.urls")),
@@ -16,9 +15,9 @@ urlpatterns = [
     path("", include("agir.msgs.urls")),
     path("", include("agir.notifications.urls")),
     path("", include("agir.presidentielle2022.urls")),
-    path("", include("agir.voting_proxies.urls")),
     path("", include("agir.elections.urls")),
     path("", include("agir.event_requests.urls")),
+    path("", include("agir.geodata.urls")),
     path("cagnottes/", include("agir.cagnottes.urls")),
     path("ilb/", include("agir.ilb.urls")),
     path("carte/", include("agir.carte.urls")),

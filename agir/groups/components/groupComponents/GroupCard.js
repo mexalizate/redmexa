@@ -64,13 +64,11 @@ const GroupCard = ({
   isManager,
   typeLabel,
   labels,
-  discountCodes,
   displayGroupLogo,
   displayType,
   displayDescription,
   displayMembership,
   isEmbedded = false,
-  isCertified,
   backLink,
 }) => {
   const history = useHistory();
@@ -150,8 +148,6 @@ const GroupCard = ({
         </div>
       )}
 
-      <DiscountCodes discountCodes={discountCodes} />
-
       <StyledRow gutter={6} style={{ paddingTop: ".5rem" }}>
         {!isEmbedded && !isMember && (
           <Button
@@ -178,17 +174,6 @@ const GroupCard = ({
         >
           Voir le groupe
         </Button>
-        {isCertified && (
-          <Button
-            link
-            key="fund"
-            icon="trending-up"
-            route="contributions"
-            params={{ group: id }}
-          >
-            Financer
-          </Button>
-        )}
         {isManager && (
           <Button
             key="manage"
@@ -222,7 +207,6 @@ GroupCard.propTypes = {
   isManager: PropTypes.bool,
   typeLabel: PropTypes.string,
   labels: PropTypes.arrayOf(PropTypes.string),
-  discountCodes: PropTypes.array,
   routes: PropTypes.object,
   displayGroupLogo: PropTypes.bool,
   displayType: PropTypes.bool,

@@ -168,6 +168,7 @@ class ContactFormMixin:
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
+        self.fields["contact_name"].required = True
         self.fields["contact_email"].required = True
         self.fields["contact_phone"].required = True
 
@@ -307,7 +308,7 @@ class MetaFieldsMixin:
             except NumberParseException:
                 return value
         elif isinstance(field, forms.FileField):
-            url = settings.FRONT_DOMAIN + settings.MEDIA_URL + value
+            url = settings.PLATFORM_FRONT_DOMAIN + settings.MEDIA_URL + value
             if html:
                 return format_html('<a href="{}">Accéder au fichier</a>', url)
             else:

@@ -1,21 +1,25 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
 
+import I18N from "@agir/lib/i18n";
 import style from "@agir/front/genericComponents/_variables.scss";
 import helloDesktop from "@agir/front/genericComponents/images/hello-desktop.svg";
 
 import Link from "@agir/front/app/Link";
-import Button from "@agir/front/genericComponents/Button";
-import CheckboxField from "@agir/front/formComponents/CheckboxField";
-import { Hide } from "@agir/front/genericComponents/grid";
+import MexicanMunicipioField, {
+  formatMexicanMunicipioOption,
+} from "@agir/front/formComponents/MexicanMunicipioField";
 import PhoneField from "@agir/front/formComponents/PhoneField";
-import SelectField from "@agir/front/formComponents/SelectField";
+import CountryField from "@agir/front/formComponents/CountryField";
 import TextField from "@agir/front/formComponents/TextField";
+import Button from "@agir/front/genericComponents/Button";
 import LogoAP from "@agir/front/genericComponents/LogoAP";
 import Spacer from "@agir/front/genericComponents/Spacer";
+import { Hide } from "@agir/front/genericComponents/grid";
 
-import { updateProfile, getProfile } from "@agir/front/authentication/api";
+import { getProfile, updateProfile } from "@agir/front/authentication/api";
 import generateLogger from "@agir/lib/utils/logger";
 
 const logger = generateLogger(__filename);
@@ -98,26 +102,8 @@ const DEFAULT_DATA = {
   lastName: "",
   contactPhone: "",
   zip: "",
-  mandat: null,
+  country: I18N.country,
 };
-const MANDAT_OPTIONS = [
-  {
-    label: "Mandat municipal",
-    value: "municipal",
-  },
-  {
-    label: "Mandat départemental",
-    value: "departemental",
-  },
-  {
-    label: "Mandat régional",
-    value: "regional",
-  },
-  {
-    label: "Mandat consulaire",
-    value: "consulaire",
-  },
-];
 
 const TellMore = ({ dismiss }) => {
   const [formData, setFormData] = useState(DEFAULT_DATA);
@@ -142,10 +128,8 @@ const TellMore = ({ dismiss }) => {
       lastName: data.lastName || DEFAULT_DATA.lastName,
       contactPhone: data.contactPhone || DEFAULT_DATA.contactPhone,
       zip: data.zip || DEFAULT_DATA.zip,
-      mandat:
-        Array.isArray(data.mandat) && data.mandat.length > 0
-          ? data.mandat[0]
-          : null,
+      country: data.country || DEFAULT_DATA.country,
+      municipio: data.municipio && formatMexicanMunicipioOption(data.municipio),
     });
     setExistingData({ firstName: !!data.firstName, lastName: !!data.lastName });
   }, []);
@@ -166,15 +150,18 @@ const TellMore = ({ dismiss }) => {
     }));
   }, []);
 
-  const toggleShowMandat = useCallback(() => {
+  const handleChangeMunicipio = useCallback((value) => {
     setFormData((formData) => ({
       ...formData,
-      mandat: formData.mandat ? null : MANDAT_OPTIONS[0].value,
+      municipio: value,
     }));
   }, []);
 
-  const handleChangeMandat = useCallback((option) => {
-    setFormData((formData) => ({ ...formData, mandat: option.value }));
+  const handleChangeCountry = useCallback((value) => {
+    setFormData((formData) => ({
+      ...formData,
+      country: value,
+    }));
   }, []);
 
   const handleSubmit = useCallback(
@@ -213,7 +200,7 @@ const TellMore = ({ dismiss }) => {
         <LeftBlock>
           <img
             src={helloDesktop}
-            alt="Bienvenue"
+            alt={_("Bienvenue")}
             width="217"
             height="227"
             style={{ width: "220px", paddingRight: "60px" }}
@@ -221,12 +208,13 @@ const TellMore = ({ dismiss }) => {
         </LeftBlock>
         <MainBlock onSubmit={handleSubmit}>
           <div style={{ width: "100%", maxWidth: "517px" }}>
-            <h1>Je complète mon profil</h1>
-            <h2>Complétez les informations vous concernant</h2>
+            <h1>{_("Je complète mon profil")}</h1>
+            <h2>{_("Complétez les informations vous concernant")}</h2>
             <TextField
               label="Nom public"
-              helpText="Le nom que pourront voir les membres avec qui vous interagissez.
-              Indiquez par exemple votre prénom ou un pseudonyme."
+              helpText={_(
+                "Le nom que pourront voir les membres avec qui vous interagissez. Indiquez par exemple votre prénom ou un pseudonyme.",
+              )}
               error={error && error.displayName}
               name="displayName"
               placeholder="Mathilde P."
@@ -258,7 +246,8 @@ const TellMore = ({ dismiss }) => {
                 <TextField
                   label={
                     <>
-                      Nom <span style={{ fontWeight: 400 }}>(facultatif)</span>
+                      {_("Nom")}{" "}
+                      <span style={{ fontWeight: 400 }}>(facultatif)</span>
                     </>
                   }
                   id="lastName"
@@ -274,7 +263,7 @@ const TellMore = ({ dismiss }) => {
             <InputGroup>
               <div>
                 <TextField
-                  label="Code postal"
+                  label={_("Code postal")}
                   id="zip"
                   error={error && error.zip}
                   name="zip"
@@ -290,8 +279,10 @@ const TellMore = ({ dismiss }) => {
                 <PhoneField
                   label={
                     <>
-                      Numéro de téléphone{" "}
-                      <span style={{ fontWeight: 400 }}>(facultatif)</span>
+                      {_("Numéro de téléphone")}{" "}
+                      <span style={{ fontWeight: 400 }}>
+                        ({_("facultatif")})
+                      </span>
                     </>
                   }
                   id="contactPhone"
@@ -304,33 +295,32 @@ const TellMore = ({ dismiss }) => {
                 <Spacer size="1rem" />
               </div>
             </InputGroup>
-            <div>
-              <CheckboxField
-                name="mandat"
-                label="Je suis élu·e"
-                value={formData.mandat !== null}
-                onChange={toggleShowMandat}
-                disabled={isLoading}
-              />
-              <Spacer size="1rem" />
-            </div>
-            {formData.mandat !== null && (
-              <>
-                <div>
-                  <SelectField
-                    label="Mandat"
-                    name="mandat"
-                    value={MANDAT_OPTIONS.find(
-                      (option) => option.value === formData.mandat,
-                    )}
-                    options={MANDAT_OPTIONS}
-                    onChange={handleChangeMandat}
-                    disabled={isLoading}
-                  />
-                </div>
-                <Spacer size="1rem" />
-              </>
-            )}
+            <CountryField
+              label={_("Pays")}
+              id="country"
+              name="country"
+              placeholder=""
+              onChange={handleChangeCountry}
+              value={formData.country}
+              disabled={isLoading}
+              required
+            />
+            <Spacer size="1rem" />
+            <MexicanMunicipioField
+              label={
+                <>
+                  {_("Municipalité mexicaine d'origine")}{" "}
+                  <span style={{ fontWeight: 400 }}>(facultatif)</span>
+                </>
+              }
+              id="municipio"
+              name="municipio"
+              placeholder=""
+              onChange={handleChangeMunicipio}
+              value={formData.municipio}
+              disabled={isLoading}
+            />
+            <Spacer size="1rem" />
             <Button
               type="submit"
               color="primary"
@@ -342,11 +332,9 @@ const TellMore = ({ dismiss }) => {
                 marginBottom: "2rem",
               }}
             >
-              Enregistrer
+              {_("Enregistrer")}
             </Button>
-            {formData.mandat === null && (
-              <Hide $under style={{ paddingBottom: "79px" }}></Hide>
-            )}
+            <Hide as={Spacer} $under size="79px" />
           </div>
         </MainBlock>
       </div>

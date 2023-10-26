@@ -105,13 +105,18 @@ const Page = (props) => {
     }
   }, [routeConfig]);
 
-  if (typeof routeConfig.redirectTo === "function") {
-    const redirectProps = routeConfig.redirectTo(pathname, routeParams);
-    return typeof redirectProps === "string" ? (
-      <Redirect route={redirectProps} />
-    ) : (
-      <Redirect {...redirectProps} />
-    );
+  if (routeConfig.redirectTo) {
+    let redirectProps =
+      typeof routeConfig.redirectTo === "function"
+        ? routeConfig.redirectTo(pathname, routeParams)
+        : routeConfig.redirectTo;
+
+    redirectProps =
+      typeof redirectProps === "string"
+        ? { route: redirectProps }
+        : redirectProps;
+
+    return <Redirect {...redirectProps} />;
   }
 
   if (routeConfig.isPartial) {

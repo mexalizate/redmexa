@@ -4,7 +4,7 @@ import React from "react";
 import Card from "./GroupPageCard";
 import Button from "@agir/front/genericComponents/Button";
 
-const GroupFacts = (props) => {
+const GroupDonation = (props) => {
   const { id, isCertified } = props;
 
   if (!isCertified) {
@@ -19,7 +19,7 @@ const GroupFacts = (props) => {
         s’équiper en matériel, vous pouvez contribuer financièrement de manière
         ponctuelle ou mensuellement.
       </p>
-      <p>Chaque euro compte.</p>
+      <p>Chaque peso compte.</p>
       <Button
         route="contributions"
         params={{ group: id }}
@@ -42,8 +42,8 @@ const GroupFacts = (props) => {
   );
 };
 
-GroupFacts.propTypes = {
+GroupDonation.propTypes = {
   id: PropTypes.string.isRequired,
   isCertified: PropTypes.bool,
 };
-export default GroupFacts;
+export default GroupDonation;

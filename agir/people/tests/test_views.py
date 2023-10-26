@@ -1,22 +1,19 @@
 import datetime
-import logging
 import re
 from unittest import mock
 from unittest.mock import patch
 
 from django.core import mail
 from django.test import TestCase, override_settings
-from django.utils import timezone
 from django.utils.http import base36_to_int, int_to_base36, urlencode
 from phonenumber_field.phonenumber import to_python as to_phone_number
 from rest_framework import status
 from rest_framework.reverse import reverse
-from rest_framework.test import APITestCase
 
 from agir.api.redis import using_separate_redis_server
-from agir.events.models import Event, EventSubtype
 from agir.people.actions.validation_codes import _initialize_buckets
 from agir.people.models import Person, PersonValidationSMS, generate_code
+from agir.people.tags import skills_tags
 from agir.people.tasks import (
     send_confirmation_change_email,
     send_confirmation_merge_account,
@@ -212,7 +209,6 @@ class ProfileFormTestCase(TestCase):
             "location_zip": "75002",
             "location_country": "FR",
             "contact_phone": "+33612345678",
-            "mandates": "[]",
         }
 
         self.person = Person.objects.create_insoumise(
@@ -222,11 +218,11 @@ class ProfileFormTestCase(TestCase):
 
     def test_can_add_tag(self):
         response = self.client.post(
-            reverse("skills"), {**self.sample_data, "info blogueur": "on"}
+            reverse("skills"), {**self.sample_data, skills_tags[0][0]: "on"}
         )
 
         self.assertEqual(response.status_code, 302)
-        self.assertIn("info blogueur", [tag.label for tag in self.person.tags.all()])
+        self.assertIn(skills_tags[0][0], [tag.label for tag in self.person.tags.all()])
 
     @mock.patch("django.db.transaction.on_commit")
     def test_can_change_address(self, on_commit):
@@ -267,7 +263,7 @@ class ProfileFormTestCase(TestCase):
         self.assertContains(response, "has-error")
 
     @mock.patch("agir.people.forms.profile.geocode_person")
-    def test_can_validate_without_zip_code_when_abroad(self, geocode_person):
+    def test_cannot_validate_without_zip_code_when_abroad(self, geocode_person):
         self.sample_data["location_city"] = "Berlin"
         self.sample_data["location_zip"] = ""
         self.sample_data["location_country"] = "DE"
@@ -276,7 +272,8 @@ class ProfileFormTestCase(TestCase):
         response = self.client.post(
             reverse("personal_information"), data=self.sample_data
         )
-        self.assertNotContains(response, "Ce champ est obligatoire.", status_code=302)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertContains(response, "has-error")
 
     def test_cannot_validate_form_without_zip_code_when_in_france(self):
         self.sample_data["location_zip"] = ""

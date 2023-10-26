@@ -1,7 +1,7 @@
 from iso8601 import iso8601
 
 from agir.events.models import Event
-from agir.lib.geo import FRENCH_COUNTRY_CODES
+from agir.geodata.geocoding import FRENCH_COUNTRY_CODES
 
 TREVE_ELECTORALE = [
     (iso8601.parse_date(start), iso8601.parse_date(end), *rest)

@@ -1,17 +1,15 @@
 import json
+from functools import wraps
 from pathlib import Path
 from unittest.mock import patch, Mock
 
 import requests
-from functools import wraps
-
 from django.test import TestCase
 
-from agir.lib.geo import geocode_france, get_commune
+from agir.geodata.geocoding import geocode_france, get_commune
 from agir.lib.models import LocationMixin
 from agir.lib.tests.utils import import_communes_test_data
 from agir.people.models import Person
-
 
 JSON_DIR = Path(__file__).parent / "geoban_json"
 DATA_DIR = Path(__file__).parent / "data"
@@ -21,7 +19,7 @@ def with_json_response(file_name):
     def wrapper_maker(func):
         @wraps(func)
         def wrapper(*args, **kwargs):
-            with patch("agir.lib.geo.requests") as requests:
+            with patch("agir.geodata.geocoding.requests") as requests:
                 res = requests.get.return_value = Mock()
                 res.status_code = 200
                 with open(JSON_DIR / file_name) as file:
@@ -36,7 +34,7 @@ def with_json_response(file_name):
 def with_no_request(f=None):
     def wrapper_maker(func):
         def wrapper(*args, **kwargs):
-            with patch("agir.lib.geo.requests") as requests_patch:
+            with patch("agir.geodata.geocoding.requests") as requests_patch:
                 res = requests_patch.get.side_effect = requests.ConnectionError
                 func(*args, **kwargs)
 

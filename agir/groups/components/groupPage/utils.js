@@ -1,5 +1,6 @@
 import { DateTime } from "luxon";
 
+import I18N from "@agir/lib/i18n";
 import { communeNameOfToIn } from "@agir/lib/utils/display";
 
 export const getGroupTypeWithLocation = (type, location) => {
@@ -40,13 +41,15 @@ export const parseDiscountCodes = (discountCodes) => {
       expiration,
       month: expirationDateTime
         .minus({ months: 1 })
-        .setLocale("fr-FR")
+        .setLocale(I18N.locale)
         .toFormat("LLLL")
         .toLowerCase(),
-      date: expirationMonthStart.setLocale("fr-FR").toFormat("dd MMMM yyyy"),
+      date: expirationMonthStart
+        .setLocale(I18N.locale)
+        .toFormat("dd MMMM yyyy"),
       dateExact: expirationDateTime
         .minus({ day: 1 })
-        .setLocale("fr-FR")
+        .setLocale(I18N.locale)
         .toFormat("dd MMMM yyyy"),
       isEarly,
     };

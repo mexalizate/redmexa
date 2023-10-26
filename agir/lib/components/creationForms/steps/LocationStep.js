@@ -1,7 +1,20 @@
 import React from "react";
+import countries from "localized-countries/data/es_MX";
 
-const countries = require("localized-countries/data/fr");
-const countriesFirst = ["FR", "PT", "DZ", "MA", "TR", "IT", "GB", "ES"];
+import I18N from "@agir/lib/i18n";
+
+const countriesFirst = [
+  "MX",
+  "US",
+  "FR",
+  "PT",
+  "DZ",
+  "MA",
+  "TR",
+  "IT",
+  "GB",
+  "ES",
+];
 
 const fullCountryList = countriesFirst
   .map((code) => ({ code, label: countries[code], key: `${code}1` }))
@@ -24,7 +37,8 @@ const requiredFields = [
 
 export default class LocationStep extends FormStep {
   constructor(props) {
-    props.fields.locationCountryCode = props.fields.locationCountryCode || "FR";
+    props.fields.locationCountryCode =
+      props.fields.locationCountryCode || I18N.country;
     super(props);
   }
 
@@ -38,7 +52,7 @@ export default class LocationStep extends FormStep {
       }
     }
 
-    if (fields.locationCountryCode === "FR") {
+    if (fields.locationCountryCode === I18N.country) {
       if (!fields.locationZip) {
         this.setError("locationZip", "Ce champ est requis.");
       } else if (!fields.locationZip.match("^[0-9]{5}$")) {

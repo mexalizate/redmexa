@@ -18,7 +18,7 @@ from agir.lib.rest_framework_permissions import (
     GlobalOnlyPermissions,
     IsActionPopulaireClientPermission,
 )
-from agir.people.actions.subscription import SUBSCRIPTION_TYPE_AP
+from agir.people.actions.subscription import SUBSCRIPTION_TYPE_PLATFORM
 from agir.people.models import Person
 from agir.people.serializers import (
     SubscriptionRequestSerializer,
@@ -54,7 +54,7 @@ class SignupAPIView(SubscriptionAPIView):
     permission_classes = ()
 
     def post(self, request, *args, **kwargs):
-        request.data.update({"type": SUBSCRIPTION_TYPE_AP})
+        request.data.update({"type": SUBSCRIPTION_TYPE_PLATFORM})
         return super().post(request, *args, **kwargs)
 
 
@@ -98,10 +98,11 @@ class PersonProfileAPIView(RetrieveUpdateAPIView):
                 "country",
                 "contactPhone",
                 "isPoliticalSupport",
-                "mandat",
                 "newsletters",
                 "actionRadius",
                 "hasLocation",
+                "municipio",
+                "municipioCode",
             ],
             **kwargs,
         )

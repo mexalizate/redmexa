@@ -3,7 +3,7 @@ from django.db import transaction, IntegrityError
 
 __all__ = ["merge_persons"]
 
-from agir.elus.models import AccesApplicationParrainages
+
 from agir.people.models import Person
 
 
@@ -152,27 +152,6 @@ def merge_comments(p1, p2, _field):
     p1.commentaires = f"{p1.commentaires}\n\n{p2.commentaires}".strip()
 
 
-def merge_acces_application_parrainages(p1, p2, _field):
-    try:
-        ac2 = p2.acces_application_parrainages
-    except AccesApplicationParrainages.DoesNotExist:
-        return
-
-    ac1, _created = AccesApplicationParrainages.objects.get_or_create(person=p1)
-
-    ac1.etat = max(
-        ac1.etat,
-        ac2.etat,
-        key=[
-            AccesApplicationParrainages.Etat.EN_ATTENTE,
-            AccesApplicationParrainages.Etat.REFUSE,
-            AccesApplicationParrainages.Etat.VALIDE,
-        ].index,
-    )
-
-    ac1.save()
-
-
 def merge_event_speakers(p1, p2, _field):
     try:
         es2 = p2.event_speaker
@@ -215,12 +194,6 @@ MERGE_STRATEGIES = {
     "subscriptions": merge_reassign_related,
     "activities": merge_reassign_related,
     "municipales2020_commune": None,
-    "mandat_municipal": merge_reassign_related,
-    "mandat_departemental": merge_reassign_related,
-    "mandat_regional": merge_reassign_related,
-    "mandat_consulaire": merge_reassign_related,
-    "mandat_depute": merge_reassign_related,
-    "mandat_depute_depute_europeen": merge_reassign_related,
     "campaignsentevent": None,
     "pushcampaignsentevent": None,
     "notification_subscriptions": None,
@@ -242,15 +215,6 @@ MERGE_STRATEGIES = {
     "role": None,
     "auto_login_salt": None,
     "is_political_support": merge_boolean_field,
-    "membre_reseau_elus": merge_with_priority_ordering(
-        [
-            Person.MEMBRE_RESEAU_EXCLUS,
-            Person.MEMBRE_RESEAU_OUI,
-            Person.MEMBRE_RESEAU_NON,
-            Person.MEMBRE_RESEAU_SOUHAITE,
-            Person.MEMBRE_RESEAU_INCONNU,
-        ]
-    ),
     "newsletters": merge_newsletters,
     "subscribed_sms": merge_boolean_field,
     "event_notifications": merge_boolean_field,
@@ -268,7 +232,6 @@ MERGE_STRATEGIES = {
     ),
     "gender": merge_text_fields,
     "date_of_birth": merge_nullable,
-    "mandates": None,
     "meta": merge_dicts,
     "commentaires": merge_comments,
     "search": None,
@@ -277,13 +240,10 @@ MERGE_STRATEGIES = {
     "transferoperation": None,
     "display_name": merge_text_fields,
     "image": merge_text_fields,
-    "rechercheparrainage": merge_reassign_related,
     "read_messages": merge_reassign_related,
     "depense": None,
-    "acces_application_parrainages": merge_acces_application_parrainages,
     "invitation_response": merge_reassign_related,
     "invitation": merge_reassign_related,
-    "candidature": merge_reassign_related,
     "_email": None,
     "voting_proxy": None,
     "polling_station_officer": None,
@@ -294,6 +254,7 @@ MERGE_STRATEGIES = {
     "action_radius": None,
     "document": merge_reassign_related,
     "own_spending_request": merge_reassign_related,
+    "municipio": merge_nullable,
 }
 
 

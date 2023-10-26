@@ -107,21 +107,23 @@ SCANNER_API_KEY = os.environ.get("SCANNER_API_KEY", "prout")
 SCANNER_API_SECRET = os.environ.get("SCANNER_API_SECRET", "prout")
 
 # these domain names are used when absolute URLs should be generated (e.g. to include in emails)
-MAIN_DOMAIN = os.environ.get("MAIN_DOMAIN", "https://lafranceinsoumise.fr")
-API_DOMAIN = os.environ.get(
-    "API_DOMAIN",
+PLATFORM_ADMIN_DOMAIN = os.environ.get(
+    "PLATFORM_ADMIN_DOMAIN",
     "http://agir.local:8000" if DEBUG else "https://api.lafranceinsoumise.fr",
 )
-FRONT_DOMAIN = os.environ.get(
-    "FRONT_DOMAIN",
+PLATFORM_FRONT_DOMAIN = os.environ.get(
+    "PLATFORM_FRONT_DOMAIN",
+    "http://agir.local:8000" if DEBUG else "https://agir.lafranceinsoumise.fr",
+)
+CAMPAIGN_DOMAIN = os.environ.get("MAIN_DOMAIN", "https://lafranceinsoumise.fr")
+ACTIVIST_DOMAIN = os.environ.get(
+    "ACTIVIST_DOMAIN",
     "http://agir.local:8000" if DEBUG else "https://agir.lafranceinsoumise.fr",
 )
 MAP_DOMAIN = os.environ.get(
     "MAP_DOMAIN",
     "http://agir.local:8000" if DEBUG else "https://agir.lafranceinsoumise.fr",
 )
-NSP_DOMAIN = os.environ.get("NSP_DOMAIN", "http://localhost")
-NSP_AGIR_DOMAIN = os.environ.get("NSP_AGIR_DOMAIN", "http://localhost")
 
 ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "localhost,agir.local").split(",")
 
@@ -150,12 +152,10 @@ INSTALLED_APPS = [
     "agir.activity.apps.ActivityConfig",
     "agir.notifications",
     "agir.municipales.apps.MunicipalesConfig",
+    "agir.geodata",
     "agir.legacy",
-    "agir.telegram",
-    "agir.elus.apps.ElusConfig",
     "agir.gestion.apps.GestionConfig",
     "agir.presidentielle2022",
-    "agir.voting_proxies",
     "agir.elections",
     "agir.legislatives2022.apps.Legislatives2022Config",
     "agir.cagnottes.apps.CagnottesConfig",
@@ -313,11 +313,11 @@ EMAIL_TEMPLATES = {
     ## TEMPLATE LFI
     ################
     # WELCOME_MESSAGE variables: [PROFILE_LINK]
-    "WELCOME_LFI_MESSAGE": "https://mosaico.lafranceinsoumise.fr/emails/ac205f71-61a3-465b-8161-cec5729ecdbb.html",
+    "SUBSCRIPTION_WELCOME_MESSAGE__CAMPAIGN": "https://mosaico.lafranceinsoumise.fr/emails/ac205f71-61a3-465b-8161-cec5729ecdbb.html",
     # CONFIRM_SUBSCRIPTION_MESSAGE variables: [CONFIRMATION_URL]
-    "SUBSCRIPTION_CONFIRMATION_LFI_MESSAGE": "https://mosaico.lafranceinsoumise.fr/emails/cd878308-6fd7-4088-b525-a020c5bb3fe0.html",
+    "SUBSCRIPTION_CONFIRMATION_MESSAGE__CAMPAIGN": "https://mosaico.lafranceinsoumise.fr/emails/cd878308-6fd7-4088-b525-a020c5bb3fe0.html",
     # ALREADY_SUBSCRIBED_MESSAGE: [AGO], [PANEL_LINK]
-    "ALREADY_SUBSCRIBED_LFI_MESSAGE": "https://mosaico.lafranceinsoumise.fr/emails/d7040d22-703f-4ac7-883c-d2f04c13be1a.html",
+    "SUBSCRIPTION_ALREADY_SUBSCRIBED_MESSAGE__CAMPAIGN": "https://mosaico.lafranceinsoumise.fr/emails/d7040d22-703f-4ac7-883c-d2f04c13be1a.html",
     # DONATION_MESSAGE variables : [PROFILE_LINK]
     "DONATION_MESSAGE": "https://mosaico.lafranceinsoumise.fr/emails/cab3c2ee-9444-4c70-b16e-9f7dce7929b1.html",
     # DONATION_MESSAGE_2022 variables :
@@ -327,7 +327,7 @@ EMAIL_TEMPLATES = {
     ################
     ## TEMPLATE NSP
     ################
-    "SUBSCRIPTION_CONFIRMATION_NSP_MESSAGE": "https://mosaico.lafranceinsoumise.fr/emails/a60a6bd0-5557-4527-94b3-72d1f0fce049.html",
+    "SUBSCRIPTION_CONFIRMATION_MESSAGE__ACTIVIST": "https://mosaico.lafranceinsoumise.fr/emails/a60a6bd0-5557-4527-94b3-72d1f0fce049.html",
     ################
     ## TEMPLATE AP
     ################
@@ -400,12 +400,12 @@ EMAIL_TEMPLATES = {
     "GROUP_ALERT_CAPACITY_30": "https://mosaico.lafranceinsoumise.fr/emails/a4cb42b0-1417-446a-af66-5d8e67b2047e.html",
     # NEW_MESSAGE variables: DISPLAY_NAME, AUTHOR_STATUS, MESSAGE_HTML, DISPLAY_NAME
     "NEW_MESSAGE": "https://mosaico.lafranceinsoumise.fr/emails/0f9f599a-1dcf-4a49-963e-56078ce9d587.html",
-    # EXISTING_EMAIL_SUBSCRIPTION
-    "EXISTING_EMAIL_SUBSCRIPTION": "https://mosaico.lafranceinsoumise.fr/emails/f175251e-ad1a-430a-9c07-bb0d415263ff.html",
+    # SUBSCRIPTION_ALREADY_SUBSCRIBED_MESSAGE__PLATFORM
+    "SUBSCRIPTION_ALREADY_SUBSCRIBED_MESSAGE__PLATFORM": "https://mosaico.lafranceinsoumise.fr/emails/f175251e-ad1a-430a-9c07-bb0d415263ff.html",
     # UNEXISTING_EMAIL_LOGIN variables: SUBSCRIPTION_URL
     "UNEXISTING_EMAIL_LOGIN": "https://mosaico.lafranceinsoumise.fr/emails/1cc10994-38d6-45ea-8f70-a3102eb955e9.html",
-    # SUBSCRIPTION_CONFIRMATION_MESSAGE variables: CONFIRMATION_URL
-    "SUBSCRIPTION_CONFIRMATION_MESSAGE": "https://mosaico.lafranceinsoumise.fr/emails/315b969b-87a7-4b2e-9d61-697af4cbd4a7.html",
+    # SUBSCRIPTION_CONFIRMATION_MESSAGE__PLATFORM variables: CONFIRMATION_URL
+    "SUBSCRIPTION_CONFIRMATION_MESSAGE__PLATFORM": "https://mosaico.lafranceinsoumise.fr/emails/315b969b-87a7-4b2e-9d61-697af4cbd4a7.html",
     # NEW_EVENT_MY_GROUPS_NOTIFICATION variables: GROUP, EVENT_NAME, EVENT_SCHEDULE, LOCATION_NAME, LOCATION_ZIP, EVENT_LINK
     "NEW_EVENT_MY_GROUPS_NOTIFICATION": "https://mosaico.lafranceinsoumise.fr/emails/65c722ed-1958-40e8-95ea-1e644bb3239a.html",
     # EVENT_SUGGESTION variables: TITLE, EVENT_NAME, EVENT_SCHEDULE, LOCATION_NAME, LOCATION_ZIP, EVENT_LINK
@@ -492,16 +492,16 @@ MEDIA_URL = "/media/"
 
 MEDIA_ROOT = os.environ.get("MEDIA_ROOT", "media")
 
-# if not DEBUG:
-#     DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
-#     AWS_DEFAULT_ACL = "public-read"
-#     AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
-#     AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
-#     AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME", "agir")
-#     AWS_S3_REGION_NAME = os.environ.get("AWS_S3_REGION_NAME")
-#     AWS_S3_ENDPOINT_URL = os.environ.get("AWS_S3_ENDPOINT_URL")
-#     AWS_QUERYSTRING_AUTH = False
-#     AWS_S3_CUSTOM_DOMAIN = os.environ.get("AWS_S3_CUSTOM_DOMAIN")
+if "AWS_ACCESS_KEY_ID" in os.environ:
+    DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+    # AWS_DEFAULT_ACL = "public-read"
+    AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
+    AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
+    AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME", "redmexa")
+    AWS_S3_REGION_NAME = os.environ.get("AWS_S3_REGION_NAME")
+    AWS_S3_ENDPOINT_URL = os.environ.get("AWS_S3_ENDPOINT_URL")
+    AWS_S3_CUSTOM_DOMAIN = os.environ.get("AWS_S3_CUSTOM_DOMAIN")
+    AWS_QUERYSTRING_AUTH = False
 
 # Authentication
 
@@ -925,16 +925,10 @@ PRESSERO_SITE = os.environ.get("PRESSERO_SITE", "").rstrip("/")
 PRESSERO_APPROBATOR_ID = os.environ.get("PRESSERO_APPROBATOR_ID")
 PRESSERO_GROUP_ID = os.environ.get("PRESSERO_GROUP_ID")
 
-# djan
-DJAN_URL = {
-    "LFI": "https://la-fi.fr",
-    "M2022": "https://m2022.fr",
-}
-DJAN_API_KEY = os.environ.get("DJAN_API_KEY")
 
 # nuntius
 NUNTIUS_REDIS_CONNECTION_GETTER = "agir.api.redis.get_auth_redis_client"
-NUNTIUS_PUBLIC_URL = FRONT_DOMAIN
+NUNTIUS_PUBLIC_URL = PLATFORM_FRONT_DOMAIN
 NUNTIUS_IMAGES_URL = None
 NUNTIUS_LINKS_URL = os.environ.get(
     "NUNTIUS_LINKS_URL", "https://www.actionpopulaire.fr"
@@ -988,10 +982,6 @@ BANNER_CONFIG = {"thumbnail": (400, 250), "banner": (1200, 400)}
 
 JITSI_GROUP_SIZE = 5
 JITSI_SERVERS = os.environ.get("JITSI_SERVERS", "visio.lafranceinsoumise.fr").split(",")
-
-# telegram
-TELEGRAM_API_ID = os.environ.get("TELEGRAM_API_ID")
-TELEGRAM_API_HASH = os.environ.get("TELEGRAM_API_HASH")
 
 
 # Municipales
@@ -1051,6 +1041,3 @@ ILB_DONS_URL = os.environ.get("ILB_DONS_URL", "https://institutlaboetie.fr/don/"
 ILB_DONS_REMERCIEMENTS_URL = os.environ.get(
     "ILB_DONS_REMERCIEMENTS_URL", "https://institutlaboetie.fr/don/merci/"
 )
-
-MATERIEL_REST_API_USERNAME = os.environ.get("MATERIEL_REST_API_USERNAME")
-MATERIEL_REST_API_PASSWORD = os.environ.get("MATERIEL_REST_API_PASSWORD")

@@ -1,18 +1,12 @@
-from urllib.parse import urljoin
-
 from django.conf import settings
-from django.urls import reverse
 
 from agir.authentication.tokens import monthly_donation_confirmation_token_generator
 from agir.donations.models import SpendingRequest
 from agir.lib.celery import (
     emailing_task,
-    http_task,
 )
-from agir.lib.mailing import send_mosaico_email, add_params_to_urls, send_template_email
-from agir.lib.phone_numbers import is_french_number, is_mobile_number
-from agir.lib.sms import send_sms
-from agir.lib.utils import front_url, generate_token_params, shorten_url
+from agir.lib.mailing import send_mosaico_email, send_template_email
+from agir.lib.utils import front_url
 from agir.payments.types import PAYMENT_TYPES
 from agir.people.models import Person
 from agir.system_pay.models import SystemPaySubscription
@@ -103,35 +97,6 @@ def send_expiration_email_reminder(sp_subscription_pk):
             "expiry_date": sp_subscription.alias.expiry_date,
         },
         recipients=[sp_subscription.subscription.person],
-    )
-
-
-@http_task(post_save=True)
-def send_expiration_sms_reminder(sp_subscription_pk):
-    sp_subscription = SystemPaySubscription.objects.select_related(
-        "subscription__person", "alias"
-    ).get(pk=sp_subscription_pk)
-
-    recipient = sp_subscription.subscription.person
-
-    if (
-        not recipient.contact_phone
-        or not is_french_number(recipient.contact_phone)
-        or not is_mobile_number(recipient.contact_phone)
-    ):
-        return
-
-    connection_params = generate_token_params(recipient)
-
-    url = shorten_url(
-        add_params_to_urls(front_url("view_payments"), connection_params), secret=True
-    )
-
-    send_sms(
-        f"Votre carte bleue arrive à expiration. Pour continuer votre don régulier à la France insoumise, "
-        f"mettez là à jour : {url}\n"
-        f"Merci encore de votre soutien !",
-        recipient.contact_phone,
     )
 
 

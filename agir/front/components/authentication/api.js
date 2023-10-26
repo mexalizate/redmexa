@@ -143,7 +143,7 @@ export const getProfileOptions = async () => {
   return result;
 };
 
-export const updateProfile = async (body) => {
+export const updateProfile = async (data) => {
   const result = {
     data: null,
     error: null,
@@ -151,6 +151,11 @@ export const updateProfile = async (body) => {
 
   const url = ENDPOINT.updateProfile;
   try {
+    const body = {
+      ...data,
+      municipioCode: data.municipio && data.municipio.value,
+      municipio: undefined,
+    };
     const response = await axios.patch(url, body);
     result.data = response.data;
   } catch (e) {

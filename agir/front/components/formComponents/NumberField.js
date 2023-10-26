@@ -1,6 +1,8 @@
 import PropTypes from "prop-types";
 import React, { forwardRef, useCallback, useState } from "react";
 
+import I18N from "@agir/lib/i18n";
+
 import TextField from "./TextField";
 
 const NumberField = forwardRef((props, ref) => {
@@ -43,13 +45,13 @@ const NumberField = forwardRef((props, ref) => {
       min="0"
       step="0.01"
       inputMode="decimal"
-      lang="fr-FR"
+      lang={I18N.locale}
       {...rest}
       ref={ref}
       onChange={handleChange}
       value={currentValue}
       textArea={false}
-      icon={currency ? "euro-sign" : undefined}
+      icon={currency ? "dollar-sign" : undefined}
     />
   );
 });

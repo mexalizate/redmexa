@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useState, useCallback } from "react";
 import Button from "@agir/front/genericComponents/Button";
@@ -65,7 +66,7 @@ const LoginMailEmpty = (props) => {
         />
         {error?.detail && (
           <Link route="codeLogin">
-            Accéder à la page pour demander son code
+            {_("Accéder à la page pour demander son code")}
           </Link>
         )}
       </div>
@@ -76,7 +77,7 @@ const LoginMailEmpty = (props) => {
           loading={isLoading}
           disabled={isLoading}
         >
-          Me connecter
+          {_("Me connecter")}
         </Button>
       </div>
     </Form>
