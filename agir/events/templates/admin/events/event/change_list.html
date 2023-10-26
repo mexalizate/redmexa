@@ -1,9 +1,10 @@
+{% load i18n %}
 {% extends "admin/change_list.html" %}
 
 {% block object-tools-items %}
   <li>
     <a href="{% url "admin:events_event_export_summary" %}">
-      Exporter un résumé
+      {% translate "Exporter un résumé" %}
     </a>
   </li>
   {{ block.super }}
