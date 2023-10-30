@@ -1,5 +1,5 @@
 from django.apps import AppConfig
-
+from django.utils.translation import gettext_lazy as _
 from agir.payments.types import (
     PaymentType,
     register_payment_type,
@@ -34,7 +34,7 @@ class CagnottesConfig(AppConfig):
         register_payment_type(
             payment_type=PaymentType(
                 self.PAYMENT_TYPE,
-                "Don à une cagnotte",
+                _("Don à une cagnotte"),
                 RemerciementView.as_view(),
                 status_listener=notification_listener,
                 description_template="cagnottes/description.html",

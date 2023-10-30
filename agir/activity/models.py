@@ -8,7 +8,7 @@ from django.utils.functional import cached_property
 from push_notifications.models import GCMDevice, APNSDevice
 from stdimage import StdImageField
 from stdimage.validators import MinSizeValidator
-
+from django.utils.translation import gettext_lazy as _
 from agir.lib.models import TimeStampedModel, DescriptionField, BaseAPIResource
 from agir.lib.utils import front_url, is_absolute_url
 
@@ -114,83 +114,83 @@ class Activity(TimeStampedModel):
     )
 
     TYPE_CHOICES = (
-        (TYPE_WAITING_PAYMENT, "Paiement en attente"),
-        (TYPE_NEW_EVENT_PARTICIPATION_MYGROUPS, "Le groupe participe à un événement"),
-        (TYPE_GROUP_INVITATION, "Invitation à un groupe"),
-        (TYPE_NEW_FOLLOWER, "Nouveau·lle abonné·e dans le groupe"),
-        (TYPE_NEW_MEMBER, "Nouveau membre dans le groupe"),
+        (TYPE_WAITING_PAYMENT, _("Paiement en attente")),
+        (TYPE_NEW_EVENT_PARTICIPATION_MYGROUPS, _("Le groupe participe à un événement")),
+        (TYPE_GROUP_INVITATION, _("Invitation à un groupe")),
+        (TYPE_NEW_FOLLOWER, _("Nouveau·lle abonné·e dans le groupe")),
+        (TYPE_NEW_MEMBER, _("Nouveau membre dans le groupe")),
         (
             TYPE_MEMBER_STATUS_CHANGED,
-            "Un membre actif du groupe a été passé au statut abonné·e",
+            _("Un membre actif du groupe a été passé au statut abonné·e"),
         ),
         (
             TYPE_GROUP_MEMBERSHIP_LIMIT_REMINDER,
-            "Les membres du groupes sont de plus en plus nombreux",
+            _("Les membres du groupes sont de plus en plus nombreux"),
         ),
-        (TYPE_NEW_MESSAGE, "Nouveau message dans un de vos groupes"),
-        (TYPE_NEW_COMMENT, "Nouveau commentaire dans un de vos groupes"),
+        (TYPE_NEW_MESSAGE, _("Nouveau message dans un de vos groupes")),
+        (TYPE_NEW_COMMENT, _("Nouveau commentaire dans un de vos groupes")),
         (
             TYPE_NEW_COMMENT_RESTRICTED,
-            "Nouveau commentaire dans une de vos discussions",
+            _("Nouveau commentaire dans une de vos discussions"),
         ),
-        (TYPE_WAITING_LOCATION_GROUP, "Préciser la localisation du groupe"),
-        (TYPE_WAITING_LOCATION_EVENT, "Préciser la localisation d'un événement"),
-        (TYPE_NEW_EVENT_SPEAKER_REQUEST, "Nouvelle demande d'événement reçue"),
+        (TYPE_WAITING_LOCATION_GROUP, _("Préciser la localisation du groupe")),
+        (TYPE_WAITING_LOCATION_EVENT, _("Préciser la localisation d'un événement")),
+        (TYPE_NEW_EVENT_SPEAKER_REQUEST, _("Nouvelle demande d'événement reçue")),
         (
             TYPE_GROUP_COORGANIZATION_INVITE,
-            "Invitation à coorganiser un événement reçue",
+            _("Invitation à coorganiser un événement reçue"),
         ),
         (
             TYPE_GROUP_COORGANIZATION_ACCEPTED,
-            "Invitation à coorganiser un événement acceptée",
+            _("Invitation à coorganiser un événement acceptée"),
         ),
         (
             TYPE_GROUP_COORGANIZATION_ACCEPTED_FROM,
-            "Invitation de leur groupe à coorganiser mon événement acceptée",
+            _("Invitation de leur groupe à coorganiser mon événement acceptée"),
         ),
         (
             TYPE_GROUP_COORGANIZATION_ACCEPTED_TO,
-            "Invitation de mon groupe à coorganiser leur événement acceptée",
+            _("Invitation de mon groupe à coorganiser leur événement acceptée"),
         ),
-        (TYPE_GROUP_INFO_UPDATE, "Mise à jour des informations du groupe"),
-        (TYPE_ACCEPTED_INVITATION_MEMBER, "Invitation à rejoindre un groupe acceptée"),
-        (TYPE_NEW_ATTENDEE, "Un nouveau participant à votre événement"),
-        (TYPE_NEW_GROUP_ATTENDEE, "Un nouveau groupe participant à votre événement"),
-        (TYPE_EVENT_UPDATE, "Mise à jour d'un événement"),
-        (TYPE_NEW_EVENT_MYGROUPS, "Votre groupe organise un événement"),
-        (TYPE_NEW_REPORT, "Nouveau compte-rendu d'événement"),
-        (TYPE_CANCELLED_EVENT, "Événement annulé"),
-        (TYPE_REFERRAL, "Personne parrainée"),
-        (TYPE_ANNOUNCEMENT, "Associée à une annonce"),
+        (TYPE_GROUP_INFO_UPDATE, _("Mise à jour des informations du groupe")),
+        (TYPE_ACCEPTED_INVITATION_MEMBER, _("Invitation à rejoindre un groupe acceptée")),
+        (TYPE_NEW_ATTENDEE, _("Un nouveau participant à votre événement")),
+        (TYPE_NEW_GROUP_ATTENDEE, _("Un nouveau groupe participant à votre événement")),
+        (TYPE_EVENT_UPDATE, _("Mise à jour d'un événement")),
+        (TYPE_NEW_EVENT_MYGROUPS, _("Votre groupe organise un événement")),
+        (TYPE_NEW_REPORT, _("Nouveau compte-rendu d'événement")),
+        (TYPE_CANCELLED_EVENT, _("Événement annulé")),
+        (TYPE_REFERRAL, _("Personne parrainée")),
+        (TYPE_ANNOUNCEMENT, _("Associée à une annonce")),
         (
             TYPE_TRANSFERRED_GROUP_MEMBER,
-            "Un membre d'un groupe a été transferé vers un autre groupe",
+            _("Un membre d'un groupe a été transferé vers un autre groupe"),
         ),
         (
             TYPE_NEW_MEMBERS_THROUGH_TRANSFER,
-            "De nouveaux membres ont été transferés vers le groupe",
+            _("De nouveaux membres ont été transferés vers le groupe"),
         ),
-        (TYPE_GROUP_CREATION_CONFIRMATION, "Groupe créé"),
-        (TYPE_EVENT_SUGGESTION, "Événement suggéré"),
+        (TYPE_GROUP_CREATION_CONFIRMATION, _("Groupe créé")),
+        (TYPE_EVENT_SUGGESTION, _("Événement suggéré")),
         (
             TYPE_REMINDER_DOCS_EVENT_EVE,
-            "Rappel à la veille d'un événement des documents à envoyer",
+            _("Rappel à la veille d'un événement des documents à envoyer"),
         ),
         (
             TYPE_REMINDER_DOCS_EVENT_NEXTDAY,
-            "Rappel au lendemain d'un événement des documents à envoyer",
+            _("Rappel au lendemain d'un événement des documents à envoyer"),
         ),
         (
             TYPE_REMINDER_REPORT_FORM_FOR_EVENT,
-            "Rappel au lendemain d'un événement de l'éventuel formulaire de bilan à remplir",
+            _("Rappel au lendemain d'un événement de l'éventuel formulaire de bilan à remplir"),
         ),
         (
             TYPE_REMINDER_UPCOMING_EVENT_START,
-            "Rappel du début imminent d'un événement pour les participants",
+            _("Rappel du début imminent d'un événement pour les participants"),
         ),
         (
             TYPE_UNCERTIFIABLE_GROUP_WARNING,
-            "Avertissement aux animateur·ices d'un groupe certifié qui ne respecte plus les critères de certification",
+            _("Avertissement aux animateur·ices d'un groupe certifié qui ne respecte plus les critères de certification"),
         ),
     )
 
@@ -198,23 +198,23 @@ class Activity(TimeStampedModel):
     STATUS_DISPLAYED = "S"
     STATUS_INTERACTED = "I"
     STATUS_CHOICES = (
-        (STATUS_UNDISPLAYED, "Pas encore présentée au destinataire"),
-        (STATUS_DISPLAYED, "Présentée au destinataire"),
-        (STATUS_INTERACTED, "Le destinataire a interagi avec"),
+        (STATUS_UNDISPLAYED, _("Pas encore présentée au destinataire")),
+        (STATUS_DISPLAYED, _("Présentée au destinataire")),
+        (STATUS_INTERACTED, _("Le destinataire a interagi avec")),
     )  # attention : l'ordre croissant par niveau d'interaction est important
     PUSH_STATUS_CHOICES = (
-        (STATUS_UNDISPLAYED, "Pas énvoyée au destinataire"),
-        (STATUS_DISPLAYED, "Envoyée au destinataire"),
-        (STATUS_INTERACTED, "Cliquée par le destinataire"),
+        (STATUS_UNDISPLAYED, _("Pas énvoyée au destinataire")),
+        (STATUS_DISPLAYED, _("Envoyée au destinataire")),
+        (STATUS_INTERACTED, _("Cliquée par le destinataire")),
     )  # attention : l'ordre croissant par niveau d'interaction est important
 
     objects = ActivityManager()
 
     timestamp = models.DateTimeField(
-        verbose_name="Date de la notification", null=False, default=timezone.now
+        verbose_name=_("Date de la notification"), null=False, default=timezone.now
     )
 
-    type = models.CharField("Type", max_length=50, choices=TYPE_CHOICES)
+    type = models.CharField(_("Type"), max_length=50, choices=TYPE_CHOICES)
 
     recipient = models.ForeignKey(
         "people.Person",
@@ -224,11 +224,11 @@ class Activity(TimeStampedModel):
     )
 
     status = models.CharField(
-        "Statut", max_length=1, choices=STATUS_CHOICES, default=STATUS_UNDISPLAYED
+        _("Statut"), max_length=1, choices=STATUS_CHOICES, default=STATUS_UNDISPLAYED
     )
 
     push_status = models.CharField(
-        "Statut notification push",
+        _("Statut notification push"),
         max_length=1,
         choices=PUSH_STATUS_CHOICES,
         default=STATUS_UNDISPLAYED,
@@ -277,7 +277,7 @@ class Activity(TimeStampedModel):
         blank=True,
     )
 
-    meta = models.JSONField("Autres données", blank=True, default=dict)
+    meta = models.JSONField(_("Autres données"), blank=True, default=dict)
 
     def __str__(self):
         return f"« {self.get_type_display()} » pour {self.recipient} ({self.timestamp})"
@@ -286,8 +286,8 @@ class Activity(TimeStampedModel):
         return f"Activity(timestamp={self.timestamp!r}, type={self.type!r}, recipient={self.recipient!r})"
 
     class Meta:
-        verbose_name = "Notice d'activité"
-        verbose_name_plural = "Notices d'activité"
+        verbose_name = _("Notice d'activité")
+        verbose_name_plural = _("Notices d'activité")
         ordering = ("-timestamp",)
         indexes = (
             models.Index(
@@ -322,33 +322,33 @@ class Announcement(BaseAPIResource):
     objects = AnnouncementQuerySet.as_manager()
 
     title = models.CharField(
-        verbose_name="Titre de l'annonce",
+        verbose_name=_("Titre de l'annonce"),
         max_length=200,
-        help_text="Ce texte sera utilisé comme titre de l'annonce",
+        help_text=_("Ce texte sera utilisé comme titre de l'annonce"),
         blank=False,
     )
 
     custom_display = models.SlugField(
-        verbose_name="Affichage personnalisé",
+        verbose_name=_("Affichage personnalisé"),
         blank=True,
-        help_text="Ce champ sert au pôle outils numériques",
+        help_text=_("Ce champ sert au pôle outils numériques"),
     )
 
     link = models.URLField(verbose_name="Lien", blank=False)
 
     link_label = models.CharField(
-        verbose_name="Libellé du lien",
+        verbose_name=_("Libellé du lien"),
         max_length=200,
-        help_text="Ce texte sera utilisé comme texte du lien de l'annonce",
+        help_text=_("Ce texte sera utilisé comme texte du lien de l'annonce"),
         blank=False,
         null=False,
-        default="En savoir plus",
+        default=_("En savoir plus"),
     )
 
-    content = DescriptionField(verbose_name="Contenu", blank=False)
+    content = DescriptionField(verbose_name=_("Contenu"), blank=False)
 
     image = StdImageField(
-        verbose_name="Bannière",
+        verbose_name=_("Bannière"),
         validators=[MinSizeValidator(255, 160)],
         variations={
             "desktop": {"width": 255, "height": 130, "crop": True},
@@ -363,9 +363,9 @@ class Announcement(BaseAPIResource):
     )
 
     start_date = models.DateTimeField(
-        verbose_name="Date de début", default=timezone.now
+        verbose_name=_("Date de début"), default=timezone.now
     )
-    end_date = models.DateTimeField(verbose_name="Date de fin", null=True, blank=True)
+    end_date = models.DateTimeField(verbose_name=_("Date de fin"), null=True, blank=True)
 
     segment = models.ForeignKey(
         to="mailing.Segment",
@@ -374,23 +374,23 @@ class Announcement(BaseAPIResource):
         related_query_name="notification",
         null=True,
         blank=True,
-        help_text=(
+        help_text=_(
             "Segment des personnes auquel ce message sera montré (laisser vide pour montrer à tout le monde)"
         ),
     )
 
     priority = models.IntegerField(
-        verbose_name="Priorité",
+        verbose_name=_("Priorité"),
         default=0,
-        help_text="Permet de modifier l'ordre d'affichage des annonces. Les valeurs plus élevées sont affichées avant."
-        " Deux annonces de même priorité sont affichées dans l'ordre anti-chronologique (par date de début)",
+        help_text=_("Permet de modifier l'ordre d'affichage des annonces. Les valeurs plus élevées sont affichées avant."
+        " Deux annonces de même priorité sont affichées dans l'ordre anti-chronologique (par date de début)"),
     )
 
     def __str__(self):
         return f"« {self.title} »"
 
     class Meta:
-        verbose_name = "Annonce"
+        verbose_name = _("Annonce")
         indexes = (
             models.Index(
                 fields=("-start_date", "end_date"), name="announcement_date_index"
@@ -401,35 +401,35 @@ class Announcement(BaseAPIResource):
 
 class PushAnnouncement(BaseAPIResource):
     title = models.CharField(
-        verbose_name="Titre",
+        verbose_name=_("Titre"),
         max_length=50,
         blank=True,
         default="",
-        help_text="Max. 50 caractères.",
+        help_text=_("Max. 50 caractères."),
     )
 
     subtitle = models.CharField(
-        verbose_name="Sous-titre",
+        verbose_name=_("Sous-titre"),
         max_length=60,
         blank=True,
         default="",
-        help_text="Max. 60 caractères. Le sous-titre s'affichera uniquement sur iOS.",
+        help_text=_("Max. 60 caractères. Le sous-titre s'affichera uniquement sur iOS."),
     )
 
     message = models.TextField(
-        verbose_name="Message",
+        verbose_name=_("Message"),
         blank=False,
-        help_text="Longueur max. conséillée env. 150 caractères sur iOS et 240 sur Android.",
+        help_text=_("Longueur max. conséillée env. 150 caractères sur iOS et 240 sur Android."),
     )
 
     link = models.URLField(
-        verbose_name="Lien",
+        verbose_name=_("Lien"),
         blank=False,
-        help_text="Le lien à ouvrir lors du clic sur la notification.",
+        help_text=_("Le lien à ouvrir lors du clic sur la notification."),
     )
 
     image = StdImageField(
-        verbose_name="Image",
+        verbose_name=_("Image"),
         validators=[
             FileSizeValidator(5 * 1024 * 1024),
             FileExtensionValidator(["jpg", "jpeg"]),
@@ -439,65 +439,65 @@ class PushAnnouncement(BaseAPIResource):
         ),
         null=True,
         blank=True,
-        help_text="Utiliser une image au format JPEG avec un ratio de 2:1 et de maximum 5 MB.",
+        help_text=_("Utiliser une image au format JPEG avec un ratio de 2:1 et de maximum 5 MB."),
     )
 
     thread_id = models.CharField(
-        verbose_name="Idéntifiant de groupe",
+        verbose_name=_("Idéntifiant de groupe"),
         max_length=64,
         blank=True,
         default="",
-        help_text="Max. 64 caractères. Si indiqué, permet de regrouper les notifications avec le même "
-        "identifiant de groupe ensemble.",
+        help_text=_("Max. 64 caractères. Si indiqué, permet de regrouper les notifications avec le même "
+        "identifiant de groupe ensemble."),
     )
 
     ttl = models.IntegerField(
-        verbose_name="Durée de vie (en secondes)",
+        verbose_name=_("Durée de vie (en secondes)"),
         validators=[
             validators.MinValueValidator(1),
             validators.MaxValueValidator(2419200),  # 28 days
         ],
         blank=False,
         default=259200,  # 3 days
-        help_text="Max. 28 jours. La notification ne sera pas reçue si l'appareil n'est "
-        "pas connecté au réseau pendant le temps indiqué.",
+        help_text=_("Max. 28 jours. La notification ne sera pas reçue si l'appareil n'est "
+        "pas connecté au réseau pendant le temps indiqué."),
     )
 
     segment = models.ForeignKey(
         to="mailing.Segment",
-        verbose_name="Segment",
+        verbose_name=_("Segment"),
         on_delete=models.CASCADE,
         related_name="push_notifications",
         related_query_name="push_notification",
         null=False,
         blank=False,
-        help_text="Segment des personnes auquel ce message sera envoyé.",
+        help_text=_("Segment des personnes auquel ce message sera envoyé."),
     )
 
     test_segment = models.ForeignKey(
         to="mailing.Segment",
-        verbose_name="Segment",
+        verbose_name=_("Segment"),
         on_delete=models.SET_NULL,
         related_name="+",
         related_query_name="+",
         null=True,
         blank=True,
-        help_text="Segment des personnes auxquelles envoyer des notifications de test",
+        help_text=_("Segment des personnes auxquelles envoyer des notifications de test"),
     )
 
     has_ios = models.BooleanField(
-        verbose_name="Envoyer aux appareils iOS", default=True, blank=False
+        verbose_name=_("Envoyer aux appareils iOS"), default=True, blank=False
     )
 
     has_android = models.BooleanField(
-        verbose_name="Envoyer aux appareils Android", default=True, blank=False
+        verbose_name=_("Envoyer aux appareils Android"), default=True, blank=False
     )
 
     sending_meta = models.JSONField(
-        "Résultats de l'envoi", blank=True, default=dict, editable=False
+        _("Résultats de l'envoi"), blank=True, default=dict, editable=False
     )
     sending_date = models.DateTimeField(
-        "Date d'envoi",
+        _("Date d'envoi"),
         null=True,
         default=None,
         editable=False,
@@ -667,13 +667,13 @@ class PushAnnouncement(BaseAPIResource):
 
     def send(self):
         if not self.can_send():
-            raise Exception("Cette annonce a déjà été envoyée")
+            raise Exception(_("Cette annonce a déjà été envoyée"))
 
         recipient_count = self.recipient_count()
 
         if recipient_count == 0:
             raise Exception(
-                "Aucun destinataire n'a été trouvé pour le segment spécifié"
+                _("Aucun destinataire n'a été trouvé pour le segment spécifié")
             )
 
         sending_result = self.push()
@@ -701,17 +701,17 @@ class PushAnnouncement(BaseAPIResource):
 
     def test(self):
         if not self.test_segment:
-            raise Exception("Aucun segment de test n'a été défini.")
+            raise Exception(_("Aucun segment de test n'a été défini."))
 
         return self.push(self.test_segment)
 
     def __str__(self):
         if self.title:
-            return f"Annonce push « {self.title} »"
+            return f"{_('Annonce push')} « {self.title} »"
 
-        return f"Annonce push #{self.id}"
+        return f"{_('Annonce push')} #{self.id}"
 
     class Meta:
-        verbose_name = "Annonce push"
-        verbose_name_plural = "Annonces push"
+        verbose_name = _("Annonce push")
+        verbose_name_plural = _("Annonces push")
         ordering = ("-created",)
