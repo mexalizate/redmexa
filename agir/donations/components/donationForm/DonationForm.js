@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
@@ -93,9 +94,9 @@ const DonationForm = ({
         value={serializeAllocations(allocations)}
       />
       {enableAllocations || typeChoices ? (
-        <Title>Je choisis le montant de {typeActe}</Title>
+        <Title>{_("Je choisis le montant de")} {typeActe}</Title>
       ) : (
-        <h4>Je choisis le montant de {typeActe}</h4>
+        <h4>{_("Je choisis le montant de")} {typeActe}</h4>
       )}
       <AmountWidget
         amount={amount}
@@ -110,11 +111,10 @@ const DonationForm = ({
       />
       {typeChoices && (
         <>
-          <Title>Je choisis de donner une fois ou chaque mois</Title>
+          <Title>{_("Je choisis de donner une fois ou chaque mois")}</Title>
           {type === "M" && (
             <p className="help-block">
-              <i className="fa fa-warning"></i>&ensp;Seul le don par carte bleue
-              est possible pour un don mensuel.
+              <i className="fa fa-warning"></i>&ensp;{_("Seul le don par carte bleue est possible pour un don mensuel.")}
             </p>
           )}
           <TypeWidget
@@ -129,7 +129,7 @@ const DonationForm = ({
 
       {enableAllocations && (
         <>
-          <Title>Je choisis une répartition pour {typeActe}</Title>
+          <Title>{_("Je choisis une répartition pour")} {typeActe}</Title>
           <AllocationWidget
             groupChoices={groupChoices}
             value={allocations}

@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useCallback, useRef } from "react";
 import styled from "styled-components";
@@ -129,26 +130,23 @@ const DonationLandingPage = () => {
                 rel="noopener noreferrer"
                 target="_blank"
               />
-              <h2>Financer les actions du mouvement</h2>
+              <h2>{_("Financer les actions du mouvement")}</h2>
               <Spacer size="1rem" />
               <p>
-                En devenant financeur·euse, le groupes d’action ont plus de
-                visibilité pour financer leurs actions.
+                {_("En devenant financeur·euse, le groupes d’action ont plus de visibilité pour financer leurs actions.")}
               </p>
               <p>
-                <Link route="donationHelp">En savoir plus</Link>
+                <Link route="donationHelp">{_("En savoir plus")}</Link>
               </p>
               <Spacer size="1.5rem" />
               <StyledCards>
                 <DonationLandingPageCard
-                  title="Don ponctuel"
+                  title={_("Don ponctuel")}
                   route="donations"
-                  linkLabel="Je fais un don ponctuel"
+                  linkLabel={_("Je fais un don ponctuel")}
                 >
                   <p>
-                    Chaque don nous aide à l’organisation d’événements, à
-                    l’achat de matériel, au fonctionnement de ce site, etc. Nous
-                    avons besoin du soutien financier de chacun·e d’entre vous.
+                    {_("Chaque don nous aide à l’organisation d’événements, à l’achat de matériel, au fonctionnement de ce site, etc. Nous avons besoin du soutien financier de chacun·e d’entre vous.")}
                   </p>
                 </DonationLandingPageCard>
                 <DonationLandingPageCard
@@ -156,17 +154,14 @@ const DonationLandingPage = () => {
                   route="contributions"
                   linkLabel={
                     user?.hasContribution
-                      ? "Vous avez déjà validé votre contibution !"
-                      : "Je deviens financeur·euse"
+                      ? _("Vous avez déjà validé votre contibution !")
+                      : _("Je deviens financeur·euse")
                   }
                   disabled={user?.hasContribution}
                 >
                   <p>
-                    La contribution volontaire est un don{" "}
-                    <strong>versé mensuellement</strong> jusqu’à la fin de
-                    l’année civile. En devenant financeur·euse de la France
-                    insoumise, vous vous engagez à ce que votre contribution
-                    soit versée chaque mois jusqu’au mois de décembre.
+                    {_("La contribution volontaire est un don")}{" "}
+                    <strong>{_("versé mensuellement")}</strong> {_("jusqu’à la fin de l’année civile. En devenant financeur·euse de la France insoumise, vous vous engagez à ce que votre contribution soit versée chaque mois jusqu’au mois de décembre.")}
                   </p>
                 </DonationLandingPageCard>
               </StyledCards>

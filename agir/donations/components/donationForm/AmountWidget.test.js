@@ -1,3 +1,4 @@
+import _ from "gettext";
 /**
  * @jest-environment jsdom
  */
@@ -8,7 +9,7 @@ import AmountWidget from "./AmountWidget";
 
 afterEach(cleanup);
 
-test("AmountWidget dans son état initial", () => {
+test(_("AmountWidget dans son état initial"), () => {
   const component = render(<AmountWidget />);
 
   const buttons = component.getAllByRole("button");
@@ -20,7 +21,7 @@ test("AmountWidget dans son état initial", () => {
   expect(component.getByPlaceholderText("Autre montant")).toBeDefined();
 });
 
-test("AmountWidget avec un montant sélectionné", () => {
+test(_("AmountWidget avec un montant sélectionné"), () => {
   const component = render(<AmountWidget amount={50 * 100} />);
 
   const buttons = component.getAllByRole("button");
@@ -34,7 +35,7 @@ test("AmountWidget avec un montant sélectionné", () => {
   }
 });
 
-test("Sélectionner des valeurs dans le AmountWidget", () => {
+test(_("Sélectionner des valeurs dans le AmountWidget"), () => {
   let currentValue = null;
 
   const component = render(
@@ -49,12 +50,12 @@ test("Sélectionner des valeurs dans le AmountWidget", () => {
   fireEvent.click(button50);
   expect(currentValue).toEqual(50 * 100);
 
-  const input = component.getByPlaceholderText("Autre montant");
+  const input = component.getByPlaceholderText(_("Autre montant"));
   fireEvent.change(input, { target: { value: "23" } });
   expect(currentValue).toEqual(23 * 100);
 });
 
-test("utiliser des montants autres que ceux par défaut", () => {
+test(_("utiliser des montants autres que ceux par défaut"), () => {
   const choices = [1, 2, 3, 4];
   const component = render(<AmountWidget amountChoices={choices} />);
   const buttons = component.queryAllByText(/[0-9]+\s*\$/);

@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useCallback, useState } from "react";
 import styled from "styled-components";
@@ -258,7 +259,7 @@ const CreateSpendingRequestForm = (props) => {
       <AppRedirect
         route="spendingRequestDetails"
         routeParams={{ spendingRequestPk: data.id }}
-        toast="La demande a bien été enregistrée"
+        toast={_("La demande a bien été enregistrée")}
       />
     );
   }
@@ -288,10 +289,10 @@ const CreateSpendingRequestForm = (props) => {
           route="spendingRequestHelp"
           style={{ textAlign: "left" }}
         >
-          Un doute ? Consultez le centre d'aide
+          {_("Un doute ? Consultez le centre d'aide")}
         </Hide>
         <Hide $under as={StyledLabel}>
-          Détails (obligatoire)
+          {_("Détails (obligatoire)")}
         </Hide>
         <RadioField
           autoFocus
@@ -316,7 +317,7 @@ const CreateSpendingRequestForm = (props) => {
           hasCounter={false}
         />
         <Spacer size="2rem" />
-        <StyledLabel>Catégorie de dépense (obligatoire)</StyledLabel>
+        <StyledLabel>{_("Catégorie de dépense (obligatoire)")}</StyledLabel>
         <CategoryField
           disabled={isLoading}
           id="category"
@@ -334,7 +335,7 @@ const CreateSpendingRequestForm = (props) => {
           value={data.explanation}
           onChange={handleChange}
           error={errors?.explanation}
-          label="Motif de l'achat (obligatoire)"
+          label={_("Motif de l'achat (obligatoire)")}
           textArea
           rows={3}
           maxLength={1500}
@@ -349,7 +350,7 @@ const CreateSpendingRequestForm = (props) => {
           value={data.event}
           onChange={handleChangeEvent}
           error={errors?.event}
-          label="Événement lié à la dépense"
+          label={_("Événement lié à la dépense")}
         />
         <Spacer size="1.5rem" />
         <DateTimeField
@@ -360,7 +361,7 @@ const CreateSpendingRequestForm = (props) => {
           value={data.spendingDate}
           onChange={handleChangeSpendingDate}
           error={errors?.spendingDate}
-          label="Date de l'achat (obligatoire)"
+          label={_("Date de l'achat (obligatoire)")}
         />
         <Spacer size="1.5rem" />
         <ContactField
@@ -374,7 +375,7 @@ const CreateSpendingRequestForm = (props) => {
       </StyledFieldset>
       <StyledFieldset>
         <Hide $under as={StyledLabel}>
-          Pièces justificatives (obligatoire)
+          {_("Pièces justificatives (obligatoire)")}
         </Hide>
         <AttachmentWidget
           id="attachments"
@@ -387,7 +388,7 @@ const CreateSpendingRequestForm = (props) => {
       </StyledFieldset>
       <StyledFieldset>
         <Hide $under as={StyledLabel}>
-          Montant et financement (obligatoire)
+          {_("Montant et financement (obligatoire)")}
         </Hide>
         <AmountField
           value={data.amount}
@@ -399,7 +400,7 @@ const CreateSpendingRequestForm = (props) => {
       </StyledFieldset>
       <StyledFieldset>
         <Hide $under as={StyledLabel}>
-          Coordonnées bancaires (obligatoire)
+         {_(" Coordonnées bancaires (obligatoire)")}
         </Hide>
         <BankAccountField
           id="bankAccount"
@@ -410,7 +411,7 @@ const CreateSpendingRequestForm = (props) => {
         />
       </StyledFieldset>
       <StyledFieldset>
-        <StyledLabel>Validation (obligatoire)</StyledLabel>
+        <StyledLabel>{_("Validation (obligatoire)")}</StyledLabel>
         <AgreementField onChange={setHasAgreement} disabled={isLoading} />
         {globalError && (
           <StyledGlobalError>

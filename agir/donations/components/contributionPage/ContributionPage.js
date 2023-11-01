@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React, { useCallback, useEffect } from "react";
 import { useLocation, useParams, useHistory } from "react-router-dom";
 import styled from "styled-components";
@@ -154,7 +155,7 @@ const ContributionPage = () => {
               <button
                 type="button"
                 onClick={closeModal}
-                aria-label="Fermer la modale"
+                aria-label={_("Fermer la modale")}
               >
                 <RawFeatherIcon name="arrow-left" />
               </button>

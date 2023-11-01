@@ -49,7 +49,7 @@ const CirconscriptionLegislativeField = (props) => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            nosdeputes.fr
+            {_("nosdeputes.fr")}
           </a>
         </span>
       }

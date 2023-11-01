@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
@@ -68,32 +69,30 @@ const StyledInlineMenu = styled.div`
 
 export const HELP_CONFIG = {
   documentTypes: {
-    trigger: "Quels types de documents sont recevables ?",
+    trigger: _("Quels types de documents sont recevables ?"),
     menu: (
       <>
         <article>
-          <h5>Ce qui peut être une pièce comptable</h5>
+          <h5>{_("Ce qui peut être une pièce comptable")}</h5>
           <ul>
-            <li>Facture</li>
-            <li>Ticket de caisse (pas le reçu de carte bancaire)</li>
-            <li>Devis</li>
+            <li>{_("Facture")}</li>
+            <li>{_("Ticket de caisse (pas le reçu de carte bancaire)")}</li>
+            <li>{_("Devis")}</li>
             <li>
-              Facture pro-forma (c'est-à-dire avant qu'elle ne soit acquittée)
+              {_("Facture pro-forma (c'est-à-dire avant qu'elle ne soit acquittée)")}
             </li>
-            <li>Justificatif de transport</li>
+            <li>{_("Justificatif de transport")}</li>
           </ul>
         </article>
         <article>
-          <h5>Ce qui peut être un complément de justificatif</h5>
+          <h5>{_("Ce qui peut être un complément de justificatif")}</h5>
           <ul>
-            <li>Photographie de l'événement</li>
+            <li>{_("Photographie de l'événement")}</li>
             <li>
-              Impression : <abbr title="Bon à tirer">BAT</abbr>, photographie
-              des impressions, tract au format PDF
+              {_("Impression :")} <abbr title="Bon à tirer">{_("BAT")}</abbr>{_(", photographie des impressions, tract au format PDF")}
             </li>
             <li>
-              Capture d'écran de la page de l'événement sur Action populaire ou
-              du visuel de l'événement
+              {_("Capture d'écran de la page de l'événement sur Action populaire ou du visuel de l'événement")}
             </li>
           </ul>
         </article>
@@ -102,7 +101,7 @@ export const HELP_CONFIG = {
   },
   documentQuality: {
     trigger:
-      "Envoyez de préférence des documents numériques ou scannés : ils doivent être lisibles (exemple)",
+      _("Envoyez de préférence des documents numériques ou scannés : ils doivent être lisibles (exemple)"),
     menu: (
       <>
         <article style={{ textAlign: "center" }}>
@@ -114,13 +113,13 @@ export const HELP_CONFIG = {
             style={{ color: style.redNSP }}
           />
           <h5 style={{ textTransform: "uppercase" }}>
-            Exemple de document illisible
+            {_("Exemple de document illisible")}
           </h5>
           <figure>
             <figcaption>
-              Lettres manquantes ou floues, trop de contraste...
+              {_("Lettres manquantes ou floues, trop de contraste...")}
             </figcaption>
-            <img src={badDocument} alt="Exemple de document illisible" />
+            <img src={badDocument} alt={_("Exemple de document illisible")} />
           </figure>
         </article>
         <article style={{ textAlign: "center" }}>
@@ -132,11 +131,11 @@ export const HELP_CONFIG = {
             style={{ color: style.green500 }}
           />
           <h5 style={{ textTransform: "uppercase" }}>
-            Exemple de document lisible
+            {_("Exemple de document lisible")}
           </h5>
           <figure>
-            <figcaption>Les articles, montants et dates sont nets</figcaption>
-            <img src={goodDocument} alt="Exemple de document lisible" />
+            <figcaption>{_("Les articles, montants et dates sont nets")}</figcaption>
+            <img src={goodDocument} alt={_("Exemple de document lisible")} />
           </figure>
         </article>
       </>

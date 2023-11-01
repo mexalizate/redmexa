@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useCallback } from "react";
 import styled from "styled-components";
@@ -32,7 +33,7 @@ const BankAccountField = (props) => {
   return (
     <StyledField>
       <TextField
-        label="Titulaire du compte"
+        label={_("Titulaire du compte")}
         id="name"
         name="name"
         value={name}
@@ -46,7 +47,7 @@ const BankAccountField = (props) => {
         hasCounter={false}
       />
       <TextField
-        label={<abbr title="International Bank Account Number">IBAN</abbr>}
+        label={<abbr title={_("International Bank Account Number")}>IBAN</abbr>}
         id="iban"
         name="iban"
         value={iban}
@@ -58,7 +59,7 @@ const BankAccountField = (props) => {
         }
       />
       <TextField
-        label={<abbr title="Bank Identifier Code">BIC</abbr>}
+        label={<abbr title={_("Bank Identifier Code")}>BIC</abbr>}
         id="bic"
         name="bic"
         value={bic}
@@ -70,7 +71,7 @@ const BankAccountField = (props) => {
         }
       />
       <FileField
-        label={<abbr title="Relevé d'Identité Bancaire">RIB</abbr>}
+        label={<abbr title={_("Relevé d'Identité Bancaire")}>RIB</abbr>}
         id="rib"
         name="rib"
         value={rib}

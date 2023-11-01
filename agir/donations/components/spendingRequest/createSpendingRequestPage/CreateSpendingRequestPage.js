@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useMemo } from "react";
 import styled from "styled-components";
@@ -84,10 +85,10 @@ const CreateSpendingRequestPage = ({ groupPk }) => {
               icon="arrow-right"
               route="spendingRequestHelp"
             >
-              Un doute ? Consultez le <strong>centre d'aide</strong>
+              {_("Un doute ? Consultez le")} <strong>{_("centre d'aide")}</strong>
             </Button>
           </nav>
-          <h2>Nouvelle dépense</h2>
+          <h2>{_("Nouvelle dépense")}</h2>
           <CreateSpendingRequestForm
             user={session?.user}
             group={group}

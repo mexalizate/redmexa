@@ -1,3 +1,4 @@
+import _ from "gettext";
 import { routeConfig } from "@agir/front/app/routes.config";
 
 const ACTIVITY_CONFIG = {
@@ -7,7 +8,7 @@ const ACTIVITY_CONFIG = {
     action: ({ link, linkLabel }) => {
       return link
         ? {
-            label: linkLabel || "En savoir plus",
+            label: linkLabel || _("En savoir plus"),
             href: link,
           }
         : null;
@@ -70,7 +71,7 @@ const ACTIVITY_CONFIG = {
         return group?.routes?.membershipTransfer
           ? {
               href: group.routes.membershipTransfer,
-              label: "Diviser mon groupe",
+              label: _("Diviser mon groupe"),
             }
           : null;
       }
@@ -78,7 +79,7 @@ const ACTIVITY_CONFIG = {
       return routes?.groupTransferHelp
         ? {
             href: routes?.groupTransferHelp,
-            label: "Diviser mon groupe",
+            label: _("Diviser mon groupe"),
           }
         : null;
     },
@@ -89,7 +90,7 @@ const ACTIVITY_CONFIG = {
       event?.routes?.rsvp
         ? {
             href: event.routes.rsvp,
-            label: "Payer",
+            label: _("Payer"),
           }
         : null,
   },
@@ -101,7 +102,7 @@ const ACTIVITY_CONFIG = {
             to: routeConfig.groupDetails.getLink({
               groupPk: group.id,
             }),
-            label: "Rejoindre",
+            label: _("Rejoindre"),
           }
         : null,
   },
@@ -117,7 +118,7 @@ const ACTIVITY_CONFIG = {
               groupPk: group.id,
               activePanel: "membres",
             }),
-            label: "Voir les membres",
+            label: _("Voir les membres"),
           }
         : null,
   },
@@ -129,7 +130,7 @@ const ACTIVITY_CONFIG = {
             to: routeConfig.groupDetails.getLink({
               groupPk: group.id,
             }),
-            label: "Voir le groupe",
+            label: _("Voir le groupe"),
           }
         : null,
   },
@@ -139,7 +140,7 @@ const ACTIVITY_CONFIG = {
       group.id
         ? {
             to: routeConfig.groupDetails.getLink({ groupPk: group.id }),
-            label: "Mettre à jour",
+            label: _("Mettre à jour"),
           }
         : null,
   },
@@ -149,7 +150,7 @@ const ACTIVITY_CONFIG = {
       meta?.acceptUrl
         ? {
             href: meta?.acceptUrl,
-            label: "Accepter",
+            label: _("Accepter"),
           }
         : null,
   },
@@ -160,7 +161,7 @@ const ACTIVITY_CONFIG = {
       event?.id
         ? {
             to: routeConfig.eventDetails.getLink({ eventPk: event.id }),
-            label: "Voir",
+            label: _("Voir"),
           }
         : null,
   },
@@ -171,7 +172,7 @@ const ACTIVITY_CONFIG = {
       event?.id
         ? {
             to: routeConfig.eventDetails.getLink({ eventPk: event.id }),
-            label: "Voir",
+            label: _("Voir"),
           }
         : null,
   },
@@ -182,7 +183,7 @@ const ACTIVITY_CONFIG = {
       event?.id
         ? {
             to: routeConfig.eventDetails.getLink({ eventPk: event.id }),
-            label: "Voir",
+            label: _("Voir"),
           }
         : null,
   },
@@ -192,7 +193,7 @@ const ACTIVITY_CONFIG = {
       event?.id
         ? {
             to: routeConfig.eventSettings.getLink({ eventPk: event.id }),
-            label: "Voir",
+            label: _("Voir"),
           }
         : null,
   },
@@ -200,7 +201,7 @@ const ACTIVITY_CONFIG = {
     icon: "calendar",
     action: () => ({
       route: "eventSpeaker",
-      label: "Voir mes demandes",
+      label: _("Voir mes demandes"),
     }),
   },
   "group-creation-confirmation": {
@@ -209,7 +210,7 @@ const ACTIVITY_CONFIG = {
       routes?.newGroupHelp
         ? {
             href: routes.newGroupHelp,
-            label: "Lire l'article",
+            label: _("Lire l'article"),
           }
         : null,
   },
@@ -219,7 +220,7 @@ const ACTIVITY_CONFIG = {
       routes?.newGroupHelp
         ? {
             href: routes.newGroupHelp,
-            label: "Lire l'article",
+            label: _("Lire l'article"),
           }
         : null,
   },

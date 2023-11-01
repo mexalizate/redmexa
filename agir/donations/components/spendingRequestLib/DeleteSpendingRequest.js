@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useCallback, useRef, useState } from "react";
 
@@ -26,14 +27,14 @@ const DeleteSpendingRequest = ({ deleteUrl }) => {
     <>
       <Button bsSize="sm" bsStyle="danger" onClick={handleOpen}>
         <span className="fa fa-trash" />
-        &nbsp;Supprimer la demande
+        &nbsp;{_("Supprimer la demande")}
       </Button>
       <ModalConfirmation
         shouldShow={isOpen}
         onClose={handleClose}
-        title="Supprimer la demande de dépenses"
-        dismissLabel="Annuler"
-        confirmationLabel="Supprimer la demande"
+        title={_("Supprimer la demande de dépenses")}
+        dismissLabel={_("Annuler")}
+        confirmationLabel={_("Supprimer la demande")}
         onConfirm={handleConfirm}
         shouldDismissOnClick
       >
@@ -44,10 +45,9 @@ const DeleteSpendingRequest = ({ deleteUrl }) => {
             value={getCookie("csrftoken")}
           />
           <p>
-            Confirmez-vous la suppression définitive de cette demande de dépense
-            et de tous les documents associés&nbsp;?
+           {_(" Confirmez-vous la suppression définitive de cette demande de dépense et de tous les documents associés")}&nbsp;?
           </p>
-          <p>Attention&nbsp;: cette action est irréversible.</p>
+          <p>{_("Attention")}&nbsp;: {_("cette action est irréversible.")}</p>
         </form>
       </ModalConfirmation>
     </>

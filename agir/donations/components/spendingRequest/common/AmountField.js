@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
@@ -62,7 +63,7 @@ const AmountField = (props) => {
         value={value}
         onChange={onChange}
         error={error}
-        label="Montant TTC (obligatoire)"
+        label={_("Montant TTC (obligatoire)")}
         placeholder={displayPrice(availableAmount, true)}
       />
       <Spacer size="1rem" />
@@ -71,11 +72,11 @@ const AmountField = (props) => {
           <RawFeatherIcon name="info" />
           {availableAmount > 0 ? (
             <strong>
-              Le solde de votre groupe d'action est de{" "}
+              {_("Le solde de votre groupe d'action est de")}{" "}
               {displayPrice(availableAmount)}
             </strong>
           ) : (
-            <strong>Le solde de votre groupe est nul</strong>
+            <strong>{_("Le solde de votre groupe est nul")}</strong>
           )}
         </Card>
         <Button
@@ -88,7 +89,7 @@ const AmountField = (props) => {
           target={isDesktop ? "_blank" : undefined}
           wrap={!isDesktop}
         >
-          Comment augmenter le solde du GA ?
+          {_("Comment augmenter le solde du GA ?")}
         </Button>
       </StyledGroupAmount>
     </>

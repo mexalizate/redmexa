@@ -24,7 +24,7 @@ const GroupMembershipLimitReminderCard = (props) => {
       return (
         <GenericCardContainer {...props}>
           <strong>
-            {_("Action requise&nbsp;: votre groupe ne respecte plus la")}{" "}
+            {_("Action requise : votre groupe ne respecte plus la")}{" "}
             <Link
               href={`/activite/${id}/lien/`}
               params={{ next: routes.charteEquipes }}
@@ -33,7 +33,7 @@ const GroupMembershipLimitReminderCard = (props) => {
             </Link>
           </strong>
           <br />
-          {SupportGroup} a atteint {membershipCount} {_("membres actifs&nbsp;! Il est maintenant impossible que des nouvelles personnes la rejoignent. Divisez votre groupe en groupes plus petits maintenant pour renforcer le réseau d’action.")}
+          {SupportGroup} a atteint {membershipCount} {_("membres actifs ! Il est maintenant impossible que des nouvelles personnes la rejoignent. Divisez votre groupe en groupes plus petits maintenant pour renforcer le réseau d’action.")}
         </GenericCardContainer>
       );
     case 1:
@@ -71,7 +71,7 @@ const GroupMembershipLimitReminderCard = (props) => {
       return (
         <GenericCardContainer {...props}>
           <strong>
-            {_("Bravo, vous êtes maintenant")} {membershipCount || "nombreux·ses"} {_("dans votre groupe&nbsp;!")}
+            {_("Bravo, vous êtes maintenant")} {membershipCount || _("nombreux·ses")} {_("dans votre groupe&nbsp;!")}
           </strong>
           <br />
           {SupportGroup} {_("a atteint le nombre idéal de membres actifs. Désormais, favorisez la création d'autres groupes autour de chez vous par d’autres membres, de manière à renforcer le réseau d'action.")}

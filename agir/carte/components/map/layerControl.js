@@ -1,3 +1,4 @@
+import _ from "gettext";
 import Control from "ol/control/Control";
 
 import { element } from "./utils";
@@ -37,7 +38,7 @@ export default function makeLayerControl(layersConfig, drawingFunction) {
   });
   const activeCheckboxLabel = element("label", [
     activeCheckbox,
-    " Groupes les plus actifs",
+    _(" Groupes les plus actifs"),
   ]);
   activeCheckbox.addEventListener("change", function () {
     drawingFunction(activeCheckbox.checked);

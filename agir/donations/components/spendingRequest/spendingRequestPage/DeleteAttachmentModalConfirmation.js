@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useCallback } from "react";
 import styled from "styled-components";
@@ -50,11 +51,11 @@ const DeleteAttachmentModalConfirmation = (props) => {
     >
       <StyledModalContent>
         <p>
-          Confirmez-vous la suppression du document&nbsp;:{" "}
+          {_("Confirmez-vous la suppression du document")}&nbsp;:{" "}
           <mark>{attachment?.title}</mark>&nbsp;?
         </p>
         <StyledWarning>
-          ⚠&ensp;Attention&nbsp;: cette action est irréversible&nbsp;!
+          ⚠&ensp;{_("Attention")}&nbsp;: {_("cette action est irréversible")}&nbsp;!
         </StyledWarning>
         <StyledError>{error}</StyledError>
       </StyledModalContent>

@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useState } from "react";
 import styled from "styled-components";
@@ -108,18 +109,16 @@ const AmountStep = (props) => {
           )}
           {hasAllocations && group?.id ? (
             <p>
-              Pour financer ses actions, le groupe d’action certifié a la
-              possibilité de se constituer une enveloppe par l’intermédiaire de
-              dons alloués. <Link route="donationHelp">En savoir plus</Link>
+              {_("Pour financer ses actions, le groupe d’action certifié a la possibilité de se constituer une enveloppe par l’intermédiaire de dons alloués.")} 
+              <Link route="donationHelp">{_("En savoir plus")}</Link>
             </p>
           ) : (
             <>
               <p>
-                Chaque don nous aide à l’organisation d’événements, à l’achat de
-                matériel, au fonctionnement de ce site, etc.
+                {_("Chaque don nous aide à l’organisation d’événements, à l’achat de matériel, au fonctionnement de ce site, etc.")}
               </p>
               <p>
-                Nous avons besoin du soutien financier de chacun·e d’entre vous.
+                {_("Nous avons besoin du soutien financier de chacun·e d’entre vous.")}
               </p>
             </>
           )}
@@ -148,9 +147,9 @@ const AmountStep = (props) => {
               loading={isLoading}
             >
               <span>
-                <strong>Continuer</strong>
+                <strong>{_("Continuer")}</strong>
                 <br />
-                1/3 étapes
+                {_("1/3 étapes")}
               </span>
               <RawFeatherIcon name="arrow-right" />
             </StepButton>
@@ -160,13 +159,13 @@ const AmountStep = (props) => {
           <PaymentParagraph>
             <span>
               <RawFeatherIcon width="1rem" height="1rem" name="lock" />
-              &ensp;SÉCURISÉ ET ANONYME
+              &ensp;{_("SÉCURISÉ ET ANONYME")}
             </span>
             <img
               width="366"
               height="26"
               src={acceptedPaymentMethods}
-              alt="Moyens de paiement acceptés : Visa, Visa Electron, Mastercard, Maestro, Carte Bleue, E-Carte Bleue"
+              alt={_("Moyens de paiement acceptés : Visa, Visa Electron, Mastercard, Maestro, Carte Bleue, E-Carte Bleue")}
             />
           </PaymentParagraph>
         </StyledMain>
