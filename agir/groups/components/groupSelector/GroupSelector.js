@@ -51,7 +51,7 @@ const GroupSelector = ({
         location_zip ? `${name} (${location_zip})` : name
       }
       onChange={onChange}
-      loadingMessage={() => "Recherche..."}
+      loadingMessage={() => _("Recherche...")}
       noOptionsMessage={({ inputValue }) =>
         inputValue.length < 3
           ? _("Entrez au moins 3 lettres pour chercher un groupe")
@@ -80,7 +80,7 @@ GroupSelector.defaultProps = {
   filter: () => true,
   groupChoices: [],
   value: null,
-  defaultOptionsLabel: "Mes groupes",
+  defaultOptionsLabel: _("Mes groupes"),
   search: debouncedSearch,
 };
 

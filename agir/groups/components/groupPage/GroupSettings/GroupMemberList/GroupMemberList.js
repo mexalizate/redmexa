@@ -115,7 +115,7 @@ const GroupMemberList = ({
         <StyledControls>
           {searchable && (
             <TextField
-              label="Filter"
+              label={_("Filter")}
               value={search}
               onChange={handleSearch}
               placeholder={_("Filtrer par nom ou e-mail")}
@@ -124,7 +124,7 @@ const GroupMemberList = ({
           {sortable && searchable && <Spacer size="0.5rem" />}
           {sortable && (
             <SelectField
-              label="Trier par..."
+              label={_("Trier par...")}
               value={sort}
               onChange={setSort}
               options={SORTING_OPTIONS}

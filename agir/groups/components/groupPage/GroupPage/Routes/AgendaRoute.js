@@ -23,7 +23,7 @@ const AgendaRoute = ({
     ) : null}
     {Array.isArray(pastEvents) && pastEvents.length > 0 ? (
       <GroupEventList
-        title="Événements passés"
+        title={_("Événements passés")}
         events={pastEvents}
         loadMore={loadMorePastEvents}
         isLoading={isLoadingPastEvents}

@@ -135,7 +135,7 @@ const LocationField = (props) => {
       ) : (
         <div style={{ paddingBottom: ".5rem" }}>
           <button type="button" onClick={displayAddress2} disabled={disabled}>
-            + Ajouter une deuxième ligne pour l'adresse
+           {_(" + Ajouter une deuxième ligne pour l'adresse")}
           </button>
         </div>
       )}

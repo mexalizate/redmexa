@@ -1,3 +1,4 @@
+import _ from "gettext";
 import { DateTime, Interval } from "luxon";
 import React, { useCallback, useMemo } from "react";
 import styled from "styled-components";
@@ -132,7 +133,7 @@ const Agenda = () => {
               marginTop: 0,
             }}
           >
-            Bonjour{" "}
+            {_("Bonjour")}{" "}
             {user?.displayName?.length > 2
               ? user?.displayName
               : user?.firstName || user?.displayName}{" "}
@@ -142,14 +143,14 @@ const Agenda = () => {
         </Hide>
         <TopBar>
           <LayoutTitle>
-            Bonjour{" "}
+            {_("Bonjour")}{" "}
             {user?.displayName && user?.displayName.length > 2
               ? user.displayName
               : user?.firstName || user?.displayName}{" "}
             👋
           </LayoutTitle>
           <Hide $under as={Button} small link route="eventMap" icon="map">
-            Carte
+            {_("Carte")}
           </Hide>
         </TopBar>
       </header>
@@ -172,7 +173,7 @@ const Agenda = () => {
                 lineHeight: 1.4,
               }}
             >
-              Mes événements prévus
+              {_("Mes événements prévus")}
             </h2>
             <UpcomingEvents events={rsvpedEvents} />
           </Hide>
@@ -193,10 +194,10 @@ const Agenda = () => {
               flex: "1 1 auto",
             }}
           >
-            Événements
+            {_("Événements")}
           </h2>
           <Button small link route="eventMap" icon="map">
-            Carte
+            {_("Carte")}
           </Button>
         </Hide>
         <EventSuggestions isPaused={isPaused} />

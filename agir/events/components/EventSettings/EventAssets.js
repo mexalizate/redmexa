@@ -61,7 +61,7 @@ const EventAssets = (props) => {
           text={_("Document utile en cas de réservation d'une salle pour les événements publics")}
           icon="file-text"
           route="attestationAssurance"
-          downloadLabel="Télécharger l'attestation"
+          downloadLabel={_("Télécharger l'attestation")}
         />
       </PageFadeIn>
       <Spacer size="2rem" />

@@ -13,7 +13,7 @@ const GroupDonation = (props) => {
   }
 
   return (
-    <Card title="Financez les actions du groupe">
+    <Card title={_("Financez les actions du groupe")}>
       <p />
       <p>
         {_("Pour que ce groupe puisse financer ses frais de fonctionnement et s’équiper en matériel, vous pouvez contribuer financièrement de manière ponctuelle ou mensuellement.")}

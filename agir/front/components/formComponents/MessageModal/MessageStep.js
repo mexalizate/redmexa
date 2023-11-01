@@ -254,7 +254,7 @@ const MessageStep = (props) => {
                 : _(`Aucun événément associé`)}
               &ensp;
               <button disabled={disabled} onClick={onClearEvent}>
-                Changer
+                {_("Changer")}
               </button>
             </em>
           )}

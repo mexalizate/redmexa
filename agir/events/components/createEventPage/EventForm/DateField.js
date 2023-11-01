@@ -164,7 +164,7 @@ const DateField = (props) => {
       <Field className={className}>
         <div>
           <DateTimeField
-            label={`Date et heure ${!duration?.value ? "de début" : ""}`.trim()}
+            label={`Date et heure ${!duration?.value ? _("de début") : ""}`.trim()}
             value={startTime}
             onChange={updateStartTime}
             error={inlineError ? inlineError : error ? " " : error}

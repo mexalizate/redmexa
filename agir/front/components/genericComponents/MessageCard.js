@@ -597,10 +597,10 @@ const MessageCard = (props) => {
             <Avatar {...author} />
             <h4>
               <strong>
-                {author.displayName || (isAuthor && "Moi") || "Quelqu'un"}
+                {author.displayName || (isAuthor && _("Moi")) || _("Quelqu'un")}
                 &nbsp;
                 {!author.displayName && isAuthor && (
-                  <Link route="personalInformation">Ajouter mon nom</Link>
+                  <Link route="personalInformation">{_("Ajouter mon nom")}</Link>
                 )}
               </strong>
               <em onClick={handleClick} style={{ cursor: "pointer" }}>

@@ -109,7 +109,7 @@ const EventFeedback = (props) => {
       <RichTextField
         id="feedback"
         name="compteRendu"
-        label="Écrire un compte rendu*"
+        label={_("Écrire un compte rendu*")}
         placeholder=""
         onChange={(e) => handleChange("compteRendu", e)}
         value={formData.compteRendu}
@@ -121,8 +121,8 @@ const EventFeedback = (props) => {
 
       <h4>
         {!formData.compteRenduPhoto || imageHasChanged
-          ? "Ajouter une photo"
-          : "Photo"}
+          ? _("Ajouter une photo")
+          : _("Photo")}
       </h4>
       <span style={{ color: style.black700 }}>
         {_("Cette image apparaîtra en tête de votre compte rendu, et dans les partages que vous ferez du compte rendu sur les réseaux sociaux.")}

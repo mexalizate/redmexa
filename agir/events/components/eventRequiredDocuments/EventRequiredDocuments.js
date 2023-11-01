@@ -220,7 +220,7 @@ const EventRequiredDocuments = (props) => {
             {required.length > 1
               ? _("informations requises")
               : _("information requise")}
-            <small>À compléter avant le {displayShortDate(limitDate)}</small>
+            <small>{_("À compléter avant le")} {displayShortDate(limitDate)}</small>
           </h4>
           <Spacer size="1rem" />
           <p style={{ textAlign: "inherit", lineHeight: 1.6 }}>

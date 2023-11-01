@@ -63,7 +63,7 @@ const EventDescriptionCard = ({
   return (
     <StyleDescriptionCard>
       <DescriptionSection>
-        <h5>L'événement</h5>
+        <h5>{_("L'événement")}</h5>
 
         <Spacer size="1rem" />
 

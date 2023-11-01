@@ -21,13 +21,13 @@ const ABROAD_POLLING_STATION_OPTIONS = ABROAD_POLLING_STATIONS.map(
 
 const HelpText = (
   <span>
-    Vous pouvez vérifier votre bureau de vote sur votre carte éléctorale ou sur{" "}
+    {_("Vous pouvez vérifier votre bureau de vote sur votre carte éléctorale ou sur")}{" "}
     <a
       href="https://www.service-public.fr/particuliers/vosdroits/services-en-ligne-et-formulaires/ISE"
       target="_blank"
       rel="noopener noreferrer"
     >
-      le site du service public
+      {_("le site du service public")}
     </a>
   </span>
 );

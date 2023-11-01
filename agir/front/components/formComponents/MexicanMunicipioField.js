@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useEffect, useState } from "react";
 
@@ -65,7 +66,7 @@ const MexicanMunicipio = (props) => {
       onChange={onChange}
       onSearch={handleSearch}
       defaultOptions={options}
-      placeholder="Buscar un municipio..."
+      placeholder={_("Buscar un municipio...")}
     />
   );
 };

@@ -21,12 +21,12 @@ const ONBOARDING_TYPE = {
       </>
     ),
     primaryLink: {
-      label: "Créer un événement",
+      label: _("Créer un événement"),
       route: "createEvent",
     },
   },
   group__suggestions: {
-    title: "Rejoignez un groupe proche de chez vous",
+    title: _("Rejoignez un groupe proche de chez vous"),
     body: (
       <>
         <p>
@@ -39,7 +39,7 @@ const ONBOARDING_TYPE = {
     ),
     mapIframe: "groupsMap",
     primaryLink: {
-      label: "Voir les groupes dans ma commune",
+      label: _("Voir les groupes dans ma commune"),
       route: "groupMap",
     },
   },

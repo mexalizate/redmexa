@@ -71,7 +71,7 @@ const GroupMemberMainPanel = (props) => {
       </p>
       <Spacer size="1rem" />
       <ShareLink
-        label="Copier les e-mails"
+        label={_("Copier les e-mails")}
         color="primary"
         url={emails}
         $wrap

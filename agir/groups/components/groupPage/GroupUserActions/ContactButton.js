@@ -82,7 +82,7 @@ const ContactButton = (props) => {
           onClick={user ? handleMessageOpen : redirectToLogin}
         >
           <RawFeatherIcon name="mail" width="1.5rem" height="1.5rem" />
-          <span>Contacter</span>
+          <span>{_("Contacter")}</span>
         </button>
       )}
       {isMessagingEnabled ? (

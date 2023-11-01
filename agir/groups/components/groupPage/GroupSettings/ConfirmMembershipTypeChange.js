@@ -88,7 +88,7 @@ const ConfirmPanel = (props) => {
       <>
         <BackButton disabled={isLoading} onClick={onBack} />
         <StyledTitle>
-          Passer {selectedMember.displayName} en membre actif&nbsp;?
+          Passer {selectedMember.displayName} {_("en membre actif ?")}
         </StyledTitle>
         <Spacer size="0.5rem" />
         <StyledContent>

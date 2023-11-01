@@ -50,7 +50,7 @@ export const POLLING_STATION_OFFICER_CONSTRAINTS = {
   firstName: {
     presence: {
       allowEmpty: false,
-      message: "Ce champ est obligatoire",
+      message: _("Ce champ est obligatoire"),
     },
     length: {
       maximum: 255,

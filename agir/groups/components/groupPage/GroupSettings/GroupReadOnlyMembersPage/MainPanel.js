@@ -32,7 +32,7 @@ const GroupMemberMainPanel = (props) => {
         {members.length > 1 ? _("Membres") : _("Membre")}
       </StyledTitle>
       <p style={{ color: style.black700, margin: 0 }}>
-        Retrouvez ici la liste des membres de votre groupe
+        {_("Retrouvez ici la liste des membres de votre groupe")}
       </p>
       <Spacer size="1rem" />
       <ShareLink

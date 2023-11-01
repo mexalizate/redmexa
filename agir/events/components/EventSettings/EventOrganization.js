@@ -66,14 +66,14 @@ const EventOrganization = (props) => {
       {!canInviteOrganizerGroups &&
       groups.length + groupsInvited.length === 1 ? (
         <>
-          <StyledTitle>Groupe organisateur</StyledTitle>
+          <StyledTitle>{_("Groupe organisateur")}</StyledTitle>
           <span style={{ color: style.black700 }}>
             {_("Les animateur·ices du groupe peuvent accéder à la gestion de l'événement et la liste des participant·es.")}
           </span>
         </>
       ) : (
         <>
-          <StyledTitle>Groupes organisateurs</StyledTitle>
+          <StyledTitle>{_("Groupes organisateurs")}</StyledTitle>
           <span style={{ color: style.black700 }}>
             {_("Les animateur·ices de ces groupes peuvent accéder à la gestion de l'événement et la liste des participant·es.")}
           </span>
@@ -106,7 +106,7 @@ const EventOrganization = (props) => {
       </GroupList>
       <Spacer size="1.5rem" />
 
-      <StyledTitle>Participant·es organisateur·ices</StyledTitle>
+      <StyledTitle>{_("Participant·es organisateur·ices")}</StyledTitle>
       <span style={{ color: style.black700 }}>
         {_("Donnez des droits d’accès à des participant·es pour leur permettre de gérer l’événement.")}
       </span>

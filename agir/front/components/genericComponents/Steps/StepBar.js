@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 import { animated, useSpring } from "@react-spring/web";
@@ -77,12 +78,12 @@ const StepBar = (props) => {
       <footer>
         {typeof steps[current - 1] !== "undefined" && (
           <Button type="button" onClick={goToPrevious}>
-            Précédent
+            {_("Précédent")}
           </Button>
         )}
         {typeof steps[current + 1] !== "undefined" && (
           <Button type="button" color="danger" onClick={goToNext}>
-            Suivant
+            {_("Suivant")}
           </Button>
         )}
         {onSubmit && current === last && (
@@ -92,7 +93,7 @@ const StepBar = (props) => {
             type="submit"
             color="danger"
           >
-            Envoyer
+            {_("Envoyer")}
           </Button>
         )}
       </footer>

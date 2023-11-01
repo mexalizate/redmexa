@@ -65,7 +65,7 @@ const FullGroupPage = ({ groupPk }) => {
     <PageFadeIn ready={fullGroup !== "undefined"} wait={<Skeleton />}>
       {fullGroup && (
         <CenteredLayout
-          title={`${fullGroup.name} compte déjà trop de membres !`}
+          title={_(`${fullGroup.name} compte déjà trop de membres !`)}
           icon="x-circle"
         >
           <StyledBlock>

@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useEffect, useMemo } from "react";
 import { createPortal } from "react-dom";
@@ -103,7 +104,7 @@ export const ModalCloseButton = ({ onClose, size = "2rem", ...rest }) => {
     <StyledCloseButton
       {...rest}
       onClick={onClose}
-      aria-label="Fermer la modale"
+      aria-label={_("Fermer la modale")}
     >
       <RawFeatherIcon name="x" width={size} height={size} />
     </StyledCloseButton>

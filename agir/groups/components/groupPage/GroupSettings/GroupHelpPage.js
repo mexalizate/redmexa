@@ -17,7 +17,7 @@ const GroupHelpPage = (props) => {
   return (
     <div>
       <HeaderPanel onBack={onBack} illustration={illustration} />
-      <StyledTitle>Ressources</StyledTitle>
+      <StyledTitle>{_("Ressources")}</StyledTitle>
       <Spacer size="1rem" />
       <span style={{ color: style.black700 }}>
         {_("Retrouvez ici la liste des ressources qui pourront vous être utiles pour l'animation et la gestion de votre groupe.")}

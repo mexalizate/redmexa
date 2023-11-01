@@ -1,3 +1,4 @@
+import _ from "gettext";
 const attAssTemplate = "https://infos.actionpopulaire.fr/assurance.pdf";
 
 export const EVENT_DOCUMENT_TYPES = {
@@ -5,9 +6,9 @@ export const EVENT_DOCUMENT_TYPES = {
     type: "ATT-ASS",
     name: "Attestation d'assurance",
     templateLink: attAssTemplate,
-    templateLinkLabel: "Télécharger l'attesation",
+    templateLinkLabel: _("Télécharger l'attesation"),
     description:
-      "Attestation d'assurance de la France insoumise, que vous pourrez utiliser, si besoin, en cas de réservation d'une salle pour votre événement public",
+      _("Attestation d'assurance de la France insoumise, que vous pourrez utiliser, si besoin, en cas de réservation d'une salle pour votre événement public"),
   },
 };
 

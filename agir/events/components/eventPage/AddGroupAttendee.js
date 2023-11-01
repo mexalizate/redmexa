@@ -180,7 +180,7 @@ const AddGroupAttendee = ({ id, groups, groupsAttendees }) => {
                 <Spacer size="1rem" />
                 {!!Object.keys(errors).length && (
                   <StaticToast style={{ marginTop: 0 }}>
-                    {errors?.text || "Une erreur est apparue"}
+                    {errors?.text || _("Une erreur est apparue")}
                   </StaticToast>
                 )}
               </>

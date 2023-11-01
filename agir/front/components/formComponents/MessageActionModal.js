@@ -185,7 +185,7 @@ const Steps = {
             </Button>
           ) : null}
           <Button color="default" onClick={onClose} disabled={isLoading}>
-            {onDelete ? "Non merci" : "Terminer"}
+            {onDelete ? _("Non merci") : _("Terminer")}
           </Button>
         </StyledModalFooter>
       </>

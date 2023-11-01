@@ -584,7 +584,7 @@ const PollingStationOfficerForm = (props) => {
           onChange={handleChange}
           error={errors?.email}
           label={_("Adresse e-mail")}
-          helpText="Important : si vous vous êtes déjà inscrit·e sur lafranceinsoumise.fr ou melenchon2022.fr, utilisez la même adresse e-mail."
+          helpText={_("Important : si vous vous êtes déjà inscrit·e sur lafranceinsoumise.fr ou melenchon2022.fr, utilisez la même adresse e-mail.")}
           autoComplete="email"
         />
         <Spacer size="1rem" />
@@ -600,7 +600,7 @@ const PollingStationOfficerForm = (props) => {
           onChange={handleChange}
           error={errors?.remarks}
           label={_("Remarques ou question (facultatif)")}
-          helpText="Quand êtes-vous disponible pour être contacté·e, en semaine et le week-end ?"
+          helpText={_("Quand êtes-vous disponible pour être contacté·e, en semaine et le week-end ?")}
         />
         <Spacer size="1rem" />
         <CheckboxField

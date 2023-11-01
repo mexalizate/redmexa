@@ -75,7 +75,7 @@ export const UpdateAddressModal = (props) => {
         <Spacer size="1.5rem" />
         <form onSubmit={handleSubmit}>
           <TextField
-            label="Adresse"
+            label={_("Adresse")}
             id="address1"
             error={errors?.address1}
             name="address1"
@@ -86,7 +86,7 @@ export const UpdateAddressModal = (props) => {
           />
           <Spacer size="1rem" />
           <TextField
-            label="Complément d'adresse"
+            label={_("Complément d'adresse")}
             id="address2"
             error={errors?.address2}
             name="address2"
@@ -97,7 +97,7 @@ export const UpdateAddressModal = (props) => {
           />
           <Spacer size="1rem" />
           <TextField
-            label="Code postal"
+            label={_("Code postal")}
             id="zip"
             error={errors?.zip}
             name="zip"
@@ -108,7 +108,7 @@ export const UpdateAddressModal = (props) => {
           />
           <Spacer size="1rem" />
           <TextField
-            label="Commune"
+            label={_("Commune")}
             id="city"
             error={errors?.city}
             name="city"
@@ -119,7 +119,7 @@ export const UpdateAddressModal = (props) => {
           />
           <Spacer size="1rem" />
           <CountryField
-            label="Pays"
+            label={_("Pays")}
             id="country"
             error={errors?.country}
             name="country"

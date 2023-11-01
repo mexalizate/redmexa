@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useContext, useEffect, useMemo, Suspense } from "react";
 import { StateInspector, useReducer } from "reinspect";
@@ -46,7 +47,7 @@ const ProdProvider = ({ hasRouter = false, hasToasts = false, children }) => {
             ? err.message
             : typeof err === "string"
             ? err
-            : "Session cache deletion failed.";
+            : _("Session cache deletion failed.");
           throw new Error(message);
         }
       });

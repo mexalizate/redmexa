@@ -124,7 +124,7 @@ export const GroupsOrganizingCard = ({
       : "";
 
   return (
-    <StyledCard outlined title="Organisé par" editLinkTo={editLink}>
+    <StyledCard outlined title={_("Organisé par")} editLinkTo={editLink}>
       {groups.map((group) => (
         <GroupLine
           key={group.id}

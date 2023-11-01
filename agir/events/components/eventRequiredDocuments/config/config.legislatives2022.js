@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React from "react";
 import Spacer from "@agir/front/genericComponents/Spacer";
 
@@ -20,7 +21,7 @@ export const EVENT_DOCUMENT_TYPES = {
     name: "Attestation de concours en nature",
     templateLink: attConTemplate,
     description:
-      "Nécessaire lorsque vous empruntez n’importe quel matériel, comme une sono, un barnum, une estrade, un rétro-projecteur, etc.",
+      _("Nécessaire lorsque vous empruntez n’importe quel matériel, comme une sono, un barnum, une estrade, un rétro-projecteur, etc."),
   },
   "ATT-REG": {
     type: "ATT-REG",
@@ -28,7 +29,7 @@ export const EVENT_DOCUMENT_TYPES = {
     name: "Attestation de règlement des consommations (mise à disposition d'un établissement privé)",
     templateLink: attRegTemplate,
     description:
-      "Certifie que les consommations ont été réglées directement à l'établissement par les participants, et non par l'organisateur⋅rice de l'événement.",
+      _("Certifie que les consommations ont été réglées directement à l'établissement par les participants, et non par l'organisateur⋅rice de l'événement."),
   },
   "ATT-GRA": {
     type: "ATT-GRA",
@@ -37,13 +38,9 @@ export const EVENT_DOCUMENT_TYPES = {
     templateLink: attGraTemplate,
     description: (
       <>
-        Cette attestation est nécessaire pour certifier que la mise à
-        disposition de la salle municipale est gratuite et s'adresse à toutes
-        les autres forces politiques et leurs candidats. Elle doit vous être
-        délivrée par la mairie.
+        {_("Cette attestation est nécessaire pour certifier que la mise à disposition de la salle municipale est gratuite et s'adresse à toutes les autres forces politiques et leurs candidats. Elle doit vous être délivrée par la mairie.")}
         <Spacer size=".5rem" />
-        <strong>À noter&nbsp;:</strong> pour réserver une salle, il vous sera
-        demandé de l’assurer.
+        <strong>{_("À noter")}&nbsp;:</strong> {_("pour réserver une salle, il vous sera demandé de l’assurer.")}
       </>
     ),
   },
@@ -53,7 +50,7 @@ export const EVENT_DOCUMENT_TYPES = {
     name: "Copie de la demande d'autorisation d'occupation de l'espace public",
     templateLink: "",
     description:
-      "Ce document est nécessaire lorsque vous organisez une manifestation, une réunion publique extérieure, ou encore un pique-nique, un apéro citoyen ou une table militante.",
+      _("Ce document est nécessaire lorsque vous organisez une manifestation, une réunion publique extérieure, ou encore un pique-nique, un apéro citoyen ou une table militante."),
   },
 };
 

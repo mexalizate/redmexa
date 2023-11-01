@@ -44,10 +44,10 @@ export const JoinAGroupCard = (props) => {
       <h4>
         {_("Créer ou rejoindre un groupe d’action")}{" "}
         {commune?.nameOf
-          ? `${communeNameOfToIn(commune.nameOf)} et alentours`
+          ? _(`${communeNameOfToIn(commune.nameOf)} et alentours`)
           : city
-          ? `à ${city} et alentours`
-          : "près de chez vous"}
+          ? _(`à ${city} et alentours`)
+          : _("près de chez vous")}
       </h4>
       <Button link route="groupMap" color="secondary">
         {_("Voir la carte")}

@@ -104,7 +104,7 @@ const AddToCalendarWidget = (props) => {
           {routes.googleExport && (
             <CalendarLink href={routes.googleExport}>
               <LogoIcon aria-hidden="true" $icon={googleLogo} />
-              Sur Google Agenda
+              {_("Sur Google Agenda")}
             </CalendarLink>
           )}
           {routes.calendarExport && (

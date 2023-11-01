@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useCallback, useEffect, useState } from "react";
 
@@ -26,7 +27,7 @@ const NameField = (props) => {
 
   return (
     <TextField
-      label="Nom de l'événement"
+      label={_("Nom de l'événement")}
       id={name}
       name={name}
       value={value}

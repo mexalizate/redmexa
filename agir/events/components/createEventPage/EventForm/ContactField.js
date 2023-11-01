@@ -76,7 +76,7 @@ const ContactField = (props) => {
           <p>{name}</p>
           <p>{email}</p>
           <p>{phone}</p>
-          <button onClick={editDefaultContact}>Modifier le contact</button>
+          <button onClick={editDefaultContact}>{_("Modifier le contact")}</button>
         </StyledDefaultField>
       ) : (
         <>
@@ -91,7 +91,7 @@ const ContactField = (props) => {
             error={error && error.name}
           />
           <TextField
-            label="Adresse e-mail de contact"
+            label={_("Adresse e-mail de contact")}
             name="email"
             autoComplete="email"
             type="email"

@@ -53,7 +53,7 @@ const GroupMemberActions = (props) => {
 
     return (
       <StyledWrapper>
-        <h4>Modifier les droits</h4>
+        <h4>{_("Modifier les droits")}</h4>
         <p>
           <Button disabled={isGroupFull} onClick={handleClick}>
             {_("Passer en membre actif")}

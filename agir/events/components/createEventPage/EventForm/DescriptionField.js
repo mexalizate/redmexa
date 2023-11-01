@@ -40,7 +40,7 @@ const DescriptionField = (props) => {
           line-height: 1.5;
         `}
       >
-        {!required && <em>Facultative. </em>}
+        {!required && <em>{_("Facultative.")} </em>}
         {_("La description apparaîtra sur la page publique de l'événement.")}
       </span>
       {isExpanded ? (
