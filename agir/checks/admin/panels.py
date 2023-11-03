@@ -47,7 +47,7 @@ class CheckPaymentAdmin(
             },
         ),
         (
-            "Facturation",
+            _("Facturation"),
             {
                 "fields": (
                     "first_name",
@@ -62,7 +62,7 @@ class CheckPaymentAdmin(
                 )
             },
         ),
-        ("Informations techniques", {"fields": ("meta", "events", "status_buttons")}),
+        (_("Informations techniques"), {"fields": ("meta", "events", "status_buttons")}),
     )
     add_fieldsets = (
         (
@@ -78,7 +78,7 @@ class CheckPaymentAdmin(
             },
         ),
         (
-            "Facturation",
+            _("Facturation"),
             {
                 "fields": (
                     "first_name",

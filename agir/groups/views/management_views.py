@@ -195,8 +195,7 @@ class CreateSupportGroupView(VerifiedContactPhoneRequiredMixin, TemplateView):
                 "subtypes": subtypes,
                 "types": types,
                 "disabled": disabled,
-                "disabledMessage": f"Vous ne pouvez plus créer de nouveau groupe car vous avez atteint la limite "
-                f"de création ({self.max_groups_for_referent_number} groupes par personne).",
+                "disabledMessage": _(f"Vous ne pouvez plus créer de nouveau groupe car vous avez atteint la limite de création ({self.max_groups_for_referent_number} groupes par personne)."),
             },
             **kwargs,
         )
@@ -222,7 +221,7 @@ class PerformCreateSupportGroupView(HardLoginRequiredMixin, FormMixin, ProcessFo
         messages.add_message(
             request=self.request,
             level=messages.SUCCESS,
-            message="Votre groupe a été correctement créé.",
+            message=_("Votre groupe a été correctement créé."),
         )
 
         form.save()
@@ -349,10 +348,10 @@ class RedirectToPresseroView(BaseSupportGroupAdminView, DetailView):
         person = request.user.person
 
         if not is_pressero_enabled():
-            raise Http404("Cette page n'existe pas")
+            raise Http404(_("Cette page n'existe pas"))
 
         if not group.is_certified:
-            raise Http404("Cette page n'existe pas")
+            raise Http404(_("Cette page n'existe pas"))
 
         try:
             return redirect_to_pressero(person)
@@ -380,7 +379,7 @@ class InvitationConfirmationView(VerifyLinkSignatureMixin, View):
             messages.add_message(
                 request=request,
                 level=messages.ERROR,
-                message="Le groupe qui vous a invité n'existe plus.",
+                message=_("Le groupe qui vous a invité n'existe plus."),
             )
             return HttpResponseRedirect(reverse("dashboard"))
 
@@ -394,13 +393,13 @@ class InvitationConfirmationView(VerifyLinkSignatureMixin, View):
                 request,
                 messages.SUCCESS,
                 format_html(
-                    "Vous venez de rejoindre le groupe d'action <em>{group_name}</em>",
+                    _("Vous venez de rejoindre le groupe d'action <em>{group_name}</em>"),
                     group_name=group.name,
                 ),
             )
         else:
             messages.add_message(
-                request, messages.INFO, "Vous étiez déjà membre de ce groupe."
+                request, messages.INFO, _("Vous étiez déjà membre de ce groupe.")
             )
 
         return HttpResponseRedirect(reverse("view_group", args=(group.pk,)))
@@ -512,16 +511,16 @@ class DownloadMemberListView(BaseSupportGroupAdminView, DetailView):
     permission_required = ("groups.download_member_list",)
     serializer = MemberPersonalInformationSerializer
     columns = [
-        "Statut",
-        "Pseudo",
-        "Nom",
-        "Prénom",
-        "Description",
-        "E-mail",
-        "Téléphone",
-        "Adresse",
-        "Membre depuis le",
-        "Abonnement à l’actualité du groupe",
+        _("Statut"),
+        _("Pseudo"),
+        _("Nom"),
+        _("Prénom"),
+        _("Description"),
+        _("E-mail"),
+        _("Téléphone"),
+        _("Adresse"),
+        _("Membre depuis le"),
+        _("Abonnement à l’actualité du groupe"),
     ]
 
     def get_data(self, supportgroup):

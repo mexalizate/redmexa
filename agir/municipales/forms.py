@@ -13,6 +13,7 @@ from agir.municipales.models import CommunePage
 from agir.municipales.tasks import notify_commune_changed
 from agir.people.models import Person
 from agir.people.tasks import send_confirmation_email
+from django.utils.translation import gettext as _, gettext
 
 
 class CommunePageForm(forms.ModelForm):
@@ -24,10 +25,10 @@ class CommunePageForm(forms.ModelForm):
         self.helper = FormHelper()
         self.helper.add_input(Submit("submit", "Modifier"))
         self.helper.layout = Layout(
-            Fieldset("Informations sur la liste", "contact_email", "mandataire_email"),
-            Fieldset("La liste sur internet", "twitter", "facebook", "website"),
+            Fieldset(_("Informations sur la liste"), "contact_email", "mandataire_email"),
+            Fieldset(_("La liste sur internet"), "twitter", "facebook", "website"),
             Fieldset(
-                "Les informations pour les dons par chèque", "ordre_don", "adresse_don"
+                _("Les informations pour les dons par chèque"), "ordre_don", "adresse_don"
             ),
         )
 
@@ -90,32 +91,32 @@ class MunicipalesLenderForm(LenderForm):
 
 
 class ProcurationForm(forms.Form):
-    nom = forms.CharField(label="Nom", required=True)
-    prenom = forms.CharField(label="Prénom", required=True)
+    nom = forms.CharField(label=_("Nom"), required=True)
+    prenom = forms.CharField(label=_("Prénom"), required=True)
     code_postal = forms.CharField(
         label="Code postal", required=True, validators=[french_zipcode_validator]
     )
-    email = forms.EmailField(label="Adresse email de contact", required=True)
-    phone = PhoneNumberField(label="Numéro de téléphone", required=True)
+    email = forms.EmailField(label=_("Adresse email de contact"), required=True)
+    phone = PhoneNumberField(label=_("Numéro de téléphone"), required=True)
 
     bureau = forms.CharField(
-        label="Numéro de votre bureau de vote",
+        label=_("Numéro de votre bureau de vote"),
         required=False,
         help_text=format_html(
-            'Le numéro de bureau figure sur votre carte électorale, ou <a href="{url}">vous pouvez l\'obtenir sur service-public.fr</a>',
+            gettext('Le numéro de bureau figure sur votre carte électorale, ou <a href="{url}">vous pouvez l\'obtenir sur service-public.fr</a>'),
             url="https://www.service-public.fr/particuliers/vosdroits/services-en-ligne-et-formulaires/ISE",
         ),
     )
 
     autres = forms.CharField(
-        label="Avez-vous d'autres informations ou remarques ?",
+        label=_("Avez-vous d'autres informations ou remarques ?"),
         required=False,
-        help_text="Indiquez toute autre information pertinente pour établir votre procuration.",
+        help_text=_("Indiquez toute autre information pertinente pour établir votre procuration."),
         widget=forms.Textarea,
     )
 
     subscribed = forms.BooleanField(
-        label="Je souhaite recevoir les informations de la France insoumise dans ma boîte email.",
+        label=_("Je souhaite recevoir les informations de la France insoumise dans ma boîte email."),
         required=False,
         widget=forms.CheckboxInput,
     )
@@ -126,7 +127,7 @@ class ProcurationForm(forms.Form):
         self.person = person
 
         self.helper = FormHelper()
-        self.helper.add_input(Submit("envoyer", "Envoyer aux équipes de la liste"))
+        self.helper.add_input(Submit("envoyer", _("Envoyer aux équipes de la liste")))
         self.helper.layout = Layout(
             Row(HalfCol("nom"), HalfCol("prenom")),
             Row(
@@ -185,15 +186,15 @@ class ProcurationForm(forms.Form):
 
 
 class CostCertificateForm(forms.Form):
-    nom_liste = forms.CharField(label="Nom de la liste")
-    mandataire_nom = forms.CharField(label="Nom et prénom du ou de la mandataire")
+    nom_liste = forms.CharField(label=_("Nom de la liste"))
+    mandataire_nom = forms.CharField(label=_("Nom et prénom du ou de la mandataire"))
     mandataire_adresse = forms.CharField(
-        label="Adresse complète du ou de la mandataire",
+        label=_("Adresse complète du ou de la mandataire"),
         widget=forms.Textarea(attrs={"rows": 4}),
     )
-    nombre = forms.IntegerField(label="Nombre de tracts distribués")
+    nombre = forms.IntegerField(label=_("Nombre de tracts distribués"))
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
-        self.helper.add_input(Submit("envoyer", "Télécharger le certificat"))
+        self.helper.add_input(Submit("envoyer", _("Télécharger le certificat")))

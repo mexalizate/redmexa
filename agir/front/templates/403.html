@@ -1,7 +1,7 @@
 {% extends "front/layout.html" %}
-{% load static %}
+{% load static i18n %}
 
 {% block main %}
-  <h3>Vous n'êtes pas autorisé⋅e à accéder à cette page.</h3>
+  <h3>{% translate "Vous n'êtes pas autorisé⋅e à accéder à cette page." %}</h3>
   <p>{{ exception }}</p>
 {% endblock %}

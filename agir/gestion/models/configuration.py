@@ -1,4 +1,5 @@
 import decimal
+from django.utils.translation import gettext_lazy as _, gettext
 
 from agir.gestion.typologies import TypeDepense
 
@@ -17,7 +18,7 @@ class EngagementAutomatique:
 
     def __getitem__(self, item):
         if item not in TypeDepense:
-            raise KeyError(f"{item} n'est pas un type de dépense acceptable")
+            raise KeyError(gettext(f"{item} n'est pas un type de dépense acceptable"))
 
         # On convertit en chaîne pour le cas où on aurait un objet de type TypeDepense
         item = str(item)
@@ -37,15 +38,15 @@ class EngagementAutomatique:
             # Mieux vaut juste crasher que risque d'engager une dépense incorrectement une dépense,
             # ou même refuser silencieusement l'engagement d'un truc qui devrait être engagé.
             raise RuntimeError(
-                f"Valeur de plafond incorrect pour {self.compte!r} pour le type {item!r}"
+                gettext(f"Valeur de plafond incorrect pour {self.compte!r} pour le type {item!r}")
             )
 
     def __setitem__(self, key, value):
         if key not in TypeDepense:
-            raise KeyError(f"{key} n'est pas un type de dépense acceptable")
+            raise KeyError(gettext(f"{key} n'est pas un type de dépense acceptable"))
 
         if not isinstance(value, decimal.Decimal):
-            raise ValueError(f"{value!r} n'est pas un nombre décimal.")
+            raise ValueError(gettext(f"{value!r} n'est pas un nombre décimal."))
 
         # On convertit en chaîne pour le cas où on aurait un objet de type TypeDepense
         key = str(key)

@@ -2,11 +2,12 @@ from agir.lib.admin.autocomplete_filter import AutocompleteRelatedModelFilter
 
 from agir.gestion.models import Projet, Depense
 from django.contrib.admin import SimpleListFilter, ListFilter
+from django.utils.translation import gettext_lazy as _
 
 
 class InclureProjetsMilitantsFilter(ListFilter):
-    parameter_name = "militant"
-    title = "origine du projet"
+    parameter_name = _("militant")
+    title = _("origine du projet")
 
     def __init__(self, request, params, model, model_admin):
         super().__init__(request, params, model, model_admin)
@@ -26,12 +27,12 @@ class InclureProjetsMilitantsFilter(ListFilter):
         yield {
             "selected": self.value is None,
             "query_string": changelist.get_query_string(remove=[self.parameter_name]),
-            "display": "n'inclure que les projets créés dans l'administration",
+            "display": _("n'inclure que les projets créés dans l'administration"),
         }
         yield {
             "selected": self.value == "O",
             "query_string": changelist.get_query_string({self.parameter_name: "O"}),
-            "display": "inclure aussi les projets militants",
+            "display": _("inclure aussi les projets militants"),
         }
 
     def queryset(self, request, queryset):
@@ -41,11 +42,11 @@ class InclureProjetsMilitantsFilter(ListFilter):
 
 
 class ProjetResponsableFilter(SimpleListFilter):
-    parameter_name = "responsable"
-    title = "responsable actuel"
+    parameter_name = _("responsable")
+    title = _("responsable actuel")
 
     def lookups(self, request, model_admin):
-        return (("R", "Responsable du compte"), ("G", "Gestionnaire projets"))
+        return (("R", _("Responsable du compte")), ("G", _("Gestionnaire projets")))
 
     def queryset(self, request, queryset):
         value = self.value()
@@ -64,14 +65,14 @@ class ProjetResponsableFilter(SimpleListFilter):
 
 
 class DepenseResponsableFilter(SimpleListFilter):
-    parameter_name = "responsable"
-    title = "responsable actuel"
+    parameter_name = _("responsable")
+    title = _("responsable actuel")
 
     def lookups(self, request, model_admin):
         return (
-            ("R", "Responsable du compte"),
-            ("G", "Gestionnaire projets"),
-            ("E", "Experts comptables"),
+            ("R", _("Responsable du compte")),
+            ("G", _("Gestionnaire projets")),
+            ("E", _("Experts comptables")),
         )
 
     def queryset(self, request, queryset):
@@ -90,5 +91,5 @@ class DepenseResponsableFilter(SimpleListFilter):
 
 
 class FournisseurFilter(AutocompleteRelatedModelFilter):
-    field_name = "fournisseur"
-    title = "fournisseur"
+    field_name = _("fournisseur")
+    title = _("fournisseur")

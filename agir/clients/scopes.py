@@ -1,4 +1,5 @@
 from oauth2_provider.scopes import BaseScopes
+from django.utils.translation import gettext as _
 
 
 class Scope(object):
@@ -11,17 +12,17 @@ class Scope(object):
         return self.name == other_scope
 
 
-view_profile = Scope("view_profile", "Voir votre profil", ["people.view_person"])
-edit_profile = Scope("edit_profile", "Changer votre profil", ["people.change_person"])
-edit_event = Scope("edit_event", "Éditer vos événements", ["events.change_event"])
-edit_rsvp = Scope("edit_rsvp", "Voir et éditer vos participations aux événements", [])
-edit_supportgroup = Scope("edit_supportgroup", "Éditer vos groupes d'action", [])
+view_profile = Scope("view_profile", _("Voir votre profil"), ["people.view_person"])
+edit_profile = Scope("edit_profile", _("Changer votre profil"), ["people.change_person"])
+edit_event = Scope("edit_event", ("Éditer vos événements"), ["events.change_event"])
+edit_rsvp = Scope("edit_rsvp", _("Voir et éditer vos participations aux événements"), [])
+edit_supportgroup = Scope("edit_supportgroup", _("Éditer vos groupes d'action"), [])
 edit_membership = Scope(
-    "edit_membership", "Voir et éditer vos participations aux groupes d'action", []
+    "edit_membership", _("Voir et éditer vos participations aux groupes d'action"), []
 )
-edit_authorization = Scope("edit_authorization", "Éditer vos autorisations d'accès", [])
+edit_authorization = Scope("edit_authorization", _("Éditer vos autorisations d'accès"), [])
 toktok = Scope(
-    "toktok", "Accès aux informations nécessaires à l'application TokTok", []
+    "toktok", _("Accès aux informations nécessaires à l'application TokTok"), []
 )
 
 scopes = [

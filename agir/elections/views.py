@@ -1,4 +1,5 @@
 from itertools import chain
+from django.utils.translation import gettext as _
 
 from data_france.models import (
     CirconscriptionConsulaire,
@@ -85,8 +86,8 @@ class RetrieveCreatePollingStationOfficerAPIView(RetrieveAPIView, CreateAPIView)
     queryset = PollingStationOfficer.objects.all()
     serializer_class = CreateUpdatePollingStationOfficerSerializer
     messages = {
-        "throttled": "Vous avez déjà fais plusieurs demandes. Veuillez laisser quelques minutes "
-        "avant d'en faire d'autres."
+        "throttled": _("Vous avez déjà fais plusieurs demandes. Veuillez laisser quelques minutes "
+        "avant d'en faire d'autres.")
     }
 
     def throttle_requests(self, data):

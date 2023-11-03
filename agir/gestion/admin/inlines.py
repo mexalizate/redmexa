@@ -2,6 +2,8 @@ from django.contrib import admin
 from django.urls import reverse
 from django.utils.html import format_html_join, format_html
 from django.utils.safestring import mark_safe
+from django.utils.translation import gettext_lazy as _, gettext
+
 
 from agir.gestion.admin.base import SearchableModelMixin
 from agir.gestion.admin.depenses import DepenseListMixin
@@ -17,8 +19,8 @@ from agir.lib.admin.form_fields import CleavedDateInput
 
 
 class BaseDocumentInline(admin.TabularInline):
-    verbose_name = "Document justificatif"
-    verbose_name_plural = "Documents justificatifs"
+    verbose_name = _("Document justificatif")
+    verbose_name_plural = _("Documents justificatifs")
     extra = 0
     classes = ("retirer-original",)
     can_delete = False
@@ -40,7 +42,7 @@ class BaseDocumentInline(admin.TabularInline):
             return obj.document.get_type_display()
         return "-"
 
-    type_document.short_description = "Type de document"
+    type_document.short_description = _("Type de document")
 
     def fichier_document(self, obj):
         if obj and obj.document:
@@ -50,10 +52,10 @@ class BaseDocumentInline(admin.TabularInline):
                     '<a href="{}">{}</a>', doc.fichier.url, doc.fichier.name
                 )
             else:
-                return mark_safe("<strong>Fichier manquant</strong>")
+                return mark_safe(_("<strong>Fichier manquant</strong>"))
         return "-"
 
-    fichier_document.short_description = "Voir le fichier"
+    fichier_document.short_description = _("Voir le fichier")
 
     def numero(self, obj):
         if obj and obj.document:
@@ -64,28 +66,28 @@ class BaseDocumentInline(admin.TabularInline):
             )
         return "-"
 
-    numero.short_description = "Numéro unique"
+    numero.short_description = _("Numéro unique")
 
     def precision(self, obj):
         if obj and obj.document:
             return obj.document.precision
         return "-"
 
-    precision.short_description = "Précision"
+    precision.short_description = _("Précision")
 
     def identifiant(self, obj):
         if obj and obj.document:
             return obj.document.identifiant or "-"
         return "-"
 
-    identifiant.short_description = "Numéro ou identifiant"
+    identifiant.short_description = _("Numéro ou identifiant")
 
     def date(self, obj):
         if obj and obj.document:
             return obj.document.date or "-"
         return "-"
 
-    date.short_description = "Date"
+    date.short_description = _("Date")
 
 
 class DepenseDocumentInline(BaseDocumentInline):
@@ -93,8 +95,8 @@ class DepenseDocumentInline(BaseDocumentInline):
 
 
 class DepenseInline(DepenseListMixin, SearchableModelMixin, admin.TabularInline):
-    verbose_name = "Dépense"
-    verbose_name_plural = "Dépenses du projet"
+    verbose_name = _("Dépense")
+    verbose_name_plural = _("Dépenses du projet")
 
     model = Depense
     extra = 0
@@ -162,7 +164,7 @@ def depense_type(type, label):
 
 
 class ProjetParticipationInline(admin.TabularInline):
-    verbose_name_plural = "Personnes impliquées dans ce projet"
+    verbose_name_plural = _("Personnes impliquées dans ce projet")
     model = Participation
     extra = 1
 
@@ -176,8 +178,8 @@ class ProjetParticipationInline(admin.TabularInline):
     autocomplete_fields = ("person",)
     readonly_fields = ("depense_transport", "depense_hebergement")
 
-    depense_transport = depense_type("TRA", "Dépenses de transport")
-    depense_hebergement = depense_type("FRH", "Dépenses d'hébergement")
+    depense_transport = depense_type("TRA", _("Dépenses de transport"))
+    depense_hebergement = depense_type("FRH", _("Dépenses d'hébergement"))
 
 
 class VersionDocumentInline(admin.TabularInline):
@@ -207,7 +209,7 @@ class AjoutRapideMixin:
 
 
 class AjouterDepenseInline(AjoutRapideMixin, admin.TabularInline):
-    verbose_name_plural = "Ajout rapide de dépenses"
+    verbose_name_plural = _("Ajout rapide de dépenses")
     model = Depense
     form = AjoutRapideDepenseForm
 
@@ -215,7 +217,7 @@ class AjouterDepenseInline(AjoutRapideMixin, admin.TabularInline):
 
 
 class BaseAjouterDocumentInline(AjoutRapideMixin, admin.TabularInline):
-    verbose_name_plural = "Ajout rapide de documents justificatifs"
+    verbose_name_plural = _("Ajout rapide de documents justificatifs")
     form = DocumentAjoutRapideForm
     fields = ("type", "identifiant", "precision", "date", "fichier")
 
@@ -274,7 +276,7 @@ class DepenseReglementInline(admin.TabularInline):
 
         return obj.get_etat_display()
 
-    @admin.display(description="Preuve de paiement")
+    @admin.display(description=_("Preuve de paiement"))
     def preuve_link(self, obj):
         if obj and obj.preuve:
             change_url = reverse("admin:gestion_document_change", args=(obj.preuve_id,))
@@ -283,7 +285,7 @@ class DepenseReglementInline(admin.TabularInline):
                 return format_html(
                     '<a href="{}">{}</a> <a href="{}">\U0001F4C4</a>',
                     change_url,
-                    obj.preuve.precision or "Preuve de paiement",
+                    obj.preuve.precision or _("Preuve de paiement"),
                     obj.preuve.fichier.url,
                 )
 
@@ -293,7 +295,7 @@ class DepenseReglementInline(admin.TabularInline):
             )
         return "-"
 
-    @admin.display(description="Fournisseur")
+    @admin.display(description=_("Fournisseur"))
     def fournisseur_link(self, obj):
         if obj and obj.fournisseur:
             return format_html(
@@ -306,7 +308,7 @@ class DepenseReglementInline(admin.TabularInline):
 
 
 class DepenseReglementLectureSeuleInline(DepenseReglementInline):
-    verbose_name_plural = "Règlements clos"
+    verbose_name_plural = _("Règlements clos")
     can_delete = False
 
     def has_change_permission(self, request, obj=None):
@@ -346,7 +348,7 @@ class OrdreVirementReglementInline(admin.TabularInline):
             obj.depense.titre,
         )
 
-    depense_link.short_description = "Dépense"
+    depense_link.short_description = _("Dépense")
 
     # TODO: gérer ici les permissions sur les règlements déjà validés à l'aide de la définiton de get_queryset
     # il faut faire deux inlines différents, pour ceux en lecture seule et pour ceux modifiables

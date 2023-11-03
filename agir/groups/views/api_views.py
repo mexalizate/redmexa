@@ -26,6 +26,7 @@ from rest_framework.generics import (
     get_object_or_404,
 )
 from rest_framework.response import Response
+from django.utils.translation import gettext as _
 
 from agir.donations.allocations import get_supportgroup_balance
 from agir.donations.models import SpendingRequest
@@ -461,7 +462,7 @@ class GroupMessageNotificationStatusAPIView(RetrieveUpdateAPIView):
         is_muted = request.data.get("isMuted", None)
 
         if not isinstance(is_muted, bool):
-            raise ValidationError({"isMuted": "Ce champ est obligatoire"})
+            raise ValidationError({"isMuted": _("Ce champ est obligatoire")})
 
         person = self.request.user.person
 
@@ -490,7 +491,7 @@ class GroupMessageLockedStatusAPIView(RetrieveUpdateAPIView):
         is_locked = request.data.get("isLocked", None)
 
         if not isinstance(is_locked, bool):
-            raise ValidationError({"isLocked": "Ce champ est obligatoire"})
+            raise ValidationError({"isLocked": _("Ce champ est obligatoire")})
 
         message.is_locked = is_locked
         message.save()
@@ -738,7 +739,7 @@ class GroupInvitationAPIView(GenericAPIView):
         email = request.data.get("email", "")
         if not email:
             raise exceptions.ValidationError(
-                detail={"email": "L'adresse email ne peut être vide"},
+                detail={"email": _("L'adresse email ne peut être vide")},
                 code="invalid_format",
             )
 
@@ -746,7 +747,7 @@ class GroupInvitationAPIView(GenericAPIView):
             validate_email(email)
         except:
             raise exceptions.ValidationError(
-                detail={"email": "L'adresse email n'est pas valide"},
+                detail={"email": _("L'adresse email n'est pas valide")},
                 code="invalid_format",
             )
 
@@ -757,7 +758,7 @@ class GroupInvitationAPIView(GenericAPIView):
             pass
         else:
             raise exceptions.ValidationError(
-                detail={"email": "Cette personne fait déjà partie de votre groupe !"},
+                detail={"email": _("Cette personne fait déjà partie de votre groupe !")},
                 code="invalid_format",
             )
 

@@ -37,13 +37,14 @@ from ..groups.models import SupportGroupSubtype
 from ..groups.views.public_views import SupportGroupDetailMixin
 from ..lib.utils import generate_token_params, front_url
 from ..msgs.models import SupportGroupMessage
+from django.utils.translation import gettext as _, gettext
 
 cache_decorators = [cache.cache_page(30), cache.cache_control(public=True)]
 
 
 class BasicOpenGraphMixin(SimpleOpengraphMixin):
-    meta_title = "Action Populaire"
-    meta_description = "Action Populaire est le réseau social d'action de la France insoumise et de la NUPES."
+    meta_title = _("Action Populaire")
+    meta_description = _("Action Populaire est le réseau social d'action de la France insoumise et de la NUPES.")
     meta_type = "website"
     meta_image = urljoin(
         settings.PLATFORM_FRONT_DOMAIN, static("front/assets/og_image_NSP.jpg")
@@ -123,18 +124,18 @@ class FontAwesomeTestView(BaseAppCachedView):
 
 
 class SignupView(BaseAppCachedView):
-    meta_title = "Inscription"
-    meta_description = "Rejoignez Action Populaire"
+    meta_title = _("Inscription")
+    meta_description = _("Rejoignez Action Populaire")
 
 
 class CodeSignupView(BaseAppCachedView):
-    meta_title = "Inscription"
-    meta_description = "Rejoignez Action Populaire"
+    meta_title = _("Inscription")
+    meta_description = _("Rejoignez Action Populaire")
 
 
 class LoginView(BaseAppCachedView):
-    meta_title = "Connexion"
-    meta_description = "Connectez-vous à Action Populaire"
+    meta_title = _("Connexion")
+    meta_description = _("Connectez-vous à Action Populaire")
 
     def get_meta_title(self):
         default = super().get_meta_title()
@@ -156,8 +157,8 @@ class LoginView(BaseAppCachedView):
 
 
 class CodeLoginView(BaseAppCachedView):
-    meta_title = "Connexion"
-    meta_description = "Connectez-vous à Action Populaire"
+    meta_title = _("Connexion")
+    meta_description = _("Connectez-vous à Action Populaire")
 
 
 class LogoutView(BaseAppView):
@@ -217,7 +218,7 @@ class UserMessageView(
 
 class DonationView(BaseAppCachedView):
     meta_title = "Faire un don - La France insoumise"
-    meta_description = (
+    meta_description = gettext(
         "Pour financer les dépenses liées à l’organisation d’événements, à l’achat de matériel, au"
         "fonctionnement du site, etc., nous avons besoin du soutien financier de chacun.e d’entre vous !"
     )
@@ -232,20 +233,20 @@ class AlreadyContributorRedirectView(RedirectView):
             request=request,
             level=messages.WARNING,
             message=mark_safe(
-                "Vous avez déjà effectuée une contribution financière pour cette année ! "
-                "Merci de votre soutien ! Si vous le souhaitez vous pouvez toujours faire un don ponctuel "
-                f'<a href="{front_url("donation_amount", absolute=True)}">sur la page de don</a>.'
+                gettext("Vous avez déjà effectuée une contribution financière pour cette année ! "),
+                gettext("Merci de votre soutien ! Si vous le souhaitez vous pouvez toujours faire un don ponctuel "),
+                gettext(f'<a href="{front_url("donation_amount", absolute=True)}">sur la page de don</a>.')
             ),
         )
         return super().get(request, *args, **kwargs)
 
 
 class ContributionView(BaseAppCachedView):
-    meta_title = "Devenir financeur·euse de la France insoumise"
+    meta_title = _("Devenir financeur·euse de la France insoumise")
     meta_image = urljoin(
         settings.PLATFORM_FRONT_DOMAIN, static("front/og-image/contributions.png")
     )
-    meta_description = (
+    meta_description = gettext(
         "Pour financer les dépenses liées à l’organisation d’événements, à l’achat de matériel, au"
         "fonctionnement du site, etc., nous avons besoin du soutien financier de chacun.e d’entre vous !"
     )
@@ -266,7 +267,7 @@ class ContributionView(BaseAppCachedView):
 
 
 class Donation2022View(DonationView):
-    meta_title = "Faire un don - Mélenchon 2022"
+    meta_title = _("Faire un don - Mélenchon 2022")
 
 
 class SupportGroupDonationView(RedirectView):
@@ -289,7 +290,7 @@ class SupportGroupContributionView(RedirectView):
 class EventDetailView(
     EventDetailMixin, BaseDetailView, ObjectOpengraphMixin, ReactBaseView
 ):
-    meta_description = (
+    meta_description = gettext(
         "Participez et organisez des événements pour soutenir les propositions de la France insoumise et "
         "de la NUPES"
     )
@@ -324,8 +325,8 @@ class CreateEventView(BaseAppSoftAuthView):
 
 
 class SearchView(BaseAppCachedView):
-    meta_title = "Rechercher"
-    meta_description = "Rechercher un groupe, un événement"
+    meta_title = _("Rechercher")
+    meta_description = _("Rechercher un groupe, un événement")
 
 
 ## SUPPORTGROUP VIEWS
@@ -334,7 +335,7 @@ class SearchView(BaseAppCachedView):
 class SupportGroupDetailView(
     SupportGroupDetailMixin, BaseDetailView, ObjectOpengraphMixin, ReactBaseView
 ):
-    meta_description = "Rejoignez les groupes d'action de votre quartier pour soutenir les propositions de la France insoumise et de la NUPES"
+    meta_description = _("Rejoignez les groupes d'action de votre quartier pour soutenir les propositions de la France insoumise et de la NUPES")
 
     def get_api_preloads(self):
         return [
@@ -394,7 +395,7 @@ class SpendingRequestUpdateView(SpendingRequestDetailsView):
         messages.add_message(
             self.request,
             messages.WARNING,
-            "Cette demande ne peut pas être modifiée",
+            _("Cette demande ne peut pas être modifiée"),
         )
         return HttpResponseRedirect(
             reverse("spending_request_details", kwargs=self.kwargs)
@@ -504,14 +505,14 @@ class PostElectionRedirectView(RedirectView):
         messages.add_message(
             request=request,
             level=messages.WARNING,
-            message="La page du lien que vous avez ouvert n'existe plus. Merci de votre soutien !",
+            message=_("La page du lien que vous avez ouvert n'existe plus. Merci de votre soutien !"),
         )
         return super().get(request, *args, **kwargs)
 
 
 class VotingProxyView(PostElectionRedirectView):
-    meta_title = "Se porter volontaire pour voter par procuration - Action Populaire"
-    meta_description = (
+    meta_title = _("Se porter volontaire pour voter par procuration - Action Populaire")
+    meta_description = gettext(
         "Prenez une procuration près de chez vous, pour voter pour les candidats-es de l'Union Populaire "
         "aux élections législatives le 12 et 19 juin 2022."
     )
@@ -522,8 +523,8 @@ class VotingProxyView(PostElectionRedirectView):
 
 
 class VotingProxyRequestView(PostElectionRedirectView):
-    meta_title = "Voter par procuration — Action Populaire"
-    meta_description = (
+    meta_title = _("Voter par procuration — Action Populaire")
+    meta_description = gettext(
         "Faites la demande qu'un·e volontaire de votre ville vote à votre place pour les candidats-es de "
         "l'Union Populaire aux élections législatives du 12 et 19 juin 2022."
     )
@@ -534,8 +535,8 @@ class VotingProxyRequestView(PostElectionRedirectView):
 
 
 class PollingStationOfficerView(PostElectionRedirectView):
-    meta_title = "Devenir assesseur·e ou délégué·e — Action Populaire"
-    meta_description = (
+    meta_title = _("Devenir assesseur·e ou délégué·e — Action Populaire")
+    meta_description = gettext(
         "Pour la réussite de ce scrutin, il est nécessaire que nous ayons un maximum d'assesseur⋅es "
         "et de délégué⋅es dans le plus grand nombre de bureaux de vote de la circonscription."
     )

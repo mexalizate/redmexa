@@ -9,6 +9,7 @@ from django.db.models import Q
 from django.utils import timezone
 from django_countries.fields import CountryField
 from phonenumber_field.modelfields import PhoneNumberField
+from django.utils.translation import gettext_lazy as _, gettext
 
 from agir.authentication.models import Role
 from agir.gestion.models.common import (
@@ -45,7 +46,7 @@ def depense_entierement_reglee(depense: "Depense", _role):
 
 
 depense_entierement_reglee.explication = (
-    "La dépense doit être entièrement réglée pour pouvoir la clôturer."
+    _("La dépense doit être entièrement réglée pour pouvoir la clôturer.")
 )
 
 
@@ -56,7 +57,7 @@ def valider_reglements_lies(depense: "Depense"):
 
 
 engagement_autorise.explication = (
-    "Vous n'avez pas les autorisations pour engager cette dépense"
+    _("Vous n'avez pas les autorisations pour engager cette dépense")
 )
 
 
@@ -85,25 +86,25 @@ class Depense(ModeleGestionMixin, TimeStampedModel):
     objects = DepenseQuerySet.as_manager()
 
     class Etat(models.TextChoices):
-        REFUS = "R", "Dossier refusé"
-        ATTENTE_VALIDATION = "V", "En attente de validation d'opportunité"
-        ATTENTE_ENGAGEMENT = "A", "En attente de l'engagement de la dépense"
-        CONSTITUTION = "C", "Constitution du dossier"
-        COMPLET = "O", "Dossier complété"
-        CLOTURE = "L", "Dossier clôturé"
-        EXPERTISE = "E", "En attente d'intégration au FEC"
-        FEC = "F", "Intégré au FEC"
+        REFUS = "R", _("Dossier refusé")
+        ATTENTE_VALIDATION = "V", _("En attente de validation d'opportunité")
+        ATTENTE_ENGAGEMENT = "A", _("En attente de l'engagement de la dépense")
+        CONSTITUTION = "C", _("Constitution du dossier")
+        COMPLET = "O", _("Dossier complété")
+        CLOTURE = "L", _("Dossier clôturé")
+        EXPERTISE = "E", _("En attente d'intégration au FEC")
+        FEC = "F", _("Intégré au FEC")
 
     TRANSITIONS = {
         Etat.ATTENTE_VALIDATION: [
             Transition(
-                nom="Valider la dépense",
+                nom=_("Valider la dépense"),
                 vers=Etat.ATTENTE_ENGAGEMENT,
                 class_name="success",
                 permissions=["gestion.gerer_depense"],
             ),
             Transition(
-                nom="Refuser la dépense",
+                nom=_("Refuser la dépense"),
                 vers=Etat.REFUS,
                 class_name="failure",
                 permissions=["gestion.gerer_depense"],
@@ -111,20 +112,20 @@ class Depense(ModeleGestionMixin, TimeStampedModel):
         ],
         Etat.ATTENTE_ENGAGEMENT: [
             Transition(
-                nom="Engager la dépense",
+                nom=_("Engager la dépense"),
                 vers=Etat.CONSTITUTION,
                 class_name="success",
                 condition=engagement_autorise,
                 effect=engager_depense,
             ),
             Transition(
-                nom="Refuser l'engagement de la dépense",
+                nom=_("Refuser l'engagement de la dépense"),
                 vers=Etat.REFUS,
                 class_name="failure",
                 permissions=["gestion.engager_depense", "gestion.gerer_depense"],
             ),
             Transition(
-                nom="Clôturer directement le dossier",
+                nom=_("Clôturer directement le dossier"),
                 vers=Etat.CLOTURE,
                 permissions=["gestion.controler_depense"],
                 condition=depense_entierement_reglee,
@@ -134,14 +135,14 @@ class Depense(ModeleGestionMixin, TimeStampedModel):
         ],
         Etat.CONSTITUTION: [
             Transition(
-                nom="Compléter et transmettre le dossier",
+                nom=_("Compléter et transmettre le dossier"),
                 vers=Etat.COMPLET,
                 condition=no_todos,
                 class_name="success",
                 permissions=["gestion.gerer_depense"],
             ),
             Transition(
-                nom="Clôturer directement la dépense",
+                nom=_("Clôturer directement la dépense"),
                 vers=Etat.CLOTURE,
                 permissions=["gestion.controler_depense"],
                 condition=depense_entierement_reglee,
@@ -151,13 +152,13 @@ class Depense(ModeleGestionMixin, TimeStampedModel):
         ],
         Etat.COMPLET: [
             Transition(
-                nom="Renvoyer le dossier pour précisions",
+                nom=_("Renvoyer le dossier pour précisions"),
                 vers=Etat.CONSTITUTION,
                 permissions=["gestion.controler_depense"],
                 class_name="failure",
             ),
             Transition(
-                nom="Clôturer le dossier",
+                nom=_("Clôturer le dossier"),
                 vers=Etat.CLOTURE,
                 permissions=["gestion.controler_depense"],
                 condition=depense_entierement_reglee,
@@ -167,13 +168,13 @@ class Depense(ModeleGestionMixin, TimeStampedModel):
         ],
         Etat.EXPERTISE: [
             Transition(
-                nom="Renvoyer pour corrections",
+                nom=_("Renvoyer pour corrections"),
                 vers=Etat.COMPLET,
                 permissions=["gestion.validation_depense"],
                 class_name="failure",
             ),
             Transition(
-                nom="Intégrer au FEC",
+                nom=_("Intégrer au FEC"),
                 vers=Etat.FEC,
                 permissions=["gestion.validation_depense"],
                 condition=no_todos,
@@ -183,15 +184,15 @@ class Depense(ModeleGestionMixin, TimeStampedModel):
     }
 
     titre = models.CharField(
-        verbose_name="Titre de la dépense",
-        help_text="Une description sommaire de la nature de la dépense",
+        verbose_name=_("Titre de la dépense"),
+        help_text=_("Une description sommaire de la nature de la dépense"),
         blank=False,
         max_length=250,
     )
 
     description = models.TextField(
-        verbose_name="Description",
-        help_text="La description doit permettre de pouvoir identifier de façon non ambigue la dépense et sa nature dans le cas où le titre ne suffit pas.",
+        verbose_name=_("Description"),
+        help_text=_("La description doit permettre de pouvoir identifier de façon non ambigue la dépense et sa nature dans le cas où le titre ne suffit pas."),
         blank=True,
     )
 
@@ -200,7 +201,7 @@ class Depense(ModeleGestionMixin, TimeStampedModel):
         null=False,
         related_name="depenses",
         related_query_name="depense",
-        help_text="Le compte dont fait partie cette dépense.",
+        help_text=_("Le compte dont fait partie cette dépense."),
         on_delete=models.PROTECT,
     )
 
@@ -210,23 +211,23 @@ class Depense(ModeleGestionMixin, TimeStampedModel):
         blank=True,
         related_name="depenses",
         related_query_name="depense",
-        help_text="Le projet éventuel auquel est rattaché cette dépense.",
+        help_text=_("Le projet éventuel auquel est rattaché cette dépense."),
         on_delete=models.SET_NULL,
     )
 
     type = models.CharField(
-        "Type de dépense", max_length=7, choices=TypeDepense.choices
+        _("Type de dépense"), max_length=7, choices=TypeDepense.choices
     )
 
     montant = models.DecimalField(
-        verbose_name="Montant de la dépense",
+        verbose_name=_("Montant de la dépense"),
         decimal_places=2,
         null=False,
         max_digits=10,
     )
 
     etat = models.CharField(
-        verbose_name="État de ce dossier de dépense",
+        verbose_name=_("État de ce dossier de dépense"),
         max_length=1,
         choices=Etat.choices,
         default=Etat.ATTENTE_VALIDATION,
@@ -234,38 +235,38 @@ class Depense(ModeleGestionMixin, TimeStampedModel):
     )
 
     quantite = models.FloatField(
-        verbose_name="Quantité",
+        verbose_name=_("Quantité"),
         null=True,
         blank=True,
-        help_text="Lorsque la dépense correspond à l'achat de matériel, indiquez ici la quantité achetée.",
+        help_text=_("Lorsque la dépense correspond à l'achat de matériel, indiquez ici la quantité achetée."),
     )
 
     nature = models.CharField(
-        verbose_name="Nature",
+        verbose_name=_("Nature"),
         max_length=200,
         blank=True,
-        help_text="La nature du bien acheté, à remplir simultanément avec le champ quantité si applicable.",
+        help_text=_("La nature du bien acheté, à remplir simultanément avec le champ quantité si applicable."),
     )
 
     date_debut = models.DateField(
-        "Date de début",
+        _("Date de début"),
         blank=True,
         null=True,
-        help_text="Premier jour d'utilisation du matériel, premier jour de l'opération correspondante.",
+        help_text=_("Premier jour d'utilisation du matériel, premier jour de l'opération correspondante."),
     )
 
     date_fin = models.DateField(
-        "Date de fin",
+        _("Date de fin"),
         blank=True,
         null=True,
-        help_text="Dernier jour d'utilisation du matériel, dernier jour de l'opération correspondante.",
+        help_text=_("Dernier jour d'utilisation du matériel, dernier jour de l'opération correspondante."),
     )
 
     date_depense = models.DateField(
-        "Date d'engagement de la dépense",
+        _("Date d'engagement de la dépense"),
         blank=True,
         null=True,
-        help_text="Date à laquelle la dépense a été engagée (généralement l'acceptation du contrat)",
+        help_text=_("Date à laquelle la dépense a été engagée (généralement l'acceptation du contrat)"),
     )
 
     documents = models.ManyToManyField(
@@ -280,7 +281,7 @@ class Depense(ModeleGestionMixin, TimeStampedModel):
 
     beneficiaires = models.ManyToManyField(
         to="people.Person",
-        verbose_name="Bénéficiaires de la dépense",
+        verbose_name=_("Bénéficiaires de la dépense"),
         related_name="depenses",
         related_query_name="depense",
         blank=True,
@@ -288,15 +289,15 @@ class Depense(ModeleGestionMixin, TimeStampedModel):
 
     depenses_refacturees = models.ManyToManyField(
         to="Depense",
-        verbose_name="Dépenses à refacturer",
+        verbose_name=_("Dépenses à refacturer"),
         related_name="refacturations",
         related_query_name="refacturation",
         blank=True,
-        help_text="Toutes les dépenses concernées par cette refacturation.",
+        help_text=_("Toutes les dépenses concernées par cette refacturation."),
     )
 
     niveau_acces = models.CharField(
-        verbose_name="Niveau d'accès",
+        verbose_name=_("Niveau d'accès"),
         max_length=1,
         choices=NiveauAcces.choices,
         blank=False,
@@ -377,23 +378,23 @@ class Depense(ModeleGestionMixin, TimeStampedModel):
     )
 
     class Meta:
-        verbose_name = "Dépense"
-        verbose_name_plural = "Dépenses"
+        verbose_name = _("Dépense")
+        verbose_name_plural = _("Dépenses")
 
 
 @reversion.register(follow=["depense"])
 class Reglement(SearchableModel, TimeStampedModel):
     class Etat(models.TextChoices):
-        ATTENTE = "C", "En cours"
-        REGLE = "R", "Réglé"
-        RAPPROCHE = "P", "Rapproché"
-        EXPERTISE = "E", "Attente de validation pour l'expertise comptable"
-        FEC = "F", "Intégré au FEC"
+        ATTENTE = "C", _("En cours")
+        REGLE = "R", _("Réglé")
+        RAPPROCHE = "P", _("Rapproché")
+        EXPERTISE = "E", _("Attente de validation pour l'expertise comptable")
+        FEC = "F", _("Intégré au FEC")
 
     TRANSITIONS = {
         Etat.REGLE: [
             Transition(
-                nom="Clore le règlement",
+                nom=_("Clore le règlement"),
                 vers=Etat.RAPPROCHE,
                 permissions=["gestion.controler_depense"],
                 class_name="success",
@@ -401,13 +402,13 @@ class Reglement(SearchableModel, TimeStampedModel):
         ],
         Etat.EXPERTISE: [
             Transition(
-                nom="Renvoyer pour corrections",
+                nom=_("Renvoyer pour corrections"),
                 vers=Etat.REGLE,
                 class_name="failure",
                 permissions=["validation_depense"],
             ),
             Transition(
-                nom="Intégrer au FEC",
+                nom=_("Intégrer au FEC"),
                 vers=Etat.FEC,
                 class_name="success",
                 permissions=["validation_depense"],
@@ -416,14 +417,14 @@ class Reglement(SearchableModel, TimeStampedModel):
     }
 
     class Mode(models.TextChoices):
-        VIREMENT = "V", "Par virement"
-        PRELEV = "P", "Par prélèvement"
-        CHEQUE = "C", "Par chèque"
-        CARTE = "A", "Par carte bancaire"
-        CASH = "S", "En espèces"
+        VIREMENT = "V", _("Par virement")
+        PRELEV = "P", _("Par prélèvement")
+        CHEQUE = "C", _("Par chèque")
+        CARTE = "A", _("Par carte bancaire")
+        CASH = "S", _("En espèces")
 
     journal = models.CharField(
-        verbose_name="Code du journal",
+        verbose_name=_("Code du journal"),
         null=False,
         blank=False,
         default="CCO",
@@ -431,21 +432,21 @@ class Reglement(SearchableModel, TimeStampedModel):
     )
 
     numero = models.PositiveIntegerField(
-        verbose_name="Numéro dans le relevé bancaire",
+        verbose_name=_("Numéro dans le relevé bancaire"),
         null=True,
         blank=True,
-        help_text="le numéro de la ligne correspondante dans le relevé bancaire du compte de campagne.",
+        help_text=_("le numéro de la ligne correspondante dans le relevé bancaire du compte de campagne."),
     )
 
     numero_complement = models.CharField(
         max_length=5,
-        verbose_name="Complément pour différencier plusieurs transactions avec le même numéro",
+        verbose_name=_("Complément pour différencier plusieurs transactions avec le même numéro"),
         blank=True,
     )
 
     depense = models.ForeignKey(
         to="Depense",
-        verbose_name="Dépense concernée",
+        verbose_name=_("Dépense concernée"),
         related_name="reglements",
         related_query_name="reglement",
         on_delete=models.PROTECT,
@@ -453,7 +454,7 @@ class Reglement(SearchableModel, TimeStampedModel):
 
     ordre_virement = models.ForeignKey(
         to="OrdreVirement",
-        verbose_name="Ordre de virement",
+        verbose_name=_("Ordre de virement"),
         related_name="reglements",
         related_query_name="reglement",
         on_delete=models.SET_NULL,
@@ -461,58 +462,58 @@ class Reglement(SearchableModel, TimeStampedModel):
     )
 
     endtoend_id = models.CharField(
-        verbose_name="ID unique",
+        verbose_name=_("ID unique"),
         max_length=35,
         unique=True,
         null=True,
         default=None,
-        help_text="Identifiant unique utilisé pour suivre une transaction de banque à banque.",
+        help_text=_("Identifiant unique utilisé pour suivre une transaction de banque à banque."),
     )
 
     intitule = models.CharField(
-        verbose_name="Libellé dans le FEC",
+        verbose_name=_("Libellé dans le FEC"),
         max_length=200,
         blank=False,
-        help_text="Ce champ est utilisé comme intitulé dans le FEC, et comme intitulé dans le relevé bancaire pour les "
-        "virements générés.",
+        help_text=_("Ce champ est utilisé comme intitulé dans le FEC, et comme intitulé dans le relevé bancaire pour les "
+        "virements générés."),
     )
 
     mode = models.CharField(
-        verbose_name="Mode de règlement",
+        verbose_name=_("Mode de règlement"),
         max_length=1,
         choices=Mode.choices,
         blank=False,
     )
 
     montant = models.DecimalField(
-        verbose_name="Montant du règlement",
+        verbose_name=_("Montant du règlement"),
         decimal_places=2,
         null=False,
         max_digits=10,
     )
 
     date = models.DateField(
-        verbose_name="Date du règlement",
+        verbose_name=_("Date du règlement"),
         blank=False,
         null=False,
         default=timezone.now,
     )
 
     date_releve = models.DateField(
-        verbose_name="Date dans le relevé bancaire",
+        verbose_name=_("Date dans le relevé bancaire"),
         blank=True,
         null=True,
     )
 
     date_validation = models.DateField(
-        verbose_name="Date de validation de l'écriture",
+        verbose_name=_("Date de validation de l'écriture"),
         blank=True,
         null=True,
     )
 
     preuve = models.ForeignKey(
         to="Document",
-        verbose_name="Preuve de paiement",
+        verbose_name=_("Preuve de paiement"),
         related_name="comme_preuve_paiement",
         null=True,
         blank=True,
@@ -521,16 +522,16 @@ class Reglement(SearchableModel, TimeStampedModel):
 
     facture = models.ForeignKey(
         to="Document",
-        verbose_name="Facture associée",
+        verbose_name=_("Facture associée"),
         related_name="comme_facture",
         null=True,
         blank=True,
         on_delete=models.PROTECT,
-        help_text="Indiquez laquelle des factures de la dépense est lié ce paiement.",
+        help_text=_("Indiquez laquelle des factures de la dépense est lié ce paiement."),
     )
 
     etat = models.CharField(
-        verbose_name="état",
+        verbose_name=_("état"),
         max_length=1,
         blank=False,
         choices=Etat.choices,
@@ -546,58 +547,58 @@ class Reglement(SearchableModel, TimeStampedModel):
     )
 
     numero_compte = models.CharField(
-        verbose_name="Compte affecté",
+        verbose_name=_("Compte affecté"),
         max_length=5,
         blank=True,
         validators=[RegexValidator(regex=r"^\d{5}$")],
     )
 
     code_insee = models.CharField(
-        verbose_name="Code INSEE du lieu de dépense",
+        verbose_name=_("Code INSEE du lieu de dépense"),
         max_length=5,
         blank=True,
         validators=[RegexValidator(regex=r"^\d{5}$")],
     )
 
     date_evenement = models.DateField(
-        verbose_name="Date de l'événement", null=True, blank=True
+        verbose_name=_("Date de l'événement"), null=True, blank=True
     )
 
     # informations fournisseurs
     nom_fournisseur = models.CharField(
-        verbose_name="Nom du fournisseur", blank=False, max_length=100
+        verbose_name=_("Nom du fournisseur"), blank=False, max_length=100
     )
 
-    iban_fournisseur = IBANField(verbose_name="IBAN du fournisseur", blank=True)
-    bic_fournisseur = BICField(verbose_name="BIC du fournisseur", blank=True)
+    iban_fournisseur = IBANField(verbose_name=_("IBAN du fournisseur"), blank=True)
+    bic_fournisseur = BICField(verbose_name=_("BIC du fournisseur"), blank=True)
 
     contact_phone_fournisseur = PhoneNumberField(
-        verbose_name="Numéro de téléphone", blank=True
+        verbose_name=_("Numéro de téléphone"), blank=True
     )
     contact_email_fournisseur = models.EmailField(
-        verbose_name="Adresse email", blank=True
+        verbose_name=_("Adresse email"), blank=True
     )
 
     location_address1_fournisseur = models.CharField(
-        "adresse (1ère ligne)", max_length=100, blank=True
+        _("adresse (1ère ligne)"), max_length=100, blank=True
     )
     location_address2_fournisseur = models.CharField(
-        "adresse (2ère ligne)", max_length=100, blank=True
+        _("adresse (2ère ligne)"), max_length=100, blank=True
     )
-    location_city_fournisseur = models.CharField("ville", max_length=100, blank=False)
+    location_city_fournisseur = models.CharField(_("ville"), max_length=100, blank=False)
     location_zip_fournisseur = models.CharField(
-        "code postal", max_length=20, blank=False
+        _("code postal"), max_length=20, blank=False
     )
     location_country_fournisseur = CountryField(
-        "pays", blank_label="(sélectionner un pays)", default="FR", blank=False
+        _("pays"), blank_label=_("(sélectionner un pays)"), default="MX", blank=False
     )
 
-    libre = models.TextField(verbose_name="Commentaire libre", blank=True)
+    libre = models.TextField(verbose_name=_("Commentaire libre"), blank=True)
 
     commentaires = models.ManyToManyField(
         to="Commentaire",
-        verbose_name="Commentaires",
-        help_text="Ces commentaires permettent d'ajouter de garder la trace des opérations de traitement des différentes pièces.",
+        verbose_name=_("Commentaires"),
+        help_text=_("Ces commentaires permettent d'ajouter de garder la trace des opérations de traitement des différentes pièces."),
     )
 
     search_config = (
@@ -627,13 +628,13 @@ class Reglement(SearchableModel, TimeStampedModel):
 
     def generer_virement(self, date):
         if self.mode != Reglement.Mode.VIREMENT or self.etat != Reglement.Etat.ATTENTE:
-            raise ValueError(f"Mode ou état incorrect pour le règlement d'id {self.id}")
+            raise ValueError(gettext(f"Mode ou état incorrect pour le règlement d'id {self.id}"))
 
         if not self.endtoend_id:
-            raise ValueError(f"Pas d'endtoend_id pour le règlement d'id {self.id}")
+            raise ValueError(gettext(f"Pas d'endtoend_id pour le règlement d'id {self.id}"))
 
         if not self.iban_fournisseur:
-            raise ValueError(f"IBAN manquant pour le règlement d'id {self.id}")
+            raise ValueError(gettext(f"IBAN manquant pour le règlement d'id {self.id}"))
 
         # noinspection PyTypeChecker
         beneficiaire = Partie(
@@ -659,13 +660,13 @@ class Reglement(SearchableModel, TimeStampedModel):
         return self.depense.compte
 
     class Meta:
-        verbose_name = "règlement"
+        verbose_name = _("règlement")
         ordering = ("-date",)
 
 
 class TypeFournisseur(models.TextChoices):
-    PERSONNE_MORALE = "M", "Personne morale"
-    PERSONNE_PHYSIQUE = "P", "Personne physique"
+    PERSONNE_MORALE = "M", _("Personne morale")
+    PERSONNE_PHYSIQUE = "P", _("Personne physique")
 
 
 @reversion.register()
@@ -679,7 +680,7 @@ class Fournisseur(LocationMixin, TimeStampedModel):
     Type = TypeFournisseur
 
     type = models.CharField(
-        verbose_name="Type de fournisseur",
+        verbose_name=_("Type de fournisseur"),
         blank=False,
         max_length=1,
         choices=Type.choices,
@@ -687,17 +688,17 @@ class Fournisseur(LocationMixin, TimeStampedModel):
     )
 
     nom = models.CharField(
-        verbose_name="Nom du fournisseur", blank=False, max_length=100
+        verbose_name=_("Nom du fournisseur"), blank=False, max_length=100
     )
-    description = models.TextField(verbose_name="Description", blank=True)
+    description = models.TextField(verbose_name=_("Description"), blank=True)
 
-    iban = IBANField(verbose_name="IBAN du fournisseur", blank=True)
-    bic = BICField(verbose_name="BIC du fournisseur", blank=True)
+    iban = IBANField(verbose_name=_("IBAN du fournisseur"), blank=True)
+    bic = BICField(verbose_name=_("BIC du fournisseur"), blank=True)
 
-    contact_phone = PhoneNumberField(verbose_name="Numéro de téléphone", blank=True)
-    contact_email = models.EmailField(verbose_name="Adresse email", blank=True)
+    contact_phone = PhoneNumberField(verbose_name=_("Numéro de téléphone"), blank=True)
+    contact_email = models.EmailField(verbose_name=_("Adresse email"), blank=True)
 
-    siren = models.CharField(verbose_name="SIREN/SIRET", max_length=14, blank=True)
+    siren = models.CharField(verbose_name=_("SIREN/SIRET"), max_length=14, blank=True)
 
     def __str__(self):
         if not self.location_city:
@@ -719,7 +720,7 @@ class Fournisseur(LocationMixin, TimeStampedModel):
             if len(self.siren) not in (9, 14):
                 errors["siren"] = [
                     ValidationError(
-                        "Indiquez soit un code SIREN (9 caractères), soit un code SIRET (14 caractères).",
+                        _("Indiquez soit un code SIREN (9 caractères), soit un code SIRET (14 caractères)."),
                         code="siren_invalide",
                     )
                 ]
@@ -735,7 +736,7 @@ CONDITIONS = {
     TypeDepense.FOURNITURE_MARCHANDISES: (
         Todo(
             Q(documents__type=TypeDocument.PHOTOGRAPHIE),
-            "Vous devez joindre une photographie de la marchandise pour justifier cette dépense.",
+            _("Vous devez joindre une photographie de la marchandise pour justifier cette dépense."),
             NiveauTodo.IMPERATIF,
         ),
     ),
@@ -802,27 +803,27 @@ def todos(depense: Depense):
         if not depense.documents.filter(Q(type=TypeDocument.DEVIS)).exists():
             todos_generaux.append(
                 (
-                    "Vous devez joindre le devis pour permettre l'engagement de la dépense par le responsable"
-                    " du compte.",
+                    _("Vous devez joindre le devis pour permettre l'engagement de la dépense par le responsable"
+                    " du compte."),
                     NiveauTodo.IMPERATIF,
                 )
             )
     else:
         if depense.etat == Depense.Etat.COMPLET and not depense.depense_reglee:
             todos_generaux.append(
-                ("La dépense doit être réglée avant clôture.", NiveauTodo.IMPERATIF)
+                (_("La dépense doit être réglée avant clôture."), NiveauTodo.IMPERATIF)
             )
 
         if not depense.documents.filter(type=TypeDocument.FACTURE).exists():
             todos_generaux.append(
                 (
-                    "Une facture (ou ticket de caisse) doit impérativement être joint à la dépense.",
+                    _("Une facture (ou ticket de caisse) doit impérativement être joint à la dépense."),
                     NiveauTodo.IMPERATIF,
                 ),
             )
 
         if todos_generaux:
-            todos.append(("Obligations générales", todos_generaux))
+            todos.append((_("Obligations générales"), todos_generaux))
 
         type_todos = []
         for type in CONDITIONS:
@@ -832,6 +833,6 @@ def todos(depense: Depense):
                         type_todos.append((cond.message_erreur, cond.niveau_erreur))
 
         if type_todos:
-            todos.append(("Obligations pour ce type de dépense", type_todos))
+            todos.append((_("Obligations pour ce type de dépense"), type_todos))
 
     return todos

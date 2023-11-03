@@ -4,6 +4,7 @@ import pytz as pytz
 from django.core.exceptions import ValidationError
 from django.db import models
 from django_countries.fields import CountryField
+from django.utils.translation import gettext as _
 
 from agir.lib.model_fields import ChoiceArrayField
 from agir.lib.models import BaseAPIResource, SimpleLocationMixin
@@ -20,27 +21,27 @@ class PollingStationOfficer(BaseAPIResource, SimpleLocationMixin):
     GENDER_FEMALE = "F"
     GENDER_MALE = "M"
     GENDER_CHOICES = (
-        (GENDER_FEMALE, "Femme"),
-        (GENDER_MALE, "Homme"),
+        (GENDER_FEMALE, _("Femme")),
+        (GENDER_MALE, _("Homme")),
     )
 
     ROLE_ASSESSEURE_TITULAIRE = "AT"
     ROLE_ASSESSEURE_SUPPLEANTE = "AS"
     ROLE_DELEGUEE = "D"
     ROLE_CHOICES = (
-        (ROLE_ASSESSEURE_TITULAIRE, "Assesseur·e titulaire"),
-        (ROLE_ASSESSEURE_SUPPLEANTE, "Assesseur·e suppléant·e"),
-        (ROLE_DELEGUEE, "Délégué·e"),
+        (ROLE_ASSESSEURE_TITULAIRE, _("Assesseur·e titulaire")),
+        (ROLE_ASSESSEURE_SUPPLEANTE, _("Assesseur·e suppléant·e")),
+        (ROLE_DELEGUEE, _("Délégué·e")),
     )
 
     VOTING_DATE_CHOICES = (
         (
             datetime(2022, 6, 12, 0, 0, 0, tzinfo=pytz.timezone("Europe/Paris")).date(),
-            "12 juin 2022 — 1er tour des législatives",
+            _("12 juin 2022 — 1er tour des législatives"),
         ),
         (
             datetime(2022, 6, 19, 0, 0, 0, tzinfo=pytz.timezone("Europe/Paris")).date(),
-            "19 juin 2022 — 2nd tour des législatives",
+            _("19 juin 2022 — 2nd tour des législatives"),
         ),
     )
 
@@ -48,7 +49,7 @@ class PollingStationOfficer(BaseAPIResource, SimpleLocationMixin):
 
     person = models.OneToOneField(
         "people.Person",
-        verbose_name="personne",
+        verbose_name=_("personne"),
         related_name="polling_station_officer",
         related_query_name="polling_station_officer",
         null=True,
@@ -57,47 +58,47 @@ class PollingStationOfficer(BaseAPIResource, SimpleLocationMixin):
     )
 
     first_name = models.CharField(
-        "prénoms",
-        help_text="Tous les prénoms, tels qu'indiqués à l'état civil",
+        _("prénoms"),
+        help_text=_("Tous les prénoms, tels qu'indiqués à l'état civil"),
         max_length=255,
         null=False,
         blank=False,
     )
     last_name = models.CharField(
-        "nom de famille",
-        help_text="Le nom de famille, tel qu'indiqué à l'état civil",
+        _("nom de famille"),
+        help_text=_("Le nom de famille, tel qu'indiqué à l'état civil"),
         max_length=255,
         null=False,
         blank=False,
     )
     birth_name = models.CharField(
-        "nom de naissance",
-        help_text="Le nom de naissance, si différent du nom de famille",
+        _("nom de naissance"),
+        help_text=_("Le nom de naissance, si différent du nom de famille"),
         max_length=255,
         null=False,
         blank=True,
     )
 
     gender = models.CharField(
-        "genre",
-        help_text="Le genre tel qu'indiqué à l'état civil",
+        _("genre"),
+        help_text=_("Le genre tel qu'indiqué à l'état civil"),
         max_length=1,
         null=False,
         blank=False,
         choices=GENDER_CHOICES,
     )
 
-    birth_date = models.DateField("date de naissance", null=False, blank=False)
+    birth_date = models.DateField(_("date de naissance"), null=False, blank=False)
     birth_city = models.CharField(
-        "ville de naissance",
+        _("ville de naissance"),
         max_length=255,
         null=False,
         blank=False,
     )
     birth_country = CountryField(
-        "pays de naissance",
-        blank_label="(sélectionner un pays)",
-        default="FR",
+        _("pays de naissance"),
+        blank_label=_("(sélectionner un pays)"),
+        default="MX",
         null=False,
         blank=False,
     )

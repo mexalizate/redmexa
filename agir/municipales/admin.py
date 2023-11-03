@@ -10,6 +10,7 @@ from django.shortcuts import redirect, get_object_or_404
 from django.urls import reverse, path
 from django.utils.html import format_html, format_html_join
 from django.utils.safestring import mark_safe
+from django.utils.translation import gettext as _, gettext
 
 from agir.municipales.models import CommunePage, Liste
 
@@ -37,13 +38,13 @@ def presentation_liste(liste):
 
 
 class CheffeDeFileFilter(SimpleListFilter):
-    title = "Chef⋅fes de fil"
+    title = _("Chef⋅fes de fil")
     parameter_name = "cheffes_file"
 
     def lookups(self, request, model_admin):
         return (
-            ("O", "Uniquement les communes avec"),
-            ("N", "Uniquement les communes sans"),
+            ("O", _("Uniquement les communes avec")),
+            ("N", _("Uniquement les communes sans")),
         )
 
     def queryset(self, request, queryset):
@@ -57,13 +58,13 @@ class CheffeDeFileFilter(SimpleListFilter):
 
 class CommuneForm(forms.ModelForm):
     liste_soutenue_tour_1 = forms.ModelChoiceField(
-        label="Liste soutenue par la FI — 1er tour",
+        label=_("Liste soutenue par la FI — 1er tour"),
         queryset=Liste.objects.none(),
-        empty_label="Aucune",
+        empty_label=_("Aucune"),
         required=False,
     )
     type_soutien_tour_1 = forms.ChoiceField(
-        label="Type de soutien — 1er tour",
+        label=_("Type de soutien — 1er tour"),
         choices=[
             (Liste.SOUTIEN_PUBLIC, "Soutien public"),
             (Liste.SOUTIEN_PREF, "Simple préférence"),
@@ -73,16 +74,16 @@ class CommuneForm(forms.ModelForm):
     )
 
     liste_soutenue_tour_2 = forms.ModelChoiceField(
-        label="Liste soutenue par la FI — 2ème tour",
+        label=_("Liste soutenue par la FI — 2ème tour"),
         queryset=Liste.objects.none(),
-        empty_label="Aucune",
+        empty_label=_("Aucune"),
         required=False,
     )
     type_soutien_tour_2 = forms.ChoiceField(
-        label="Type de soutien — 2ème tour",
+        label=_("Type de soutien — 2ème tour"),
         choices=[
-            (Liste.SOUTIEN_PUBLIC, "Soutien public"),
-            (Liste.SOUTIEN_PREF, "Simple préférence"),
+            (Liste.SOUTIEN_PUBLIC, _("Soutien public")),
+            (Liste.SOUTIEN_PREF, _("Simple préférence")),
         ],
         initial="P",
         required="P",
@@ -231,7 +232,7 @@ class CommunePageAdmin(admin.ModelAdmin):
             return ""
         return presentation_liste(liste_tour_1)
 
-    candidats_liste_tour_1.short_description = "Liste soutenue au 1er tour"
+    candidats_liste_tour_1.short_description = _("Liste soutenue au 1er tour")
 
     def candidats_liste_tour_2(self, object):
         liste_tour_2 = object.listes.filter(
@@ -242,15 +243,15 @@ class CommunePageAdmin(admin.ModelAdmin):
             return ""
         return presentation_liste(liste_tour_2)
 
-    candidats_liste_tour_2.short_description = "Liste soutenue au 2ème tour"
+    candidats_liste_tour_2.short_description = _("Liste soutenue au 2ème tour")
 
     def toutes_les_listes(self, object):
         return format_html(
-            '<a href="{}" class="button">Voir toutes les listes dans cette commune</a>',
+            gettext('<a href="{}" class="button">Voir toutes les listes dans cette commune</a>'),
             f'{reverse("admin:municipales_liste_changelist",)}?q={object.code}',
         )
 
-    toutes_les_listes.short_description = "Autres listes"
+    toutes_les_listes.short_description = _("Autres listes")
 
     def get_search_results(self, request, queryset, search_term):
         if search_term:
@@ -282,11 +283,11 @@ class CommunePageAdmin(admin.ModelAdmin):
 
 
 class AvecCommuneFilter(SimpleListFilter):
-    title = "Avec ou sans commune"
-    parameter_name = "avec_commune"
+    title = _("Avec ou sans commune")
+    parameter_name = _("avec_commune")
 
     def lookups(self, request, model_admin):
-        return (("O", "Avec commune"), ("N", "Sans commune"))
+        return (("O", _("Avec commune")), ("N", _("Sans commune")))
 
     def queryset(self, request, queryset):
         value = self.value()
@@ -298,12 +299,12 @@ class AvecCommuneFilter(SimpleListFilter):
 
 
 class MetropoleOutremerFilter(SimpleListFilter):
-    title = "Métropole ou Outremer"
-    parameter_name = "metropole_outremer"
+    title = _("Métropole ou Outremer")
+    parameter_name = _("metropole_outremer")
     condition = reduce(or_, (Q(code__startswith=str(i)) for i in range(10)))
 
     def lookups(self, request, model_admin):
-        return (("M", "Métropole seulement"), ("O", "Outremer seulement"))
+        return (("M", _("Métropole seulement")), ("O", _("Outremer seulement")))
 
     def queryset(self, request, queryset):
         value = self.value()
@@ -366,4 +367,4 @@ class ListeAdmin(admin.ModelAdmin):
                 name=str(commune),
             )
 
-    lien_commune.short_description = "Commune"
+    lien_commune.short_description = _("Commune")

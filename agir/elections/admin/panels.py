@@ -2,29 +2,30 @@ from django.contrib import admin
 from django.urls import reverse
 from django.utils.html import format_html
 from django.utils.safestring import mark_safe
+from django.utils.translation import gettext as _
 
 from agir.elections.models import PollingStationOfficer
 from agir.lib.admin.autocomplete_filter import AutocompleteRelatedModelFilter
 
 
 class CommuneListFilter(AutocompleteRelatedModelFilter):
-    field_name = "voting_commune"
-    title = "commune"
+    field_name = _("voting_commune")
+    title = _("commune")
 
 
 class ConsulateListFilter(AutocompleteRelatedModelFilter):
-    field_name = "voting_consulate"
-    title = "consulat"
+    field_name = _("voting_consulate")
+    title = _("consulat")
 
 
 class CirconscriptionLegislativeListFilter(AutocompleteRelatedModelFilter):
-    field_name = "voting_circonscription_legislative"
-    title = "circonscription législative"
+    field_name = _("voting_circonscription_legislative")
+    title = _("circonscription législative")
 
 
 class IsAvailableForVotingDateListFilter(admin.SimpleListFilter):
-    title = "date de disponibilité"
-    parameter_name = "available_voting_dates"
+    title = _("date de disponibilité")
+    parameter_name = _("available_voting_dates")
 
     def lookups(self, request, model_admin):
         return PollingStationOfficer.VOTING_DATE_CHOICES
@@ -129,7 +130,7 @@ class PollingStationOfficerModelAdmin(admin.ModelAdmin):
     def created__date(self, instance):
         return instance.created.date()
 
-    created__date.short_description = "date de création"
+    created__date.short_description = _("date de création")
     created__date.admin_order_field = "created"
 
     def commune_consulate(self, instance):
@@ -144,7 +145,7 @@ class PollingStationOfficerModelAdmin(admin.ModelAdmin):
             return instance.voting_circonscription_legislative.code
         return "-"
 
-    circonscription_legislative.short_description = "circonscription législative"
+    circonscription_legislative.short_description = _("circonscription législative")
 
     def person_link(self, instance):
         if instance.person is None:

@@ -9,6 +9,7 @@ from django.contrib.gis.db.models.functions import (
     Distance as DistanceFunction,
     DistanceResultMixin,
 )
+from django.utils.translation import gettext as _
 from django.contrib.gis.geos import Point
 from django.contrib.gis.measure import Distance as DistanceMeasure
 from django.db.models import Value, FloatField
@@ -74,7 +75,7 @@ class SimpleOpengraphMixin(ContextMixin):
 
 
 class ObjectOpengraphMixin(SimpleOpengraphMixin):
-    title_suffix = "Action Populaire"
+    title_suffix = _("Action Populaire")
 
     # noinspection PyUnresolvedReferences
     def get_meta_title(self):

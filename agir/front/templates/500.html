@@ -1,8 +1,8 @@
 {% extends "front/layout.html" %}
-{% load static %}
+{% load static i18n %}
 
 {% block main %}
   <p>
-    Le serveur a rencontré une erreur. Elle nous a déjà été signalée. Nous faisons de notre mieux pour corriger cela rapidement !
+    {% translate "Le serveur a rencontré une erreur. Elle nous a déjà été signalée. Nous faisons de notre mieux pour corriger cela rapidement !" %}
   <p>
 {% endblock %}

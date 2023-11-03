@@ -3,16 +3,16 @@ from collections import OrderedDict
 from data_france.models import CirconscriptionConsulaire, CirconscriptionLegislative
 from django.db.models import F, ExpressionWrapper, BooleanField
 from django.db.models import Q
-
+from django.utils.translation import gettext_lazy as _, gettext
 from agir.groups.models import SupportGroup, Membership
 from agir.lib.data import departements
 from agir.people.models import PersonQualification
 from agir.people.models import PersonTag
 
-TAG_SUFFIX_FE = "Membre boucle FE {}"
-TAG_SUFFIX_DEPARTEMENT = "Membre boucle départementale {}"
+TAG_SUFFIX_FE = gettext("Membre boucle FE {}")
+TAG_SUFFIX_DEPARTEMENT = gettext("Membre boucle départementale {}")
 QUALIFICATION_PREFIX = "BD__"
-FINANCE_QUALIFICATION_LABEL = QUALIFICATION_PREFIX + "finances"
+FINANCE_QUALIFICATION_LABEL = QUALIFICATION_PREFIX + _("finances")
 
 
 def effectuer_changements(boucle, membres_souhaites, metas, dry_run=False):
@@ -187,7 +187,7 @@ def maj_boucle_fe(circonscription, dry_run=False):
     pays = set(p for c in circos_consulaires for p in c.pays)
 
     ordinal = "1ère" if numero == 1 else f"{numero}ème"
-    suffixe = f"{ordinal} circonscription des Français de l'étranger"
+    suffixe = gettext(f"{ordinal} circonscription des Français de l'étranger")
 
     try:
         boucle = SupportGroup.objects.get(

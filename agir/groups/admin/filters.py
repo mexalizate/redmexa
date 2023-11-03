@@ -5,7 +5,7 @@ from django.contrib import admin
 from django.contrib.humanize.templatetags import humanize
 from django.db.models import Count, Q, OuterRef
 from django.utils import timezone
-from django.utils.translation import gettext_lazy as _
+from django.utils.translation import gettext_lazy as _, gettext
 
 from agir.events.models import Event
 from .. import models
@@ -41,8 +41,8 @@ class GroupHasEventsFilter(admin.SimpleListFilter):
 
 
 class CertifiedSupportGroupFilter(admin.SimpleListFilter):
-    title = "certification"
-    parameter_name = "certified"
+    title = _("certification")
+    parameter_name = _("certified")
 
     def lookups(self, request, model_admin):
         return ("yes", _("Groupe certifiés")), ("no", _("Groupes non certifiés"))
@@ -55,18 +55,18 @@ class CertifiedSupportGroupFilter(admin.SimpleListFilter):
 
 
 class CertificationWarningFilter(admin.SimpleListFilter):
-    title = "avertissement de décertification"
-    parameter_name = "certification_warning"
+    title = _("avertissement de décertification")
+    parameter_name = _("certification_warning")
     WARNING_EXPIRATION_IN_DAYS = 31
 
     def lookups(self, request, model_admin):
         limit = humanize.apnumber(settings.CERTIFICATION_WARNING_EXPIRATION_IN_DAYS)
         return (
-            ("sent", f"Envoyé"),
-            ("expired", f"Envoyé depuis plus de {limit} jours"),
+            ("sent", gettext(f"Envoyé")),
+            ("expired", gettext(f"Envoyé depuis plus de {limit} jours")),
             (
                 "unexpired",
-                f"Envoyé depuis moins de {limit} jours",
+                gettext(f"Envoyé depuis moins de {limit} jours"),
             ),
         )
 
@@ -88,7 +88,7 @@ class MembersFilter(admin.SimpleListFilter):
     parameter_name = "members"
 
     def lookups(self, request, model_admin):
-        return (("no_members", "Aucun membre"), ("no_referent", "Aucun animateur"))
+        return (("no_members", _("Aucun membre")), ("no_referent", _("Aucun animateur")))
 
     def queryset(self, request, queryset):
         if self.value() == "no_members":
@@ -103,20 +103,20 @@ class MembersFilter(admin.SimpleListFilter):
 class TooMuchMembersFilter(admin.SimpleListFilter):
     MEMBERS_LIMIT = models.SupportGroup.MEMBERSHIP_LIMIT
 
-    title = "Groupe d'action avec trop de membres ({} actuellement)".format(
+    title = _("Groupe d'action avec trop de membres ({} actuellement)").format(
         MEMBERS_LIMIT
     )
-    parameter_name = "group with too much members"
+    parameter_name = _("group with too much members")
 
     def lookups(self, request, model_admin):
         return (
             (
-                "less_than_{}_members".format(self.MEMBERS_LIMIT),
-                "Moins de {} membres".format(self.MEMBERS_LIMIT),
+                gettext("less_than_{}_members").format(self.MEMBERS_LIMIT),
+                gettext("Moins de {} membres").format(self.MEMBERS_LIMIT),
             ),
             (
-                "more_than_{}_members".format(self.MEMBERS_LIMIT),
-                "Plus de {} membres".format(self.MEMBERS_LIMIT),
+                gettext("more_than_{}_members").format(self.MEMBERS_LIMIT),
+                gettext("Plus de {} membres").format(self.MEMBERS_LIMIT),
             ),
         )
 
@@ -128,15 +128,15 @@ class TooMuchMembersFilter(admin.SimpleListFilter):
 
 
 class LastManagerLoginFilter(admin.SimpleListFilter):
-    title = "Dernière connexion d'un·e gestionnaire"
+    title = _("Dernière connexion d'un·e gestionnaire")
     parameter_name = "last_manager_login"
 
     def lookups(self, request, model_admin):
         return (
-            ("1_week_ago", "Il y a plus d'une semaine"),
-            ("1_month_ago", "Il y a plus d'un mois"),
-            ("2_months_ago", "Il y a plus de deux mois"),
-            ("3_months_ago", "Il y a plus de trois mois"),
+            ("1_week_ago", _("Il y a plus d'une semaine")),
+            ("1_month_ago", _("Il y a plus d'un mois")),
+            ("2_months_ago", _("Il y a plus de deux mois")),
+            ("3_months_ago", _("Il y a plus de trois mois")),
         )
 
     def queryset(self, request, queryset):

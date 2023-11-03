@@ -1,6 +1,6 @@
 from agir.groups.models import Membership
 from agir.lib.display import genrer
-
+from django.utils.translation import gettext as _, ngettext
 
 def genrer_membership(genre, membership_type):
     """
@@ -8,17 +8,17 @@ def genrer_membership(genre, membership_type):
     """
 
     if membership_type is None:
-        return genrer(genre, "Visiteur", "Visiteuse", "Visiteur⋅se")
+        return genrer(genre, _("Visiteur"), _("Visiteuse"), _("Visiteur⋅se"))
 
     if membership_type == Membership.MEMBERSHIP_TYPE_FOLLOWER:
-        author_status = genrer(genre, "Abonné", "Abonnée", "Abonné⋅e")
+        author_status = genrer(genre, _("Abonné"), _("Abonnée"), _("Abonné⋅e"))
     elif membership_type == Membership.MEMBERSHIP_TYPE_MEMBER:
         author_status = "Membre"
     elif membership_type == Membership.MEMBERSHIP_TYPE_MANAGER:
         author_status = "Membre gestionnaire"
     elif membership_type == Membership.MEMBERSHIP_TYPE_REFERENT:
-        author_status = genrer(genre, "Animateur", "Animatrice", "Animateur·ice")
+        author_status = genrer(genre, _("Animateur"), _("Animatrice"), _("Animateur·ice"))
     else:
-        raise Exception("The author status is unknown")
+        raise Exception(_("The author status is unknown"))
 
     return author_status

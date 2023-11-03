@@ -10,6 +10,7 @@ from django.urls import reverse, path
 from django.utils.html import format_html_join, format_html
 from django.utils.safestring import mark_safe
 from reversion.admin import VersionAdmin
+from django.utils.translation import gettext_lazy as _, gettext
 
 from agir.events.models import Event
 from agir.geodata.geocoding import FRENCH_COUNTRY_CODES
@@ -66,11 +67,11 @@ class CompteAdmin(admin.ModelAdmin):
     fieldsets = (
         (None, {"fields": ("designation", "nom", "description")}),
         (
-            "Informations de l'émetteur",
+            _("Informations de l'émetteur"),
             {"fields": ("emetteur_designation", "emetteur_iban", "emetteur_bic")},
         ),
         (
-            "Informations de créditeur",
+            _("Informations de créditeur"),
             {
                 "fields": (
                     "beneficiaire_designation",
@@ -91,7 +92,7 @@ class CompteAdmin(admin.ModelAdmin):
             and obj.emetteur_bic
         )
 
-    peut_emettre_virement.short_description = "Peut émettre des virements"
+    peut_emettre_virement.short_description = _("Peut émettre des virements")
     peut_emettre_virement.boolean = True
 
     def peut_recevoir_virement(self, obj):
@@ -102,7 +103,7 @@ class CompteAdmin(admin.ModelAdmin):
             and obj.beneficiaire_bic
         )
 
-    peut_recevoir_virement.short_description = "Peut recevoir des virements"
+    peut_recevoir_virement.short_description = _("Peut recevoir des virements")
     peut_recevoir_virement.boolean = True
 
 
@@ -127,7 +128,7 @@ class FournisseurAdmin(VersionAdmin):
             },
         ),
         (
-            "Paiement",
+            _("Paiement"),
             {
                 "fields": (
                     "iban",
@@ -136,7 +137,7 @@ class FournisseurAdmin(VersionAdmin):
             },
         ),
         (
-            "Adresse de facturation",
+            _("Adresse de facturation"),
             {
                 "fields": (
                     "location_address1",
@@ -155,12 +156,12 @@ class FournisseurAdmin(VersionAdmin):
     def depenses(self, obj):
         if obj is not None:
             return format_html(
-                '<a href="{}">voir toutes les dépenses<a>',
+                gettext('<a href="{}">voir toutes les dépenses<a>'),
                 f'{reverse("admin:gestion_depense_changelist")}?fournisseur={obj.id}',
             )
         return "-"
 
-    depenses.short_description = "dépenses"
+    depenses.short_description = _("dépenses")
 
 
 @admin.register(Document)
@@ -192,7 +193,7 @@ class DocumentAdmin(BaseGestionModelAdmin, VersionAdmin):
             },
         ),
         (
-            "Lié à",
+            _("Lié à"),
             {
                 "fields": [
                     "comme_preuve_paiement",
@@ -203,7 +204,7 @@ class DocumentAdmin(BaseGestionModelAdmin, VersionAdmin):
             },
         ),
         (
-            "Ajouter une version de ce document",
+           _("Ajouter une version de ce document"),
             {"fields": ("titre_version", "fichier")},
         ),
     )
@@ -272,7 +273,7 @@ class DocumentAdmin(BaseGestionModelAdmin, VersionAdmin):
                 )
         return "-"
 
-    depenses.short_description = "dépenses"
+    depenses.short_description = _("dépenses")
 
     def projets(self, obj):
         ps = obj.projets.all()
@@ -378,10 +379,10 @@ class DepenseAdmin(DepenseListMixin, BaseGestionModelAdmin, VersionAdmin):
             (None, {"fields": common_fields}),
             ("Gestion", {"fields": rel_fields}),
             (
-                "Nature de la dépense",
+                _("Nature de la dépense"),
                 {"fields": nature_fields, "description": self.NATURE_DESCRIPTION},
             ),
-            ("Paiement", {"fields": paiement_fields}),
+            (_("Paiement"), {"fields": paiement_fields}),
         )
 
     def date_evenement(self, obj):
@@ -392,7 +393,7 @@ class DepenseAdmin(DepenseListMixin, BaseGestionModelAdmin, VersionAdmin):
 
         return "-"
 
-    date_evenement.short_description = "Date de l'événement"
+    date_evenement.short_description = _("Date de l'événement")
     date_evenement.admin_order_field = "_date_evenement"
 
     def reglement(self, obj):
@@ -400,22 +401,22 @@ class DepenseAdmin(DepenseListMixin, BaseGestionModelAdmin, VersionAdmin):
             return "Non réglée"
 
         if obj.prevu < obj.montant:
-            return "Partiellement prévue"
+            return _("Partiellement prévue")
 
         if obj.regle is None:
-            return "Prévu mais non réglée"
+            return _("Prévu mais non réglée")
 
         if obj.regle < obj.montant:
-            return "Partiellement réglée"
+            return _("Partiellement réglée")
 
-        return "Réglée"
+        return _("Réglée")
 
     def reglements(self, obj):
         if obj is None or obj.id is None:
             return "-"
 
         return format_html(
-            '{}<br><a href="{}">Ajouter un règlement</a>',
+            gettext('{}<br><a href="{}">Ajouter un règlement</a>'),
             self.reglement(obj),
             reverse("admin:gestion_depense_reglement", args=(obj.id,)),
         )
@@ -504,7 +505,7 @@ class BaseProjetAdmin(BaseGestionModelAdmin, AddRelatedLinkMixin, VersionAdmin):
         if obj and obj.event:
             return obj.event.name
 
-    event_name.short_description = "Événement associé"
+    event_name.short_description = _("Événement associé")
     event_name.admin_order_field = "event__name"
 
     def event_city(self, obj):
@@ -515,7 +516,7 @@ class BaseProjetAdmin(BaseGestionModelAdmin, AddRelatedLinkMixin, VersionAdmin):
 
         return "-"
 
-    event_city.short_description = "Lieu"
+    event_city.short_description = _("Lieu")
     event_city.admin_order_field = "event__location_zip"
 
     def event_location(self, obj):
@@ -539,7 +540,7 @@ class BaseProjetAdmin(BaseGestionModelAdmin, AddRelatedLinkMixin, VersionAdmin):
 
         return "-"
 
-    event_location.short_description = "Lieu"
+    event_location.short_description = _("Lieu")
     event_location.admin_order_field = "event__location_zip"
 
     def event_start_time(self, obj):
@@ -547,7 +548,7 @@ class BaseProjetAdmin(BaseGestionModelAdmin, AddRelatedLinkMixin, VersionAdmin):
             return obj.event.start_time
         return "-"
 
-    event_start_time.short_description = "Quand"
+    event_start_time.short_description = _("Quand")
     event_start_time.admin_order_field = "event__start_time"
 
     def event_schedule(self, obj):
@@ -555,7 +556,7 @@ class BaseProjetAdmin(BaseGestionModelAdmin, AddRelatedLinkMixin, VersionAdmin):
             return obj.event.get_display_date()
         return "-"
 
-    event_schedule.short_description = "Quand"
+    event_schedule.short_description = _("Quand")
     event_schedule.admin_order_field = "event__start_time"
 
     def event_organizer_persons(self, obj):
@@ -564,7 +565,7 @@ class BaseProjetAdmin(BaseGestionModelAdmin, AddRelatedLinkMixin, VersionAdmin):
             return display_list_of_links((p, str(p)) for p in persons)
         return "-"
 
-    event_organizer_persons.short_description = "Organisateurs"
+    event_organizer_persons.short_description = _("Organisateurs")
 
     def event_organizer_groups(self, obj):
         if obj and obj.event:
@@ -572,7 +573,7 @@ class BaseProjetAdmin(BaseGestionModelAdmin, AddRelatedLinkMixin, VersionAdmin):
             return display_list_of_links((g, str(g)) for g in groups)
         return "-"
 
-    event_organizer_groups.short_description = "Groupes organisateurs"
+    event_organizer_groups.short_description = _("Groupes organisateurs")
 
     def event_contact(self, obj):
         if obj and (e := obj.event):
@@ -590,12 +591,12 @@ class BaseProjetAdmin(BaseGestionModelAdmin, AddRelatedLinkMixin, VersionAdmin):
 
         return "-"
 
-    event_contact.short_description = "Informations de contact"
+    event_contact.short_description = _("Informations de contact")
 
     def nb_depenses(self, obj):
         return getattr(obj, "nb_depenses", "-")
 
-    nb_depenses.short_description = "Nombre de dépenses"
+    nb_depenses.short_description = _("Nombre de dépenses")
     nb_depenses.admin_order_field = "nb_depenses"
 
     def get_readonly_fields(self, request, obj=None):
@@ -653,7 +654,7 @@ class ProjetAdmin(BaseProjetAdmin):
             },
         ),
         (
-            "Détails de l'événement lié",
+            _("Détails de l'événement lié"),
             {
                 "fields": (
                     "event_link",
@@ -730,7 +731,7 @@ class ProjetUtilisateurAdmin(BaseProjetAdmin):
             },
         ),
         (
-            "Détails de l'événement lié",
+            _("Détails de l'événement lié"),
             {
                 "fields": (
                     "event_link",
@@ -835,20 +836,20 @@ class OrdreVirementAdmin(BaseGestionModelAdmin, VersionAdmin):
     def nb_reglements(self, obj):
         return getattr(obj, "nb_reglements", "-")
 
-    nb_reglements.short_description = "Nombre de règlements"
+    nb_reglements.short_description = _("Nombre de règlements")
     nb_reglements.admin_order_field = "nb_reglements"
 
     def montant(self, obj):
         total = getattr(obj, "montant")
         return display_price(total, price_in_cents=False) if total else "-"
 
-    montant.short_description = "Montant total"
+    montant.short_description = _("Montant total")
     montant.admin_order_field = "montant"
 
     def obtenir_fichier(self, obj):
         if obj.pk:
             return format_html(
-                '<a class="button" href="{}">Obtenir le fichier</a>',
+                gettext('<a class="button" href="{}">Obtenir le fichier</a>'),
                 reverse("admin:gestion_ordrevirement_fichier", args=(obj.pk,)),
             )
 
@@ -914,21 +915,21 @@ class InstanceCherchableAdmin(admin.ModelAdmin):
     def lien_numero(self, obj):
         return lien(obj.lien_admin(), obj.numero)
 
-    lien_numero.short_description = "Numéro"
+    lien_numero.short_description = _("Numéro")
 
     def type_instance(self, obj):
         if obj is None:
             return "-"
         return obj.content_type.name
 
-    type_instance.short_description = "Type d'objet"
+    type_instance.short_description = _("Type d'objet")
 
     def lien_instance(self, obj):
         if obj is None:
             return "-"
         return lien(obj.lien_admin(), str(obj.instance))
 
-    lien_instance.short_description = "Titre"
+    lien_instance.short_description = _("Titre")
 
 
 @admin.register(Reglement)
@@ -962,7 +963,7 @@ class ReglementAdmin(BaseGestionModelAdmin):
             },
         ),
         (
-            "Infos complémentaires pour le FECC",
+            _("Infos complémentaires pour le FECC"),
             {
                 "fields": (
                     "numero_compte",
@@ -973,7 +974,7 @@ class ReglementAdmin(BaseGestionModelAdmin):
             },
         ),
         (
-            "Liens avec d'autres entités",
+            _("Liens avec d'autres entités"),
             {
                 "fields": (
                     "depense_link",
@@ -985,7 +986,7 @@ class ReglementAdmin(BaseGestionModelAdmin):
             },
         ),
         (
-            "Pour les paiements via la plateforme",
+            _("Pour les paiements via la plateforme"),
             {
                 "fields": (
                     "endtoend_id",
@@ -1018,7 +1019,7 @@ class ReglementAdmin(BaseGestionModelAdmin):
     def has_add_permission(self, request):
         return False
 
-    @admin.display(description="Compte")
+    @admin.display(description=_("Compte"))
     def compte_link(self, obj):
         try:
             return lien(
@@ -1029,7 +1030,7 @@ class ReglementAdmin(BaseGestionModelAdmin):
             return "-"
 
     @admin.display(
-        description="Numéro dans le FECC",
+        description=_("Numéro dans le FECC"),
         ordering=Concat(
             LPad(Cast("numero", output_field=CharField()), 5, Value("0")),
             "numero_complement",

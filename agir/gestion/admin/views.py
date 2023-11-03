@@ -10,6 +10,7 @@ from django.urls import reverse
 from django.utils.html import format_html
 from django.views import View
 from django.views.generic import CreateView, TemplateView, FormView
+from django.utils.translation import gettext_lazy as _, gettext
 
 from agir.lib.admin.panels import AdminViewMixin
 from agir.lib.display import display_price
@@ -32,7 +33,7 @@ class AjouterReglementView(AdminViewMixin, CreateView):
     def form_valid(self, form):
         with reversion.create_revision():
             montant = display_price(form.cleaned_data["montant"], price_in_cents=False)
-            message = f"Ajout d'un règlement d'une valeur de {montant}"
+            message = gettext(f"Ajout d'un règlement d'une valeur de {montant}")
             reversion.set_user(self.request.user)
             reversion.set_comment(message)
             LogEntry.objects.log_action(
@@ -79,11 +80,11 @@ class AjouterReglementView(AdminViewMixin, CreateView):
                         },
                     ),
                     (
-                        "Sélectionnez un fournisseur existant",
+                        _("Sélectionnez un fournisseur existant"),
                         {"fields": ("fournisseur",)},
                     ),
                     (
-                        "Ou créez un nouveau fournisseur",
+                        _("Ou créez un nouveau fournisseur"),
                         {"fields": champs_fournisseurs},
                     ),
                 ],
@@ -110,7 +111,7 @@ class CacherCommentaireView(AdminViewMixin, TemplateView):
         with reversion.create_revision():
             e = "e" if self.commentaire.type == Commentaire.Type.REM else ""
             message = (
-                f"{self.commentaire.get_type_display()} indiqué{e} comme traité{e}"
+                gettext(f"{self.commentaire.get_type_display()} indiqué{e} comme traité{e}")
             )
 
             reversion.set_user(request.user)
@@ -147,7 +148,7 @@ class FormHandlerView(View):
 
     def lien_incorrect(self, message=None):
         if message is None:
-            message = "Le lien que vous avez suivi était incorrect."
+            message = _("Le lien que vous avez suivi était incorrect.")
 
         messages.add_message(
             request=self.request,
@@ -160,7 +161,7 @@ class FormHandlerView(View):
     def retour_page_modification(self):
         opts = self.model._meta
         next_url = reverse(
-            f"admin:{opts.app_label}_{opts.model_name}_change", args=(self.object_id,)
+            gettext(f"admin:{opts.app_label}_{opts.model_name}_change", args=(self.object_id,))
         )
         return HttpResponseRedirect(next_url)
 
@@ -181,7 +182,7 @@ class AjouterCommentaireView(FormView, FormHandlerView):
             with reversion.create_revision():
                 type = Commentaire.Type(form.cleaned_data["type"])
                 e = "e" if type == Commentaire.Type.REM else ""
-                message = f"Ajout d'un{e} {type.label}"
+                message = gettext(f"Ajout d'un{e} {type.label}")
                 reversion.set_user(request.user)
                 reversion.set_comment(message)
                 form.save(self.object)
@@ -249,7 +250,7 @@ class ObtenirFichierOrdreVirementView(View):
                 obj.generer_fichier_virement()
             except ValueError as e:
                 logger.error(
-                    "Erreur lors de la génération d'un fichier de virement",
+                    _("Erreur lors de la génération d'un fichier de virement"),
                     exc_info=True,
                 )
                 messages.add_message(
@@ -257,8 +258,8 @@ class ObtenirFichierOrdreVirementView(View):
                     messages.WARNING,
                     format_html(
                         "<p>{}</p><p>{}</p>",
-                        "Une erreur a été rencontré lors de la génération du fichier de virement. Merci de consulter les"
-                        " logs pour obtenir les détails.",
+                        _("Une erreur a été rencontré lors de la génération du fichier de virement. Merci de consulter les"
+                        " logs pour obtenir les détails."),
                         e.args[0],
                     ),
                 )

@@ -5,6 +5,7 @@ from django.core.validators import RegexValidator
 from django.db import models
 from django.urls import reverse
 from django.utils.html import format_html
+from django.utils.translation import gettext_lazy as _, gettext
 
 from agir.lib.models import TimeStampedModel
 from agir.people.models import Person
@@ -22,7 +23,7 @@ class ProjetManager(NumeroManager):
             projet = self.get(event=event)
         except self.model.DoesNotExist:
             with reversion.create_revision():
-                reversion.set_comment("Création à partir d'un événement utilisateur")
+                reversion.set_comment(_("Création à partir d'un événement utilisateur"))
                 reversion.set_user(user)
                 titre = event.name if len(event.name) < 40 else f"{event.name[:39]}…"
                 return self.create(

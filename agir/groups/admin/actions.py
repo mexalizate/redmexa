@@ -48,7 +48,7 @@ def certify_supportgroups(modeladmin, request, qs):
     groups = qs.uncertified().select_for_update()
     with reversion.create_revision():
         reversion.set_user(request.user)
-        reversion.set_comment("Certification du groupe")
+        reversion.set_comment(_("Certification du groupe"))
         updated_count = 0
         try:
             for group in groups:
@@ -79,7 +79,7 @@ def uncertify_supportgroups(modeladmin, request, qs):
     groups = qs.certified().select_for_update()
     with reversion.create_revision():
         reversion.set_user(request.user)
-        reversion.set_comment("Décértification du groupe")
+        reversion.set_comment(_("Décértification du groupe"))
         updated_count = 0
         try:
             for group in groups:

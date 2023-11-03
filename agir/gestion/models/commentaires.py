@@ -1,5 +1,6 @@
 import reversion
 from django.db import models
+from django.utils.translation import gettext_lazy as _, gettext
 
 from agir.lib.models import TimeStampedModel
 from agir.people.models import Person
@@ -16,26 +17,26 @@ class Commentaire(TimeStampedModel):
 
     auteur = models.ForeignKey(
         to="people.Person",
-        verbose_name="Auteur⋅ice",
+        verbose_name=_("Auteur⋅ice"),
         on_delete=models.SET_NULL,
         related_name="+",
         null=True,
     )
 
     auteur_nom = models.CharField(
-        verbose_name="Nom de l'auteur",
+        verbose_name=_("Nom de l'auteur"),
         blank=False,
         max_length=200,
-        help_text="Pour pouvoir afficher un nom si la personne a été supprimée.",
+        help_text=_("Pour pouvoir afficher un nom si la personne a été supprimée."),
     )
 
     type = models.CharField(
-        verbose_name="Type de commentaire", max_length=1, choices=Type.choices
+        verbose_name=_("Type de commentaire"), max_length=1, choices=Type.choices
     )
 
-    texte = models.TextField(verbose_name="Texte du commentaire", blank=False)
+    texte = models.TextField(verbose_name=_("Texte du commentaire"), blank=False)
 
-    cache = models.BooleanField(verbose_name="Commentaire caché", default=False)
+    cache = models.BooleanField(verbose_name=_("Commentaire caché"), default=False)
 
     def get_auteur_display(self):
         if self.auteur:

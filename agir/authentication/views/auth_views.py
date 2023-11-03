@@ -5,6 +5,7 @@ from django.urls import reverse_lazy
 from django.utils.http import url_has_allowed_host_and_scheme
 from django.views.generic import RedirectView
 from oauth2_provider.views import AuthorizationView
+from django.utils.translation import gettext as _
 
 from agir.authentication.view_mixins import HardLoginRequiredMixin
 
@@ -63,8 +64,8 @@ class SocialLoginError(RedirectView):
             messages.add_message(
                 request=request,
                 level=messages.ERROR,
-                message="Une erreur inconnue est survenue lors de votre tentative de connexion."
-                " Veuillez vous connecter autrement ou réessayer plus tard.",
+                message=_("Une erreur inconnue est survenue lors de votre tentative de connexion."
+                " Veuillez vous connecter autrement ou réessayer plus tard."),
             )
 
         return super().get(request, *args, **kwargs)

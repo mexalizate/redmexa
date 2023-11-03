@@ -10,7 +10,7 @@ from django.template.response import TemplateResponse
 from django.utils import timezone
 from django.utils.html import escape
 from django.utils.text import slugify
-from django.utils.translation import gettext_lazy as _
+from django.utils.translation import gettext_lazy as _, gettext
 from glom import glom, T
 
 from .forms import AddMemberForm
@@ -91,7 +91,7 @@ def maj_membres_boucles_departementales(model_admin, request, pk):
     group = model_admin.get_object(request, pk)
 
     if group is None:
-        raise Http404("Pas de groupe avec cet identifiant")
+        raise Http404(_("Pas de groupe avec cet identifiant"))
 
     response = HttpResponseRedirect(
         reverse(
@@ -108,7 +108,7 @@ def maj_membres_boucles_departementales(model_admin, request, pk):
     if group.type != SupportGroup.TYPE_BOUCLE_DEPARTEMENTALE:
         messages.warning(
             request,
-            "La mise à jour automatique des membres est disponible uniquement pour les boucles départementales",
+            _("La mise à jour automatique des membres est disponible uniquement pour les boucles départementales"),
         )
         return response
 
@@ -121,7 +121,7 @@ def maj_membres_boucles_departementales(model_admin, request, pk):
     if not code:
         messages.warning(
             request,
-            "Le département ou la circonscription FE n'ont pas pu être retrouvés pour cette boucle",
+            _("Le département ou la circonscription FE n'ont pas pu être retrouvés pour cette boucle"),
         )
         return response
 
@@ -131,7 +131,7 @@ def maj_membres_boucles_departementales(model_admin, request, pk):
     if not result:
         messages.warning(
             request,
-            "Le département ou la circonscription FE n'ont pas pu être retrouvés pour cette boucle",
+            _("Le département ou la circonscription FE n'ont pas pu être retrouvés pour cette boucle"),
         )
         return response
 
@@ -140,12 +140,12 @@ def maj_membres_boucles_departementales(model_admin, request, pk):
     if not count:
         messages.warning(
             request,
-            "Le département ou la circonscription FE n'ont pas pu être retrouvés pour cette boucle",
+            _("Le département ou la circonscription FE n'ont pas pu être retrouvés pour cette boucle"),
         )
         return response
 
     existing, created, deleted = count
-    message = (
+    message = gettext(
         f"La boucle {lieu} a été mise à jour · Membres existants : {existing} "
         f"· Membres supprimés : {deleted} · Membres ajoutés : {created}"
     )
@@ -249,11 +249,11 @@ def export_memberships(modeladmin, request, pk, as_format):
     group = modeladmin.get_object(request, pk)
 
     if group is None:
-        raise Http404("Pas de groupe avec cet identifiant")
+        raise Http404(_("Pas de groupe avec cet identifiant"))
 
     if as_format == "csv":
         return export_memberships_to_csv(group)
     if as_format == "xlsx":
         return export_memberships_to_xlsx(group)
 
-    return Http404(f"Le format {as_format} n'est pas supporté pour l'export")
+    return Http404(gettext(f"Le format {as_format} n'est pas supporté pour l'export"))
