@@ -6,6 +6,7 @@ from django.urls import reverse
 from django.utils.html import format_html, format_html_join
 from django.utils.safestring import mark_safe
 from reversion.admin import VersionAdmin
+from django.utils.translation import gettext as _, gettext
 
 from agir.groups.models import Membership, SupportGroup
 from agir.lib.admin.autocomplete_filter import AutocompleteSelectModelBaseFilter
@@ -15,7 +16,7 @@ from agir.people.models import Person
 
 
 class MessageSupportGroupFilter(AutocompleteSelectModelBaseFilter):
-    title = "groupe"
+    title = _("groupe")
     filter_model = SupportGroup
     parameter_name = "supportgroup"
 
@@ -38,7 +39,7 @@ class CommentSupportGroupFilter(MessageSupportGroupFilter):
 
 
 class AuthorFilter(AutocompleteSelectModelBaseFilter):
-    title = "auteur·ice"
+    title = _("auteur·ice")
     filter_model = Person
     parameter_name = "author"
 
@@ -53,7 +54,7 @@ class AuthorFilter(AutocompleteSelectModelBaseFilter):
 
 
 class ReportListFilter(admin.SimpleListFilter):
-    title = "signalements reçus"
+    title = _("signalements reçus")
     parameter_name = "reports"
 
     def lookups(self, request, model_admin):
@@ -67,15 +68,15 @@ class ReportListFilter(admin.SimpleListFilter):
 
 
 class RequiredMembershipListFilter(admin.SimpleListFilter):
-    title = "visibilité de groupe"
-    parameter_name = "required_membership_type"
+    title = _("visibilité de groupe")
+    parameter_name = _("required_membership_type")
 
     def lookups(self, request, model_admin):
         return (
-            (Membership.MEMBERSHIP_TYPE_FOLLOWER, "Abonné·e"),
-            (Membership.MEMBERSHIP_TYPE_MEMBER, "Membre actif·ve"),
-            (Membership.MEMBERSHIP_TYPE_MANAGER, "Gestionnaire"),
-            (Membership.MEMBERSHIP_TYPE_REFERENT, "Animateur·ice"),
+            (Membership.MEMBERSHIP_TYPE_FOLLOWER, _("Abonné·e")),
+            (Membership.MEMBERSHIP_TYPE_MEMBER, _("Membre actif·ve")),
+            (Membership.MEMBERSHIP_TYPE_MANAGER, _("Gestionnaire")),
+            (Membership.MEMBERSHIP_TYPE_REFERENT, _("Animateur·ice")),
         )
 
     def queryset(self, request, queryset):
@@ -111,11 +112,11 @@ class MessageAdminMixin:
         "report_count",
     )
 
-    @admin.display(description="Auteur·ice")
+    @admin.display(description=_("Auteur·ice"))
     def author_link(self, obj):
         return display_link(obj.author)
 
-    @admin.display(description="Texte")
+    @admin.display(description=_("Texte"))
     def text_preview(self, obj):
         is_comment = hasattr(obj, "message")
         message = obj.message if is_comment else obj
@@ -130,7 +131,7 @@ class MessageAdminMixin:
             mark_safe(obj.text),
         )
 
-    @admin.display(description="Nombre de signalements")
+    @admin.display(description=_("Nombre de signalements"))
     def report_count(self, obj):
         count = obj.reports.count()
 
@@ -197,7 +198,7 @@ class SupportGroupMessageCommentAdmin(MessageAdminMixin, VersionAdmin):
     search_fields = ("=id", "=message__id", "message__subject", "author__search")
     model = SupportGroupMessageComment
 
-    @admin.display(description="Message")
+    @admin.display(description=_("Message"))
     def message_link(self, obj):
         return display_link(obj.message, obj.message.pk)
 
@@ -227,7 +228,7 @@ class InlineSupportGroupMessageCommentAdmin(TabularInline, MessageAdminMixin):
 
     def history(self, obj):
         return format_html(
-            '<a href="{}">Historique</a>',
+            gettext('<a href="{}">Historique</a>'),
             reverse("admin:msgs_supportgroupmessagecomment_history", args=[obj.pk]),
         )
 
@@ -297,7 +298,7 @@ class SupportGroupMessageAdmin(MessageAdminMixin, VersionAdmin):
         InlineSupportGroupMessageCommentAdmin,
     ]
 
-    @admin.display(description="Nombre de commentaires")
+    @admin.display(description=_("Nombre de commentaires"))
     def comment_count(self, obj):
         count = SupportGroupMessageComment.objects.filter(message=obj.pk).count()
         if count == 0:
@@ -312,11 +313,11 @@ class SupportGroupMessageAdmin(MessageAdminMixin, VersionAdmin):
             ),
         )
 
-    @admin.display(description="Événement")
+    @admin.display(description=_("Événement"))
     def event(self, obj):
         return display_link(obj.linked_event)
 
-    @admin.display(description="Groupe")
+    @admin.display(description=_("Groupe"))
     def group(self, obj):
         return display_link(obj.supportgroup)
 
@@ -343,17 +344,17 @@ class UserReportAdmin(admin.ModelAdmin):
     )
     search_fields = ("reporter__search", "=object_id")
 
-    @admin.display(description="Auteur·ice du signalement", ordering="reporter")
+    @admin.display(description=_("Auteur·ice du signalement"), ordering="reporter")
     def reporter_link(self, obj):
         return display_link(obj.reporter)
 
-    @admin.display(description="Objet du signalement")
+    @admin.display(description=_("Objet du signalement"))
     def reported_object_link(self, obj):
         return display_link(
             obj.reported_object, f"{obj.content_type.name} ({obj.reported_object.id})"
         )
 
-    @admin.display(description="Texte")
+    @admin.display(description=_("Texte"))
     def reported_object_text(self, obj):
         if not obj.reported_object:
             return "-"
@@ -400,21 +401,21 @@ class UserReportAdmin(admin.ModelAdmin):
             messages,
         )
 
-    @admin.display(description="Auteur·ice de l'objet")
+    @admin.display(description=_("Auteur·ice de l'objet"))
     def reported_object_author(self, obj):
         if not obj.reported_object:
             return "-"
 
         return display_link(obj.reported_object.author)
 
-    @admin.display(description="Auteur·ice de l'objet")
+    @admin.display(description=_("Auteur·ice de l'objet"))
     def reported_object_author(self, obj):
         if not obj.reported_object:
             return "-"
 
         return display_link(obj.reported_object.author)
 
-    @admin.display(description="Objet supprimé", boolean=True)
+    @admin.display(description=_("Objet supprimé"), boolean=True)
     def reported_object_deleted(self, obj):
         return obj and obj.reported_object and obj.reported_object.deleted
 

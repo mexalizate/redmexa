@@ -3,7 +3,7 @@ from django.utils.functional import cached_property
 
 from agir.groups.models import SupportGroup, SupportGroupQuerySet
 from agir.groups.utils import certification
-
+from django.utils.translation import gettext as _
 
 class ThematicGroupManager(models.Manager.from_queryset(SupportGroupQuerySet)):
     def get_queryset(self):
@@ -15,8 +15,8 @@ class ThematicGroup(SupportGroup):
 
     class Meta:
         default_permissions = ("view", "change")
-        verbose_name = "Groupe thématique"
-        verbose_name_plural = "Groupes thématiques"
+        verbose_name = _("Groupe thématique")
+        verbose_name_plural = _("Groupes thématiques")
         proxy = True
 
 
@@ -50,6 +50,6 @@ class UncertifiableGroup(SupportGroup):
 
     class Meta:
         default_permissions = ("view", "change")
-        verbose_name = "Groupe décertifiable"
-        verbose_name_plural = "Groupes décertifiables"
+        verbose_name = _("Groupe décertifiable")
+        verbose_name_plural = _("Groupes décertifiables")
         proxy = True

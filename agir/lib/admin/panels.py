@@ -107,7 +107,7 @@ class PersonLinkMixin:
 
         return "Aucune"
 
-    person_link.short_description = "Personne"
+    person_link.short_description = _("Personne")
 
 
 class AddRelatedLinkMixin(BaseModelAdmin):

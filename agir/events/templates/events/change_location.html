@@ -1,27 +1,28 @@
 {% extends "front/layout.html" %}
+{% load i18n %}
 {% load static %}
 {% load crispy_forms_tags %}
 
-{% block title %}Modifier la localisation de mon événement{% endblock %}
+{% block title %}{% translate "Modifier la localisation de mon événement" %}{% endblock %}
 
 {% block main %}
 <div class="row">
   <div class="col-xs-12 margintopmore text-right" style="line-height: 45px; margin-bottom: 0;">
     <div class="pull-left">
       <a class="menu-back-link" href="{% url "list_events" %}">
-        <i class="fa fa-arrow-left"></i>&emsp;Retour à l'accueil
+        <i class="fa fa-arrow-left"></i>&emsp;{% translate "Retour à l'accueil" %}
       </a>
     </div>
     <div class="pull-right">
       <a
         class="btn btn-sm btn-default"
         href="{% url "manage_event" event.pk %}">
-        <i class="fa fa-cog"></i> Gestion de l'événement
+        <i class="fa fa-cog"></i> {% translate "Gestion de l'événement" %}
       </a>
       <a
         class="btn btn-sm btn-default"
         href="{% url "view_event" event.pk %}">
-        Page publique de l'événement
+        {% translate "Page publique de l'événement" %}
       </a>
     </div>
     <div class="clearfix"></div>
@@ -32,16 +33,16 @@
       {{ event.name }}
     </h2>
     <hr />
-    <h3>Modification de la localisation</h3>
+    <h3>{% translate "Modification de la localisation" %}</h3>
     <div class="padtop padbottom form-group">
       <p>
-        Si votre événement n'apparaît au bon endroit sur la carte, vous pouvez utiliser ci-dessous la petite carte pour le localiser correctement. Cliquez-déplacez le point existant, ou cliquez sur le lien « Supprimer toutes les localisations » puis directement sur la carte.
+        { translate "Si votre événement n'apparaît au bon endroit sur la carte, vous pouvez utiliser ci-dessous la petite carte pour le localiser correctement. Cliquez-déplacez le point existant, ou cliquez sur le lien « Supprimer toutes les localisations » puis directement sur la carte." %}
       </p>
       <p>
-        Si vous souhaitez revenir à une localisation automatique de votre événement à partir de son adresse, cochez la case correspondante et sauvegardez le formulaire.
+        {% translate "Si vous souhaitez revenir à une localisation automatique de votre événement à partir de son adresse, cochez la case correspondante et sauvegardez le formulaire." %}
       </p>
       <p>
-        <strong>Après sauvegarde de ce formulaire, les modifications peuvent mettre jusqu'à 5 minutes pour apparaître sur la carte.</strong>
+        <strong>{% translate "Après sauvegarde de ce formulaire, les modifications peuvent mettre jusqu'à 5 minutes pour apparaître sur la carte." %}</strong>
       </p>
       <div class="row">
         <div class="col-sm-12 form-group">

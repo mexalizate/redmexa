@@ -2,6 +2,7 @@ from datetime import timedelta
 
 from django.db.models import Count
 from django.utils import timezone
+from django.utils.translation import gettext as _
 
 from agir.events.models import Event
 from agir.geodata.geocoding import FRENCH_COUNTRY_CODES
@@ -9,24 +10,24 @@ from agir.groups.models import Membership, SupportGroup, SupportGroupSubtype
 
 CERTIFICATION_CRITERIA_LABELS = {
     "gender": {
-        "label": "Animation paritaire",
-        "help": "Le groupe est animé par au moins deux personnes de genre différent",
+        "label": _("Animation paritaire"),
+        "help": _("Le groupe est animé par au moins deux personnes de genre différent"),
     },
     "activity": {
-        "label": "Trois actions de terrain",
-        "help": "Le groupe a organisé trois actions de terrain dans les deux derniers mois",
+        "label": _("Trois actions de terrain"),
+        "help": _("Le groupe a organisé trois actions de terrain dans les deux derniers mois"),
     },
     "creation": {
-        "label": "Un mois d’existence",
-        "help": "Le groupe a été créé il y plus d'un mois",
+        "label": _("Un mois d’existence"),
+        "help": _("Le groupe a été créé il y plus d'un mois"),
     },
     "members": {
-        "label": "Trois membres actifs",
-        "help": "Le groupe doit compter plus de trois membres actifs, animateur·ices et gestionnaires compris",
+        "label": _("Trois membres actifs"),
+        "help": _("Le groupe doit compter plus de trois membres actifs, animateur·ices et gestionnaires compris"),
     },
     "exclusivity": {
-        "label": "Un seul groupe certifié par animateur·ice",
-        "help": "Les animateur·ices du groupe n'animent pas d'autres groupes locaux certifiés",
+        "label": _("Un seul groupe certifié par animateur·ice"),
+        "help": _("Les animateur·ices du groupe n'animent pas d'autres groupes locaux certifiés"),
     },
 }
 

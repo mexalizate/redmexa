@@ -2,7 +2,7 @@ from django.utils.safestring import mark_safe
 
 from agir.gestion.models import Compte, Reglement
 from agir.lib.display import display_price
-
+from django.utils.translation import gettext_lazy as _
 
 class DepenseListMixin:
     def get_list_display(self, request):
@@ -18,7 +18,7 @@ class DepenseListMixin:
             return display_price(obj.montant, price_in_cents=False)
         return "-"
 
-    montant_.short_description = "Montant"
+    montant_.short_description = _("Montant")
     montant_.admin_order_field = "montant"
 
     def montant_interdit(self, obj):

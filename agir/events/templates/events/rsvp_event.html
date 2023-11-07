@@ -1,7 +1,8 @@
 {% extends "front/layout.html" %}
+{% load i18n %}
 {% load crispy_forms_tags %}
 
-{% block title %}S'inscrire pour «&nbsp;{{ event.name }}&nbsp;»{% endblock %}
+{% block title %}{% translate "S'inscrire pour" %} «&nbsp;{{ event.name }}&nbsp;»{% endblock %}
 
 {% block css %}
   {{ block.super }}
@@ -17,30 +18,30 @@
     <div class="col-responsive">
       <h2><a href="{% url "view_event" event.pk %}">{{ event.name }}</a></h2>
       <ol class="breadcrumb">
-        <li><a href="{% url "view_event" event.pk %}">Page publique de l'événement</a></li>
-        <li>Inscription</li>
+        <li><a href="{% url "view_event" event.pk %}">{% translate "Page publique de l'événement" %}</a></li>
+        <li>{% translate "Inscription" %}</li>
       </ol>
       {% if rsvp %}
-        <h3 class="h2">Votre inscription</h3>
+        <h3 class="h2">{% translate "Votre inscription" %}</h3>
         <h3 class="h2"><span class="label label-primary">{{ rsvp.get_status_display }}</span></h3>
         {% if rsvp.payment %}
           <div class="panel panel-primary">
-            <div class="panel-heading">Informations de paiement</div>
+            <div class="panel-heading">{% translate "Informations de paiement" %}</div>
             <dl class="list-group">
               <div class="list-group-item">
-                <dt class="list-group-item-heading">Prix</dt>
+                <dt class="list-group-item-heading">{% translate "Prix" %}</dt>
                 <dd class="list-group-item-text">{{ rsvp.payment.get_price_display }}</dd>
               </div>
               <div class="list-group-item">
-                <dt class="list-group-item-heading">Numéro de transaction</dt>
+                <dt class="list-group-item-heading">{% translate "Numéro de transaction" %}</dt>
                 <dd class="list-group-item-text">{{ rsvp.payment.pk }}</dd>
               </div>
               <div class="list-group-item">
-                <dt class="list-group-item-heading">Mode de paiement</dt>
+                <dt class="list-group-item-heading">{% translate "Mode de paiement" %}</dt>
                 <dd class="list-group-item-text">{{ rsvp.payment.get_mode_display }}</dd>
               </div>
               <div class="list-group-item">
-                <dt class="list-group-item-heading">Statut de paiement</dt>
+                <dt class="list-group-item-heading">{% translate "Statut de paiement" %}</dt>
                 <dd class="list-group-item-text">{{ rsvp.payment.get_status_display }}</dd>
               </div>
             </dl>
@@ -48,13 +49,13 @@
               <div class="panel-footer">
                 {% if rsvp.payment.can_cancel %}
                   <a class="btn btn-sm btn-default" href="{% url "rsvp_change_payment" rsvp.pk %}">
-                    Modifier le paiement
+                    {% translate "Modifier le paiement" %}
                   </a>
                 {% endif %}
                 &nbsp;
                 {% if rsvp.payment.can_retry %}
                   <a class="btn btn-sm btn-default" href="{% url "payment_retry" rsvp.payment.pk %}">
-                    Retenter le paiement
+                    {% translate "Retenter le paiement" %}
                   </a>
                 {% endif %}
               </div>
@@ -63,7 +64,7 @@
         {% endif %}
 
         {% if submission_data %}
-          <h4>Voici les informations que vous avez donné :</h4>
+          <h4>{% translate "Voici les informations que vous avez donné" %} :</h4>
 
           <div class="panel panel-default">
             {% include "people/includes/personform_submission_data.html" with submission_data=submission_data %}
@@ -71,18 +72,17 @@
 
           {% if person_form_instance.editable %}
             <a class="btn btn-default"
-               href="{% url 'edit_person_form_submission' person_form_instance.slug submission.pk %}">
-              Modifier ces informations</a>
+               href="{% url 'edit_person_form_submission' person_form_instance.slug submission.pk %}">{% translate "Modifier ces informations" %}</a>
           {% endif %}
         {% endif %}
 
         {% if guests %}
-          <h4>Vous avez inscrit d'autre personnes&nbsp;:</h4>
+          <h4>{% translate "Vous avez inscrit d'autre personnes" %}&nbsp;:</h4>
           {% for guest in guests %}
             <div class="panel panel-default">
               <div class="panel-heading">
                 <div style="display:flex;gap:0.5rem;align-items:center;justify-content:space-between;">
-                  <strong class="panel-title">Invité #{{ forloop.counter }}&ensp;</strong>
+                  <strong class="panel-title">{% translate "Invité" %} #{{ forloop.counter }}&ensp;</strong>
                   <span class="label label-primary">{{ guest.status }}</span>
                 </div>
               </div>
@@ -93,13 +93,13 @@
                 <div class="panel-footer">
                   {% if guest.payment.can_cancel %}
                     <a class="btn btn-sm btn-default" href="{% url "identified_guest_change_payment" guest.pk %}">
-                      Modifier le paiement
+                      {% translate "Modifier le paiement" %}
                     </a>
                   {% endif %}
                   &nbsp;
                   {% if guest.payment.can_retry %}
                     <a class="btn btn-sm btn-default" href="{% url "payment_retry" guest.payment.pk %}">
-                      Retenter le paiement
+                      {% translate "Retenter le paiement" %}
                     </a>
                   {% endif %}
                 </div>
@@ -110,25 +110,21 @@
       {% endif %}
       {% if form %}
         {% if is_participant %}
-          <h3 class="h2">Inscrire une autre personne</h3>
+          <h3 class="h2">{% translate "Inscrire une autre personne" %}</h3>
           <div class="alert" style="color:#4d26b9;background-color:#e9e1ff;border-color:#e9e1ff;">
             <p>
-              Vous pouvez inscrire un⋅e participant⋅e supplémentaire avec votre compte. Cela est utile si cette
-              personne ne dispose pas d'adresse email ou de compte sur lafranceinsoumise.fr ou actionpopulaire.fr. Il
-              sera de votre responsabilité de transmettre les éventuelles informations ou billets d'entrée qui vous
-              seront envoyés avant l'événement.
+              {% translate "Vous pouvez inscrire un⋅e participant⋅e supplémentaire avec votre compte. Cela est utile si cette personne ne dispose pas d'adresse email ou de compte sur lafranceinsoumise.fr ou actionpopulaire.fr. Il sera de votre responsabilité de transmettre les éventuelles informations ou billets d'entrée qui vous seront envoyés avant l'événement" %}.
             </p>
             <p>
-              Si la personne dispose d'une adresse email, préférez plutôt une inscription via son propre compte.
-              <a href="{% url 'disconnect' %}">Cliquez ici pour vous connecter avec un autre compte</a>.
+              {% translate "Si la personne dispose d'une adresse email, préférez plutôt une inscription via son propre compte" %}.
+              <a href="{% url 'disconnect' %}">{% translate "Cliquez ici pour vous connecter avec un autre compte" %}</a>.
             </p>
           </div>
         {% elif rsvp %}
-          <h3 class="h2">Se réinscrire à l'événement</h3>
+          <h3 class="h2">{% translate "Se réinscrire à l'événement" %}</h3>
           <div class="alert" style="color:#4d26b9;background-color:#e9e1ff;border-color:#e9e1ff;">
             <p>
-              Votre inscription précédente a été annulée, mais vous pouvez vous réinscrire en remplissant à nouveau le
-              formualire ci-dessous.
+              {% translate "Votre inscription précédente a été annulée, mais vous pouvez vous réinscrire en remplissant à nouveau le formualire ci-dessous" %}.
             </p>
           </div>
         {% endif %}

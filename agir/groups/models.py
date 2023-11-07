@@ -283,10 +283,10 @@ class SupportGroup(
     TYPE_BOUCLE_DEPARTEMENTALE = "D"
 
     TYPE_CHOICES = (
-        (TYPE_LOCAL_GROUP, "Groupe local"),
-        (TYPE_THEMATIC, "Groupe thématique"),
-        (TYPE_FUNCTIONAL, "Groupe fonctionnel"),
-        (TYPE_BOUCLE_DEPARTEMENTALE, "Boucle départementale"),
+        (TYPE_LOCAL_GROUP, _("Groupe local")),
+        (TYPE_THEMATIC, _("Groupe thématique")),
+        (TYPE_FUNCTIONAL, _("Groupe fonctionnel")),
+        (TYPE_BOUCLE_DEPARTEMENTALE, _("Boucle départementale")),
     )
 
     TYPE_PARAMETERS = {
@@ -297,24 +297,24 @@ class SupportGroup(
     }
 
     TYPE_DESCRIPTION = {
-        TYPE_LOCAL_GROUP: "Les groupes locaux réunissent les personnes sur la base d'un territoire réduit (quartier, "
+        TYPE_LOCAL_GROUP: _("Les groupes locaux réunissent les personnes sur la base d'un territoire réduit (quartier, "
         "village ou petite ville), ceux étudiants d'un même lieu d'étude, professionnels d'un même "
         "lieu de travail. Chacun·e ne peut animer qu'un seul groupe local, étudiant et "
-        "professionnel.",
-        TYPE_THEMATIC: "Les groupes thématiques réunissent celles et ceux qui souhaitent agir ensemble sur un thème "
-        "donné en lien avec les livrets thématiques de l'Avenir en Commun.",
-        TYPE_FUNCTIONAL: "Les groupes fonctionnels rassemblent les personnes d'une même zone s'organisant à plusieurs "
+        "professionnel."),
+        TYPE_THEMATIC: _("Les groupes thématiques réunissent celles et ceux qui souhaitent agir ensemble sur un thème "
+        "donné en lien avec les livrets thématiques de l'Avenir en Commun."),
+        TYPE_FUNCTIONAL: _("Les groupes fonctionnels rassemblent les personnes d'une même zone s'organisant à plusieurs "
         "pour accomplir des fonctions précises (gestion d'un local, organisation des manifestation, "
-        "etc.)",
-        TYPE_BOUCLE_DEPARTEMENTALE: "Les boucles départementales assurent la coordination des groupes d'action au sein"
-        "d'un département.",
+        "etc.)"),
+        TYPE_BOUCLE_DEPARTEMENTALE: _("Les boucles départementales assurent la coordination des groupes d'action au sein"
+        "d'un département."),
     }
 
     TYPE_DISABLED_DESCRIPTION = {
-        TYPE_LOCAL_GROUP: "✅ Il n'est possible d'animer que deux groupes par personne.",
-        TYPE_THEMATIC: "✅ Il n'est possible d'animer que deux groupes par personne.",
-        TYPE_FUNCTIONAL: "✅ Il n'est possible d'animer que deux groupes par personne.",
-        TYPE_BOUCLE_DEPARTEMENTALE: "✅ Il n'est possible d'animer que deux groupes par personne.",
+        TYPE_LOCAL_GROUP: _("✅ Il n'est possible d'animer que deux groupes par personne."),
+        TYPE_THEMATIC: _("✅ Il n'est possible d'animer que deux groupes par personne."),
+        TYPE_FUNCTIONAL: _("✅ Il n'est possible d'animer que deux groupes par personne."),
+        TYPE_BOUCLE_DEPARTEMENTALE: _("✅ Il n'est possible d'animer que deux groupes par personne."),
     }
 
     MEMBERSHIP_LIMIT = 30
@@ -709,8 +709,8 @@ class Membership(ExportModelOperationsMixin("membership"), TimeStampedModel):
 
         if not self.is_manager:
             raise ValidationError(
-                "La modification de ce champ est autorisée uniquement pour les gestionnaires et "
-                "animateur·ices du groupe"
+                _("La modification de ce champ est autorisée uniquement pour les gestionnaires et "
+                "animateur·ices du groupe")
             )
 
         self.has_finance_managing_privilege = value
@@ -736,8 +736,8 @@ class TransferOperation(models.Model):
     members = models.ManyToManyField("people.Person", related_name="+", editable=False)
 
     class Meta:
-        verbose_name = "Transfert de membres"
-        verbose_name_plural = "Transferts de membres"
+        verbose_name = _("Transfert de membres")
+        verbose_name_plural = _("Transferts de membres")
         ordering = ("timestamp", "former_group")
 
 
@@ -752,5 +752,5 @@ class SupportGroupExternalLink(ExternalLinkMixin):
     )
 
     class Meta:
-        verbose_name = "Lien ou réseau social de l’équipe"
-        verbose_name_plural = "Liens et réseaux sociaux de l’équipe"
+        verbose_name = _("Lien ou réseau social de l’équipe")
+        verbose_name_plural = _("Liens et réseaux sociaux de l’équipe")

@@ -3,6 +3,7 @@ from django.contrib.contenttypes.fields import GenericForeignKey, GenericRelatio
 from django.contrib.contenttypes.models import ContentType
 from django.db import models
 from stdimage import StdImageField
+from django.utils.translation import gettext as _
 
 from agir.groups.models import Membership
 from agir.lib.models import TimeStampedModel, BaseAPIResource
@@ -12,7 +13,7 @@ class UserReport(TimeStampedModel):
     reporter = models.ForeignKey(
         "people.Person",
         on_delete=models.SET_NULL,
-        verbose_name="Personne à l'origine du signalement",
+        verbose_name=_("Personne à l'origine du signalement"),
         null=True,
     )
 
@@ -26,8 +27,8 @@ class UserReport(TimeStampedModel):
         return f"Signalement ({self.id})"
 
     class Meta:
-        verbose_name = "Signalement"
-        verbose_name_plural = "Signalements"
+        verbose_name = _("Signalement")
+        verbose_name_plural = _("Signalements")
 
 
 class SupportGroupMessageQuerySet(models.QuerySet):
@@ -57,13 +58,13 @@ class AbstractMessage(BaseAPIResource):
         "people.Person",
         editable=False,
         on_delete=models.SET_NULL,
-        verbose_name="Auteur",
+        verbose_name=_("Auteur"),
         null=True,
     )
-    text = models.TextField("Contenu", max_length=2000)
+    text = models.TextField(_("Contenu"), max_length=2000)
     image = StdImageField()
     reports = GenericRelation(UserReport)
-    deleted = models.BooleanField("Supprimé", default=False)
+    deleted = models.BooleanField(_("Supprimé"), default=False)
 
     class Meta:
         abstract = True
@@ -80,7 +81,7 @@ class SupportGroupMessage(AbstractMessage):
         "groups.SupportGroup",
         editable=False,
         on_delete=models.PROTECT,
-        verbose_name="Groupe / équipe",
+        verbose_name=_("Groupe / équipe"),
         related_name="messages",
     )
     linked_event = models.ForeignKey(
@@ -88,7 +89,7 @@ class SupportGroupMessage(AbstractMessage):
         blank=True,
         null=True,
         on_delete=models.PROTECT,
-        verbose_name="Événement lié",
+        verbose_name=_("Événement lié"),
     )
     required_membership_type = models.IntegerField(
         "required_membershiptype",
@@ -97,26 +98,26 @@ class SupportGroupMessage(AbstractMessage):
     )
     recipient_mutedlist = models.ManyToManyField(
         "people.Person",
-        related_name="messages_muted",
-        verbose_name="Liste de personnes en sourdine",
+        related_name=_("messages_muted"),
+        verbose_name=_("Liste de personnes en sourdine"),
         blank=True,
     )
     is_locked = models.BooleanField(
-        verbose_name="Message verrouillé",
+        verbose_name=_("Message verrouillé"),
         default=False,
     )
     readonly = models.BooleanField(
-        verbose_name="Message en lecture seule",
+        verbose_name=_("Message en lecture seule"),
         default=False,
-        help_text="Le message s'affichera mais il ne sera pas possible d'y répondre",
+        help_text=_("Le message s'affichera mais il ne sera pas possible d'y répondre"),
     )
 
     def __str__(self):
         return f"id: {self.pk} | {self.author} --> '{self.text}' | required_membership_type: {str(self.required_membership_type)} | supportgroup: {self.supportgroup}"
 
     class Meta:
-        verbose_name = "Message de groupe"
-        verbose_name_plural = "Messages de groupe"
+        verbose_name = _("Message de groupe")
+        verbose_name_plural = _("Messages de groupe")
 
 
 @reversion.register()
@@ -131,22 +132,22 @@ class SupportGroupMessageComment(AbstractMessage):
     )
 
     class Meta:
-        verbose_name = "Commentaire de messages de groupe"
-        verbose_name_plural = "Commentaires de messages de groupe"
+        verbose_name = _("Commentaire de messages de groupe")
+        verbose_name_plural = _("Commentaires de messages de groupe")
 
 
 class SupportGroupMessageRecipient(TimeStampedModel):
     recipient = models.ForeignKey(
         "people.Person",
         on_delete=models.CASCADE,
-        verbose_name="Destinataire",
+        verbose_name=_("Destinataire"),
         related_name="read_messages",
         null=False,
     )
     message = models.ForeignKey(
         "SupportGroupMessage",
         on_delete=models.CASCADE,
-        verbose_name="Message",
+        verbose_name=_("Message"),
         related_name="readers",
         null=False,
     )
@@ -163,8 +164,8 @@ class SupportGroupMessageRecipient(TimeStampedModel):
         )
 
     class Meta:
-        verbose_name = "Message lu par l'utilisateur·ice"
-        verbose_name_plural = "Messages lus par les utilisateur·ices"
+        verbose_name = _("Message lu par l'utilisateur·ice")
+        verbose_name_plural = _("Messages lus par les utilisateur·ices")
         constraints = [
             models.UniqueConstraint(
                 fields=["recipient", "message"],

@@ -1,3 +1,5 @@
+{% load i18n %}
+
 <div class="list-group">
   {% for event in events %}
     <div class="list-group-item">
@@ -22,7 +24,11 @@
     </div>
   {% empty %}
     <div class="list-group-item">
-      {{ empty_message|default:"Aucun événement à venir." }}
+      {% if empty_message %}
+        {% translate empty_message %}
+      {% else %}
+        {% translate "Aucun événement à venir." %}
+      {% endif %}
     </div>
   {% endfor %}
   {% if events.paginator %}
@@ -32,7 +38,7 @@
           <li class="previous">
             <a href="?{{ page_param|default:"events_page" }}={{ events.previous_page_number }}">
               <span aria-hidden="true">&larr;</span>
-              Précédent
+              {% translate "Précédent" %}
             </a>
           </li>
         {% endif %}
@@ -40,7 +46,7 @@
           <li class="next">
             <a href="?{{ page_param|default:"events_page" }}={{ events.next_page_number }}">
               <span aria-hidden="true">&rarr;</span>
-              Suivant
+              {% translate "Suivant" %}
             </a>
           </li>
         {% endif %}

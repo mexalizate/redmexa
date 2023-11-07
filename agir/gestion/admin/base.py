@@ -11,6 +11,7 @@ from agir.gestion.admin.views import (
 from agir.gestion.models import Commentaire
 from agir.lib.admin.panels import AddRelatedLinkMixin
 from agir.lib.admin.utils import get_admin_link
+from django.utils.translation import gettext_lazy as _
 
 
 class SearchableModelMixin(BaseModelAdmin):
@@ -29,9 +30,9 @@ class SearchableModelMixin(BaseModelAdmin):
         if obj.id:
             return format_html('<a href="{}">{}</a>', get_admin_link(obj), obj.numero)
         else:
-            return "Attribué à la création"
+            return _("Attribué à la création")
 
-    numero_.short_description = "Numéro unique"
+    numero_.short_description = _("Numéro unique")
 
 
 class BaseGestionModelAdmin(SearchableModelMixin, AddRelatedLinkMixin, ModelAdmin):

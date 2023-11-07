@@ -1,5 +1,6 @@
 {% extends "front/layout.html" %}
 {% load static pagination %}
+{% load i18n %}
 
 {% block title %}{{ calendar.name }}{% endblock %}
 
@@ -10,7 +11,7 @@
   <div class="col-xs-12 margintopmore text-right" style="line-height: 45px; margin-bottom: 0;">
     <div class="pull-left">
       <a class="menu-back-link" href="{% url "list_events" %}">
-        <i class="fa fa-arrow-left"></i>&emsp;Retour à l'accueil
+        <i class="fa fa-arrow-left"></i>&emsp;{% translate "Retour à l'accueil" %}
       </a>
     </div>
     <div class="pull-right">
@@ -18,7 +19,7 @@
         class="btn btn-sm btn-primary"
         data-toggle="modal"
         data-target="#calendar-modal">
-        <i class="fa fa-calendar"></i> S'abonner
+        <i class="fa fa-calendar"></i> {% translate "S'abonner" %}
       </a>
     </div>
     <div class="clearfix"></div>
@@ -48,7 +49,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 class="btn btn-sm btn-default">
-                Page publique de l'événement&nbsp;
+                {% translate "Page publique de l'événement" %}&nbsp;
                 <i class="fa fa-external-link"></i>
               </a>
             </p>
@@ -69,7 +70,7 @@
                   target="_blank"
                   rel="noopener noreferrer"
                   class="btn btn-sm btn-default">
-                  Page publique de l'événement&nbsp;
+                  {% translate "Page publique de l'événement" %}&nbsp;
                   <i class="fa fa-external-link"></i>
                 </a>
               </p>
@@ -91,7 +92,7 @@
           </div>
           <div class="panel-footer">
             <h6>
-              Ajouter à mon agenda&ensp;
+              {% translate "Ajouter à mon agenda" %}&ensp;
               {% include 'events/event_ics.html' with event=event %}
             </h6>
           </div>
@@ -102,7 +103,7 @@
 
     {% else %}
       <div class="lead text-center">
-        Pas d'événement prévu pour le moment
+        {% translate "Pas d'événement prévu pour le moment" %}
       </div>
     {% endif %}
   </div>

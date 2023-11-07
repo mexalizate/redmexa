@@ -1,4 +1,5 @@
 {% extends 'donations/personal_information.html' %}
+{% load i18n %}
 {% load display_lib %}
 
 {% block title %}
@@ -10,7 +11,7 @@
 {% endblock %}
 
 {% block donation_reminder %}
-  Je souhaite donner <strong>{{  amount | display_price_in_cent }}</strong>.
+  {% translate "Je souhaite donner" %} <strong>{{  amount | display_price_in_cent }}</strong>.
 {% endblock %}
 
 {% block legal %}

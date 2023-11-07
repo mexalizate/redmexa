@@ -182,11 +182,11 @@ class USCounty(models.Model):
 
 class USZipCode(models.Model):
     code = models.CharField(
-        verbose_name="zip code", max_length=5, editable=False, unique=True
+        verbose_name=_("zip code"), max_length=5, editable=False, unique=True
     )
 
     official_city = models.CharField(
-        verbose_name="official city name",
+        verbose_name=_("official city name"),
         max_length=50,
         editable=False,
     )

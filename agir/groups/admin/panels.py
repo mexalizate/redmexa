@@ -12,7 +12,7 @@ from django.urls import reverse
 from django.utils import timezone
 from django.utils.html import format_html, escape, format_html_join
 from django.utils.safestring import mark_safe
-from django.utils.translation import gettext_lazy as _
+from django.utils.translation import gettext_lazy as _, gettext
 from reversion.admin import VersionAdmin
 
 from agir.groups import proxys
@@ -250,7 +250,7 @@ class SupportGroupAdmin(VersionAdmin, CenterOnFranceMixin, OSMGeoAdmin):
 
         if show_add_button:
             value = format_html(
-                '{value} (<a href="{link}">Changer</a>)',
+                _('{value} (<a href="{link}">Changer</a>)'),
                 value=value,
                 link=reverse("admin:donations_operation_add")
                 + "?group="
@@ -286,7 +286,7 @@ class SupportGroupAdmin(VersionAdmin, CenterOnFranceMixin, OSMGeoAdmin):
 
     last_manager_login.short_description = _("Dernière connexion d'un·e gestionnaire")
 
-    @admin.display(description="Actions")
+    @admin.display(description=_("Actions"))
     def action_buttons(self, obj):
         if obj._state.adding:
             return mark_safe("-")
@@ -300,38 +300,38 @@ class SupportGroupAdmin(VersionAdmin, CenterOnFranceMixin, OSMGeoAdmin):
                         "admin:groups_supportgroup_maj_membres_boucles_departementales",
                         args=(obj.pk,),
                     ),
-                    "Mettre à jour les membres",
+                    _("Mettre à jour les membres"),
                 )
             )
         else:
             action_buttons.append(
                 (
                     admin_url("admin:groups_supportgroup_add_member", args=(obj.pk,)),
-                    "Ajouter un membre",
+                    _("Ajouter un membre"),
                 )
             )
 
         action_buttons.append(
             (
                 admin_url("admin:donations_operation_add", query={"group": obj.pk}),
-                "Changer l'allocation",
+                _("Changer l'allocation"),
             ),
         )
 
         html = format_html_join(
             " ", '<a class="button" href="{}">{}</a>', action_buttons
         ) + format_html(
-            "<div class='help' style='margin: 0; padding: 0;'>"
-            "Attention : cliquer sur ces boutons quitte la page et perd vos modifications courantes."
+            "<div class='help' style='margin: 0; padding: 0;'>",
+            gettext("Attention : cliquer sur ces boutons quitte la page et perd vos modifications courantes."),
             "</div>"
         )
 
         return html
 
-    @admin.display(description="Export des membres")
+    @admin.display(description=_("Export des membres"))
     def export_buttons(self, obj):
         if obj._state.adding or not obj.memberships.exists():
-            return "Ce groupe n'a pas encore de membres"
+            return _("Ce groupe n'a pas encore de membres")
 
         export_buttons = [
             (
@@ -339,14 +339,14 @@ class SupportGroupAdmin(VersionAdmin, CenterOnFranceMixin, OSMGeoAdmin):
                     "admin:groups_supportgroup_export_memberships",
                     args=(obj.pk, "csv"),
                 ),
-                "Exporter au format CSV",
+                _("Exporter au format CSV"),
             ),
             (
                 admin_url(
                     "admin:groups_supportgroup_export_memberships",
                     args=(obj.pk, "xlsx"),
                 ),
-                "Exporter au format Excel",
+                _("Exporter au format Excel"),
             ),
         ]
 
@@ -354,44 +354,44 @@ class SupportGroupAdmin(VersionAdmin, CenterOnFranceMixin, OSMGeoAdmin):
             " ", '<a class="button" href="{}" download>{}</a>', export_buttons
         )
 
-    @admin.display(description="Création", ordering="created")
+    @admin.display(description=_("Création"), ordering="created")
     def creation_date(self, obj):
         return obj.created.strftime("%d/%m/%Y")
 
-    @admin.display(description="Certifié", boolean=True, ordering="certification_date")
+    @admin.display(description=_("Certifié"), boolean=True, ordering="certification_date")
     def is_certified(self, obj):
         return obj.is_certified
 
-    @admin.display(description="Statut")
+    @admin.display(description=_("Statut"))
     def certification_status(self, obj):
         if obj.is_certified:
             status = (
-                f"<span style='font-size:14px;'>"
-                f"Certifié depuis le <strong>{obj.certification_date.strftime('%d %B %Y')}</strong>"
+                f"<span style='font-size:14px;'>",
+                gettext(f"Certifié depuis le <strong>{obj.certification_date.strftime('%d %B %Y')}</strong>"),
                 f"</span>"
             )
             if obj.uncertifiable_warning_date:
                 diff_days = (timezone.now() - obj.uncertifiable_warning_date).days
                 if diff_days == 0:
-                    diff_days = "aujourd'hui"
+                    diff_days = _("aujourd'hui")
                 elif diff_days == 1:
-                    diff_days = "hier"
+                    diff_days = _("hier")
                 else:
-                    diff_days = f"il y a {diff_days} jours"
+                    diff_days = gettext(f"il y a {diff_days} jours")
                 status = (
-                    f"{status}"
-                    "<br />"
-                    f"— Avertissement de décertification envoyé "
-                    f"le <strong>{obj.uncertifiable_warning_date.strftime('%d %B %Y')}</strong> ({diff_days})"
+                    f"{status}",
+                    "<br />",
+                    gettext(f"— Avertissement de décertification envoyé "),
+                    gettext(f"le <strong>{obj.uncertifiable_warning_date.strftime('%d %B %Y')}</strong> ({diff_days})")
                 )
             return mark_safe(status)
 
         if obj.is_certifiable:
-            return "Éligible à la certification"
+            return _("Éligible à la certification")
 
-        return "Ce type de groupe n'est pas éligible à la certification"
+        return _("Ce type de groupe n'est pas éligible à la certification")
 
-    @admin.display(description="Critères")
+    @admin.display(description=_("Critères"))
     def certification_criteria(self, obj):
         acceptable_event_subtype_link = admin_url(
             "admin:events_eventsubtype_changelist",
@@ -407,7 +407,7 @@ class SupportGroupAdmin(VersionAdmin, CenterOnFranceMixin, OSMGeoAdmin):
                 <div class="help">
                   {criterion["help"]}
                   {f' (<a href="{acceptable_event_subtype_link}">'
-                    "voir la liste des types d'événement acceptés"
+                    "ver la lista de tipos de eventos aceptados"
                     "</a>)" if key =='activity' else ""}
                 </div>
               </div>
@@ -417,7 +417,7 @@ class SupportGroupAdmin(VersionAdmin, CenterOnFranceMixin, OSMGeoAdmin):
         ]
         return format_html("".join(html))
 
-    @admin.display(description="Actions")
+    @admin.display(description=_("Actions"))
     def certification_actions(self, obj):
         certification_actions = []
         if obj and not obj.is_certified:
@@ -602,7 +602,7 @@ class UncertifiableGroupAdmin(SupportGroupAdmin):
     date_hierarchy = None
     show_full_result_count = False
 
-    @admin.display(description="Groupe", ordering="name")
+    @admin.display(description=_("Groupe"), ordering="name")
     def group_link(self, obj):
         return mark_safe(
             '<a href="%s">%s</a>'
@@ -612,15 +612,15 @@ class UncertifiableGroupAdmin(SupportGroupAdmin):
             )
         )
 
-    @admin.display(description="Création", ordering="created")
+    @admin.display(description=_("Création"), ordering="created")
     def created__date(self, obj):
         return obj.created.date()
 
-    @admin.display(description="Certification", ordering="certification_date")
+    @admin.display(description=_("Certification"), ordering="certification_date")
     def certification__date(self, obj):
         return obj.certification_date and obj.certification_date.strftime("%-d %B %Y")
 
-    @admin.display(description="Avertissement")
+    @admin.display(description=_("Avertissement"))
     def uncertifiable_warning__date(self, obj):
         warning_date = obj.uncertifiable_warning_date
         if not warning_date:
@@ -628,7 +628,7 @@ class UncertifiableGroupAdmin(SupportGroupAdmin):
 
         return obj.uncertifiable_warning_date.strftime("%-d %B %Y")
 
-    @admin.display(description="Critères")
+    @admin.display(description=_("Critères"))
     def short_certification_criteria(self, obj):
         criteria = check_certification_criteria(obj, with_labels=True)
         html = [
@@ -687,7 +687,7 @@ class TransfertOperationAdmin(admin.ModelAdmin):
     def members_count(self, obj):
         return obj.members.count()
 
-    members_count.short_description = "Nombre de membres concernés"
+    members_count.short_description = _("Nombre de membres concernés")
 
     def members_list(self, obj):
         return format_html_join(
@@ -699,4 +699,4 @@ class TransfertOperationAdmin(admin.ModelAdmin):
             ),
         )
 
-    members_list.short_description = "Liste des membres concernés"
+    members_list.short_description = _("Liste des membres concernés")

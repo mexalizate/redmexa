@@ -2,7 +2,7 @@ import django_countries
 from data_france.models import CirconscriptionLegislative
 from django.contrib import admin
 from django.db.models import Subquery
-
+from django.utils.translation import gettext as _
 from agir.lib import data
 from agir.lib.admin.autocomplete_filter import AutocompleteSelectModelBaseFilter
 from agir.lib.data import FRANCE_COUNTRY_CODES
@@ -16,8 +16,8 @@ class CountryListFilter(admin.SimpleListFilter):
 
     def lookups(self, request, model_admin):
         return [
-            ("FR_all", "France (outremer compris)"),
-            ("not_FR_all", "Hors France (outremer compris)"),
+            ("FR_all", _("France (outremer compris)")),
+            ("not_FR_all", _("Hors France (outremer compris)")),
         ] + list(django_countries.countries)
 
     def queryset(self, request, queryset):
@@ -32,7 +32,7 @@ class CountryListFilter(admin.SimpleListFilter):
 
 
 class DepartementListFilter(admin.SimpleListFilter):
-    title = "Département"
+    title = _("Département")
     parameter_name = "departement"
     template = "admin/dropdown_filter.html"
 
@@ -46,7 +46,7 @@ class DepartementListFilter(admin.SimpleListFilter):
 
 
 class RegionListFilter(admin.SimpleListFilter):
-    title = "Région"
+    title = _("Région")
     parameter_name = "region"
     template = "admin/dropdown_filter.html"
 
@@ -60,7 +60,7 @@ class RegionListFilter(admin.SimpleListFilter):
 
 
 class CirconscriptionLegislativeFilter(AutocompleteSelectModelBaseFilter):
-    title = "circonscription législative"
+    title = _("circonscription législative")
     filter_model = CirconscriptionLegislative
     parameter_name = "circo"
 
@@ -81,7 +81,7 @@ class CirconscriptionLegislativeFilter(AutocompleteSelectModelBaseFilter):
 
 
 class ParticipantFilter(AutocompleteSelectModelBaseFilter):
-    title = "participant·e"
+    title = _("participant·e")
     filter_model = Person
     parameter_name = "participant_id"
 

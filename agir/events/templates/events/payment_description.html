@@ -1,7 +1,19 @@
 {% load display_lib %}
-<h4>Participation à un événement payant</h4>
-<div>Vous avez payé <strong>{{ payment.price | display_price_in_cent }}</strong> le {{ payment.created | date }} pour
-  {% if guest %}emmener un invité{% else %}participer{% endif %}
-  à {% if event %}l'événement payant <a href="{% url "view_event" event.pk %}">{{ event.name }}</a>{% else %}
-  un événement{% endif %}.
+{% load i18n %}
+
+<h4>{% translate "Participation à un événement payant" %}</h4>
+
+{% url "view_event" event.pk as event_pk %}
+<div>{% blocktrans with payment_price=payment.price|display_price_in_cent payment_created=payment.created|date %}Vous avez payé <strong>{{ payment_price }}</strong> le {{ payment_created }} pour {% endblocktrans %}
+  {% if guest %}
+    {% translate "emmener un invité" %}
+  {% else %}
+    {% translate "participer" %}
+  {% endif %}
+    {% translate "à" %}
+  {% if event %}
+    {% blocktrans with event_name=event.name %}l'événement payant <a href="{{ event_pk }}">{{ event_name }}</a>{% endblocktrans %}
+  {% else %}
+    {% translate "un événement" %}
+  {% endif %}
 </div>

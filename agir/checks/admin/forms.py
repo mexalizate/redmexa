@@ -18,7 +18,7 @@ class CheckPaymentSearchForm(forms.Form):
             "Saisissez les numéros de transaction du chèque, séparés par des espaces"
         ),
     )
-    amount = MoneyField(label="Montant du chèque", min_value=0, required=True)
+    amount = MoneyField(label=_("Montant du chèque"), min_value=0, required=True)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -59,20 +59,20 @@ class CheckPaymentSearchForm(forms.Form):
 
 class CheckPaymentForm(forms.ModelForm):
     status = forms.ChoiceField(
-        label="Statut",
+        label=_("Statut"),
         initial=CheckPayment.STATUS_COMPLETED,
         choices=CheckPayment.STATUS_CHOICES,
         required=True,
         disabled=True,
     )
     mode = forms.CharField(
-        label="Mode de paiement",
+        label=_("Mode de paiement"),
         initial=DonationCheckPaymentMode.id,
         required=True,
         disabled=True,
     )
     type = forms.ChoiceField(
-        label="Type de paiement",
+        label=_("Type de paiement"),
         initial=DonsConfig.SINGLE_TIME_DONATION_TYPE,
         choices=get_payment_choices(),
         required=True,

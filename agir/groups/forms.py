@@ -8,7 +8,7 @@ from django import forms
 from django.db import transaction
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
-
+from django.utils.translation import gettext as ngettext
 from agir.groups.actions.transfer import (
     schedule_membership_transfer_tasks,
 )
@@ -68,7 +68,7 @@ class SupportGroupForm(
 
         self.helper = FormHelper()
         self.helper.form_method = "POST"
-        self.helper.add_input(Submit("submit", "Sauvegarder et publier"))
+        self.helper.add_input(Submit("submit", _("Sauvegarder et publier")))
 
         # do not allow random organizers to modify HTML
         if self.instance.allow_html:
@@ -143,9 +143,9 @@ class SupportGroupForm(
         with reversion.create_revision():
             reversion.set_user(self.person.role)
             if self.is_creation:
-                reversion.set_comment("Création du groupe")
+                reversion.set_comment(_("Création du groupe"))
             else:
-                reversion.set_comment("Modification")
+                reversion.set_comment(_("Modification"))
             res = super().save(commit=commit)
 
             if commit:
@@ -228,7 +228,7 @@ class GroupGeocodingForm(GeocodingBaseForm):
     def save(self, commit=True):
         with reversion.create_revision():
             reversion.set_user(self.person.role)
-            reversion.set_comment("Modification de la localisation")
+            reversion.set_comment(_("Modification de la localisation"))
             res = super().save(commit=commit)
             return res
 
@@ -243,7 +243,7 @@ class SearchGroupForm(SearchByZipCodeFormBase):
 
 class InvitationWithSubscriptionConfirmationForm(forms.Form):
     location_zip = forms.CharField(
-        label="Mon code postal",
+        label=_("Mon code postal"),
         required=True,
         help_text=_(
             "Votre code postal nous permet de savoir dans quelle ville vous habitez, pour pouvoir vous proposer"
@@ -261,7 +261,7 @@ class InvitationWithSubscriptionConfirmationForm(forms.Form):
     )
 
     subscribed = forms.BooleanField(
-        label="Je souhaite être tenu au courant de l'actualité de la France insoumise",
+        label=_("Je souhaite être tenu au courant de l'actualité de la France insoumise"),
         required=False,
         help_text=_(
             "Si vous le souhaitez, nous pouvons vous envoyer notre lettre d'information hebdomadaire, et des"
@@ -305,14 +305,14 @@ class TransferGroupMembersForm(forms.Form):
         queryset=SupportGroup.objects.active(),
         label=_("Groupe de destination"),
         required=True,
-        help_text="Le nouveau groupe doit avoir déjà été créé pour pouvoir y transférer une partie de vos membres.",
+        help_text=_("Le nouveau groupe doit avoir déjà été créé pour pouvoir y transférer une partie de vos membres."),
     )
     members = MembershipMultipleChoiceField(
         queryset=Membership.objects.all(),
         label=_("Membres à transférer"),
         required=True,
         widget=forms.CheckboxSelectMultiple,
-        help_text="Les membres sélectionnés seront transférés dans le groupe de destination. Ses animateur·ices et les membres transférés recevront alors un e-mail de confirmation. Cette action est irréversible.",
+        help_text=_("Les membres sélectionnés seront transférés dans le groupe de destination. Ses animateur·ices et les membres transférés recevront alors un e-mail de confirmation. Cette action est irréversible."),
     )
 
     def __init__(self, manager, former_group, *args, **kwargs):

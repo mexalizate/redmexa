@@ -7,6 +7,7 @@ from agir.lib.celery import emailing_task
 from agir.lib.mailing import send_mosaico_email, send_template_email
 from agir.lib.utils import front_url
 from agir.people.actions.subscription import SUBSCRIPTION_TYPE_PLATFORM
+from django.utils.translation import gettext as _
 
 
 def interleave_spaces(s, n=3):
@@ -50,7 +51,7 @@ def send_no_account_email(
 
     send_mosaico_email(
         code="UNEXISTING_EMAIL_LOGIN",
-        subject="Vous n'avez pas encore de compte sur Action Populaire",
+        subject=_("Vous n'avez pas encore de compte sur Action Populaire"),
         from_email=settings.EMAIL_FROM,
         recipients=[email],
         bindings={"SUBSCRIPTION_URL": confirm_subscription_url},

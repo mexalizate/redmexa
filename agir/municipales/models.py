@@ -5,6 +5,7 @@ from django.contrib.postgres.search import SearchVector, SearchRank
 from django.db import models
 from django.db.models import UniqueConstraint
 from django.utils.html import format_html
+from django.utils.translation import gettext as _
 
 from agir.lib.model_fields import FacebookPageField, TwitterProfileField
 from agir.lib.models import TimeStampedModel
@@ -37,109 +38,109 @@ class CommunePageQueryset(models.QuerySet):
 class CommunePage(TimeStampedModel, models.Model):
     objects = CommunePageQueryset.as_manager()
 
-    published = models.BooleanField("Publiée", default=False, null=False)
+    published = models.BooleanField(_("Publiée"), default=False, null=False)
 
-    code = models.CharField("Code INSEE", max_length=10, editable=False)
+    code = models.CharField(_("Code INSEE"), max_length=10, editable=False)
     code_departement = models.CharField(
-        "Code département", max_length=3, editable=False
+        _("Code département"), max_length=3, editable=False
     )
-    coordinates = MultiPolygonField("Périmètre de la commune", geography=True)
-    name = models.CharField("Nom de la commune", max_length=255)
-    slug = models.SlugField("Slug")
+    coordinates = MultiPolygonField(_("Périmètre de la commune"), geography=True)
+    name = models.CharField(_("Nom de la commune"), max_length=255)
+    slug = models.SlugField(_("Slug"))
 
     liste_tour_1 = models.CharField(
-        "Nom de la liste du 1er tour",
+        _("Nom de la liste du 1er tour"),
         max_length=255,
         blank=True,
-        help_text="Le nom de la liste tel qu'il sera affiché publiquement",
+        help_text=_("Le nom de la liste tel qu'il sera affiché publiquement"),
     )
 
     tete_liste_tour_1 = models.CharField(
-        "Nom de la tête de liste au 1er tour",
+        _("Nom de la tête de liste au 1er tour"),
         max_length=255,
         blank=True,
-        help_text="Le nom de la tête de liste, tel qu'il s'affichera publiquement",
+        help_text=_("Le nom de la tête de liste, tel qu'il s'affichera publiquement"),
     )
 
     liste_tour_2 = models.CharField(
-        "Nom de la liste du 2e tour",
+        _("Nom de la liste du 2e tour"),
         max_length=255,
         blank=True,
-        help_text="Le nom de la liste tel qu'il sera affiché publiquement",
+        help_text=_("Le nom de la liste tel qu'il sera affiché publiquement"),
     )
 
     tete_liste_tour_2 = models.CharField(
-        "Nom de la tête de liste au 2e tour",
+        _("Nom de la tête de liste au 2e tour"),
         max_length=255,
         blank=True,
-        help_text="Le nom de la tête de liste, tel qu'il s'affichera publiquement",
+        help_text=_("Le nom de la tête de liste, tel qu'il s'affichera publiquement"),
     )
 
     first_name_1 = models.CharField(
-        "Prénom chef⋅fe de file 1", max_length=255, blank=True
+        _("Prénom chef⋅fe de file 1"), max_length=255, blank=True
     )
-    last_name_1 = models.CharField("Nom chef⋅fe de file 1", max_length=255, blank=True)
+    last_name_1 = models.CharField(_("Nom chef⋅fe de file 1"), max_length=255, blank=True)
     first_name_2 = models.CharField(
-        "Prénom chef⋅fe de file 2", max_length=255, blank=True
+        _("Prénom chef⋅fe de file 2"), max_length=255, blank=True
     )
-    last_name_2 = models.CharField("Nom chef⋅fe de file 2", max_length=255, blank=True)
+    last_name_2 = models.CharField(_("Nom chef⋅fe de file 2"), max_length=255, blank=True)
     twitter = TwitterProfileField(
-        "Identifiant Twitter",
+        _("Identifiant Twitter"),
         blank=True,
-        help_text="Indiquez l'identifiant ou l'URL du compte Twitter de la campagne.",
+        help_text=_("Indiquez l'identifiant ou l'URL du compte Twitter de la campagne."),
     )
     facebook = FacebookPageField(
-        "Identifiant Facebook",
+        _("Identifiant Facebook"),
         max_length=255,
         blank=True,
-        help_text="Indiquez l'identifiant ou l'URL de la page Facebook de la campagne",
+        help_text=_("Indiquez l'identifiant ou l'URL de la page Facebook de la campagne"),
     )
 
     website = models.URLField(
-        "Site web",
+        _("Site web"),
         max_length=255,
         blank=True,
-        help_text="Indiquez l'URL du site web de la liste en entier (avec le http:// ou le https://)",
+        help_text=_("Indiquez l'URL du site web de la liste en entier (avec le http:// ou le https://)"),
     )
 
     ordre_don = models.CharField(
-        "Ordre des chèques",
+        _("Ordre des chèques"),
         max_length=255,
         blank=True,
-        help_text="Indiquez l'ordre auquel les chèques de dons doivent être adressés.",
+        help_text=_("Indiquez l'ordre auquel les chèques de dons doivent être adressés."),
     )
 
     adresse_don = models.TextField(
-        "Adresse complète pour les dons",
+        _("Adresse complète pour les dons"),
         blank=True,
-        help_text="Cette adresse sera affichée sur la page pour inciter les visiteurs à envoyer leurs dons par chèque.",
+        help_text=_("Cette adresse sera affichée sur la page pour inciter les visiteurs à envoyer leurs dons par chèque."),
     )
 
     contact_email = models.EmailField(
-        "Adresse email de contact",
+        _("Adresse email de contact"),
         max_length=255,
         blank=True,
-        help_text="Une adresse email publique qui peut être utilisée pour contacter votre campagne",
+        help_text=_("Une adresse email publique qui peut être utilisée pour contacter votre campagne"),
     )
 
     mandataire_email = models.EmailField(
-        "Adresse email du mandataire financier",
+        _("Adresse email du mandataire financier"),
         max_length=255,
         blank=True,
-        help_text="Nous aurons sans doute besoin pendant et après la campagne de transmettre des documents"
+        help_text=_("Nous aurons sans doute besoin pendant et après la campagne de transmettre des documents"
         " légaux au mandataire financier. Indiquez-nous une adresse qui nous permettra de le⋅a contacter à"
-        " ce moment.",
+        " ce moment."),
     )
 
     chefs_file = models.ManyToManyField(
         "people.Person",
-        verbose_name="Têtes de file pour les élections municipales de 2020",
+        verbose_name=_("Têtes de file pour les élections municipales de 2020"),
         related_name="municipales2020_commune",
         blank=True,
     )
 
     population = models.PositiveIntegerField(
-        verbose_name="Population municipale", null=True, blank=True
+        verbose_name=_("Population municipale"), null=True, blank=True
     )
 
     def __str__(self):
@@ -190,34 +191,34 @@ class CommunePage(TimeStampedModel, models.Model):
         constraints = (
             UniqueConstraint(fields=["code_departement", "slug"], name="dep_slug"),
         )
-        verbose_name = "Page de commune"
-        verbose_name_plural = "Pages de commune"
+        verbose_name = _("Page de commune")
+        verbose_name_plural = _("Pages de commune")
 
 
 NUANCES_CHOICES = [
-    ("LDVC", "Divers centre"),
-    ("LDVG", "Divers gauche"),
-    ("LEXG", "Extrême gauche"),
-    ("LDIV", "Divers"),
-    ("LDVD", "Divers droite"),
-    ("LREM", "LREM"),
-    ("LUG", "Union de la gauche"),
-    ("LUD", "Union de la droite"),
-    ("LRN", "Rassemblement national"),
-    ("LECO", "Autre Ecologiste"),
-    ("LSOC", "Socialiste"),
-    ("LCOM", "Communiste"),
-    ("LFI", "FI"),
-    ("LVEC", "EELV"),
-    ("LUDI", "UDI"),
-    ("LLR", "Les Républicains"),
-    ("LDLF", "Debout la France"),
-    ("LEXD", "Extrême droite"),
-    ("LRDG", "Parti radical de gauche"),
-    ("LMDM", "Modem"),
-    ("LUC", "Union du centre"),
-    ("LREG", "Régionaliste"),
-    ("LGJ", "Gilets Jaunes"),
+    ("LDVC", _("Divers centre")),
+    ("LDVG", _("Divers gauche")),
+    ("LEXG", _("Extrême gauche")),
+    ("LDIV", _("Divers")),
+    ("LDVD", _("Divers droite")),
+    ("LREM", _("LREM")),
+    ("LUG", _("Union de la gauche")),
+    ("LUD", _("Union de la droite")),
+    ("LRN", _("Rassemblement national")),
+    ("LECO", _("Autre Ecologiste")),
+    ("LSOC", _("Socialiste")),
+    ("LCOM", _("Communiste")),
+    ("LFI", _("FI")),
+    ("LVEC", _("EELV")),
+    ("LUDI", _("UDI")),
+    ("LLR", _("Les Républicains")),
+    ("LDLF", _("Debout la France")),
+    ("LEXD", _("Extrême droite")),
+    ("LRDG", _("Parti radical de gauche")),
+    ("LMDM", _("Modem")),
+    ("LUC", _("Union du centre")),
+    ("LREG", _("Régionaliste")),
+    ("LGJ", _("Gilets Jaunes")),
 ]
 
 
@@ -226,13 +227,13 @@ class Liste(models.Model):
     SOUTIEN_PREF = "O"
     SOUTIEN_NON = "N"
     SOUTIEN_CHOICES = (
-        (SOUTIEN_PUBLIC, "Soutien et participation de la FI"),
-        (SOUTIEN_PREF, "Préférence de la FI sans soutien"),
-        (SOUTIEN_NON, "Non soutenue"),
+        (SOUTIEN_PUBLIC, _("Soutien et participation de la FI")),
+        (SOUTIEN_PREF, _("Préférence de la FI sans soutien")),
+        (SOUTIEN_NON, _("Non soutenue")),
     )
 
-    code = models.CharField(verbose_name="Code", max_length=20, editable=False)
-    nom = models.CharField(verbose_name="Nom de la liste", max_length=300)
+    code = models.CharField(verbose_name=_("Code"), max_length=20, editable=False)
+    nom = models.CharField(verbose_name=_("Nom de la liste"), max_length=300)
     commune = models.ForeignKey(
         CommunePage,
         on_delete=models.CASCADE,
@@ -243,33 +244,33 @@ class Liste(models.Model):
     )
 
     tour = models.IntegerField(
-        "Tour", choices=[(1, "Premier tour"), (2, "Deuxième tour")]
+        _("Tour"), choices=[(1, _("Premier tour"), (2, "Deuxième tour"))]
     )
 
     nuance = models.CharField(
-        verbose_name="Nuance politique", max_length=4, choices=NUANCES_CHOICES
+        verbose_name=_("Nuance politique"), max_length=4, choices=NUANCES_CHOICES
     )
 
     candidats_noms = ArrayField(
-        verbose_name="Noms candidats",
+        verbose_name=_("Noms candidats"),
         base_field=models.CharField(max_length=200),
         default=list,
     )
 
     candidats_prenoms = ArrayField(
-        verbose_name="Prénoms candidats",
+        verbose_name=_("Prénoms candidats"),
         base_field=models.CharField(max_length=200),
         default=list,
     )
 
     candidats_communautaire = ArrayField(
-        verbose_name="Candidats pour le conseil communautaire",
+        verbose_name=_("Candidats pour le conseil communautaire"),
         base_field=models.BooleanField(),
         default=list,
     )
 
     soutien = models.CharField(
-        verbose_name="Soutien ou participation de la FI",
+        verbose_name=_("Soutien ou participation de la FI"),
         max_length=1,
         choices=SOUTIEN_CHOICES,
         default=SOUTIEN_NON,

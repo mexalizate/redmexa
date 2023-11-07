@@ -1,20 +1,21 @@
 {% extends "front/layout.html" %}
+{% load i18n %}
 
-{% block title %}Ne plus participer à l'événement {{ event.name }}{% endblock %}
+{% block title %}{% translate "Ne plus participer à l'événement" %} {{ event.name }}{% endblock %}
 
 {% block main %}
 <div class="row">
   <div class="col-xs-12 margintopmore text-right" style="line-height: 45px; margin-bottom: 0;">
     <div class="pull-left">
       <a class="menu-back-link" href="{% url "list_events" %}">
-        <i class="fa fa-arrow-left"></i>&emsp;Retour à l'accueil
+        <i class="fa fa-arrow-left"></i>&emsp;{% translate "Retour à l'accueil" %}
       </a>
     </div>
     <div class="pull-right">
       <a
         class="btn btn-sm btn-default"
         href="{% url "view_event" event.pk %}">
-        Page publique de l'événement
+        {% translate "Page publique de l'événement" %}
       </a>
     </div>
     <div class="clearfix"></div>
@@ -26,21 +27,21 @@
     </h2>
     <hr />
     <h3>
-      Annuler ma participation à un événement
+      {% translate "Annuler ma participation à un événement" %}
     </h3>
     <p>
-      Souhaitez vous réellement ne plus participer à l'événement <strong>{{ event.name }}</strong> &nbsp;?
+      {% translate "Souhaitez vous réellement ne plus participer à l'événement" %} <strong>{{ event.name }}</strong> &nbsp;?
     </p>
     <form method="POST" class="row padtop">
       {% csrf_token %}
       <div class="col-sm-3">
         <a href="{% url "view_event" event.pk %}" class="marginbottomless btn btn-block btn-default">
-          Retour
+          {% translate "Retour" %}
         </a>
       </div>
       <div class="col-sm-4">
         <button type="submit" class="marginbottomless btn btn-block btn-danger">
-          Quitter l'événement
+          {% translate "Quitter l'événement" %}
         </button>
       </div>
     </form>

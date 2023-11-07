@@ -327,7 +327,7 @@ class SingleEventMapView(EventMapMixin, AbstractSingleItemMapView):
 
     def get(self, request, *args, **kwargs):
         if not request.user.has_perm("events.view_event", self.get_object()):
-            raise Http404("Cette page n'existe pas.")
+            raise Http404(_("Cette page n'existe pas."))
         return super().get(request, *args, **kwargs)
 
 

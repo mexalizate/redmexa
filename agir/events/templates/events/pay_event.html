@@ -1,48 +1,43 @@
 {% extends "front/layout.html" %}
+{% load i18n %}
 {% load crispy_forms_tags %}
 
-{% block title %}S'inscrire pour «&nbsp;{{ event.name }}&nbsp;»{% endblock %}
+{% block title %}{% translate "S'inscrire pour" %} «&nbsp;{{ event.name }}&nbsp;»{% endblock %}
 
 {% block main %}
   <div class="col-responsive">
     <h2><a href="{% url "view_event" event.pk %}">{{ event.name }}</a></h2>
     <ol class="breadcrumb">
-      <li><a href="{% url "view_event" event.pk %}">Page publique de l'événement</a></li>
-      <li><a href="{% url "rsvp_event" event.pk %}">Inscription à l'événement</a></li>
+      <li><a href="{% url "view_event" event.pk %}">{% translate "Page publique de l'événement" %}</a></li>
+      <li><a href="{% url "rsvp_event" event.pk %}">{% translate "Inscription à l'événement" %}</a></li>
       <li>Paiement</li>
     </ol>
     {% if event.subscription_form is not None %}
-      <h2 class="headline">Récapitulatif et paiement</h2>
+      <h2 class="headline">{% translate "Récapitulatif et paiement" %}</h2>
       <div class="alert" style="color:#4d26b9;background-color:#e9e1ff;border-color:#e9e1ff;">
-        Les paiements relatifs aux événements ne constituent <strong>pas</strong> des dons,
-        et n'ouvrent donc <strong>pas</strong> droit à la réduction d'impôt de 66 %.
+        {% blocktrans %}Les paiements relatifs aux événements ne constituent <strong>pas</strong> des dons, et n'ouvrent donc <strong>pas</strong> droit à la réduction d'impôt de 66 %.{% endblocktrans %}
       </div>
       <div>
 
-        <h3>Les informations que vous avez entrées&nbsp;:</h3>
+        <h3>{% translate "Les informations que vous avez entrées" %}&nbsp;:</h3>
         {% include "people/includes/personform_submission_data.html" with submission_data=submission_data %}
         <p><b>Total&nbsp;:</b> {{ price|floatformat:2 }} €</p>
-        <h3 class="headline">Informations de facturation</h3>
+        <h3 class="headline">{% translate "Informations de facturation" %}</h3>
         <div class="alert alert-warning">
           <p>
-            Attention, même si vous inscrivez une autre personne, vous devez entrer les informations de la personne
-            qui détient le compte lafranceinsoumise.fr ou actionpopulaire.fr associé à l'adresse {{ user.person.email }} et qui
-            effectue le paiement.
+            {% blocktrans with user.person.email as user_person_email %}Attention, même si vous inscrivez une autre personne, vous devez entrer les informations de la personne qui détient le compte lafranceinsoumise.fr ou actionpopulaire.fr associé à l'adresse {{ user_person_email }} et qui effectue le paiement.{% endblocktrans %}
           </p>
         </div>
       </div>
     {% else %}
-      <h2 class="headline">Informations de facturation</h2>
+      <h2 class="headline">{% translate "Informations de facturation" %}</h2>
       <div class="alert" style="color:#4d26b9;background-color:#e9e1ff;border-color:#e9e1ff;">
-        Les paiements relatifs aux événements ne constituent <strong>pas</strong> des dons,
-        et n'ouvrent donc <strong>pas</strong> droit à la réduction d'impôt de 66 %.
+        {% blocktrans %}Les paiements relatifs aux événements ne constituent <strong>pas</strong> des dons, et n'ouvrent donc <strong>pas</strong> droit à la réduction d'impôt de 66 %.{% endblocktrans %}
       </div>
 
       <div class="alert alert-warning">
         <p>
-          Attention, même si vous inscrivez une autre personne, vous devez entrer les informations de la personne
-          qui détient le compte lafranceinsoumise.fr ou actionpopulaire.fr associé à l'adresse {{ user.person.email }} et qui
-          effectue le paiement.
+          {% blocktrans with user.person.email as user_person_email %}Attention, même si vous inscrivez une autre personne, vous devez entrer les informations de la personne qui détient le compte lafranceinsoumise.fr ou actionpopulaire.fr associé à l'adresse {{ user.person.email }} et qui effectue le paiement.{% endblocktrans %}
         </p>
       </div>
     {% endif %}

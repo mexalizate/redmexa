@@ -11,6 +11,7 @@ from django.contrib.postgres.indexes import GinIndex
 from django.contrib.postgres.search import SearchVector, SearchRank, SearchVectorField
 from django.db import models
 from django.urls import reverse
+from django.utils.translation import gettext_lazy as _, gettext
 
 from agir.gestion.models.configuration import EngagementAutomatique
 from agir.lib.models import TimeStampedModel
@@ -83,19 +84,19 @@ class ModeleGestionMixin(SearchableModel):
     objects = NumeroManager()
 
     numero = models.CharField(
-        verbose_name="Numéro unique",
+        verbose_name=_("Numéro unique"),
         max_length=7,
         editable=False,
         blank=False,
         default=numero_unique,
         unique=True,
-        help_text="Numéro unique pour identifier chaque objet sur la plateforme.",
+        help_text=_("Numéro unique pour identifier chaque objet sur la plateforme."),
     )
 
     commentaires = models.ManyToManyField(
         to="Commentaire",
-        verbose_name="Commentaires",
-        help_text="Ces commentaires permettent d'ajouter de garder la trace des opérations de traitement des différentes pièces.",
+        verbose_name=_("Commentaires"),
+        help_text=_("Ces commentaires permettent d'ajouter de garder la trace des opérations de traitement des différentes pièces."),
     )
 
     def __str__(self):
@@ -115,56 +116,56 @@ class Compte(TimeStampedModel):
     """
 
     designation = models.CharField(
-        verbose_name="Désignation courte", max_length=5, blank=False, unique=True
+        verbose_name=_("Désignation courte"), max_length=5, blank=False, unique=True
     )
     nom = models.CharField(
-        verbose_name="Nom complet du compte", max_length=200, blank=False
+        verbose_name=_("Nom complet du compte"), max_length=200, blank=False
     )
-    description = models.TextField(verbose_name="Description", blank=True)
+    description = models.TextField(verbose_name=_("Description"), blank=True)
 
-    actif = models.BooleanField(verbose_name="Compte actif", default=True)
+    actif = models.BooleanField(verbose_name=_("Compte actif"), default=True)
 
     emetteur_designation = models.CharField(
-        verbose_name="Désignation bancaire d'émetteur",
+        verbose_name=_("Désignation bancaire d'émetteur"),
         max_length=140,
         blank=True,
-        help_text="La désignation bancaire utilisée pour émettre des virements à partir de ce compte.",
+        help_text=_("La désignation bancaire utilisée pour émettre des virements à partir de ce compte."),
     )
 
     emetteur_iban = IBANField(
-        verbose_name="IBAN émetteur",
-        help_text="L'IBAN utilisé pour émettre des virements à partir de ce compte.",
+        verbose_name=_("IBAN émetteur"),
+        help_text=_("L'IBAN utilisé pour émettre des virements à partir de ce compte."),
         blank=True,
     )
 
     emetteur_bic = BICField(
-        verbose_name="BIC émetteur",
-        help_text="Le BIC utilisé pour émettre des virements à partir de ce compte.",
+        verbose_name=_("BIC émetteur"),
+        help_text=_("Le BIC utilisé pour émettre des virements à partir de ce compte."),
         blank=True,
     )
 
     beneficiaire_designation = models.CharField(
-        verbose_name="Désignation bancaire de créditeur",
+        verbose_name=_("Désignation bancaire de créditeur"),
         max_length=140,
         blank=True,
-        help_text="La désignation bancaire utilisée comme créditeur pour un virement vers ce compte (pour une "
-        "refacturation par exemple).",
+        help_text=_("La désignation bancaire utilisée comme créditeur pour un virement vers ce compte (pour une "
+        "refacturation par exemple)."),
     )
 
     beneficiaire_iban = IBANField(
-        verbose_name="IBAN émetteur",
-        help_text="L'IBAN utilisé comme créditeur pour un virement vers ce compte.",
+        verbose_name=_("IBAN émetteur"),
+        help_text=_("L'IBAN utilisé comme créditeur pour un virement vers ce compte."),
         blank=True,
     )
 
     beneficiaire_bic = BICField(
-        verbose_name="BIC émetteur",
-        help_text="Le BIC utilisé comme créditeur pour un virement vers ce compte.",
+        verbose_name=_("BIC émetteur"),
+        help_text=_("Le BIC utilisé comme créditeur pour un virement vers ce compte."),
         blank=True,
     )
 
     configuration = models.JSONField(
-        verbose_name="Configuration",
+        verbose_name=_("Configuration"),
         default=dict,
         null=False,
         blank=True,
@@ -176,24 +177,24 @@ class Compte(TimeStampedModel):
         return f"{self.designation}"
 
     class Meta:
-        verbose_name = "Compte"
-        verbose_name_plural = "Comptes"
+        verbose_name = _("Compte")
+        verbose_name_plural = _("Comptes")
         permissions = [
             (
                 "acces_contenu_restreint",
-                "Voir les projets, dépenses et documents dont l'accès est indiqué comme restreint.",
+                _("Voir les projets, dépenses et documents dont l'accès est indiqué comme restreint."),
             ),
             (
                 "acces_contenu_secret",
-                "Voir les projets, dépenses et documents dont l'accès est indiqué commme secret.",
+                _("Voir les projets, dépenses et documents dont l'accès est indiqué commme secret."),
             ),
-            ("engager_depense", "Engager une dépense pour ce compte"),
-            ("gerer_depense", "Gérer les dépenses après engagement"),
-            ("controler_depense", "Contrôler les dépenses a posteriori"),
-            ("validation_depense", "Validation comptable des dépenses"),
-            ("voir_montant_depense", "Voir le montant des dépenses finalisées"),
-            ("gerer_projet", "Gérer les projets"),
-            ("controler_projet", "Contrôler les projets"),
+            ("engager_depense", _("Engager une dépense pour ce compte")),
+            ("gerer_depense", _("Gérer les dépenses après engagement")),
+            ("controler_depense", _("Contrôler les dépenses a posteriori")),
+            ("validation_depense", _("Validation comptable des dépenses")),
+            ("voir_montant_depense", _("Voir le montant des dépenses finalisées")),
+            ("gerer_projet", _("Gérer les projets")),
+            ("controler_projet", _("Contrôler les projets")),
         ]
 
 
@@ -218,13 +219,13 @@ class Autorisation(TimeStampedModel):
 
 class InstanceCherchable(models.Model):
     numero = models.CharField(
-        verbose_name="Numéro unique",
+        verbose_name=_("Numéro unique"),
         max_length=7,
         editable=False,
         blank=True,
         default=numero_unique,
         unique=True,
-        help_text="Numéro unique pour identifier chaque objet sur la plateforme.",
+        help_text=_("Numéro unique pour identifier chaque objet sur la plateforme."),
     )
     recherche = SearchVectorField(verbose_name="Champ de recherche", null=False)
     content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)

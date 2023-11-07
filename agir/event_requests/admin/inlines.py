@@ -6,6 +6,7 @@ from django.forms import Textarea
 from django.urls import reverse
 from django.utils.html import format_html
 from django.utils.safestring import mark_safe
+from django.utils.translation import gettext as _, gettext
 
 from agir.event_requests import models
 from agir.events.models import Event
@@ -15,8 +16,8 @@ from agir.people.models import Person
 
 
 class EventAssetTemplateInline(NonrelatedTabularInline):
-    verbose_name = "template de visuel"
-    verbose_name_plural = "templates de visuels"
+    verbose_name = _("template de visuel")
+    verbose_name_plural = _("templates de visuels")
     model = models.EventAssetTemplate
     fields = ("name", "file", "target_format")
     extra = 0
@@ -32,8 +33,8 @@ class EventAssetTemplateInline(NonrelatedTabularInline):
 
 
 class EventAssetInline(admin.TabularInline):
-    verbose_name = "visuel de l'événement"
-    verbose_name_plural = "visuels de l'événement"
+    verbose_name = _("visuel de l'événement")
+    verbose_name_plural = _("visuels de l'événement")
     model = models.EventAsset
     fields = (
         "name",
@@ -53,13 +54,13 @@ class EventAssetInline(admin.TabularInline):
     show_change_link = True
     extra = 0
 
-    @admin.display(description="Génération")
+    @admin.display(description=_("Génération"))
     def render(self, obj):
         if obj and obj.renderable:
             return format_html(
-                '<a href="{}" class="button" title="Régénérer le visuel">⟳ Régénérer</a>'
-                "<p class='help' style='margin:0;padding:8px 0 0;font-size:0.75rem;'>"
-                "<strong>⚠ Le visuel existant sera définitivement supprimé</strong>"
+                gettext("<a href='{}' class='button' title='Régénérer le visuel'>⟳ Régénérer</a>"),
+                "<p class='help' style='margin:0;padding:8px 0 0;font-size:0.75rem;'>",
+                gettext("<strong>⚠ Le visuel existant sera définitivement supprimé</strong>"),
                 "</p>",
                 admin_url(
                     f"{self.opts.app_label}_{self.opts.model_name}_render",
@@ -76,9 +77,9 @@ class EventAssetInline(admin.TabularInline):
 
         if obj.is_event_image_candidate:
             return format_html(
-                '<a href="{}" class="button" title="Utiliser comme image de bannière">🖼️ Utiliser comme image</a>'
-                "<p class='help' style='margin:0;padding:8px 0 0;font-size:0.75rem;'>"
-                "<strong>⚠ L'image existante sera définitivement supprimée</strong>"
+                gettext('<a href="{}" class="button" title="Utiliser comme image de bannière">🖼️ Utiliser comme image</a>'),
+                "<p class='help' style='margin:0;padding:8px 0 0;font-size:0.75rem;'>",
+                gettext("<strong>⚠ L'image existante sera définitivement supprimée</strong>"),
                 "</p>",
                 admin_url(
                     f"{self.opts.app_label}_{self.opts.model_name}_set_as_event_image",
@@ -105,18 +106,18 @@ class EventAssetInline(admin.TabularInline):
             obj.name,
         )
 
-    @admin.display(description="Publié", boolean=True)
+    @admin.display(description=_("Publié"), boolean=True)
     def is_published(self, obj):
         return obj and obj.published
 
-    @admin.display(description="Publication")
+    @admin.display(description=_("Publication"))
     def publishing(self, obj):
         if obj and not obj.published:
             return format_html(
-                "<a href='{}' class='button'>✔ Publier</a>"
-                "<p class='help' style='margin:0;padding:8px 0 0;font-size:0.75rem;'>"
-                "Les organisateur·ices recevront une notification et pourront accèder au visuel "
-                "dans le volet de gestion de la page de l'événement"
+                gettext("<a href='{}' class='button'>✔ Publier</a>"),
+                gettext("<p class='help' style='margin:0;padding:8px 0 0;font-size:0.75rem;'>"),
+                gettext("Les organisateur·ices recevront une notification et pourront accèder au visuel "),
+                gettext("dans le volet de gestion de la page de l'événement"),
                 "</p>",
                 admin_url(
                     f"{self.opts.app_label}_{self.opts.model_name}_publish",
@@ -126,7 +127,7 @@ class EventAssetInline(admin.TabularInline):
 
         if obj and obj.published:
             return format_html(
-                "<a href='{}' class='button'>✖ Dépublier</a>",
+                _("<a href='{}' class='button'>✖ Dépublier</a>"),
                 admin_url(
                     f"{self.opts.app_label}_{self.opts.model_name}_unpublish",
                     args=[obj.id],
@@ -145,8 +146,8 @@ class EventAssetInline(admin.TabularInline):
 
 
 class EventThemeInline(admin.TabularInline):
-    verbose_name = "thème"
-    verbose_name_plural = "thèmes"
+    verbose_name = _("thème")
+    verbose_name_plural = _("thèmes")
     model = models.EventTheme
     extra = 0
     show_change_link = True
@@ -155,8 +156,8 @@ class EventThemeInline(admin.TabularInline):
 
 
 class EventSpeakerThemeInline(admin.TabularInline):
-    verbose_name = "thème"
-    verbose_name_plural = "thèmes"
+    verbose_name = _("thème")
+    verbose_name_plural = _("thèmes")
     model = models.EventSpeaker.event_themes.through
     extra = 0
     can_delete = False
@@ -167,8 +168,8 @@ class EventSpeakerThemeInline(admin.TabularInline):
 
 
 class EventThemeSpeakerInline(admin.TabularInline):
-    verbose_name = "intervenant·e"
-    verbose_name_plural = "intervenant·es"
+    verbose_name = _("intervenant·e")
+    verbose_name_plural = _("intervenant·es")
     model = models.EventSpeaker.event_themes.through
     extra = 0
     can_delete = False
@@ -180,8 +181,8 @@ class EventThemeSpeakerInline(admin.TabularInline):
 
 
 class EventSpeakerRequestInline(admin.TabularInline):
-    verbose_name = "demandes de disponibilité"
-    verbose_name_plural = "demandes de disponibilité"
+    verbose_name = _("demandes de disponibilité")
+    verbose_name_plural = _("demandes de disponibilité")
     model = models.EventSpeakerRequest
     extra = 0
     can_delete = False
@@ -236,7 +237,7 @@ class EventSpeakerRequestInline(admin.TabularInline):
                     "admin:event_requests_eventspeakerrequest_unaccept",
                     args=(obj.pk,),
                 ),
-                "Annuler",
+                _("Annuler"),
                 button=True,
             )
 
@@ -244,8 +245,8 @@ class EventSpeakerRequestInline(admin.TabularInline):
 
 
 class EventSpeakerEventInline(NonrelatedTabularInline):
-    verbose_name = "événement"
-    verbose_name_plural = "événements"
+    verbose_name = _("événement")
+    verbose_name_plural = _("événements")
     model = Event
     extra = 0
     can_add = False
@@ -275,8 +276,8 @@ class EventSpeakerEventInline(NonrelatedTabularInline):
 
 
 class EventSpeakerUpcomingEventInline(EventSpeakerEventInline):
-    verbose_name = "événement à venir"
-    verbose_name_plural = "événements à venir"
+    verbose_name = _("événement à venir")
+    verbose_name_plural = _("événements à venir")
     ordering = ("start_time",)
 
     def get_form_queryset(self, obj):
@@ -284,8 +285,8 @@ class EventSpeakerUpcomingEventInline(EventSpeakerEventInline):
 
 
 class EventSpeakerPastEventInline(EventSpeakerEventInline):
-    verbose_name = "dernier événement"
-    verbose_name_plural = "derniers événements"
+    verbose_name = _("dernier événement")
+    verbose_name_plural = _("derniers événements")
     ordering = ("-start_time",)
     max_num = 10
 
@@ -295,8 +296,8 @@ class EventSpeakerPastEventInline(EventSpeakerEventInline):
 
 class EventSpeakerPersonInline(NonrelatedTabularInline):
     model = Person
-    verbose_name = "personne"
-    verbose_name_plural = "personne"
+    verbose_name = _("personne")
+    verbose_name_plural = _("personne")
     extra = 0
     can_add = False
     can_delete = False
@@ -321,6 +322,6 @@ class EventSpeakerPersonInline(NonrelatedTabularInline):
     def save_new_instance(self, parent, instance):
         instance.save()
 
-    @admin.display(description="E-mail d'affichage")
+    @admin.display(description=_("E-mail d'affichage"))
     def display_email(self, obj):
         return obj.display_email

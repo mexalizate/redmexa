@@ -5,6 +5,7 @@ from django.http import HttpResponseRedirect
 from django.utils.html import format_html
 from django.utils.safestring import mark_safe
 from django.utils.translation import ngettext
+from django.utils.translation import gettext_lazy as _
 
 from agir.activity.models import Activity, Announcement, PushAnnouncement
 from agir.lib.admin.utils import display_json_details
@@ -16,10 +17,10 @@ class ActivityAdmin(admin.ModelAdmin):
     fieldsets = (
         (None, {"fields": ("timestamp", "type", "recipient", "status", "push_status")}),
         (
-            "Éléments liés",
+            _("Éléments liés"),
             {"fields": ("event", "supportgroup", "individual", "announcement", "meta")},
         ),
-        ("Création et modification", {"fields": ("created", "modified")}),
+        (_("Création et modification"), {"fields": ("created", "modified")}),
     )
     list_display = ("type", "timestamp", "recipient", "status", "push_status")
     list_filter = ("type", "status", "push_status")
@@ -53,7 +54,7 @@ class AnnouncementAdmin(admin.ModelAdmin):
 
     fieldsets = (
         (
-            "Contenu",
+            _("Contenu"),
             {
                 "fields": (
                     "title",
@@ -66,7 +67,7 @@ class AnnouncementAdmin(admin.ModelAdmin):
             },
         ),
         (
-            "Conditions d'affichage",
+            _("Conditions d'affichage"),
             {
                 "fields": (
                     "segment",
@@ -77,7 +78,7 @@ class AnnouncementAdmin(admin.ModelAdmin):
                 )
             },
         ),
-        ("Statistiques", {"fields": ("affichages", "clics")}),
+        (_("Statistiques"), {"fields": ("affichages", "clics")}),
     )
 
     readonly_fields = ["miniatures", "affichages", "clics"]
@@ -105,7 +106,7 @@ class AnnouncementAdmin(admin.ModelAdmin):
             activity=activity,
         )
 
-    miniatures.short_description = "Affichage de l'image selon l'environnement"
+    miniatures.short_description = _("Affichage de l'image selon l'environnement")
 
     def affichages(self, obj):
         if obj.pk:
@@ -114,13 +115,13 @@ class AnnouncementAdmin(admin.ModelAdmin):
             ).count()
         return "-"
 
-    affichages.short_description = "Nombre d'affichages uniques"
+    affichages.short_description = _("Nombre d'affichages uniques")
 
     def clics(self, obj):
         if obj.pk:
             return obj.activities.filter(status=Activity.STATUS_INTERACTED).count()
 
-    clics.short_description = "Nombre de clics uniques"
+    clics.short_description = _("Nombre de clics uniques")
 
 
 @admin.register(PushAnnouncement)
@@ -130,7 +131,7 @@ class PushAnnouncementAdmin(admin.ModelAdmin):
     save_on_top = True
     fieldsets = (
         (
-            "Paramètres du message",
+            _("Paramètres du message"),
             {
                 "fields": (
                     "title",
@@ -147,7 +148,7 @@ class PushAnnouncementAdmin(admin.ModelAdmin):
             },
         ),
         (
-            "Paramètres de test",
+            _("Paramètres de test"),
             {
                 "fields": (
                     "test_segment",
@@ -157,7 +158,7 @@ class PushAnnouncementAdmin(admin.ModelAdmin):
             },
         ),
         (
-            "Paramètres d'envoi",
+            _("Paramètres d'envoi"),
             {
                 "fields": (
                     "segment",
@@ -166,7 +167,7 @@ class PushAnnouncementAdmin(admin.ModelAdmin):
             },
         ),
         (
-            "Statistiques d'envoi",
+            _("Statistiques d'envoi"),
             {
                 "fields": (
                     "sending_date",
@@ -190,24 +191,24 @@ class PushAnnouncementAdmin(admin.ModelAdmin):
     ]
     autocomplete_fields = ("segment", "test_segment")
 
-    @admin.display(description="Données")
+    @admin.display(description=_("Données"))
     def notification_data(self, obj):
         if obj._state.adding:
             return "-"
 
         android, ios = obj.get_notification_kwargs()
         return display_json_details(
-            {"android": android, "ios": ios}, "Données de notification"
+            {"android": android, "ios": ios}, _("Données de notification")
         )
 
-    @admin.display(description="Nombre de destinataires de test")
+    @admin.display(description=_("Nombre de destinataires de test"))
     def test_recipient_count(self, obj):
         if obj._state.adding or not obj.test_segment:
             return "-"
 
         return obj.test_recipient_count()
 
-    @admin.display(description="Nombre de destinataires")
+    @admin.display(description=_("Nombre de destinataires"))
     def recipient_count(self, obj):
         if obj._state.adding:
             return "-"
@@ -217,21 +218,21 @@ class PushAnnouncementAdmin(admin.ModelAdmin):
 
         return obj.displayed_count()
 
-    @admin.display(description="Nombre de clics")
+    @admin.display(description=_("Nombre de clics"))
     def clicked_count(self, obj):
         if obj._state.adding:
             return "-"
 
         return obj.clicked_count()
 
-    @admin.display(description="Données")
+    @admin.display(description=_("Données"))
     def sending_data(self, obj):
         if obj._state.adding:
             return "-"
 
-        return display_json_details(obj.sending_meta, "Données de l'envoi")
+        return display_json_details(obj.sending_meta, _("Données de l'envoi"))
 
-    @admin.display(description="Actions")
+    @admin.display(description=_("Actions"))
     def test_action_buttons(self, obj):
         if obj._state.adding or not obj.test_segment:
             return "-"
@@ -251,25 +252,25 @@ class PushAnnouncementAdmin(admin.ModelAdmin):
             "</div>"
         )
 
-    @admin.display(description="Actions")
+    @admin.display(description=_("Actions"))
     def action_buttons(self, obj):
         if obj._state.adding or not obj.can_send():
             return "-"
 
         return format_html(
-            "<input type='submit' "
-            "name='_send' "
-            "style='border-radius:8px;background:#571aff;font-weight:bold;' "
+            "<input type='submit' ",
+            "name='_send' ",
+            "style='border-radius:8px;background:#571aff;font-weight:bold;' ",
             "value='🚀&ensp;{}' />",
-            "ENVOYER L'ANNONCE",
+            _("ENVOYER L'ANNONCE"),
         ) + format_html(
-            "<div class='help' style='margin: 4px 0 0; padding: 0;'>"
-            "Attention : cliquer sur ce bouton recharge la page sans sauvegarder vos modifications courantes."
-            "<br />"
-            "Les notifications seront envoyées aux appareils des personnes du segment spécifié et des notices "
-            "d'activité seront créés pour pouvoir compter le nombre de clics.<br />Une fois l'annonce envoyée il ne sera "
-            "plus possible de la renvoyer."
-            "</div>"
+            "<div class='help' style='margin: 4px 0 0; padding: 0;'>",
+            _("Attention : cliquer sur ce bouton recharge la page sans sauvegarder vos modifications courantes."),
+            "<br />",
+            _("Les notifications seront envoyées aux appareils des personnes du segment spécifié et des notices "),
+            _("d'activité seront créés pour pouvoir compter le nombre de clics.<br />Une fois l'annonce envoyée il ne sera "),
+            _("plus possible de la renvoyer."),
+            "</div>",
         )
 
     def response_change(self, request, obj):

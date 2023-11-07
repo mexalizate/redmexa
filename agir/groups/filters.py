@@ -5,6 +5,7 @@ from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Row, Div, Submit
 from django import forms
 from django.forms import CheckboxInput
+from django.utils.translation import gettext as _
 
 from agir.groups.models import SupportGroup
 from agir.lib.filters import DistanceFilter
@@ -34,7 +35,7 @@ class GroupFilterSet(django_filters.FilterSet):
 
     certified = django_filters.BooleanFilter(
         method="filter_certified",
-        label="Groupes certifiés uniquement",
+        label=_("Groupes certifiés uniquement"),
         widget=CheckboxInput,
     )
 
@@ -66,7 +67,7 @@ class GroupFilterSet(django_filters.FilterSet):
 class GroupAPIFilterSet(GroupFilterSet, django_filters.rest_framework.FilterSet):
     exclude = django_filters.CharFilter(
         method="filter_exclude",
-        label="Sauf l'id de groupe",
+        label=_("Sauf l'id de groupe"),
     )
 
     def filter_exclude(self, qs, name, value):
