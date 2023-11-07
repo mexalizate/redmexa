@@ -33,7 +33,7 @@ export const WithErrors = Template.bind({});
 WithErrors.args = {
   ...Editing.args,
   errors: {
-    label: "This does not mean anything!",
+    label: _("This does not mean anything!"),
     url: "This is not an URL",
   },
 };

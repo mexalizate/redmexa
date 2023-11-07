@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useCallback } from "react";
 import { animated, useTransition } from "@react-spring/web";
@@ -208,13 +209,13 @@ const Comment = (props) => {
                   {canDelete && (
                     <button onClick={handleDelete}>
                       <RawFeatherIcon name="x" color={style.primary500} />
-                      Supprimer
+                      {_("Supprimer")}
                     </button>
                   )}
                   {canReport && (
                     <button onClick={handleReport}>
                       <RawFeatherIcon name="flag" color={style.primary500} />
-                      Signaler
+                      {_("Signaler")}
                     </button>
                   )}
                 </StyledInlineMenuItems>

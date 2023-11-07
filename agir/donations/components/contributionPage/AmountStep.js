@@ -1,3 +1,4 @@
+import _ from "gettext";
 import { DateTime } from "luxon";
 import PropTypes from "prop-types";
 import React, { useMemo, useState } from "react";
@@ -125,43 +126,30 @@ const AmountStep = (props) => {
             onChange={selectGroup}
           />
           <p>
-            <strong>La contribution volontaire</strong> est un don versé
-            mensuellement jusqu’à la fin de l’année civile. En devenant
-            financeur·euse de la France insoumise, vous vous engagez à ce que
-            votre contribution soit versée{" "}
-            <strong>chaque mois jusqu’au mois de {endDateString}</strong>*.
+            <strong>{_("La contribution volontaire")}</strong> {_("est un don versé mensuellement jusqu’à la fin de l’année civile. En devenant financeur·euse de la France insoumise, vous vous engagez à ce que votre contribution soit versée")}{" "}
+            <strong>{_("chaque mois jusqu’au mois de ")}{endDateString}</strong>*.
           </p>
           <p>
-            Par votre engagement, vous permettrez à notre mouvement de mieux
-            planifier et organiser ses activités au niveau local et/ou national,
-            tout au long de l’année. C'est pourquoi, dès le mois de décembre
-            prochain, vous serez sollicité·e pour reconduire votre contribution
-            volontaire pour l'année suivante.
+            {_("Par votre engagement, vous permettrez à notre mouvement de mieux planifier et organiser ses activités au niveau local et/ou national, tout au long de l’année. C'est pourquoi, dès le mois de décembre prochain, vous serez sollicité·e pour reconduire votre contribution volontaire pour l'année suivante.")}
           </p>
           {fixedRatio && (
             <p>
-              Une partie de votre contribution volontaire ({fixedRatio * 100}%)
-              sera automatiquement réservée à une{" "}
-              <strong>caisse nationale de solidarité financière</strong> afin
-              d'être redistribuée aux caisses départementales. Le reste de votre
-              contribution peut être alloué, suivant la répartition que vous
-              choisissez, entre {hasGroup ? "le groupe d'action local, " : ""}
-              une caisse départementale et/ou la France insoumise.
+              {_("Une partie de votre contribution volontaire")} ({fixedRatio * 100}%)
+              {_("sera automatiquement réservée à une")}{" "}
+              <strong>{_("caisse nationale de solidarité financière")}</strong>{_(" afin d'être redistribuée aux caisses départementales. Le reste de votre contribution peut être alloué, suivant la répartition que vous choisissez, entre")} {hasGroup ? _("le groupe d'action local, ") : ""}
+              {_("une caisse départementale et/ou la France insoumise.")}
             </p>
           )}
           <p>
-            Votre contribution volontaire peut être réglée{" "}
-            <strong>mensuellement par carte bancaire</strong> ou{" "}
-            <strong>en une seule fois par chèque</strong>.
+            {_("Votre contribution volontaire peut être réglée")}{" "}
+            <strong>{_("mensuellement par carte bancaire")}</strong> {_("ou")}{" "}
+            <strong>{_("en une seule fois par chèque")}</strong>.
           </p>
           <p>
             <Link route="contributionHelp">En savoir plus</Link>
           </p>
           <p style={{ fontSize: "0.875rem" }}>
-            * Dans l’éventualité où vous souhaitiez interrompre votre
-            contribution volontaire, vous pourrez le faire à tout moment en vous
-            rendant dans l'onglet &laquo;&nbsp;Dons et paiements&nbsp;&raquo; de
-            votre espace personnel sur actionpopulaire.fr.
+            {_("* Dans l’éventualité où vous souhaitiez interrompre votre contribution volontaire, vous pourrez le faire à tout moment en vous rendant dans l'onglet &laquo;&nbsp;Dons et paiements&nbsp;&raquo; de votre espace personnel sur actionpopulaire.fr.")}
           </p>
           <form noValidate onSubmit={handleSubmit}>
             <AmountWidget
@@ -188,9 +176,9 @@ const AmountStep = (props) => {
               loading={isLoading}
             >
               <span>
-                <strong>Continuer</strong>
+                <strong>{_("Continuer")}</strong>
                 <br />
-                1/3 étapes
+                {_("1/3 étapes")}
               </span>
               <RawFeatherIcon name="arrow-right" />
             </StepButton>
@@ -200,13 +188,13 @@ const AmountStep = (props) => {
           <PaymentParagraph>
             <span>
               <RawFeatherIcon width="1rem" height="1rem" name="lock" />
-              &ensp;SÉCURISÉ ET ANONYME
+              &ensp;{_("SÉCURISÉ ET ANONYME")}
             </span>
             <img
               width="366"
               height="26"
               src={acceptedPaymentMethods}
-              alt="Moyens de paiement acceptés : Visa, Visa Electron, Mastercard, Maestro, Carte Bleue, E-Carte Bleue"
+              alt={_("Moyens de paiement acceptés : Visa, Visa Electron, Mastercard, Maestro, Carte Bleue, E-Carte Bleue")}
             />
           </PaymentParagraph>
         </StyledMain>

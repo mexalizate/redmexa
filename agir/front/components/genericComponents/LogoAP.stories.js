@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React from "react";
 
 import LogoAP from "./LogoAP";
@@ -27,7 +28,7 @@ const Template = (args) => <LogoAP {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  alt: "Action Populaire",
+  alt: _("Action Populaire"),
   height: "auto",
   width: "auto",
 };

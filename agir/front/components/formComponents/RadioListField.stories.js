@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React from "react";
 
 import RadioListField from "./RadioListField";
@@ -26,17 +27,17 @@ export const Default = Template.bind({});
 Default.args = {
   value: false,
   id: "attachment",
-  label: "Type de pièce jointe",
+  label: _("Type de pièce jointe"),
   disabled: false,
   options: [
-    { value: "E", label: "Devis" },
-    { value: "I", label: "Facture" },
-    { value: "B", label: "Impression" },
+    { value: "E", label: _("Devis") },
+    { value: "I", label: _("Facture") },
+    { value: "B", label: _("Impression") },
     {
       value: "P",
-      label: "Photo ou illustration de l'événement, de la salle, du matériel",
+      label: _("Photo ou illustration de l'événement, de la salle, du matériel"),
     },
-    { value: "O", label: "Autre type de justificatif" },
+    { value: "O", label: _("Autre type de justificatif") },
   ],
 };
 

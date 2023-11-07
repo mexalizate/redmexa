@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useCallback, useRef, Suspense } from "react";
 import styled from "styled-components";
@@ -221,23 +222,20 @@ const MessageStep = (props) => {
             <>
               {onBoarding ? (
                 <>
-                  Les animateur·ices du groupe ont été informé·es de votre
-                  arrivée dans le groupe. Envoyez-leur un message pour vous
-                  présenter&nbsp;!
+                  {_("Les animateur·ices du groupe ont été informé·es de votre arrivée dans le groupe. Envoyez-leur un message pour vous présenter !")}
                 </>
               ) : (
-                <>Contactez les animateur·ices du groupe&nbsp;!</>
+                <>{_("Contactez les animateur·ices du groupe !")}</>
               )}
               <Spacer size="0.5rem" />
             </>
           ) : (
             <>
-              Vous souhaitez rejoindre ce groupe ou bien recevoir des
-              informations&nbsp;? Entamez votre discussion ici&nbsp;!&nbsp;
+              {_("Vous souhaitez rejoindre ce groupe ou bien recevoir des informations ? Entamez votre discussion ici ! ")}
             </>
           )}
-          Vous recevrez leur réponse{" "}
-          <strong>par notification et sur votre e-mail</strong> (
+          {_("Vous recevrez leur réponse")}{" "}
+          <strong>{_("par notification et sur votre e-mail")}</strong> (
           <span style={{ color: style.primary500 }}>{user.email}</span>)
         </div>
       )}
@@ -250,13 +248,13 @@ const MessageStep = (props) => {
               {event.id
                 ? `À propos de ${event.name}${
                     event.startTime
-                      ? " du " + displayShortDate(event.startTime)
+                      ? _(" du ") + displayShortDate(event.startTime)
                       : ""
                   }`
-                : `Aucun événément associé`}
+                : _(`Aucun événément associé`)}
               &ensp;
               <button disabled={disabled} onClick={onClearEvent}>
-                Changer
+                {_("Changer")}
               </button>
             </em>
           )}

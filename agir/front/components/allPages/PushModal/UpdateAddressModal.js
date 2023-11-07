@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
@@ -66,16 +67,15 @@ export const UpdateAddressModal = (props) => {
   return (
     <Modal shouldShow={shouldShow} noScroll>
       <StyledModalContent>
-        <h4>Localisation</h4>
+        <h4>{_("Localisation")}</h4>
         <Spacer size=".5rem" />
         <p>
-          Entrez votre adresse pour que nous puissions vous suggérer les
-          événements à proximité de chez vous.
+          {_("Entrez votre adresse pour que nous puissions vous suggérer les événements à proximité de chez vous.")}
         </p>
         <Spacer size="1.5rem" />
         <form onSubmit={handleSubmit}>
           <TextField
-            label="Adresse"
+            label={_("Adresse")}
             id="address1"
             error={errors?.address1}
             name="address1"
@@ -86,7 +86,7 @@ export const UpdateAddressModal = (props) => {
           />
           <Spacer size="1rem" />
           <TextField
-            label="Complément d'adresse"
+            label={_("Complément d'adresse")}
             id="address2"
             error={errors?.address2}
             name="address2"
@@ -97,7 +97,7 @@ export const UpdateAddressModal = (props) => {
           />
           <Spacer size="1rem" />
           <TextField
-            label="Code postal"
+            label={_("Code postal")}
             id="zip"
             error={errors?.zip}
             name="zip"
@@ -108,7 +108,7 @@ export const UpdateAddressModal = (props) => {
           />
           <Spacer size="1rem" />
           <TextField
-            label="Commune"
+            label={_("Commune")}
             id="city"
             error={errors?.city}
             name="city"
@@ -119,7 +119,7 @@ export const UpdateAddressModal = (props) => {
           />
           <Spacer size="1rem" />
           <CountryField
-            label="Pays"
+            label={_("Pays")}
             id="country"
             error={errors?.country}
             name="country"
@@ -199,9 +199,9 @@ const ConnectedUpdateAddressModal = () => {
     async (data) => {
       if (!data.zip) {
         setErrors({
-          zip: "Ce champ est obligatoire",
+          zip: _("Ce champ est obligatoire"),
           global:
-            "Entrez une adresse. Seul le code postal est obligatoire pour continuer.",
+           _("Entrez une adresse. Seul le code postal est obligatoire pour continuer."),
         });
         return;
       }

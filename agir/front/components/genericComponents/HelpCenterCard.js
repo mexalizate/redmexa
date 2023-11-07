@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 
@@ -14,24 +15,22 @@ const HelpCenterCard = (props) => {
   return (
     <Card>
       <p>
-        Un centre d'aide est à votre disposition avec des fiches pratiques et
-        les réponses aux questions le plus fréquemment posées.
+        {_("Un centre d'aide est à votre disposition avec des fiches pratiques et les réponses aux questions le plus fréquemment posées.")}
       </p>
       <p>
-        Un page de contact est également disponible pour des questions plus
-        spécifiques.
+       {_(" Un page de contact est également disponible pour des questions plus spécifiques.")}
       </p>
       <Spacer size="0.5rem" />
       <Button link small route={route} color="secondary">
-        Acceder au centre d'aide
+        {_("Acceder au centre d'aide")}
       </Button>
       <Spacer size="0.5rem" />
       <Button link small route="helpIndex" color="secondary">
-        Voir les fiches pratiques
+        {_("Voir les fiches pratiques")}
       </Button>
       <Spacer size="0.5rem" />
       <Button link small route="contact" color="default">
-        Nous contacter
+        {_("Nous contacter")}
       </Button>
     </Card>
   );

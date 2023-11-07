@@ -1,4 +1,5 @@
 /* eslint-disable react/no-unknown-property */
+import _ from "gettext";
 import React from "react";
 import styled from "styled-components";
 
@@ -89,11 +90,9 @@ export const ActionTools = () => {
           <RawFeatherIcon name="calendar" />
         </i>
         <span>
-          <strong>Organiser une action</strong>
+          <strong>{_("Organiser une action")}</strong>
           <span>
-            Porte-à-porte, tractage, caravane... Des fiches pratiques sont à
-            votre disposition vour vous aider dans l'organisation de vos
-            actions.
+           {_(" Porte-à-porte, tractage, caravane... Des fiches pratiques sont à votre disposition vour vous aider dans l'organisation de vos actions.")}
           </span>
           <span
             css={`
@@ -104,10 +103,10 @@ export const ActionTools = () => {
             `}
           >
             <Button small link route="createEvent">
-              Créer un événement
+              {_("Créer un événement")}
             </Button>
             <Button small link route="helpIndex">
-              Voir les fiches pratiques
+              {_("Voir les fiches pratiques")}
             </Button>
           </span>
         </span>
@@ -123,10 +122,9 @@ export const ActionTools = () => {
           <RawFeatherIcon name="shopping-bag" />
         </i>
         <span>
-          <strong>Commander du matériel</strong>
+          <strong>{_("Commander du matériel")}</strong>
           <span>
-            Commandez et recevez chez vous des tracts, des affiches et des
-            objets des campagnes du mouvement.
+           {_(" Commandez et recevez chez vous des tracts, des affiches et des objets des campagnes du mouvement.")}
           </span>
         </span>
         <RawFeatherIcon aria-hidden="true" name="chevron-right" />
@@ -142,14 +140,9 @@ export const ActionTools = () => {
           <RawFeatherIcon name="coffee" />
         </i>
         <span>
-          <strong>Organiser un café populaire</strong>
+          <strong>{_("Organiser un café populaire")}</strong>
           <span>
-            Le café populaire est un exercice d’éducation populaire, de débat
-            d’idées, et de formation politique mis en place par la France
-            insoumise et organisé par l’Institut La Boétie, qui fournit un
-            catalogue de thèmes et d'intervenant·es. Les cafés populaires
-            peuvent être organisés partout en France et sont ouvert à tou·tes
-            les citoyen·nes.
+            {_("Le café populaire est un exercice d’éducation populaire, de débat d’idées, et de formation politique mis en place par la France insoumise et organisé par l’Institut La Boétie, qui fournit un catalogue de thèmes et d'intervenant·es. Les cafés populaires peuvent être organisés partout en France et sont ouvert à tou·tes les citoyen·nes.")}
           </span>
           <span
             css={`
@@ -173,10 +166,9 @@ export const ActionTools = () => {
           <RawFeatherIcon name="user-plus" />
         </i>
         <span>
-          <strong>Ajouter un contact</strong>
+          <strong>{_("Ajouter un contact")}</strong>
           <span>
-            Ajoutez un nouveau soutien à Action Populaire et à votre groupe
-            d’action en quelques clics.
+           {_(" Ajoutez un nouveau soutien à Action Populaire et à votre groupe d’action en quelques clics.")}
           </span>
         </span>
         <RawFeatherIcon aria-hidden="true" name="chevron-right" />

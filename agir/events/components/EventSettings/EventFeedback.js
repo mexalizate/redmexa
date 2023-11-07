@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useState, useMemo, useCallback, useEffect } from "react";
 import useSWR from "swr";
@@ -68,7 +69,7 @@ const EventFeedback = (props) => {
       setErrors((errors) => ({
         ...errors,
         image:
-          "Vous devez acceptez les licences pour envoyer votre image en conformité.",
+          _("Vous devez acceptez les licences pour envoyer votre image en conformité."),
       }));
       setIsLoading(false);
       return;
@@ -83,7 +84,7 @@ const EventFeedback = (props) => {
       setErrors(res.error);
       return;
     }
-    sendToast("Informations mises à jour", "SUCCESS", { autoClose: true });
+    sendToast(_("Informations mises à jour"), "SUCCESS", { autoClose: true });
     mutate((event) => {
       return { ...event, ...res.data };
     });
@@ -102,13 +103,13 @@ const EventFeedback = (props) => {
   return (
     <form onSubmit={handleSubmit}>
       <HeaderPanel onBack={onBack} illustration={illustration} />
-      <StyledTitle>Compte rendu</StyledTitle>
+      <StyledTitle>{_("Compte rendu")}</StyledTitle>
 
       <Spacer size="1rem" />
       <RichTextField
         id="feedback"
         name="compteRendu"
-        label="Écrire un compte rendu*"
+        label={_("Écrire un compte rendu*")}
         placeholder=""
         onChange={(e) => handleChange("compteRendu", e)}
         value={formData.compteRendu}
@@ -120,12 +121,11 @@ const EventFeedback = (props) => {
 
       <h4>
         {!formData.compteRenduPhoto || imageHasChanged
-          ? "Ajouter une photo"
-          : "Photo"}
+          ? _("Ajouter une photo")
+          : _("Photo")}
       </h4>
       <span style={{ color: style.black700 }}>
-        Cette image apparaîtra en tête de votre compte rendu, et dans les
-        partages que vous ferez du compte rendu sur les réseaux sociaux.
+        {_("Cette image apparaîtra en tête de votre compte rendu, et dans les partages que vous ferez du compte rendu sur les réseaux sociaux.")}
       </span>
       <Spacer size="0.5rem" />
       <ImageField
@@ -144,9 +144,8 @@ const EventFeedback = (props) => {
             value={hasCheckedImageLicence}
             label={
               <span style={{ color: style.black700 }}>
-                En important une image, je certifie être le propriétaire des
-                droits et accepte de la partager sous licence libre{" "}
-                <a href={I18N.ccLicenseLink}>Creative Commons CC-BY-NC 3.0</a>.
+                {_("En important une image, je certifie être le propriétaire des droits et accepte de la partager sous licence libre")}{" "}
+                <a href={I18N.ccLicenseLink}>{_("Creative Commons CC-BY-NC 3.0")}</a>.
               </span>
             }
             onChange={handleCheckImageLicence}
@@ -159,14 +158,14 @@ const EventFeedback = (props) => {
         <>
           <Spacer size="0.5rem" />
           <Button link small href={event?.routes.addPhoto}>
-            Ajouter d'autres photos
+            {_("Ajouter d'autres photos")}
           </Button>
         </>
       )}
 
       <Spacer size="2rem" />
       <Button color="secondary" wrap disabled={isDisabled} type="submit">
-        Enregistrer les informations
+        {_("Enregistrer les informations")}
       </Button>
     </form>
   );

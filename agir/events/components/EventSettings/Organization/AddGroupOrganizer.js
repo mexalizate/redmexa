@@ -1,3 +1,4 @@
+import _ from "gettext";
 import _debounce from "lodash/debounce";
 import PropTypes from "prop-types";
 import React, { useEffect, useMemo, useState } from "react";
@@ -74,13 +75,13 @@ export const AddGroupOrganizer = ({ eventPk, groups, onBack }) => {
     }
     if (res.data.created) {
       sendToast(
-        "Le groupe, dont vous êtes animateur·ice, a été ajouté à l'organisation de l'événement",
+        _("Le groupe, dont vous êtes animateur·ice, a été ajouté à l'organisation de l'événement"),
         "SUCCESS",
         { autoClose: true },
       );
     } else {
       sendToast(
-        "Une invitation a été envoyée aux animateur·ices du groupe",
+        _("Une invitation a été envoyée aux animateur·ices du groupe"),
         "SUCCESS",
         { autoClose: true },
       );
@@ -126,16 +127,15 @@ export const AddGroupOrganizer = ({ eventPk, groups, onBack }) => {
       <BackButton onClick={onBack} />
       <StyledTitle>
         {!selectedGroup
-          ? "Co-organisation"
-          : "Ajouter un groupe en co-organisation"}
+          ? _("Co-organisation")
+          : _("Ajouter un groupe en co-organisation")}
       </StyledTitle>
       <Spacer size="1rem" />
 
       {!selectedGroup ? (
         <>
           <span style={{ color: style.black700 }}>
-            Invitez des groupes à organiser votre événement. Ils s’afficheront
-            sur la page publiquement.
+           {_(" Invitez des groupes à organiser votre événement. Ils s’afficheront sur la page publiquement.")}
           </span>
 
           <Spacer size="1rem" />
@@ -146,19 +146,19 @@ export const AddGroupOrganizer = ({ eventPk, groups, onBack }) => {
               type="text"
               value={search}
               onChange={handleChange}
-              placeholder="Chercher un groupe..."
+              placeholder={_("Chercher un groupe...")}
             />
           </StyledSearch>
           <Spacer size="1rem" />
           <div>
             {search.length < START_SEARCH ? (
-              <span>Ecrivez au moins {START_SEARCH} caractères</span>
+              <span>{_("Ecrivez au moins")} {START_SEARCH} {_("caractères")}</span>
             ) : isLoading ? (
-              <span>Recherche en cours...</span>
+              <span>{_("Recherche en cours...")}</span>
             ) : groupSearchResults.length === 0 ? (
-              <span>Aucun groupe ne correspond à cette recherche</span>
+              <span>{_("Aucun groupe ne correspond à cette recherche")}</span>
             ) : (
-              <h4>Résultats</h4>
+              <h4>{_("Résultats")}</h4>
             )}
             {groupSearchResults.length > 0 && (
               <GroupList
@@ -170,7 +170,7 @@ export const AddGroupOrganizer = ({ eventPk, groups, onBack }) => {
           <Spacer size="1rem" />
           {groupSuggestions.length > 0 && (
             <div>
-              <h4>Derniers groupes co-organisateurs</h4>
+              <h4>{_("Derniers groupes co-organisateurs")}</h4>
               <GroupList
                 groups={groupSuggestions}
                 selectGroup={setSelectedGroup}
@@ -187,19 +187,17 @@ export const AddGroupOrganizer = ({ eventPk, groups, onBack }) => {
           <div>
             <StyledListBlock>
               <div />
-              <b>Si ses animateur·ices acceptent la co-organisation</b>, ce
-              groupe s’affichera sur la page publique de l’événement
+              <b>{_("Si ses animateur·ices acceptent la co-organisation")}</b>, {_("ce groupe s’affichera sur la page publique de l’événement")}
             </StyledListBlock>
             <Spacer size="0.5rem" />
             <StyledListBlock>
               <div />
-              Ces dernier·es <b>pourront accéder aux paramètres</b> de
-              l’événement.
+              {_("Ces dernier·es")} <b>{_("pourront accéder aux paramètres")}</b> {_("de l’événement.")}
             </StyledListBlock>
           </div>
           <Spacer size="1rem" />
           <Button color="secondary" onClick={onSubmit} disabled={isLoading}>
-            Envoyer l'invitation
+            {_("Envoyer l'invitation")}
           </Button>
         </>
       )}

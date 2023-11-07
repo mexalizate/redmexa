@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React, { useMemo } from "react";
 import useSWRImmutable from "swr/immutable";
 
@@ -42,9 +43,9 @@ const TokTokPreview = () => {
           }
         >
           <BackButton link route="events">
-            Retour à l'accueil
+            {_("Retour à l'accueil")}
           </BackButton>
-          <h2>La carte collaborative du porte-à-porte</h2>
+          <h2>{_("La carte collaborative du porte-à-porte")}</h2>
           <HowTo />
           <Spacer size="1.5rem" />
           {!isGroupManager && (
@@ -58,15 +59,14 @@ const TokTokPreview = () => {
               font-size: 0.875rem;
             `}
           >
-            Note&nbsp;: TokTok ne remplace pas l’outil d’ajout de contact et le
-            formulaire pour indiquer le nombre de soutiens obtenus.
+            {_("Note&nbsp;: TokTok ne remplace pas l’outil d’ajout de contact et le formulaire pour indiquer le nombre de soutiens obtenus.")}
           </p>
           <p
             css={`
               font-size: 0.875rem;
             `}
           >
-            TokTok est un outil créé par le{" "}
+            {_("TokTok est un outil créé par le")}{" "}
             <Link
               route="discordInsoumis"
               rel="noopener noreferrer"
@@ -80,7 +80,7 @@ const TokTokPreview = () => {
                 }
               `}
             >
-              Discord Insoumis
+              {_("Discord Insoumis")}
             </Link>
           </p>
           <Spacer size="1rem" />
@@ -92,7 +92,7 @@ const TokTokPreview = () => {
               icon="external-link"
               color="secondary"
             >
-              Ouvrir TokTok
+              {_("Ouvrir TokTok")}
             </Button>
             <Spacer size=".5rem" />
             <Button
@@ -103,7 +103,7 @@ const TokTokPreview = () => {
               rel="noopener noreferrer"
               target="_blank"
             >
-              Voir la vidéo de présentation
+              {_("Voir la vidéo de présentation")}
             </Button>
           </p>
         </PageFadeIn>

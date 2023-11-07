@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useState } from "react";
 import { animated, useSpring } from "@react-spring/web";
@@ -95,7 +96,7 @@ export const HowTo = (props) => {
     >
       <div {...bind}>
         <StyledHeader type="button" onClick={isCollapsed ? open : close}>
-          <strong>Comment ça marche</strong>
+          <strong>{_("Comment ça marche")}</strong>
           <animated.span style={{ transform }}>
             <RawFeatherIcon name="chevron-down" />
           </animated.span>
@@ -104,32 +105,29 @@ export const HowTo = (props) => {
           <li>
             <RawFeatherIcon strokeWidth={2} name="edit-2" />
             <span>
-              <strong>Notez les adresses</strong> que vous avez couvertes pour
-              mieux partager le travail avec les autres groupes
+              <strong>{_("Notez les adresses")}</strong> {_("que vous avez couvertes pour mieux partager le travail avec les autres groupes")}
             </span>
           </li>
           <li>
             <RawFeatherIcon strokeWidth={2} name="map-pin" />
             <span>
-              <strong>Ciblez les quartiers</strong> lorsque vous préparez vos
-              actions grâce aux indications sur la carte
+              <strong>{_("Ciblez les quartiers")}</strong> {_("lorsque vous préparez vos actions grâce aux indications sur la carte")}
             </span>
           </li>
           <li>
             <RawFeatherIcon strokeWidth={2} name="bar-chart-2" />
             <span>
               <strong>
-                Affichez les intentions de vote et taux d'absention
+                {_("Affichez les intentions de vote et taux d'absention")}
               </strong>{" "}
-              par secteur en cliquant sur le menu en haut à droite
+              {_("par secteur en cliquant sur le menu en haut à droite")}
             </span>
           </li>
           <li>
             <RawFeatherIcon strokeWidth={2} name="search" />
             <span>
-              <strong>Zoomez au niveau de votre commune et votre rue</strong>{" "}
-              pour voir les quartiers prioritaires où nos actions sont
-              attendues&nbsp;!
+              <strong>{_("Zoomez au niveau de votre commune et votre rue")}</strong>{" "}
+              {_("pour voir les quartiers prioritaires où nos actions sont attendues&nbsp;!")}
             </span>
           </li>
         </StyledBody>

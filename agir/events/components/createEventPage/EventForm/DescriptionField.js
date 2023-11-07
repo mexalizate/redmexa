@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useCallback, useState } from "react";
 import { useShallowCompareEffect } from "react-use";
@@ -31,7 +32,7 @@ const DescriptionField = (props) => {
           margin-bottom: 5px;
         `}
       >
-        Description de l'événement
+        {_("Description de l'événement")}
       </strong>
       <br />
       <span
@@ -39,8 +40,8 @@ const DescriptionField = (props) => {
           line-height: 1.5;
         `}
       >
-        {!required && <em>Facultative. </em>}
-        La description apparaîtra sur la page publique de l'événement.
+        {!required && <em>{_("Facultative.")} </em>}
+        {_("La description apparaîtra sur la page publique de l'événement.")}
       </span>
       {isExpanded ? (
         <RichTextField
@@ -59,7 +60,7 @@ const DescriptionField = (props) => {
           `}
         >
           <Button small disabled={disabled} onClick={expand}>
-            Ajouter une description à l'évenement
+            {_("Ajouter une description à l'évenement")}
           </Button>
         </p>
       )}

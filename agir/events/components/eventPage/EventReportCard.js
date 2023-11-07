@@ -1,3 +1,4 @@
+import _ from "gettext";
 import { DateTime } from "luxon";
 import PropTypes from "prop-types";
 import React from "react";
@@ -25,7 +26,7 @@ const EventReportCard = ({
 
   return (
     <StyledCard>
-      <h5>Compte rendu</h5>
+      <h5>{_("Compte rendu")}</h5>
       <Spacer size="0.5rem" />
       {compteRendu ? (
         <Collapsible
@@ -34,7 +35,7 @@ const EventReportCard = ({
           fadingOverflow
         />
       ) : (
-        <p>Il n'y a pas encore de compte rendu de cet événement.</p>
+        <p>{_("Il n'y a pas encore de compte rendu de cet événement.")}</p>
       )}
       {isEditable && isOrganizer && (
         <Button
@@ -45,7 +46,7 @@ const EventReportCard = ({
             activePanel: "compte-rendu",
           })}
         >
-          {compteRendu ? "Modifier le" : "Ajouter un"} compte rendu
+          {compteRendu ? _("Modifier le") : _("Ajouter un")} {_("compte rendu")}
         </Button>
       )}
     </StyledCard>

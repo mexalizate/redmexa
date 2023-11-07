@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useEffect, useState } from "react";
 
@@ -43,20 +44,19 @@ const AgreementField = ({ initialValue, onChange, disabled, reset }) => {
         onChange={handleChangeAgreement}
         label={
           <>
-            Je certifie que cette dépense est conforme à{" "}
+            {_("Je certifie que cette dépense est conforme à")}{" "}
             <Link
               route="charteEquipes"
               target="_blank"
               rel="noopener noreferrer"
             >
-              la charte des groupes d’action
+              {_("la charte des groupes d’action")}
             </Link>{" "}
-            et{" "}
+            {_("et")}{" "}
             <Link route="principes" target="_blank" rel="noopener noreferrer">
-              aux principes
+              {_("aux principes")}
             </Link>
-            , aux orientations politiques, stratégiques, programmatiques et
-            électorales de la France Insoumise .
+            {_(", aux orientations politiques, stratégiques, programmatiques et électorales de la France Insoumise .")}
           </>
         }
       />
@@ -66,7 +66,7 @@ const AgreementField = ({ initialValue, onChange, disabled, reset }) => {
         name="legal"
         value={agreements.legal}
         onChange={handleChangeAgreement}
-        label="Je certifie sur l'honneur être une personne physique et la dépense ne porte pas atteinte à la législation encadrant l’activité des partis et groupements politiques."
+        label={_("Je certifie sur l'honneur être une personne physique et la dépense ne porte pas atteinte à la législation encadrant l’activité des partis et groupements politiques.")}
       />
     </>
   );

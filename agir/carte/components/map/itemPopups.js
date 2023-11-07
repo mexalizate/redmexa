@@ -1,3 +1,4 @@
+import _ from "gettext";
 const formatEvent = (types, subtypes) => (event) => {
   const subtype = subtypes[event.subtype];
   const type = types[subtype.type];
@@ -20,7 +21,7 @@ const formatGroup = (types, subtypes) => (group) =>
     <a target="_top" href="${group.link}">${group.name}</a>
     <br/>
     <strong>
-      ${types[group.type].label}${group.is_certified ? " certifié" : ""}
+      ${types[group.type].label}${group.is_certified ? _(" certifié") : ""}
     </strong>
     ${group.subtypes
       .map((subtype) =>

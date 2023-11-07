@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useMemo } from "react";
 import useSWR from "swr";
@@ -64,7 +65,7 @@ const EventParticipants = (props) => {
           <div>
             <StyledLink to={organizationLink} style={{ marginLeft: "10px" }}>
               <RawFeatherIcon name="settings" height="13px" />
-              Inviter à co-organiser
+              {_("Inviter à co-organiser")}
             </StyledLink>
           </div>
         )}
@@ -72,7 +73,7 @@ const EventParticipants = (props) => {
 
       <Spacer size="1rem" />
       <ShareLink
-        label="Copier les e-mails des participant·es"
+        label={_("Copier les e-mails des participant·es")}
         color="primary"
         url={participants.map(({ email }) => email).join(", ") || ""}
         $wrap
@@ -86,17 +87,15 @@ const EventParticipants = (props) => {
         <>
           <BlockTitle>
             <h3>
-              {groupsAttendees.length} Groupe{severalGroups && "s"} participant
+              {groupsAttendees.length} Groupe{severalGroups && "s"} {_("participant")}
               {severalGroups && "s"}
             </h3>
           </BlockTitle>
           <Spacer size="0.5rem" />
-          Les groupes ayant indiqué leur participation. Ils ne sont pas indiqués
-          co-organisateurs de l'événement. Vous pouvez les inviter à
-          co-organiser cet événement depuis l'onglet&nbsp;
+          {_("Les groupes ayant indiqué leur participation. Ils ne sont pas indiqués co-organisateurs de l'événement. Vous pouvez les inviter à co-organiser cet événement depuis l'onglet")}&nbsp;
           <Link to={organizationLink} style={{ display: "inline-block" }}>
             <RawFeatherIcon name="settings" height="14px" />
-            Organisation
+            {_("Organisation")}
           </Link>
           .
           <Spacer size="1rem" />

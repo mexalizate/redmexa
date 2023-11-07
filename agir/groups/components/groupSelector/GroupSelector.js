@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React from "react";
 
 import Async from "react-select/async";
@@ -50,11 +51,11 @@ const GroupSelector = ({
         location_zip ? `${name} (${location_zip})` : name
       }
       onChange={onChange}
-      loadingMessage={() => "Recherche..."}
+      loadingMessage={() => _("Recherche...")}
       noOptionsMessage={({ inputValue }) =>
         inputValue.length < 3
-          ? "Entrez au moins 3 lettres pour chercher un groupe"
-          : "Pas de résultats"
+          ? _("Entrez au moins 3 lettres pour chercher un groupe")
+          : _("Pas de résultats")
       }
       placeholder="Choisissez un groupe..."
     >
@@ -79,7 +80,7 @@ GroupSelector.defaultProps = {
   filter: () => true,
   groupChoices: [],
   value: null,
-  defaultOptionsLabel: "Mes groupes",
+  defaultOptionsLabel: _("Mes groupes"),
   search: debouncedSearch,
 };
 

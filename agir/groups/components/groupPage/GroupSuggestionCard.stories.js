@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React from "react";
 
 import GroupSuggestionCard from "./GroupSuggestionCard";
@@ -28,7 +29,7 @@ const Template = (args) => {
 
 export const Default = Template.bind({});
 Default.args = {
-  name: "Comités d'appui et de travail pour une Vienne Insoumise",
+  name: _("Comités d'appui et de travail pour une Vienne Insoumise"),
   locationCity: "Poitiers",
   locationZip: "86000",
   latitude: -97.14704,

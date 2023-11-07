@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
@@ -29,7 +30,7 @@ const AllocationsWidget = ({ groupChoices, value, onChange, maxAmount }) => {
         onClick={() => setExtra(!(extra || value.length > 0)) + onChange([])}
         className="btn btn-wrap btn-primary"
       >
-        Je souhaite allouer mon don à un ou plusieurs groupes
+        {_("Je souhaite allouer mon don à un ou plusieurs groupes")}
       </Button>
 
       <AllocationsArray>
@@ -43,7 +44,7 @@ const AllocationsWidget = ({ groupChoices, value, onChange, maxAmount }) => {
             disabled={value.length === 0}
             step={1}
           >
-            <RecipientLabel>Activités nationales</RecipientLabel>
+            <RecipientLabel>{_("Activités nationales")}</RecipientLabel>
           </GroupAllocation>
         )}
         {value.map(({ id, name, amount }, i) => (
@@ -97,7 +98,7 @@ const AllocationsWidget = ({ groupChoices, value, onChange, maxAmount }) => {
         <ButtonHolder>
           <Button type="button" disabled={extra} onClick={() => setExtra(true)}>
             <span className="fa fa-plus" />
-            &ensp;Allouer à un groupe supplémentaire
+            &ensp;{_("Allouer à un groupe supplémentaire")}
           </Button>
         </ButtonHolder>
       )}

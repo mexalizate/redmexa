@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useState, useEffect } from "react";
 import useSWR from "swr";
@@ -44,13 +45,13 @@ const EventVisio = (props) => {
       setErrors(res.error);
       sendToast(
         res.error.detail ||
-          "Une erreur est survenue, veuillez réessayer plus tard",
+          _("Une erreur est survenue, veuillez réessayer plus tard"),
         "ERROR",
         { autoClose: true },
       );
       return;
     }
-    sendToast("Informations mises à jour", "SUCCESS", { autoClose: true });
+    sendToast(_("Informations mises à jour"), "SUCCESS", { autoClose: true });
     mutate((event) => {
       return { ...event, ...res.data };
     });
@@ -64,15 +65,13 @@ const EventVisio = (props) => {
       <StyledTitle>Visioconférence</StyledTitle>
 
       <span style={{ color: style.black700 }}>
-        Pour vos réunions en ligne, utilisez le service d’Action Populaire.
-        Votre salon de visioconférence est déjà prêt si vous voulez
-        l’utiliser&nbsp;!
+        {_("Pour vos réunions en ligne, utilisez le service d’Action Populaire. Votre salon de visioconférence est déjà prêt si vous voulez l’utiliser&nbsp;!")}
       </span>
 
       <Spacer size="1rem" />
       <OnlineUrlField
-        label="URL de votre visio-conférence sur Action Populaire"
-        placeholder="URL de la visio-conférence"
+        label={_("URL de votre visio-conférence sur Action Populaire")}
+        placeholder={_("URL de la visio-conférence")}
         name="onlineUrl"
         value={onlineUrl}
         onChange={updateValue}
@@ -82,7 +81,7 @@ const EventVisio = (props) => {
 
       <Spacer size="1rem" />
       <Button color="secondary" wrap disabled={isDisabled} type="submit">
-        Enregistrer
+        {_("Enregistrer")}
       </Button>
     </form>
   );

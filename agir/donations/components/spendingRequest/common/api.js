@@ -1,3 +1,4 @@
+import _ from "gettext";
 import axios from "@agir/lib/utils/axios";
 import { objectToFormData } from "@agir/lib/utils/forms";
 import { addQueryStringParams } from "@agir/lib/utils/url";
@@ -126,17 +127,17 @@ export const deleteSpendingRequest = async (spendingRequestPk) => {
     result.data = response.data;
   } catch (e) {
     if (!e.response) {
-      result.error = e.message || "Une erreur est survenue";
+      result.error = e.message || _("Une erreur est survenue");
     } else {
       switch (e.response.status) {
         case 403:
-          result.error = "Cette demande ne peut pas être supprimée";
+          result.error = _("Cette demande ne peut pas être supprimée");
           break;
         case 404:
-          result.error = "La demande n'a pas pu être retrouvée";
+          result.error = _("La demande n'a pas pu être retrouvée");
           break;
         default:
-          result.error = e.response.data || "Une erreur est survenue";
+          result.error = e.response.data || _("Une erreur est survenue");
       }
     }
   }

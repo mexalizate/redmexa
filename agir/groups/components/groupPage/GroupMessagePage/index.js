@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useEffect, useMemo } from "react";
 import { Redirect } from "react-router-dom";
@@ -73,7 +74,7 @@ const Page = ({ groupPk, messagePk }) => {
           group && group.isMember
             ? {
                 to: groupURL,
-                label: "Voir le groupe",
+                label: _("Voir le groupe"),
               }
             : {
                 route: "groups",
@@ -87,7 +88,7 @@ const Page = ({ groupPk, messagePk }) => {
       dispatch(
         setAdminLink({
           href: group.routes.admin,
-          label: "Administration",
+          label: _("Administration"),
         }),
       );
     }
@@ -124,8 +125,8 @@ const Page = ({ groupPk, messagePk }) => {
       <OpenGraphTags
         title={
           group && group.name && group.isMember
-            ? `Message du groupe : ${group.name}`
-            : "Message du groupe"
+            ? _(`Message du groupe : ${group.name}`)
+            : _("Message du groupe")
         }
       />
       <PageFadeIn wait={PageSkeleton} ready={isSessionLoaded && group}>
@@ -134,7 +135,7 @@ const Page = ({ groupPk, messagePk }) => {
             $maxWidth="780px"
             title={
               group && !group.isMember
-                ? "Ce message n'est pas disponible"
+                ? _("Ce message n'est pas disponible")
                 : undefined
             }
             icon={group && !group.isMember ? "lock" : undefined}

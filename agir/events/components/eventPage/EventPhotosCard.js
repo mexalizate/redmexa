@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React from "react";
 import styled from "styled-components";
 import { DateTime } from "luxon";
@@ -67,7 +68,7 @@ const EventPhotosCard = (props) => {
         <Thumbnails>
           {photos.map((url) => {
             const legend =
-              url?.legend || "Photo de l'événement postée par l'utilisateur";
+              url?.legend || _("Photo de l'événement postée par l'utilisateur");
             return (
               <a
                 key={url.image}
@@ -87,12 +88,12 @@ const EventPhotosCard = (props) => {
           })}
         </Thumbnails>
       ) : (
-        <p>Il n'y a pas encore de photo de cet événement.</p>
+        <p>{_("Il n'y a pas encore de photo de cet événement.")}</p>
       )}
       {isPast && isRSVP && (
         <div style={{ paddingTop: "1rem" }}>
           <Button link href={routes.addPhoto}>
-            Ajouter une photo
+            {_("Ajouter une photo")}
           </Button>
         </div>
       )}

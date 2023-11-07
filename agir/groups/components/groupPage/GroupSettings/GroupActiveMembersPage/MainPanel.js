@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useMemo } from "react";
 
@@ -30,12 +31,9 @@ const FullGroupWarning = () => (
     `}
   >
     <strong>
-      Action requise&nbsp;: votre groupe ne respecte plus la charte des groupes
-      d'action.
+      {_("Action requise&nbsp;: votre groupe ne respecte plus la charte des groupes d'action.")}
     </strong>{" "}
-    Il est maintenant impossible que de nouvelles personnes la rejoignent.
-    Divisez votre groupe en groupes plus petits maintenant pour renforcer le
-    réseau d’action.
+   {_(" Il est maintenant impossible que de nouvelles personnes la rejoignent. Divisez votre groupe en groupes plus petits maintenant pour renforcer le réseau d’action.")}
   </div>
 );
 
@@ -69,12 +67,11 @@ const GroupMemberMainPanel = (props) => {
         {activeMembers.length > 1 ? "Membres actifs" : "Membre actif"}
       </StyledTitle>
       <p style={{ color: style.black700, margin: 0 }}>
-        Vos membres impliqués activement. Quand une personne rejoint votre
-        groupe, elle est considérée comme membre actif.
+        {_("Vos membres impliqués activement. Quand une personne rejoint votre groupe, elle est considérée comme membre actif.")}
       </p>
       <Spacer size="1rem" />
       <ShareLink
-        label="Copier les e-mails"
+        label={_("Copier les e-mails")}
         color="primary"
         url={emails}
         $wrap
@@ -100,7 +97,7 @@ const GroupMemberMainPanel = (props) => {
           style={{ paddingTop: "3px" }}
         />
         <Spacer size="0.5rem" />
-        Télécharger la liste des membres et contacts au format CSV
+        {_("Télécharger la liste des membres et contacts au format CSV")}
       </Link>
       <Spacer size="0.5rem" />
       <Link
@@ -114,7 +111,7 @@ const GroupMemberMainPanel = (props) => {
           style={{ paddingTop: "3px" }}
         />
         <Spacer size="0.5rem" />
-        Transférer des membres vers un autre groupe
+        {_("Transférer des membres vers un autre groupe")}
       </Link>
     </>
   );

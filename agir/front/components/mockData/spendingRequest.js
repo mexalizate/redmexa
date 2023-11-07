@@ -1,3 +1,6 @@
+import _ from "gettext";
+
+const spendingRequest = 
 {
   "id": "6222ebcf-c753-47cf-ae43-176fc1a4ab7f",
   "manageUrl": "http://agir.local:8000/financement/requete/6222ebcf-c753-47cf-ae43-176fc1a4ab7f/",
@@ -9,22 +12,22 @@
   "amount": 38740,
   "status": {
     "code": "I",
-    "label": "Informations supplémentaires requises",
+    "label": _("Informations supplémentaires requises"),
     "editable": true,
     "deletable": false,
     "action": "Transmettre",
-    "explanation": "Lorsque vous aurez intégré les modifications demandées, vous pourrez de nouveau transmettre cette demande à l'équipe de suivi.",
+    "explanation": _("Lorsque vous aurez intégré les modifications demandées, vous pourrez de nouveau transmettre cette demande à l'équipe de suivi."),
     "editionWarning": ""
   },
   "group": {
     "id": "a14f3255-bd35-42d7-9d93-a3fe5cc34498",
-    "name": "Groupe d'action des îles Kerguelen"
+    "name": _("Groupe d'action des îles Kerguelen")
   },
   "category": "AC",
-  "explanation": "Achat de barnum pour les événements",
+  "explanation": _("Achat de barnum pour les événements"),
   "event": {
     "id": "8238898f-bb02-43ed-b0c4-7083e04bfd0e",
-    "name": "Café Populaire sur le thème 'Réforme des retraites' avec Camille Marx",
+    "name": _("Café Populaire sur le thème 'Réforme des retraites' avec Camille Marx"),
     "illustration": null,
     "startTime": "2024-05-18T18:00:00+02:00",
     "endTime": "2024-05-18T19:00:00+02:00",
@@ -52,8 +55,8 @@
     "rsvp": "CO",
     "subtype": {
       "id": 2,
-      "label": "autre reunion publique",
-      "description": "Autre type de réunion publique",
+      "label": _("autre reunion publique"),
+      "description": _("Autre type de réunion publique"),
       "color": "#0098B6",
       "icon": null,
       "iconName": "cutlery",
@@ -101,7 +104,7 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Création de la demande",
+      "title": _("Création de la demande"),
       "comment": "",
       "diff": [],
       "status": "D",
@@ -116,8 +119,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Modification de Montant de la dépense et Titulaire du compte bancaire.",
+      "title": _(_("Mise à jour de la demande")),
+      "comment": _("Modification de Montant de la dépense et Titulaire du compte bancaire."),
       "diff": ["Titulaire du compte bancaire"],
       "status": "D",
       "fromStatus": null
@@ -131,8 +134,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Modification de Montant de la dépense et Titulaire du compte bancaire.",
+      "title": _(_("Mise à jour de la demande")),
+      "comment": _("Modification de Montant de la dépense et Titulaire du compte bancaire."),
       "diff": ["Titulaire du compte bancaire"],
       "status": "D",
       "fromStatus": null
@@ -146,8 +149,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Validée par l'auteur d'origine",
-      "comment": "Validation de la demande",
+      "title": _("Validée par l'auteur d'origine"),
+      "comment": _("Validation de la demande"),
       "diff": [],
       "status": "G",
       "fromStatus": "D"
@@ -161,8 +164,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Création de la demande",
-      "comment": "Modification de Montant de la dépense et Statut.",
+      "title": _("Création de la demande"),
+      "comment": _("Modification de Montant de la dépense et Statut."),
       "diff": [],
       "status": "D",
       "fromStatus": "G"
@@ -176,8 +179,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Validée par l'auteur d'origine",
-      "comment": "Validation de la demande",
+      "title": _("Validée par l'auteur d'origine"),
+      "comment": _("Validation de la demande"),
       "diff": [],
       "status": "G",
       "fromStatus": "D"
@@ -191,8 +194,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Création de la demande",
-      "comment": "Modification de Montant de la dépense et Statut.",
+      "title": _("Création de la demande"),
+      "comment": _("Modification de Montant de la dépense et Statut."),
       "diff": [],
       "status": "D",
       "fromStatus": "G"
@@ -206,8 +209,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Validée par l'auteur d'origine",
-      "comment": "Validation de la demande",
+      "title": _("Validée par l'auteur d'origine"),
+      "comment": _("Validation de la demande"),
       "diff": [],
       "status": "G",
       "fromStatus": "D"
@@ -221,8 +224,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Création de la demande",
-      "comment": "Modification de Montant de la dépense et Statut.",
+      "title": _("Création de la demande"),
+      "comment": _("Modification de Montant de la dépense et Statut."),
       "diff": [],
       "status": "D",
       "fromStatus": "G"
@@ -236,8 +239,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Validée par l'auteur d'origine",
-      "comment": "Validation de la demande",
+      "title": _("Validée par l'auteur d'origine"),
+      "comment": _("Validation de la demande"),
       "diff": [],
       "status": "G",
       "fromStatus": "D"
@@ -251,8 +254,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Création de la demande",
-      "comment": "Modification de Montant de la dépense et Statut.",
+      "title": _("Création de la demande"),
+      "comment": _("Modification de Montant de la dépense et Statut."),
       "diff": [],
       "status": "D",
       "fromStatus": "G"
@@ -266,8 +269,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Validée par l'auteur d'origine",
-      "comment": "Validation de la demande",
+      "title": _("Validée par l'auteur d'origine"),
+      "comment": _("Validation de la demande"),
       "diff": [],
       "status": "G",
       "fromStatus": "D"
@@ -281,8 +284,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Suppression d'une pièce-jointe : Faites un choix !",
+      "title": _(_("Mise à jour de la demande")),
+      "comment": _("Suppression d'une pièce-jointe : Faites un choix !"),
       "diff": [],
       "status": "G",
       "fromStatus": null
@@ -296,8 +299,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Mise à jour d'une pièce-jointe : Le Stade de France",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Mise à jour d'une pièce-jointe : Le Stade de France"),
       "diff": [],
       "status": "G",
       "fromStatus": null
@@ -311,8 +314,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Ajout d'une pièce-jointe : Photo du groupe d'action",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Ajout d'une pièce-jointe : Photo du groupe d'action"),
       "diff": [],
       "status": "G",
       "fromStatus": null
@@ -326,7 +329,7 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
+      "title": _("Mise à jour de la demande"),
       "comment": "",
       "diff": [],
       "status": "G",
@@ -341,7 +344,7 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
+      "title": _("Mise à jour de la demande"),
       "comment": "",
       "diff": [],
       "status": "G",
@@ -356,8 +359,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Modification du champ : Titre",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Modification du champ : Titre"),
       "diff": ["Titre"],
       "status": "G",
       "fromStatus": null
@@ -371,8 +374,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "[Modification non identifiée]",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("[Modification non identifiée]"),
       "diff": ["Motif de l'achat", "Événement lié à la dépense"],
       "status": "G",
       "fromStatus": null
@@ -386,8 +389,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "[Modification non identifiée]",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("[Modification non identifiée]"),
       "diff": ["Titre"],
       "status": "G",
       "fromStatus": null
@@ -401,8 +404,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "[Modification non identifiée]",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("[Modification non identifiée]"),
       "diff": ["Titre"],
       "status": "G",
       "fromStatus": null
@@ -416,8 +419,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Modification du champ : Événement lié à la dépense",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Modification du champ : Événement lié à la dépense"),
       "diff": ["Événement lié à la dépense"],
       "status": "G",
       "fromStatus": null
@@ -431,8 +434,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Modification des champs : Catégorie, Motif de l'achat, Nom du contact",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Modification des champs : Catégorie, Motif de l'achat, Nom du contact"),
       "diff": ["Catégorie", "Motif de l'achat", "Nom du contact"],
       "status": "G",
       "fromStatus": null
@@ -446,8 +449,8 @@
         "gender": "F",
         "image": null
       },
-      "title": "Validée par un⋅e second⋅e animateur⋅rice",
-      "comment": "[Modification non identifiée]",
+      "title": _("Validée par un⋅e second⋅e animateur⋅rice"),
+      "comment": _("[Modification non identifiée]"),
       "diff": [],
       "status": "R",
       "fromStatus": "G"
@@ -461,8 +464,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Validée par l'auteur d'origine",
-      "comment": "Modification de Montant de la dépense et Statut.",
+      "title": _("Validée par l'auteur d'origine"),
+      "comment": _("Modification de Montant de la dépense et Statut."),
       "diff": [],
       "status": "G",
       "fromStatus": "R"
@@ -476,7 +479,7 @@
         "gender": "F",
         "image": null
       },
-      "title": "Validée par un⋅e second⋅e animateur⋅rice",
+      "title":_( "Validée par un⋅e second⋅e animateur⋅rice"),
       "comment": "",
       "diff": [],
       "status": "R",
@@ -491,8 +494,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Ajout d'une pièce-jointe : Doublons",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Ajout d'une pièce-jointe : Doublons"),
       "diff": [],
       "status": "R",
       "fromStatus": null
@@ -506,8 +509,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Ajout d'une pièce-jointe : Formulaire à tags",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Ajout d'une pièce-jointe : Formulaire à tags"),
       "diff": [],
       "status": "R",
       "fromStatus": null
@@ -521,8 +524,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Mise à jour du statut de la demande après une modification",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Mise à jour du statut de la demande après une modification"),
       "diff": [],
       "status": "I",
       "fromStatus": "R"
@@ -536,7 +539,7 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Renvoyée pour validation à l'équipe de suivi des questions financières",
+      "title": _("Renvoyée pour validation à l'équipe de suivi des questions financières"),
       "comment": "",
       "diff": [],
       "status": "R",
@@ -551,8 +554,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Ajout d'une pièce-jointe : Doublons",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Ajout d'une pièce-jointe : Doublons"),
       "diff": [],
       "status": "R",
       "fromStatus": null
@@ -566,8 +569,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Mise à jour du statut de la demande après une modification",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Mise à jour du statut de la demande après une modification"),
       "diff": [],
       "status": "I",
       "fromStatus": "R"
@@ -581,7 +584,7 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Renvoyée pour validation à l'équipe de suivi des questions financières",
+      "title": _("Renvoyée pour validation à l'équipe de suivi des questions financières"),
       "comment": "",
       "diff": [],
       "status": "R",
@@ -596,8 +599,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Ajout d'une pièce-jointe : Facture",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Ajout d'une pièce-jointe : Facture"),
       "diff": [],
       "status": "R",
       "fromStatus": null
@@ -611,8 +614,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Mise à jour du statut de la demande après une modification",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Mise à jour du statut de la demande après une modification"),
       "diff": [],
       "status": "I",
       "fromStatus": "R"
@@ -626,7 +629,7 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Renvoyée pour validation à l'équipe de suivi des questions financières",
+      "title": _("Renvoyée pour validation à l'équipe de suivi des questions financières"),
       "comment": "",
       "diff": [],
       "status": "R",
@@ -641,8 +644,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Ajout d'une pièce-jointe : Formulaire de candidature stage de formation régional - Institut La Boétie - Brétagne et Pays de la Loire",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Ajout d'une pièce-jointe : Formulaire de candidature stage de formation régional - Institut La Boétie - Brétagne et Pays de la Loire"),
       "diff": [],
       "status": "R",
       "fromStatus": null
@@ -656,8 +659,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Mise à jour du statut de la demande après une modification",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Mise à jour du statut de la demande après une modification"),
       "diff": [],
       "status": "I",
       "fromStatus": "R"
@@ -671,7 +674,7 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Renvoyée pour validation à l'équipe de suivi des questions financières",
+      "title": _("Renvoyée pour validation à l'équipe de suivi des questions financières"),
       "comment": "",
       "diff": [],
       "status": "R",
@@ -686,8 +689,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Ajout d'une pièce-jointe : Facture",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Ajout d'une pièce-jointe : Facture"),
       "diff": [],
       "status": "R",
       "fromStatus": null
@@ -701,8 +704,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Mise à jour du statut de la demande après une modification",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Mise à jour du statut de la demande après une modification"),
       "diff": [],
       "status": "I",
       "fromStatus": "R"
@@ -716,7 +719,7 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Renvoyée pour validation à l'équipe de suivi des questions financières",
+      "title": _("Renvoyée pour validation à l'équipe de suivi des questions financières"),
       "comment": "",
       "diff": [],
       "status": "R",
@@ -731,8 +734,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Ajout d'une pièce-jointe : Formulaire à tags",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Ajout d'une pièce-jointe : Formulaire à tags"),
       "diff": [],
       "status": "R",
       "fromStatus": null
@@ -746,8 +749,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Mise à jour du statut de la demande après une modification",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Mise à jour du statut de la demande après une modification"),
       "diff": [],
       "status": "I",
       "fromStatus": "R"
@@ -761,7 +764,7 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Renvoyée pour validation à l'équipe de suivi des questions financières",
+      "title": _("Renvoyée pour validation à l'équipe de suivi des questions financières"),
       "comment": "",
       "diff": [],
       "status": "R",
@@ -776,8 +779,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Ajout d'une pièce-jointe : Facture",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Ajout d'une pièce-jointe : Facture"),
       "diff": [],
       "status": "R",
       "fromStatus": null
@@ -791,8 +794,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Mise à jour du statut de la demande après une modification",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Mise à jour du statut de la demande après une modification"),
       "diff": [],
       "status": "I",
       "fromStatus": "R"
@@ -806,8 +809,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Mise à jour d'une pièce-jointe : Facture",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Mise à jour d'une pièce-jointe : Facture"),
       "diff": [],
       "status": "I",
       "fromStatus": null
@@ -821,8 +824,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Mise à jour d'une pièce-jointe : Pièce",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Mise à jour d'une pièce-jointe : Pièce"),
       "diff": [],
       "status": "I",
       "fromStatus": null
@@ -836,8 +839,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Mise à jour d'une pièce-jointe : Pièce",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Mise à jour d'une pièce-jointe : Pièce"),
       "diff": [],
       "status": "I",
       "fromStatus": null
@@ -851,7 +854,7 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Renvoyée pour validation à l'équipe de suivi des questions financières",
+      "title": _("Renvoyée pour validation à l'équipe de suivi des questions financières"),
       "comment": "",
       "diff": [],
       "status": "R",
@@ -866,8 +869,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Ajout d'une pièce-jointe : Facture",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Ajout d'une pièce-jointe : Facture"),
       "diff": [],
       "status": "R",
       "fromStatus": null
@@ -881,8 +884,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Mise à jour du statut de la demande après une modification",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Mise à jour du statut de la demande après une modification"),
       "diff": [],
       "status": "I",
       "fromStatus": "R"
@@ -896,7 +899,7 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Renvoyée pour validation à l'équipe de suivi des questions financières",
+      "title": _("Renvoyée pour validation à l'équipe de suivi des questions financières"),
       "comment": "",
       "diff": [],
       "status": "R",
@@ -911,8 +914,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Ajout d'une pièce-jointe : Doublons",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Ajout d'une pièce-jointe : Doublons"),
       "diff": [],
       "status": "R",
       "fromStatus": null
@@ -926,8 +929,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Mise à jour du statut de la demande après une modification",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Mise à jour du statut de la demande après une modification"),
       "diff": [],
       "status": "I",
       "fromStatus": "R"
@@ -941,7 +944,7 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Renvoyée pour validation à l'équipe de suivi des questions financières",
+      "title": _("Renvoyée pour validation à l'équipe de suivi des questions financières"),
       "comment": "",
       "diff": [],
       "status": "R",
@@ -956,8 +959,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Ajout d'une pièce-jointe : Facture",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Ajout d'une pièce-jointe : Facture"),
       "diff": [],
       "status": "R",
       "fromStatus": null
@@ -971,8 +974,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Mise à jour du statut de la demande après une modification",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Mise à jour du statut de la demande après une modification"),
       "diff": [],
       "status": "I",
       "fromStatus": "R"
@@ -986,8 +989,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Suppression d'une pièce-jointe : Facture",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Suppression d'une pièce-jointe : Facture"),
       "diff": [],
       "status": "I",
       "fromStatus": null
@@ -1001,8 +1004,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Suppression d'une pièce-jointe : Doublons",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Suppression d'une pièce-jointe : Doublons"),
       "diff": [],
       "status": "I",
       "fromStatus": null
@@ -1016,8 +1019,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Suppression d'une pièce-jointe : Facture",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Suppression d'une pièce-jointe : Facture"),
       "diff": [],
       "status": "I",
       "fromStatus": null
@@ -1031,8 +1034,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Suppression d'une pièce-jointe : Document",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Suppression d'une pièce-jointe : Document"),
       "diff": [],
       "status": "I",
       "fromStatus": null
@@ -1046,8 +1049,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Suppression d'une pièce-jointe : Formulaire à tags",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Suppression d'une pièce-jointe : Formulaire à tags"),
       "diff": [],
       "status": "I",
       "fromStatus": null
@@ -1061,8 +1064,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Suppression d'une pièce-jointe : Facture",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Suppression d'une pièce-jointe : Facture"),
       "diff": [],
       "status": "I",
       "fromStatus": null
@@ -1076,8 +1079,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Suppression d'une pièce-jointe : Facture",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Suppression d'une pièce-jointe : Facture"),
       "diff": [],
       "status": "I",
       "fromStatus": null
@@ -1091,8 +1094,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Suppression d'une pièce-jointe : Doublons",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Suppression d'une pièce-jointe : Doublons"),
       "diff": [],
       "status": "I",
       "fromStatus": null
@@ -1106,7 +1109,7 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Renvoyée pour validation à l'équipe de suivi des questions financières",
+      "title": _("Renvoyée pour validation à l'équipe de suivi des questions financières"),
       "comment": "",
       "diff": [],
       "status": "R",
@@ -1121,8 +1124,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Ajout d'une pièce-jointe : Facture",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Ajout d'une pièce-jointe : Facture"),
       "diff": [],
       "status": "R",
       "fromStatus": null
@@ -1136,8 +1139,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Mise à jour du statut de la demande après une modification",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Mise à jour du statut de la demande après une modification"),
       "diff": [],
       "status": "I",
       "fromStatus": "R"
@@ -1151,7 +1154,7 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
+      "title": _("Mise à jour de la demande"),
       "comment": "",
       "diff": [],
       "status": "I",
@@ -1166,8 +1169,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Suppression d'une pièce-jointe : Facture",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Suppression d'une pièce-jointe : Facture"),
       "diff": [],
       "status": "I",
       "fromStatus": null
@@ -1181,8 +1184,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Suppression d'une pièce-jointe : Formulaire de candidature stage de formation régional - Institut La Boétie - Brétagne et Pays de la Loire",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Suppression d'une pièce-jointe : Formulaire de candidature stage de formation régional - Institut La Boétie - Brétagne et Pays de la Loire"),
       "diff": [],
       "status": "I",
       "fromStatus": null
@@ -1196,8 +1199,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Suppression d'une pièce-jointe : Formulaire à tags",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Suppression d'une pièce-jointe : Formulaire à tags"),
       "diff": [],
       "status": "I",
       "fromStatus": null
@@ -1211,8 +1214,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Suppression d'une pièce-jointe : Photo du groupe d'action",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Suppression d'une pièce-jointe : Photo du groupe d'action"),
       "diff": [],
       "status": "I",
       "fromStatus": null
@@ -1226,8 +1229,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Suppression d'une pièce-jointe : Doublons",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Suppression d'une pièce-jointe : Doublons"),
       "diff": [],
       "status": "I",
       "fromStatus": null
@@ -1241,8 +1244,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Suppression d'une pièce-jointe : Photo du Stade de France",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Suppression d'une pièce-jointe : Photo du Stade de France"),
       "diff": [],
       "status": "I",
       "fromStatus": null
@@ -1256,8 +1259,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Suppression d'une pièce-jointe : Devis de la location",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Suppression d'une pièce-jointe : Devis de la location"),
       "diff": [],
       "status": "I",
       "fromStatus": null
@@ -1271,7 +1274,7 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
+      "title": _("Mise à jour de la demande"),
       "comment": "",
       "diff": [],
       "status": "I",
@@ -1286,8 +1289,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Ajout d'une pièce-jointe : Facture",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Ajout d'une pièce-jointe : Facture"),
       "diff": [],
       "status": "I",
       "fromStatus": null
@@ -1301,8 +1304,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Suppression d'une pièce-jointe : Facture",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Suppression d'une pièce-jointe : Facture"),
       "diff": [],
       "status": "I",
       "fromStatus": null
@@ -1316,8 +1319,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Ajout d'une pièce-jointe : Doublons",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Ajout d'une pièce-jointe : Doublons"),
       "diff": [],
       "status": "I",
       "fromStatus": null
@@ -1331,8 +1334,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Modification du champ : Catégorie",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Modification du champ : Catégorie"),
       "diff": ["Catégorie"],
       "status": "I",
       "fromStatus": null
@@ -1346,7 +1349,7 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Renvoyée pour validation à l'équipe de suivi des questions financières",
+      "title": _("Renvoyée pour validation à l'équipe de suivi des questions financières"),
       "comment": "",
       "diff": [],
       "status": "R",
@@ -1361,8 +1364,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Ajout d'une pièce-jointe : Doublons",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Ajout d'une pièce-jointe : Doublons"),
       "diff": [],
       "status": "R",
       "fromStatus": null
@@ -1376,8 +1379,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Mise à jour du statut de la demande après une modification",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Mise à jour du statut de la demande après une modification"),
       "diff": [],
       "status": "I",
       "fromStatus": "R"
@@ -1391,7 +1394,7 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Renvoyée pour validation à l'équipe de suivi des questions financières",
+      "title": _("Renvoyée pour validation à l'équipe de suivi des questions financières"),
       "comment": "",
       "diff": [],
       "status": "R",
@@ -1407,7 +1410,7 @@
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
       "title": "Validée par l'auteur d'origine",
-      "comment": "Modification de Montant de la dépense et Statut.",
+      "comment": _("Modification de Montant de la dépense et Statut."),
       "diff": [],
       "status": "G",
       "fromStatus": "R"
@@ -1421,8 +1424,8 @@
         "gender": "F",
         "image": null
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Suppression d'une pièce-jointe : Doublons",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Suppression d'une pièce-jointe : Doublons"),
       "diff": [],
       "status": "G",
       "fromStatus": null
@@ -1436,8 +1439,8 @@
         "gender": "F",
         "image": null
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Suppression d'une pièce-jointe : Doublons",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Suppression d'une pièce-jointe : Doublons"),
       "diff": [],
       "status": "G",
       "fromStatus": null
@@ -1451,8 +1454,8 @@
         "gender": "F",
         "image": null
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Ajout d'une pièce-jointe : Facture",
+      "title": _("Mise à jour de la demande"),
+      "comment":_( "Ajout d'une pièce-jointe : Facture"),
       "diff": [],
       "status": "G",
       "fromStatus": null
@@ -1466,8 +1469,8 @@
         "gender": "F",
         "image": null
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Suppression d'une pièce-jointe : Facture",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Suppression d'une pièce-jointe : Facture"),
       "diff": [],
       "status": "G",
       "fromStatus": null
@@ -1481,8 +1484,8 @@
         "gender": "F",
         "image": null
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Modification du champ : IBAN",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Modification du champ : IBAN"),
       "diff": ["IBAN"],
       "status": "G",
       "fromStatus": null
@@ -1496,8 +1499,8 @@
         "gender": "F",
         "image": null
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Ajout d'une pièce-jointe : Facture",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Ajout d'une pièce-jointe : Facture"),
       "diff": [],
       "status": "G",
       "fromStatus": null
@@ -1511,8 +1514,8 @@
         "gender": "F",
         "image": null
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Modification du champ : IBAN",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Modification du champ : IBAN"),
       "diff": ["IBAN"],
       "status": "G",
       "fromStatus": null
@@ -1526,7 +1529,7 @@
         "gender": "F",
         "image": null
       },
-      "title": "Mise à jour de la demande",
+      "title": _("Mise à jour de la demande"),
       "comment": "",
       "diff": [],
       "status": "G",
@@ -1541,7 +1544,7 @@
         "gender": "F",
         "image": null
       },
-      "title": "Validée par un⋅e second⋅e animateur⋅rice",
+      "title": _("Validée par un⋅e second⋅e animateur⋅rice"),
       "comment": "",
       "diff": [],
       "status": "R",
@@ -1556,8 +1559,8 @@
         "gender": "F",
         "image": null
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Ajout d'une pièce-jointe : Facture",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Ajout d'une pièce-jointe : Facture"),
       "diff": [],
       "status": "R",
       "fromStatus": null
@@ -1571,8 +1574,8 @@
         "gender": "F",
         "image": null
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Mise à jour du statut de la demande après une modification",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Mise à jour du statut de la demande après une modification"),
       "diff": [],
       "status": "I",
       "fromStatus": "R"
@@ -1586,8 +1589,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Suppression d'une pièce-jointe : Facture",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Suppression d'une pièce-jointe : Facture"),
       "diff": [],
       "status": "I",
       "fromStatus": null
@@ -1601,8 +1604,8 @@
         "gender": "F",
         "image": "https://randomuser.me/api/portraits/lego/6.jpg"
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Suppression d'une pièce-jointe : Facture",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Suppression d'une pièce-jointe : Facture"),
       "diff": [],
       "status": "I",
       "fromStatus": null
@@ -1616,8 +1619,8 @@
         "gender": "F",
         "image": null
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Modification du champ : Montant de la dépense",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Modification du champ : Montant de la dépense"),
       "diff": ["Montant de la dépense"],
       "status": "I",
       "fromStatus": null
@@ -1631,7 +1634,7 @@
         "gender": "F",
         "image": null
       },
-      "title": "Mise à jour de la demande",
+      "title": _("Mise à jour de la demande"),
       "comment": "",
       "diff": [],
       "status": "I",
@@ -1646,8 +1649,8 @@
         "gender": "F",
         "image": null
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Modification du champ : Montant de la dépense",
+      "title": _("Mise à jour de la demande"),
+      "comment":_("Modification du champ : Montant de la dépense"),
       "diff": ["Montant de la dépense"],
       "status": "I",
       "fromStatus": null
@@ -1661,8 +1664,8 @@
         "gender": "F",
         "image": null
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Modification du champ : Montant de la dépense",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Modification du champ : Montant de la dépense"),
       "diff": ["Montant de la dépense"],
       "status": "I",
       "fromStatus": null
@@ -1676,7 +1679,7 @@
         "gender": "F",
         "image": null
       },
-      "title": "Mise à jour de la demande",
+      "title": _("Mise à jour de la demande"),
       "comment": "",
       "diff": [],
       "status": "I",
@@ -1691,7 +1694,7 @@
         "gender": "F",
         "image": null
       },
-      "title": "Mise à jour de la demande",
+      "title": _("Mise à jour de la demande"),
       "comment": "",
       "diff": [],
       "status": "I",
@@ -1706,7 +1709,7 @@
         "gender": "F",
         "image": null
       },
-      "title": "Mise à jour de la demande",
+      "title": _("Mise à jour de la demande"),
       "comment": "",
       "diff": [],
       "status": "I",
@@ -1721,8 +1724,8 @@
         "gender": "F",
         "image": null
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Modification du champ : Montant de la dépense",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Modification du champ : Montant de la dépense"),
       "diff": ["Montant de la dépense"],
       "status": "I",
       "fromStatus": null
@@ -1736,8 +1739,8 @@
         "gender": "F",
         "image": null
       },
-      "title": "Mise à jour de la demande",
-      "comment": "Ajout d'une pièce-jointe : Facture",
+      "title": _("Mise à jour de la demande"),
+      "comment": _("Ajout d'une pièce-jointe : Facture"),
       "diff": [],
       "status": "I",
       "fromStatus": null
@@ -1745,12 +1748,14 @@
     {
       "id": "123456",
       "modified": "2023-09-08T17:58:12.483000+02:00",
-      "title": "Demande en attente de règlement",
-      "comment": "Tout est parfait !",
+      "title": _("Demande en attente de règlement"),
+      "comment": _("Tout est parfait !"),
       "diff": [],
-      "person": "Équipe de suivi",
+      "person": _("Équipe de suivi"),
       "fromStatus": "R",
       "status": "T"
     }
   ]
-}
+}; 
+
+export default spendingRequest;

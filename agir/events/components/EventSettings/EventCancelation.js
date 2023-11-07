@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 import useSWR from "swr";
@@ -25,13 +26,13 @@ const EventCancelation = (props) => {
 
     if (error) {
       sendToast(
-        error.detail || "Une erreur est survenue, veuillez réessayer plus tard",
+        error.detail || _("Une erreur est survenue, veuillez réessayer plus tard"),
         "ERROR",
         { autoClose: true },
       );
       return;
     }
-    sendToast("L'événement a bien été annulé.", "SUCCESS", { autoClose: true });
+    sendToast(_("L'événement a bien été annulé."), "SUCCESS", { autoClose: true });
     const route = routeConfig.events.getLink();
     history.push(route);
   };
@@ -39,22 +40,21 @@ const EventCancelation = (props) => {
   return (
     <>
       <HeaderPanel onBack={onBack} illustration={illustration} />
-      <StyledTitle>Annuler l'événement</StyledTitle>
+      <StyledTitle>{_("Annuler l'événement")}</StyledTitle>
 
       <Spacer size="1rem" />
 
       <p>
-        Voulez-vous annuler votre événement <strong>{event.name}</strong> ?
+        {_("Voulez-vous annuler votre événement")} <strong>{event.name}</strong> ?
       </p>
       <p>
-        Tous les participant·es recevront une notification leur indiquant que
-        vous avez annulé l’événement.
+        {_("Tous les participant·es recevront une notification leur indiquant que vous avez annulé l’événement.")}
       </p>
-      <p>Cette action est irréversible.</p>
+      <p>{_("Cette action est irréversible.")}</p>
 
       <Spacer size="1rem" />
       <Button onClick={handleCancel} color="danger">
-        Annuler l'événement
+        {_("Annuler l'événement")}
       </Button>
     </>
   );

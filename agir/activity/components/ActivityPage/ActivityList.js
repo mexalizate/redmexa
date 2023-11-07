@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React, { useCallback, useEffect, useMemo } from "react";
 import styled from "styled-components";
 import useSWR from "swr";
@@ -83,12 +84,11 @@ const ActivityList = () => {
         }
       >
         <LayoutTitle>
-          Notifications
+          {_("Notifications")}
           <NotificationSettingLink root="activite" />
         </LayoutTitle>
         <LayoutSubtitle>
-          L'actualité de vos groupes et de votre engagement. Cliquez sur une
-          notification pour la marquer comme “acquittée”.
+          {_("L'actualité de vos groupes et de votre engagement. Cliquez sur une notification pour la marquer comme “acquittée”.")}
         </LayoutSubtitle>
         {Array.isArray(activities) && (
           <div>

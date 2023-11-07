@@ -1,5 +1,5 @@
+import _ from "gettext";
 import React from "react";
-
 import TextField from "./TextField";
 
 export default {
@@ -36,7 +36,7 @@ Empty.args = {
   value: "",
   type: "text",
   id: "field",
-  label: "Prénom",
+  label: _("Prénom"),
   error: "",
   maxLength: undefined,
   disabled: false,
@@ -52,7 +52,7 @@ Filled.args = {
 export const WithHelpText = Template.bind({});
 WithHelpText.args = {
   ...Filled.args,
-  helpText: "Texte d'aide si necessaire",
+  helpText: _("Texte d'aide si necessaire"),
 };
 
 export const WithMaxLength = Template.bind({});
@@ -77,13 +77,13 @@ Focused.args = {
 export const WithValidationError = Template.bind({});
 WithValidationError.args = {
   ...Filled.args,
-  error: "Texte d’erreur sur le champ",
+  error: _("Texte d’erreur sur le champ"),
 };
 
 export const WithValidationErrorAndMaxLength = Template.bind({});
 WithValidationErrorAndMaxLength.args = {
   ...WithMaxLength.args,
-  error: "Texte d’erreur sur le champ",
+  error: _("Texte d’erreur sur le champ"),
 };
 
 export const Disabled = Template.bind({});
@@ -105,5 +105,5 @@ DarkWithIcon.args = {
   ...Empty.args,
   dark: true,
   icon: "search",
-  placeholder: "Rechercher un événement",
+  placeholder: _("Rechercher un événement"),
 };

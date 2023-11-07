@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useMemo } from "react";
 import styled from "styled-components";
@@ -65,19 +66,18 @@ const EditionPanel = (props) => {
       <Spacer size="1rem" />
       {members.length === 1 ? (
         <span style={{ color: style.black700 }}>
-          Accueillez d’abord un·e membre dans votre groupe pour pouvoir lui
-          donner un rôle de gestionnaire.
+         {_(" Accueillez d’abord un·e membre dans votre groupe pour pouvoir lui donner un rôle de gestionnaire.")}
         </span>
       ) : candidates.length === 0 ? (
         <span style={{ color: style.black700 }}>
-          Tous vos membres sont déjà tous gestionnaires ou animateur·ices.
+          {_("Tous vos membres sont déjà tous gestionnaires ou animateur·ices.")}
         </span>
       ) : (
         <>
           <Spacer size="1rem" />
           <SelectField
-            label="Choisir un membre"
-            placeholder="Sélection"
+            label={_("Choisir un membre")}
+            placeholder={_("Sélection")}
             options={candidates.map((candidate) => ({
               label: `${candidate.displayName} (${candidate.email})`,
               value: candidate,
@@ -92,33 +92,33 @@ const EditionPanel = (props) => {
           <GroupMemberList members={[selectedMember]} />
           <Spacer size="1rem" />
           <div>
-            Ce membre pourra :
+            {_("Ce membre pourra :")}
             <Spacer size="0.5rem" />
             {selectedMembershipType === MEMBERSHIP_TYPES.REFERENT && (
               <StyledList>
                 <div />
-                Modifier les permissions des gestionnaires
+                {_("Modifier les permissions des gestionnaires")}
               </StyledList>
             )}
             <StyledList>
               <div />
-              Voir la liste des membres
+              {_("Voir la liste des membres")}
             </StyledList>
             <StyledList>
               <div />
-              Modifier les informations du groupe
+              {_("Modifier les informations du groupe")}
             </StyledList>
             <StyledList>
               <div />
-              Créer des événements au nom du groupe
+              {_("Créer des événements au nom du groupe")}
             </StyledList>
           </div>
           {errors?.membershipType && (
-            <StaticToast>Erreur : {errors.membershipType}</StaticToast>
+            <StaticToast>{_("Erreur")} : {errors.membershipType}</StaticToast>
           )}
           <Spacer size="1rem" />
           <Button color="secondary" onClick={onSubmit} disabled={isLoading}>
-            Confirmer
+            {_("Confirmer")}
           </Button>
         </>
       )}

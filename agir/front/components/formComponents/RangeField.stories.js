@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React from "react";
 
 import RangeField from "./RangeField";
@@ -25,7 +26,7 @@ const Template = (args) => {
 export const Default = Template.bind({});
 Default.args = {
   id: "range",
-  label: "Proposer des événements dans un rayon de :",
+  label: _("Proposer des événements dans un rayon de :"),
   min: 1,
   max: 500,
 };
@@ -33,7 +34,7 @@ Default.args = {
 export const WithHelp = Template.bind({});
 WithHelp.args = {
   ...Default.args,
-  helpText: "Veuillez choisir une valeur entre 0 et 500",
+  helpText: _("Veuillez choisir une valeur entre 0 et 500"),
 };
 
 export const WithValue = Template.bind({});

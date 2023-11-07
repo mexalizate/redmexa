@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useCallback, useMemo, useState } from "react";
 import styled from "styled-components";
@@ -47,7 +48,7 @@ const DeleteSpendingRequestButton = ({ spendingRequest, disabled }) => {
     () =>
       group
         ? {
-            label: "Gestion du groupe",
+            label: _("Gestion du groupe"),
             route: "groupSettings",
             routeParams: {
               groupPk: group.id,
@@ -79,7 +80,7 @@ const DeleteSpendingRequestButton = ({ spendingRequest, disabled }) => {
 
   if (isDeleted) {
     return (
-      <AppRedirect {...redirectTo} toast="La demande a bien été supprimée !" />
+      <AppRedirect {...redirectTo} toast={_("La demande a bien été supprimée !")} />
     );
   }
 
@@ -91,25 +92,25 @@ const DeleteSpendingRequestButton = ({ spendingRequest, disabled }) => {
         icon="trash-2"
         onClick={handleOpen}
         loading={isLoading}
-        title={disabled ? "Cette demande ne peut pas être supprimée" : ""}
+        title={disabled ? _("Cette demande ne peut pas être supprimée") : ""}
       >
-        Supprimer
+        {_("Supprimer")}
       </Button>
       <ModalConfirmation
         shouldShow={isOpen}
         onClose={!isLoading && !isDeleted ? handleClose : undefined}
-        title="Supprimer la demande de dépense"
-        dismissLabel="Annuler"
-        confirmationLabel="Supprimer la demande"
+        title={_("Supprimer la demande de dépense")}
+        dismissLabel={_("Annuler")}
+        confirmationLabel={_("Supprimer la demande")}
         onConfirm={handleConfirm}
         shouldDismissOnClick={false}
       >
         <StyledModalContent>
           <p>
-            Confirmez-vous la suppression définitive{" "}
+            {_("Confirmez-vous la suppression définitive")}{" "}
             {title ? (
               <>
-                de la demande <mark>{title}</mark>
+                {_("de la demande")} <mark>{title}</mark>
               </>
             ) : (
               "de cette demande"
@@ -117,7 +118,7 @@ const DeleteSpendingRequestButton = ({ spendingRequest, disabled }) => {
             &nbsp;?
           </p>
           <StyledWarning>
-            ⚠&ensp;Attention&nbsp;: cette action est irréversible&nbsp;!
+            ⚠&ensp;{_("Attention")}&nbsp;: {_("cette action est irréversible")}&nbsp;!
           </StyledWarning>
           <StyledError>{error}</StyledError>
         </StyledModalContent>

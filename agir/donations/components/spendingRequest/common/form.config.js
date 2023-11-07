@@ -1,82 +1,83 @@
+import _ from "gettext";
 import validate from "@agir/lib/utils/validate";
 
 export const TIMING_OPTIONS = {
   P: {
     value: "P",
-    label: "Il s’agit d’un remboursement  (dépense passée)",
-    shortLabel: "Passée",
+    label: _("Il s’agit d’un remboursement  (dépense passée)"),
+    shortLabel: _("Passée"),
   },
   U: {
     value: "U",
-    label: "Il s’agit d’une demande de paiement (dépense future)",
-    shortLabel: "Future",
+    label: _("Il s’agit d’une demande de paiement (dépense future)"),
+    shortLabel: _("Future"),
   },
 };
 
 export const FALLBACK_CATEGORY = {
   value: "O",
-  label: "Autre",
+  label: _("Autre"),
   icon: "more-horizontal",
 };
 
 export const CATEGORY_OPTIONS = {
   IM: {
     value: "IM",
-    label: "Impressions",
+    label: _("Impressions"),
     icon: "printer",
   },
   CO: {
     value: "CO",
-    label: "Achat de consommables (colles, feutres, etc.)",
+    label: _("Achat de consommables (colles, feutres, etc.)"),
     icon: "pen-tool",
   },
   AC: {
     value: "AC",
-    label: "Achat de matériel (quincaillerie, matériel de collage, etc.)",
+    label: _("Achat de matériel (quincaillerie, matériel de collage, etc.)"),
     icon: "package",
   },
   DE: {
     value: "DE",
-    label: "Déplacement",
+    label: _("Déplacement"),
     icon: "map",
   },
   HE: {
     value: "HE",
-    label: "Hébergement",
+    label: _("Hébergement"),
     icon: "home",
   },
   SA: {
     value: "SA",
-    label: "Location de salle",
+    label: _("Location de salle"),
     icon: "map-pin",
   },
   MA: {
     value: "MA",
-    label: "Location de matériel (mobilier, vaisselle, etc.)",
+    label: _("Location de matériel (mobilier, vaisselle, etc.)"),
     icon: "shopping-bag",
   },
   TE: {
     value: "TE",
-    label: "Location de matériel technique (sono, vidéo)",
+    label: _("Location de matériel technique (sono, vidéo)"),
     icon: "video",
   },
   VE: {
     value: "VE",
-    label: "Location de véhicule",
+    label: _("Location de véhicule"),
     icon: "truck",
   },
 };
 
 export const DOCUMENT_TYPE_OPTIONS = {
-  E: { value: "E", label: "Devis" },
-  I: { value: "I", label: "Facture" },
-  B: { value: "B", label: "Impression" },
+  E: { value: "E", label: _("Devis") },
+  I: { value: "I", label: _("Facture") },
+  B: { value: "B", label: _("Impression") },
   P: {
     value: "P",
-    label: "Photo ou illustration de l'événement, de la salle, du matériel",
-    smallLabel: "Photo / illustration",
+    label: _("Photo ou illustration de l'événement, de la salle, du matériel"),
+    smallLabel: _("Photo / illustration"),
   },
-  O: { value: "O", label: "Autre type de justificatif", smallLabel: "Autre" },
+  O: { value: "O", label: _("Autre type de justificatif"), smallLabel: _("Autre") },
 };
 
 const INITIAL_DATA = {
@@ -114,24 +115,24 @@ export const SPENDING_REQUEST_DRAFT_CONSTRAINT = {
   title: {
     presence: {
       allowEmpty: false,
-      message: "Ce champ est obligatoire",
+      message:_("Ce champ est obligatoire"),
     },
     length: {
       maximum: 200,
       tooLong:
-        "La valeur de ce champ ne peut pas dépasser les %{count} caractères",
+        _("La valeur de ce champ ne peut pas dépasser les %{count} caractères"),
     },
   },
   category: {
     presence: {
       allowEmpty: false,
-      message: "Ce champ ne peut pas être vide.",
+      message:_("Ce champ ne peut pas être vide."),
     },
     // inclusion: {
     //   within: Object.values(CATEGORY_OPTIONS)
     //     .map((option) => option.value)
     //     .filter(Boolean),
-    //   message: "Veuillez choisir une des options.",
+    //   message:_( "Veuillez choisir une des options."),
     // },
   },
 };
@@ -141,88 +142,88 @@ export const SPENDING_REQUEST_VALIDATION_CONSTRAINT = {
   explanation: {
     presence: {
       allowEmpty: false,
-      message: "Ce champ est obligatoire",
+      message:_("Ce champ est obligatoire"),
     },
     length: {
       maximum: 1500,
       tooLong:
-        "La valeur de ce champ ne peut pas dépasser les %{count} caractères",
+        _("La valeur de ce champ ne peut pas dépasser les %{count} caractères"),
     },
   },
   spendingDate: {
     presence: {
       allowEmpty: false,
-      message: "Ce champ est obligatoire",
+      message:_("Ce champ est obligatoire"),
     },
     datetime: {
-      message: "Saisissez une date valide",
+      message:_("Saisissez une date valide"),
     },
   },
   "contact.name": {
     presence: {
       allowEmpty: false,
-      message: "Ce champ est obligatoire",
+      message:_("Ce champ est obligatoire"),
     },
     length: {
       maximum: 255,
       tooLong:
-        "La valeur de ce champ ne peut pas dépasser les %{count} caractères",
+        _("La valeur de ce champ ne peut pas dépasser les") + {count} + _("caractères"),
     },
   },
   "contact.phone": {
     presence: {
       allowEmpty: false,
-      message: "Ce champ est obligatoire",
+      message:_("Ce champ est obligatoire"),
     },
     phone: {
-      message: "Saisissez un numéro de téléphone valide.",
+      message:_("Saisissez un numéro de téléphone valide."),
     },
   },
   attachments: {
     presence: {
       allowEmpty: false,
       message:
-        "Veuillez joindre au moins une pièce justificative à votre demande avant de pouvoir la valider",
+        _("Veuillez joindre au moins une pièce justificative à votre demande avant de pouvoir la valider"),
     },
   },
   amount: {
     presence: {
       allowEmpty: false,
-      message: "Ce champ est obligatoire",
+      message:_("Ce champ est obligatoire"),
     },
     numericality: {
       greaterThan: 0,
-      notValid: "Le montant devrait être un nombre supérieur à 0",
-      notGreaterThan: "Le montant devrait être un nombre supérieur à 0",
+      notValid: _("Le montant devrait être un nombre supérieur à 0"),
+      notGreaterThan: _("Le montant devrait être un nombre supérieur à 0"),
     },
   },
   "bankAccount.name": {
     presence: {
       allowEmpty: false,
-      message: "Ce champ est obligatoire",
+      message:_("Ce champ est obligatoire"),
     },
     length: {
       maximum: 255,
       tooLong:
-        "La valeur de ce champ ne peut pas dépasser les %{count} caractères",
+        _("La valeur de ce champ ne peut pas dépasser les %{count} caractères"),
     },
   },
   "bankAccount.iban": {
     presence: {
       allowEmpty: false,
-      message: "Ce champ est obligatoire",
+      message:_("Ce champ est obligatoire"),
     },
   },
   "bankAccount.bic": {
     presence: {
       allowEmpty: false,
-      message: "Ce champ est obligatoire",
+      message:_("Ce champ est obligatoire"),
     },
   },
   "bankAccount.rib": {
     presence: {
       allowEmpty: false,
-      message: "Ce champ est obligatoire",
+      message:_("Ce champ est obligatoire"),
     },
   },
 };
@@ -231,30 +232,30 @@ export const DOCUMENT_CONSTRAINT = {
   type: {
     presence: {
       allowEmpty: false,
-      message: "Ce champ ne peut pas être vide.",
+      message:_("Ce champ ne peut pas être vide."),
     },
     inclusion: {
       within: Object.values(DOCUMENT_TYPE_OPTIONS)
         .map((option) => option.value)
         .filter(Boolean),
-      message: "Veuillez choisir une des options.",
+      message:_("Veuillez choisir une des options."),
     },
   },
   title: {
     presence: {
       allowEmpty: false,
-      message: "Ce champ est obligatoire",
+      message:_("Ce champ est obligatoire"),
     },
     length: {
       maximum: 255,
       tooLong:
-        "La valeur de ce champ ne peut pas dépasser les %{count} caractères",
+        _("La valeur de ce champ ne peut pas dépasser les %{count} caractères"),
     },
   },
   file: {
     presence: {
       allowEmpty: false,
-      message: "Ce champ est obligatoire",
+      message:_("Ce champ est obligatoire"),
     },
   },
 };

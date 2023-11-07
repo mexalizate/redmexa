@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useMemo } from "react";
 import styled from "styled-components";
@@ -56,7 +57,7 @@ const DiscountCode = (props) => {
     <li key={code}>
       {label && <strong>🎟️&nbsp;{label}</strong>}
       <ShareLink color="secondary" url={code} label="Copier" $wrap={400} />
-      <em>Valable jusqu'au {dateExact}</em>
+      <em>{_("Valable jusqu'au ")}{dateExact}</em>
     </li>
   );
 };
@@ -79,7 +80,7 @@ const DiscountCodes = ({ discountCodes, ...rest }) => {
 
   return (
     <StyledSection {...rest}>
-      <h5>Codes matériels</h5>
+      <h5>{_("Codes matériels")}</h5>
       {specialCodes.length > 0 && (
         <StyledList $special>
           {specialCodes.map((data) => (

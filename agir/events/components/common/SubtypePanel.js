@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { Fragment, useCallback, useMemo, useState } from "react";
 import styled from "styled-components";
@@ -228,9 +229,9 @@ export const SubtypePicker = (props) => {
 
     return [
       {
-        label: "Derniers types utilisés",
+        label: _("Derniers types utilisés"),
         description:
-          "Les types choisis pour les derniers événements que vous avez créé",
+          _("Les types choisis pour les derniers événements que vous avez créé"),
         subtypes: lastUsed,
       },
     ];
@@ -244,8 +245,8 @@ export const SubtypePicker = (props) => {
           name="ev-st-search"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          placeholder="Rechercher un type d'événement"
-          aria-label="Rechercher un type d'événement"
+          placeholder={_("Rechercher un type d'événement")}
+          aria-label={_("Rechercher un type d'événement")}
           icon="magnifying-glass:solid"
           label=""
           dark
@@ -271,7 +272,7 @@ export const SubtypePicker = (props) => {
           </>
         ) : (
           <StyledEmptyMessage>
-            Aucun type d'événément n'a été trouvé
+           {_(" Aucun type d'événément n'a été trouvé")}
           </StyledEmptyMessage>
         )}
       </div>
@@ -296,7 +297,7 @@ const SubtypePanel = (props) => {
       shouldShow={shouldShow}
       onClose={onClose}
       onBack={onClose}
-      title="Type de l'événement"
+      title={_("Type de l'événement")}
       noScroll
     >
       <SubtypePicker {...rest} />

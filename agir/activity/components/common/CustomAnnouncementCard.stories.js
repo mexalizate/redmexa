@@ -21,7 +21,7 @@ Default.args = {
     id: "f45b1022-939a-48c7-9977-940c0cbd69a8",
     title: "tellMore",
     link: "http://agir.local:8000/activite/f45b1022-939a-48c7-9977-940c0cbd69a8/lien/",
-    content: "<p>Bienvenue !</p>",
+    content: "<p>"+ _("Bienvenue !")+"</p>",
     image: {},
     startDate: "2021-03-25T16:26:57+01:00",
     endDate: null,

@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useCallback, useState } from "react";
 import styled from "styled-components";
@@ -136,23 +137,21 @@ const QuitEventButton = ({ eventPk, group, isOpen, setIsOpen }) => {
           <main>
             <h4>
               {!groupPk ? (
-                "Annuler ma participation à l'événement"
+                _("Annuler ma participation à l'événement")
               ) : (
-                <>Annuler la participation du groupe à l’évément&nbsp;?</>
+                <>{_("Annuler la participation du groupe à l’évément&nbsp;?")}</>
               )}
             </h4>
             <p>
               {!groupPk ? (
                 <>
-                  Souhaitez-vous réellement ne plus participer à
-                  l'événement&nbsp;?
+                  {_("Souhaitez-vous réellement ne plus participer à l'événement&nbsp;?")}
                 </>
               ) : (
                 <>
-                  <b>{group.name}</b> ne sera plus indiqué comme participant à
-                  l’événement.
+                  <b>{group.name}</b> {_("ne sera plus indiqué comme participant à l’événement.")}
                   <Spacer size="1rem" />
-                  L’événement sera retiré de l’agenda du groupe.
+                  {_("L’événement sera retiré de l’agenda du groupe.")}
                 </>
               )}
             </p>
@@ -164,10 +163,10 @@ const QuitEventButton = ({ eventPk, group, isOpen, setIsOpen }) => {
               isLoading={isLoading}
               disabled={isLoading}
             >
-              {!groupPk ? "Quitter l'événement" : "Confirmer"}
+              {!groupPk ? _("Quitter l'événement") : _("Confirmer")}
             </Button>
             <Button color="default" onClick={closeDialog} disabled={isLoading}>
-              Annuler
+              {_("Annuler")}
             </Button>
           </footer>
         </StyledDialog>

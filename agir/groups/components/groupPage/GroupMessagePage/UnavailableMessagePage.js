@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
@@ -33,16 +34,15 @@ const UnavailableMessagePage = (props) => {
   return (
     <StyledBlock>
       <p>
-        Vous n’avez pas les droits nécessaires pour afficher ce message, car il
-        est réservé aux membres du groupe.
+        {_("Vous n’avez pas les droits nécessaires pour afficher ce message, car il est réservé aux membres du groupe.")}
       </p>
       {groupURL ? (
         <Button color="primary" link to={groupURL}>
-          Voir le groupe
+          {_("Voir le groupe")}
         </Button>
       ) : null}
       <Button color="white" link route="help">
-        Voir l'aide en ligne
+        {_("Voir l'aide en ligne")}
       </Button>
     </StyledBlock>
   );

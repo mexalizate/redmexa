@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { Fragment } from "react";
 import useSWRImmutable from "swr/immutable";
@@ -24,18 +25,17 @@ const EventAssets = (props) => {
   return (
     <div>
       <HeaderPanel onBack={onBack} illustration={illustration} />
-      <StyledTitle>Ressources</StyledTitle>
+      <StyledTitle>{_("Ressources")}</StyledTitle>
       <Spacer size="1rem" />
       <span style={{ color: style.black700 }}>
-        Retrouvez ici la liste des ressources qui pourront vous être utiles dans
-        l'organisation de votre événement.
+       {_(" Retrouvez ici la liste des ressources qui pourront vous être utiles dans l'organisation de votre événement.")}
       </span>
       <Spacer size="1rem" />
-      <StyledTitle>Centre d'aide</StyledTitle>
+      <StyledTitle>{_("Centre d'aide")}</StyledTitle>
       <Spacer size=".5rem" />
       <HelpCenterCard type="event" />
       <Spacer size="1rem" />
-      <StyledTitle>Documents</StyledTitle>
+      <StyledTitle>{_("Documents")}</StyledTitle>
       <Spacer size=".5rem" />
       <PageFadeIn
         ready={!isLoading}
@@ -51,17 +51,17 @@ const EventAssets = (props) => {
                 text={`Format ${eventAsset.format} - ${eventAsset.size}`}
                 icon="image"
                 route={eventAsset.file}
-                downloadLabel="Télécharger le visuel"
+                downloadLabel={_("Télécharger le visuel")}
               />
               <Spacer size="1rem" />
             </Fragment>
           ))}
         <FileCard
-          title="Attestation d'assurance de la France insoumise"
-          text="Document utile en cas de réservation d'une salle pour les événements publics"
+          title={_("Attestation d'assurance de la France insoumise")}
+          text={_("Document utile en cas de réservation d'une salle pour les événements publics")}
           icon="file-text"
           route="attestationAssurance"
-          downloadLabel="Télécharger l'attestation"
+          downloadLabel={_("Télécharger l'attestation")}
         />
       </PageFadeIn>
       <Spacer size="2rem" />

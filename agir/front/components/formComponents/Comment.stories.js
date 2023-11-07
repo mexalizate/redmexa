@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React from "react";
 
 import Comment from "./Comment";
@@ -53,7 +54,7 @@ export const Default = Template.bind({});
 Default.args = {
   comment: {
     author,
-    text: "Bonjour !\n\nBonjour !\nBonjour !",
+    text: _("Bonjour !\n\nBonjour !\nBonjour !"),
     created: new Date().toUTCString(),
   },
   hasActions: false,
@@ -63,7 +64,7 @@ export const WithActions = Template.bind({});
 WithActions.args = {
   comment: {
     author,
-    text: "Bonjour !",
+    text: _("Bonjour !"),
     created: new Date().toUTCString(),
   },
   hasActions: true,

@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React, { useCallback, useEffect, useState } from "react";
 import { useHistory, useLocation } from "react-router-dom";
 import styled from "styled-components";
@@ -197,7 +198,7 @@ const EventForm = () => {
       if (formData.image && !formData.image.hasLicense) {
         errors = errors || {};
         errors.image =
-          "Vous devez acceptez la licence pour envoyer votre image en conformité";
+          _("Vous devez acceptez la licence pour envoyer votre image en conformité");
       }
       if (errors) {
         setErrors(errors);
@@ -214,7 +215,7 @@ const EventForm = () => {
         return;
       }
       if (!result.data || !result.data.id) {
-        setErrors({ global: "Une erreur est survenue" });
+        setErrors({ global: _("Une erreur est survenue") });
         return;
       }
       setNewEventPk(result.data.id);
@@ -341,10 +342,8 @@ const EventForm = () => {
       <Spacer size="2rem" />
       <fieldset>
         <legend style={{ paddingBottom: "0" }}>
-          <strong>Lieu de l'événement</strong>
-          <em>Même s'il se déroule en ligne</em>, indiquez un lieu pour suggérer
-          l’événement aux personnes à proximité, une mairie ou un café pour ne
-          pas rendre votre adresse publique.
+          <strong>{_("Lieu de l'événement")}</strong>
+          <em>{_("Même s'il se déroule en ligne")}</em>, {_("indiquez un lieu pour suggérer l’événement aux personnes à proximité, une mairie ou un café pour ne pas rendre votre adresse publique.")}
         </legend>
         <Spacer size="1.5rem" data-scroll="onlineUrl" />
         <OnlineUrlField
@@ -353,7 +352,7 @@ const EventForm = () => {
           onChange={updateValue}
           error={errors && errors.onlineUrl}
           value={formData.onlineUrl}
-          placeholder="URL de la visio-conférence (facultatif)"
+          placeholder={_("URL de la visio-conférence (facultatif)")}
         />
         {options?.recentLocations?.length > 0 && (
           <>
@@ -373,7 +372,7 @@ const EventForm = () => {
           onChange={updateNestedValue}
           error={errors && errors.location}
           help={{
-            name: "Si l'événement se déroule en ligne, vous pouvez le préciser ici",
+            name: _("Si l'événement se déroule en ligne, vous pouvez le préciser ici"),
           }}
           disabled={isLoading}
           required
@@ -382,9 +381,8 @@ const EventForm = () => {
       <Spacer size="1.5rem" data-scroll="contact" />
       <fieldset>
         <legend>
-          <strong>Contact</strong>
-          Affiché publiquement. N’indiquez pas votre nom complet si vous ne
-          souhaitez pas apparaître dans les résultats des moteurs de recherche.
+          <strong>{_("Contact")}</strong>
+          {_("Affiché publiquement. N’indiquez pas votre nom complet si vous ne souhaitez pas apparaître dans les résultats des moteurs de recherche.")}
         </legend>
         <ContactField
           name="contact"
@@ -406,12 +404,12 @@ const EventForm = () => {
         color="secondary"
         block
       >
-        Créer l'événement
+        {_("Créer l'événement")}
       </Button>
       <p
         style={{ padding: "1rem 0", fontSize: "0.813rem", textAlign: "center" }}
       >
-        Vous pourrez modifier ces informations après la création de l’événement.
+        {_("Vous pourrez modifier ces informations après la création de l’événement.")}
       </p>
       <UnloadPrompt enabled={!newEventPk} allowedRoutes="createEvent" />
     </StyledForm>

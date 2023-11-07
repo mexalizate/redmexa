@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React from "react";
 import styled from "styled-components";
 
@@ -70,13 +71,13 @@ const TokTokCard = ({ flex = false, ...rest }) => (
   <StyledCard $flex={flex} {...rest}>
     <StyledLogo $flex={flex} aria-hidden="true" />
     <article>
-      <p>Pour préparer vos porte-à-porte, utilisez la carte collaborative</p>
+      <p>{_("Pour préparer vos porte-à-porte, utilisez la carte collaborative")}</p>
       <footer>
         <Button small link route="toktokPreview" color="primary">
-          En savoir plus
+          {_("En savoir plus")}
         </Button>
         <Button small link route="toktok" icon="external-link" iconRight>
-          Ouvrir la carte
+          {_("Ouvrir la carte")}
         </Button>
       </footer>
     </article>

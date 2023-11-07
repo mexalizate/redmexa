@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
@@ -64,7 +65,7 @@ const FileCard = (props) => {
         color="primary"
         icon={downloadIcon || "download"}
       >
-        {downloadLabel || "Télécharger le document"}
+        {downloadLabel || _("Télécharger le document")}
       </Button>
     </StyledCard>
   );

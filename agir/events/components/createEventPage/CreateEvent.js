@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React from "react";
 import styled from "styled-components";
 
@@ -101,15 +102,14 @@ const InfoBlock = (props) => (
     <Illustration aria-hidden="true" />
     <Spacer size="1rem" />
     <div>
-      En publiant votre événement, ce dernier sera visible à toutes les
-      personnes aux alentours.
+      {_("En publiant votre événement, ce dernier sera visible à toutes les personnes aux alentours.")}
       <Spacer size="0.5rem" />
       <Link route="newGroupHelp" target="_blank" rel="noopener noreferrer">
-        Besoin d'idées d'événements&nbsp;?
+       {_(" Besoin d'idées d'événements&nbsp;?")}
       </Link>
       <Spacer size="0.5rem" />
       <Link route="help" target="_blank" rel="noopener noreferrer">
-        Consulter le centre d'aide
+        {_("Consulter le centre d'aide")}
       </Link>
     </div>
   </StyledInfoBlock>
@@ -126,7 +126,7 @@ const CreateEvent = () => {
             <RawFeatherIcon name="arrow-left" color={style.black1000} />
           </BackLink>
           <Spacer size="1.5rem" />
-          <h2>Nouvel événement</h2>
+          <h2>{_("Nouvel événement")}</h2>
           <Hide as={InfoBlock} $over />
           <Spacer size="1.5rem" />
           <EventForm />

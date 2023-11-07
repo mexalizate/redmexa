@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useState, useCallback } from "react";
 import { animated, useTransition } from "@react-spring/web";
@@ -60,7 +61,7 @@ const GroupLinksPage = (props) => {
         return;
       }
 
-      sendToast("Le lien a été enregistré", "SUCCESS", { autoClose: true });
+      sendToast(_("Le lien a été enregistré"), "SUCCESS", { autoClose: true });
       setSelectedLink(null);
       mutate(getGroupEndpoint("getGroup", { groupPk }));
     },
@@ -75,14 +76,14 @@ const GroupLinksPage = (props) => {
 
       if (res.error) {
         sendToast(
-          "Le lien n'a pas pu être supprimé. Veuillez ressayer.",
+          _("Le lien n'a pas pu être supprimé. Veuillez ressayer."),
           "ERROR",
           { autoClose: true },
         );
         return;
       }
 
-      sendToast("Le lien a été supprimé", "SUCCESS", { autoClose: true });
+      sendToast(_("Le lien a été supprimé"), "SUCCESS", { autoClose: true });
       setSelectedLink(null);
       mutate(getGroupEndpoint("getGroup", { groupPk }));
     },
@@ -99,7 +100,7 @@ const GroupLinksPage = (props) => {
   return (
     <>
       <HeaderPanel onBack={onBack} illustration={illustration} />
-      <StyledTitle>Liens et réseaux sociaux du groupe</StyledTitle>
+      <StyledTitle>{_("Liens et réseaux sociaux du groupe")}</StyledTitle>
       <Spacer size="1rem" />
       <PageFadeIn ready={!!group} wait={<Skeleton />}>
         <GroupLinks links={group.links} onEdit={setSelectedLink} />

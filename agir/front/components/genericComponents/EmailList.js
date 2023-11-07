@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useMemo } from "react";
 import styled from "styled-components";
@@ -63,7 +64,7 @@ const EmailList = (props) => {
         icon={isCopied ? "check" : "copy"}
         small
       >
-        {isCopied ? "Copié !" : label || "Copier les adresses"}
+        {isCopied ? _("Copié !") : label || _("Copier les adresses")}
       </Button>
     </StyledEmailList>
   );

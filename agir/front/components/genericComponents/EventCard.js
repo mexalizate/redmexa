@@ -1,3 +1,4 @@
+import _ from "gettext";
 import { DateTime, Interval } from "luxon";
 import PropTypes from "prop-types";
 import React, { useMemo, useRef } from "react";
@@ -192,7 +193,7 @@ const EventCardIllustration = (props) => {
   if (image) {
     return (
       <Illustration {...linkProps} $img={image}>
-        <img src={image} alt="Image d'illustration" />
+        <img src={image} alt={_("Image d'illustration")} />
       </Illustration>
     );
   }
@@ -215,7 +216,7 @@ const EventCardIllustration = (props) => {
         src={eventCardDefaultBackground}
         width="359"
         height="203"
-        alt="Image d'illustration par défaut"
+        alt={_("Image d'illustration par défaut")}
       />
     </Illustration>
   );
@@ -301,7 +302,7 @@ const EventCard = (props) => {
           </StyledLink>
           <StyledInfo>
             {Array.isArray(eventSpeakers) && eventSpeakers.length > 0 ? (
-              <p title="Intervenant·es">
+              <p title={_("Intervenant·es")}>
                 <RawFeatherIcon widht="1rem" height="1rem" name="mic" />
                 &nbsp;avec{" "}
                 {eventSpeakers
@@ -315,7 +316,7 @@ const EventCard = (props) => {
               </p>
             ) : null}
             {Array.isArray(groups) && groups.length > 0 ? (
-              <p title="Groupes organisateurs">
+              <p title={_("Groupes organisateurs")}>
                 <RawFeatherIcon widht="1rem" height="1rem" name="users" />
                 {groups.map((group) => (
                   <span key={group.id}>{group.name}</span>

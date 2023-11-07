@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useMemo, useState } from "react";
 import styled from "styled-components";
@@ -79,18 +80,13 @@ const StyledContent = styled.article`
 const MissingCriteriaWarning = () => (
   <StyledWarning>
     <strong>
-      Action requise&nbsp;: votre groupe ne respecte plus la charte des groupes
-      d'action&nbsp;!
+      {_("Action requise&nbsp;: votre groupe ne respecte plus la charte des groupes d'action&nbsp;!")}
     </strong>
     <br />
-    Certains des critères requis pour la certification de votre groupe ne sont
-    plus respectés. Attention, si cette situation devait perdurer, votre groupe
-    serait decertifié.
+    {_("Certains des critères requis pour la certification de votre groupe ne sont plus respectés. Attention, si cette situation devait perdurer, votre groupe serait decertifié.")}
     <br />
     <small>
-      NB&nbsp;: dans le cas de l'animation paritaire il se peut que les
-      animateur-ices n'aient pas indiqué leur genre. Corrigez cela pour que
-      votre groupe redevienne paritaire.
+      {_("NB&nbsp;: dans le cas de l'animation paritaire il se peut que les animateur-ices n'aient pas indiqué leur genre. Corrigez cela pour que votre groupe redevienne paritaire.")}
     </small>
   </StyledWarning>
 );
@@ -112,16 +108,15 @@ const GroupCertification = (props) => {
 
   return (
     <>
-      <StyledTitle>Certification du groupe</StyledTitle>
+      <StyledTitle>{_("Certification du groupe")}</StyledTitle>
       <Spacer size="0.5rem" />
       <StyledContent>
         <p>
-          La certification du groupe permet de recevoir un code mensuel de 30
-          euros afin de <Link route="materiel">commander du matériel</Link>.
+          {_("La certification du groupe permet de recevoir un code mensuel de 30 euros afin de ")}<Link route="materiel">{_("commander du matériel")}</Link>.
         </p>
         <p>
-          Par ailleurs, la certification permet de témoigner du respect de la{" "}
-          <Link route="charteEquipes">charte des groupes d’action</Link>.
+          {_("Par ailleurs, la certification permet de témoigner du respect de la")}{" "}
+          <Link route="charteEquipes">{_("charte des groupes d’action")}</Link>.
         </p>
         {isCertified && !isCertifiable && <MissingCriteriaWarning />}
         <Spacer size="1rem" />
@@ -151,7 +146,7 @@ const GroupCertification = (props) => {
                 `}
               />
               <span>
-                <strong>Votre groupe est certifié&nbsp;!</strong>
+                <strong>{_("Votre groupe est certifié&nbsp;!")}</strong>
               </span>
             </li>
           )}
@@ -175,11 +170,11 @@ const GroupCertification = (props) => {
                   `}
                   label={
                     <>
-                      Je confirme avoir pris connaissance de la{" "}
+                      {_("Je confirme avoir pris connaissance de la")}{" "}
                       <Link route="charteEquipes">
-                        charte des groupes d’action
+                        {_("charte des groupes d’action")}
                       </Link>{" "}
-                      et m'engage à la respecter dans l'animation de mon groupe
+                      {_("et m'engage à la respecter dans l'animation de mon groupe")}
                     </>
                   }
                 />
@@ -194,7 +189,7 @@ const GroupCertification = (props) => {
               }
               disabled={!hasConsent || !isCertifiable}
             >
-              Demander la certification
+              {_("Demander la certification")}
             </Button>
             <Spacer size="1rem" />
             <span>
@@ -204,7 +199,7 @@ const GroupCertification = (props) => {
               {checkedCriteria.length <= 1
                 ? "condition remplie"
                 : "conditions remplies"}{" "}
-              pour demander la certification
+              {_("pour demander la certification")}
             </span>
           </footer>
         )}

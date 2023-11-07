@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { Fragment, useCallback, useState } from "react";
 import { animated, useTransition } from "@react-spring/web";
@@ -173,13 +174,13 @@ const EditableMembershipPanel = (props) => {
       if (res.error) {
         sendToast(
           res.error?.membershipType ||
-            "Une erreur est survenue. Veuillez ressayer.",
+            _("Une erreur est survenue. Veuillez ressayer."),
           "ERROR",
           { autoClose: true },
         );
         return;
       }
-      sendToast("Informations mises à jour", "SUCCESS", {
+      sendToast(_("Informations mises à jour"), "SUCCESS", {
         autoClose: true,
       });
       !unselectMemberAfterUpdate && mutateSelectedMember();

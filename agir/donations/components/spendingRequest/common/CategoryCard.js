@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useMemo } from "react";
 import styled from "styled-components";
@@ -80,7 +81,7 @@ const CategoryCard = (props) => {
       <StyledCategory>
         {!small && (
           <>
-            <small>Catégorie de dépense</small>
+            <small>{_("Catégorie de dépense")}</small>
             <br />
           </>
         )}

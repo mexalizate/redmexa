@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
@@ -64,17 +65,15 @@ const FullGroupPage = ({ groupPk }) => {
     <PageFadeIn ready={fullGroup !== "undefined"} wait={<Skeleton />}>
       {fullGroup && (
         <CenteredLayout
-          title={`${fullGroup.name} compte déjà trop de membres !`}
+          title={_(`${fullGroup.name} compte déjà trop de membres !`)}
           icon="x-circle"
         >
           <StyledBlock>
-            <p>Désolé, vous ne pouvez pas rejoindre ce groupe.</p>
+            <p>{_("Désolé, vous ne pouvez pas rejoindre ce groupe.")}</p>
             <p>
-              Pour favoriser l'implication de chacun·e et la répartition de
-              l'action sur le tout le territoire, nous privilégions les petits
-              groupes.
+              {_("Pour favoriser l'implication de chacun·e et la répartition de l'action sur le tout le territoire, nous privilégions les petits groupes.")}
             </p>
-            <p>Rejoignez un autre groupe proche de chez vous&nbsp;:</p>
+            <p>{_("Rejoignez un autre groupe proche de chez vous&nbsp;:")}</p>
           </StyledBlock>
           {routes.groupsMap ? <Map src={routes.groupsMap} /> : null}
           {Array.isArray(groupSuggestions) && groupSuggestions.length > 0 && (

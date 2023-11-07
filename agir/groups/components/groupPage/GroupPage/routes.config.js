@@ -1,3 +1,4 @@
+import _ from "gettext";
 import { useCallback, useEffect, useMemo } from "react";
 import { useHistory, useLocation } from "react-router-dom";
 import { RouteConfig } from "@agir/front/app/routes.config";
@@ -15,7 +16,7 @@ const routeConfig = {
     id: "info",
     path: "/groupes/:groupPk/",
     exact: false,
-    label: "Accueil",
+    label: _("Accueil"),
     hasTab: true,
     hasRoute: true,
   },
@@ -23,7 +24,7 @@ const routeConfig = {
     id: "messages",
     path: "/groupes/:groupPk/messages/",
     exact: false,
-    label: "Messages",
+    label: _("Messages"),
     hasTab: true,
     hasRoute: (group) => {
       if (group.isManager) {
@@ -36,7 +37,7 @@ const routeConfig = {
     id: "agenda",
     path: "/groupes/:groupPk/agenda/",
     exact: false,
-    label: "Agenda",
+    label: _("Agenda"),
     hasTab: true,
     hasRoute: (group) =>
       group.isMember || group.hasUpcomingEvents || group.hasPastEvents,
@@ -45,7 +46,7 @@ const routeConfig = {
     id: "reports",
     path: "/groupes/:groupPk/comptes-rendus/",
     exact: false,
-    label: "Comptes rendus",
+    label: _("Comptes rendus"),
     hasTab: true,
     hasRoute: (group) => group.isManager || group.hasPastEventReports,
   },
@@ -133,7 +134,7 @@ export const useTabs = (props, isMobile = true) => {
       dispatch(
         setAdminLink({
           href: routes.admin,
-          label: "Administration",
+          label: _("Administration"),
         }),
       );
   }, [dispatch, group, activePathname]);
@@ -143,7 +144,7 @@ export const useTabs = (props, isMobile = true) => {
       dispatch(
         setTopBarRightLink({
           to: settingsLink,
-          label: "Gestion du groupe",
+          label: _("Gestion du groupe"),
         }),
       );
   }, [dispatch, settingsLink, location.pathname]);

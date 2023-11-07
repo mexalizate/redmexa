@@ -1,3 +1,5 @@
+
+import _ from "gettext";
 import React from "react";
 
 import LogoFI from "./LogoFI";
@@ -27,7 +29,7 @@ const Template = (args) => <LogoFI {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  alt: "La France insoumise",
+  alt: _("La France insoumise"),
   height: "auto",
   width: "auto",
 };

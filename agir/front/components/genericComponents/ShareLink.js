@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 
@@ -80,7 +81,7 @@ const ShareLink = (props) => {
           icon={isCopied ? "check" : "copy"}
           onClick={handleCopy}
         >
-          {label || "Copier"}
+          {label || _("Copier")}
         </Button>
       </div>
     </StyledDiv>

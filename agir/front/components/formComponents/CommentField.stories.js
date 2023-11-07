@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React from "react";
 
 import CommentField, { CommentButton } from "./CommentField";
@@ -86,9 +87,9 @@ export const WithComments = () => {
   const [messages, setMessages] = React.useState([
     {
       id: 0,
-      text: "Bonjour !",
+      text: _("Bonjour !"),
       author: {
-        displayName: "Quelqu'un",
+        displayName: _("Quelqu'un"),
         image: `https://images.dicebear.com/api/human/${String(
           Math.random(),
         ).replace(".", "")}.svg?background=%23ffffff`,

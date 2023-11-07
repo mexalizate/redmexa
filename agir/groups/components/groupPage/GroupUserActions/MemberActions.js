@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useCallback, useState } from "react";
 import styled from "styled-components";
@@ -32,7 +33,7 @@ const MemberActions = ({ onQuit, onEdit }) => {
         icon="chevron-down"
         rightIcon
       >
-        Vous êtes membre
+        {_("Vous êtes membre")}
       </Button>
       <ResponsiveLayout
         MobileLayout={BottomSheet}
@@ -46,13 +47,13 @@ const MemberActions = ({ onQuit, onEdit }) => {
           <li>
             <button type="button" onClick={onEdit}>
               <RawFeatherIcon name="lock" width="1rem" height="1rem" />
-              Préférences de confidentialité
+              {_("Préférences de confidentialité")}
             </button>
           </li>
           <li>
             <button type="button" onClick={onQuit}>
               <RawFeatherIcon name="x" width="1rem" height="1rem" />
-              Quitter le groupe
+              {_("Quitter le groupe")}
             </button>
           </li>
         </StyledMenuList>

@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useMemo } from "react";
 import styled from "styled-components";
@@ -113,7 +114,7 @@ const ActionCard = (props) => {
                   disabled={disabled}
                   color="default"
                 >
-                  {dismissed ? "Marquer comme non traité" : dismissLabel}
+                  {dismissed ? _("Marquer comme non traité") : dismissLabel}
                 </Button>
               )}
             </StyledFooter>

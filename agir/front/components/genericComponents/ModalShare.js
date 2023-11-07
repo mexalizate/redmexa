@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
@@ -45,7 +46,7 @@ const ModalShare = (props) => {
     <Modal shouldShow={shouldShow} onClose={onClose}>
       <ModalContainer>
         <ModalContent>
-          <h1>Partager la page</h1>
+          <h1>{_("Partager la page")}</h1>
           <ShareContentUrl url={url} />
         </ModalContent>
       </ModalContainer>

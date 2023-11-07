@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
@@ -49,14 +50,13 @@ const GroupLinks = (props) => {
     return (
       <>
         <div>
-          Vous n’avez pas encore de lien !
+          {_("Vous n’avez pas encore de lien !")}
           <Spacer size="0.5rem" />
-          Ajoutez vos réseaux sociaux et sites web pour permettre à tout le
-          monde de les retrouver facilement
+          {_("Ajoutez vos réseaux sociaux et sites web pour permettre à tout le monde de les retrouver facilement")}
         </div>
         <Spacer size="1rem" />
         <Button color="secondary" onClick={createNewLink}>
-          Ajouter un lien
+          {_("Ajouter un lien")}
         </Button>
       </>
     );
@@ -72,7 +72,7 @@ const GroupLinks = (props) => {
         </GroupLink>
       ))}
       <Button icon="plus" color="link" onClick={createNewLink}>
-        Ajouter un lien
+        {_("Ajouter un lien")}
       </Button>
     </>
   );

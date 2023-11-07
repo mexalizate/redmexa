@@ -159,7 +159,7 @@ const SignUp = () => {
       <InputGroup>
         <div>
           <TextField
-            label="Email"
+            label={_("Email")}
             name="email"
             error={error && error.email}
             onChange={handleChange}
@@ -170,7 +170,7 @@ const SignUp = () => {
         </div>
         <div>
           <TextField
-            label="Code postal"
+            label={_("Code postal")}
             name="postalCode"
             error={error && error.postalCode}
             onChange={handleChange}
@@ -190,7 +190,7 @@ const SignUp = () => {
         {hasCountryField && (
           <div>
             <CountryField
-              label="Pays"
+              label={_("Pays")}
               name="country"
               error={error && error.country}
               placeholder=""

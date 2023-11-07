@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useState, useCallback } from "react";
 
@@ -52,7 +53,7 @@ const GroupInvitation = (props) => {
         setErrors(res.error);
         return;
       }
-      sendToast("Invitation envoyée", "SUCCESS", { autoClose: true });
+      sendToast(_("Invitation envoyée"), "SUCCESS", { autoClose: true });
       setEmail("");
     },
     [email, groupPk, sendToast],
@@ -71,14 +72,14 @@ const GroupInvitation = (props) => {
           <TextField
             type="text"
             value={email}
-            placeholder="Adresse e-mail de l’invité·e"
+            placeholder={_("Adresse e-mail de l’invité·e")}
             onChange={handleChange}
             error={errors?.email}
           />
         </div>
         <div>
           <Button color="primary" small onClick={handleInvitation}>
-            Envoyer une invitation
+            {_("Envoyer une invitation")}
           </Button>
         </div>
       </StyledContainer>

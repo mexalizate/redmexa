@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React from "react";
 
 import ContactForm from "./ContactForm";
@@ -17,8 +18,8 @@ Default.args = {
   isLoading: false,
   error: null,
   groups: [
-    { id: "abc123", name: "Mon groupe" },
-    { id: "123abc", name: "Mon autre groupe" },
+    { id: "abc123", name: _("Mon groupe") },
+    { id: "123abc", name: _("Mon autre groupe") },
   ],
 };
 

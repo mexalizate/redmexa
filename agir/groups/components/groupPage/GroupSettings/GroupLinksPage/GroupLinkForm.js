@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useState, useEffect } from "react";
 
@@ -44,20 +45,20 @@ const GroupLinkForm = (props) => {
     <>
       <BackButton disabled={isLoading} onClick={onBack} />
       <StyledTitle>
-        {isNew ? "Nouveau lien personnalisé" : "Modifier le lien"}
+        {isNew ? _("Nouveau lien personnalisé") : _("Modifier le lien")}
       </StyledTitle>
       <Spacer size="1rem" />
       <div>
-        Attention : ces liens seront disponibles <strong>publiquement</strong>{" "}
-        et tout le monde pourra y accéder. Ne partagez pas de boucles privées.
+        {_("Attention : ces liens seront disponibles")} <strong>{_("publiquement")}</strong>{" "}
+        {_("et tout le monde pourra y accéder. Ne partagez pas de boucles privées.")}
       </div>
       <Spacer size="1.5rem" />
       <form onSubmit={handleSubmit}>
         <TextField
           id="label"
           name="label"
-          label="Titre à afficher"
-          helpText="Exemple : « Vidéo de présentation »"
+          label={_("Titre à afficher")}
+          helpText={_("Exemple : « Vidéo de présentation »")}
           onChange={handleChange}
           value={linkData.label || ""}
           error={errors?.label}
@@ -88,7 +89,7 @@ const GroupLinkForm = (props) => {
             color="secondary"
             style={{ flex: "0 0 auto" }}
           >
-            {isNew ? "Ajouter ce lien" : "Enregistrer"}
+            {isNew ? _("Ajouter ce lien") : _("Enregistrer")}
           </Button>
           {handleDelete && (
             <Button
@@ -98,7 +99,7 @@ const GroupLinkForm = (props) => {
               color="danger"
               style={{ flex: "0 0 auto" }}
             >
-              Supprimer le lien
+              {_("Supprimer le lien")}
             </Button>
           )}
         </footer>

@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React from "react";
 
 import EventRequiredDocuments from "./EventRequiredDocuments";
@@ -35,8 +36,8 @@ Default.args = {
     {
       id: "doc",
       type: Object.keys(EVENT_DOCUMENT_TYPES)[3],
-      description: "Attestation de concours en nature",
-      name: "Attestation de concours en nature",
+      description: _("Attestation de concours en nature"),
+      name: _("Attestation de concours en nature"),
       file: "#doc",
     },
   ],

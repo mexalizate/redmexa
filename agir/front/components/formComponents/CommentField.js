@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, {
   useCallback,
@@ -399,7 +400,7 @@ const CommentField = (props) => {
   if (isLocked) {
     return (
       <StaticToast $color="grey" style={{ marginTop: 0 }}>
-        Cette conversation est close. Vous ne pouvez pas y écrire de réponse.
+        {_("Cette conversation est close. Vous ne pouvez pas y écrire de réponse.")}
       </StaticToast>
     );
   }
@@ -451,7 +452,7 @@ const CommentField = (props) => {
               <button
                 type="submit"
                 disabled={!maySend}
-                aria-label="Envoyer le commentaire"
+                aria-label={_("Envoyer le commentaire")}
               >
                 <RawFeatherIcon
                   name="send"

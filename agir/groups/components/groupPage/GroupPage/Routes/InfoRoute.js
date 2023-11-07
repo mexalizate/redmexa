@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
@@ -69,7 +70,7 @@ const MobileInfoRoute = (props) => {
       <StyledShareCard>
         <ShareCard
           url={group.routes?.details}
-          title="Partager le lien du groupe"
+          title={_("Partager le lien du groupe")}
         />
       </StyledShareCard>
 
@@ -107,7 +108,7 @@ const DesktopInfoRoute = (props) => {
           <GroupLocation {...group} groupSettingsLinks={groupSettingsLinks} />
           <ShareCard
             url={group.routes?.details}
-            title="Partager le lien du groupe"
+            title={_("Partager le lien du groupe")}
           />
         </>
       ) : (
@@ -120,7 +121,7 @@ const DesktopInfoRoute = (props) => {
           />
           <ShareCard
             url={group.routes?.details}
-            title="Partager le lien du groupe"
+            title={_("Partager le lien du groupe")}
           />
           <GroupLocation {...group} groupSettingsLinks={groupSettingsLinks} />
         </>

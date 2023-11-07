@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React, { useState, useCallback, useEffect } from "react";
 import ModalConfirmation from "./ModalConfirmation";
 
@@ -41,16 +42,16 @@ const Template = ({
 export const Default = Template.bind({});
 Default.args = {
   shouldShow: true,
-  title: "Titre de la modale",
-  description: "Ma description est sacrée !",
+  title: _("Titre de la modale"),
+  description: _("Ma description est sacrée !"),
 };
 
 export const WithConfirmation = Template.bind({});
 WithConfirmation.args = {
   shouldShow: true,
-  title: "Titre de la modale",
-  description: "Ma description est sacrée :)",
-  dismissLabel: "Non merci",
-  confirmationLabel: "Allons à cette étape !",
+  title: _("Titre de la modale"),
+  description: _("Ma description est sacrée :)"),
+  dismissLabel: _("Non merci"),
+  confirmationLabel: _("Allons à cette étape !"),
   confirmationUrl: "https://actionpopulaire.fr",
 };

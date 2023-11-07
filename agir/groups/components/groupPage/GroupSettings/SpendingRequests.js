@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useMemo } from "react";
 import styled from "styled-components";
@@ -148,7 +149,7 @@ const SpendingRequest = (props) => {
     <StyledSpendingRequest
       route="spendingRequestDetails"
       routeParams={{ spendingRequestPk: id }}
-      aria-label="Voir la demande"
+      aria-label={_("Voir la demande")}
       $status={status}
     >
       <RawFeatherIcon
@@ -190,7 +191,7 @@ const SpendingRequests = ({ groupPk, spendingRequests }) => {
           color="secondary"
           wrap
         >
-          Créer une demande de dépense
+          {_("Créer une demande de dépense")}
         </Button>
       )}
       <Spacer size="1rem" />

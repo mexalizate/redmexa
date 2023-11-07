@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useMemo } from "react";
 import styled from "styled-components";
@@ -126,12 +127,12 @@ const SpendingRequestDetails = (props) => {
           icon="arrow-right"
           color="choose"
         >
-          Voir le suivi
+          {_("Voir le suivi")}
         </Button>
       </StyledCard>
       <StyledCard>
         <header>
-          <h3>Détails</h3>
+          <h3>{_("Détails")}</h3>
         </header>
 
         <h4 style={{ fontSize: "1rem" }}>
@@ -139,37 +140,37 @@ const SpendingRequestDetails = (props) => {
         </h4>
         <p>
           <small>
-            Demande créée {timeAgo(spendingRequest.created)}
+            {_("Demande créée")} {timeAgo(spendingRequest.created)}
             {spendingRequest.creator && ` par ${spendingRequest.creator}`}
           </small>
         </p>
 
-        <h4>Type de dépense</h4>
-        <p>Dépense {spendingRequestTiming.toLowerCase()}</p>
+        <h4>{_("Type de dépense")}</h4>
+        <p>{_("Dépense")} {spendingRequestTiming.toLowerCase()}</p>
 
-        <h4>Motif de l'achat</h4>
-        <p>{spendingRequest.explanation || <em>Non renseigné</em>}</p>
+        <h4>{_("Motif de l'achat")}</h4>
+        <p>{spendingRequest.explanation || <em>{_("Non renseigné")}</em>}</p>
 
-        <h4>Catégorie de dépense</h4>
+        <h4>{_("Catégorie de dépense")}</h4>
         <p>
           <CategoryCard small category={spendingRequest.category} />
         </p>
 
-        <h4>Date de l'achat</h4>
-        <p>{spendingRequestSpendingDate || <em>Non renseignée</em>}</p>
+        <h4>{_("Date de l'achat")}</h4>
+        <p>{spendingRequestSpendingDate || <em>{_("Non renseignée")}</em>}</p>
 
-        <h4>Événement lié à la dépense</h4>
+        <h4>{_("Événement lié à la dépense")}</h4>
         <p>
           {spendingRequest.event?.name || (
-            <em>Pas d'évenement lié à cette dépense</em>
+            <em>{_("Pas d'évenement lié à cette dépense")}</em>
           )}
         </p>
 
-        <h4>Nom du contact</h4>
-        <p>{spendingRequest.contact?.name || <em>Non renseigné</em>}</p>
+        <h4>{_("Nom du contact")}</h4>
+        <p>{spendingRequest.contact?.name || <em>{_("Non renseigné")}</em>}</p>
 
-        <h4>Numéro de téléphone</h4>
-        <p>{spendingRequest.contact?.phone || <em>Non renseigné</em>}</p>
+        <h4>{_("Numéro de téléphone")}</h4>
+        <p>{spendingRequest.contact?.phone || <em>{_("Non renseigné")}</em>}</p>
       </StyledCard>
       <StyledCard>
         <header>
@@ -183,45 +184,44 @@ const SpendingRequestDetails = (props) => {
         </header>
         <Spacer size="0" />
         <FlexLine as="h4">
-          <span>Total de la dépense</span>
+          <span>{_("Total de la dépense")}</span>
           <span>{spendingRequestAmount}</span>
         </FlexLine>
         <p style={{ fontSize: "0.875rem" }}>
-          Payé par le groupe&nbsp;:{" "}
+          {_("Payé par le groupe")}&nbsp;:{" "}
           <strong>{spendingRequest.group.name}</strong>
         </p>
       </StyledCard>
       <StyledCard>
         <header>
-          <h3>Paiement</h3>
+          <h3>{_("Paiement")}</h3>
         </header>
 
-        <h4>Mode de paiement</h4>
-        <p>Virement</p>
+        <h4>{_("Mode de paiemen")}t</h4>
+        <p>{_("Virement")}</p>
 
-        <h4>Titulaire du compte</h4>
-        <p>{spendingRequest.bankAccount?.name || <em>Non renseigné</em>}</p>
+        <h4>{_("Titulaire du compte")}</h4>
+        <p>{spendingRequest.bankAccount?.name || <em>{_("Non renseigné")}</em>}</p>
 
-        <h4>IBAN</h4>
-        <p>{spendingRequest.bankAccount?.iban || <em>Non renseigné</em>}</p>
+        <h4>{_("IBAN")}</h4>
+        <p>{spendingRequest.bankAccount?.iban || <em>{_("Non renseigné")}</em>}</p>
 
-        <h4>BIC</h4>
-        <p>{spendingRequest.bankAccount?.bic || <em>Non renseigné</em>}</p>
+        <h4>{_("BIC")}</h4>
+        <p>{spendingRequest.bankAccount?.bic || <em>{_("Non renseigné")}</em>}</p>
 
-        <h4>RIB</h4>
+        <h4>{_("RIB")}</h4>
         <p>
           {spendingRequest.bankAccount?.rib ? (
             <AttachmentItem
               id={spendingRequest.bankAccount.rib}
               type="RIB"
-              title="Relevé d'Identité Bancare"
+              title={_("Relevé d'Identité Bancare")}
               file={spendingRequest.bankAccount.rib}
             />
           ) : (
             <em>
-              Pour la validation de la demande, vous devrez également joindre le{" "}
-              <abbr title="Relevé d'Identité Bancaire">RIB</abbr> du compte
-              bancaire au format PDF, JPEG ou PNG.
+              {_("Pour la validation de la demande, vous devrez également joindre le")}{" "}
+              <abbr title="Relevé d'Identité Bancaire">{_("RIB")}</abbr> {_("du compte bancaire au format PDF, JPEG ou PNG.")}
             </em>
           )}
         </p>
@@ -236,7 +236,7 @@ const SpendingRequestDetails = (props) => {
             />
           </h3>
           <Button small icon="plus" onClick={onAttachmentAdd}>
-            Ajouter
+            {_("Ajouter")}
           </Button>
         </header>
         {Array.isArray(spendingRequest.attachments) &&
@@ -247,7 +247,7 @@ const SpendingRequestDetails = (props) => {
             onDelete={onAttachmentDelete}
           />
         ) : (
-          <em>Aucune pièce justificative n'a pas encore été ajoutée</em>
+          <em>{_("Aucune pièce justificative n'a pas encore été ajoutée")}</em>
         )}
       </StyledCard>
     </div>

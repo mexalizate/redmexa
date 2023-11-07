@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 
@@ -77,13 +78,13 @@ export const EventList = ({ events }) => {
   return (
     <>
       {!!futureEvents?.length && (
-        <StyledSubtitle>Événements à venir</StyledSubtitle>
+        <StyledSubtitle>{_("Événements à venir")}</StyledSubtitle>
       )}
       {futureEvents.map((event) => (
         <EventItem key={event.id} event={event} />
       ))}
       {!!pastEvents?.length && (
-        <StyledSubtitle>Événements passés</StyledSubtitle>
+        <StyledSubtitle>{_("Événements passés")}</StyledSubtitle>
       )}
       {pastEvents.map((event) => (
         <EventItem key={event.id} event={event} />
@@ -102,7 +103,7 @@ export const ListTitle = ({ name, length = 0, onShowMore }) => (
     </div>
     {onShowMore && (
       <Button color="primary" small onClick={onShowMore}>
-        Voir tout
+        {_("Voir tout")}
       </Button>
     )}
   </h2>
@@ -121,7 +122,7 @@ export const NoResults = ({ name, list }) => {
   return (
     <>
       <Spacer size="1rem" />
-      Aucun {name} n'est lié à cette recherche
+      {_("Aucun")} {name} {_("n'est lié à cette recherche")}
     </>
   );
 };

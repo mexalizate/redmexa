@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React from "react";
 
 import DateTimeField from "./DateTimeField";
@@ -36,7 +37,7 @@ export const Default = Template.bind({});
 Default.args = {
   value: "",
   id: "field",
-  label: "Date de naissance",
+  label: _("Date de naissance"),
   error: "",
   disabled: false,
 };
@@ -68,7 +69,7 @@ Filled.args = {
 export const WithHelpText = Template.bind({});
 WithHelpText.args = {
   ...Filled.args,
-  helpText: "Texte d'aide si necessaire",
+  helpText: _("Texte d'aide si necessaire"),
 };
 
 export const Focused = Template.bind({});
@@ -80,7 +81,7 @@ Focused.args = {
 export const WithValidationError = Template.bind({});
 WithValidationError.args = {
   ...Filled.args,
-  error: "Texte d’erreur sur le champ",
+  error: _("Texte d’erreur sur le champ"),
 };
 
 export const Disabled = Template.bind({});

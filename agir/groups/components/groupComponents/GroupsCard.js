@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
@@ -88,8 +89,8 @@ const GroupLine = ({
       </h3>
       {isDetailed && (
         <small style={{ color: style.black500 }}>
-          {eventCount} événement{eventCount > 1 ? "s" : ""} &bull;{" "}
-          {membersCount} membre{membersCount > 1 ? "s" : ""}
+          {eventCount} {_("événement")}{eventCount > 1 ? "s" : ""} &bull;{" "}
+          {membersCount} {_("membre")}{membersCount > 1 ? "s" : ""}
         </small>
       )}
     </div>
@@ -123,7 +124,7 @@ export const GroupsOrganizingCard = ({
       : "";
 
   return (
-    <StyledCard outlined title="Organisé par" editLinkTo={editLink}>
+    <StyledCard outlined title={_("Organisé par")} editLinkTo={editLink}>
       {groups.map((group) => (
         <GroupLine
           key={group.id}
@@ -160,7 +161,7 @@ export const GroupsJoiningCard = ({
     <StyledCard
       outlined
       title={
-        !isPast ? "Mes groupes y participent" : "Mes groupes y ont participé"
+        !isPast ? _("Mes groupes y participent") : _("Mes groupes y ont participé")
       }
     >
       {groupsAttendees.map((group) => (

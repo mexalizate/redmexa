@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useMemo } from "react";
 
@@ -45,7 +46,7 @@ const GroupsPage = ({ groups }) => {
       )}
       {followed.length > 0 && (
         <GroupList>
-          {joined.length > 0 && <h3>Groupes suivis</h3>}
+          {joined.length > 0 && <h3>{_("Groupes suivis")}</h3>}
           {followed.map((group) => (
             <GroupCard
               key={group.id}

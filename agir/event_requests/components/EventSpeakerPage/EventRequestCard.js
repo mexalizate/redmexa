@@ -1,3 +1,4 @@
+import _ from "gettext";
 /* eslint-disable react/no-unknown-property */
 import PropTypes from "prop-types";
 import React from "react";
@@ -104,7 +105,7 @@ const EventRequestCard = (props) => {
   return (
     <StyledCard>
       <p>
-        {theme.type} sur le thème &laquo;&nbsp;{theme.name}&nbsp;&raquo;
+        {theme.type} {_("sur le thème")} &laquo;&nbsp;{theme.name}&nbsp;&raquo;
       </p>
       <p>
         {location.zip}, {location.city} · {location.country}

@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useMemo } from "react";
 
@@ -28,14 +29,14 @@ const GroupMemberMainPanel = (props) => {
     <>
       <StyledTitle>
         {members.length}&nbsp;
-        {members.length > 1 ? "Membres" : "Membre"}
+        {members.length > 1 ? _("Membres") : _("Membre")}
       </StyledTitle>
       <p style={{ color: style.black700, margin: 0 }}>
-        Retrouvez ici la liste des membres de votre groupe
+        {_("Retrouvez ici la liste des membres de votre groupe")}
       </p>
       <Spacer size="1rem" />
       <ShareLink
-        label="Copier les e-mails des membres"
+        label={_("Copier les e-mails des membres")}
         color="primary"
         url={emails}
         $wrap

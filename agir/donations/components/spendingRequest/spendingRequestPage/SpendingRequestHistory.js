@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useMemo } from "react";
 import styled from "styled-components";
@@ -253,7 +254,7 @@ const SpendingRequestHistory = (props) => {
     <StyledWrapper>
       {status && (
         <>
-          <h4>Statut</h4>
+          <h4>{_("Statut")}</h4>
           <Spacer size="0.5rem" />
           <SpendingRequestStatus {...status} />
         </>
@@ -261,7 +262,7 @@ const SpendingRequestHistory = (props) => {
       {status && history && <Spacer size="2rem" />}
       {history && (
         <>
-          <h4>Suivi</h4>
+          <h4>{_("Suivi")}</h4>
           <Spacer size="1rem" />
           <StyledHistory>
             {historyEntries.map((item) => (

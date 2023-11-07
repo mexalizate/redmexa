@@ -1,3 +1,4 @@
+import _ from "gettext";
 /**
  * @jest-environment jsdom
  */

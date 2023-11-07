@@ -1,3 +1,4 @@
+import _ from "gettext";
 import _sortBy from "lodash/sortBy";
 import PropTypes from "prop-types";
 import React, { useMemo } from "react";
@@ -21,16 +22,15 @@ const GroupMaterielPage = (props) => {
   return (
     <>
       <HeaderPanel onBack={onBack} illustration={illustration} />
-      <StyledTitle>Matériel</StyledTitle>
+      <StyledTitle>{_("Matériel")}</StyledTitle>
       <span style={{ color: style.black700 }}>
-        Accédez à du matériel (affiches, tracts, autocollants...) gratuit en
-        utilisant les codes promos mis à disposition de votre groupe.
+        {_("Accédez à du matériel (affiches, tracts, autocollants...) gratuit en utilisant les codes promos mis à disposition de votre groupe.")}
       </span>
       {ordersURL && (
         <>
           <Spacer size=".5rem" />
           <span style={{ color: style.black700 }}>
-            Pour utiliser vos codes, accédez au site matériel&nbsp;:
+            {_("Pour utiliser vos codes, accédez au site matériel :")}
           </span>
           <Spacer size="1.5rem" />
           <p style={{ textAlign: "center" }}>
@@ -43,7 +43,7 @@ const GroupMaterielPage = (props) => {
               rel="noopener noreferrer"
               wrap
             >
-              Site d’achat de matériel
+              {_("Site d’achat de matériel")}
             </Button>
           </p>
         </>

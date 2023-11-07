@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useCallback, useMemo } from "react";
 import styled from "styled-components";
@@ -132,7 +133,7 @@ export const AttachmentItem = (props) => {
       {onEdit && (
         <button type="button" onClick={handleEdit} disabled={disabled}>
           <RawFeatherIcon
-            title="Modifier la pièce-jointe"
+            title={_("Modifier la pièce-jointe")}
             name="edit-2"
             width="1.5rem"
             height="1.5rem"
@@ -142,7 +143,7 @@ export const AttachmentItem = (props) => {
       {onDelete && (
         <button type="button" onClick={handleDelete} disabled={disabled}>
           <RawFeatherIcon
-            title="Supprimer la pièce-jointe"
+            title={_("Supprimer la pièce-jointe")}
             name="trash-2"
             width="1.5rem"
             height="1.5rem"
@@ -157,7 +158,7 @@ export const AttachmentItem = (props) => {
           disabled={disabled}
         >
           <RawFeatherIcon
-            title="Ouvrir la pièce-jointe"
+            title={_("Ouvrir la pièce-jointe")}
             name="eye"
             width="1.5rem"
             height="1.5rem"

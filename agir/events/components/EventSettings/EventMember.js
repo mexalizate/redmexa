@@ -1,3 +1,5 @@
+
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useMemo } from "react";
 import styled from "styled-components";
@@ -113,11 +115,11 @@ const Member = styled.div`
 
 const MEMBER_TYPE_CONFIG = {
   organizer: {
-    label: ["Organisateur·ice", "Organisatrice", "Organisateur"],
+    label: [_("Organisateur·ice"), _("Organisatrice"), _("Organisateur")],
     icon: <FaLock />,
   },
   speaker: {
-    label: ["Intervenant·e", "Intervenante", "Intervenant"],
+    label: [_("Intervenant·e"), _("Intervenante"), _("Intervenant")],
     icon: <FaMicrophone />,
   },
 };
@@ -164,7 +166,7 @@ const EventMember = (props) => {
         )}
       </Role>
       <Name>{displayName}</Name>
-      <Email title="Copier l'adresse" type="button" onClick={handleCopy}>
+      <Email title={_("Copier l'adresse")} type="button" onClick={handleCopy}>
         {email}
       </Email>
     </Member>

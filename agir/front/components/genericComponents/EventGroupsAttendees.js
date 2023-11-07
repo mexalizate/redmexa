@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 
@@ -48,10 +49,10 @@ export const EventGroupsAttendees = ({ groupsAttendees, isPast }) => {
       {userGroupsAttendees.length > 1 ? (
         <>
           et {userGroupsAttendees.length - 1} autres groupes&nbsp;
-          {isPast ? "y ont participé" : "y participent"}
+          {isPast ? _("y ont participé") : _("y participent")}
         </>
       ) : (
-        <>{isPast ? "y a participé" : "y participe"}</>
+        <>{isPast ? _("y a participé") : _("y participe")}</>
       )}
     </StyledGroupsAttendees>
   );
