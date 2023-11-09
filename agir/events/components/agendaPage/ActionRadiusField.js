@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
@@ -22,11 +23,11 @@ const ActionRadiusField = (props) => {
           value={value}
           onChange={onChange}
           disabled={disabled}
-          label="Proposer des événements dans un rayon de :"
+          label={_("Proposer des événements dans un rayon de :")}
           helpText={
             <p style={{ margin: "0.25rem 0 0", textAlign: "right" }}>
-              Un doute sur la localisation utilisée&nbsp;?&ensp;
-              <Link route="personalInformation">Vérifiez ici</Link>
+             {_("Un doute sur la localisation utilisée ? ")}
+              <Link route="personalInformation">{_("Vérifiez ici")}</Link>
             </p>
           }
           min={min}

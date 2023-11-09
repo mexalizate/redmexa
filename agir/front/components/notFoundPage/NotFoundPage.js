@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useEffect } from "react";
 import { usePrevious } from "react-use";
@@ -52,11 +53,11 @@ export const NotFoundPage = ({
             height="175"
             style={{ marginBottom: "2rem" }}
           />
-          <h2 style={{ marginBottom: ".5rem" }}>Pas de connexion</h2>
+          <h2 style={{ marginBottom: ".5rem" }}>{_("Pas de connexion")}</h2>
           <p>
-            Connectez-vous à un
+            {_("Connectez-vous à un")}
             <br />
-            réseau Wi-Fi ou mobile
+            {_("réseau Wi-Fi ou mobile")}
           </p>
         </OfflineBlock>
       </ErrorPage>
@@ -66,8 +67,8 @@ export const NotFoundPage = ({
   return (
     <ErrorPage
       icon="?"
-      title={`${title} introuvable`.trim()}
-      subtitle={`${subtitle} n’existe pas ou plus`.trim()}
+      title={_(`${title} introuvable`).trim()}
+      subtitle={_(`${subtitle} n’existe pas ou plus`).trim()}
       hasReload={false}
       hasTopBar={hasTopBar}
     />

@@ -1,3 +1,4 @@
+import _ from "gettext";
 import { DateTime, Interval } from "luxon";
 import PropTypes from "prop-types";
 import React, { useMemo } from "react";
@@ -102,7 +103,7 @@ const GroupEventList = (props) => {
           icon="chevron-down"
           rightIcon
         >
-          {loadMoreLabel || "Charger plus d’événements"}
+          {loadMoreLabel || _("Charger plus d’événements")}
         </Button>
       ) : null}
     </StyledList>

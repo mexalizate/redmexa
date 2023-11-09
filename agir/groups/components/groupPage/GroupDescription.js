@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
@@ -42,13 +43,13 @@ const GroupDescription = (props) => {
 
   return (
     <StyledCard
-      title="Présentation"
+      title={_("Présentation")}
       editLinkTo={editLinkTo}
       outlined={outlined}
     >
       <Collapsible
         dangerouslySetInnerHTML={{ __html: description.trim() }}
-        expanderLabel="Lire la suite"
+        expanderLabel={_("Lire la suite")}
         maxHeight={maxHeight}
         fadingOverflow
       />

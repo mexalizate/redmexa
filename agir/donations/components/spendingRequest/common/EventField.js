@@ -1,3 +1,4 @@
+import _ from "gettext"; 
 import PropTypes from "prop-types";
 import React, { useCallback, useMemo } from "react";
 
@@ -53,7 +54,7 @@ const EventField = (props) => {
 
   return (
     <SearchAndSelectField
-      placeholder="Chercher par nom, lieu …"
+      placeholder={_("Chercher par nom, lieu …")}
       {...rest}
       isLoading={isLoading}
       value={currentValue}

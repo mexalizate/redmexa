@@ -1,8 +1,7 @@
+import _ from "gettext";
 import { DateTime } from "luxon";
 import React from "react";
-
 import I18N from "@agir/lib/i18n";
-
 import TimezoneField from "./TimezoneField";
 import DateTimeField from "./DateTimeField";
 
@@ -39,7 +38,7 @@ export const Empty = Template.bind({});
 Empty.args = {
   value: "",
   name: "timezone",
-  label: "Fuseau horaire",
+  label: _("Fuseau horaire"),
   error: "",
   maxLength: undefined,
   disabled: false,
@@ -55,7 +54,7 @@ Filled.args = {
 export const WithHelpText = Template.bind({});
 WithHelpText.args = {
   ...Filled.args,
-  helpText: "Texte d'aide si necessaire",
+  helpText: _("Texte d'aide si necessaire"),
 };
 
 export const Focused = Template.bind({});
@@ -67,7 +66,7 @@ Focused.args = {
 export const WithValidationError = Template.bind({});
 WithValidationError.args = {
   ...Filled.args,
-  error: "Texte d’erreur sur le champ",
+  error: _("Texte d’erreur sur le champ"),
 };
 
 export const Disabled = Template.bind({});
@@ -120,10 +119,10 @@ export const WithDateTimeField = (args = Filled.args) => {
             <small>({tz})</small>
           </>
         ) : (
-          <em>empty</em>
+          <em>{_("empty")}</em>
         )}
       </pre>
-      <button onClick={() => setValue(args.value)}>Reset</button>
+      <button onClick={() => setValue(args.value)}>{_("Reset")}</button>
     </div>
   );
 };

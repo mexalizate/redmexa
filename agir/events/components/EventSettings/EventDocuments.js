@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 
@@ -10,7 +11,7 @@ const EventDocuments = (props) => {
   return (
     <>
       <HeaderPanel onBack={onBack} />
-      <StyledTitle>Documents de l'événement public</StyledTitle>
+      <StyledTitle>{_("Documents de l'événement public")}</StyledTitle>
       <EventRequiredDocumentsPage eventPk={eventPk} embedded />
     </>
   );

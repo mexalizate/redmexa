@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useMemo } from "react";
 import { useLocation, Redirect, useRouteMatch } from "react-router-dom";
@@ -42,9 +43,9 @@ export const EventSettings = (props) => {
 
   const warning = !event.isEditable ? (
     <>
-      Cet événement n'est pas modifiable directement via Action Populaire.
+      {_("Cet événement n'est pas modifiable directement via Action Populaire.")}
       <br />
-      Pour toute question, veuillez contacter nos équipes à l'adresse e-mail{" "}
+      {_("Pour toute question, veuillez contacter nos équipes à l'adresse e-mail")}{" "}
       <strong>groupes@actionpopulaire.fr</strong>
     </>
   ) : undefined;

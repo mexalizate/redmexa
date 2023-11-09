@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useMemo } from "react";
 import styled from "styled-components";
@@ -109,14 +110,14 @@ const SpendingRequestDetails = (props) => {
       <div>
         <StyledCard>
           <header>
-            <h3>Détails</h3>
+            <h3>{_("Détails")}</h3>
           </header>
           <TextField
             disabled
             readOnly
             id="title"
             name="title"
-            label="Titre de la dépense"
+            label={_("Titre de la dépense")}
             value={spendingRequest.title}
           />
           <CategoryCard category={spendingRequest.category} />
@@ -126,7 +127,7 @@ const SpendingRequestDetails = (props) => {
               readOnly
               id="timing"
               name="timing"
-              label="Type de dépense"
+              label={_("Type de dépense")}
               value={spendingRequestTiming}
             />
             <TextField
@@ -135,7 +136,7 @@ const SpendingRequestDetails = (props) => {
               id="spendingDate"
               name="spendingDate"
               value={spendingRequestSpendingDate}
-              label="Date de l'achat"
+              label={_("Date de l'achat")}
             />
           </FlexLine>
           <TextField
@@ -143,7 +144,7 @@ const SpendingRequestDetails = (props) => {
             readOnly
             id="event"
             name="event"
-            label="Événement lié à la dépense"
+            label={_("Événement lié à la dépense")}
             value={spendingRequest.event?.name || ""}
           />
           <TextField
@@ -152,7 +153,7 @@ const SpendingRequestDetails = (props) => {
             id="explanation"
             name="explanation"
             value={spendingRequest.explanation}
-            label="Motif de l'achat"
+            label={_("Motif de l'achat")}
             textArea
             rows={1}
           />
@@ -161,7 +162,7 @@ const SpendingRequestDetails = (props) => {
             readOnly
             id="contactName"
             name="contactName"
-            label="Contact lié à la dépense"
+            label={_("Contact lié à la dépense")}
             value={spendingRequest.contact?.name}
           />
           <PhoneField
@@ -169,43 +170,43 @@ const SpendingRequestDetails = (props) => {
             readOnly
             id="contactPhone"
             name="contactPhone"
-            label="Numéro de téléphone"
+            label={_("Numéro de téléphone")}
             value={spendingRequest.contact?.phone}
           />
         </StyledCard>
         <Spacer size="2.5rem" />
         <StyledCard>
           <header>
-            <h3>Montant et financement</h3>
+            <h3>{_("Montant et financement")}</h3>
           </header>
           <Spacer size="0" />
           <FlexLine as="h4">
-            <span>Total de la dépense</span>
+            <span>{_("Total de la dépense")}</span>
             <span>{spendingRequestAmount}</span>
           </FlexLine>
           <p style={{ fontSize: "0.875rem" }}>
-            Payé par le groupe&nbsp;:{" "}
+            {_("Payé par le groupe")}&nbsp;:{" "}
             <strong>{spendingRequest.group.name}</strong>
           </p>
         </StyledCard>
         <Spacer size="2.5rem" />
         <StyledCard>
           <header>
-            <h3>Paiement</h3>
+            <h3>{_("Paiement")}</h3>
           </header>
           <TextField
             disabled
             readOnly
             id="paymentMode"
             name="paymentMode"
-            label="Mode de paiement"
+            label={_("Mode de paiement")}
             value="Virement"
           />
-          <h4>Coordonnées bancaires</h4>
+          <h4>{_("Coordonnées bancaires")}</h4>
           <TextField
             disabled
             readOnly
-            label="Titulaire du compte"
+            label={_("Titulaire du compte")}
             id="bankAccountName"
             name="bankAccountName"
             value={spendingRequest.bankAccount?.name}
@@ -213,7 +214,7 @@ const SpendingRequestDetails = (props) => {
           <TextField
             disabled
             readOnly
-            label={<abbr title="International Bank Account Number">IBAN</abbr>}
+            label={<abbr title={_("International Bank Account Number")}>{_("IBAN")}</abbr>}
             id="bankAccountIban"
             name="bankAccountIban"
             value={spendingRequest.bankAccount?.iban}
@@ -221,7 +222,7 @@ const SpendingRequestDetails = (props) => {
           <TextField
             disabled
             readOnly
-            label={<abbr title="Bank Identifier Code">BIC</abbr>}
+            label={<abbr title={_("Bank Identifier Code")}>{_("BIC")}</abbr>}
             id="bankAccountBic"
             name="bankAccountBic"
             value={spendingRequest.bankAccount?.bic}
@@ -230,24 +231,22 @@ const SpendingRequestDetails = (props) => {
             <AttachmentItem
               id={spendingRequest.bankAccount.rib}
               type="RIB"
-              title="Relevé d'Identité Bancare"
+              title={_("Relevé d'Identité Bancare")}
               file={spendingRequest.bankAccount.rib}
             />
           ) : (
             <em>
-              &mdash;&nbsp;Pour la validation de la demande, vous devrez
-              également joindre le{" "}
-              <abbr title="Relevé d'Identité Bancaire">RIB</abbr> du compte
-              bancaire au format PDF, JPEG ou PNG.
+              &mdash;&nbsp;{_("Pour la validation de la demande, vous devrez également joindre le")}{" "}
+              <abbr title={_("Relevé d'Identité Bancaire")}>{_("RIB")}</abbr> {_("du compte bancaire au format PDF, JPEG ou PNG.")}
             </em>
           )}
         </StyledCard>
         <Spacer size="2.5rem" />
         <StyledCard>
           <header>
-            <h3>Pièces justificatives</h3>
+            <h3>{_("Pièces justificatives")}</h3>
             <Button icon="plus" onClick={onAttachmentAdd}>
-              Ajouter
+              {_("Ajouter")}
             </Button>
           </header>
           {Array.isArray(spendingRequest.attachments) &&
@@ -259,7 +258,7 @@ const SpendingRequestDetails = (props) => {
             />
           ) : (
             <em>
-              &mdash;&nbsp;Aucune pièce justificative n'a pas encore été ajoutée
+              &mdash;&nbsp;{_("Aucune pièce justificative n'a pas encore été ajoutée")}
             </em>
           )}
         </StyledCard>

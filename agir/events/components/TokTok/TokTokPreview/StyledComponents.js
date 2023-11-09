@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
@@ -114,9 +115,8 @@ export const GroupCreationWarning = styled.div.attrs(() => ({
     <>
       <RawFeatherIcon name="alert-triangle" />
       <p>
-        <strong>Vous n’êtes pas gestionnaire d’un groupe d’action.</strong>{" "}
-        Créez un groupe d’action ou devenez gestionnaire d’un groupe existant
-        pour indiquer les portes auxquelles vous avez toqué
+        <strong>{_("Vous n’êtes pas gestionnaire d’un groupe d’action.")}</strong>{" "}
+        {_("Créez un groupe d’action ou devenez gestionnaire d’un groupe existant pour indiquer les portes auxquelles vous avez toqué")}
       </p>
     </>
   ),

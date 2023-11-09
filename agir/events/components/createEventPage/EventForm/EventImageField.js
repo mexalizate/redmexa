@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useCallback } from "react";
 
@@ -35,7 +36,7 @@ const EventImageField = (props) => {
           margin-bottom: 5px;
         `}
       >
-        Image de couverture
+        {_("Image de couverture")}
       </strong>
       <br />
       <span
@@ -43,9 +44,8 @@ const EventImageField = (props) => {
           line-height: 1.5;
         `}
       >
-        {!required && <em>Facultative. </em>}
-        L'image apparaîtra sur la page et sur les réseaux sociaux. Taille
-        conseillée&nbsp;: 1200x630&nbsp;px ou plus.
+        {!required && <em>{_("Facultative. ")}</em>}
+       {_(" L'image apparaîtra sur la page et sur les réseaux sociaux. Taille conseillée&nbsp;: 1200x630&nbsp;px ou plus.")}
       </span>
       <ImageField
         name={name}
@@ -63,14 +63,13 @@ const EventImageField = (props) => {
             value={value?.hasLicense || false}
             label={
               <span>
-                En important une image, je certifie être propriétaire des droits
-                et accepte de la partager sous licence libre{" "}
+               {_(" En important une image, je certifie être propriétaire des droits et accepte de la partager sous licence libre")}{" "}
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
                   href={I18N.ccLicenseLink}
                 >
-                  Creative Commons CC-BY-NC 3.0
+                  {_("Creative Commons CC-BY-NC 3.0")}
                 </a>
                 .
               </span>

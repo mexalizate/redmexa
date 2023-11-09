@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import styled from "styled-components";
@@ -15,12 +16,12 @@ import MessageStep from "./MessageStep";
 const EMPTY_EVENTS = [
   {
     id: null,
-    name: "Ne concerne pas un événement",
+    name: _("Ne concerne pas un événement"),
     type: "NULL",
   },
   {
     id: null,
-    name: "Événement futur",
+    name: _("Événement futur"),
   },
 ];
 
@@ -210,20 +211,20 @@ const Modal = (props) => {
   const handleSend = useCallback(() => {
     if (!subject || !text) {
       setErrors({
-        subject: !subject && "L'objet du message est obligatoire",
-        text: !text && "Un corps de message est obligatoire",
+        subject: !subject && _("L'objet du message est obligatoire"),
+        text: !text && _("Un corps de message est obligatoire"),
       });
       return false;
     }
     if (subject?.trim()?.length > SUBJECT_MAX_LENGTH) {
       setErrors({
-        subject: `L'objet du message doit comporter moins de ${SUBJECT_MAX_LENGTH} caractères`,
+        subject: _(`L'objet du message doit comporter moins de ${SUBJECT_MAX_LENGTH} caractères`),
       });
       return false;
     }
     if (text?.trim()?.length > TEXT_MAX_LENGTH) {
       setErrors({
-        text: `Le message doit comporter moins de ${TEXT_MAX_LENGTH} caractères`,
+        text: _(`Le message doit comporter moins de ${TEXT_MAX_LENGTH} caractères`),
       });
       return false;
     }
@@ -283,7 +284,7 @@ const Modal = (props) => {
     <ModalWrapper shouldShow={shouldShow} noScroll>
       <StyledModalContent $isLoading={isLoading}>
         <StyledModalHeader>
-          <h4>Nouveau message</h4>
+          <h4>{_("Nouveau message")}</h4>
           <StyledIconButton onClick={onClose} disabled={isLoading}>
             <RawFeatherIcon name="x" />
           </StyledIconButton>
@@ -302,7 +303,7 @@ const Modal = (props) => {
               disabled={!maySend}
               onClick={handleSend}
             >
-              Envoyer
+              {_("Envoyer")}
             </Button>
           )}
         </StyledModalHeader>
@@ -336,7 +337,7 @@ const Modal = (props) => {
         {(selectedEvent || !!groupPk) && (
           <StyledModalFooter>
             <Button color="secondary" disabled={!maySend} onClick={handleSend}>
-              Envoyer le message
+              {_("Envoyer le message")}
             </Button>
           </StyledModalFooter>
         )}

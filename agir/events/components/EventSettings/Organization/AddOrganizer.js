@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useState } from "react";
 import { mutate } from "swr";
@@ -41,7 +42,7 @@ export const AddOrganizer = ({ eventPk, participants, onBack }) => {
     setIsLoading(false);
     if (res.errors) {
       sendToast(
-        res.errors?.detail || "L'invitation n'a pas pu être envoyée",
+        res.errors?.detail || _("L'invitation n'a pas pu être envoyée"),
         "ERROR",
         { autoClose: true },
       );
@@ -56,18 +57,17 @@ export const AddOrganizer = ({ eventPk, participants, onBack }) => {
   return (
     <>
       <BackButton onClick={onBack} />
-      <StyledTitle>Ajouter un·e autre organisateur·ice</StyledTitle>
+      <StyledTitle>{_("Ajouter un·e autre organisateur·ice")}</StyledTitle>
       <Spacer size="1rem" />
 
       {!participants.length ? (
         <span style={{ color: style.black700 }}>
-          Accueillez d’abord un·e participant·e à l'événement pour pouvoir lui
-          donner un rôle d'organisateur·ice.
+          {_("Accueillez d’abord un·e participant·e à l'événement pour pouvoir lui donner un rôle d'organisateur·ice.")}
         </span>
       ) : (
         <SelectField
-          label="Choisir un·e participant·e"
-          placeholder="Sélection"
+          label={_("Choisir un·e participant·e")}
+          placeholder={_("Sélection")}
           options={participants.map((participant) => ({
             label: `${participant.displayName} (${participant.email})`,
             value: participant,
@@ -83,28 +83,28 @@ export const AddOrganizer = ({ eventPk, participants, onBack }) => {
           <MemberList members={[selectedParticipant.value]} />
           <Spacer size="1rem" />
           <div>
-            Ce participant pourra :
+            {_("Ce participant pourra :")}
             <Spacer size="0.5rem" />
             <StyledList>
               <div />
-              Voir la liste des participant·es
+              {_("Voir la liste des participant·es")}
             </StyledList>
             <StyledList>
               <div />
-              Modifier les organisateurs
+              {_("Modifier les organisateurs")}
             </StyledList>
             <StyledList>
               <div />
-              Modifier les informations de l’événement
+              {_("Modifier les informations de l’événement")}
             </StyledList>
             <StyledList>
               <div />
-              Annuler l’événement
+              {_("Annuler l’événement")}
             </StyledList>
           </div>
           <Spacer size="1rem" />
           <Button color="secondary" onClick={onSubmit} disabled={isLoading}>
-            Confirmer
+            {_("Confirmer")}
           </Button>
         </>
       )}

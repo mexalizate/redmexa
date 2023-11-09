@@ -1,3 +1,4 @@
+import _ from "gettext";
 /* eslint-disable react/no-unknown-property */
 import PropTypes from "prop-types";
 import React from "react";
@@ -59,8 +60,7 @@ const GroupMemberFile = (props) => {
           color: ${({ theme }) => theme.black700};
         `}
       >
-        Cette personne a transmis ces informations volontairement à votre
-        groupe. Elles sont strictement confidentielles.
+        {_("Cette personne a transmis ces informations volontairement à votre groupe. Elles sont strictement confidentielles.")}
       </p>
     </PageFadeIn>
   );

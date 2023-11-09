@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useMemo } from "react";
 
@@ -43,8 +44,8 @@ export const GroupPage = (props) => {
       {group === false ? (
         <NotFoundPage
           hasTopBar={false}
-          title="Groupe"
-          subtitle="Ce groupe"
+          title={_("Groupe")}
+          subtitle={_("Ce groupe")}
           reloadOnReconnection={false}
         />
       ) : (

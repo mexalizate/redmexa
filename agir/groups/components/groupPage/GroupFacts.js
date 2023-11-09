@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
@@ -59,7 +60,7 @@ const GroupFacts = (props) => {
           <li>
             <FeatherIcon name="calendar" small inline />
             <span>
-              {eventCount} événement{eventCount > 1 && "s"}
+              {eventCount} {_("événement")}{eventCount > 1 && "s"}
             </span>
           </li>
         )}
@@ -68,14 +69,14 @@ const GroupFacts = (props) => {
             <FeatherIcon name="users" small inline />
             <span>
               {activeMemberCount}{" "}
-              {activeMemberCount > 1 ? "membres actifs" : "membre actif"}
+              {activeMemberCount > 1 ? _("membres actifs") : _("membre actif")}
             </span>
           </li>
         )}
         {!!isCertified && (
           <li>
             <FeatherIcon name="check-circle" small inline />
-            <span>Groupe certifié</span>
+            <span>{_("Groupe certifié")}</span>
           </li>
         )}
         {!!creationDate && (
@@ -87,7 +88,7 @@ const GroupFacts = (props) => {
         {!!lastActivityDate && (
           <li>
             <FeatherIcon name="rss" small inline />
-            <span>Dernière activité&nbsp;: {timeAgo(lastActivityDate)}</span>
+            <span>{_("Dernière activité&nbsp;:")} {timeAgo(lastActivityDate)}</span>
           </li>
         )}
         {Array.isArray(subtypes) && subtypes.length > 0 && (
@@ -99,7 +100,7 @@ const GroupFacts = (props) => {
         {routes && (
           <li style={{ marginTop: "1rem" }}>
             <AddToCalendarWidget routes={routes} name={name}>
-              <span>Télécharger l'agenda du groupe</span>
+              <span>{_("Télécharger l'agenda du groupe")}</span>
             </AddToCalendarWidget>
           </li>
         )}

@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useCallback, useState } from "react";
 import { useTransition, animated } from "@react-spring/web";
@@ -77,18 +78,18 @@ export const FeedbackButton = (props) => {
           shouldShow={hasTooltip}
           onClose={shouldPushTooltip ? hideTooltip : undefined}
         >
-          <strong>Aidez-nous !</strong>
+          <strong>{_("Aidez-nous !")}</strong>
           {isMobileApp ? (
             <span>
-              Donnez votre avis sur l'application Action Populaire&nbsp;→
+              {_("Donnez votre avis sur l'application Action Populaire →")}
             </span>
           ) : (
-            <span>Donnez votre avis sur le site Action Populaire&nbsp;→</span>
+            <span>{_("Donnez votre avis sur le site Action Populaire →")}</span>
           )}
         </Tooltip>
         <Button
           href={href}
-          aria-label="Je donne mon avis"
+          aria-label={_("Je donne mon avis")}
           onMouseOver={shouldPushTooltip ? undefined : showTooltip}
           onMouseLeave={shouldPushTooltip ? undefined : hideTooltip}
         />

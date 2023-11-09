@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React from "react";
 
 import ButtonAddList from "./ButtonAddList.js";
@@ -12,13 +13,13 @@ const Template = (args) => <ButtonAddList {...args} />;
 export const Default = Template.bind({});
 
 Default.args = {
-  label: "Ajouter votre binôme",
+  label: _("Ajouter votre binôme"),
   onClick: () => {},
 };
 
 export const AddOrganizer = Template.bind({});
 
 AddOrganizer.args = {
-  label: "Ajouter un·e gestionnaire",
+  label: _("Ajouter un·e gestionnaire"),
   onClick: () => {},
 };

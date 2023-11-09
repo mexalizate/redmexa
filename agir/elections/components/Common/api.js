@@ -1,3 +1,4 @@
+import _ from "gettext";
 import axios from "@agir/lib/utils/axios";
 import { addQueryStringParams } from "@agir/lib/utils/url";
 
@@ -71,7 +72,7 @@ export const createPollingStationOfficerOptions = async () => {
       if (e.response?.data && typeof e.response.data === "object") {
         result.error = e.response.data;
       } else {
-        result.error = { detail: e.message || "Une erreur est survenue" };
+        result.error = { detail: e.message || _("Une erreur est survenue") };
       }
     }
   }
@@ -105,7 +106,7 @@ export const createPollingStationOfficer = async (data) => {
     if (e.response?.data && typeof e.response.data === "object") {
       result.error = e.response.data;
     } else {
-      result.error = { detail: e.message || "Une erreur est survenue" };
+      result.error = { detail: e.message || _("Une erreur est survenue") };
     }
   }
 

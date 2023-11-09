@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
@@ -13,104 +14,93 @@ import onboardingActionImage from "./images/onboarding__action.jpg";
 const ONBOARDING_TYPE = {
   event: {
     img: onboardingEventImage,
-    title: <>Organisez un événement près de chez vous&nbsp;!</>,
+    title: <>{_("Organisez un événement près de chez vous !")}</>,
     body: (
       <>
-        Agissez et organisez un événement, tel qu’une action de solidarité, une
-        réunion en ligne pour discuter du programme, une écoute collective...
-        Organisez-vous avec d’autres personnes pour soutenir et faire vivre le
-        mouvement près de chez vous&nbsp;!
+       {_(" Agissez et organisez un événement, tel qu’une action de solidarité, une réunion en ligne pour discuter du programme, une écoute collective... Organisez-vous avec d’autres personnes pour soutenir et faire vivre le mouvement près de chez vous !")}
       </>
     ),
     primaryLink: {
-      label: "Créer un événement",
+      label: _("Créer un événement"),
       route: "createEvent",
     },
   },
   group__suggestions: {
-    title: "Rejoignez un groupe proche de chez vous",
+    title: _("Rejoignez un groupe proche de chez vous"),
     body: (
       <>
         <p>
-          Les groupes d'action permettent aux militants de s’organiser dans leur
-          quartier ou dans leur commune.
+          {_("Les groupes d'action permettent aux militants de s’organiser dans leur quartier ou dans leur commune.")}
         </p>
         <p>
-          Rejoignez un groupe, agissez sur le terrain et organisez des moments
-          de réflexions politiques&nbsp;!
+          {_("Rejoignez un groupe, agissez sur le terrain et organisez des moments de réflexions politiques !")}
         </p>
       </>
     ),
     mapIframe: "groupsMap",
     primaryLink: {
-      label: "Voir les groupes dans ma commune",
+      label: _("Voir les groupes dans ma commune"),
       route: "groupMap",
     },
   },
   group__creation: {
-    title: <>Ou bien créez votre groupe&nbsp;!</>,
+    title: <>{_("Ou bien créez votre groupe !")}</>,
     body: (
       <>
         <p>
-          Commencez dès aujourd’hui à organiser des actions pour soutenir les
-          propositions de la France insoumise et de la <em>NUPES</em>.
+          {_("Commencez dès aujourd’hui à organiser des actions pour soutenir les propositions de la France insoumise et de la")} <em>{_("NUPES")}</em>.
         </p>
         <p>
-          Besoin d’inspiration pour animer votre groupe&nbsp;?{" "}
+         {_(" Besoin d’inspiration pour animer votre groupe ?")}{" "}
           <a
             href="https://infos.actionpopulaire.fr/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Voici quelques pistes
+            {_("Voici quelques pistes")}
           </a>
           .
         </p>
       </>
     ),
     primaryLink: {
-      label: "Créer un groupe",
+      label: _("Créer un groupe"),
       route: "createGroup",
     },
   },
   fullGroup__creation: {
-    title: <>Ou bien animez votre propre groupe et invitez-y vos amis&nbsp;!</>,
+    title: <>{_("Ou bien animez votre propre groupe et invitez-y vos amis !")}</>,
     body: ({ routes }) => [
       <span key="text">
-        Créez votre groupe en quelques clics, et commencez dès aujourd’hui à
-        organiser des actions pour soutenir les propositions de la France
-        insoumise et de la <em>NUPES</em>. Besoin d’inspiration pour animer
-        votre groupe&nbsp;?{" "}
+        {_("Créez votre groupe en quelques clics, et commencez dès aujourd’hui à organiser des actions pour soutenir les propositions de la France insoumise et de la")} <em>{_("NUPES")}</em>{_(". Besoin d’inspiration pour animer votre groupe ?")}{" "}
       </span>,
       routes.newGroupHelp && (
         <a key="link" href={routes.newGroupHelp}>
-          Voici quelques pistes.
+         {_("Voici quelques pistes.")}
         </a>
       ),
     ],
     primaryLink: {
-      label: "Créer un groupe d'action",
+      label: _("Créer un groupe d'action"),
       route: "createGroup",
     },
   },
   group__action: {
     img: onboardingActionImage,
     title:
-      "Rejoignez un groupe d’action de votre commune pour militer localement",
+      _("Rejoignez un groupe d’action de votre commune pour militer localement"),
     body: (
       <>
-        Les groupes d’actions permettent aux militants de s’organiser dans leur
-        quartier ou dans leur commune. Rejoignez un groupe, agissez sur le
-        terrain et organisez des moments de réflexions politiques&nbsp;!
+        {_("Les groupes d’actions permettent aux militants de s’organiser dans leur quartier ou dans leur commune. Rejoignez un groupe, agissez sur le terrain et organisez des moments de réflexions politiques !")}
       </>
     ),
     primaryLink: {
-      label: "Rejoindre un groupe",
+      label: _("Rejoindre un groupe"),
       route: "groupMap",
     },
     secondaryLink: {
       href: "groupes/creer/",
-      label: "Créer un groupe",
+      label: _("Créer un groupe"),
     },
   },
 };

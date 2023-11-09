@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useCallback } from "react";
 import Select, { components } from "react-select";
@@ -207,7 +208,7 @@ const SelectMenuList = (props) => {
       <components.MenuList {...props} />
       <footer>
         <button type="button" onClick={handleClick}>
-          Fermer
+          {_("Fermer")}
         </button>
       </footer>
     </StyledMenuList>

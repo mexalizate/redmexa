@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useCallback, useState } from "react";
 import styled from "styled-components";
@@ -161,8 +162,8 @@ const SpendingRequestPage = ({ spendingRequestPk }) => {
       const updatedRequest = await mutate();
       sendToast(
         updatedRequest.status.code !== status
-          ? "La pièce a été enregistrée et le statut de la demande mis à jour"
-          : "La pièce justificative a été enregistrée",
+          ? _("La pièce a été enregistrée et le statut de la demande mis à jour")
+          : _("La pièce justificative a été enregistrée"),
         "SUCCESS",
       );
     },
@@ -188,7 +189,7 @@ const SpendingRequestPage = ({ spendingRequestPk }) => {
       }));
       setSelectedAttachment(null);
       setIsLoadingAttachment(false);
-      sendToast("La pièce justificative a été supprimée", "SUCCESS");
+      sendToast(_("La pièce justificative a été supprimée"), "SUCCESS");
     },
     [mutate, sendToast],
   );
@@ -199,7 +200,7 @@ const SpendingRequestPage = ({ spendingRequestPk }) => {
         <StyledPage>
           <BackLink style={{ marginLeft: 0 }} />
           <header>
-            <h2>Demande de dépense</h2>
+            <h2>{_("Demande de dépense")}</h2>
             <StyledNav $under>
               <DeleteSpendingRequestButton
                 spendingRequest={spendingRequest}
@@ -215,8 +216,8 @@ const SpendingRequestPage = ({ spendingRequestPk }) => {
                 routeParams={{ spendingRequestPk }}
                 title={
                   !spendingRequest.status.editable
-                    ? "Cette demande ne peut pas être modifiée"
-                    : "Modifier la demande"
+                    ? _("Cette demande ne peut pas être modifiée")
+                    : _("Modifier la demande")
                 }
                 disabled={!spendingRequest.status.editable}
                 icon="edit-2"
@@ -258,8 +259,8 @@ const SpendingRequestPage = ({ spendingRequestPk }) => {
               routeParams={{ spendingRequestPk }}
               title={
                 !spendingRequest.status.editable
-                  ? "Cette demande ne peut pas être modifiée"
-                  : "Modifier la demande"
+                  ? _("Cette demande ne peut pas être modifiée")
+                  : _("Modifier la demande")
               }
               disabled={!spendingRequest.status.editable}
               icon="edit-2"

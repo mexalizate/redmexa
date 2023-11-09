@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 import { animated, useSpring } from "@react-spring/web";
@@ -157,7 +158,7 @@ export const GroupSuggestions = (props) => {
       <StyledWrapper>
         <h4>Autres groupes qui peuvent vous intéresser</h4>
         <Button link route="groupMap" icon="map" small>
-          Carte des groupes
+          {_("Carte des groupes")}
         </Button>
         <ResponsiveLayout
           MobileLayout={GroupSuggestionCarousel}

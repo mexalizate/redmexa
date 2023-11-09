@@ -1,3 +1,5 @@
+
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import styled from "styled-components";
@@ -119,7 +121,7 @@ const EventGeneral = (props) => {
       setErrors((errors) => ({
         ...errors,
         image:
-          "Vous devez acceptez les licences pour envoyer votre image en conformité.",
+          _("Vous devez acceptez les licences pour envoyer votre image en conformité."),
       }));
       setIsLoading(false);
       return;
@@ -137,13 +139,13 @@ const EventGeneral = (props) => {
       sendToast(
         res.error.detail ||
           (Array.isArray(res.error.subtype) && res.error.subtype[0]) ||
-          "Une erreur est survenue, veuillez réessayer plus tard",
+          _("Une erreur est survenue, veuillez réessayer plus tard"),
         "ERROR",
         { autoClose: true },
       );
       return;
     }
-    sendToast("Informations mises à jour", "SUCCESS", { autoClose: true });
+    sendToast(_("Informations mises à jour"), "SUCCESS", { autoClose: true });
     mutate((event) => ({ ...event, ...res.data }));
   };
 
@@ -155,13 +157,13 @@ const EventGeneral = (props) => {
         <HeaderPanel onBack={onBack} illustration={illustration} />
         <StyledTitle>Général</StyledTitle>
         <span style={{ color: style.black700 }}>
-          Ces informations seront affichées en public.
+          {_("Ces informations seront affichées en public.")}
         </span>
         <Spacer size="1rem" />
         <TextField
           id="name"
           name="name"
-          label="Nom de l'événement*"
+          label={_("Nom de l'événement*")}
           onChange={handleChange}
           value={formData.name}
           error={errors?.name}
@@ -187,7 +189,7 @@ const EventGeneral = (props) => {
         <RichTextField
           id="description"
           name="description"
-          label="Description*"
+          label={_("Description*")}
           placeholder=""
           onChange={handleDescriptionChange}
           value={formData.description}
@@ -198,16 +200,15 @@ const EventGeneral = (props) => {
         <TextField
           id="facebook"
           name="facebook"
-          label="Url de l'événement sur Facebook"
+          label={_("Url de l'événement sur Facebook")}
           onChange={handleChange}
           value={formData.facebook}
           error={errors?.facebook}
           disabled={isDisabled}
         />
-        <h4>Image mise en avant</h4>
+        <h4>{_("Image mise en avant")}</h4>
         <span style={{ color: style.black700 }}>
-          Taille : 1200*630px ou plus. Elle apparaîtra sur la page et sur les
-          réseaux sociaux.
+          {_("Taille : 1200*630px ou plus. Elle apparaîtra sur la page et sur les réseaux sociaux.")}
         </span>
         <Spacer size="0.5rem" />
         <ImageField
@@ -225,9 +226,8 @@ const EventGeneral = (props) => {
               value={hasCheckedImageLicence}
               label={
                 <span style={{ color: style.black700 }}>
-                  En important une image, je certifie être le propriétaire des
-                  droits et accepte de la partager sous licence libre{" "}
-                  <a href={I18N.ccLicenseLink}>Creative Commons CC-BY-NC 3.0</a>
+                  {_("En important une image, je certifie être le propriétaire des droits et accepte de la partager sous licence libre")}{" "}
+                  <a href={I18N.ccLicenseLink}>{_("Creative Commons CC-BY-NC 3.0")}</a>
                   .
                 </span>
               }
@@ -262,7 +262,7 @@ const EventGeneral = (props) => {
         )}
         <Spacer size="1rem" />
         <Button color="secondary" wrap disabled={isDisabled} type="submit">
-          Enregistrer
+          {_("Enregistrer")}
         </Button>
       </form>
     </>

@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { Fragment, useMemo } from "react";
 
@@ -52,13 +53,13 @@ const GroupContactsMainPanel = (props) => {
           margin: 0;
         `}
       >
-        Toutes les personnes intéressées par votre groupe.
+        {_("Toutes les personnes intéressées par votre groupe.")}
       </p>
       {emails ? (
         <>
           <Spacer size="1rem" />
           <ShareLink
-            label="Copier les e-mails"
+            label={_("Copier les e-mails")}
             color="primary"
             url={emails}
             $wrap
@@ -79,14 +80,13 @@ const GroupContactsMainPanel = (props) => {
         <>
           <Spacer size="1.5rem" />
           <p>
-            Vous n’avez pas encore de contact !
+            {_("Vous n’avez pas encore de contact !")}
             <Spacer size="0.5rem" />
-            Obtenez des contacts pour partager les actions de votre groupe
-            d’action et du mouvement.
+            {_("Obtenez des contacts pour partager les actions de votre groupe d’action et du mouvement.")}
           </p>
           <Spacer size=".5rem" />
           <Button link icon="user-plus" route="createContact" color="secondary">
-            Ajouter un contact
+            {_("Ajouter un contact")}
           </Button>
         </>
       )}
@@ -98,15 +98,12 @@ const GroupContactsMainPanel = (props) => {
         `}
       >
         <p>
-          Lorsque vous ajoutez un contact, ou bien quand un membre d’Action
-          Populaire clique sur “Suivre le groupe”, ses informations s’affichent
-          ici.
+          {_("Lorsque vous ajoutez un contact, ou bien quand un membre d’Action Populaire clique sur “Suivre le groupe”, ses informations s’affichent ici.")}
         </p>
         <p>
-          Vos contacts qui reçoivent vos messages et nouveaux événements par
-          e-mail sont indiqués comme « abonnés ».
+         {_(" Vos contacts qui reçoivent vos messages et nouveaux événements par e-mail sont indiqués comme « abonnés ».")}
         </p>
-        <p>Les contacts ne comptent pas dans le total des membres du groupe.</p>
+        <p>{_("Les contacts ne comptent pas dans le total des membres du groupe.")}</p>
       </footer>
     </>
   );

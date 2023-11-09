@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useCallback, useRef, useState } from "react";
 
@@ -28,7 +29,7 @@ const DeleteDocumentButton = ({ deleteUrl, documentName }) => {
         bsSize="sm"
         bsStyle="danger"
         onClick={handleOpen}
-        title="Supprimer le document"
+        title={_("Supprimer le document")}
       >
         <span className="fa fa-trash" />
       </Button>
@@ -36,8 +37,8 @@ const DeleteDocumentButton = ({ deleteUrl, documentName }) => {
         shouldShow={isOpen}
         onClose={handleClose}
         title={`Supprimer le document ${documentName}`}
-        dismissLabel="Annuler"
-        confirmationLabel="Supprimer le document"
+        dismissLabel={_("Annuler")}
+        confirmationLabel={_("Supprimer le document")}
         onConfirm={handleConfirm}
         shouldDismissOnClick
       >
@@ -47,8 +48,8 @@ const DeleteDocumentButton = ({ deleteUrl, documentName }) => {
             name="csrfmiddlewaretoken"
             value={getCookie("csrftoken")}
           />
-          <p>Confirmez-vous la suppression définitive de ce document&nbsp;?</p>
-          <p>Attention&nbsp;: cette action est irréversible.</p>
+          <p>{_("Confirmez-vous la suppression définitive de ce document")}&nbsp;?</p>
+          <p>{_("Attention")}&nbsp;: {_("cette action est irréversible.")}</p>
         </form>
       </ModalConfirmation>
     </>

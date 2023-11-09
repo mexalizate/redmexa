@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-18 19:45-0600\n"
+"POT-Creation-Date: 2023-11-01 18:21-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,68 +18,2700 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: agir/front/components/app/Footer/Footer.js:128
-msgid "Faire un don"
-msgstr "Donar"
+#: agir/activity/components/ActivityPage/ActivityCard/GenericCard.js:86
+msgid "Vous avez été invité⋅e à rejoindre"
+msgstr ""
 
-#: agir/front/components/app/Footer/Footer.js:129
-msgid "Carte des événements"
+#: agir/activity/components/ActivityPage/ActivityCard/GenericCard.js:97
+msgid "suit désormais votre groupe"
+msgstr ""
+
+#: agir/activity/components/ActivityPage/ActivityCard/GenericCard.js:108
+#: agir/activity/components/ActivityPage/ActivityCard/GenericCard.js:185
+#: agir/activity/components/ActivityPage/ActivityCard/ReferralUpdateCard.js:37
+msgid "a rejoint"
+msgstr ""
+
+#: agir/activity/components/ActivityPage/ActivityCard/GenericCard.js:108
+msgid ". Prenez le temps de l’accueillir&nbsp;!"
+msgstr ""
+
+#: agir/activity/components/ActivityPage/ActivityCard/GenericCard.js:119
+msgid ""
+"Vous avez été indiqué comme \"abonné·e\" par les gestionnaires de ce groupe."
+msgstr ""
+
+#: agir/activity/components/ActivityPage/ActivityCard/GenericCard.js:121
+msgid ""
+"Vous continuerez de recevoir la plupart des informations du groupe, sauf les "
+"messages destinés uniquement aux membres actifs."
+msgstr ""
+
+#: agir/activity/components/ActivityPage/ActivityCard/GenericCard.js:135
+msgid "Précisez la localisation de votre événement&nbsp;:"
+msgstr ""
+
+#: agir/activity/components/ActivityPage/ActivityCard/GenericCard.js:144
+msgid ""
+"Indiquez si vous êtes ou pas disponible pour une ou plusieurs des dates "
+"demandées."
+msgstr ""
+
+#: agir/activity/components/ActivityPage/ActivityCard/GenericCard.js:159
+msgid "a accepté de co-organiser votre événement"
+msgstr ""
+
+#: agir/activity/components/ActivityPage/ActivityCard/GenericCard.js:172
+msgid "a accepté de co-organiser l'événement"
+msgstr ""
+
+#: agir/activity/components/ActivityPage/ActivityCard/GenericCard.js:185
+msgid "en acceptant une"
+msgstr ""
+
+#: agir/activity/components/ActivityPage/ActivityCard/GenericCard.js:195
+msgid "s'est"
+msgstr ""
+
+#: agir/activity/components/ActivityPage/ActivityCard/GenericCard.js:196
+#, fuzzy
+#| msgid "Carte des événements"
+msgid "à votre événement"
 msgstr "Mapa de Acciones"
 
-#: agir/front/components/app/Footer/Footer.js:130
-msgid "Carte des groupes"
+#: agir/activity/components/ActivityPage/ActivityCard/GenericCard.js:208
+msgid "Mise à jour : l'événement"
+msgstr ""
+
+#: agir/activity/components/ActivityPage/ActivityCard/GenericCard.js:208
+msgid "auquel vous participez a changé"
+msgstr ""
+
+#: agir/activity/components/ActivityPage/ActivityCard/GenericCard.js:222
+#: agir/events/components/eventPage/JoiningDetails.js:98
+#, fuzzy
+#| msgid "Carte des événements"
+msgid "participe à l'événement"
+msgstr "Mapa de Acciones"
+
+#: agir/activity/components/ActivityPage/ActivityCard/GenericCard.js:251
+#: agir/events/components/eventPage/EventDescriptionCard.js:66
+#, fuzzy
+#| msgid "Carte des événements"
+msgid "L'événement"
+msgstr "Mapa de Acciones"
+
+#: agir/activity/components/ActivityPage/ActivityCard/GenericCard.js:251
+msgid "a été annulé."
+msgstr ""
+
+#: agir/activity/components/ActivityPage/ActivityCard/GenericCard.js:259
+msgid "Votre nouveau groupe vous attend !"
+msgstr ""
+
+#: agir/activity/components/ActivityPage/ActivityCard/GenericCard.js:273
+msgid "suite à un transfert depuis"
+msgstr ""
+
+#: agir/activity/components/ActivityPage/ActivityCard/GenericCard.js:281
+msgid "En tant qu'animateur·ice, vous pouvez gérer"
+msgstr ""
+
+#: agir/activity/components/ActivityPage/ActivityCard/GenericCard.js:281
+msgid ""
+"à tout moment depuis le bouton &laquo;&nbsp;Gestion&nbsp;&raquo; ou bien en "
+"cliquant sur"
+msgstr ""
+
+#: agir/activity/components/ActivityPage/ActivityCard/GenericCard.js:286
+msgid "ce lien"
+msgstr ""
+
+#: agir/activity/components/ActivityPage/ActivityCard/GenericCard.js:289
+msgid ""
+"Nous vous conseillons de lire ces conseils à destination des nouveaux "
+"animateur·ice·s."
+msgstr ""
+
+#: agir/activity/components/ActivityPage/ActivityCard/GroupMembershipLimitReminderCard.js:16
+msgid "activities"
+msgstr ""
+
+#: agir/activity/components/ActivityPage/ActivityCard/GroupMembershipLimitReminderCard.js:32
+#, fuzzy
+#| msgid "Carte des groupes"
+msgid "charte des groupes d'action"
 msgstr "Mapa de Grupos"
 
-#: agir/front/components/app/Footer/Footer.js:132
-msgid "Commander du matériel"
-msgstr "Pedir material"
+#: agir/activity/components/ActivityPage/ActivityCard/GroupMembershipLimitReminderCard.js:36
+msgid ""
+"membres actifs ! Il est maintenant impossible que des nouvelles personnes la "
+"rejoignent. Divisez votre groupe en groupes plus petits maintenant pour "
+"renforcer le réseau d’action."
+msgstr ""
 
-#: agir/front/components/app/Footer/Footer.js:138
-msgid "Liens utiles"
-msgstr "Enlaces útiles"
+#: agir/activity/components/ActivityPage/ActivityCard/GroupMembershipLimitReminderCard.js:45
+msgid "compte plus de"
+msgstr ""
 
-#: agir/front/components/app/Footer/Footer.js:141
-msgid "Se déconnecter"
-msgstr "Cerrar sesión"
+#: agir/activity/components/ActivityPage/ActivityCard/GroupMembershipLimitReminderCard.js:45
+msgid ""
+"membres actifs&nbsp;! Il est temps de vous diviser en plusieurs groupes pour "
+"permettre une plus grande répartition de l’action."
+msgstr ""
 
-#: agir/front/components/app/Footer/Footer.js:143
-#: agir/front/components/app/Homepage/HomeFooter.js:59
-#: agir/front/components/app/Homepage/MobileHome.js:60
-msgid "Se connecter"
-msgstr "Conectarme"
+#: agir/activity/components/ActivityPage/ActivityCard/GroupMembershipLimitReminderCard.js:50
+#: agir/activity/components/ActivityPage/ActivityCard/GroupMembershipLimitReminderCard.js:66
+msgid "En savoir plus sur la division des groupes"
+msgstr ""
 
-#: agir/front/components/app/Footer/Footer.js:145
-msgid "Besoin d'aide ?"
+#: agir/activity/components/ActivityPage/ActivityCard/GroupMembershipLimitReminderCard.js:58
+msgid "Gardez un oeil sur le nombre de membres de votre groupe"
+msgstr ""
+
+#: agir/activity/components/ActivityPage/ActivityCard/GroupMembershipLimitReminderCard.js:61
+msgid "a dépassé les"
+msgstr ""
+
+#: agir/activity/components/ActivityPage/ActivityCard/GroupMembershipLimitReminderCard.js:61
+msgid ""
+"membres actifs ! Afin que chacun·e puisse s'impliquer et pour permettre une "
+"plus grande répartition de votre action, nous vous invitons à diviser votre "
+"groupe."
+msgstr ""
+
+#: agir/activity/components/ActivityPage/ActivityCard/GroupMembershipLimitReminderCard.js:74
+msgid "Bravo, vous êtes maintenant"
+msgstr ""
+
+#: agir/activity/components/ActivityPage/ActivityCard/GroupMembershipLimitReminderCard.js:74
+msgid "nombreux·ses"
+msgstr ""
+
+#: agir/activity/components/ActivityPage/ActivityCard/GroupMembershipLimitReminderCard.js:74
+msgid "dans votre groupe&nbsp;!"
+msgstr ""
+
+#: agir/activity/components/ActivityPage/ActivityCard/GroupMembershipLimitReminderCard.js:77
+msgid ""
+"a atteint le nombre idéal de membres actifs. Désormais, favorisez la "
+"création d'autres groupes autour de chez vous par d’autres membres, de "
+"manière à renforcer le réseau d'action."
+msgstr ""
+
+#: agir/activity/components/ActivityPage/ActivityCard/ReferralUpdateCard.js:20
+msgid "Grâce à vous,"
+msgstr ""
+
+#: agir/activity/components/ActivityPage/ActivityCard/ReferralUpdateCard.js:23
+msgid "Merci beaucoup, continuez à partager !"
+msgstr ""
+
+#: agir/activity/components/ActivityPage/ActivityCard/ReferralUpdateCard.js:38
+#: agir/activity/components/ActivityPage/ActivityCard/ReferralUpdateCard.js:65
+msgid "Action populaire"
+msgstr ""
+
+#: agir/activity/components/ActivityPage/ActivityCard/ReferralUpdateCard.js:40
+msgid "C'est super, vous avez fait rejoindre"
+msgstr ""
+
+#: agir/activity/components/ActivityPage/ActivityCard/ReferralUpdateCard.js:40
+#: agir/front/components/genericComponents/MessageDetails.js:47
+msgid "personnes"
+msgstr ""
+
+#: agir/activity/components/ActivityPage/ActivityCard/ReferralUpdateCard.js:41
+msgid "Continuez comme ça"
+msgstr ""
+
+#: agir/activity/components/ActivityPage/ActivityCard/ReferralUpdateCard.js:49
+msgid "Quel est votre secret"
+msgstr ""
+
+#: agir/activity/components/ActivityPage/ActivityCard/ReferralUpdateCard.js:51
+msgid "Si vous n'y aviez pas encore songé, il est peut-être temps de"
+msgstr ""
+
+#: agir/activity/components/ActivityPage/ActivityCard/ReferralUpdateCard.js:56
+#, fuzzy
+#| msgid "un groupe d'action autour de vous !"
+msgid "créer un groupe d'action dans votre commune"
+msgstr "un grupo cerca de ti"
+
+#: agir/activity/components/ActivityPage/ActivityCard/ReferralUpdateCard.js:65
+msgid "Grâce à vous, 20 personnes ont rejoint"
+msgstr ""
+
+#: agir/activity/components/ActivityPage/ActivityCard/ReferralUpdateCard.js:67
+msgid "Beau travail"
+msgstr ""
+
+#: agir/activity/components/ActivityPage/ActivityCard/ReferralUpdateCard.js:67
+msgid "Prochaine étape"
+msgstr ""
+
+#: agir/activity/components/ActivityPage/ActivityCard/ReferralUpdateCard.js:68
+msgid "organiser un événement en ligne"
+msgstr ""
+
+#: agir/activity/components/ActivityPage/ActivityCard/ReferralUpdateCard.js:74
+msgid "Et de"
+msgstr ""
+
+#: agir/activity/components/ActivityPage/ActivityCard/ReferralUpdateCard.js:74
+msgid "Génial"
+msgstr ""
+
+#: agir/activity/components/ActivityPage/EmptyActivityList.js:44
+msgid "Vous n’avez rien reçu ici."
+msgstr ""
+
+#: agir/activity/components/ActivityPage/EmptyActivityList.js:46
+msgid "Revenez plus tard !"
+msgstr ""
+
+#: agir/activity/components/common/CollapsibleAnnouncementCard.js:107
+msgid "Compris"
+msgstr ""
+
+#: agir/activity/components/common/activity.config.js:11
+#: agir/events/components/TokTok/TokTokCard.js:77
+msgid "En savoir plus"
+msgstr ""
+
+#: agir/activity/components/common/activity.config.js:74
+#: agir/activity/components/common/activity.config.js:82
+msgid "Diviser mon groupe"
+msgstr ""
+
+#: agir/activity/components/common/activity.config.js:93
+msgid "Payer"
+msgstr ""
+
+#: agir/activity/components/common/activity.config.js:105
+#: agir/groups/components/groupComponents/GroupCard.js:162
+#: agir/groups/components/groupPage/GroupUserActions/FollowerActions.js:69
+#: agir/groups/components/groupPage/GroupUserActions/JoinGroupDialog.js:33
+msgid "Rejoindre"
+msgstr ""
+
+#: agir/activity/components/common/activity.config.js:121
+#, fuzzy
+#| msgid "Voir les groupes"
+msgid "Voir les membres"
+msgstr "Ver los grupos"
+
+#: agir/activity/components/common/activity.config.js:133
+#: agir/groups/components/groupComponents/GroupCard.js:176
+#: agir/groups/components/groupPage/GroupMessagePage/index.js:77
+#: agir/groups/components/groupPage/GroupSuggestionCard.js:119
+#, fuzzy
+#| msgid "Voir les groupes"
+msgid "Voir le groupe"
+msgstr "Ver los grupos"
+
+#: agir/activity/components/common/activity.config.js:143
+#: agir/event_requests/components/EventSpeakerPage/EventSpeakerRequestForm.js:117
+msgid "Mettre à jour"
+msgstr ""
+
+#: agir/activity/components/common/activity.config.js:153
+msgid "Accepter"
+msgstr ""
+
+#: agir/activity/components/common/activity.config.js:164
+#: agir/activity/components/common/activity.config.js:175
+#: agir/activity/components/common/activity.config.js:186
+#: agir/activity/components/common/activity.config.js:196
+#: agir/events/components/eventRequiredDocuments/SentDocumentsCard.js:80
+msgid "Voir"
+msgstr ""
+
+#: agir/activity/components/common/activity.config.js:204
+#, fuzzy
+#| msgid "Voir les groupes"
+msgid "Voir mes demandes"
+msgstr "Ver los grupos"
+
+#: agir/activity/components/common/activity.config.js:213
+#: agir/activity/components/common/activity.config.js:223
+msgid "Lire l'article"
+msgstr ""
+
+#: agir/carte/components/map/itemPopups.js:24
+msgid " certifié"
+msgstr ""
+
+#: agir/carte/components/map/layerControl.js:41
+msgid " Groupes les plus actifs"
+msgstr ""
+
+#: agir/carte/components/map/searchControl.js:37
+msgid "Impossible de contacter le service de recherche d'adresses."
+msgstr ""
+
+#: agir/carte/components/map/searchControl.js:41
+msgid "Lieu inconnu"
+msgstr ""
+
+#: agir/donations/components/DonationLandingPage.js:133
+#, fuzzy
+#| msgid "et les campagnes du mouvement"
+msgid "Financer les actions du mouvement"
+msgstr "y las estrategias del movimiento"
+
+#: agir/donations/components/DonationLandingPage.js:136
+msgid ""
+"En devenant financeur·euse, le groupes d’action ont plus de visibilité pour "
+"financer leurs actions."
+msgstr ""
+
+#: agir/donations/components/DonationLandingPage.js:144
+msgid "Don ponctuel"
+msgstr ""
+
+#: agir/donations/components/DonationLandingPage.js:146
+msgid "Je fais un don ponctuel"
+msgstr ""
+
+#: agir/donations/components/DonationLandingPage.js:149
+msgid ""
+"Chaque don nous aide à l’organisation d’événements, à l’achat de matériel, "
+"au fonctionnement de ce site, etc. Nous avons besoin du soutien financier de "
+"chacun·e d’entre vous."
+msgstr ""
+
+#: agir/donations/components/DonationLandingPage.js:157
+#, fuzzy
+#| msgid "Vous avez déjà un compte ?"
+msgid "Vous avez déjà validé votre contibution !"
+msgstr "¿Ya tienes cuenta?"
+
+#: agir/donations/components/DonationLandingPage.js:158
+msgid "Je deviens financeur·euse"
+msgstr ""
+
+#: agir/donations/components/DonationLandingPage.js:163
+msgid "La contribution volontaire est un don"
+msgstr ""
+
+#: agir/donations/components/DonationLandingPage.js:164
+msgid "versé mensuellement"
+msgstr ""
+
+#: agir/donations/components/contributionPage/AmountStep.js:129
+msgid ""
+"est un don versé mensuellement jusqu’à la fin de l’année civile. En devenant "
+"financeur·euse de la France insoumise, vous vous engagez à ce que votre "
+"contribution soit versée"
+msgstr ""
+
+#: agir/donations/components/contributionPage/AmountStep.js:130
+msgid "chaque mois jusqu’au mois de "
+msgstr ""
+
+#: agir/donations/components/contributionPage/AmountStep.js:133
+msgid ""
+"Par votre engagement, vous permettrez à notre mouvement de mieux planifier "
+"et organiser ses activités au niveau local et/ou national, tout au long de "
+"l’année. C'est pourquoi, dès le mois de décembre prochain, vous serez "
+"sollicité·e pour reconduire votre contribution volontaire pour l'année "
+"suivante."
+msgstr ""
+
+#: agir/donations/components/contributionPage/AmountStep.js:139
+msgid ""
+" afin d'être redistribuée aux caisses départementales. Le reste de votre "
+"contribution peut être alloué, suivant la répartition que vous choisissez, "
+"entre"
+msgstr ""
+
+#: agir/donations/components/contributionPage/AmountStep.js:139
+#, fuzzy
+#| msgid "un groupe d'action autour de vous !"
+msgid "le groupe d'action local, "
+msgstr "un grupo cerca de ti"
+
+#: agir/donations/components/contributionPage/AmountStep.js:140
+msgid "une caisse départementale et/ou la France insoumise."
+msgstr ""
+
+#: agir/donations/components/contributionPage/AmountStep.js:145
+msgid "ou"
+msgstr ""
+
+#: agir/donations/components/contributionPage/AmountStep.js:146
+msgid "en une seule fois par chèque"
+msgstr ""
+
+#: agir/donations/components/contributionPage/AmountStep.js:152
+msgid ""
+"* Dans l’éventualité où vous souhaitiez interrompre votre contribution "
+"volontaire, vous pourrez le faire à tout moment en vous rendant dans "
+"l'onglet &laquo;&nbsp;Dons et paiements&nbsp;&raquo; de votre espace "
+"personnel sur actionpopulaire.fr."
+msgstr ""
+
+#: agir/donations/components/contributionPage/AmountStep.js:181
+#: agir/donations/components/donationPage/AmountStep.js:152
+msgid "1/3 étapes"
+msgstr ""
+
+#: agir/donations/components/contributionPage/AmountStep.js:191
+#: agir/donations/components/donationPage/AmountStep.js:162
+msgid "SÉCURISÉ ET ANONYME"
+msgstr ""
+
+#: agir/donations/components/contributionSuccessPage/ContributionSuccessPage.js:51
+#: agir/donations/components/donationSuccessPage/DonationSuccessPage.js:53
+msgid ""
+"Vous allez recevoir un e-mail de confirmation dès que votre paiement aura "
+"été validé."
+msgstr ""
+
+#: agir/donations/components/contributionSuccessPage/ContributionSuccessPage.js:58
+#: agir/donations/components/donationSuccessPage/DonationSuccessPage.js:60
+msgid "de votre espace personnel sur actionpopulaire.fr."
+msgstr ""
+
+#: agir/donations/components/contributionSuccessPage/ContributionSuccessPage.js:65
+#: agir/donations/components/donationSuccessPage/DonationSuccessPage.js:67
+msgid "Encouragez vos ami·es à faire un don :"
+msgstr ""
+
+#: agir/donations/components/donationForm/AllocationsWidget/index.js:33
+msgid "Je souhaite allouer mon don à un ou plusieurs groupes"
+msgstr ""
+
+#: agir/donations/components/donationForm/AmountWidget.js:107
+msgid ""
+"Si je paye des impôts, après réduction, ma contribution nette sera de "
+"seulement"
+msgstr ""
+
+#: agir/donations/components/donationForm/AmountWidget.js:116
+msgid ""
+"Si je paye des impôts, je bénéficie d&apos;une réduction d&apos;impôt de"
+msgstr ""
+
+#: agir/donations/components/donationForm/AmountWidget.test.js:12
+msgid "AmountWidget dans son état initial"
+msgstr ""
+
+#: agir/donations/components/donationForm/AmountWidget.test.js:24
+msgid "AmountWidget avec un montant sélectionné"
+msgstr ""
+
+#: agir/donations/components/donationForm/AmountWidget.test.js:38
+msgid "Sélectionner des valeurs dans le AmountWidget"
+msgstr ""
+
+#: agir/donations/components/donationForm/AmountWidget.test.js:53
+msgid "Autre montant"
+msgstr ""
+
+#: agir/donations/components/donationForm/AmountWidget.test.js:58
+msgid "utiliser des montants autres que ceux par défaut"
+msgstr ""
+
+#: agir/donations/components/donationForm/DonationForm.js:97
+msgid "Je choisis le montant de"
+msgstr ""
+
+#: agir/donations/components/donationForm/DonationForm.js:132
+msgid "Je choisis une répartition pour"
+msgstr ""
+
+#: agir/donations/components/donationPage/AmountStep.js:121
+msgid "Nous avons besoin du soutien financier de chacun·e d’entre vous."
+msgstr ""
+
+#: agir/donations/components/donationPage/AmountStep.js:150
+#: agir/front/components/app/IntroApp.js:381
+#: agir/front/components/authentication/Connexion/TellMore/ChooseNewsletters.js:282
+#: agir/front/components/genericComponents/Steps/StepIndex.js:177
+msgid "Continuer"
+msgstr "Continuar"
+
+#: agir/donations/components/spendingRequest/common/AmountField.js:66
+msgid "Montant TTC (obligatoire)"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/AmountField.js:79
+msgid "Le solde de votre groupe est nul"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/AmountField.js:92
+msgid "Comment augmenter le solde du GA ?"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/AttachmentList.js:136
+msgid "Modifier la pièce-jointe"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/AttachmentList.js:146
+msgid "Supprimer la pièce-jointe"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/AttachmentList.js:161
+msgid "Ouvrir la pièce-jointe"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/BankAccountField.js:36
+#: agir/donations/components/spendingRequest/spendingRequestPage/SpendingRequestDetails/MobileLayout.js:203
+msgid "Titulaire du compte"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/CategoryCard.js:84
+#: agir/donations/components/spendingRequest/spendingRequestPage/SpendingRequestDetails/MobileLayout.js:154
+msgid "Catégorie de dépense"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/CategoryField.js:206
+msgid "Attention, une demande de dépense correspond à une pièce comptable."
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/ContactField.js:38
+msgid "Contact lié à la dépense (obligatoire)"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/EventField.js:57
+msgid "Chercher par nom, lieu …"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/SpendingRequestAgreement.js:47
+msgid "Je certifie que cette dépense est conforme à"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/SpendingRequestAgreement.js:53
+#, fuzzy
+#| msgid "Carte des groupes"
+msgid "la charte des groupes d’action"
+msgstr "Mapa de Grupos"
+
+#: agir/donations/components/spendingRequest/common/SpendingRequestAgreement.js:59
+msgid ""
+", aux orientations politiques, stratégiques, programmatiques et électorales "
+"de la France Insoumise ."
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/SpendingRequestAgreement.js:69
+msgid ""
+"Je certifie sur l'honneur être une personne physique et la dépense ne porte "
+"pas atteinte à la législation encadrant l’activité des partis et groupements "
+"politiques."
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/SpendingRequestHelp.js:72
+msgid "Quels types de documents sont recevables ?"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/SpendingRequestHelp.js:76
+msgid "Ce qui peut être une pièce comptable"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/SpendingRequestHelp.js:79
+msgid "Ticket de caisse (pas le reçu de carte bancaire)"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/SpendingRequestHelp.js:82
+msgid "Facture pro-forma (c'est-à-dire avant qu'elle ne soit acquittée)"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/SpendingRequestHelp.js:88
+msgid "Ce qui peut être un complément de justificatif"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/SpendingRequestHelp.js:92
+msgid "Impression :"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/SpendingRequestHelp.js:92
+msgid "BAT"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/SpendingRequestHelp.js:95
+msgid ""
+"Capture d'écran de la page de l'événement sur Action populaire ou du visuel "
+"de l'événement"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/SpendingRequestHelp.js:104
+msgid ""
+"Envoyez de préférence des documents numériques ou scannés : ils doivent être "
+"lisibles (exemple)"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/SpendingRequestHelp.js:120
+msgid "Lettres manquantes ou floues, trop de contraste..."
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/SpendingRequestHelp.js:137
+msgid "Les articles, montants et dates sont nets"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/SpendingRequestStatus.js:16
+msgid "Brouillon à compléter"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/SpendingRequestStatus.js:23
+msgid "En attente de vérification par une autre personne"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/SpendingRequestStatus.js:31
+msgid ""
+"En attente de vérification par l'équipe de suivi des questions financières"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/SpendingRequestStatus.js:32
+msgid "En attente de vérification par l'équipe de suivi"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/SpendingRequestStatus.js:39
+#: agir/front/components/mockData/spendingRequest.js:15
+msgid "Informations supplémentaires requises"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/SpendingRequestStatus.js:47
+msgid ""
+"Validée par l'équipe de suivi des questions financières, en attente des fonds"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/SpendingRequestStatus.js:48
+msgid "Validée, en attente des fonds"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/SpendingRequestStatus.js:55
+msgid "Décomptée de l'allocation du groupe, à payer"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/SpendingRequestStatus.js:56
+msgid "Validée, en attente de paiement"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/SpendingRequestStatus.js:70
+msgid "Cette demande a été refusée"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/SpendingRequestStatus.js:71
+msgid "Refusée"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/api.js:130
+#: agir/donations/components/spendingRequest/common/api.js:140
+#: agir/elections/components/Common/api.js:75
+#: agir/elections/components/Common/api.js:109
+#: agir/events/components/createEventPage/EventForm/index.js:218
+#: agir/front/components/app/routes.config.js:393
+#: agir/front/components/errorPage/ErrorPage.js:78
+msgid "Une erreur est survenue"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/api.js:134
+msgid "Cette demande ne peut pas être supprimée"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/api.js:137
+msgid "La demande n'a pas pu être retrouvée"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/form.config.js:7
+msgid "Il s’agit d’un remboursement  (dépense passée)"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/form.config.js:8
+msgid "Passée"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/form.config.js:12
+msgid "Il s’agit d’une demande de paiement (dépense future)"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/form.config.js:13
+msgid "Future"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/form.config.js:19
+#: agir/donations/components/spendingRequest/common/form.config.js:80
+#: agir/events/components/common/utils.js:48
+#: agir/front/components/SearchPage/config.js:57
+#: agir/front/components/mockData/eventSubtypes.js:40
+msgid "Autre"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/form.config.js:26
+msgid "Impressions"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/form.config.js:31
+msgid "Achat de consommables (colles, feutres, etc.)"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/form.config.js:36
+msgid "Achat de matériel (quincaillerie, matériel de collage, etc.)"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/form.config.js:41
+msgid "Déplacement"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/form.config.js:46
+msgid "Hébergement"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/form.config.js:51
+msgid "Location de salle"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/form.config.js:56
+msgid "Location de matériel (mobilier, vaisselle, etc.)"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/form.config.js:61
+msgid "Location de matériel technique (sono, vidéo)"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/form.config.js:66
+msgid "Location de véhicule"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/form.config.js:72
+msgid "Devis"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/form.config.js:73
+msgid "Facture"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/form.config.js:74
+msgid "Impression"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/form.config.js:77
+msgid "Photo ou illustration de l'événement, de la salle, du matériel"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/form.config.js:78
+msgid "Photo / illustration"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/form.config.js:80
+msgid "Autre type de justificatif"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/form.config.js:118
+#: agir/donations/components/spendingRequest/common/form.config.js:145
+#: agir/donations/components/spendingRequest/common/form.config.js:156
+#: agir/donations/components/spendingRequest/common/form.config.js:165
+#: agir/donations/components/spendingRequest/common/form.config.js:176
+#: agir/donations/components/spendingRequest/common/form.config.js:192
+#: agir/donations/components/spendingRequest/common/form.config.js:203
+#: agir/donations/components/spendingRequest/common/form.config.js:214
+#: agir/donations/components/spendingRequest/common/form.config.js:220
+#: agir/donations/components/spendingRequest/common/form.config.js:226
+#: agir/donations/components/spendingRequest/common/form.config.js:247
+#: agir/donations/components/spendingRequest/common/form.config.js:258
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/form.config.js:53
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/form.config.js:171
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/form.config.js:182
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/form.config.js:193
+#: agir/front/components/allPages/PushModal/UpdateAddressModal.js:202
+msgid "Ce champ est obligatoire"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/form.config.js:123
+#: agir/donations/components/spendingRequest/common/form.config.js:150
+#: agir/donations/components/spendingRequest/common/form.config.js:208
+#: agir/donations/components/spendingRequest/common/form.config.js:252
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/form.config.js:58
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/form.config.js:69
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/form.config.js:104
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/form.config.js:121
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/form.config.js:131
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/form.config.js:142
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/form.config.js:153
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/form.config.js:176
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/form.config.js:187
+msgid "La valeur de ce champ ne peut pas dépasser les %{count} caractères"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/form.config.js:129
+#: agir/donations/components/spendingRequest/common/form.config.js:235
+msgid "Ce champ ne peut pas être vide."
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/form.config.js:159
+msgid "Saisissez une date valide"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/form.config.js:170
+msgid "La valeur de ce champ ne peut pas dépasser les"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/form.config.js:170
+msgid "caractères"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/form.config.js:179
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/form.config.js:226
+msgid "Saisissez un numéro de téléphone valide."
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/form.config.js:186
+msgid ""
+"Veuillez joindre au moins une pièce justificative à votre demande avant de "
+"pouvoir la valider"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/form.config.js:196
+#: agir/donations/components/spendingRequest/common/form.config.js:197
+msgid "Le montant devrait être un nombre supérieur à 0"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/common/form.config.js:241
+msgid "Veuillez choisir une des options."
+msgstr ""
+
+#: agir/donations/components/spendingRequest/createSpendingRequestPage/CreateSpendingRequestForm.js:262
+msgid "La demande a bien été enregistrée"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/createSpendingRequestPage/CreateSpendingRequestForm.js:295
+#: agir/donations/components/spendingRequest/editSpendingRequestPage/EditSpendingRequestForm.js:306
+msgid "Détails (obligatoire)"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/createSpendingRequestPage/CreateSpendingRequestForm.js:338
+#: agir/donations/components/spendingRequest/editSpendingRequestPage/EditSpendingRequestForm.js:349
+msgid "Motif de l'achat (obligatoire)"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/createSpendingRequestPage/CreateSpendingRequestForm.js:353
+#: agir/donations/components/spendingRequest/editSpendingRequestPage/EditSpendingRequestForm.js:364
+#: agir/donations/components/spendingRequest/spendingRequestPage/SpendingRequestDetails/MobileLayout.js:162
+msgid "Événement lié à la dépense"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/createSpendingRequestPage/CreateSpendingRequestForm.js:364
+#: agir/donations/components/spendingRequest/editSpendingRequestPage/EditSpendingRequestForm.js:375
+msgid "Date de l'achat (obligatoire)"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/createSpendingRequestPage/CreateSpendingRequestForm.js:378
+msgid "Pièces justificatives (obligatoire)"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/createSpendingRequestPage/CreateSpendingRequestForm.js:403
+msgid " Coordonnées bancaires (obligatoire)"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/createSpendingRequestPage/CreateSpendingRequestPage.js:88
+#: agir/donations/components/spendingRequest/editSpendingRequestPage/EditSpendingRequestPage.js:110
+msgid "Un doute ? Consultez le"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/createSpendingRequestPage/CreateSpendingRequestPage.js:88
+#: agir/donations/components/spendingRequest/editSpendingRequestPage/EditSpendingRequestPage.js:110
+#, fuzzy
+#| msgid "Besoin d'aide ?"
+msgid "centre d'aide"
 msgstr "Ayuda"
 
-#: agir/front/components/app/Footer/Footer.js:146
-msgid "Mentions légales"
-msgstr "Aviso legal"
+#: agir/donations/components/spendingRequest/editSpendingRequestPage/EditSpendingRequestForm.js:271
+msgid "La demande a bien été mise à jour"
+msgstr ""
 
-#: agir/front/components/app/Footer/Footer.js:147
+#: agir/donations/components/spendingRequest/editSpendingRequestPage/EditSpendingRequestForm.js:389
+msgid "Montant et financement (obligatoire)"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/editSpendingRequestPage/EditSpendingRequestForm.js:412
+msgid "Validation (obligatoire)"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/editSpendingRequestPage/EditSpendingRequestForm.js:429
+msgid "Vous pouvez sauvegarder vos modifications en cliquant sur le bouton"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/editSpendingRequestPage/EditSpendingRequestForm.js:430
+#: agir/event_requests/components/EventSpeakerPage/EventSpeakerRequestForm.js:116
+#: agir/events/components/EventSettings/EventContact.js:138
+#: agir/events/components/EventSettings/EventVisio.js:84
+#: agir/groups/components/groupPage/GroupSettings/GroupLinksPage/GroupLinkForm.js:92
+#: agir/groups/components/groupPage/GroupSettings/GroupLocalizationPage.js:143
+msgid "Enregistrer"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/editSpendingRequestPage/EditSpendingRequestForm.js:433
+msgid ""
+"Vous pourrez ensuite ajouter les pièces nécessaires puis valider la demande "
+"directement depuis la page de détail."
+msgstr ""
+
+#: agir/donations/components/spendingRequest/editSpendingRequestPage/EditSpendingRequestPage.js:93
+msgid "Cette demande ne peut plus être modifiée"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/spendingRequestPage/DeleteAttachmentModalConfirmation.js:54
+msgid "Confirmez-vous la suppression du document"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/spendingRequestPage/DeleteAttachmentModalConfirmation.js:58
+#: agir/donations/components/spendingRequestLib/DeleteDocumentButton.js:52
+#: agir/donations/components/spendingRequestLib/DeleteSpendingRequest.js:50
+msgid "Attention"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/spendingRequestPage/DeleteAttachmentModalConfirmation.js:58
+msgid "cette action est irréversible"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/spendingRequestPage/DeleteSpendingRequestButton.js:51
+#: agir/groups/components/groupPage/GroupPage/routes.config.js:147
+#: agir/groups/components/groupPage/GroupUserActions/ManagerActions.js:95
+msgid "Gestion du groupe"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/spendingRequestPage/DeleteSpendingRequestButton.js:83
+msgid "La demande a bien été supprimée !"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/spendingRequestPage/DeleteSpendingRequestButton.js:102
+msgid "Supprimer la demande de dépense"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/spendingRequestPage/DeleteSpendingRequestButton.js:103
+#: agir/donations/components/spendingRequestLib/DeleteDocumentButton.js:40
+#: agir/donations/components/spendingRequestLib/DeleteSpendingRequest.js:36
+#: agir/events/components/eventPage/QuitEventButton.js:169
+#: agir/front/components/formComponents/MessageActionModal.js:147
+#: agir/groups/components/groupPage/GroupSettings/ConfirmMembershipTypeChange.js:166
+msgid "Annuler"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/spendingRequestPage/DeleteSpendingRequestButton.js:104
+#: agir/donations/components/spendingRequestLib/DeleteSpendingRequest.js:37
+msgid "Supprimer la demande"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/spendingRequestPage/DeleteSpendingRequestButton.js:110
+msgid "Confirmez-vous la suppression définitive"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/spendingRequestPage/DeleteSpendingRequestButton.js:113
+msgid "de la demande"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/spendingRequestPage/SpendingRequestDetails/DesktopLayout.js:113
+#: agir/donations/components/spendingRequest/spendingRequestPage/SpendingRequestDetails/MobileLayout.js:135
+msgid "Détails"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/spendingRequestPage/SpendingRequestDetails/DesktopLayout.js:120
+msgid "Titre de la dépense"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/spendingRequestPage/SpendingRequestDetails/DesktopLayout.js:130
+msgid "Type de dépense"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/spendingRequestPage/SpendingRequestDetails/DesktopLayout.js:156
+msgid "Motif de l'achat"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/spendingRequestPage/SpendingRequestDetails/DesktopLayout.js:173
+#: agir/donations/components/spendingRequest/spendingRequestPage/SpendingRequestDetails/MobileLayout.js:172
+msgid "Numéro de téléphone"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/spendingRequestPage/SpendingRequestDetails/DesktopLayout.js:184
+#: agir/donations/components/spendingRequest/spendingRequestPage/SpendingRequestDetails/MobileLayout.js:187
+msgid "Total de la dépense"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/spendingRequestPage/SpendingRequestDetails/DesktopLayout.js:205
+msgid "Coordonnées bancaires"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/spendingRequestPage/SpendingRequestDetails/DesktopLayout.js:217
+msgid "International Bank Account Number"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/spendingRequestPage/SpendingRequestDetails/DesktopLayout.js:217
+msgid "IBAN"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/spendingRequestPage/SpendingRequestDetails/DesktopLayout.js:225
+msgid "Bank Identifier Code"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/spendingRequestPage/SpendingRequestDetails/DesktopLayout.js:225
+#: agir/donations/components/spendingRequest/spendingRequestPage/SpendingRequestDetails/MobileLayout.js:209
+msgid "BIC"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/spendingRequestPage/SpendingRequestDetails/DesktopLayout.js:234
+#: agir/donations/components/spendingRequest/spendingRequestPage/SpendingRequestDetails/MobileLayout.js:218
+msgid "Relevé d'Identité Bancare"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/spendingRequestPage/SpendingRequestDetails/DesktopLayout.js:240
+#: agir/donations/components/spendingRequest/spendingRequestPage/SpendingRequestDetails/MobileLayout.js:224
+msgid "du compte bancaire au format PDF, JPEG ou PNG."
+msgstr ""
+
+#: agir/donations/components/spendingRequest/spendingRequestPage/SpendingRequestDetails/DesktopLayout.js:249
+msgid "Ajouter"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/spendingRequestPage/SpendingRequestDetails/MobileLayout.js:130
+#, fuzzy
+#| msgid "Voir les groupes"
+msgid "Voir le suivi"
+msgstr "Ver los grupos"
+
+#: agir/donations/components/spendingRequest/spendingRequestPage/SpendingRequestDetails/MobileLayout.js:149
+msgid "Dépense"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/spendingRequestPage/SpendingRequestDetails/MobileLayout.js:152
+#: agir/donations/components/spendingRequest/spendingRequestPage/SpendingRequestDetails/MobileLayout.js:170
+#: agir/donations/components/spendingRequest/spendingRequestPage/SpendingRequestDetails/MobileLayout.js:207
+msgid "Non renseigné"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/spendingRequestPage/SpendingRequestDetails/MobileLayout.js:160
+msgid "Non renseignée"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/spendingRequestPage/SpendingRequestDetails/MobileLayout.js:197
+msgid "Paiement"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/spendingRequestPage/SpendingRequestDetails/MobileLayout.js:200
+msgid "Mode de paiemen"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/spendingRequestPage/SpendingRequestDetails/MobileLayout.js:250
+msgid "Aucune pièce justificative n'a pas encore été ajoutée"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/spendingRequestPage/SpendingRequestHistory.js:257
+msgid "Statut"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/spendingRequestPage/SpendingRequestPage.js:165
+msgid "La pièce a été enregistrée et le statut de la demande mis à jour"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/spendingRequestPage/SpendingRequestPage.js:166
+msgid "La pièce justificative a été enregistrée"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/spendingRequestPage/SpendingRequestPage.js:192
+msgid "La pièce justificative a été supprimée"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/spendingRequestPage/SpendingRequestPage.js:262
+msgid "Cette demande ne peut pas être modifiée"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/spendingRequestPage/SpendingRequestPage.js:263
+msgid "Modifier la demande"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/spendingRequestPage/ValidateSpendingRequestButton.js:53
+#: agir/donations/components/spendingRequest/spendingRequestPage/ValidateSpendingRequestButton.js:92
+msgid "Valider"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/spendingRequestPage/ValidateSpendingRequestButton.js:81
+msgid "La demande a bien été validée !"
+msgstr ""
+
+#: agir/donations/components/spendingRequest/spendingRequestPage/ValidateSpendingRequestButton.js:107
+msgid ""
+"Vous êtes sur le point de valider cette demande de dépense. Une fois votre "
+"approbation donnée, elle ne sera plus modifiable."
+msgstr ""
+
+#: agir/donations/components/spendingRequestLib/DeleteDocumentButton.js:32
+#: agir/donations/components/spendingRequestLib/DeleteDocumentButton.js:41
+msgid "Supprimer le document"
+msgstr ""
+
+#: agir/donations/components/spendingRequestLib/DeleteDocumentButton.js:52
+#: agir/donations/components/spendingRequestLib/DeleteSpendingRequest.js:50
+msgid "cette action est irréversible."
+msgstr ""
+
+#: agir/donations/components/spendingRequestLib/DeleteSpendingRequest.js:35
+msgid "Supprimer la demande de dépenses"
+msgstr ""
+
+#: agir/elections/components/Common/CirconscriptionLegislativeField.js:46
+msgid "Vous pouvez vérifier votre circonscription d'inscription sur le site"
+msgstr ""
+
+#: agir/elections/components/Common/CirconscriptionLegislativeField.js:52
+msgid "nosdeputes.fr"
+msgstr ""
+
+#: agir/elections/components/Common/CirconscriptionLegislativeField.js:56
+#, fuzzy
+#| msgid "Rechercher une action"
+msgid "Chercher un circonscription"
+msgstr "Buscar una acción"
+
+#: agir/elections/components/Common/PollingStationField.js:30
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/PollingStationOfficerForm.js:483
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/PollingStationOfficerForm.js:505
+msgid "le site du service public"
+msgstr ""
+
+#: agir/elections/components/Common/PollingStationField.js:76
+#, fuzzy
+#| msgid "Rechercher un groupe ou une action"
+msgid "Chercher un bureau de vote"
+msgstr "Buscar un grupo o una acción"
+
+#: agir/elections/components/Common/PollingStationField.js:111
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/PollingStationOfficerForm.js:474
+msgid "Bureau de vote"
+msgstr ""
+
+#: agir/elections/components/Common/StyledComponents.js:148
+#, fuzzy
+#| msgid "Besoin d'aide ?"
+msgid "Besoin d'aide ? Une question ?"
+msgstr "Ayuda"
+
+#: agir/elections/components/Common/StyledComponents.js:150
+msgid "Écrivez-nous à l'adresse"
+msgstr ""
+
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/NewPollingStationOfficerHowTo.js:16
+msgid "Devenir assesseur·e ou délégué·e"
+msgstr ""
+
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/NewPollingStationOfficerHowTo.js:21
+msgid ""
+"Pour la réussite de ce scrutin, il est nécessaire que nous ayons un maximum "
+"d'assesseur⋅es et de délégué⋅es dans le plus grand nombre de bureaux de vote."
+msgstr ""
+
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/NewPollingStationOfficerHowTo.js:36
+msgid ""
+"C’est à chaque scrutin que nous devons garder les bonnes habitudes et "
+"surtout faire en sorte qu’elles ne se perdent pas. En effet les &laquo; "
+"ententes à la bonne franquette &raquo; sur le thème nous &laquo; avons "
+"toujours fait comme ça &raquo; sont à bannir dès lors qu’elles rentrent en "
+"contradiction avec le"
+msgstr ""
+
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/NewPollingStationOfficerHowTo.js:36
+msgid "Code électoral"
+msgstr ""
+
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/NewPollingStationOfficerHowTo.js:63
+msgid ""
+"Vous aurez aussi à mobiliser le/la représentant·e local·e pour qu’il/elle "
+"intervienne par écrit séance tenante auprès du Préfet pour obtenir des "
+"rappels à la Loi et le cas échéant :"
+msgstr ""
+
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/NewPollingStationOfficerHowTo.js:68
+msgid ""
+"le juge aux élections dans les communes de plus de 20 000 habitant·e·s, "
+"obligatoirement de permanence sur votre département"
+msgstr ""
+
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/NewPollingStationOfficerHowTo.js:79
+msgid "Ressources pour les assesseur·es et délégué·es"
+msgstr ""
+
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/NewPollingStationOfficerHowTo.js:102
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/NewPollingStationOfficerSuccess.js:75
+msgid "La vidéo de formation"
+msgstr ""
+
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/NewPollingStationOfficerSuccess.js:13
+msgid "Votre demande a été envoyée"
+msgstr ""
+
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/NewPollingStationOfficerSuccess.js:16
+msgid ""
+"Les équipes de campagne de votre circonscription législative recevront "
+"bientôt votre demande et pourront vous recontacter."
+msgstr ""
+
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/NewPollingStationOfficerSuccess.js:20
+msgid ""
+"Merci beaucoup, c'est grâce à votre implication que nous pouvons participer "
+"à assurer la sincérité du scrutin. C'est une tâche politique "
+"importante&nbsp;!​"
+msgstr ""
+
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/NewPollingStationOfficerSuccess.js:25
+msgid "Soyons dans tous les bureaux de vote&nbsp;:"
+msgstr ""
+
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/NewPollingStationOfficerSuccess.js:27
+msgid "n'hésitez pas à partager ce formulaire​&nbsp;!"
+msgstr ""
+
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/PollingStationOfficerForm.js:258
+msgid "Une erreur est survenue."
+msgstr ""
+
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/PollingStationOfficerForm.js:311
+msgid "Prénoms"
+msgstr ""
+
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/PollingStationOfficerForm.js:312
+msgid "Tous vos prénoms, tels qu'ils apparaissent sur la carte électorale"
+msgstr ""
+
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/PollingStationOfficerForm.js:324
+msgid "Nom de famille"
+msgstr ""
+
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/PollingStationOfficerForm.js:325
+msgid "Votre nom de famille, tel qu'il apparaît sur la carte électorale"
+msgstr ""
+
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/PollingStationOfficerForm.js:336
+msgid "Nom de naissance (si necessaire)"
+msgstr ""
+
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/PollingStationOfficerForm.js:337
+msgid "Indiquer votre nom de naissance si, par exemple, vous vous êtes marié·e"
+msgstr ""
+
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/PollingStationOfficerForm.js:348
+msgid "Genre (à l'état civil)"
+msgstr ""
+
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/PollingStationOfficerForm.js:361
+msgid "Date de naissance"
+msgstr ""
+
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/PollingStationOfficerForm.js:373
+msgid "Commune de naissance"
+msgstr ""
+
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/PollingStationOfficerForm.js:384
+msgid "Pays de naissance"
+msgstr ""
+
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/PollingStationOfficerForm.js:397
+#: agir/front/components/allPages/PushModal/UpdateAddressModal.js:78
+msgid "Adresse"
+msgstr ""
+
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/PollingStationOfficerForm.js:409
+msgid "Complément d'adresse (facultatif)"
+msgstr ""
+
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/PollingStationOfficerForm.js:421
+#: agir/front/components/allPages/PushModal/UpdateAddressModal.js:100
+#: agir/front/components/authentication/Connexion/TellMore/TellMore.js:266
+msgid "Code postal"
+msgstr ""
+
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/PollingStationOfficerForm.js:433
+#: agir/front/components/allPages/PushModal/UpdateAddressModal.js:111
+#: agir/front/components/formComponents/LocationField/Field.js:154
+msgid "Commune"
+msgstr ""
+
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/PollingStationOfficerForm.js:445
+#: agir/front/components/allPages/PushModal/UpdateAddressModal.js:122
+#: agir/front/components/authentication/Connexion/Signup.js:193
+#: agir/people/components/contacts/CreateContactPage/ContactForm.js:374
+msgid "Pays"
+msgstr ""
+
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/PollingStationOfficerForm.js:462
+msgid "Commune ou ambassade d'inscription aux listes électorales"
+msgstr ""
+
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/PollingStationOfficerForm.js:477
+msgid ""
+"Vous pouvez vérifier votre bureau de vote sur votre carte éléctorale ou sur"
+msgstr ""
+
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/PollingStationOfficerForm.js:496
+msgid "Numéro national d'électeur"
+msgstr ""
+
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/PollingStationOfficerForm.js:499
+msgid ""
+"Vous pouvez retrouver votre numéro national d'électeur sur votre carte "
+"éléctorale ou sur"
+msgstr ""
+
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/PollingStationOfficerForm.js:518
+msgid "Circonscription législative d'inscription"
+msgstr ""
+
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/PollingStationOfficerForm.js:533
+msgid "Rôle"
+msgstr ""
+
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/PollingStationOfficerForm.js:534
+msgid "Choisir un rôle"
+msgstr ""
+
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/PollingStationOfficerForm.js:546
+msgid "Dates de disponibilité"
+msgstr ""
+
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/PollingStationOfficerForm.js:550
+msgid "Mobilité"
+msgstr ""
+
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/PollingStationOfficerForm.js:559
+msgid ""
+"Je suis disponible à tenir un autre bureau de vote que celui dans lequel je "
+"suis inscrit·e, si nécessaire"
+msgstr ""
+
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/PollingStationOfficerForm.js:573
+#: agir/people/components/contacts/CreateContactPage/ContactForm.js:258
+msgid "Téléphone mobile"
+msgstr ""
+
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/PollingStationOfficerForm.js:586
+msgid "Adresse e-mail"
+msgstr ""
+
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/PollingStationOfficerForm.js:587
+msgid ""
+"Important : si vous vous êtes déjà inscrit·e sur lafranceinsoumise.fr ou "
+"melenchon2022.fr, utilisez la même adresse e-mail."
+msgstr ""
+
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/PollingStationOfficerForm.js:602
+msgid "Remarques ou question (facultatif)"
+msgstr ""
+
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/PollingStationOfficerForm.js:603
+msgid ""
+"Quand êtes-vous disponible pour être contacté·e, en semaine et le week-end ?"
+msgstr ""
+
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/PollingStationOfficerForm.js:614
+msgid ""
+"J'autorise Action Populaire à partager mes coordonnées pour être mis·e en "
+"contact avec les équipes de campagne de la"
+msgstr ""
+
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/PollingStationOfficerForm.js:615
+msgid "Nouvelle Union Populaire Écologique et Sociale"
+msgstr ""
+
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/PollingStationOfficerForm.js:616
+#: agir/front/components/app/Footer/Footer.js:152
+#: agir/front/components/app/Footer/Footer.js:169
+#: agir/front/components/authentication/Connexion/LeftBlockDesktop.js:58
+#: agir/front/components/genericComponents/Onboarding.js:51
+#: agir/front/components/genericComponents/Onboarding.js:75
+msgid "NUPES"
+msgstr ""
+
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/form.config.js:64
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/form.config.js:84
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/form.config.js:90
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/form.config.js:99
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/form.config.js:110
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/form.config.js:116
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/form.config.js:137
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/form.config.js:148
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/form.config.js:159
+msgid "Ce champ ne peut être vide."
+msgstr ""
+
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/form.config.js:78
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/form.config.js:235
+msgid "Assurez-vous que ce champ comporte au plus 255 caractères."
+msgstr ""
+
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/form.config.js:93
+msgid "Indiquez une date valide"
+msgstr ""
+
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/form.config.js:165
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/form.config.js:199
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/form.config.js:208
+msgid "Cette sélection ne peut être vide."
+msgstr ""
+
+#: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/form.config.js:217
+msgid "Saisissez une adresse e-mail valide."
+msgstr ""
+
+#: agir/event_requests/components/EventSpeakerPage/EventSpeakerPage.js:83
+msgid "Vous n'êtes pas autorisé·e à accéder à cette page"
+msgstr ""
+
+#: agir/event_requests/components/EventSpeakerPage/EventSpeakerPage.js:84
+msgid ""
+"Si vous êtes arrivé·e ici en suivant un lien reçu par e-mail, vérifiez que "
+"vous êtes bien connecté·e avec le compte correspondant à la même adresse e-"
+"mail."
+msgstr ""
+
+#: agir/event_requests/components/EventSpeakerPage/EventSpeakerPage.js:102
+#, fuzzy
+#| msgid "Carte des événements"
+msgid "Demandes d'événements"
+msgstr "Mapa de Acciones"
+
+#: agir/event_requests/components/EventSpeakerPage/EventSpeakerPage.js:110
+msgid "Vous n'avez pas encore reçu de demandes d'événement."
+msgstr ""
+
+#: agir/event_requests/components/EventSpeakerPage/EventSpeakerPage.js:121
+msgid "Vous n'avez pas de demande à traiter."
+msgstr ""
+
+#: agir/event_requests/components/EventSpeakerPage/EventSpeakerPage.js:127
+msgid "Demandes passées"
+msgstr ""
+
+#: agir/event_requests/components/EventSpeakerPage/EventSpeakerPage.js:140
+msgid "Vos événements à venir"
+msgstr ""
+
+#: agir/event_requests/components/EventSpeakerPage/EventSpeakerPage.js:148
+msgid "Vous n'avez pas d'événements à venir"
+msgstr ""
+
+#: agir/event_requests/components/EventSpeakerPage/EventSpeakerRequestForm.js:57
+msgid "Une erreur est survenue. Veuillez ressayer."
+msgstr ""
+
+#: agir/event_requests/components/EventSpeakerPage/EventSpeakerRequestForm.js:62
+#: agir/events/components/EventSettings/EventFeedback.js:87
+#: agir/events/components/EventSettings/EventGeneral.js:148
+#: agir/events/components/EventSettings/EventVisio.js:54
+#: agir/groups/components/groupPage/GroupSettings/GroupContactPage.js:57
+#: agir/groups/components/groupPage/GroupSettings/GroupGeneralPage.js:92
+#: agir/groups/components/groupPage/GroupSettings/GroupLocalizationPage.js:62
+msgid "Informations mises à jour"
+msgstr ""
+
+#: agir/event_requests/components/EventSpeakerPage/EventSpeakerRequestForm.js:114
+msgid "Enregistré"
+msgstr ""
+
+#: agir/events/components/EventSettings/EventAssets.js:54
+msgid "Télécharger le visuel"
+msgstr ""
+
+#: agir/events/components/EventSettings/EventCancelation.js:29
+#: agir/events/components/EventSettings/EventGeneral.js:142
+#: agir/events/components/EventSettings/EventVisio.js:48
+msgid "Une erreur est survenue, veuillez réessayer plus tard"
+msgstr ""
+
+#: agir/events/components/EventSettings/EventCancelation.js:35
+msgid "L'événement a bien été annulé."
+msgstr ""
+
+#: agir/events/components/EventSettings/EventCancelation.js:53
+msgid "Cette action est irréversible."
+msgstr ""
+
+#: agir/events/components/EventSettings/EventCancelation.js:57
+#: agir/events/components/EventSettings/routes.config.js:168
+#, fuzzy
+#| msgid "Carte des événements"
+msgid "Annuler l'événement"
+msgstr "Mapa de Acciones"
+
+#: agir/events/components/EventSettings/EventContact.js:85
+msgid ""
+"Ces informations seront affichées en public. Conseillé : créez une adresse e-"
+"mail pour votre groupe et n’utilisez pas une adresse personnelle."
+msgstr ""
+
+#: agir/events/components/EventSettings/EventContact.js:93
+msgid "Nom de la/les personnes à contacter*"
+msgstr ""
+
+#: agir/events/components/EventSettings/EventContact.js:106
+msgid "Adresse e-mail à contacter*"
+msgstr ""
+
+#: agir/events/components/EventSettings/EventContact.js:118
+msgid "Numéro de téléphone à contacter*"
+msgstr ""
+
+#: agir/events/components/EventSettings/EventContact.js:129
+msgid "Cacher le numéro de téléphone"
+msgstr ""
+
+#: agir/events/components/EventSettings/EventFeedback.js:72
+#: agir/events/components/EventSettings/EventGeneral.js:124
+#: agir/groups/components/groupPage/GroupSettings/GroupGeneralPage.js:75
+msgid ""
+"Vous devez acceptez les licences pour envoyer votre image en conformité."
+msgstr ""
+
+#: agir/events/components/EventSettings/EventFeedback.js:128
+msgid ""
+"Cette image apparaîtra en tête de votre compte rendu, et dans les partages "
+"que vous ferez du compte rendu sur les réseaux sociaux."
+msgstr ""
+
+#: agir/events/components/EventSettings/EventFeedback.js:147
+#: agir/groups/components/groupPage/GroupSettings/GroupGeneralPage.js:168
+msgid ""
+"En important une image, je certifie être le propriétaire des droits et "
+"accepte de la partager sous licence libre"
+msgstr ""
+
+#: agir/events/components/EventSettings/EventFeedback.js:148
+#: agir/events/components/createEventPage/EventForm/EventImageField.js:72
+#: agir/groups/components/groupPage/GroupSettings/GroupGeneralPage.js:169
+msgid "Creative Commons CC-BY-NC 3.0"
+msgstr ""
+
+#: agir/events/components/EventSettings/EventFeedback.js:168
+msgid "Enregistrer les informations"
+msgstr ""
+
+#: agir/events/components/EventSettings/EventGeneral.js:160
+msgid "Ces informations seront affichées en public."
+msgstr ""
+
+#: agir/events/components/EventSettings/EventGeneral.js:166
+#, fuzzy
+#| msgid "Carte des événements"
+msgid "Nom de l'événement*"
+msgstr "Mapa de Acciones"
+
+#: agir/events/components/EventSettings/EventGeneral.js:209
+msgid "Image mise en avant"
+msgstr ""
+
+#: agir/events/components/EventSettings/EventLocation.js:106
+msgid ""
+"Merci d'indiquer une adresse précise avec numéro de rue, sans quoi "
+"l'événement n'apparaîtra pas sur la carte."
+msgstr ""
+
+#: agir/events/components/EventSettings/EventMember.js:118
+#, fuzzy
+#| msgid "Organisez"
+msgid "Organisateur·ice"
+msgstr "Organízate"
+
+#: agir/events/components/EventSettings/EventMember.js:118
+#, fuzzy
+#| msgid "Organisez"
+msgid "Organisatrice"
+msgstr "Organízate"
+
+#: agir/events/components/EventSettings/EventMember.js:118
+#: agir/events/components/common/OrganizerGroupField.js:19
+#, fuzzy
+#| msgid "Organisez"
+msgid "Organisateur"
+msgstr "Organízate"
+
+#: agir/events/components/EventSettings/EventMember.js:122
+#: agir/events/components/eventPage/EventSpeakers.js:69
+msgid "Intervenant·e"
+msgstr ""
+
+#: agir/events/components/EventSettings/EventMember.js:122
+msgid "Intervenante"
+msgstr ""
+
+#: agir/events/components/EventSettings/EventMember.js:122
+msgid "Intervenant"
+msgstr ""
+
+#: agir/events/components/EventSettings/EventMember.js:169
+msgid "Copier l'adresse"
+msgstr ""
+
+#: agir/events/components/EventSettings/EventOrganization.js:71
+msgid ""
+"Les animateur·ices du groupe peuvent accéder à la gestion de l'événement et "
+"la liste des participant·es."
+msgstr ""
+
+#: agir/events/components/EventSettings/EventOrganization.js:76
+#: agir/front/components/genericComponents/EventCard.js:319
+msgid "Groupes organisateurs"
+msgstr ""
+
+#: agir/events/components/EventSettings/EventOrganization.js:88
+msgid "Ajouter un groupe co-organisateur"
+msgstr ""
+
+#: agir/events/components/EventSettings/EventOrganization.js:102
+msgid "Invitation en attente"
+msgstr ""
+
+#: agir/events/components/EventSettings/EventOrganization.js:111
+msgid ""
+"Donnez des droits d’accès à des participant·es pour leur permettre de gérer "
+"l’événement."
+msgstr ""
+
+#: agir/events/components/EventSettings/EventOrganization.js:117
+msgid "Ajouter un·e autre organisateur·ice"
+msgstr ""
+
+#: agir/events/components/EventSettings/EventParticipants.js:95
+msgid ""
+"Les groupes ayant indiqué leur participation. Ils ne sont pas indiqués co-"
+"organisateurs de l'événement. Vous pouvez les inviter à co-organiser cet "
+"événement depuis l'onglet"
+msgstr ""
+
+#: agir/events/components/EventSettings/EventSettings.js:48
+msgid "Pour toute question, veuillez contacter nos équipes à l'adresse e-mail"
+msgstr ""
+
+#: agir/events/components/EventSettings/EventSubtypeField.js:49
+#, fuzzy
+#| msgid "Carte des événements"
+msgid "Type de l'événement"
+msgstr "Mapa de Acciones"
+
+#: agir/events/components/EventSettings/EventSubtypeField.js:70
+#: agir/front/components/formComponents/MessageModal/MessageStep.js:257
+msgid "Changer"
+msgstr ""
+
+#: agir/events/components/EventSettings/EventSubtypeField.js:70
+msgid "Choisir"
+msgstr ""
+
+#: agir/events/components/EventSettings/EventVisio.js:68
+msgid ""
+"Pour vos réunions en ligne, utilisez le service d’Action Populaire. Votre "
+"salon de visioconférence est déjà prêt si vous voulez l’utiliser&nbsp;!"
+msgstr ""
+
+#: agir/events/components/EventSettings/EventVisio.js:73
+msgid "URL de votre visio-conférence sur Action Populaire"
+msgstr ""
+
+#: agir/events/components/EventSettings/EventVisio.js:74
+msgid "URL de la visio-conférence"
+msgstr ""
+
+#: agir/events/components/EventSettings/GroupItem.js:133
+msgid "Inviter"
+msgstr ""
+
+#: agir/events/components/EventSettings/Organization/AddGroupOrganizer.js:78
+msgid ""
+"Le groupe, dont vous êtes animateur·ice, a été ajouté à l'organisation de "
+"l'événement"
+msgstr ""
+
+#: agir/events/components/EventSettings/Organization/AddGroupOrganizer.js:84
+msgid "Une invitation a été envoyée aux animateur·ices du groupe"
+msgstr ""
+
+#: agir/events/components/EventSettings/Organization/AddGroupOrganizer.js:149
+#, fuzzy
+#| msgid "Rechercher un groupe ou une action"
+msgid "Chercher un groupe..."
+msgstr "Buscar un grupo o una acción"
+
+#: agir/events/components/EventSettings/Organization/AddGroupOrganizer.js:157
+#, fuzzy
+#| msgid "Rechercher une action"
+msgid "Recherche en cours..."
+msgstr "Buscar una acción"
+
+#: agir/events/components/EventSettings/Organization/AddGroupOrganizer.js:161
+msgid "Résultats"
+msgstr ""
+
+#: agir/events/components/EventSettings/Organization/AddGroupOrganizer.js:173
+msgid "Derniers groupes co-organisateurs"
+msgstr ""
+
+#: agir/events/components/EventSettings/Organization/AddGroupOrganizer.js:190
+msgid "Si ses animateur·ices acceptent la co-organisation"
+msgstr ""
+
+#: agir/events/components/EventSettings/Organization/AddGroupOrganizer.js:195
+msgid "Ces dernier·es"
+msgstr ""
+
+#: agir/events/components/EventSettings/Organization/AddGroupOrganizer.js:195
+msgid "pourront accéder aux paramètres"
+msgstr ""
+
+#: agir/events/components/EventSettings/Organization/AddGroupOrganizer.js:200
+msgid "Envoyer l'invitation"
+msgstr ""
+
+#: agir/events/components/EventSettings/Organization/AddOrganizer.js:45
+msgid "L'invitation n'a pas pu être envoyée"
+msgstr ""
+
+#: agir/events/components/EventSettings/Organization/AddOrganizer.js:69
+msgid "Choisir un·e participant·e"
+msgstr ""
+
+#: agir/events/components/EventSettings/Organization/AddOrganizer.js:70
+#: agir/groups/components/groupPage/GroupSettings/GroupManagementPage/EditionPanel.js:80
+msgid "Sélection"
+msgstr ""
+
+#: agir/events/components/EventSettings/Organization/AddOrganizer.js:86
+msgid "Ce participant pourra :"
+msgstr ""
+
+#: agir/events/components/EventSettings/Organization/AddOrganizer.js:90
+msgid "Voir la liste des participant·es"
+msgstr ""
+
+#: agir/events/components/EventSettings/Organization/AddOrganizer.js:94
+msgid "Modifier les organisateurs"
+msgstr ""
+
+#: agir/events/components/EventSettings/Organization/AddOrganizer.js:98
+msgid "Modifier les informations de l’événement"
+msgstr ""
+
+#: agir/events/components/EventSettings/Organization/AddOrganizer.js:102
+msgid "Annuler l’événement"
+msgstr ""
+
+#: agir/events/components/EventSettings/routes.config.js:75
+#: agir/groups/components/groupPage/GroupSettings/routes.config.js:136
+msgid "Général"
+msgstr ""
+
+#: agir/events/components/EventSettings/routes.config.js:86
+msgid "Participant·es"
+msgstr ""
+
+#: agir/events/components/EventSettings/routes.config.js:96
+#, fuzzy
+#| msgid "manifestation"
+msgid "Organisation"
+msgstr "manifestación"
+
+#: agir/events/components/EventSettings/routes.config.js:107
+msgid "Documents"
+msgstr ""
+
+#: agir/events/components/EventSettings/routes.config.js:117
+msgid "Vidéo-conférence"
+msgstr ""
+
+#: agir/events/components/EventSettings/routes.config.js:128
+#: agir/front/components/app/Footer/Footer.js:142
+#: agir/front/components/app/Navigation/navigation.config.js:81
 msgid "Contact"
 msgstr "Contacto"
 
-#: agir/front/components/app/Footer/Footer.js:152
-#: agir/front/components/app/Footer/Footer.js:161
-msgid "Le programme"
-msgstr "El Programa"
+#: agir/events/components/EventSettings/routes.config.js:138
+#: agir/front/components/allPages/PushModal/UpdateAddressModal.js:70
+#: agir/groups/components/groupPage/GroupSettings/routes.config.js:147
+#, fuzzy
+#| msgid "manifestation"
+msgid "Localisation"
+msgstr "manifestación"
 
-#: agir/front/components/app/Footer/Footer.js:155
+#: agir/events/components/EventSettings/routes.config.js:148
+#: agir/events/components/eventPage/EventReportCard.js:29
+msgid "Compte rendu"
+msgstr ""
+
+#: agir/events/components/EventSettings/routes.config.js:158
+#: agir/groups/components/groupPage/GroupSettings/routes.config.js:179
+msgid "Ressources"
+msgstr ""
+
+#: agir/events/components/TokTok/TokTokPreview/HowTo.js:99
+#: agir/people/components/contacts/CreateContactPage/HowTo.js:112
+msgid "Comment ça marche"
+msgstr ""
+
+#: agir/events/components/TokTok/TokTokPreview/HowTo.js:108
+msgid ""
+"que vous avez couvertes pour mieux partager le travail avec les autres "
+"groupes"
+msgstr ""
+
+#: agir/events/components/TokTok/TokTokPreview/HowTo.js:114
+msgid "lorsque vous préparez vos actions grâce aux indications sur la carte"
+msgstr ""
+
+#: agir/events/components/TokTok/TokTokPreview/HowTo.js:123
+msgid "par secteur en cliquant sur le menu en haut à droite"
+msgstr ""
+
+#: agir/events/components/TokTok/TokTokPreview/HowTo.js:130
+msgid ""
+"pour voir les quartiers prioritaires où nos actions sont attendues&nbsp;!"
+msgstr ""
+
+#: agir/events/components/TokTok/TokTokPreview/StyledComponents.js:118
+msgid "Vous n’êtes pas gestionnaire d’un groupe d’action."
+msgstr ""
+
+#: agir/events/components/TokTok/TokTokPreview/index.js:48
+msgid "La carte collaborative du porte-à-porte"
+msgstr ""
+
+#: agir/events/components/TokTok/TokTokPreview/index.js:62
+msgid ""
+"Note&nbsp;: TokTok ne remplace pas l’outil d’ajout de contact et le "
+"formulaire pour indiquer le nombre de soutiens obtenus."
+msgstr ""
+
+#: agir/events/components/TokTok/TokTokPreview/index.js:95
+msgid "Ouvrir TokTok"
+msgstr ""
+
+#: agir/events/components/TokTok/TokTokPreview/index.js:106
+msgid "Voir la vidéo de présentation"
+msgstr ""
+
+#: agir/events/components/agendaPage/ActionRadiusField.js:26
+msgid "Proposer des événements dans un rayon de :"
+msgstr ""
+
+#: agir/events/components/agendaPage/ActionRadiusField.js:29
+msgid "Un doute sur la localisation utilisée ? "
+msgstr ""
+
+#: agir/events/components/agendaPage/ActionRadiusField.js:30
+msgid "Vérifiez ici"
+msgstr ""
+
+#: agir/events/components/agendaPage/Agenda.js:136
+#: agir/front/components/authentication/SoftLoginModal.js:92
+msgid "Bonjour"
+msgstr ""
+
+#: agir/events/components/agendaPage/Agenda.js:153
+#: agir/events/components/agendaPage/Agenda.js:200
+#: agir/groups/components/groupsPage/GroupsPageHeader.js:68
+msgid "Carte"
+msgstr ""
+
+#: agir/events/components/agendaPage/Agenda.js:176
+#: agir/front/components/app/Layout/DesktopLayout.js:93
+#, fuzzy
+#| msgid "Carte des événements"
+msgid "Mes événements prévus"
+msgstr "Mapa de Acciones"
+
+#: agir/events/components/agendaPage/EventSuggestions.js:137
+#, fuzzy
+#| msgid "Carte des événements"
+msgid "Pas d'événement"
+msgstr "Mapa de Acciones"
+
+#: agir/events/components/agendaPage/EventSuggestions.js:138
+#: agir/events/components/agendaPage/EventSuggestions.js:231
+msgid "Commencez par en créer un"
+msgstr ""
+
+#: agir/events/components/agendaPage/EventSuggestions.js:156
+msgid "Zut ! Il n'y a pas d'événement prévu à proximité ?"
+msgstr ""
+
+#: agir/events/components/agendaPage/EventSuggestions.js:158
+msgid "Vérifiez votre adresse et code postal"
+msgstr ""
+
+#: agir/events/components/agendaPage/EventSuggestions.js:176
+#, fuzzy
+#| msgid "Carte des événements"
+msgid "Grands événements"
+msgstr "Mapa de Acciones"
+
+#: agir/events/components/agendaPage/EventSuggestions.js:230
+msgid "Pas d'événement dans vos groupes"
+msgstr ""
+
+#: agir/events/components/common/OrganizerGroupField.js:25
+msgid "Choisissez un organisateur"
+msgstr ""
+
+#: agir/events/components/common/SubtypePanel.js:232
+msgid "Derniers types utilisés"
+msgstr ""
+
+#: agir/events/components/common/SubtypePanel.js:234
+msgid "Les types choisis pour les derniers événements que vous avez créé"
+msgstr ""
+
+#: agir/events/components/common/SubtypePanel.js:248
+#: agir/events/components/common/SubtypePanel.js:249
+#, fuzzy
+#| msgid "Rechercher un groupe ou une action"
+msgid "Rechercher un type d'événement"
+msgstr "Buscar un grupo o una acción"
+
+#: agir/events/components/common/SubtypePanel.js:275
+msgid " Aucun type d'événément n'a été trouvé"
+msgstr ""
+
+#: agir/events/components/common/eventForm.config.js:45
+msgid "Donnez un titre à votre événement"
+msgstr ""
+
+#: agir/events/components/common/eventForm.config.js:51
+msgid "Donnez un titre à votre événement d’au moins %{count} caractères"
+msgstr ""
+
+#: agir/events/components/common/eventForm.config.js:53
+msgid ""
+"Le titre de votre événement ne peut pas dépasser les %{count} caractères"
+msgstr ""
+
+#: agir/events/components/common/eventForm.config.js:59
+msgid "Indiquez l'organisateur de votre événement"
+msgstr ""
+
+#: agir/events/components/common/eventForm.config.js:65
+msgid "Indiquez une date et heure de début"
+msgstr ""
+
+#: agir/events/components/common/eventForm.config.js:68
+#: agir/events/components/common/eventForm.config.js:77
+msgid "Indiquez une date et heure valides"
+msgstr ""
+
+#: agir/events/components/common/eventForm.config.js:74
+msgid "Indiquez une date et heure de fin"
+msgstr ""
+
+#: agir/events/components/common/eventForm.config.js:83
+msgid "Indiquez un fuseau horaire"
+msgstr ""
+
+#: agir/events/components/common/eventForm.config.js:89
+msgid "Choisissez un type parmi les options proposées"
+msgstr ""
+
+#: agir/events/components/common/eventForm.config.js:97
+msgid "Indiquez une URL valide"
+msgstr ""
+
+#: agir/events/components/common/eventForm.config.js:103
+msgid "Donnez un nom au lieu où se déroule l’événement"
+msgstr ""
+
+#: agir/events/components/common/eventForm.config.js:109
+msgid "Indiquez l’adresse du lieu où se déroule l’évément"
+msgstr ""
+
+#: agir/events/components/common/eventForm.config.js:115
+msgid "Indiquez la commune où se déroule l’événement"
+msgstr ""
+
+#: agir/events/components/common/eventForm.config.js:121
+msgid "Indiquez un code postal"
+msgstr ""
+
+#: agir/events/components/common/eventForm.config.js:127
+msgid "Indiquez le nom du pays où se déroule l’événement"
+msgstr ""
+
+#: agir/events/components/common/eventForm.config.js:134
+msgid "Indiquez le nom de la personne à contacter concernant cet événement"
+msgstr ""
+
+#: agir/events/components/common/eventForm.config.js:141
+msgid ""
+"Indiquez une adresse e-mail de contact pour les personnes qui souhaiteraient "
+"se renseigner"
+msgstr ""
+
+#: agir/events/components/common/eventForm.config.js:144
+msgid "Indiquez une adresse e-mail valide"
+msgstr ""
+
+#: agir/events/components/common/eventForm.config.js:150
+msgid "Indiquez un numéro de téléphone"
+msgstr ""
+
+#: agir/events/components/common/eventForm.config.js:153
+msgid "Indiquez un numéro de téléphone valide"
+msgstr ""
+
+#: agir/events/components/common/hooks.js:23
+msgid "À titre individuel"
+msgstr ""
+
+#: agir/events/components/common/utils.js:33
+#: agir/front/components/SearchPage/config.js:56
+msgid "Action publique"
+msgstr ""
+
+#: agir/events/components/common/utils.js:35
+msgid ""
+"Une action qui se déroulera dans un lieu public et qui aura comme objectif "
+"principal  d'aller à la rencontre ou d'atteindre des personnes extérieures à "
+"la France insoumise"
+msgstr ""
+
+#: agir/events/components/common/utils.js:38
+#: agir/front/components/SearchPage/config.js:55
+msgid "Événement public"
+msgstr ""
+
+#: agir/events/components/common/utils.js:40
+msgid ""
+"Un événement ouvert à tous les publics, au-delà des membres du groupe, mais "
+"qui aura lieu dans un lieu privé. Par exemple, un événement public avec un "
+"orateur, une projection ou un concert"
+msgstr ""
+
+#: agir/events/components/common/utils.js:43
+#: agir/front/components/SearchPage/config.js:54
+msgid "Réunion privée de groupe"
+msgstr ""
+
+#: agir/events/components/common/utils.js:45
+msgid ""
+"Une réunion qui concerne principalement les membres du groupes, et non le "
+"public de façon générale. Par exemple, la réunion hebdomadaire du groupe, "
+"une réunion de travail, ou l'audition d'une association"
+msgstr ""
+
+#: agir/events/components/common/utils.js:50
+msgid ""
+"Tout autre type d'événement qui ne rentre pas dans les autres catégories"
+msgstr ""
+
+#: agir/events/components/common/utils.js:55
+msgid ""
+"Seuls les membres des groupes organisateurs pourront participer à "
+"l'événement."
+msgstr ""
+
+#: agir/events/components/common/utils.js:58
+msgid "Ce type d'événement est reservé aux groupes du type « :type »."
+msgstr ""
+
+#: agir/events/components/common/utils.js:61
+msgid "Ce type d'événement est reservé aux groupes suivants : "
+msgstr ""
+
+#: agir/events/components/createEventPage/CreateEvent.js:108
+#, fuzzy
+#| msgid "Carte des événements"
+msgid " Besoin d'idées d'événements&nbsp;?"
+msgstr "Mapa de Acciones"
+
+#: agir/events/components/createEventPage/CreateEvent.js:112
+msgid "Consulter le centre d'aide"
+msgstr ""
+
+#: agir/events/components/createEventPage/EventForm/ContactField.js:94
+msgid "Adresse e-mail de contact"
+msgstr ""
+
+#: agir/events/components/createEventPage/EventForm/DateField.js:167
+msgid "de début"
+msgstr ""
+
+#: agir/events/components/createEventPage/EventForm/DateField.js:177
+msgid "Durée"
+msgstr ""
+
+#: agir/events/components/createEventPage/EventForm/DateField.js:186
+msgid "Fuseau horaire"
+msgstr ""
+
+#: agir/events/components/createEventPage/EventForm/DateField.js:203
+msgid "Date et heure de fin"
+msgstr ""
+
+#: agir/events/components/createEventPage/EventForm/DescriptionField.js:35
+#, fuzzy
+#| msgid "Carte des événements"
+msgid "Description de l'événement"
+msgstr "Mapa de Acciones"
+
+#: agir/events/components/createEventPage/EventForm/DescriptionField.js:43
+msgid "Facultative."
+msgstr ""
+
+#: agir/events/components/createEventPage/EventForm/EventImageField.js:39
+msgid "Image de couverture"
+msgstr ""
+
+#: agir/events/components/createEventPage/EventForm/EventImageField.js:47
+msgid "Facultative. "
+msgstr ""
+
+#: agir/events/components/createEventPage/EventForm/EventImageField.js:66
+msgid ""
+" En important une image, je certifie être propriétaire des droits et accepte "
+"de la partager sous licence libre"
+msgstr ""
+
+#: agir/events/components/createEventPage/EventForm/NameField.js:30
+#, fuzzy
+#| msgid "Carte des événements"
+msgid "Nom de l'événement"
+msgstr "Mapa de Acciones"
+
+#: agir/events/components/createEventPage/EventForm/OnlineUrlField.js:77
+msgid ""
+"Utiliser le service de visio-conférence automatique de La France insoumise"
+msgstr ""
+
+#: agir/events/components/createEventPage/EventForm/index.js:201
+msgid "Vous devez acceptez la licence pour envoyer votre image en conformité"
+msgstr ""
+
+#: agir/events/components/createEventPage/EventForm/index.js:346
+msgid "Même s'il se déroule en ligne"
+msgstr ""
+
+#: agir/events/components/createEventPage/EventForm/index.js:375
+msgid "Si l'événement se déroule en ligne, vous pouvez le préciser ici"
+msgstr ""
+
+#: agir/events/components/createEventPage/EventForm/index.js:385
+msgid ""
+"Affiché publiquement. N’indiquez pas votre nom complet si vous ne souhaitez "
+"pas apparaître dans les résultats des moteurs de recherche."
+msgstr ""
+
+#: agir/events/components/createEventPage/EventForm/index.js:412
+msgid ""
+"Vous pourrez modifier ces informations après la création de l’événement."
+msgstr ""
+
+#: agir/events/components/eventPage/AddGroupAttendee.js:142
+#: agir/events/components/eventPage/AddGroupAttendee.js:164
+#, fuzzy
+#| msgid "Carte des groupes"
+msgid "Participer avec mon groupe"
+msgstr "Mapa de Grupos"
+
+#: agir/events/components/eventPage/AddGroupAttendee.js:167
+msgid "L’événement sera ajouté à l’agenda du groupe."
+msgstr ""
+
+#: agir/events/components/eventPage/AddGroupAttendee.js:183
+#: agir/front/components/SearchPage/SearchPageTab.js:53
+msgid "Une erreur est apparue"
+msgstr ""
+
+#: agir/events/components/eventPage/AddGroupAttendee.js:190
+msgid "Votre groupe participe à l’évémenent&nbsp;!"
+msgstr ""
+
+#: agir/events/components/eventPage/AddGroupAttendee.js:192
+msgid "est désormais indiqué comme participant à l’événement."
+msgstr ""
+
+#: agir/events/components/eventPage/EventDescriptionCard.js:82
+msgid "Ajoutez une description !"
+msgstr ""
+
+#: agir/events/components/eventPage/EventDescriptionCard.js:100
+msgid "Changer l'"
+msgstr ""
+
+#: agir/events/components/eventPage/EventDescriptionCard.js:100
+msgid "Ajouter une "
+msgstr ""
+
+#: agir/events/components/eventPage/EventDescriptionCard.js:100
+#, fuzzy
+#| msgid "manifestation"
+msgid "image d'illustration"
+msgstr "manifestación"
+
+#: agir/events/components/eventPage/EventHeader.js:234
+#, fuzzy
+#| msgid "Carte des événements"
+msgid "Participer à l'événement"
+msgstr "Mapa de Acciones"
+
+#: agir/events/components/eventPage/EventHeader.js:266
+msgid "Ajouter une personne"
+msgstr ""
+
+#: agir/events/components/eventPage/EventHeader.js:345
+#, fuzzy
+#| msgid "S'inscrire"
+msgid "je m'inscris"
+msgstr "Regístrate"
+
+#: agir/events/components/eventPage/EventInfoCard.js:56
+#: agir/groups/components/groupComponents/GroupsCard.js:127
+#, fuzzy
+#| msgid "Organisez"
+msgid "Organisé par"
+msgstr "Organízate"
+
+#: agir/events/components/eventPage/EventPhotosCard.js:71
+msgid "Photo de l'événement postée par l'utilisateur"
+msgstr ""
+
+#: agir/events/components/eventPage/EventPhotosCard.js:96
+msgid "Ajouter une photo"
+msgstr ""
+
+#: agir/events/components/eventPage/EventReportCard.js:49
+msgid "Modifier le"
+msgstr ""
+
+#: agir/events/components/eventPage/EventReportCard.js:49
+msgid "Ajouter un"
+msgstr ""
+
+#: agir/events/components/eventPage/EventReportCard.js:49
+msgid "compte rendu"
+msgstr ""
+
+#: agir/events/components/eventPage/JoiningDetails.js:67
+#, fuzzy
+#| msgid "Carte des événements"
+msgid "Vous participez à l'événement"
+msgstr "Mapa de Acciones"
+
+#: agir/events/components/eventPage/QuitEventButton.js:154
+msgid "L’événement sera retiré de l’agenda du groupe."
+msgstr ""
+
+#: agir/events/components/eventPage/ReportFormCard.js:47
+msgid "Vous avez répondu à ce formulaire"
+msgstr ""
+
+#: agir/events/components/eventPage/ReportFormCard.js:54
+msgid "Je complète"
+msgstr ""
+
+#: agir/events/components/eventRequiredDocuments/EventRequiredDocuments.js:180
+msgid "Documents de l'événement public"
+msgstr ""
+
+#: agir/events/components/eventRequiredDocuments/EventRequiredDocuments.js:227
+msgid ""
+"Si votre événement n’a pas eu recours a un élément demandé, vous pouvez "
+"cliquer sur le bouton “non applicable”."
+msgstr ""
+
+#: agir/events/components/eventRequiredDocuments/EventRequiredDocuments.js:247
+msgid "Ajouter d’autres documents"
+msgstr ""
+
+#: agir/events/components/eventRequiredDocuments/EventRequiredDocuments.js:248
+msgid "Ajoutez-en autant que nécessaire"
+msgstr ""
+
+#: agir/events/components/eventRequiredDocuments/EventRequiredDocuments.js:278
+msgid "Accèder au centre d'aide"
+msgstr ""
+
+#: agir/events/components/eventRequiredDocuments/ProjectStatusCard.js:48
+msgid "Votre événement privé ne nécessite pas de documents"
+msgstr ""
+
+#: agir/events/components/eventRequiredDocuments/ProjectStatusCard.js:63
+msgid ""
+"Vous pouvez ajouter autant de documents que nécessaire jusqu'à la relecture "
+"par le secrétariat général."
+msgstr ""
+
+#: agir/events/components/eventRequiredDocuments/ProjectStatusCard.js:72
+msgid "Vos documents sont en relecture par le secrétariat général"
+msgstr ""
+
+#: agir/events/components/eventRequiredDocuments/ProjectStatusCard.js:85
+msgid ""
+"Le secrétariat général a relu et validé les documents de votre événement"
+msgstr ""
+
+#: agir/events/components/eventRequiredDocuments/ProjectStatusCard.js:94
+msgid "Événement public refusé"
+msgstr ""
+
+#: agir/events/components/eventRequiredDocuments/RequiredDocumentCard.js:121
+msgid "Non applicable"
+msgstr ""
+
+#: agir/events/components/eventRequiredDocuments/RequiredDocumentModal.js:151
+msgid "Nouveau document"
+msgstr ""
+
+#: agir/events/components/eventRequiredDocuments/RequiredDocumentModal.js:166
+#: agir/front/components/genericComponents/FileCard.js:68
+msgid "Télécharger le document"
+msgstr ""
+
+#: agir/events/components/eventRequiredDocuments/RequiredDocumentModal.js:173
+msgid "Nom du document"
+msgstr ""
+
+#: agir/events/components/eventRequiredDocuments/RequiredDocumentModal.js:174
+msgid "Ex : prêt de retro-projecteur"
+msgstr ""
+
+#: agir/events/components/eventRequiredDocuments/RequiredDocumentModal.js:188
+msgid "Détails du document"
+msgstr ""
+
+#: agir/events/components/eventRequiredDocuments/RequiredDocumentModal.js:204
+msgid "Envoyer le document"
+msgstr ""
+
+#: agir/events/components/eventRequiredDocuments/SentDocumentsCard.js:65
+msgid "Documents envoyés"
+msgstr ""
+
+#: agir/events/components/eventRequiredDocuments/config/config.default.js:9
+msgid "Télécharger l'attesation"
+msgstr ""
+
+#: agir/events/components/eventRequiredDocuments/config/config.default.js:11
+msgid ""
+"Attestation d'assurance de la France insoumise, que vous pourrez utiliser, "
+"si besoin, en cas de réservation d'une salle pour votre événement public"
+msgstr ""
+
+#: agir/events/components/eventRequiredDocuments/config/config.legislatives2022.js:24
+#: agir/events/components/eventRequiredDocuments/config/config.presidentielle2022.js:24
+msgid ""
+"Nécessaire lorsque vous empruntez n’importe quel matériel, comme une sono, "
+"un barnum, une estrade, un rétro-projecteur, etc."
+msgstr ""
+
+#: agir/events/components/eventRequiredDocuments/config/config.legislatives2022.js:32
+#: agir/events/components/eventRequiredDocuments/config/config.presidentielle2022.js:32
+msgid ""
+"Certifie que les consommations ont été réglées directement à l'établissement "
+"par les participants, et non par l'organisateur⋅rice de l'événement."
+msgstr ""
+
+#: agir/events/components/eventRequiredDocuments/config/config.legislatives2022.js:41
+#: agir/events/components/eventRequiredDocuments/config/config.presidentielle2022.js:41
+msgid ""
+"Cette attestation est nécessaire pour certifier que la mise à disposition de "
+"la salle municipale est gratuite et s'adresse à toutes les autres forces "
+"politiques et leurs candidats. Elle doit vous être délivrée par la mairie."
+msgstr ""
+
+#: agir/events/components/eventRequiredDocuments/config/config.legislatives2022.js:43
+msgid "pour réserver une salle, il vous sera demandé de l’assurer."
+msgstr ""
+
+#: agir/events/components/eventRequiredDocuments/config/config.presidentielle2022.js:43
+msgid ""
+"pour réserver une salle, il vous sera demandé de l’assurer ! Durant la "
+"campagne présidentielle, vous pourrez utiliser notre"
+msgstr ""
+
+#: agir/events/components/eventRequiredDocuments/config/config.presidentielle2022.js:49
+msgid "attestation d’assurance convergence responsabilité civile."
+msgstr ""
+
+#: agir/events/components/eventRequiredDocuments/config/config.presidentielle2022.js:60
+msgid ""
+"Ce document est nécessaire lorsque vous organisez une manifestation, une "
+"réunion publique extérieure, ou encore un pique-nique, un apéro citoyen ou "
+"une table militante."
+msgstr ""
+
+#: agir/front/components/ActionToolsPage/ActionTools.js:93
+#, fuzzy
+#| msgid "Rechercher une action"
+msgid "Organiser une action"
+msgstr "Buscar una acción"
+
+#: agir/front/components/ActionToolsPage/ActionTools.js:106
+#: agir/front/components/genericComponents/Onboarding.js:24
+#, fuzzy
+#| msgid "Carte des événements"
+msgid "Créer un événement"
+msgstr "Mapa de Acciones"
+
+#: agir/front/components/ActionToolsPage/ActionTools.js:127
+msgid ""
+" Commandez et recevez chez vous des tracts, des affiches et des objets des "
+"campagnes du mouvement."
+msgstr ""
+
+#: agir/front/components/ActionToolsPage/ActionTools.js:143
+msgid "Organiser un café populaire"
+msgstr ""
+
+#: agir/front/components/ActionToolsPage/ActionTools.js:169
+#: agir/groups/components/groupPage/GroupSettings/GroupContactsPage/MainPanel.js:89
+#: agir/people/components/contacts/CreateContactPage/ContactForm.js:199
+msgid "Ajouter un contact"
+msgstr ""
+
+#: agir/front/components/ActionToolsPage/DesktopActionToolsPage.js:57
+msgid "Méthodes d'action"
+msgstr ""
+
+#: agir/front/components/ActionToolsPage/DesktopActionToolsPage.js:64
+#: agir/front/components/ActionToolsPage/MobileActionToolsPage.js:47
+#, fuzzy
+#| msgid "Besoin d'aide ?"
+msgid "Centre d'aide"
+msgstr "Ayuda"
+
+#: agir/front/components/ActionToolsPage/DonateCard.js:64
+msgid "Je fais un don pour la campagne"
+msgstr ""
+
+#: agir/front/components/ActionToolsPage/JoinAGroupCard.js:53
+#: agir/front/components/SearchPage/searchComponents.js:128
+#, fuzzy
+#| msgid "Voir les groupes"
+msgid "Voir la carte"
+msgstr "Ver los grupos"
+
+#: agir/front/components/SearchPage/config.js:7
+msgid "Tout"
+msgstr ""
+
+#: agir/front/components/SearchPage/config.js:8
+#, fuzzy
+#| msgid "Rechercher une action"
+msgid "Rechercher sur Action Populaire"
+msgstr "Buscar una acción"
+
+#: agir/front/components/SearchPage/config.js:16
+#: agir/front/components/app/Navigation/navigation.config.js:25
+msgid "Groupes"
+msgstr ""
+
+#: agir/front/components/SearchPage/config.js:17
+#: agir/front/components/app/routes.config.js:375
+#, fuzzy
+#| msgid "Rechercher un groupe ou une action"
+msgid "Rechercher un groupe"
+msgstr "Buscar un grupo o una acción"
+
+#: agir/front/components/SearchPage/config.js:25
+#: agir/front/components/app/Navigation/navigation.config.js:8
+#, fuzzy
+#| msgid "Carte des événements"
+msgid "Événements"
+msgstr "Mapa de Acciones"
+
+#: agir/front/components/SearchPage/config.js:26
+#: agir/front/components/app/routes.config.js:384
+#, fuzzy
+#| msgid "Rechercher une action"
+msgid "Rechercher un événement"
+msgstr "Buscar una acción"
+
+#: agir/front/components/SearchPage/config.js:48
+#, fuzzy
+#| msgid "Carte des événements"
+msgid "Tous les événements"
+msgstr "Mapa de Acciones"
+
+#: agir/front/components/SearchPage/config.js:49
+msgid "Passés"
+msgstr ""
+
+#: agir/front/components/SearchPage/config.js:50
+msgid "A venir"
+msgstr ""
+
+#: agir/front/components/SearchPage/config.js:53
+#, fuzzy
+#| msgid "Voir les groupes"
+msgid "Tous les types"
+msgstr "Ver los grupos"
+
+#: agir/front/components/SearchPage/config.js:65
+#, fuzzy
+#| msgid "Voir les groupes"
+msgid "Tous les groupes"
+msgstr "Ver los grupos"
+
+#: agir/front/components/SearchPage/config.js:66
+msgid "Certifiés"
+msgstr ""
+
+#: agir/front/components/SearchPage/config.js:67
+msgid "Non certifiés"
+msgstr ""
+
+#: agir/front/components/SearchPage/config.js:68
+msgid "Groupe local"
+msgstr ""
+
+#: agir/front/components/SearchPage/config.js:69
+msgid "Groupe thématique"
+msgstr ""
+
+#: agir/front/components/SearchPage/config.js:70
+msgid "Groupe fonctionnel"
+msgstr ""
+
+#: agir/front/components/SearchPage/resultsComponents.js:81
+#: agir/groups/components/groupPage/GroupPage/Routes/AgendaRoute.js:22
+msgid "Événements à venir"
+msgstr ""
+
+#: agir/front/components/SearchPage/resultsComponents.js:87
+msgid "Événements passés"
+msgstr ""
+
+#: agir/front/components/SearchPage/resultsComponents.js:125
+msgid "Aucun"
+msgstr ""
+
+#: agir/front/components/SearchPage/resultsComponents.js:125
+msgid "n'est lié à cette recherche"
+msgstr ""
+
+#: agir/front/components/SearchPage/searchComponents.js:117
+#: agir/front/components/app/routes.config.js:366
+#, fuzzy
+#| msgid "Rechercher une action"
+msgid "Rechercher"
+msgstr "Buscar una acción"
+
+#: agir/front/components/SearchPage/searchComponents.js:172
+#: agir/front/components/SearchPage/searchComponents.js:207
+msgid "Trier par"
+msgstr ""
+
+#: agir/front/components/SearchPage/searchComponents.js:173
+#: agir/front/components/SearchPage/searchComponents.js:208
+#: agir/groups/components/groupPage/GroupSettings/GroupMemberList/GroupMemberList.js:127
+msgid "Trier par..."
+msgstr ""
+
+#: agir/front/components/SearchPage/searchComponents.js:188
+msgid "Type"
+msgstr ""
+
+#: agir/front/components/SearchPage/searchComponents.js:189
+msgid "Types"
+msgstr ""
+
+#: agir/front/components/SearchPage/searchComponents.js:230
+msgid "Uniquement les groupes les plus actifs"
+msgstr ""
+
+#: agir/front/components/SearchPage/searchComponents.js:231
+msgid "groupInactive"
+msgstr ""
+
+#: agir/front/components/SearchPage/searchComponents.js:255
+msgid "Filtrer"
+msgstr ""
+
+#: agir/front/components/SearchPage/searchComponents.js:255
+msgid "Supprimer les filtres"
+msgstr ""
+
+#: agir/front/components/allPages/FeedbackButton.js:81
+msgid "Aidez-nous !"
+msgstr ""
+
+#: agir/front/components/allPages/FeedbackButton.js:87
+msgid "Donnez votre avis sur le site Action Populaire →"
+msgstr ""
+
+#: agir/front/components/allPages/FeedbackButton.js:92
+msgid "Je donne mon avis"
+msgstr ""
+
+#: agir/front/components/allPages/PushModal/UpdateAddressModal.js:73
+msgid ""
+"Entrez votre adresse pour que nous puissions vous suggérer les événements à "
+"proximité de chez vous."
+msgstr ""
+
+#: agir/front/components/allPages/PushModal/UpdateAddressModal.js:89
+msgid "Complément d'adresse"
+msgstr ""
+
+#: agir/front/components/allPages/PushModal/UpdateAddressModal.js:204
+msgid "Entrez une adresse. Seul le code postal est obligatoire pour continuer."
+msgstr ""
+
+#: agir/front/components/app/FacebookLoginAd.js:50
+msgid ""
+"Connectez votre compte à Facebook maintenant pour ne pas avoir à taper de "
+"code la prochaine fois."
+msgstr ""
+
+#: agir/front/components/app/FacebookLoginAd.js:65
+msgid " Connecter le compte"
+msgstr ""
+
+#: agir/front/components/app/Footer/Footer.js:124
+#: agir/front/components/app/Navigation/navigation.config.js:66
+#: agir/front/components/app/routes.config.js:95
+#: agir/front/components/app/routes.config.js:105
+msgid "Carte des événements"
+msgstr "Mapa de Acciones"
+
+#: agir/front/components/app/Footer/Footer.js:127
+#, fuzzy
+#| msgid "Commander du matériel"
+msgid " Commander du matériel"
+msgstr "Pedir material"
+
+#: agir/front/components/app/Footer/Footer.js:136
+msgid "Se déconnecter"
+msgstr "Cerrar sesión"
+
+#: agir/front/components/app/Footer/Footer.js:140
+#: agir/front/components/app/Navigation/navigation.config.js:76
+#, fuzzy
+#| msgid "Besoin d'aide ?"
+msgid "Besoin d'aide ?"
+msgstr "Ayuda"
+
+#: agir/front/components/app/Footer/Footer.js:150
 msgid "Le programme de la"
 msgstr "El programa de la"
 
-#: agir/front/components/app/Footer/Footer.js:167
-msgid "Les autres sites"
-msgstr ""
+#: agir/front/components/app/Footer/Footer.js:156
+#, fuzzy
+#| msgid "Le programme de la"
+msgid "Le programme l'Avenir en commun"
+msgstr "El programa de la"
 
-#: agir/front/components/app/Footer/Footer.js:170
+#: agir/front/components/app/Footer/Footer.js:165
 msgid "La"
 msgstr "La"
 
-#: agir/front/components/app/Footer/Footer.js:177
-msgid "Le blog de"
-msgstr "El blog de"
+#: agir/front/components/app/Footer/Footer.js:167
+msgid "Nouvelle Union Populaire Écologique et sociale"
+msgstr ""
+
+#: agir/front/components/app/Footer/Footer.js:172
+#: agir/front/components/genericComponents/LogoFI.js:19
+#, fuzzy
+#| msgid "logo de la France insoumise"
+msgid "La France insoumise"
+msgstr "logo de Red Mexa"
+
+#: agir/front/components/app/Footer/Footer.js:174
+msgid "Le blog de Jean-Luc Mélenchon"
+msgstr ""
 
 #: agir/front/components/app/Footer/FooterBanner.js:149
 msgid "Agissez dans votre ville !"
@@ -89,7 +2721,14 @@ msgstr "¡Actívate en tu ciudad!"
 msgid "est le réseau social d’action de"
 msgstr "es la red de acción de"
 
+#: agir/front/components/app/Footer/FooterBanner.js:154
+#, fuzzy
+#| msgid "logo de la France insoumise"
+msgid "la France insoumise."
+msgstr "logo de Red Mexa"
+
 #: agir/front/components/app/Footer/FooterBanner.js:159
+#: agir/front/components/authentication/Connexion/Signup.js:240
 msgid "Créer mon compte"
 msgstr "Crear mi cuenta"
 
@@ -99,20 +2738,14 @@ msgstr "¿Ya tienes cuenta?"
 
 #: agir/front/components/app/Footer/FooterBanner.js:164
 #: agir/front/components/app/Homepage/DesktopHome.js:97
-#: agir/front/components/app/IntroApp.js:359
 #: agir/front/components/authentication/Connexion/Login.js:105
+#: agir/front/components/authentication/Connexion/Signup.js:154
 msgid "Je me connecte"
 msgstr "Conectarme"
 
 #: agir/front/components/app/Homepage/DesktopHome.js:85
-#: agir/front/components/app/Homepage/MobileHome.js:49
 msgid "Passez à l'action !"
 msgstr "¡Actívate ya!"
-
-#: agir/front/components/app/Homepage/DesktopHome.js:88
-#: agir/front/components/app/Homepage/MobileHome.js:52
-msgid "Action Populaire est le réseau social d'action de la France insoumise."
-msgstr "Red Mexa es la red de acción de las y los mexican@s en el mundo"
 
 #: agir/front/components/app/Homepage/DesktopHome.js:93
 #: agir/front/components/app/IntroApp.js:351
@@ -123,11 +2756,6 @@ msgstr "Crear mi cuenta"
 msgid "manifestation"
 msgstr "manifestación"
 
-#: agir/front/components/app/Homepage/HomeActions.js:74
-#: agir/front/components/app/IntroApp.js:197
-msgid "Rencontrez"
-msgstr "Conoce"
-
 #: agir/front/components/app/Homepage/HomeActions.js:76
 msgid "d'autres membres"
 msgstr "a otras personas"
@@ -136,22 +2764,10 @@ msgstr "a otras personas"
 msgid "et agissez ensemble !"
 msgstr "a otras personas y actúen juntas"
 
-#: agir/front/components/app/Homepage/HomeActions.js:80
-msgid "Voir les groupes"
-msgstr "Ver los grupos"
-
-#: agir/front/components/app/Homepage/HomeActions.js:87
-msgid "distribution de tracts"
-msgstr "distribuir flyers"
-
 #: agir/front/components/app/Homepage/HomeActions.js:89
 #: agir/front/components/app/IntroApp.js:202
 msgid "Agissez concrètement"
 msgstr "Actúa con firmeza"
-
-#: agir/front/components/app/Homepage/HomeActions.js:90
-msgid "formez-vous et convainquez des gens près de chez vous !"
-msgstr "Convence a quienes viven cerca de ti"
 
 #: agir/front/components/app/Homepage/HomeActions.js:91
 msgid "Lire les fiches pratiques"
@@ -161,45 +2777,17 @@ msgstr "Leer las guías de acción"
 msgid "le premier cahier du programme l'Avenir en Commun"
 msgstr ""
 
-#: agir/front/components/app/Homepage/HomeActions.js:100
-msgid "Organisez"
-msgstr "Organízate"
-
 #: agir/front/components/app/Homepage/HomeActions.js:103
 msgid "Créez un groupe d'action, commandez du matériel, tracts et affiches !"
 msgstr "Crea un grupo de acción, pide material, participa"
-
-#: agir/front/components/app/Homepage/HomeActions.js:106
-msgid "Passer à l'action"
-msgstr "Pasa a la acción"
 
 #: agir/front/components/app/Homepage/HomeExternalLinks.js:85
 msgid "Retrouver"
 msgstr "Encuentra"
 
-#: agir/front/components/app/Homepage/HomeExternalLinks.js:85
-msgid "l'actualité"
-msgstr "las novedades"
-
-#: agir/front/components/app/Homepage/HomeExternalLinks.js:86
-msgid "et les campagnes du mouvement"
-msgstr "y las estrategias del movimiento"
-
-#: agir/front/components/app/Homepage/HomeExternalLinks.js:90
-msgid ""
-"Action Populaire est le réseau social d’action de la France Insoumise. Pour "
-"retrouver l’actualité, rendez-vous sur nos sites :"
-msgstr ""
-"Red Mexa reúne a las y los mexican@s en el mundo que quieren un Méxicounido "
-"y progresista. ¡Participa!"
-
 #: agir/front/components/app/Homepage/HomeExternalLinks.js:97
 msgid "logo de la France insoumise"
 msgstr "logo de Red Mexa"
-
-#: agir/front/components/app/Homepage/HomeExternalLinks.js:106
-msgid "logo de la Nouvelle Union Populaire Écologique et Sociale"
-msgstr ""
 
 #: agir/front/components/app/Homepage/HomeExternalLinks.js:115
 msgid "logo de l'insoumission"
@@ -210,9 +2798,20 @@ msgid "Passez à l'action !"
 msgstr "Actívate ya"
 
 #: agir/front/components/app/Homepage/HomeFooter.js:55
-#: agir/front/components/app/Homepage/MobileHome.js:56
 msgid "S'inscrire"
 msgstr "Regístrate"
+
+#: agir/front/components/app/Homepage/HomeFooter.js:59
+msgid "Se connecter"
+msgstr "Conectarme"
+
+#: agir/front/components/app/Homepage/MobileHome.js:52
+msgid "Action Populaire est le réseau social d'action de la France insoumise."
+msgstr "Red Mexa es la red de acción de las y los mexican@s en el mundo"
+
+#: agir/front/components/app/IntroApp.js:197
+msgid "Rencontrez"
+msgstr "Conoce"
 
 #: agir/front/components/app/IntroApp.js:198
 msgid "d'autres membres et agissez ensemble !"
@@ -235,22 +2834,2486 @@ msgstr "un grupo cerca de ti"
 msgid "Rechercher une action"
 msgstr "Buscar una acción"
 
-#: agir/front/components/app/IntroApp.js:381
-msgid "Continuer"
-msgstr "Continuar"
-
 #: agir/front/components/app/Navigation/TopBar/DesktopNavBar/RightLinks.js:124
 msgid "Aide"
 msgstr "Ayuda"
 
 #: agir/front/components/app/Navigation/TopBar/DesktopNavBar/RightLinks.js:126
+#: agir/front/components/app/routes.config.js:270
+#: agir/front/components/app/routes.config.js:294
 msgid "Connexion"
 msgstr "Conexión"
 
 #: agir/front/components/app/Navigation/TopBar/DesktopNavBar/RightLinks.js:128
+#: agir/front/components/app/routes.config.js:282
+#: agir/front/components/app/routes.config.js:306
 msgid "Inscription"
 msgstr "Registrarse"
+
+#: agir/front/components/app/Navigation/TopBar/DesktopNavBar/RightLinks.js:149
+#: agir/front/components/app/Navigation/navigation.config.js:16
+msgid "Agir"
+msgstr ""
+
+#: agir/front/components/app/Navigation/TopBar/DesktopNavBar/RightLinks.js:163
+#: agir/front/components/app/Navigation/navigation.config.js:43
+#: agir/front/components/app/routes.config.js:228
+msgid "Notifications"
+msgstr ""
 
 #: agir/front/components/app/Navigation/TopBar/DesktopNavBar/SearchBar.js:115
 msgid "Rechercher un groupe ou une action"
 msgstr "Buscar un grupo o una acción"
+
+#: agir/front/components/app/Navigation/navigation.config.js:34
+#: agir/front/components/app/routes.config.js:339
+#: agir/groups/components/groupPage/GroupPage/routes.config.js:27
+msgid "Messages"
+msgstr ""
+
+#: agir/front/components/app/Navigation/navigation.config.js:52
+#: agir/groups/components/groupPage/GroupAdminBar.js:60
+msgid "Paramètres"
+msgstr ""
+
+#: agir/front/components/app/Navigation/navigation.config.js:61
+#, fuzzy
+#| msgid "logo de la France insoumise"
+msgid "Actualité de la France insoumise"
+msgstr "logo de Red Mexa"
+
+#: agir/front/components/app/Navigation/navigation.config.js:71
+#: agir/front/components/app/routes.config.js:158
+msgid "Carte des groupes"
+msgstr "Mapa de Grupos"
+
+#: agir/front/components/app/Navigation/navigation.config.js:86
+#: agir/front/components/app/routes.config.js:330
+#, fuzzy
+#| msgid "Connexion"
+msgid "Déconnexion"
+msgstr "Conexión"
+
+#: agir/front/components/app/routes.config.js:65
+msgid "Paramètres de notification"
+msgstr ""
+
+#: agir/front/components/app/routes.config.js:76
+#, fuzzy
+#| msgid "Carte des événements"
+msgid "Liste des événements"
+msgstr "Mapa de Acciones"
+
+#: agir/front/components/app/routes.config.js:118
+#, fuzzy
+#| msgid "Carte des événements"
+msgid "Nouvel événement"
+msgstr "Mapa de Acciones"
+
+#: agir/front/components/app/routes.config.js:128
+#, fuzzy
+#| msgid "Carte des événements"
+msgid "Page de l'événement"
+msgstr "Mapa de Acciones"
+
+#: agir/front/components/app/routes.config.js:145
+#, fuzzy
+#| msgid "Carte des groupes"
+msgid "Liste des groupes"
+msgstr "Mapa de Grupos"
+
+#: agir/front/components/app/routes.config.js:180
+msgid "Groupe complet"
+msgstr ""
+
+#: agir/front/components/app/routes.config.js:198
+#: agir/groups/components/groupPage/GroupMessagePage/index.js:129
+#, fuzzy
+#| msgid "Carte des groupes"
+msgid "Message du groupe"
+msgstr "Mapa de Grupos"
+
+#: agir/front/components/app/routes.config.js:216
+#, fuzzy
+#| msgid "Carte des groupes"
+msgid "Page du groupe"
+msgstr "Mapa de Grupos"
+
+#: agir/front/components/app/routes.config.js:257
+msgid "Menu"
+msgstr ""
+
+#: agir/front/components/app/routes.config.js:318
+msgid "J'en dis plus"
+msgstr ""
+
+#: agir/front/components/app/routes.config.js:354
+#: agir/people/components/contacts/CreateContactPage/ContactForm.js:208
+msgid "Nouveau contact"
+msgstr ""
+
+#: agir/front/components/app/routes.config.js:402
+msgid "Icônes Font Awesome"
+msgstr ""
+
+#: agir/front/components/app/utils.js:27
+msgid "Lazy loading failed."
+msgstr ""
+
+#: agir/front/components/authentication/Connexion/AuthenticatedLogin.js:55
+#, fuzzy
+#| msgid "Vous avez déjà un compte ?"
+msgid "Vous êtes déjà connecté"
+msgstr "¿Ya tienes cuenta?"
+
+#: agir/front/components/authentication/Connexion/AuthenticatedLogin.js:58
+msgid "Vous êtes déjà connecté·e à votre"
+msgstr ""
+
+#: agir/front/components/authentication/Connexion/AuthenticatedLogin.js:60
+msgid "compte"
+msgstr ""
+
+#: agir/front/components/authentication/Connexion/Code/CodeLogin.js:172
+msgid "Entrez le code de connexion que nous avons envoyé"
+msgstr ""
+
+#: agir/front/components/authentication/Connexion/Code/CodeLogin.js:202
+msgid " Valider"
+msgstr ""
+
+#: agir/front/components/authentication/Connexion/Code/CodeSignup.js:43
+msgid "rejoindre l’action !"
+msgstr ""
+
+#: agir/front/components/authentication/Connexion/Code/CodeSignup.js:48
+msgid "pour valider votre inscription."
+msgstr ""
+
+#: agir/front/components/authentication/Connexion/LeftBlockDesktop.js:56
+#, fuzzy
+#| msgid "est le réseau social d’action de"
+msgid "Le réseau social d’action"
+msgstr "es la red de acción de"
+
+#: agir/front/components/authentication/Connexion/LeftBlockDesktop.js:58
+#, fuzzy
+#| msgid "logo de la France insoumise"
+msgid "de la France insoumise et de la"
+msgstr "logo de Red Mexa"
+
+#: agir/front/components/authentication/Connexion/Login.js:49
+msgid "Vous devez vous connecter pour accéder à cette page"
+msgstr ""
+
+#: agir/front/components/authentication/Connexion/Login.js:112
+#: agir/front/components/authentication/Connexion/Signup.js:146
+#, fuzzy
+#| msgid "S'inscrire"
+msgid "Je m'inscris"
+msgstr "Regístrate"
+
+#: agir/front/components/authentication/Connexion/Login.js:155
+msgid "Accéder à la page pour demander son code"
+msgstr ""
+
+#: agir/front/components/authentication/Connexion/Signup.js:139
+msgid "Je m’inscris pour participer à l’événement"
+msgstr ""
+
+#: agir/front/components/authentication/Connexion/Signup.js:186
+msgid "J'habite à l'étranger"
+msgstr ""
+
+#: agir/front/components/authentication/Connexion/Signup.js:217
+msgid "politique de conservation des données"
+msgstr ""
+
+#: agir/front/components/authentication/Connexion/Signup.js:239
+msgid "Je participe !"
+msgstr ""
+
+#: agir/front/components/authentication/Connexion/TellMore/ChooseCampaign.js:121
+msgid "Souhaitez-vous rejoindre"
+msgstr ""
+
+#: agir/front/components/authentication/Connexion/TellMore/ChooseCampaign.js:126
+msgid "Je rejoins !"
+msgstr ""
+
+#: agir/front/components/authentication/Connexion/TellMore/ChooseCampaign.js:130
+#: agir/front/components/authentication/Connexion/TellMore/ChooseNewsletters.js:286
+#: agir/groups/components/groupPage/GroupUserActions/JoinGroupDialog.js:104
+msgid "Passer cette étape"
+msgstr ""
+
+#: agir/front/components/authentication/Connexion/TellMore/ChooseNewsletters.js:165
+msgid "Jean-Luc Mélenchon"
+msgstr ""
+
+#: agir/front/components/authentication/Connexion/TellMore/DeviceNotificationSubscription.js:64
+msgid ""
+"Ne ratez pas les actions près de chez vous et recevez les annonces du "
+"mouvement."
+msgstr ""
+
+#: agir/front/components/authentication/Connexion/TellMore/DeviceNotificationSubscription.js:73
+msgid "Activer"
+msgstr ""
+
+#: agir/front/components/authentication/Connexion/TellMore/DeviceNotificationSubscription.js:76
+msgid "Vous pourrez changer à tout moment"
+msgstr ""
+
+#: agir/front/components/authentication/Connexion/TellMore/TellMore.js:203
+msgid "Bienvenue"
+msgstr ""
+
+#: agir/front/components/authentication/Connexion/TellMore/TellMore.js:211
+msgid "Je complète mon profil"
+msgstr ""
+
+#: agir/front/components/authentication/Connexion/TellMore/TellMore.js:216
+msgid ""
+"Le nom que pourront voir les membres avec qui vous interagissez. Indiquez "
+"par exemple votre prénom ou un pseudonyme."
+msgstr ""
+
+#: agir/front/components/authentication/Connexion/TellMore/TellMore.js:231
+msgid "Prénom"
+msgstr ""
+
+#: agir/front/components/authentication/SoftLoginModal.js:97
+msgid "Vous avez été connecté·e automatiquement car vous avez suivi un lien"
+msgstr ""
+
+#: agir/front/components/authentication/SoftLoginModal.js:98
+msgid "qui lui a été envoyé par email."
+msgstr ""
+
+#: agir/front/components/authentication/SoftLoginModal.js:103
+#: agir/front/components/authentication/SoftLoginModal.js:136
+msgid "Je suis"
+msgstr ""
+
+#: agir/front/components/authentication/SoftLoginModal.js:107
+msgid "Ce n'est pas moi"
+msgstr ""
+
+#: agir/front/components/authentication/SoftLoginModal.js:127
+msgid "au compte de :"
+msgstr ""
+
+#: agir/front/components/authentication/SoftLoginModal.js:132
+msgid "Validez votre identité :"
+msgstr ""
+
+#: agir/front/components/authentication/common.js:19
+msgid "Les informations de Claudializate"
+msgstr ""
+
+#: agir/front/components/authentication/common.js:25
+msgid "Les informations de Red Migrante"
+msgstr ""
+
+#: agir/front/components/authentication/common.js:31
+msgid "Correspondant·es d'immeuble ou de rue"
+msgstr ""
+
+#: agir/front/components/errorPage/ErrorPage.js:79
+msgid "Notre équipe a été prévenue du problème"
+msgstr ""
+
+#: agir/front/components/errorPage/ErrorPage.js:108
+msgid "Revenir à l'accueil"
+msgstr ""
+
+#: agir/front/components/errorPage/ErrorPage.js:114
+msgid "Recharger la page"
+msgstr ""
+
+#: agir/front/components/formComponents/Comment.js:212
+#: agir/front/components/formComponents/MessageActionModal.js:86
+msgid "Supprimer"
+msgstr ""
+
+#: agir/front/components/formComponents/Comment.js:218
+msgid "Signaler"
+msgstr ""
+
+#: agir/front/components/formComponents/CommentField.js:455
+msgid "Envoyer le commentaire"
+msgstr ""
+
+#: agir/front/components/formComponents/ImageField.js:138
+msgid " Supprimer l'image"
+msgstr ""
+
+#: agir/front/components/formComponents/LocationField/Field.js:104
+msgid "Nom du lieu"
+msgstr ""
+
+#: agir/front/components/formComponents/MessageActionModal.js:68
+msgid "Supprimer ce message ?"
+msgstr ""
+
+#: agir/front/components/formComponents/MessageActionModal.js:70
+msgid "de la discussion et plus personne ne pourra le voir."
+msgstr ""
+
+#: agir/front/components/formComponents/MessageActionModal.js:97
+msgid "Ce compte enfreint les règles de Action Populaire ?"
+msgstr ""
+
+#: agir/front/components/formComponents/MessageActionModal.js:99
+msgid "Notre équipe sera notifiée de votre signalement."
+msgstr ""
+
+#: agir/front/components/formComponents/MessageActionModal.js:111
+msgid " Signaler"
+msgstr ""
+
+#: agir/front/components/formComponents/MessageActionModal.js:123
+#: agir/front/components/formComponents/MessageActionModal.js:163
+msgid "Notre équipe a reçu votre signalement"
+msgstr ""
+
+#: agir/front/components/formComponents/MessageActionModal.js:139
+msgid "Notre équipe sera notifiée"
+msgstr ""
+
+#: agir/front/components/formComponents/MessageActionModal.js:142
+msgid ""
+"Il n'est pas possible d'annuler cette opération. Tout abus sera sanctionné."
+msgstr ""
+
+#: agir/front/components/formComponents/MessageActionModal.js:170
+msgid ""
+"En attendant, en tant que gestionnaire du groupe vous pouvez supprimer le "
+"message."
+msgstr ""
+
+#: agir/front/components/formComponents/MessageActionModal.js:188
+msgid "Non merci"
+msgstr ""
+
+#: agir/front/components/formComponents/MessageActionModal.js:188
+msgid "Terminer"
+msgstr ""
+
+#: agir/front/components/formComponents/MessageModal/EventStep.js:190
+msgid "Associer un événement au message ?"
+msgstr ""
+
+#: agir/front/components/formComponents/MessageModal/EventStep.js:195
+msgid "avec le contenu de votre message et"
+msgstr ""
+
+#: agir/front/components/formComponents/MessageModal/EventStep.js:196
+msgid "pourront y répondre!"
+msgstr ""
+
+#: agir/front/components/formComponents/MessageModal/EventStep.js:199
+msgid ""
+"(Il ne recevront pas d’e-mails pour chaque commentaire ou modification de "
+"messages)"
+msgstr ""
+
+#: agir/front/components/formComponents/MessageModal/GroupStep.js:129
+msgid "À qui s'adresse ce message ?"
+msgstr ""
+
+#: agir/front/components/formComponents/MessageModal/GroupStep.js:133
+msgid " avec le contenu de votre message"
+msgstr ""
+
+#: agir/front/components/formComponents/MessageModal/GroupStep.js:134
+msgid "pourront y répondre !"
+msgstr ""
+
+#: agir/front/components/formComponents/MessageModal/MessageStep.js:225
+msgid ""
+"Les animateur·ices du groupe ont été informé·es de votre arrivée dans le "
+"groupe. Envoyez-leur un message pour vous présenter !"
+msgstr ""
+
+#: agir/front/components/formComponents/MessageModal/MessageStep.js:234
+msgid ""
+"Vous souhaitez rejoindre ce groupe ou bien recevoir des informations ? "
+"Entamez votre discussion ici ! "
+msgstr ""
+
+#: agir/front/components/formComponents/MessageModal/MessageStep.js:251
+msgid " du "
+msgstr ""
+
+#: agir/front/components/formComponents/MessageModal/Modal.js:19
+#, fuzzy
+#| msgid "Carte des événements"
+msgid "Ne concerne pas un événement"
+msgstr "Mapa de Acciones"
+
+#: agir/front/components/formComponents/MessageModal/Modal.js:24
+msgid "Événement futur"
+msgstr ""
+
+#: agir/front/components/formComponents/MessageModal/Modal.js:214
+msgid "L'objet du message est obligatoire"
+msgstr ""
+
+#: agir/front/components/formComponents/MessageModal/Modal.js:215
+msgid "Un corps de message est obligatoire"
+msgstr ""
+
+#: agir/front/components/formComponents/MessageModal/Modal.js:221
+msgid ""
+"objet du message doit comporter moins de ${SUBJECT_MAX_LENGTH} caractères`),"
+"\r"
+msgstr ""
+
+#: agir/front/components/formComponents/MessageModal/Modal.js:287
+msgid "Nouveau message"
+msgstr ""
+
+#: agir/front/components/formComponents/MessageModal/Modal.js:306
+msgid "Envoyer"
+msgstr ""
+
+#: agir/front/components/formComponents/MessageModal/Modal.js:340
+msgid "Envoyer le message"
+msgstr ""
+
+#: agir/front/components/formComponents/MessageModal/Trigger.js:143
+msgid "Envoyer un message au groupe"
+msgstr ""
+
+#: agir/front/components/formComponents/MexicanMunicipioField.js:69
+msgid "Buscar un municipio..."
+msgstr ""
+
+#: agir/front/components/formComponents/SearchAndSelectField.js:278
+#: agir/groups/components/groupSelector/GroupSelector.js:54
+msgid "Recherche..."
+msgstr ""
+
+#: agir/front/components/formComponents/SearchAndSelectField.js:285
+#: agir/groups/components/groupSelector/GroupSelector.js:58
+msgid "Pas de résultats"
+msgstr ""
+
+#: agir/front/components/formComponents/SelectField.js:211
+#: agir/people/components/contacts/CreateContactPage/ContactSuccess.js:75
+msgid "Fermer"
+msgstr ""
+
+#: agir/front/components/genericComponents/AddToCalendarWidget.js:107
+msgid "Sur Google Agenda"
+msgstr ""
+
+#: agir/front/components/genericComponents/AddToCalendarWidget.js:114
+msgid "Sur Outlook"
+msgstr ""
+
+#: agir/front/components/genericComponents/AddToCalendarWidget.js:129
+#: agir/front/components/genericComponents/AddToCalendarWidget.js:142
+msgid "Télécharger le .ics"
+msgstr ""
+
+#: agir/front/components/genericComponents/ButtonLockMessage.js:106
+msgid ""
+"Les gestionnaires du groupe pourront déverrouiller la conversation n'importe "
+"quand."
+msgstr ""
+
+#: agir/front/components/genericComponents/ButtonMuteMessage.js:68
+msgid "Vous ne recevrez plus de notifications reliées à ce fil de messages"
+msgstr ""
+
+#: agir/front/components/genericComponents/ButtonMuteMessage.js:69
+msgid "Les notifications reliées à ce fil de message sont réactivées"
+msgstr ""
+
+#: agir/front/components/genericComponents/ButtonMuteMessage.js:100
+msgid "Réactiver"
+msgstr ""
+
+#: agir/front/components/genericComponents/ButtonMuteMessage.js:100
+msgid "Rendre muet"
+msgstr ""
+
+#: agir/front/components/genericComponents/ButtonMuteMessage.js:121
+msgid ""
+"Vous ne recevrez plus de notifications et e-mails concernant cette "
+"conversation."
+msgstr ""
+
+#: agir/front/components/genericComponents/DownloadApp.js:97
+msgid "Téléchargez l’appli des actions près"
+msgstr ""
+
+#: agir/front/components/genericComponents/EmailList.js:67
+msgid "Copié !"
+msgstr ""
+
+#: agir/front/components/genericComponents/EmailList.js:67
+#, fuzzy
+#| msgid "Voir les groupes"
+msgid "Copier les adresses"
+msgstr "Ver los grupos"
+
+#: agir/front/components/genericComponents/EventCard.js:196
+#, fuzzy
+#| msgid "manifestation"
+msgid "Image d'illustration"
+msgstr "manifestación"
+
+#: agir/front/components/genericComponents/EventCard.js:219
+msgid "Image d'illustration par défaut"
+msgstr ""
+
+#: agir/front/components/genericComponents/EventCard.js:305
+msgid "Intervenant·es"
+msgstr ""
+
+#: agir/front/components/genericComponents/EventGroupsAttendees.js:52
+msgid "y ont participé"
+msgstr ""
+
+#: agir/front/components/genericComponents/EventGroupsAttendees.js:52
+msgid "y participent"
+msgstr ""
+
+#: agir/front/components/genericComponents/HelpCenterCard.js:18
+msgid ""
+"Un centre d'aide est à votre disposition avec des fiches pratiques et les "
+"réponses aux questions le plus fréquemment posées."
+msgstr ""
+
+#: agir/front/components/genericComponents/MessageCard.js:590
+msgid "Cette discussion privée se déroule entre"
+msgstr ""
+
+#: agir/front/components/genericComponents/MessageCard.js:591
+#, fuzzy
+#| msgid "et les campagnes du mouvement"
+msgid "et les animateur·ices du groupe"
+msgstr "y las estrategias del movimiento"
+
+#: agir/front/components/genericComponents/MessageCard.js:600
+msgid "Moi"
+msgstr ""
+
+#: agir/front/components/genericComponents/MessageCard.js:600
+msgid "Quelqu'un"
+msgstr ""
+
+#: agir/front/components/genericComponents/MessageCard.js:603
+msgid "Ajouter mon nom"
+msgstr ""
+
+#: agir/front/components/genericComponents/MessageCard.js:732
+msgid "Rejoindre la conversation"
+msgstr ""
+
+#: agir/front/components/genericComponents/ModalShare.js:49
+msgid "Partager la page"
+msgstr ""
+
+#: agir/front/components/genericComponents/Onboarding.js:17
+msgid "Organisez un événement près de chez vous !"
+msgstr ""
+
+#: agir/front/components/genericComponents/Onboarding.js:29
+msgid "Rejoignez un groupe proche de chez vous"
+msgstr ""
+
+#: agir/front/components/genericComponents/Onboarding.js:33
+msgid ""
+"Les groupes d'action permettent aux militants de s’organiser dans leur "
+"quartier ou dans leur commune."
+msgstr ""
+
+#: agir/front/components/genericComponents/Onboarding.js:51
+msgid ""
+"Commencez dès aujourd’hui à organiser des actions pour soutenir les "
+"propositions de la France insoumise et de la"
+msgstr ""
+
+#: agir/front/components/genericComponents/Onboarding.js:54
+msgid " Besoin d’inspiration pour animer votre groupe ?"
+msgstr ""
+
+#: agir/front/components/genericComponents/Onboarding.js:60
+msgid "Voici quelques pistes"
+msgstr ""
+
+#: agir/front/components/genericComponents/Onboarding.js:75
+msgid ""
+"Créez votre groupe en quelques clics, et commencez dès aujourd’hui à "
+"organiser des actions pour soutenir les propositions de la France insoumise "
+"et de la"
+msgstr ""
+
+#: agir/front/components/genericComponents/Onboarding.js:79
+msgid "Voici quelques pistes."
+msgstr ""
+
+#: agir/front/components/genericComponents/Onboarding.js:98
+#, fuzzy
+#| msgid "Rejoignez ou créez"
+msgid "Rejoindre un groupe"
+msgstr "Crea o únete a"
+
+#: agir/front/components/genericComponents/Onboarding.js:103
+#: agir/people/components/contacts/CreateContactPage/NoGroupCard.js:61
+#, fuzzy
+#| msgid "Créer mon compte"
+msgid "Créer un groupe"
+msgstr "Crear mi cuenta"
+
+#: agir/front/components/genericComponents/ShareCard.js:131
+#: agir/front/components/genericComponents/ShareContentUrl.js:81
+msgid "Copier le lien"
+msgstr ""
+
+#: agir/front/components/genericComponents/ShareLink.js:84
+#: agir/groups/components/groupPage/GroupSettings/DiscountCode.js:50
+msgid "Copier"
+msgstr ""
+
+#: agir/front/components/genericComponents/Steps/StepBar.js:86
+msgid "Suivant"
+msgstr ""
+
+#: agir/front/components/genericComponents/Steps/StepIndex.js:154
+msgid "Retour"
+msgstr ""
+
+#: agir/front/components/globalContext/GlobalContext.js:50
+msgid "Session cache deletion failed."
+msgstr ""
+
+#: agir/front/components/mockData/communesConsulats.js:9
+msgid "Circonscription « États-Unis d'Amérique — 4e circonscription »"
+msgstr ""
+
+#: agir/front/components/mockData/communesConsulats.js:17
+msgid "Circonscription « États-Unis d'Amérique — 2e circonscription »"
+msgstr ""
+
+#: agir/front/components/mockData/communesConsulats.js:25
+msgid "Circonscription « Ethiopie, Soudan, Soudan du Sud »"
+msgstr ""
+
+#: agir/front/components/mockData/communesConsulats.js:33
+msgid "Circonscription « Arabie saoudite — 2e circonscription (avec Koweït) »"
+msgstr ""
+
+#: agir/front/components/mockData/communesConsulats.js:41
+msgid "Circonscription « Allemagne — 2e circonscription »"
+msgstr ""
+
+#: agir/front/components/mockData/communesConsulats.js:49
+msgid "Circonscription « Autriche, Slovaquie, Slovénie »"
+msgstr ""
+
+#: agir/front/components/mockData/communesConsulats.js:57
+msgid ""
+"Circonscription « Iran, Pakistan, Afghanistan, Azerbaïdjan, Turkménistan, "
+"Kazakhstan, Tadjikistan, Ouzbékistan, Kirghizstan »"
+msgstr ""
+
+#: agir/front/components/mockData/communesConsulats.js:65
+msgid "Circonscription « Emirats arabes unis, Oman »"
+msgstr ""
+
+#: agir/front/components/mockData/communesConsulats.js:73
+msgid "Circonscription « États-Unis d'Amérique — 7e circonscription »"
+msgstr ""
+
+#: agir/front/components/mockData/communesConsulats.js:81
+msgid "Circonscription « Allemagne — 1re circonscription »"
+msgstr ""
+
+#: agir/front/components/mockData/communesConsulats.js:89
+msgid "Circonscription « Allemagne — 3e circonscription »"
+msgstr ""
+
+#: agir/front/components/mockData/communesConsulats.js:97
+msgid "Circonscription « Paraguay »"
+msgstr ""
+
+#: agir/front/components/mockData/communesConsulats.js:105
+msgid "Circonscription « États-Unis d'Amérique — 1re circonscription »"
+msgstr ""
+
+#: agir/front/components/mockData/communesConsulats.js:113
+msgid "Circonscription « Arménie, Géorgie »"
+msgstr ""
+
+#: agir/front/components/mockData/communesConsulats.js:121
+msgid "Circonscription « Algérie — 1re circonscription »"
+msgstr ""
+
+#: agir/front/components/mockData/communesConsulats.js:129
+msgid "Circonscription « Algérie — 2e circonscription »"
+msgstr ""
+
+#: agir/front/components/mockData/communesConsulats.js:137
+msgid "Circonscription « Algérie — 3e circonscription »"
+msgstr ""
+
+#: agir/front/components/mockData/communesConsulats.js:145
+msgid "27 - Armentières-sur-Avre"
+msgstr ""
+
+#: agir/front/components/mockData/communesConsulats.js:153
+msgid "27 - Appeville-Annebault"
+msgstr ""
+
+#: agir/front/components/mockData/communesConsulats.js:161
+msgid "27 - Autheuil-Authouillet"
+msgstr ""
+
+#: agir/front/components/mockData/communesConsulats.js:169
+msgid "39 - Arsure-Arsurette"
+msgstr ""
+
+#: agir/front/components/mockData/communesConsulats.js:177
+msgid "40 - Arthez-d'Armagnac"
+msgstr ""
+
+#: agir/front/components/mockData/communesConsulats.js:185
+msgid "59 - Aulnoye-Aymeries"
+msgstr ""
+
+#: agir/front/components/mockData/communesConsulats.js:193
+msgid "30 - Arpaillargues-et-Aureillac"
+msgstr ""
+
+#: agir/front/components/mockData/communesConsulats.js:201
+msgid "18 - les Aix-d'Angillon"
+msgstr ""
+
+#: agir/front/components/mockData/communesConsulats.js:209
+msgid "18 - Apremont-sur-Allier"
+msgstr ""
+
+#: agir/front/components/mockData/communesConsulats.js:217
+msgid "80 - Acheux-en-Amiénois"
+msgstr ""
+
+#: agir/front/components/mockData/communesConsulats.js:225
+msgid "18 - Augy-sur-Aubois"
+msgstr ""
+
+#: agir/front/components/mockData/communesConsulats.js:233
+msgid "25 - Avanne-Aveney"
+msgstr ""
+
+#: agir/front/components/mockData/communesConsulats.js:241
+msgid "51 - Aulnay-l'Aître"
+msgstr ""
+
+#: agir/front/components/mockData/communesConsulats.js:249
+msgid "48 - Arzenc-d'Apcher"
+msgstr ""
+
+#: agir/front/components/mockData/communesConsulats.js:257
+msgid "55 - Autrécourt-sur-Aire"
+msgstr ""
+
+#: agir/front/components/mockData/communesConsulats.js:265
+msgid "40 - Aire-sur-l'Adour"
+msgstr ""
+
+#: agir/front/components/mockData/communesConsulats.js:273
+msgid "89 - Aisy-sur-Armançon"
+msgstr ""
+
+#: agir/front/components/mockData/communesConsulats.js:281
+msgid "Circonscription « Argentine »"
+msgstr ""
+
+#: agir/front/components/mockData/communesConsulats.js:289
+msgid "Circonscription « Andorre »"
+msgstr ""
+
+#: agir/front/components/mockData/communesConsulats.js:297
+msgid "Circonscription « Angola »"
+msgstr ""
+
+#: agir/front/components/mockData/communesConsulats.js:305
+msgid "12 - Agen-d'Aveyron"
+msgstr ""
+
+#: agir/front/components/mockData/communesConsulats.js:313
+msgid "10 - Arcis-sur-Aube"
+msgstr ""
+
+#: agir/front/components/mockData/communesConsulats.js:321
+msgid "07 - Albon-d'Ardèche"
+msgstr ""
+
+#: agir/front/components/mockData/eventSubtypes.js:6
+msgid "action-solidarite"
+msgstr ""
+
+#: agir/front/components/mockData/eventSubtypes.js:7
+msgid "Action de solidarité"
+msgstr ""
+
+#: agir/front/components/mockData/eventSubtypes.js:17
+msgid "actions-jeunes"
+msgstr ""
+
+#: agir/front/components/mockData/eventSubtypes.js:18
+msgid "actions jeunes"
+msgstr ""
+
+#: agir/front/components/mockData/eventSubtypes.js:28
+msgid "atelier-pancartes"
+msgstr ""
+
+#: agir/front/components/mockData/eventSubtypes.js:29
+msgid "Atelier de fabrication de pancartes"
+msgstr ""
+
+#: agir/front/components/mockData/eventSubtypes.js:39
+msgid "autre-evenement"
+msgstr ""
+
+#: agir/front/components/mockData/eventSubtypes.js:50
+#: agir/front/components/mockData/events.js:264
+#: agir/front/components/mockData/events.js:319
+#: agir/front/components/mockData/events.js:377
+msgid "autre action publique"
+msgstr ""
+
+#: agir/front/components/mockData/eventSubtypes.js:51
+#: agir/front/components/mockData/events.js:265
+#: agir/front/components/mockData/events.js:320
+#: agir/front/components/mockData/events.js:378
+msgid "Autre type d'action publique"
+msgstr ""
+
+#: agir/front/components/mockData/eventSubtypes.js:61
+#, fuzzy
+#| msgid "Carte des groupes"
+msgid "autre reunion groupe"
+msgstr "Mapa de Grupos"
+
+#: agir/front/components/mockData/eventSubtypes.js:62
+msgid "Autre type de réunion de groupe"
+msgstr ""
+
+#: agir/front/components/mockData/eventSubtypes.js:72
+#: agir/front/components/mockData/spendingRequest.js:58
+msgid "autre reunion publique"
+msgstr ""
+
+#: agir/front/components/mockData/eventSubtypes.js:73
+#: agir/front/components/mockData/spendingRequest.js:59
+msgid "Autre type de réunion publique"
+msgstr ""
+
+#: agir/front/components/mockData/eventSubtypes.js:83
+msgid "collage"
+msgstr ""
+
+#: agir/front/components/mockData/eventSubtypes.js:84
+msgid "Collage d'affiches"
+msgstr ""
+
+#: agir/front/components/mockData/eventSubtypes.js:94
+msgid "covoiturage"
+msgstr ""
+
+#: agir/front/components/mockData/eventSubtypes.js:95
+msgid "Covoiturage"
+msgstr ""
+
+#: agir/front/components/mockData/eventSubtypes.js:105
+msgid "depart-commun"
+msgstr ""
+
+#: agir/front/components/mockData/eventSubtypes.js:106
+msgid "Départ commun pour une manifestation/un rassemblement"
+msgstr ""
+
+#: agir/front/components/mockData/eventSubtypes.js:116
+msgid "diffusion-programme"
+msgstr ""
+
+#: agir/front/components/mockData/eventSubtypes.js:117
+msgid "Diffusion de notre programme"
+msgstr ""
+
+#: agir/front/components/mockData/eventSubtypes.js:127
+#: agir/front/components/mockData/events.js:115
+#, fuzzy
+#| msgid "distribution de tracts"
+msgid "diffusion-tracts"
+msgstr "distribuir flyers"
+
+#: agir/front/components/mockData/eventSubtypes.js:128
+#: agir/front/components/mockData/events.js:116
+#, fuzzy
+#| msgid "distribution de tracts"
+msgid "Diffusion de tracts"
+msgstr "distribuir flyers"
+
+#: agir/front/components/mockData/eventSubtypes.js:138
+msgid "ecoute-collective"
+msgstr ""
+
+#: agir/front/components/mockData/eventSubtypes.js:139
+msgid "Écoute collective"
+msgstr ""
+
+#: agir/front/components/mockData/eventSubtypes.js:149
+msgid "fête-locale"
+msgstr ""
+
+#: agir/front/components/mockData/eventSubtypes.js:150
+msgid "Fête locale"
+msgstr ""
+
+#: agir/front/components/mockData/eventSubtypes.js:160
+msgid "formations"
+msgstr ""
+
+#: agir/front/components/mockData/eventSubtypes.js:161
+msgid "Formations"
+msgstr ""
+
+#: agir/front/components/mockData/eventSubtypes.js:171
+msgid "pique-nique"
+msgstr ""
+
+#: agir/front/components/mockData/eventSubtypes.js:172
+msgid "Pique-nique, apéro citoyen"
+msgstr ""
+
+#: agir/front/components/mockData/eventSubtypes.js:182
+#, fuzzy
+#| msgid "Inscription"
+msgid "inscription-listes"
+msgstr "Registrarse"
+
+#: agir/front/components/mockData/eventSubtypes.js:183
+msgid "Point d'inscriptions sur les listes électorales"
+msgstr ""
+
+#: agir/front/components/mockData/eventSubtypes.js:193
+msgid "point-infos-retraites"
+msgstr ""
+
+#: agir/front/components/mockData/eventSubtypes.js:194
+msgid "Points d'infos retraites"
+msgstr ""
+
+#: agir/front/components/mockData/eventSubtypes.js:204
+msgid "porte-a-porte"
+msgstr ""
+
+#: agir/front/components/mockData/eventSubtypes.js:205
+msgid "Porte-à-porte"
+msgstr ""
+
+#: agir/front/components/mockData/eventSubtypes.js:215
+msgid "projection-debat"
+msgstr ""
+
+#: agir/front/components/mockData/eventSubtypes.js:216
+msgid "Projection-débat"
+msgstr ""
+
+#: agir/front/components/mockData/eventSubtypes.js:226
+msgid "reunion-publique"
+msgstr ""
+
+#: agir/front/components/mockData/eventSubtypes.js:227
+msgid "Réunion publique"
+msgstr ""
+
+#: agir/front/components/mockData/eventSubtypes.js:237
+msgid "reunion-groupe"
+msgstr ""
+
+#: agir/front/components/mockData/eventSubtypes.js:238
+msgid "Réunion régulière du groupe"
+msgstr ""
+
+#: agir/front/components/mockData/eventSubtypes.js:248
+msgid "session-appels-collective"
+msgstr ""
+
+#: agir/front/components/mockData/eventSubtypes.js:249
+msgid "Session d’appels collective"
+msgstr ""
+
+#: agir/front/components/mockData/eventSubtypes.js:259
+msgid "soiree-accueil"
+msgstr ""
+
+#: agir/front/components/mockData/eventSubtypes.js:260
+msgid "Soirée d'accueil des nouveaux membres"
+msgstr ""
+
+#: agir/front/components/mockData/eventSubtypes.js:270
+msgid "soiree-electorale"
+msgstr ""
+
+#: agir/front/components/mockData/eventSubtypes.js:271
+msgid "Soirée électorale"
+msgstr ""
+
+#: agir/front/components/mockData/eventSubtypes.js:281
+msgid "soutien"
+msgstr ""
+
+#: agir/front/components/mockData/eventSubtypes.js:282
+msgid "Soutien à une manifestation, un rassemblement"
+msgstr ""
+
+#: agir/front/components/mockData/eventSubtypes.js:292
+#: agir/front/components/mockData/events.js:209
+#, fuzzy
+#| msgid "Carte des événements"
+msgid "autre evenement"
+msgstr "Mapa de Acciones"
+
+#: agir/front/components/mockData/eventSubtypes.js:293
+#: agir/front/components/mockData/events.js:210
+#, fuzzy
+#| msgid "Carte des événements"
+msgid "Tout autre type d'événement"
+msgstr "Mapa de Acciones"
+
+#: agir/front/components/mockData/events.js:7
+msgid "Front supérieur étouffer écrire."
+msgstr ""
+
+#: agir/front/components/mockData/events.js:89
+msgid "Signe âge songer pont quart être as."
+msgstr ""
+
+#: agir/front/components/mockData/events.js:143
+msgid "Groupe de la rue Manin"
+msgstr ""
+
+#: agir/front/components/mockData/events.js:170
+#: agir/front/components/mockData/events.js:282
+msgid "Café"
+msgstr ""
+
+#: agir/front/components/mockData/events.js:219
+msgid "Savoir pierre politique grain."
+msgstr ""
+
+#: agir/front/components/mockData/events.js:274
+msgid "Event !"
+msgstr ""
+
+#: agir/front/components/mockData/events.js:439
+msgid "L'événement des gens super cools ! (sauf toi)"
+msgstr ""
+
+#: agir/front/components/mockData/events.js:480
+#: agir/front/components/mockData/events.js:538
+msgid "Groupe des gens super cools !"
+msgstr ""
+
+#: agir/front/components/mockData/events.js:487
+#: agir/front/components/mockData/events.js:488
+msgid "Ouvert m^ aux non-insoumis comme la vot. nucléaire"
+msgstr ""
+
+#: agir/front/components/mockData/events.js:545
+#: agir/front/components/mockData/events.js:546
+#: agir/front/components/mockData/events.js:603
+#: agir/front/components/mockData/events.js:604
+#: agir/front/components/mockData/events.js:664
+#: agir/front/components/mockData/events.js:665
+#: agir/front/components/mockData/events.js:722
+#: agir/front/components/mockData/events.js:723
+#: agir/front/components/mockData/events.js:780
+#: agir/front/components/mockData/events.js:781
+#: agir/front/components/mockData/events.js:838
+#: agir/front/components/mockData/events.js:839
+#: agir/front/components/mockData/events.js:896
+#: agir/front/components/mockData/events.js:897
+#: agir/front/components/mockData/events.js:954
+#: agir/front/components/mockData/events.js:955
+#: agir/front/components/mockData/events.js:1070
+#: agir/front/components/mockData/events.js:1071
+msgid "Événement ultime"
+msgstr ""
+
+#: agir/front/components/mockData/events.js:566
+msgid "Là où on boit du jus de fruit"
+msgstr ""
+
+#: agir/front/components/mockData/events.js:596
+#: agir/front/components/mockData/events.js:657
+#: agir/front/components/mockData/events.js:715
+msgid "Groupe électrogène"
+msgstr ""
+
+#: agir/front/components/mockData/events.js:773
+#: agir/front/components/mockData/events.js:889
+#: agir/front/components/mockData/events.js:947
+#: agir/front/components/mockData/events.js:1063
+msgid "G.R.O.U.P.E."
+msgstr ""
+
+#: agir/front/components/mockData/events.js:831
+#: agir/front/components/mockData/events.js:1002
+msgid "Groupe sanguin II"
+msgstr ""
+
+#: agir/front/components/mockData/events.js:1009
+#: agir/front/components/mockData/events.js:1010
+msgid "Sous-type de test"
+msgstr ""
+
+#: agir/front/components/mockData/group.js:7
+#: agir/front/components/mockData/messages.js:16
+#: agir/front/components/mockData/messages.js:108
+#: agir/front/components/mockData/messages.js:128
+#: agir/front/components/mockData/messages.js:186
+#: agir/front/components/mockData/messages.js:205
+msgid "Comités d'appui et de travail pour une Vienne Insoumise"
+msgstr ""
+
+#: agir/front/components/mockData/group.js:9
+msgid ""
+"  <p>Chocolate cake gummies fruitcake. Lemon drops chocolate bar jelly beans "
+"danish candy bonbon. Cotton candy dessert bonbon topping macaroon. "
+"<strong>Marzipan croissant apple pie powder halvah brownie bear claw.</"
+"strong> Carrot cake jelly-o tootsie roll cake jelly beans. Croissant "
+"gingerbread icing pudding ice cream candy canes. Candy canes wafer caramels "
+"gingerbread.</p><p>Ice cream biscuit brownie gingerbread liquorice soufflé "
+"wafer soufflé. <a href='#'>Fruitcake cake lollipop</a>. Gummies sesame snaps "
+"chocolate bar soufflé jelly-o candy marzipan sweet jujubes. Lemon drops "
+"cheesecake wafer chocolate bar dessert pie sesame snaps fruitcake. Brownie "
+"gummies marshmallow chocolate halvah macaroon.</p>"
+msgstr ""
+
+#: agir/front/components/mockData/group.js:18
+msgid "France"
+msgstr ""
+
+#: agir/front/components/mockData/messages.js:18
+msgid "Mon beau message"
+msgstr ""
+
+#: agir/front/components/mockData/messages.js:19
+#: agir/front/components/mockData/messages.js:110
+#: agir/front/components/mockData/messages.js:130
+#: agir/front/components/mockData/messages.js:188
+#: agir/front/components/mockData/messages.js:207
+msgid ""
+"Bonjour à tous les nouveaux membres ! Pour que tout le monde puisse vous "
+"connaître, je vous propose qu’on se rejoigne ensemble sur Zoom vendredi vers "
+"20h.\n"
+"\n"
+"Est-ce que l’horaire convient à tout le monde ?"
+msgstr ""
+
+#: agir/front/components/mockData/messages.js:22
+#: agir/front/components/mockData/messages.js:133
+msgid "Cortège France insoumise à la marche contre la fourrure 2020"
+msgstr ""
+
+#: agir/front/components/mockData/messages.js:50
+#: agir/front/components/mockData/messages.js:61
+#: agir/front/components/mockData/messages.js:73
+#: agir/front/components/mockData/messages.js:82
+#: agir/front/components/mockData/messages.js:91
+#: agir/front/components/mockData/messages.js:157
+#: agir/front/components/mockData/messages.js:169
+msgid ""
+"Est-ce que c’est possible de commencer un peu plus tard ? Ma fille termine "
+"le karaté et j’arriverai à la maison tout juste..."
+msgstr ""
+
+#: agir/front/components/mockData/notificationSettings.js:6
+msgid "Realigned stable forecast"
+msgstr ""
+
+#: agir/front/components/mockData/notificationSettings.js:14
+msgid "Enterprise-wide hybrid ability"
+msgstr ""
+
+#: agir/front/components/mockData/notificationSettings.js:22
+msgid "Sharable scalable help-desk"
+msgstr ""
+
+#: agir/front/components/mockData/notificationSettings.js:30
+msgid "Pre-emptive stable paradigm"
+msgstr ""
+
+#: agir/front/components/mockData/notificationSettings.js:38
+msgid "Ameliorated client-server open system"
+msgstr ""
+
+#: agir/front/components/mockData/notificationSettings.js:46
+msgid "Expanded multi-state definition"
+msgstr ""
+
+#: agir/front/components/mockData/notificationSettings.js:54
+msgid "Innovative 24/7 instruction set"
+msgstr ""
+
+#: agir/front/components/mockData/notificationSettings.js:62
+msgid "Exclusive full-range knowledge base"
+msgstr ""
+
+#: agir/front/components/mockData/notificationSettings.js:70
+msgid "Total fault-tolerant process improvement"
+msgstr ""
+
+#: agir/front/components/mockData/notificationSettings.js:78
+msgid "Robust fresh-thinking neural-net"
+msgstr ""
+
+#: agir/front/components/mockData/notificationSettings.js:86
+msgid "Switchable needs-based extranet"
+msgstr ""
+
+#: agir/front/components/mockData/notificationSettings.js:94
+msgid "Ameliorated leading edge artificial intelligence"
+msgstr ""
+
+#: agir/front/components/mockData/notificationSettings.js:102
+msgid "De-engineered 4th generation access"
+msgstr ""
+
+#: agir/front/components/mockData/notificationSettings.js:110
+msgid "Team-oriented zero administration moratorium"
+msgstr ""
+
+#: agir/front/components/mockData/notificationSettings.js:118
+msgid "Optimized disintermediate array"
+msgstr ""
+
+#: agir/front/components/mockData/notificationSettings.js:126
+msgid "Customer-focused empowering support"
+msgstr ""
+
+#: agir/front/components/mockData/notificationSettings.js:134
+msgid "Automated holistic approach"
+msgstr ""
+
+#: agir/front/components/mockData/notificationSettings.js:142
+msgid "Enhanced fresh-thinking moratorium"
+msgstr ""
+
+#: agir/front/components/mockData/notificationSettings.js:150
+msgid "Exclusive global standardization"
+msgstr ""
+
+#: agir/front/components/mockData/notificationSettings.js:158
+msgid "Proactive zero administration standardization"
+msgstr ""
+
+#: agir/front/components/mockData/notificationSettings.js:166
+msgid "Balanced cohesive initiative"
+msgstr ""
+
+#: agir/front/components/mockData/notificationSettings.js:174
+msgid "Intuitive mission-critical attitude"
+msgstr ""
+
+#: agir/front/components/mockData/notificationSettings.js:182
+msgid "Pre-emptive zero tolerance framework"
+msgstr ""
+
+#: agir/front/components/mockData/notificationSettings.js:190
+msgid "Enhanced interactive model"
+msgstr ""
+
+#: agir/front/components/mockData/notificationSettings.js:198
+msgid "Fully-configurable content-based hierarchy"
+msgstr ""
+
+#: agir/front/components/mockData/notificationSettings.js:206
+msgid "Organized value-added hardware"
+msgstr ""
+
+#: agir/front/components/mockData/notificationSettings.js:214
+msgid "Focused multi-state website"
+msgstr ""
+
+#: agir/front/components/mockData/notificationSettings.js:222
+msgid "Digitized coherent application"
+msgstr ""
+
+#: agir/front/components/mockData/notificationSettings.js:230
+msgid "Customer-focused homogeneous adapter"
+msgstr ""
+
+#: agir/front/components/mockData/notificationSettings.js:238
+msgid "Mandatory hybrid capability"
+msgstr ""
+
+#: agir/front/components/mockData/spendingRequest.js:19
+msgid ""
+"Lorsque vous aurez intégré les modifications demandées, vous pourrez de "
+"nouveau transmettre cette demande à l'équipe de suivi."
+msgstr ""
+
+#: agir/front/components/mockData/spendingRequest.js:24
+msgid "Groupe d'action des îles Kerguelen"
+msgstr ""
+
+#: agir/front/components/mockData/spendingRequest.js:27
+#, fuzzy
+#| msgid "Carte des événements"
+msgid "Achat de barnum pour les événements"
+msgstr "Mapa de Acciones"
+
+#: agir/front/components/mockData/spendingRequest.js:30
+msgid "Café Populaire sur le thème 'Réforme des retraites' avec Camille Marx"
+msgstr ""
+
+#: agir/front/components/mockData/spendingRequest.js:107
+#: agir/front/components/mockData/spendingRequest.js:167
+#: agir/front/components/mockData/spendingRequest.js:197
+#: agir/front/components/mockData/spendingRequest.js:227
+#: agir/front/components/mockData/spendingRequest.js:257
+msgid "Création de la demande"
+msgstr ""
+
+#: agir/front/components/mockData/spendingRequest.js:122
+#: agir/front/components/mockData/spendingRequest.js:137
+#: agir/front/components/mockData/spendingRequest.js:287
+#: agir/front/components/mockData/spendingRequest.js:302
+#: agir/front/components/mockData/spendingRequest.js:317
+#: agir/front/components/mockData/spendingRequest.js:332
+#: agir/front/components/mockData/spendingRequest.js:347
+#: agir/front/components/mockData/spendingRequest.js:362
+#: agir/front/components/mockData/spendingRequest.js:377
+#: agir/front/components/mockData/spendingRequest.js:392
+#: agir/front/components/mockData/spendingRequest.js:407
+#: agir/front/components/mockData/spendingRequest.js:422
+#: agir/front/components/mockData/spendingRequest.js:437
+#: agir/front/components/mockData/spendingRequest.js:497
+#: agir/front/components/mockData/spendingRequest.js:512
+#: agir/front/components/mockData/spendingRequest.js:527
+#: agir/front/components/mockData/spendingRequest.js:557
+#: agir/front/components/mockData/spendingRequest.js:572
+#: agir/front/components/mockData/spendingRequest.js:602
+#: agir/front/components/mockData/spendingRequest.js:617
+#: agir/front/components/mockData/spendingRequest.js:647
+#: agir/front/components/mockData/spendingRequest.js:662
+#: agir/front/components/mockData/spendingRequest.js:692
+#: agir/front/components/mockData/spendingRequest.js:707
+#: agir/front/components/mockData/spendingRequest.js:737
+#: agir/front/components/mockData/spendingRequest.js:752
+#: agir/front/components/mockData/spendingRequest.js:782
+#: agir/front/components/mockData/spendingRequest.js:797
+#: agir/front/components/mockData/spendingRequest.js:812
+#: agir/front/components/mockData/spendingRequest.js:827
+#: agir/front/components/mockData/spendingRequest.js:842
+#: agir/front/components/mockData/spendingRequest.js:872
+#: agir/front/components/mockData/spendingRequest.js:887
+#: agir/front/components/mockData/spendingRequest.js:917
+#: agir/front/components/mockData/spendingRequest.js:932
+#: agir/front/components/mockData/spendingRequest.js:962
+#: agir/front/components/mockData/spendingRequest.js:977
+#: agir/front/components/mockData/spendingRequest.js:992
+#: agir/front/components/mockData/spendingRequest.js:1007
+#: agir/front/components/mockData/spendingRequest.js:1022
+#: agir/front/components/mockData/spendingRequest.js:1037
+#: agir/front/components/mockData/spendingRequest.js:1052
+#: agir/front/components/mockData/spendingRequest.js:1067
+#: agir/front/components/mockData/spendingRequest.js:1082
+#: agir/front/components/mockData/spendingRequest.js:1097
+#: agir/front/components/mockData/spendingRequest.js:1127
+#: agir/front/components/mockData/spendingRequest.js:1142
+#: agir/front/components/mockData/spendingRequest.js:1157
+#: agir/front/components/mockData/spendingRequest.js:1172
+#: agir/front/components/mockData/spendingRequest.js:1187
+#: agir/front/components/mockData/spendingRequest.js:1202
+#: agir/front/components/mockData/spendingRequest.js:1217
+#: agir/front/components/mockData/spendingRequest.js:1232
+#: agir/front/components/mockData/spendingRequest.js:1247
+#: agir/front/components/mockData/spendingRequest.js:1262
+#: agir/front/components/mockData/spendingRequest.js:1277
+#: agir/front/components/mockData/spendingRequest.js:1292
+#: agir/front/components/mockData/spendingRequest.js:1307
+#: agir/front/components/mockData/spendingRequest.js:1322
+#: agir/front/components/mockData/spendingRequest.js:1337
+#: agir/front/components/mockData/spendingRequest.js:1367
+#: agir/front/components/mockData/spendingRequest.js:1382
+#: agir/front/components/mockData/spendingRequest.js:1427
+#: agir/front/components/mockData/spendingRequest.js:1442
+#: agir/front/components/mockData/spendingRequest.js:1457
+#: agir/front/components/mockData/spendingRequest.js:1472
+#: agir/front/components/mockData/spendingRequest.js:1487
+#: agir/front/components/mockData/spendingRequest.js:1502
+#: agir/front/components/mockData/spendingRequest.js:1517
+#: agir/front/components/mockData/spendingRequest.js:1532
+#: agir/front/components/mockData/spendingRequest.js:1562
+#: agir/front/components/mockData/spendingRequest.js:1577
+#: agir/front/components/mockData/spendingRequest.js:1592
+#: agir/front/components/mockData/spendingRequest.js:1607
+#: agir/front/components/mockData/spendingRequest.js:1622
+#: agir/front/components/mockData/spendingRequest.js:1637
+#: agir/front/components/mockData/spendingRequest.js:1652
+#: agir/front/components/mockData/spendingRequest.js:1667
+#: agir/front/components/mockData/spendingRequest.js:1682
+#: agir/front/components/mockData/spendingRequest.js:1697
+#: agir/front/components/mockData/spendingRequest.js:1712
+#: agir/front/components/mockData/spendingRequest.js:1727
+#: agir/front/components/mockData/spendingRequest.js:1742
+msgid "Mise à jour de la demande"
+msgstr ""
+
+#: agir/front/components/mockData/spendingRequest.js:123
+#: agir/front/components/mockData/spendingRequest.js:138
+msgid "Modification de Montant de la dépense et Titulaire du compte bancaire."
+msgstr ""
+
+#: agir/front/components/mockData/spendingRequest.js:152
+#: agir/front/components/mockData/spendingRequest.js:182
+#: agir/front/components/mockData/spendingRequest.js:212
+#: agir/front/components/mockData/spendingRequest.js:242
+#: agir/front/components/mockData/spendingRequest.js:272
+#: agir/front/components/mockData/spendingRequest.js:467
+msgid "Validée par l'auteur d'origine"
+msgstr ""
+
+#: agir/front/components/mockData/spendingRequest.js:153
+#: agir/front/components/mockData/spendingRequest.js:183
+#: agir/front/components/mockData/spendingRequest.js:213
+#: agir/front/components/mockData/spendingRequest.js:243
+#: agir/front/components/mockData/spendingRequest.js:273
+msgid "Validation de la demande"
+msgstr ""
+
+#: agir/front/components/mockData/spendingRequest.js:168
+#: agir/front/components/mockData/spendingRequest.js:198
+#: agir/front/components/mockData/spendingRequest.js:228
+#: agir/front/components/mockData/spendingRequest.js:258
+#: agir/front/components/mockData/spendingRequest.js:468
+#: agir/front/components/mockData/spendingRequest.js:1413
+msgid "Modification de Montant de la dépense et Statut."
+msgstr ""
+
+#: agir/front/components/mockData/spendingRequest.js:288
+msgid "Suppression d'une pièce-jointe : Faites un choix !"
+msgstr ""
+
+#: agir/front/components/mockData/spendingRequest.js:303
+msgid "Mise à jour d'une pièce-jointe : Le Stade de France"
+msgstr ""
+
+#: agir/front/components/mockData/spendingRequest.js:318
+msgid "Ajout d'une pièce-jointe : Photo du groupe d'action"
+msgstr ""
+
+#: agir/front/components/mockData/spendingRequest.js:363
+msgid "Modification du champ : Titre"
+msgstr ""
+
+#: agir/front/components/mockData/spendingRequest.js:378
+#: agir/front/components/mockData/spendingRequest.js:393
+#: agir/front/components/mockData/spendingRequest.js:408
+#: agir/front/components/mockData/spendingRequest.js:453
+msgid "[Modification non identifiée]"
+msgstr ""
+
+#: agir/front/components/mockData/spendingRequest.js:423
+msgid "Modification du champ : Événement lié à la dépense"
+msgstr ""
+
+#: agir/front/components/mockData/spendingRequest.js:438
+msgid "Modification des champs : Catégorie, Motif de l'achat, Nom du contact"
+msgstr ""
+
+#: agir/front/components/mockData/spendingRequest.js:452
+#: agir/front/components/mockData/spendingRequest.js:482
+#: agir/front/components/mockData/spendingRequest.js:1547
+msgid "Validée par un⋅e second⋅e animateur⋅rice"
+msgstr ""
+
+#: agir/front/components/mockData/spendingRequest.js:498
+#: agir/front/components/mockData/spendingRequest.js:558
+#: agir/front/components/mockData/spendingRequest.js:918
+#: agir/front/components/mockData/spendingRequest.js:1323
+#: agir/front/components/mockData/spendingRequest.js:1368
+msgid "Ajout d'une pièce-jointe : Doublons"
+msgstr ""
+
+#: agir/front/components/mockData/spendingRequest.js:513
+#: agir/front/components/mockData/spendingRequest.js:738
+msgid "Ajout d'une pièce-jointe : Formulaire à tags"
+msgstr ""
+
+#: agir/front/components/mockData/spendingRequest.js:528
+#: agir/front/components/mockData/spendingRequest.js:573
+#: agir/front/components/mockData/spendingRequest.js:618
+#: agir/front/components/mockData/spendingRequest.js:663
+#: agir/front/components/mockData/spendingRequest.js:708
+#: agir/front/components/mockData/spendingRequest.js:753
+#: agir/front/components/mockData/spendingRequest.js:798
+#: agir/front/components/mockData/spendingRequest.js:888
+#: agir/front/components/mockData/spendingRequest.js:933
+#: agir/front/components/mockData/spendingRequest.js:978
+#: agir/front/components/mockData/spendingRequest.js:1143
+#: agir/front/components/mockData/spendingRequest.js:1383
+#: agir/front/components/mockData/spendingRequest.js:1578
+msgid "Mise à jour du statut de la demande après une modification"
+msgstr ""
+
+#: agir/front/components/mockData/spendingRequest.js:542
+#: agir/front/components/mockData/spendingRequest.js:587
+#: agir/front/components/mockData/spendingRequest.js:632
+#: agir/front/components/mockData/spendingRequest.js:677
+#: agir/front/components/mockData/spendingRequest.js:722
+#: agir/front/components/mockData/spendingRequest.js:767
+#: agir/front/components/mockData/spendingRequest.js:857
+#: agir/front/components/mockData/spendingRequest.js:902
+#: agir/front/components/mockData/spendingRequest.js:947
+#: agir/front/components/mockData/spendingRequest.js:1112
+#: agir/front/components/mockData/spendingRequest.js:1352
+#: agir/front/components/mockData/spendingRequest.js:1397
+msgid "Renvoyée pour validation à l'équipe de suivi des questions financières"
+msgstr ""
+
+#: agir/front/components/mockData/spendingRequest.js:603
+#: agir/front/components/mockData/spendingRequest.js:693
+#: agir/front/components/mockData/spendingRequest.js:783
+#: agir/front/components/mockData/spendingRequest.js:873
+#: agir/front/components/mockData/spendingRequest.js:963
+#: agir/front/components/mockData/spendingRequest.js:1128
+#: agir/front/components/mockData/spendingRequest.js:1293
+#: agir/front/components/mockData/spendingRequest.js:1458
+#: agir/front/components/mockData/spendingRequest.js:1503
+#: agir/front/components/mockData/spendingRequest.js:1563
+#: agir/front/components/mockData/spendingRequest.js:1743
+msgid "Ajout d'une pièce-jointe : Facture"
+msgstr ""
+
+#: agir/front/components/mockData/spendingRequest.js:648
+msgid ""
+"Ajout d'une pièce-jointe : Formulaire de candidature stage de formation "
+"régional - Institut La Boétie - Brétagne et Pays de la Loire"
+msgstr ""
+
+#: agir/front/components/mockData/spendingRequest.js:813
+msgid "Mise à jour d'une pièce-jointe : Facture"
+msgstr ""
+
+#: agir/front/components/mockData/spendingRequest.js:828
+#: agir/front/components/mockData/spendingRequest.js:843
+msgid "Mise à jour d'une pièce-jointe : Pièce"
+msgstr ""
+
+#: agir/front/components/mockData/spendingRequest.js:993
+#: agir/front/components/mockData/spendingRequest.js:1023
+#: agir/front/components/mockData/spendingRequest.js:1068
+#: agir/front/components/mockData/spendingRequest.js:1083
+#: agir/front/components/mockData/spendingRequest.js:1173
+#: agir/front/components/mockData/spendingRequest.js:1308
+#: agir/front/components/mockData/spendingRequest.js:1473
+#: agir/front/components/mockData/spendingRequest.js:1593
+#: agir/front/components/mockData/spendingRequest.js:1608
+msgid "Suppression d'une pièce-jointe : Facture"
+msgstr ""
+
+#: agir/front/components/mockData/spendingRequest.js:1008
+#: agir/front/components/mockData/spendingRequest.js:1098
+#: agir/front/components/mockData/spendingRequest.js:1233
+#: agir/front/components/mockData/spendingRequest.js:1428
+#: agir/front/components/mockData/spendingRequest.js:1443
+msgid "Suppression d'une pièce-jointe : Doublons"
+msgstr ""
+
+#: agir/front/components/mockData/spendingRequest.js:1038
+msgid "Suppression d'une pièce-jointe : Document"
+msgstr ""
+
+#: agir/front/components/mockData/spendingRequest.js:1053
+#: agir/front/components/mockData/spendingRequest.js:1203
+msgid "Suppression d'une pièce-jointe : Formulaire à tags"
+msgstr ""
+
+#: agir/front/components/mockData/spendingRequest.js:1188
+msgid ""
+"Suppression d'une pièce-jointe : Formulaire de candidature stage de "
+"formation régional - Institut La Boétie - Brétagne et Pays de la Loire"
+msgstr ""
+
+#: agir/front/components/mockData/spendingRequest.js:1218
+msgid "Suppression d'une pièce-jointe : Photo du groupe d'action"
+msgstr ""
+
+#: agir/front/components/mockData/spendingRequest.js:1248
+msgid "Suppression d'une pièce-jointe : Photo du Stade de France"
+msgstr ""
+
+#: agir/front/components/mockData/spendingRequest.js:1263
+msgid "Suppression d'une pièce-jointe : Devis de la location"
+msgstr ""
+
+#: agir/front/components/mockData/spendingRequest.js:1338
+msgid "Modification du champ : Catégorie"
+msgstr ""
+
+#: agir/front/components/mockData/spendingRequest.js:1488
+#: agir/front/components/mockData/spendingRequest.js:1518
+msgid "Modification du champ : IBAN"
+msgstr ""
+
+#: agir/front/components/mockData/spendingRequest.js:1623
+#: agir/front/components/mockData/spendingRequest.js:1653
+#: agir/front/components/mockData/spendingRequest.js:1668
+#: agir/front/components/mockData/spendingRequest.js:1728
+msgid "Modification du champ : Montant de la dépense"
+msgstr ""
+
+#: agir/front/components/mockData/spendingRequest.js:1751
+msgid "Demande en attente de règlement"
+msgstr ""
+
+#: agir/front/components/mockData/spendingRequest.js:1752
+msgid "Tout est parfait !"
+msgstr ""
+
+#: agir/front/components/mockData/spendingRequest.js:1754
+msgid "Équipe de suivi"
+msgstr ""
+
+#: agir/front/components/notFoundPage/NotFoundPage.js:58
+msgid "Connectez-vous à un"
+msgstr ""
+
+#: agir/front/components/notFoundPage/NotFoundPage.js:60
+msgid "réseau Wi-Fi ou mobile"
+msgstr ""
+
+#: agir/front/components/treveCreationPage/TreveCreationPage.js:45
+msgid " Trève électorale"
+msgstr ""
+
+#: agir/front/components/treveCreationPage/TreveCreationPage.js:50
+msgid ""
+"Jusqu’à dimanche à 20h, vous ne pouvez pas créer d’événement ou de groupe."
+msgstr ""
+
+#: agir/front/components/treveCreationPage/TreveCreationPage.js:62
+msgid "Je trouve mon bureau de vote"
+msgstr ""
+
+#: agir/front/components/treveCreationPage/TreveCreationPage.js:71
+msgid "Agir durant le week-end des élections"
+msgstr ""
+
+#: agir/groups/components/fullGroupPage/FullGroupPage.js:72
+msgid "Désolé, vous ne pouvez pas rejoindre ce groupe."
+msgstr ""
+
+#: agir/groups/components/fullGroupPage/FullGroupPage.js:76
+msgid "Rejoignez un autre groupe proche de chez vous&nbsp;:"
+msgstr ""
+
+#: agir/groups/components/groupComponents/DiscountCodes.js:60
+msgid "Valable jusqu'au "
+msgstr ""
+
+#: agir/groups/components/groupComponents/DiscountCodes.js:83
+#, fuzzy
+#| msgid "Commander du matériel"
+msgid "Codes matériels"
+msgstr "Pedir material"
+
+#: agir/groups/components/groupComponents/GroupCard.js:164
+#, fuzzy
+#| msgid "Voir les groupes"
+msgid "le groupe"
+msgstr "Ver los grupos"
+
+#: agir/groups/components/groupComponents/GroupCard.js:194
+msgid "Vous êtes membre du groupe"
+msgstr ""
+
+#: agir/groups/components/groupComponents/GroupsCard.js:164
+msgid "Mes groupes y participent"
+msgstr ""
+
+#: agir/groups/components/groupComponents/GroupsCard.js:164
+msgid "Mes groupes y ont participé"
+msgstr ""
+
+#: agir/groups/components/groupPage/EmptyContent.js:164
+msgid "Besoin d’idée ? Consultez notre"
+msgstr ""
+
+#: agir/groups/components/groupPage/EmptyContent.js:166
+msgid "guide pour les nouveaux groupes"
+msgstr ""
+
+#: agir/groups/components/groupPage/EmptyContent.js:176
+msgid ""
+"Ajoutez-en à vos événement passés pour tenir au courant les membres de "
+"comment s’est déroulé votre événement&nbsp;!"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupAdminBar.js:54
+#: agir/groups/components/groupPage/GroupUserActions/ManagerActions.js:148
+#, fuzzy
+#| msgid "Carte des événements"
+msgid "Créer un événement du groupe"
+msgstr "Mapa de Acciones"
+
+#: agir/groups/components/groupPage/GroupAdminBar.js:75
+#, fuzzy
+#| msgid "manifestation"
+msgid "Animation"
+msgstr "manifestación"
+
+#: agir/groups/components/groupPage/GroupAdminBar.js:89
+#: agir/groups/components/groupPage/GroupMessagePage/index.js:91
+#: agir/groups/components/groupPage/GroupPage/routes.config.js:137
+#, fuzzy
+#| msgid "manifestation"
+msgid "Administration"
+msgstr "manifestación"
+
+#: agir/groups/components/groupPage/GroupContactCard.js:47
+#: agir/groups/components/groupPage/GroupSettings/routes.config.js:157
+msgid "Moyens de contact"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupDescription.js:46
+msgid "Présentation"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupDescription.js:52
+msgid "Lire la suite"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupDonation.js:16
+msgid "Financez les actions du groupe"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupDonation.js:19
+msgid ""
+"Pour que ce groupe puisse financer ses frais de fonctionnement et s’équiper "
+"en matériel, vous pouvez contribuer financièrement de manière ponctuelle ou "
+"mensuellement."
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupDonation.js:29
+msgid "Devenir financeur·euse"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupEventList.js:106
+#, fuzzy
+#| msgid "Carte des événements"
+msgid "Charger plus d’événements"
+msgstr "Mapa de Acciones"
+
+#: agir/groups/components/groupPage/GroupFacts.js:63
+#: agir/groups/components/groupPage/GroupPage/Routes/RoutePreviews.js:163
+#, fuzzy
+#| msgid "Carte des événements"
+msgid "événement"
+msgstr "Mapa de Acciones"
+
+#: agir/groups/components/groupPage/GroupFacts.js:72
+msgid "membres actifs"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupFacts.js:72
+msgid "membre actif"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupFacts.js:79
+msgid "Groupe certifié"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupFacts.js:91
+msgid "Dernière activité&nbsp;:"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupFacts.js:103
+msgid "Télécharger l'agenda du groupe"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupMessagePage/UnavailableMessagePage.js:37
+msgid ""
+"Vous n’avez pas les droits nécessaires pour afficher ce message, car il est "
+"réservé aux membres du groupe."
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupMessagePage/UnavailableMessagePage.js:45
+msgid "Voir l'aide en ligne"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupMessagePage/index.js:138
+msgid "Ce message n'est pas disponible"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupOrders.js:44
+#: agir/groups/components/groupPage/GroupOrders.js:47
+msgid "Commander du matériel"
+msgstr "Pedir material"
+
+#: agir/groups/components/groupPage/GroupPage/GroupPage.js:47
+msgid "Groupe"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupPage/GroupPage.js:48
+#, fuzzy
+#| msgid "Carte des groupes"
+msgid "Ce groupe"
+msgstr "Mapa de Grupos"
+
+#: agir/groups/components/groupPage/GroupPage/Routes/InfoRoute.js:124
+#, fuzzy
+#| msgid "Carte des groupes"
+msgid "Partager le lien du groupe"
+msgstr "Mapa de Grupos"
+
+#: agir/groups/components/groupPage/GroupPage/Routes/RoutePreviews.js:137
+#: agir/groups/components/groupPage/GroupPage/routes.config.js:40
+msgid "Agenda"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupPage/Routes/RoutePreviews.js:163
+msgid "Dernier"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupPage/Routes/RoutePreviews.js:209
+msgid "Derniers messages"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupPage/routes.config.js:19
+msgid "Accueil"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupPage/routes.config.js:49
+msgid "Comptes rendus"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/ConfirmMembershipTypeChange.js:64
+msgid ""
+"ne recevra plus les messages postés sur Action Populaire que vous destinez "
+"aux membres actifs."
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/ConfirmMembershipTypeChange.js:73
+msgid " Retirer"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/ConfirmMembershipTypeChange.js:102
+#, fuzzy
+#| msgid "Passer à l'action"
+msgid "Passer en membre actif"
+msgstr "Pasa a la acción"
+
+#: agir/groups/components/groupPage/GroupSettings/ConfirmMembershipTypeChange.js:131
+#: agir/groups/components/groupPage/GroupSettings/GroupMemberFile/GroupMemberActions.js:84
+#, fuzzy
+#| msgid "Passer à l'action"
+msgid "Passer en gestionnaire"
+msgstr "Pasa a la acción"
+
+#: agir/groups/components/groupPage/GroupSettings/ConfirmMembershipTypeChange.js:157
+msgid "restera parmi les membres actifs de votre groupe."
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupActiveMembersPage/MainPanel.js:34
+msgid ""
+"Action requise&nbsp;: votre groupe ne respecte plus la charte des groupes "
+"d'action."
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupCertificationPage/GroupCertification.js:83
+msgid ""
+"Action requise&nbsp;: votre groupe ne respecte plus la charte des groupes "
+"d'action&nbsp;!"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupCertificationPage/GroupCertification.js:86
+msgid ""
+"Certains des critères requis pour la certification de votre groupe ne sont "
+"plus respectés. Attention, si cette situation devait perdurer, votre groupe "
+"serait decertifié."
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupCertificationPage/GroupCertification.js:89
+msgid ""
+"NB&nbsp;: dans le cas de l'animation paritaire il se peut que les animateur-"
+"ices n'aient pas indiqué leur genre. Corrigez cela pour que votre groupe "
+"redevienne paritaire."
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupCertificationPage/GroupCertification.js:111
+#, fuzzy
+#| msgid "Carte des groupes"
+msgid "Certification du groupe"
+msgstr "Mapa de Grupos"
+
+#: agir/groups/components/groupPage/GroupSettings/GroupCertificationPage/GroupCertification.js:115
+msgid ""
+"La certification du groupe permet de recevoir un code mensuel de 30 euros "
+"afin de "
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupCertificationPage/GroupCertification.js:115
+#, fuzzy
+#| msgid "Commander du matériel"
+msgid "commander du matériel"
+msgstr "Pedir material"
+
+#: agir/groups/components/groupPage/GroupSettings/GroupCertificationPage/GroupCertification.js:118
+msgid "Par ailleurs, la certification permet de témoigner du respect de la"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupCertificationPage/GroupCertification.js:119
+#: agir/groups/components/groupPage/GroupSettings/GroupCertificationPage/GroupCertification.js:175
+#, fuzzy
+#| msgid "Carte des groupes"
+msgid "charte des groupes d’action"
+msgstr "Mapa de Grupos"
+
+#: agir/groups/components/groupPage/GroupSettings/GroupCertificationPage/GroupCertification.js:173
+msgid "Je confirme avoir pris connaissance de la"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupCertificationPage/GroupCertification.js:202
+msgid "pour demander la certification"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupContactsPage/MainPanel.js:85
+msgid ""
+"Obtenez des contacts pour partager les actions de votre groupe d’action et "
+"du mouvement."
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupContactsPage/MainPanel.js:104
+msgid ""
+" Vos contacts qui reçoivent vos messages et nouveaux événements par e-mail "
+"sont indiqués comme « abonnés »."
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupFinancePage.js:57
+msgid "Personne n'a encore alloué de dons à vos actions."
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupFinancePage.js:62
+msgid ""
+"Vous pouvez allouer des dons à vos actions de manière ponctuelle ou avec une "
+"contribution financière sur l'année."
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupFinancePage.js:79
+#, fuzzy
+#| msgid "Faire un don"
+msgid "Allouer un don"
+msgstr "Donar"
+
+#: agir/groups/components/groupPage/GroupSettings/GroupFinancePage.js:90
+msgid "Partagez ce lien pour solliciter des dons pour votre groupe&nbsp;:"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupFinancePage.js:106
+msgid ""
+"Vous pouvez créer une demande de remboursement ou de paiement à tout moment "
+"et en enregistrer le brouillon."
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupGeneralPage.js:145
+msgid "Image de la bannière"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupGeneralPage.js:149
+msgid ""
+"Utilisez une image à peu près deux fois plus large que haute. Elle doit "
+"faire au minimum 1200px de large et 630px de haut pour une qualité optimale."
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupInvitation.js:56
+msgid "Invitation envoyée"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupInvitation.js:75
+msgid "Adresse e-mail de l’invité·e"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupInvitation.js:82
+msgid "Envoyer une invitation"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupLinksPage/GroupLinkForm.js:53
+msgid "et tout le monde pourra y accéder. Ne partagez pas de boucles privées."
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupLinksPage/GroupLinkForm.js:60
+msgid "Titre à afficher"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupLinksPage/GroupLinkForm.js:61
+msgid "Exemple : « Vidéo de présentation »"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupLinksPage/GroupLinkForm.js:92
+msgid "Ajouter ce lien"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupLinksPage/GroupLinks.js:53
+msgid "Vous n’avez pas encore de lien !"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupLinksPage/index.js:64
+msgid "Le lien a été enregistré"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupLinksPage/index.js:79
+msgid "Le lien n'a pas pu être supprimé. Veuillez ressayer."
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupLinksPage/index.js:86
+msgid "Le lien a été supprimé"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupLocalizationPage.js:119
+msgid " Personnaliser la localisation sur la carte"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupLocalizationPage.js:124
+msgid ""
+"Si vous ne souhaitez pas rendre votre adresse personnelle publique, indiquez "
+"un endroit à proximité (café, mairie...)"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupManagementPage/EditionPanel.js:73
+msgid "Tous vos membres sont déjà tous gestionnaires ou animateur·ices."
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupManagementPage/EditionPanel.js:79
+msgid "Choisir un membre"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupManagementPage/EditionPanel.js:100
+msgid "Modifier les permissions des gestionnaires"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupManagementPage/EditionPanel.js:105
+msgid "Voir la liste des membres"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupManagementPage/EditionPanel.js:109
+msgid "Modifier les informations du groupe"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupManagementPage/EditionPanel.js:113
+#, fuzzy
+#| msgid "Carte des événements"
+msgid "Créer des événements au nom du groupe"
+msgstr "Mapa de Acciones"
+
+#: agir/groups/components/groupPage/GroupSettings/GroupManagementPage/EditionPanel.js:117
+msgid "Erreur"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupManagementPage/EditionPanel.js:121
+msgid "Confirmer"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupManagementPage/ManagerMainPanel.js:14
+#: agir/groups/components/groupPage/GroupSettings/routes.config.js:105
+msgid "Gestion et animation"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupManagementPage/ManagerMainPanel.js:22
+msgid "Quel est mon rôle en tant que gestionnaire ?"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupManagementPage/ManagerMainPanel.js:24
+msgid ""
+"Votre rôle et d’aider les animateur·ices à faire vivre votre groupe sur "
+"Action Populaire."
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupManagementPage/ManagerMainPanel.js:33
+msgid "Je souhaite quitter la gestion de ce groupe"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupManagementPage/ManagerMainPanel.js:35
+msgid ""
+"En tant que gestionnaire, vous ne pouvez pas modifier le rôle d’un membre, y "
+"compris le vôtre."
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupManagementPage/ReferentMainPanel.js:37
+msgid "Animateurs et animatrices"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupManagementPage/ReferentMainPanel.js:45
+#, fuzzy
+#| msgid "Carte des groupes"
+msgid "charte des groupes d'actions"
+msgstr "Mapa de Grupos"
+
+#: agir/groups/components/groupPage/GroupSettings/GroupManagementPage/ReferentMainPanel.js:97
+msgid "Ajoutez des gestionnaires pour vous assister sur Action Populaire."
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupManagementPage/ReferentMainPanel.js:101
+msgid ""
+"Ces derniers ont accès à la liste des membres, peuvent modifier les "
+"informations et créer des événements au nom du groupe."
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupManagementPage/ReferentMainPanel.js:115
+#, fuzzy
+#| msgid "Voir les groupes"
+msgid "Supprimer le groupe"
+msgstr "Ver los grupos"
+
+#: agir/groups/components/groupPage/GroupSettings/GroupMaterielPage.js:27
+msgid ""
+"Accédez à du matériel (affiches, tracts, autocollants...) gratuit en "
+"utilisant les codes promos mis à disposition de votre groupe."
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupMaterielPage.js:33
+msgid "Pour utiliser vos codes, accédez au site matériel :"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupMaterielPage.js:46
+msgid "Site d’achat de matériel"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupMemberFile/GroupMemberActions.js:56
+#: agir/groups/components/groupPage/GroupSettings/GroupMemberFile/GroupMemberActions.js:80
+#, fuzzy
+#| msgid "Voir les groupes"
+msgid "Modifier les droits"
+msgstr "Ver los grupos"
+
+#: agir/groups/components/groupPage/GroupSettings/GroupMemberFile/GroupMemberActions.js:64
+msgid ""
+" car le groupe a atteint la limite de membres actifs. Passez des membres "
+"actifs en contact ou divisez votre groupe pour renforcer le réseau d'action"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupMemberFile/GroupMemberActions.js:101
+msgid "Retirer le droit de gestionnaire"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupMemberFile/GroupMemberCard.js:134
+msgid "L'adresse e-mail a été copié."
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupMemberFile/GroupMemberFacts.js:39
+msgid "Est abonné·e à l’actualité de votre groupe"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupMemberFile/GroupMemberFacts.js:40
+msgid "N'est pas abonné·e à l’actualité de votre groupe"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupMemberFile/GroupMemberFile.js:63
+msgid ""
+"Cette personne a transmis ces informations volontairement à votre groupe. "
+"Elles sont strictement confidentielles."
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupMemberList/GroupMemberList.js:118
+msgid "Filter"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupMemberList/GroupMemberList.js:121
+msgid "Filtrer par nom ou e-mail"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupReadOnlyMembersPage/MainPanel.js:32
+msgid "Membres"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/GroupReadOnlyMembersPage/MainPanel.js:32
+msgid "Membre"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/SpendingRequests.js:152
+msgid "Voir la demande"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/SpendingRequests.js:194
+msgid "Créer une demande de dépense"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/routes.config.js:74
+#, fuzzy
+#| msgid "Carte des groupes"
+msgid "Paramètres du groupe"
+msgstr "Mapa de Grupos"
+
+#: agir/groups/components/groupPage/GroupSettings/routes.config.js:82
+msgid "Membres actifs"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/routes.config.js:95
+#: agir/groups/components/groupPage/GroupUserActions/ManagerActions.js:116
+#, fuzzy
+#| msgid "Contact"
+msgid "Contacts"
+msgstr "Contacto"
+
+#: agir/groups/components/groupPage/GroupSettings/routes.config.js:116
+msgid "Certification"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/routes.config.js:126
+msgid "Matériel"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupSettings/routes.config.js:168
+#, fuzzy
+#| msgid "est le réseau social d’action de"
+msgid "Liens et réseaux sociaux"
+msgstr "es la red de acción de"
+
+#: agir/groups/components/groupPage/GroupUserActions/ContactButton.js:85
+#, fuzzy
+#| msgid "Contact"
+msgid "Contacter"
+msgstr "Contacto"
+
+#: agir/groups/components/groupPage/GroupUserActions/EditMembershipDialog.js:37
+msgid "Modifier les informations que je partage avec le groupe"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupUserActions/EditMembershipDialog.js:41
+msgid "Nom public et adresse e-mail (obligatoire)"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupUserActions/FollowGroupDialog.js:16
+msgid "Vous suivez"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupUserActions/FollowGroupDialog.js:19
+msgid " Vous recevrez l’actualité de ce groupe."
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupUserActions/FollowerActions.js:36
+msgid " Vous êtes abonné·e"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupUserActions/FollowerActions.js:50
+#: agir/groups/components/groupPage/GroupUserActions/MemberActions.js:50
+msgid "Préférences de confidentialité"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupUserActions/JoinGroupDialog.js:36
+msgid ""
+"Les animateur·ices seront informé·es de votre arrivée et vous pourrez "
+"rencontrer les membres du groupe&nbsp;!"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupUserActions/JoinGroupDialog.js:50
+msgid " Annuler"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupUserActions/JoinGroupDialog.js:86
+msgid ""
+"Vous pourrez retirer cette autorisation à tout moment. C'est maintenant que "
+"tout se joue&nbsp;!"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupUserActions/JoinGroupDialog.js:134
+msgid "Je me présente&nbsp;!"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupUserActions/JoinGroupDialog.js:145
+msgid "Plus tard"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupUserActions/ManagerActions.js:129
+msgid "Animateur·ices et gestionnaires"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupUserActions/ManagerActions.js:142
+#, fuzzy
+#| msgid "Liens utiles"
+msgid "Liens externes"
+msgstr "Enlaces útiles"
+
+#: agir/groups/components/groupPage/GroupUserActions/MemberActions.js:36
+#, fuzzy
+#| msgid "d'autres membres"
+msgid "Vous êtes membre"
+msgstr "a otras personas"
+
+#: agir/groups/components/groupPage/GroupUserActions/NonMemberActions.js:37
+msgid " Rejoindre"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupUserActions/QuitGroupDialog.js:24
+#, fuzzy
+#| msgid "Voir les groupes"
+msgid "Quitter le groupe "
+msgstr "Ver los grupos"
+
+#: agir/groups/components/groupPage/GroupUserActions/QuitGroupDialog.js:34
+msgid "Vous pourrez rejoindre le groupe à nouveau à tout moment."
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupUserActions/QuitGroupDialog.js:40
+msgid "Vous pouvez suivre ce groupe à nouveau à tout moment."
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupUserActions/SecondaryActions.js:74
+msgid "Partager"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupUserActions/SecondaryActions.js:79
+#, fuzzy
+#| msgid "Carte des groupes"
+msgid "Partager le groupe"
+msgstr "Mapa de Grupos"
+
+#: agir/groups/components/groupPage/GroupUserActions/index.js:126
+msgid "Désolé, vous ne pouvez pas quitter le groupe"
+msgstr ""
+
+#: agir/groups/components/groupPage/GroupUserActions/index.js:148
+#, fuzzy
+#| msgid "Vous avez déjà un compte ?"
+msgid "Vous avez quitté le groupe"
+msgstr "¿Ya tienes cuenta?"
+
+#: agir/groups/components/groupSelector/GroupSelector.js:57
+msgid "Entrez au moins 3 lettres pour chercher un groupe"
+msgstr ""
+
+#: agir/groups/components/groupSelector/GroupSelector.js:83
+#: agir/groups/components/groupsPage/GroupsPageHeader.js:54
+#, fuzzy
+#| msgid "Voir les groupes"
+msgid "Mes groupes"
+msgstr "Ver los grupos"
+
+#: agir/groups/components/groupsPage/UserGroups.js:49
+msgid "Groupes suivis"
+msgstr ""
+
+#: agir/people/components/contacts/CreateContactPage/ConfirmContact.js:68
+msgid "Confirmer les informations"
+msgstr ""
+
+#: agir/people/components/contacts/CreateContactPage/ConfirmContact.js:81
+#, fuzzy
+#| msgid "logo de la France insoumise"
+msgid "Veut rejoindre la France insoumise"
+msgstr "logo de Red Mexa"
+
+#: agir/people/components/contacts/CreateContactPage/ConfirmContact.js:96
+msgid "Sera correspondant·e de l’immeuble ou de village"
+msgstr ""
+
+#: agir/people/components/contacts/CreateContactPage/ContactForm.js:69
+msgid "Ne pas ajouter à un groupe"
+msgstr ""
+
+#: agir/people/components/contacts/CreateContactPage/ContactForm.js:211
+msgid "Souhaitez-vous nous laisser votre contact"
+msgstr ""
+
+#: agir/people/components/contacts/CreateContactPage/ContactForm.js:215
+msgid "Prénom*"
+msgstr ""
+
+#: agir/people/components/contacts/CreateContactPage/ContactForm.js:225
+msgid "Nom*"
+msgstr ""
+
+#: agir/people/components/contacts/CreateContactPage/ContactForm.js:235
+msgid "Code postal*"
+msgstr ""
+
+#: agir/people/components/contacts/CreateContactPage/ContactForm.js:246
+msgid "E-mail"
+msgstr ""
+
+#: agir/people/components/contacts/CreateContactPage/ContactForm.js:265
+msgid "Facultatif si une adresse e-mail a été renseignée"
+msgstr ""
+
+#: agir/people/components/contacts/CreateContactPage/ContactForm.js:272
+#, fuzzy
+#| msgid "logo de la France insoumise"
+msgid "Je souhaite rejoindre la France insoumise"
+msgstr "logo de Red Mexa"
+
+#: agir/people/components/contacts/CreateContactPage/ContactForm.js:280
+msgid "Souhaitez-vous recevoir :"
+msgstr ""
+
+#: agir/people/components/contacts/CreateContactPage/ContactForm.js:334
+msgid "Devenir correspondant·e de l'immeuble ou du village"
+msgstr ""
+
+#: agir/people/components/contacts/CreateContactPage/ContactForm.js:363
+msgid "Nom de la commune"
+msgstr ""
+
+#: agir/people/components/contacts/CreateContactPage/ContactSuccess.js:65
+msgid "Les gestionnaires et animateur·ices du groupe"
+msgstr ""
+
+#: agir/people/components/contacts/CreateContactPage/HowTo.js:121
+msgid "à de nouvelles personnes !"
+msgstr ""
+
+#: agir/people/components/contacts/CreateContactPage/HowTo.js:129
+msgid ""
+"Les contacts sont enregistrés et visibles dans la partie gestion du groupe "
+"pour les gestionnaires et animateur·ices"
+msgstr ""
+
+#: agir/people/components/contacts/CreateContactPage/HowTo.js:138
+msgid ""
+"qui pourront diffuser nos propositions et inciter leurs voisins à aller voter"
+msgstr ""
+
+#: agir/people/components/contacts/CreateContactPage/NoGroupCard.js:56
+msgid ""
+"Rejoignez ou créez un groupe pour pouvoir abonner les soutiens que vous "
+"obtenez à votre groupe"
+msgstr ""
+
+#: agir/people/components/contacts/CreateContactPage/NoGroupCard.js:65
+msgid "Voir les groupes"
+msgstr "Ver los grupos"
+
+#~ msgid "Mentions légales"
+#~ msgstr "Aviso legal"
+
+#~ msgid "Le programme"
+#~ msgstr "El Programa"
+
+#~ msgid "Le blog de"
+#~ msgstr "El blog de"
+
+#~ msgid "formez-vous et convainquez des gens près de chez vous !"
+#~ msgstr "Convence a quienes viven cerca de ti"
+
+#~ msgid "l'actualité"
+#~ msgstr "las novedades"
+
+#~ msgid ""
+#~ "Action Populaire est le réseau social d’action de la France Insoumise. "
+#~ "Pour retrouver l’actualité, rendez-vous sur nos sites :"
+#~ msgstr ""
+#~ "Red Mexa reúne a las y los mexican@s en el mundo que quieren un "
+#~ "Méxicounido y progresista. ¡Participa!"

@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
@@ -64,7 +65,7 @@ const ConfirmContact = (props) => {
 
   return (
     <StyledWrapper>
-      <h2>Confirmer les informations</h2>
+      <h2>{_("Confirmer les informations")}</h2>
       <div>
         <h4>
           {data.firstName} {data.lastName}
@@ -77,11 +78,11 @@ const ConfirmContact = (props) => {
       <Spacer size="1.5rem" />
       <ul>
         {data.isPoliticalSupport ? (
-          <li>Veut rejoindre la France insoumise</li>
+          <li>{_("Veut rejoindre la France insoumise")}</li>
         ) : null}
         {newsletters.length > 0 ? (
           <li>
-            Recevra les lettres d'information suivantes&nbsp;:{" "}
+            {_("Recevra les lettres d'information suivantes&nbsp;:")}{" "}
             <ul>
               {newsletters.map((n) => (
                 <li key={n} style={{ fontSize: "0.875rem" }}>
@@ -92,30 +93,28 @@ const ConfirmContact = (props) => {
           </li>
         ) : null}
         {data.newsletters.includes(LIAISON_NEWSLETTER.value) ? (
-          <li>Sera correspondant·e de l’immeuble ou de village</li>
+          <li>{_("Sera correspondant·e de l’immeuble ou de village")}</li>
         ) : null}
         {data.group?.id ? (
           <li>
-            Ces informations seront accessibles aux gestionnaires et
-            animateur·ices du groupe <strong>{data.group.name}</strong>
+           {_(" Ces informations seront accessibles aux gestionnaires et animateur·ices du groupe")} <strong>{data.group.name}</strong>
           </li>
         ) : null}
       </ul>
       <Spacer size="2rem" />
-      <p>Le contact recevra un e-mail lui confirmant ces informations.</p>
+      <p>{_("Le contact recevra un e-mail lui confirmant ces informations.")}</p>
       <Spacer size="0.5rem" />
       <p>
-        En enregistrant cette personne vous confirmez avoir reçu son
-        consentement oral. Tout abus sera sanctionné.
+        {_("En enregistrant cette personne vous confirmez avoir reçu son consentement oral. Tout abus sera sanctionné.")}
       </p>
       <Spacer size="1rem" />
       <footer>
         <Button icon="arrow-left" onClick={onBack} disabled={isLoading}>
-          Modifier
+          {_("Modifier")}
         </Button>
         <Spacer style={{ display: "inline-block" }} size="1rem" />
         <Button color="secondary" onClick={onConfirm} disabled={isLoading}>
-          Enregistrer le contact
+          {_("Enregistrer le contact")}
         </Button>
       </footer>
     </StyledWrapper>

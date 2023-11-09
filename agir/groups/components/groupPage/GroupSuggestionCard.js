@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 import { useHistory } from "react-router-dom";
@@ -115,7 +116,7 @@ const GroupSuggestionCard = (props) => {
           small
           color="secondary"
         >
-          Voir le groupe
+          {_("Voir le groupe")}
         </Button>
       </StyledBody>
     </StyledCard>

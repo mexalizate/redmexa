@@ -228,7 +228,7 @@ const TellMore = ({ dismiss }) => {
                 <TextField
                   label={
                     <>
-                      Prénom{" "}
+                      {_("Prénom")}{" "}
                       <span style={{ fontWeight: 400 }}>(facultatif)</span>
                     </>
                   }

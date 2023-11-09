@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
@@ -41,15 +42,15 @@ export const JoinAGroupCard = (props) => {
     <StyledCard>
       <img src={illustration} />
       <h4>
-        Créer ou rejoindre un groupe d’action{" "}
+        {_("Créer ou rejoindre un groupe d’action")}{" "}
         {commune?.nameOf
-          ? `${communeNameOfToIn(commune.nameOf)} et alentours`
+          ? _(`${communeNameOfToIn(commune.nameOf)} et alentours`)
           : city
-          ? `à ${city} et alentours`
-          : "près de chez vous"}
+          ? _(`à ${city} et alentours`)
+          : _("près de chez vous")}
       </h4>
       <Button link route="groupMap" color="secondary">
-        Voir la carte
+        {_("Voir la carte")}
       </Button>
     </StyledCard>
   );

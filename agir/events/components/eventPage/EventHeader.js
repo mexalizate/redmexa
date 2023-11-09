@@ -1,3 +1,4 @@
+import _ from "gettext";
 import { DateTime, Interval } from "luxon";
 import PropTypes from "prop-types";
 import React, { useCallback, useState } from "react";
@@ -190,7 +191,7 @@ const Actions = (props) => {
             to={routeConfig.eventSettings.getLink({ eventPk: id })}
             color="primary"
           >
-            Gérer l'événement
+            {_("Gérer l'événement")}
           </Button>
         )}
       </StyledActions>
@@ -201,7 +202,7 @@ const Actions = (props) => {
     return (
       <StyledActions>
         <Button color="secondary" disabled={true}>
-          Participer à l'événement
+          {_("Participer à l'événement")}
         </Button>
       </StyledActions>
     );
@@ -219,7 +220,7 @@ const Actions = (props) => {
             to={routeConfig.eventSettings.getLink({ eventPk: id })}
             color="primary"
           >
-            Gérer l'événement
+            {_("Gérer l'événement")}
           </Button>
         )}
         {canRSVP && !rsvped && (
@@ -230,7 +231,7 @@ const Actions = (props) => {
             disabled={isLoading}
             onClick={handleRSVP}
           >
-            Participer à l'événement
+            {_("Participer à l'événement")}
           </Button>
         )}
         {rsvped && !hasPrice && (
@@ -243,7 +244,7 @@ const Actions = (props) => {
               MobileLayout={Popin}
             >
               <a href="" onClick={handleQuitEvent}>
-                Annuler
+                {_("Annuler")}
               </a>
             </StyledButtonMenu>
             <QuitEventButton
@@ -262,7 +263,7 @@ const Actions = (props) => {
         )}
         {rsvped && allowGuests && hasRSVPDetails && (
           <Button link href={routes.rsvp}>
-            Ajouter une personne
+            {_("Ajouter une personne")}
           </Button>
         )}
         {!isManager && volunteerApplicationFormLink && (
@@ -271,7 +272,7 @@ const Actions = (props) => {
             link
             href={volunteerApplicationFormLink}
           >
-            Se porter volontaire
+            {_("Se porter volontaire")}
           </Button>
         )}
       </StyledActions>
@@ -334,16 +335,16 @@ const AdditionalMessage = (props) => {
           route="login"
           state={{ from: "event", next: location.pathname }}
         >
-          Je me connecte
+          {_("Je me connecte")}
         </ActionLink>{" "}
         ou{" "}
         <ActionLink
           route="signup"
           state={{ from: "event", next: location.pathname }}
         >
-          je m'inscris
+          {_("je m'inscris")}
         </ActionLink>{" "}
-        pour participer à l'événement
+       {_(" pour participer à l'événement")}
       </div>
     );
   }
@@ -375,7 +376,7 @@ const AdditionalMessage = (props) => {
   if (!isOrganizer && !rsvped) {
     return (
       <SmallText>
-        Votre adresse e-mail sera communiquée à l'organisateur·ice
+        {_("Votre adresse e-mail sera communiquée à l'organisateur·ice")}
       </SmallText>
     );
   }

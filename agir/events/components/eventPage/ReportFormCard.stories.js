@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React from "react";
 
 import { ReportFormCard } from "./ReportFormCard";
@@ -14,9 +15,9 @@ const Template = (args) => <ReportFormCard {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  title: "Comptabiliser nos efforts !",
+  title: _("Comptabiliser nos efforts !"),
   description:
-    "Après avoir terminé votre porte-à-porte indiquez à combien de portes vous avez toqué et de contacts avez-vous obtenus",
+    _("Après avoir terminé votre porte-à-porte indiquez à combien de portes vous avez toqué et de contacts avez-vous obtenus"),
   url: "#formURL",
   submitted: false,
 };

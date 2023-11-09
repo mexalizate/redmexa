@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React from "react";
 import Modal from "./Modal";
 
@@ -117,8 +118,8 @@ WithInitialData.args = {
       startTime: "2021-01-09 10:04:19",
       type: "G",
     },
-    subject: "Un beau message",
-    text: "Bonjour !",
+    subject: _("Un beau message"),
+    text: _("Bonjour !"),
   },
 };
 

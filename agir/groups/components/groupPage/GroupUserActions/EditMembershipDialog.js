@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useEffect, useState } from "react";
 
@@ -33,17 +34,17 @@ const EditMembershipDialog = (props) => {
     >
       <StyledDialog>
         <header>
-          <h3>Modifier les informations que je partage avec le groupe</h3>
+          <h3>{_("Modifier les informations que je partage avec le groupe")}</h3>
         </header>
         <article>
           <CheckboxField
-            label="Nom public et adresse e-mail (obligatoire)"
+            label={_("Nom public et adresse e-mail (obligatoire)")}
             readOnly
             disabled
             value
           />
           <CheckboxField
-            label="Coordonées complètes (nom complet, téléphone et adresse)."
+            label={_("Coordonées complètes (nom complet, téléphone et adresse).")}
             onChange={handleCheck}
             disabled={isLoading}
             value={personalInfoConsent}
@@ -58,7 +59,7 @@ const EditMembershipDialog = (props) => {
             block
             wrap
           >
-            Mettre à jour
+           {_(" Mettre à jour")}
           </Button>
         </footer>
       </StyledDialog>

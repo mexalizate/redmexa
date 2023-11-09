@@ -1,3 +1,4 @@
+import _ from "gettext";
 import Control from "ol/control/Control";
 import { fromLonLat } from "ol/proj";
 import { OpenStreetMapProvider } from "leaflet-geosearch";
@@ -33,11 +34,11 @@ export default function makeSearchControl(view) {
       results = await provider.search({ query: value });
     } catch (e) {
       return {
-        error: "Impossible de contacter le service de recherche d'adresses.",
+        error: _("Impossible de contacter le service de recherche d'adresses."),
       };
     }
     if (results.length === 0) {
-      return { error: "Lieu inconnu" };
+      return { error: _("Lieu inconnu") };
     }
     return { results: results };
   }

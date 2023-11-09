@@ -1,3 +1,4 @@
+import _ from "gettext";
 import { lazy } from "@agir/front/app/utils";
 import {
   RouteConfig,
@@ -70,7 +71,7 @@ export const menuRoute = {
   id: "menu",
   path: "gestion/",
   exact: false,
-  label: "Paramètres du groupe",
+  label: _("Paramètres du groupe"),
 };
 
 export const routeConfig = {
@@ -78,7 +79,7 @@ export const routeConfig = {
     id: "members",
     path: "membres/",
     exact: true,
-    label: "Membres actifs",
+    label: _("Membres actifs"),
     icon: "users",
     getComponent: (group) =>
       group.isEditable
@@ -91,7 +92,7 @@ export const routeConfig = {
     id: "contacts",
     path: "contacts/",
     exact: true,
-    label: "Contacts",
+    label: _("Contacts"),
     icon: "rss",
     Component: GroupSettingsContacts,
     isActive: (group) => group.isEditable,
@@ -101,7 +102,7 @@ export const routeConfig = {
     id: "manage",
     path: "animation/",
     exact: true,
-    label: "Gestion et animation",
+    label: _("Gestion et animation"),
     icon: "lock",
     Component: GroupSettingsManage,
     illustration: illustrationManage,
@@ -112,7 +113,7 @@ export const routeConfig = {
     id: "certification",
     path: "certification/",
     exact: true,
-    label: "Certification",
+    label: _("Certification"),
     icon: "check-circle",
     Component: GroupSettingsCertification,
     isActive: (group) => group.isCertifiable || group.isCertified,
@@ -122,7 +123,7 @@ export const routeConfig = {
     id: "materiel",
     path: "materiel/",
     exact: true,
-    label: "Matériel",
+    label: _("Matériel"),
     icon: "shopping-bag",
     Component: GroupSettingsMateriel,
     isActive: true,
@@ -132,7 +133,7 @@ export const routeConfig = {
     id: "general",
     path: "general/",
     exact: true,
-    label: "Général",
+    label: _("Général"),
     icon: "file-text",
     Component: GroupSettingsGeneral,
     illustration: illustrationGeneral,
@@ -143,7 +144,7 @@ export const routeConfig = {
     id: "location",
     path: "localisation/",
     exact: true,
-    label: "Localisation",
+    label: _("Localisation"),
     icon: "map-pin",
     Component: GroupSettingsLocation,
     isActive: (group) => group.isEditable,
@@ -153,7 +154,7 @@ export const routeConfig = {
     id: "contact",
     path: "contact/",
     exact: true,
-    label: "Moyens de contact",
+    label: _("Moyens de contact"),
     icon: "mail",
     Component: GroupSettingsContact,
     illustration: illustrationContact,
@@ -164,7 +165,7 @@ export const routeConfig = {
     id: "links",
     path: "liens/",
     exact: true,
-    label: "Liens et réseaux sociaux",
+    label: _("Liens et réseaux sociaux"),
     icon: "at-sign",
     Component: GroupSettingsLinks,
     illustration: illustrationLinks,
@@ -175,7 +176,7 @@ export const routeConfig = {
     id: "help",
     path: "ressources/",
     exact: true,
-    label: "Ressources",
+    label: _("Ressources"),
     icon: "more-horizontal",
     Component: GroupSettingsHelp,
     illustration: illustrationHelp,

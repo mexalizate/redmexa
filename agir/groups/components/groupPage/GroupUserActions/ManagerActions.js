@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
@@ -91,7 +92,7 @@ const ManagerActions = (props) => {
   return (
     <StyledWrapper>
       <StyledPanel>
-        <h6>Gestion du groupe</h6>
+        <h6>{_("Gestion du groupe")}</h6>
         <Button
           link
           route="createEvent"
@@ -100,54 +101,54 @@ const ManagerActions = (props) => {
           icon="plus"
           small
         >
-          Créer un événement du groupe
+          {_("Créer un événement du groupe")}
         </Button>
         <ul>
           {groupSettingsLinks?.members && (
             <li>
               <RawFeatherIcon color={style.primary500} name="users" />
-              <Link to={groupSettingsLinks.members}>Membres</Link>
+              <Link to={groupSettingsLinks.members}>{_("Membres")}</Link>
             </li>
           )}
           {groupSettingsLinks?.contacts && (
             <li>
               <RawFeatherIcon color={style.primary500} name="rss" />
-              <Link to={groupSettingsLinks.contacts}>Contacts</Link>
+              <Link to={groupSettingsLinks.contacts}>{_("Contacts")}</Link>
             </li>
           )}
           {groupSettingsLinks?.general && (
             <li>
               <RawFeatherIcon name="file-text" color={style.primary500} />
-              <Link to={groupSettingsLinks.general}>Informations</Link>
+              <Link to={groupSettingsLinks.general}>{_("Informations")}</Link>
             </li>
           )}
           {groupSettingsLinks?.manage && (
             <li>
               <RawFeatherIcon color={style.primary500} name="lock" />
               <Link to={groupSettingsLinks.manage}>
-                Animateur·ices et gestionnaires
+                {_("Animateur·ices et gestionnaires")}
               </Link>
             </li>
           )}
           {groupSettingsLinks?.finance && (
             <li>
               <RawFeatherIcon color={style.primary500} name="briefcase" />
-              <Link to={groupSettingsLinks.finance}>Caisse du groupe</Link>
+              <Link to={groupSettingsLinks.finance}>{_("Caisse du groupe")}</Link>
             </li>
           )}
           {groupSettingsLinks?.links && (
             <li>
               <RawFeatherIcon color={style.primary500} name="loader" />
-              <Link to={groupSettingsLinks.links}>Liens externes</Link>
+              <Link to={groupSettingsLinks.links}>{_("Liens externes")}</Link>
             </li>
           )}
         </ul>
       </StyledPanel>
       <Button link route="createEvent" color="primary" icon="plus" small>
-        Créer un événement du groupe
+        {_("Créer un événement du groupe")}
       </Button>
       <Button link to={groupSettingsLinks?.menu} icon="settings" small>
-        Gestion du groupe
+        {_("Gestion du groupe")}
       </Button>
     </StyledWrapper>
   );

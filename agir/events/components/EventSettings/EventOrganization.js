@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useState, useMemo } from "react";
 import useSWR from "swr";
@@ -65,18 +66,16 @@ const EventOrganization = (props) => {
       {!canInviteOrganizerGroups &&
       groups.length + groupsInvited.length === 1 ? (
         <>
-          <StyledTitle>Groupe organisateur</StyledTitle>
+          <StyledTitle>{_("Groupe organisateur")}</StyledTitle>
           <span style={{ color: style.black700 }}>
-            Les animateur·ices du groupe peuvent accéder à la gestion de
-            l'événement et la liste des participant·es.
+            {_("Les animateur·ices du groupe peuvent accéder à la gestion de l'événement et la liste des participant·es.")}
           </span>
         </>
       ) : (
         <>
-          <StyledTitle>Groupes organisateurs</StyledTitle>
+          <StyledTitle>{_("Groupes organisateurs")}</StyledTitle>
           <span style={{ color: style.black700 }}>
-            Les animateur·ices de ces groupes peuvent accéder à la gestion de
-            l'événement et la liste des participant·es.
+            {_("Les animateur·ices de ces groupes peuvent accéder à la gestion de l'événement et la liste des participant·es.")}
           </span>
         </>
       )}
@@ -86,7 +85,7 @@ const EventOrganization = (props) => {
       <GroupList
         groups={groups}
         addButtonLabel={
-          canInviteOrganizerGroups ? "Ajouter un groupe co-organisateur" : ""
+          canInviteOrganizerGroups ? _("Ajouter un groupe co-organisateur") : ""
         }
         onAdd={
           canInviteOrganizerGroups
@@ -100,23 +99,22 @@ const EventOrganization = (props) => {
             id={group.id}
             name={group.name}
             image={group.image}
-            label="Invitation en attente"
+            label={_("Invitation en attente")}
             disabled
           />
         ))}
       </GroupList>
       <Spacer size="1.5rem" />
 
-      <StyledTitle>Participant·es organisateur·ices</StyledTitle>
+      <StyledTitle>{_("Participant·es organisateur·ices")}</StyledTitle>
       <span style={{ color: style.black700 }}>
-        Donnez des droits d’accès à des participant·es pour leur permettre de
-        gérer l’événement.
+        {_("Donnez des droits d’accès à des participant·es pour leur permettre de gérer l’événement.")}
       </span>
       <Spacer size="1.5rem" />
       <MemberList
         members={organizers}
         addButtonLabel={
-          canAddOrganizers ? "Ajouter un·e autre organisateur·ice" : ""
+          canAddOrganizers ? _("Ajouter un·e autre organisateur·ice") : ""
         }
         onAdd={
           canAddOrganizers ? () => setSubmenuOpen(MENU_ORGANIZER) : undefined

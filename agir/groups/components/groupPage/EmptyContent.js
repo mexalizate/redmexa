@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
@@ -158,11 +159,11 @@ export const MemberEmptyEvents = () => (
 
 export const ManagerEmptyEvents = () => (
   <EmptyContent icon="calendar">
-    <p>Vous n’avez pas encore créé d’événement.</p>
+    <p>{_("Vous n’avez pas encore créé d’événement.")}</p>
     <p>
-      Besoin d’idée ? Consultez notre{" "}
+      {_("Besoin d’idée ? Consultez notre")}{" "}
       <Link route="newGroupHelp" target="_blank" rel="noopener noreferrer">
-        guide pour les nouveaux groupes
+        {_("guide pour les nouveaux groupes")}
       </Link>
     </p>
   </EmptyContent>
@@ -170,10 +171,9 @@ export const ManagerEmptyEvents = () => (
 
 export const EmptyReports = () => (
   <EmptyContent icon="file-text">
-    <p>Votre groupe n’a pas encore publié de compte rendu.</p>
+    <p>{_("Votre groupe n’a pas encore publié de compte rendu.")}</p>
     <p>
-      Ajoutez-en à vos événement passés pour tenir au courant les membres de
-      comment s’est déroulé votre événement&nbsp;!
+      {_("Ajoutez-en à vos événement passés pour tenir au courant les membres de comment s’est déroulé votre événement&nbsp;!")}
     </p>
   </EmptyContent>
 );

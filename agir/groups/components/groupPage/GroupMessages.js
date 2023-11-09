@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
@@ -116,7 +117,7 @@ export const GroupMessages = (props) => {
             />
           }
         >
-          Messages
+          {_("Messages")}
         </PageFadeIn>
       </h3>
       {Array.isArray(messages) && writeNewMessage ? (
@@ -189,7 +190,7 @@ export const GroupMessages = (props) => {
                 icon="chevron-down"
                 rightIcon
               >
-                Charger plus de messages
+                {_("Charger plus de messages")}
               </Button>
             </StyledButton>
           ) : null}

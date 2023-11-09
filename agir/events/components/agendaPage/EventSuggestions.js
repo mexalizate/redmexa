@@ -1,3 +1,4 @@
+import _ from "gettext";
 import RenderIfVisible from "@agir/front/genericComponents/RenderIfVisible";
 import { Interval } from "luxon";
 import PropTypes from "prop-types";
@@ -133,8 +134,8 @@ const GenericTab = (props) => {
       {Array.isArray(tabEvents) && tabEvents.length === 0 ? (
         <EmptyAgenda>
           <p>
-            Pas d'événement {activeTab} ?{" "}
-            <Link route="createEvent">Commencez par en créer un</Link>.
+            {_("Pas d'événement")} {activeTab} ?{" "}
+            <Link route="createEvent">{_("Commencez par en créer un")}</Link>.
           </p>
         </EmptyAgenda>
       ) : (
@@ -152,9 +153,9 @@ const NearEventTab = (props) => {
       {Array.isArray(tabEvents) && tabEvents.length === 0 ? (
         <EmptyAgenda>
           <p>
-            Zut ! Il n'y a pas d'événement prévu à proximité ?{" "}
+            {_("Zut ! Il n'y a pas d'événement prévu à proximité ?")}{" "}
             <Link route="personalInformation">
-              Vérifiez votre adresse et code postal
+              {_("Vérifiez votre adresse et code postal")}
             </Link>
             .
           </p>
@@ -172,7 +173,7 @@ const GrandEvents = (props) => {
     <PageFadeIn ready={Array.isArray(events)} wait={<Skeleton />}>
       {Array.isArray(events) && events.length > 0 && (
         <div key="grand-events">
-          <EventSectionTitle>Grands événements</EventSectionTitle>
+          <EventSectionTitle>{_("Grands événements")}</EventSectionTitle>
           {events.map((event, i) => (
             <RenderIfVisible
               key={`grand-events__${event.id}`}
@@ -226,8 +227,8 @@ const GroupEventTab = (props) => {
       {Array.isArray(tabEvents) && tabEvents.length === 0 ? (
         <EmptyAgenda>
           <p>
-            Pas d'événement dans vos groupes&nbsp;?{" "}
-            <Link route="createEvent">Commencez par en créer un</Link>.
+            {_("Pas d'événement dans vos groupes")}&nbsp;?{" "}
+            <Link route="createEvent">{_("Commencez par en créer un")}</Link>.
           </p>
         </EmptyAgenda>
       ) : Array.isArray(tabEvents) ? (

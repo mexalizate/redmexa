@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
@@ -44,10 +45,10 @@ const DiscountCode = ({ code, dateExact, month, label }) => (
     {label ? (
       <h5>🎟️&nbsp;{label}</h5>
     ) : (
-      <h5>Code promo matériel du mois de {month}</h5>
+      <h5>{_("Code promo matériel du mois de")} {month}</h5>
     )}
-    <ShareLink color="secondary" url={code} label="Copier" $wrap={400} />
-    <p>Valable jusqu'au {dateExact}</p>
+    <ShareLink color="secondary" url={code} label={_("Copier")} $wrap={400} />
+    <p>{_("Valable jusqu'au")} {dateExact}</p>
   </StyledDiscountCode>
 );
 

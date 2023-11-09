@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React from "react";
 
 import GroupMemberList from "./GroupMemberList.js";
@@ -59,7 +60,7 @@ Default.args = {
 export const WithAddButton = Template.bind({});
 WithAddButton.args = {
   ...Default.args,
-  addButtonLabel: "Ajouter votre binôme",
+  addButtonLabel: _("Ajouter votre binôme"),
 };
 
 export const SortableAndSearchable = Template.bind({});

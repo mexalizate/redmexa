@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useCallback } from "react";
 import { useHistory } from "react-router-dom";
@@ -158,9 +159,9 @@ const GroupCard = ({
             routeParams={{ groupPk: id }}
             backLink={backLink}
           >
-            Rejoindre
+            {_("Rejoindre")}
             <Hide as="span" $under={800}>
-              &nbsp;le groupe
+              &nbsp;{_("le groupe")}
             </Hide>
           </Button>
         )}
@@ -172,7 +173,7 @@ const GroupCard = ({
           routeParams={{ groupPk: id }}
           backLink={backLink}
         >
-          Voir le groupe
+          {_("Voir le groupe")}
         </Button>
         {isManager && (
           <Button
@@ -183,14 +184,14 @@ const GroupCard = ({
             backLink={backLink}
             icon="settings"
           >
-            Gestion
+           {_(" Gestion")}
           </Button>
         )}
       </StyledRow>
 
       {displayMembership && isMember && (
         <div style={{ marginTop: "1em" }}>
-          <FeatherIcon small inline name="check" /> Vous êtes membre du groupe
+          <FeatherIcon small inline name="check" /> {_("Vous êtes membre du groupe")}
         </div>
       )}
     </Card>

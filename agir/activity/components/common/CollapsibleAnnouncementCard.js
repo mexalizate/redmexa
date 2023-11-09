@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useState } from "react";
 import { animated, useSpring } from "@react-spring/web";
@@ -103,7 +104,7 @@ export const CollapsibleAnnouncementCard = (props) => {
             color="secondary"
             onClick={close}
           >
-            Compris
+            {_("Compris")}
           </Button>
         </StyledFooter>
       </div>

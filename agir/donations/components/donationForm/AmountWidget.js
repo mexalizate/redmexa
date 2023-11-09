@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React from "react";
 import PropTypes from "prop-types";
 
@@ -93,7 +94,7 @@ class AmountWidget extends React.Component {
           ))}
           <AmountInput
             disabled={disabled}
-            placeholder="Autre montant"
+            placeholder={_("Autre montant")}
             onChange={this.updateWithCustomValue.bind(this)}
             value={custom ? amount : null}
           />
@@ -103,8 +104,7 @@ class AmountWidget extends React.Component {
         {showTaxCredit &&
           (amount ? (
             <p className="text-center">
-              Si je paye des impôts, après réduction, ma contribution nette sera
-              de seulement{" "}
+              {_("Si je paye des impôts, après réduction, ma contribution nette sera de seulement")}{" "}
               <strong className="text-danger">
                 {displayPrice(amount * 0.34)}
               </strong>
@@ -113,8 +113,8 @@ class AmountWidget extends React.Component {
             </p>
           ) : (
             <p className="text-center">
-              Si je paye des impôts, je bénéficie d&apos;une réduction
-              d&apos;impôt de <strong>66&nbsp;%</strong> de la somme donnée !
+              {_("Si je paye des impôts, je bénéficie d&apos;une réduction d&apos;impôt de")} 
+              <strong>66&nbsp;%</strong> {_("de la somme donnée")} !
             </p>
           ))}
       </div>

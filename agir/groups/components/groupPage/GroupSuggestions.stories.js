@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React from "react";
 
 import GroupSuggestions from "./GroupSuggestions";
@@ -16,7 +17,7 @@ Default.args = {
   groups: [
     {
       id: "a",
-      name: "Comités d'appui et de travail pour une Vienne Insoumise",
+      name: _("Comités d'appui et de travail pour une Vienne Insoumise"),
       iconConfiguration: { color: "#49b37d", iconName: "book" },
       url: "#group-detail",
       location: {
@@ -27,7 +28,7 @@ Default.args = {
     },
     {
       id: "b",
-      name: "Comités d'appui et de travail pour une Vienne Insoumise",
+      name: _("Comités d'appui et de travail pour une Vienne Insoumise"),
       iconConfiguration: { color: "#49b37d", iconName: "book" },
       url: "#group-detail",
       location: {
@@ -38,7 +39,7 @@ Default.args = {
     },
     {
       id: "c",
-      name: "Comités d'appui et de travail pour une Vienne Insoumise",
+      name: _("Comités d'appui et de travail pour une Vienne Insoumise"),
       iconConfiguration: { color: "#49b37d", iconName: "book" },
       url: "#group-detail",
       location: {

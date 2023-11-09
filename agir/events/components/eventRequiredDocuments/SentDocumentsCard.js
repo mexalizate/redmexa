@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
@@ -61,7 +62,7 @@ const SentDocumentsCard = (props) => {
 
   return (
     <StyledCard>
-      <h4>Documents envoyés</h4>
+      <h4>{_("Documents envoyés")}</h4>
       <Spacer size="1rem" />
       <ul>
         {documents.map((doc) => (
@@ -76,7 +77,7 @@ const SentDocumentsCard = (props) => {
               rel="noopener noreferrer"
               color="primary"
             >
-              Voir
+              {_("Voir")}
             </Button>
           </li>
         ))}

@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 
@@ -42,7 +43,7 @@ const ShareContentUrl = ({ url }) => {
         href={`https://www.facebook.com/sharer/sharer.php?u=${urlEncoded}`}
       >
         <FaFacebook size="1.5rem" height="32" width="32" color={style.white} />
-        &nbsp; Partager sur Facebook
+        &nbsp; {_("Partager sur Facebook")}
       </Button>
       <Button
         style={{ backgroundColor: style.twitter }}
@@ -53,7 +54,7 @@ const ShareContentUrl = ({ url }) => {
         href={`https://twitter.com/intent/tweet?text=${urlEncoded}`}
       >
         <RawFeatherIcon name="twitter" width="1.5rem" height="1.5rem" />
-        &nbsp; Partager sur Twitter
+        &nbsp; {_("Partager sur Twitter")}
       </Button>
       <Button
         style={{ backgroundColor: style.telegram }}
@@ -64,7 +65,7 @@ const ShareContentUrl = ({ url }) => {
         href={`https://t.me/share/url?url=${urlEncoded}`}
       >
         <FaTelegram size="1.5rem" height="32" width="32" color={style.white} />
-        &nbsp; Partager sur Telegram
+        &nbsp; {_("Partager sur Telegram")}
       </Button>
       <Button
         style={{ backgroundColor: style.whatsapp }}
@@ -75,9 +76,9 @@ const ShareContentUrl = ({ url }) => {
         href={`https://wa.me/?text=${urlEncoded}`}
       >
         <FaWhatsapp size="1.5rem" height="32" width="32" color={style.white} />
-        &nbsp; Partager sur Whatsapp
+        &nbsp; {_("Partager sur Whatsapp")}
       </Button>
-      <ShareLink $wrap label="Copier le lien" url={url} />
+      <ShareLink $wrap label={_("Copier le lien")} url={url} />
     </StyledContainer>
   );
 };

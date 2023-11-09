@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React from "react";
 import styled from "styled-components";
 
@@ -40,9 +41,9 @@ export const EmptyActivityList = () => {
   return (
     <StyledEmptyList>
       <span>
-        Vous n’avez rien reçu ici.
+        {_("Vous n’avez rien reçu ici.")}
         <br />
-        Revenez plus tard !
+        {_("Revenez plus tard !")}
       </span>
     </StyledEmptyList>
   );

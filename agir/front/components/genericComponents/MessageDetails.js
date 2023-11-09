@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useCallback, useState } from "react";
 import styled from "styled-components";
@@ -43,7 +44,7 @@ const MessageDetails = ({ message }) => {
   return (
     <>
       <Description onClick={() => setOpenParticipants(true)}>
-        <PrimarySpan>{participants.total} personnes</PrimarySpan> - Membres de{" "}
+        <PrimarySpan>{participants.total} {_("personnes")}</PrimarySpan> {_("- Membres de")}{" "}
         <PrimarySpan>{message?.group?.name}</PrimarySpan>
       </Description>
 

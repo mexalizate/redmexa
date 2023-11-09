@@ -1,4 +1,6 @@
-[
+import _ from "gettext";
+
+ const messages = [
   {
     "id": "432a5071-3b8c-4bbc-9501-a3f9fd48f701",
     "created": "2021-01-01 12:00:00",
@@ -11,13 +13,13 @@
     "lastUpdate": "2021-01-09 12:30:00",
     "group": {
       "id": "432a5071-3b8c-4bbc-9501-a3f9fd48f701",
-      "name": "Comités d'appui et de travail pour une Vienne Insoumise"
+      "name": _(_("Comités d'appui et de travail pour une Vienne Insoumise"))
     },
-    "subject": "Mon beau message",
-    "text": "Bonjour à tous les nouveaux membres ! Pour que tout le monde puisse vous connaître, je vous propose qu’on se rejoigne ensemble sur Zoom vendredi vers 20h.\n\nEst-ce que l’horaire convient à tout le monde ?",
+    "subject": _("Mon beau message"),
+    "text": _("Bonjour à tous les nouveaux membres ! Pour que tout le monde puisse vous connaître, je vous propose qu’on se rejoigne ensemble sur Zoom vendredi vers 20h.\n\nEst-ce que l’horaire convient à tout le monde ?"),
     "linkedEvent": {
       "id": "12343432423",
-      "name": "Cortège France insoumise à la marche contre la fourrure 2020",
+      "name": _("Cortège France insoumise à la marche contre la fourrure 2020"),
       "rsvp": "CO",
       "startTime": "2021-01-15 12:00:00",
       "endTime": "2021-01-15 15:00:00",
@@ -45,7 +47,7 @@
         "displayName": "Bill Murray",
         "image": "https://www.fillmurray.com/200/200"
       },
-      "text": "Est-ce que c’est possible de commencer un peu plus tard ? Ma fille termine le karaté et j’arriverai à la maison tout juste...",
+      "text": _("Est-ce que c’est possible de commencer un peu plus tard ? Ma fille termine le karaté et j’arriverai à la maison tout juste..."),
       "created": "2021-01-09 12:30:00"
     },
     "recentComments": [
@@ -56,7 +58,7 @@
           "displayName": "Bill Murray",
           "image": "https://www.fillmurray.com/200/200"
         },
-        "text": "Est-ce que c’est possible de commencer un peu plus tard ? Ma fille termine le karaté et j’arriverai à la maison tout juste...",
+        "text": _("Est-ce que c’est possible de commencer un peu plus tard ? Ma fille termine le karaté et j’arriverai à la maison tout juste..."),
         "created": "2021-01-09 12:30:00"
       }
     ],
@@ -68,7 +70,7 @@
           "displayName": "Bill Murray",
           "image": "https://www.fillmurray.com/200/200"
         },
-        "text": "Est-ce que c’est possible de commencer un peu plus tard ? Ma fille termine le karaté et j’arriverai à la maison tout juste...",
+        "text": _("Est-ce que c’est possible de commencer un peu plus tard ? Ma fille termine le karaté et j’arriverai à la maison tout juste..."),
         "created": "2021-01-09 12:30:00"
       },
       {
@@ -77,7 +79,7 @@
           "id": "Isabelle",
           "displayName": "Isabelle Guérini"
         },
-        "text": "Est-ce que c’est possible de commencer un peu plus tard ? Ma fille termine le karaté et j’arriverai à la maison tout juste...",
+        "text": _("Est-ce que c’est possible de commencer un peu plus tard ? Ma fille termine le karaté et j’arriverai à la maison tout juste..."),
         "created": "2021-01-09 12:30:00"
       },
       {
@@ -86,7 +88,7 @@
           "id": "Isabelle",
           "displayName": "Isabelle Guérini"
         },
-        "text": "Est-ce que c’est possible de commencer un peu plus tard ? Ma fille termine le karaté et j’arriverai à la maison tout juste...",
+        "text": _("Est-ce que c’est possible de commencer un peu plus tard ? Ma fille termine le karaté et j’arriverai à la maison tout juste..."),
         "created": "2021-01-09 12:30:00"
       }
     ],
@@ -103,9 +105,9 @@
     "lastUpdate": "2021-01-09 12:30:00",
     "group": {
       "id": "432a5071-3b8c-4bbc-9501-a3f9fd48f702",
-      "name": "Comités d'appui et de travail pour une Vienne Insoumise"
+      "name": _("Comités d'appui et de travail pour une Vienne Insoumise")
     },
-    "text": "Bonjour à tous les nouveaux membres ! Pour que tout le monde puisse vous connaître, je vous propose qu’on se rejoigne ensemble sur Zoom vendredi vers 20h.\n\nEst-ce que l’horaire convient à tout le monde ?",
+    "text":_( "Bonjour à tous les nouveaux membres ! Pour que tout le monde puisse vous connaître, je vous propose qu’on se rejoigne ensemble sur Zoom vendredi vers 20h.\n\nEst-ce que l’horaire convient à tout le monde ?"),
     "linkedEvent": null,
     "recentComments": [],
     "comments": [],
@@ -123,12 +125,12 @@
     "lastUpdate": "2021-01-09 12:30:00",
     "group": {
       "id": "432a5071-3b8c-4bbc-9501-a3f9fd48f703",
-      "name": "Comités d'appui et de travail pour une Vienne Insoumise"
+      "name": _("Comités d'appui et de travail pour une Vienne Insoumise")
     },
-    "text": "Bonjour à tous les nouveaux membres ! Pour que tout le monde puisse vous connaître, je vous propose qu’on se rejoigne ensemble sur Zoom vendredi vers 20h.\n\nEst-ce que l’horaire convient à tout le monde ?",
+    "text":_( "Bonjour à tous les nouveaux membres ! Pour que tout le monde puisse vous connaître, je vous propose qu’on se rejoigne ensemble sur Zoom vendredi vers 20h.\n\nEst-ce que l’horaire convient à tout le monde ?"),
     "linkedEvent": {
       "id": "12343432423",
-      "name": "Cortège France insoumise à la marche contre la fourrure 2020",
+      "name": _("Cortège France insoumise à la marche contre la fourrure 2020"),
       "rsvp": "CO",
       "startTime": "2021-01-15 12:00:00",
       "endTime": "2021-01-15 15:00:00",
@@ -152,7 +154,7 @@
           "displayName": "Bill Murray",
           "image": "https://www.fillmurray.com/200/200"
         },
-        "text": "Est-ce que c’est possible de commencer un peu plus tard ? Ma fille termine le karaté et j’arriverai à la maison tout juste...",
+        "text": _("Est-ce que c’est possible de commencer un peu plus tard ? Ma fille termine le karaté et j’arriverai à la maison tout juste..."),
         "created": "2021-01-09 12:30:00"
       }
     ],
@@ -164,7 +166,7 @@
           "displayName": "Bill Murray",
           "image": "https://www.fillmurray.com/200/200"
         },
-        "text": "Est-ce que c’est possible de commencer un peu plus tard ? Ma fille termine le karaté et j’arriverai à la maison tout juste...",
+        "text": _("Est-ce que c’est possible de commencer un peu plus tard ? Ma fille termine le karaté et j’arriverai à la maison tout juste..."),
         "created": "2021-01-09 12:30:00"
       }
     ],
@@ -181,9 +183,9 @@
     "lastUpdate": "2021-01-09 12:30:00",
     "group": {
       "id": "432a5071-3b8c-4bbc-9501-a3f9fd48f704",
-      "name": "Comités d'appui et de travail pour une Vienne Insoumise"
+      "name": _("Comités d'appui et de travail pour une Vienne Insoumise")
     },
-    "text": "Bonjour à tous les nouveaux membres ! Pour que tout le monde puisse vous connaître, je vous propose qu’on se rejoigne ensemble sur Zoom vendredi vers 20h.\n\nEst-ce que l’horaire convient à tout le monde ?",
+    "text":_( "Bonjour à tous les nouveaux membres ! Pour que tout le monde puisse vous connaître, je vous propose qu’on se rejoigne ensemble sur Zoom vendredi vers 20h.\n\nEst-ce que l’horaire convient à tout le monde ?"),
     "linkedEvent": null,
     "recentComments": [],
     "comments": [],
@@ -200,12 +202,14 @@
     "lastUpdate": "2021-01-09 12:30:00",
     "group": {
       "id": "432a5071-3b8c-4bbc-9501-a3f9fd48f705",
-      "name": "Comités d'appui et de travail pour une Vienne Insoumise"
+      "name": _("Comités d'appui et de travail pour une Vienne Insoumise")
     },
-    "text": "Bonjour à tous les nouveaux membres ! Pour que tout le monde puisse vous connaître, je vous propose qu’on se rejoigne ensemble sur Zoom vendredi vers 20h.\n\nEst-ce que l’horaire convient à tout le monde ?",
+    "text":_( "Bonjour à tous les nouveaux membres ! Pour que tout le monde puisse vous connaître, je vous propose qu’on se rejoigne ensemble sur Zoom vendredi vers 20h.\n\nEst-ce que l’horaire convient à tout le monde ?"),
     "linkedEvent": null,
     "recentComments": [],
     "comments": [],
     "commentCount": 0
   }
-]
+]; 
+
+export default messages; 

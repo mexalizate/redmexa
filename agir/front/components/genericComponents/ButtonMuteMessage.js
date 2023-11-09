@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useState, useCallback } from "react";
 import styled from "styled-components";
@@ -64,8 +65,8 @@ const ButtonMuteMessage = ({ message }) => {
 
     sendToast(
       muted
-        ? "Vous ne recevrez plus de notifications reliées à ce fil de messages"
-        : "Les notifications reliées à ce fil de message sont réactivées",
+        ? _("Vous ne recevrez plus de notifications reliées à ce fil de messages")
+        : _("Les notifications reliées à ce fil de message sont réactivées"),
       "INFO",
       { autoClose: true },
     );
@@ -96,7 +97,7 @@ const ButtonMuteMessage = ({ message }) => {
           loading={loading}
           onClick={handleSwitchNotification}
         >
-          {isMuted ? "Réactiver" : "Rendre muet"}
+          {isMuted ? _("Réactiver") : _("Rendre muet")}
         </Button>
       ) : (
         <StyledMuteButton
@@ -108,19 +109,18 @@ const ButtonMuteMessage = ({ message }) => {
         </StyledMuteButton>
       )}
       <ModalConfirmation
-        title="Rendre muet cette conversation ?"
-        confirmationLabel="Rendre muet"
-        dismissLabel="Annuler"
+        title={_("Rendre muet cette conversation ?")}
+        confirmationLabel={_("Rendre muet")}
+        dismissLabel={_("Annuler")}
         shouldShow={isModalOpen}
         onConfirm={switchNotificationMessage}
         onClose={() => setIsModalOpen(false)}
         shouldDismissOnClick={false}
       >
         <Spacer size="1rem" />
-        Vous ne recevrez plus de notifications et e-mails concernant cette
-        conversation.
+        {_("Vous ne recevrez plus de notifications et e-mails concernant cette conversation.")}
         <Spacer size="0.5rem" />
-        Vous pourrez réactiver les notifications et e-mails à tout moment
+        {_("Vous pourrez réactiver les notifications et e-mails à tout moment")}
       </ModalConfirmation>
     </>
   );

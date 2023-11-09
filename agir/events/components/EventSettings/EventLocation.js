@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useState, useEffect, useCallback } from "react";
 import styled from "styled-components";
@@ -84,7 +85,7 @@ const EventLocation = (props) => {
   return (
     <form onSubmit={handleSubmit}>
       <HeaderPanel onBack={onBack} illustration={illustration} />
-      <StyledTitle>Localisation</StyledTitle>
+      <StyledTitle>{_("Localisation")}</StyledTitle>
       <Spacer size="1rem" />
       <StyledMap
         center={event?.location?.coordinates?.coordinates || []}
@@ -94,17 +95,15 @@ const EventLocation = (props) => {
       />
       <Spacer size="0.5rem" />
       <Button link small wrap href={updateLocationUrl} disabled={isDisabled}>
-        Personnaliser la localisation sur la carte
+        {_("Personnaliser la localisation sur la carte")}
       </Button>
       <Spacer size="1rem" />
 
       <span style={{ color: style.black700 }}>
-        Si vous ne souhaitez pas rendre cette adresse publique, indiquez un
-        endroit à proximité (café, mairie...)
+        {_("Si vous ne souhaitez pas rendre cette adresse publique, indiquez un endroit à proximité (café, mairie...)")}
         <Spacer size="0.5rem" />
         <strong>
-          Merci d'indiquer une adresse précise avec numéro de rue, sans quoi
-          l'événement n'apparaîtra pas sur la carte.
+          {_("Merci d'indiquer une adresse précise avec numéro de rue, sans quoi l'événement n'apparaîtra pas sur la carte.")}
         </strong>
       </span>
 
@@ -130,7 +129,7 @@ const EventLocation = (props) => {
       )}
       <Spacer size="1rem" />
       <Button type="submit" color="secondary" $wrap disabled={isDisabled}>
-        Enregistrer
+        {_("Enregistrer")}
       </Button>
     </form>
   );

@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useCallback } from "react";
 import styled from "styled-components";
@@ -125,12 +126,12 @@ const GroupStep = (props) => {
 
   return (
     <StyledWrapper>
-      <h4>À qui s'adresse ce message&nbsp;?</h4>
+      <h4>{_("À qui s'adresse ce message ?")}</h4>
       <StyledWarning>
         <span>
-          Les membres et abonné·es de votre groupe&nbsp;
-          <strong>recevront un e-mail</strong> avec le contenu de votre message
-          et <strong>pourront y répondre !</strong>
+          {_("Les membres et abonné·es de votre groupe ")}
+          <strong>{_("recevront un e-mail")}</strong>{_(" avec le contenu de votre message")}
+          et <strong>{_("pourront y répondre !")}</strong>
         </span>
       </StyledWarning>
       {groups.map((group) => (

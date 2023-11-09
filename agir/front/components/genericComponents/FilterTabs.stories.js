@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React from "react";
 
 import FilterTabs from "./FilterTabs";
@@ -15,12 +16,12 @@ const Template = (args) => <FilterTabs {...args} />;
 export const Default = Template.bind({});
 Default.args = {
   tabs: [
-    "Tout",
-    "Autres",
-    "Le reste",
-    "Encore plus",
-    "Toujours plus",
-    "C'est sans fin",
+    _("Tout"),
+    _("Autres"),
+    _("Le reste"),
+    _("Encore plus"),
+    _("Toujours plus"),
+    _("C'est sans fin"),
   ],
   activeTab: 0,
 };

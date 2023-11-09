@@ -1,3 +1,4 @@
+import _ from "gettext";
 import Card from "@agir/front/genericComponents/Card";
 import { RawFeatherIcon } from "@agir/front/genericComponents/FeatherIcon";
 import PropTypes from "prop-types";
@@ -202,11 +203,10 @@ const CategoryField = (props) => {
       {label && <StyledLabel>{label}</StyledLabel>}
       <StyledError style={{ color: "#EA610B" }}>
         <RawFeatherIcon width="1rem" height="1rem" name="alert-circle" />
-        Attention, une demande de dépense correspond à une pièce comptable.
+        {_("Attention, une demande de dépense correspond à une pièce comptable.")}
       </StyledError>
       <StyledHelpText>
-        S’il y a plusieurs catégories pour une même pièce, choisissez la
-        catégorie dont la valeur est la plus significative.
+        {_("S’il y a plusieurs catégories pour une même pièce, choisissez la catégorie dont la valeur est la plus significative.")}
       </StyledHelpText>
       <StyledOptions id={id}>
         {options.map((option) => (

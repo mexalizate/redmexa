@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React, { useEffect, useState } from "react";
 import CheckboxField from "@agir/front/formComponents/CheckboxField";
 import TextField from "@agir/front/formComponents/TextField";
@@ -64,7 +65,7 @@ const OnlineUrlField = (props) => {
       <span>{label}</span>
       <CheckboxField
         disabled={disabled}
-        label="Se déroule en ligne"
+        label={_("Se déroule en ligne")}
         value={isOnline}
         onChange={handleChangeOnline}
       />
@@ -73,7 +74,7 @@ const OnlineUrlField = (props) => {
           {!!defaultUrl && (
             <CheckboxField
               disabled={disabled}
-              label="Utiliser le service de visio-conférence automatique de La France insoumise"
+              label={_("Utiliser le service de visio-conférence automatique de La France insoumise")}
               value={isAuto && onlineUrl === defaultUrl}
               onChange={handleChangeUrl}
             />

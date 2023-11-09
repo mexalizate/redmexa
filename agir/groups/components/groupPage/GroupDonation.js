@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 
@@ -12,14 +13,12 @@ const GroupDonation = (props) => {
   }
 
   return (
-    <Card title="Financez les actions du groupe">
+    <Card title={_("Financez les actions du groupe")}>
       <p />
       <p>
-        Pour que ce groupe puisse financer ses frais de fonctionnement et
-        s’équiper en matériel, vous pouvez contribuer financièrement de manière
-        ponctuelle ou mensuellement.
+        {_("Pour que ce groupe puisse financer ses frais de fonctionnement et s’équiper en matériel, vous pouvez contribuer financièrement de manière ponctuelle ou mensuellement.")}
       </p>
-      <p>Chaque peso compte.</p>
+      <p>{_("Chaque peso compte.")}</p>
       <Button
         route="contributions"
         params={{ group: id }}
@@ -27,7 +26,7 @@ const GroupDonation = (props) => {
         color="secondary"
         style={{ marginTop: "0.5rem" }}
       >
-        Devenir financeur·euse
+        {_("Devenir financeur·euse")}
       </Button>
       <Button
         route="donations"
@@ -36,7 +35,7 @@ const GroupDonation = (props) => {
         color="secondary"
         style={{ marginTop: "0.5rem" }}
       >
-        Faire un don ponctuel
+        {_("Faire un don ponctuel")}
       </Button>
     </Card>
   );

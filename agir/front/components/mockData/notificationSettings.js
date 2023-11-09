@@ -1,7 +1,9 @@
-[
+import _ from "gettext";
+
+const notificationSettings = [
   {
     "id": 1,
-    "label": "Realigned stable forecast",
+    "label": _("Realigned stable forecast"),
     "email": false,
     "pushNotification": true,
     "type": "Indonesia",
@@ -9,7 +11,7 @@
   },
   {
     "id": 2,
-    "label": "Enterprise-wide hybrid ability",
+    "label": _("Enterprise-wide hybrid ability"),
     "email": false,
     "pushNotification": true,
     "type": "Indonesia",
@@ -17,7 +19,7 @@
   },
   {
     "id": 3,
-    "label": "Sharable scalable help-desk",
+    "label": _("Sharable scalable help-desk"),
     "email": true,
     "pushNotification": true,
     "type": "Russia",
@@ -25,7 +27,7 @@
   },
   {
     "id": 4,
-    "label": "Pre-emptive stable paradigm",
+    "label": _("Pre-emptive stable paradigm"),
     "email": false,
     "pushNotification": false,
     "type": "Ireland",
@@ -33,7 +35,7 @@
   },
   {
     "id": 5,
-    "label": "Ameliorated client-server open system",
+    "label": _("Ameliorated client-server open system"),
     "email": false,
     "pushNotification": false,
     "type": "China",
@@ -41,7 +43,7 @@
   },
   {
     "id": 6,
-    "label": "Expanded multi-state definition",
+    "label": _("Expanded multi-state definition"),
     "email": false,
     "pushNotification": true,
     "type": "Russia",
@@ -49,7 +51,7 @@
   },
   {
     "id": 7,
-    "label": "Innovative 24/7 instruction set",
+    "label": _("Innovative 24/7 instruction set"),
     "email": true,
     "pushNotification": false,
     "type": "Poland",
@@ -57,7 +59,7 @@
   },
   {
     "id": 8,
-    "label": "Exclusive full-range knowledge base",
+    "label": _("Exclusive full-range knowledge base"),
     "email": false,
     "pushNotification": false,
     "type": "Honduras",
@@ -65,7 +67,7 @@
   },
   {
     "id": 9,
-    "label": "Total fault-tolerant process improvement",
+    "label": _("Total fault-tolerant process improvement"),
     "email": false,
     "pushNotification": true,
     "type": "China",
@@ -73,7 +75,7 @@
   },
   {
     "id": 10,
-    "label": "Robust fresh-thinking neural-net",
+    "label": _("Robust fresh-thinking neural-net"),
     "email": true,
     "pushNotification": true,
     "type": "Mexico",
@@ -81,7 +83,7 @@
   },
   {
     "id": 11,
-    "label": "Switchable needs-based extranet",
+    "label": _("Switchable needs-based extranet"),
     "email": false,
     "pushNotification": true,
     "type": "Russia",
@@ -89,7 +91,7 @@
   },
   {
     "id": 12,
-    "label": "Ameliorated leading edge artificial intelligence",
+    "label": _("Ameliorated leading edge artificial intelligence"),
     "email": false,
     "pushNotification": false,
     "type": "Greece",
@@ -97,7 +99,7 @@
   },
   {
     "id": 13,
-    "label": "De-engineered 4th generation access",
+    "label": _("De-engineered 4th generation access"),
     "email": true,
     "pushNotification": true,
     "type": "South Africa",
@@ -105,7 +107,7 @@
   },
   {
     "id": 14,
-    "label": "Team-oriented zero administration moratorium",
+    "label": _("Team-oriented zero administration moratorium"),
     "email": false,
     "pushNotification": true,
     "type": "China",
@@ -113,7 +115,7 @@
   },
   {
     "id": 15,
-    "label": "Optimized disintermediate array",
+    "label": _("Optimized disintermediate array"),
     "email": true,
     "pushNotification": true,
     "type": "Albania",
@@ -121,7 +123,7 @@
   },
   {
     "id": 16,
-    "label": "Customer-focused empowering support",
+    "label": _("Customer-focused empowering support"),
     "email": true,
     "pushNotification": false,
     "type": "Brazil",
@@ -129,7 +131,7 @@
   },
   {
     "id": 17,
-    "label": "Automated holistic approach",
+    "label": _("Automated holistic approach"),
     "email": true,
     "pushNotification": true,
     "type": "Ukraine",
@@ -137,7 +139,7 @@
   },
   {
     "id": 18,
-    "label": "Enhanced fresh-thinking moratorium",
+    "label": _("Enhanced fresh-thinking moratorium"),
     "email": true,
     "pushNotification": true,
     "type": "China",
@@ -145,7 +147,7 @@
   },
   {
     "id": 19,
-    "label": "Exclusive global standardization",
+    "label": _("Exclusive global standardization"),
     "email": true,
     "pushNotification": false,
     "type": "Czech Republic",
@@ -153,7 +155,7 @@
   },
   {
     "id": 20,
-    "label": "Proactive zero administration standardization",
+    "label": _("Proactive zero administration standardization"),
     "email": true,
     "pushNotification": true,
     "type": "Nigeria",
@@ -161,7 +163,7 @@
   },
   {
     "id": 21,
-    "label": "Balanced cohesive initiative",
+    "label": _("Balanced cohesive initiative"),
     "email": true,
     "pushNotification": true,
     "type": "China",
@@ -169,7 +171,7 @@
   },
   {
     "id": 22,
-    "label": "Intuitive mission-critical attitude",
+    "label": _("Intuitive mission-critical attitude"),
     "email": true,
     "pushNotification": false,
     "type": "China",
@@ -177,7 +179,7 @@
   },
   {
     "id": 23,
-    "label": "Pre-emptive zero tolerance framework",
+    "label": _("Pre-emptive zero tolerance framework"),
     "email": true,
     "pushNotification": true,
     "type": "Poland",
@@ -185,7 +187,7 @@
   },
   {
     "id": 24,
-    "label": "Enhanced interactive model",
+    "label": _("Enhanced interactive model"),
     "email": false,
     "pushNotification": false,
     "type": "Canada",
@@ -193,7 +195,7 @@
   },
   {
     "id": 25,
-    "label": "Fully-configurable content-based hierarchy",
+    "label": _("Fully-configurable content-based hierarchy"),
     "email": true,
     "pushNotification": true,
     "type": "Bangladesh",
@@ -201,7 +203,7 @@
   },
   {
     "id": 26,
-    "label": "Organized value-added hardware",
+    "label": _("Organized value-added hardware"),
     "email": false,
     "pushNotification": true,
     "type": "Nigeria",
@@ -209,7 +211,7 @@
   },
   {
     "id": 27,
-    "label": "Focused multi-state website",
+    "label": _("Focused multi-state website"),
     "email": true,
     "pushNotification": false,
     "type": "Philippines",
@@ -217,7 +219,7 @@
   },
   {
     "id": 28,
-    "label": "Digitized coherent application",
+    "label": _("Digitized coherent application"),
     "email": false,
     "pushNotification": true,
     "type": "China",
@@ -225,7 +227,7 @@
   },
   {
     "id": 29,
-    "label": "Customer-focused homogeneous adapter",
+    "label": _("Customer-focused homogeneous adapter"),
     "email": false,
     "pushNotification": false,
     "type": "France",
@@ -233,7 +235,7 @@
   },
   {
     "id": 30,
-    "label": "Mandatory hybrid capability",
+    "label": _("Mandatory hybrid capability"),
     "email": true,
     "pushNotification": true,
     "type": "Indonesia",

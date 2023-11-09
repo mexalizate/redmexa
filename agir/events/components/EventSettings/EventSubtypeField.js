@@ -1,3 +1,4 @@
+import _ from "gettext";
 import { useTransition } from "@react-spring/web";
 import PropTypes from "prop-types";
 import React, { useMemo, useState } from "react";
@@ -45,7 +46,7 @@ const EventSubtypeField = (props) => {
   return (
     <>
       <div>
-        <label>Type de l'événement</label>
+        <label>{_("Type de l'événement")}</label>
       </div>
 
       <div>
@@ -66,7 +67,7 @@ const EventSubtypeField = (props) => {
           style={{ marginLeft: "0.5rem" }}
           disabled={disabled}
         >
-          {!!selectedSubtype ? "Changer" : "Choisir"}
+          {!!selectedSubtype ? _("Changer") : _("Choisir")}
         </Button>
       </div>
 
@@ -75,7 +76,7 @@ const EventSubtypeField = (props) => {
           item && (
             <PanelWrapper style={style}>
               <BackButton onClick={closeMenu} />
-              <StyledTitle>Choisir le type de l'événement</StyledTitle>
+              <StyledTitle>{_("Choisir le type de l'événement")}</StyledTitle>
               <Spacer size="1rem" />
               <SubtypePicker
                 value={selectedSubtype}

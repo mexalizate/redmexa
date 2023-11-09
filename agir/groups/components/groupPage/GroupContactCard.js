@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
@@ -43,7 +44,7 @@ const GroupContactCard = (props) => {
     <Card>
       <StyledContactSection>
         <strong>
-          Moyens de contact&ensp;
+          {_("Moyens de contact")}
           {editLinkTo && (
             <Link to={editLinkTo}>
               <RawFeatherIcon

@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useCallback, useState } from "react";
 import styled from "styled-components";
@@ -49,7 +50,7 @@ const ValidateSpendingRequestButton = ({
   onValidate,
 }) => {
   const hasAction = !!action;
-  const label = action || "Valider";
+  const label = action || _("Valider");
 
   const [isOpen, setIsOpen] = useState(false);
   const [hasAgreement, setHasAgreement] = useState();
@@ -77,7 +78,7 @@ const ValidateSpendingRequestButton = ({
     }
     setIsOpen(false);
     onValidate();
-    sendToast("La demande a bien été validée !", "SUCCESS");
+    sendToast(_("La demande a bien été validée !"), "SUCCESS");
   }, [spendingRequestPk, onValidate, sendToast]);
 
   return (
@@ -88,13 +89,13 @@ const ValidateSpendingRequestButton = ({
         disabled={!hasAction}
         onClick={handleOpen}
       >
-        {label || "Valider"}
+        {label || _("Valider")}
       </Button>
       <ModalConfirmation
         shouldShow={hasAction && isOpen}
         onClose={!isLoading ? handleClose : undefined}
-        title={<StyledModalTitle>Attention</StyledModalTitle>}
-        dismissLabel="Annuler"
+        title={<StyledModalTitle>{_("Attention")}</StyledModalTitle>}
+        dismissLabel={"Annuler"}
         confirmationLabel={label}
         onConfirm={handleConfirm}
         shouldDismissOnClick={false}
@@ -103,8 +104,7 @@ const ValidateSpendingRequestButton = ({
       >
         <StyledModalContent>
           <p>
-            Vous êtes sur le point de valider cette demande de dépense. Une fois
-            votre approbation donnée, elle ne sera plus modifiable.
+            {_("Vous êtes sur le point de valider cette demande de dépense. Une fois votre approbation donnée, elle ne sera plus modifiable.")}
           </p>
           <p>
             <AgreementField

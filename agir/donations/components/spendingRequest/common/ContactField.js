@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useCallback } from "react";
 import styled from "styled-components";
@@ -34,7 +35,7 @@ const ContactField = (props) => {
   return (
     <StyledField>
       <TextField
-        label="Contact lié à la dépense (obligatoire)"
+        label={_("Contact lié à la dépense (obligatoire)")}
         name="name"
         autoComplete="name"
         value={name}
@@ -46,7 +47,7 @@ const ContactField = (props) => {
         hasCounter={false}
       />
       <PhoneField
-        label="Numéro de téléphone  (obligatoire)"
+        label={_("Numéro de téléphone  (obligatoire)")}
         name="phone"
         autoComplete="tel"
         value={phone}

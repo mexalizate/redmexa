@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React from "react";
 import Helmet from "react-helmet";
 import { useParams } from "react-router-dom";
@@ -47,25 +48,23 @@ const DonationPage = () => {
               />
               <Spacer size="2rem" />
               <div>
-                <h2>Merci pour votre don&nbsp;!</h2>
+                <h2>{_("Merci pour votre don")}&nbsp;!</h2>
                 <h4>
-                  Vous allez recevoir un e-mail de confirmation dès que votre
-                  paiement aura été validé.
+                  {_("Vous allez recevoir un e-mail de confirmation dès que votre paiement aura été validé.")}
                 </h4>
                 <p style={{ fontSize: "0.875rem" }}>
-                  Vous pouvez à tout moment consulter vos dons et paiements
-                  depuis{" "}
+                  {_("Vous pouvez à tout moment consulter vos dons et paiements depuis")}{" "}
                   <Link route="personalPayments">
-                    l'onglet &laquo;&nbsp;Dons et paiements&nbsp;&raquo;
+                    {_("l'onglet &laquo;&nbsp;Dons et paiements&nbsp;&raquo;")}
                   </Link>{" "}
-                  de votre espace personnel sur actionpopulaire.fr.
+                  {_("de votre espace personnel sur actionpopulaire.fr.")}
                 </p>
               </div>
               <Spacer size="2rem" />
               {thankYouNote}
               <Spacer size="3rem" />
               <ShareCard
-                title="Encouragez vos ami·es à faire un don :"
+                title={_("Encouragez vos ami·es à faire un don :")}
                 url={routeConfig.donations.getLink({
                   type: params?.type,
                 })}

@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React from "react";
 
 import EventSpeakers from "./EventSpeakers";
@@ -17,7 +18,7 @@ Default.args = {
   eventSpeakers: [
     {
       name: "Mathilde Panot",
-      description: "Députée du 94, présidente du groupe parlementaire",
+      description: _("Députée du 94, présidente du groupe parlementaire"),
     },
     {
       name: "Louis Boyard",
@@ -25,7 +26,7 @@ Default.args = {
     },
     {
       name: "Pierre-Yves Cadalen",
-      description: "Co-animateur du livret Constituante",
+      description: _("Co-animateur du livret Constituante"),
     },
   ],
 };

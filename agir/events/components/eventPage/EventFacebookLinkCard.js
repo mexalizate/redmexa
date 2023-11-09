@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React from "react";
 import PropTypes from "prop-types";
 
@@ -15,7 +16,7 @@ const EventFacebookLinkCard = ({ routes: { facebook } }) => (
       style={{ marginRight: "16px" }}
     />
     <a href={facebook} style={{ fontWeight: 500 }}>
-      L'événement sur Facebook
+      {_("L'événement sur Facebook")}
       <span style={{ marginLeft: "8px" }}>
         <FeatherIcon name="external-link" inline small />
       </span>

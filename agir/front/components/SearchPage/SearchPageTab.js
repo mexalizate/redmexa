@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useState } from "react";
 
@@ -49,7 +50,7 @@ const SearchPageTab = (props) => {
         )}
       </div>
       <PageFadeIn ready={!isLoading} wait={<Skeleton />}>
-        {hasError && <p>Une erreur est apparue&nbsp;</p>}
+        {hasError && <p>{_("Une erreur est apparue")}</p>}
         {tab.hasGroups && (
           <>
             <ListTitle

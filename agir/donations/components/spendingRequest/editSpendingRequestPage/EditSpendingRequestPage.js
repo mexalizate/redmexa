@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useMemo } from "react";
 import styled from "styled-components";
@@ -89,7 +90,7 @@ const EditSpendingRequestPage = ({ spendingRequestPk }) => {
       <AppRedirect
         route="spendingRequestDetails"
         routeParams={{ spendingRequestPk }}
-        toast="Cette demande ne peut plus être modifiée"
+        toast={_("Cette demande ne peut plus être modifiée")}
       />
     );
   }
@@ -106,10 +107,10 @@ const EditSpendingRequestPage = ({ spendingRequestPk }) => {
               icon="arrow-right"
               route="spendingRequestHelp"
             >
-              Un doute ? Consultez le <strong>centre d'aide</strong>
+              {_("Un doute ? Consultez le")} <strong>{_("centre d'aide")}</strong>
             </Button>
           </nav>
-          <h2>Modification de la demande</h2>
+          <h2>{_("Modification de la demande")}</h2>
           <EditSpendingRequestForm
             spendingRequest={spendingRequest}
             availableAmount={availableAmount}

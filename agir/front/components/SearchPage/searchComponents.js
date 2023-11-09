@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
@@ -101,7 +102,7 @@ export const SearchTooShort = ({ search }) => {
   return (
     <>
       <Spacer size="1rem" />
-      Rentrez au moins 3 caractères pour effectuer une recherche
+      {_("Rentrez au moins 3 caractères pour effectuer une recherche")}
     </>
   );
 };
@@ -113,19 +114,18 @@ export const HeaderSearch = ({ querySearch, mapRoute }) => (
   <StyledHeaderSearch>
     <div>
       <h1>
-        <Hide $over>Rechercher</Hide>
+        <Hide $over>{_("Rechercher")}</Hide>
         {!querySearch && <Hide $under>Recherche : "{querySearch}"</Hide>}
       </h1>
       <Hide $under as="div" style={{ marginTop: "0.5rem" }}>
-        Recherchez des événements et des groupes d'actions par nom, commune,
-        code postal...
+        {_("Recherchez des événements et des groupes d'actions par nom, commune, code postal...")}
       </Hide>
     </div>
     {!!mapRoute && (
       <StyledMapButton>
         <StyledLink route={mapRoute}>
           <div />
-          <div>Voir la carte</div>
+          <div>{_("Voir la carte")}</div>
         </StyledLink>
       </StyledMapButton>
     )}
@@ -169,24 +169,24 @@ export const EventFilters = ({ filters, setFilter }) => {
   return (
     <>
       <SelectField
-        label="Trier par"
-        placeholder="Trier par..."
+        label={_("Trier par")}
+        placeholder={_("Trier par...")}
         name="eventSort"
         value={filters?.eventSort}
         onChange={(value) => setFilter("eventSort", value)}
         options={OPTIONS.EventSort}
       />
       <SelectField
-        label="Catégorie d'événement"
-        placeholder="Categories"
+        label={_("Catégorie d'événement")}
+        placeholder={_("Categories")}
         name="eventSchedule"
         value={filters?.eventSchedule}
         onChange={(value) => setFilter("eventSchedule", value)}
         options={OPTIONS.EventCategory}
       />
       <SelectField
-        label="Type"
-        placeholder="Types"
+        label={_("Type")}
+        placeholder={_("Types")}
         name="eventType"
         value={filters?.eventType}
         onChange={(value) => setFilter("eventType", value)}
@@ -204,16 +204,16 @@ export const GroupFilters = ({ filters, setFilter }) => {
   return (
     <>
       <SelectField
-        label="Trier par"
-        placeholder="Trier par..."
+        label={_("Trier par")}
+        placeholder={_("Trier par...")}
         name="groupSort"
         value={filters?.groupSort}
         onChange={(value) => setFilter("groupSort", value)}
         options={OPTIONS.GroupSort}
       />
       <SelectField
-        label="Type"
-        placeholder="Types"
+        label={_("Type")}
+        placeholder={_("Types")}
         name="groupType"
         value={filters?.groupType}
         onChange={(value) => setFilter("groupType", value)}
@@ -227,8 +227,8 @@ export const GroupFilters = ({ filters, setFilter }) => {
         `}
       >
         <CheckboxField
-          label="Uniquement les groupes les plus actifs"
-          name="groupInactive"
+          label={_("Uniquement les groupes les plus actifs")}
+          name={_("groupInactive")}
           value={!filters?.groupInactive}
           onChange={({ target }) =>
             setFilter(
@@ -252,7 +252,7 @@ export const FilterButton = ({ showFilters, switchFilters }) => (
         icon={!showFilters ? "filter" : "x-circle"}
         onClick={switchFilters}
       >
-        {!showFilters ? "Filtrer" : "Supprimer les filtres"}
+        {!showFilters ? _("Filtrer") : _("Supprimer les filtres")}
       </Button>
     </div>
   </>

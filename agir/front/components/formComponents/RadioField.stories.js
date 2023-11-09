@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React from "react";
 
 import RadioField from "./RadioField";
@@ -34,7 +35,7 @@ export const Default = Template.bind({});
 Default.args = {
   value: false,
   id: "field",
-  label: "J’accepte la charte",
+  label: _("J’accepte la charte"),
   disabled: false,
   options: [
     { label: "Oui", value: "1" },

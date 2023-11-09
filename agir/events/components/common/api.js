@@ -1,3 +1,4 @@
+import _ from "gettext";
 import { DateTime } from "luxon";
 
 import axios from "@agir/lib/utils/axios";
@@ -169,7 +170,7 @@ export const updateEvent = async (eventPk, data) => {
     if (e.response && e.response.data) {
       result.error =
         e.response.status === 400 && data.image
-          ? { image: "La taille du fichier ne doit pas dépasser 2.5 Mo" }
+          ? { image: _("La taille du fichier ne doit pas dépasser 2.5 Mo") }
           : e.response.data;
     } else {
       result.error = e.message;
@@ -216,7 +217,7 @@ export const addEventProjectDocument = async (eventPk, data) => {
       result.errors = e.message;
     } else if (e.response.status === 400 && data.file) {
       result.errors = {
-        file: "La taille du fichier ne doit pas dépasser le 2.5 Mo",
+        file: _("La taille du fichier ne doit pas dépasser le 2.5 Mo"),
       };
     } else {
       result.errors = Object.entries(e.response.data).reduce(

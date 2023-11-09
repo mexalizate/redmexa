@@ -1,5 +1,4 @@
 import Control from "ol/control/Control";
-
 import { element } from "./utils";
 import fontawesome from "@agir/lib/utils/fontawesome";
 
@@ -14,10 +13,8 @@ export default function makeLayerControl(layersConfig, drawingFunction) {
     input.addEventListener("change", function () {
       layerConfig.layer.setVisible(input.checked);
     });
-
     return label;
   });
-
   const layerButton = element("button", [fontawesome("bars")]);
   const layerButtonContainer = element("div", [layerButton], {
     className: "ol-unselectable ol-control layer_selector_button",

@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React from "react";
 
 import ActionCard from "./ActionCard";
@@ -27,10 +28,10 @@ const Template = (args) => {
 export const Default = Template.bind({});
 Default.args = {
   name: "waiting-location-event",
-  text: "Précisez la localisation de votre événement : {événement}",
+  text: _("Précisez la localisation de votre événement : {événement}"),
   iconName: "alert-circle",
-  confirmLabel: "Mettre à jour",
-  dismissLabel: "Cacher",
+  confirmLabel: _("Mettre à jour"),
+  dismissLabel: _("Cacher"),
   dismissed: false,
   timestamp: new Date().toISOString(),
 };

@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
@@ -15,7 +16,7 @@ LogoFI.propTypes = {
 };
 
 LogoFI.defaultProps = {
-  alt: "La France insoumise",
+  alt: _("La France insoumise"),
 };
 
 export default LogoFI;

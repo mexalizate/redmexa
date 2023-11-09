@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
@@ -52,18 +53,15 @@ const GroupMemberActions = (props) => {
 
     return (
       <StyledWrapper>
-        <h4>Modifier les droits</h4>
+        <h4>{_("Modifier les droits")}</h4>
         <p>
           <Button disabled={isGroupFull} onClick={handleClick}>
-            Passer en membre actif
+            {_("Passer en membre actif")}
           </Button>
         </p>
         {isGroupFull && (
           <p>
-            <strong>Impossible de passer ce contact en membre actif</strong> car
-            le groupe a atteint la limite de membres actifs. Passez des membres
-            actifs en contact ou divisez votre groupe pour renforcer le réseau
-            d'action
+            <strong>{_("Impossible de passer ce contact en membre actif")}</strong>{_(" car le groupe a atteint la limite de membres actifs. Passez des membres actifs en contact ou divisez votre groupe pour renforcer le réseau d'action")}
           </p>
         )}
       </StyledWrapper>
@@ -79,11 +77,11 @@ const GroupMemberActions = (props) => {
     };
     return (
       <StyledWrapper>
-        <h4>Modifier les droits</h4>
+        <h4>{_("Modifier les droits")}</h4>
         <p>
-          <Button onClick={setAsFollower}>Passer en contact</Button>
+          <Button onClick={setAsFollower}>{_("Passer en contact")}</Button>
           {isReferent && (
-            <Button onClick={setAsManager}>Passer en gestionnaire</Button>
+            <Button onClick={setAsManager}>{_("Passer en gestionnaire")}</Button>
           )}
         </p>
       </StyledWrapper>
@@ -97,10 +95,10 @@ const GroupMemberActions = (props) => {
 
     return (
       <StyledWrapper>
-        <h4>Modifier les droits</h4>
+        <h4>{_("Modifier les droits")}</h4>
         <p>
           <Button onClick={handleClick}>
-            Retirer le droit de gestionnaire
+            {_("Retirer le droit de gestionnaire")}
           </Button>
         </p>
       </StyledWrapper>

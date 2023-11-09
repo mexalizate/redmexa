@@ -1,3 +1,4 @@
+import _ from "gettext";
 import React from "react";
 import styled from "styled-components";
 
@@ -50,7 +51,7 @@ const GroupsPageHeader = () => {
   const routes = useSelector(getRoutes);
   return (
     <StyledHeader>
-      <LayoutTitle>Mes groupes</LayoutTitle>
+      <LayoutTitle>{_("Mes groupes")}</LayoutTitle>
       <div>
         {routes.createGroup && (
           <Button
@@ -60,11 +61,11 @@ const GroupsPageHeader = () => {
             color="secondary"
             small
           >
-            Créer un groupe
+            {_("Créer un groupe")}
           </Button>
         )}
         <Button link icon="map" route="groupMap" small>
-          Carte
+          {_("Carte")}
         </Button>
       </div>
     </StyledHeader>

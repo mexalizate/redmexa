@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
@@ -74,8 +75,8 @@ const StyledPage = styled.div`
 
 export const ErrorPage = (props) => {
   const {
-    title = "Une erreur est survenue",
-    subtitle = "Notre équipe a été prévenue du problème",
+    title = _("Une erreur est survenue"),
+    subtitle = _("Notre équipe a été prévenue du problème"),
     errorMessage,
     hasReload = true,
     hasTopBar = true,
@@ -104,19 +105,19 @@ export const ErrorPage = (props) => {
           {errorMessage && <pre>{errorMessage}</pre>}
           <Spacer size="1rem" />
           <Button link route="events" color="primary" block>
-            Revenir à l'accueil
+            {_("Revenir à l'accueil")}
           </Button>
           {hasReload ? (
             <>
               <Spacer size="1rem" />
               <Button onClick={() => window.location.reload()} block>
-                Recharger la page
+                {_("Recharger la page")}
               </Button>
             </>
           ) : null}
           <Spacer size="1rem" />
           <span>
-            ou consulter le <Link route="helpIndex">centre d'aide</Link>
+            {_("ou consulter le")} <Link route="helpIndex">{_("centre d'aide")}</Link>
           </span>
         </StyledContainer>
       )}

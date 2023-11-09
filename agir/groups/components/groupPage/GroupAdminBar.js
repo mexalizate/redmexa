@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
@@ -50,18 +51,18 @@ const GroupAdminBar = (props) => {
     <StyledBar>
       <LeftSection>
         <Button link route="createEvent" color="primary" icon="plus">
-          Créer un événement du groupe
+          {_("Créer un événement du groupe")}
         </Button>
       </LeftSection>
       <RightSection>
         {routes.settings && (
           <Button link href={routes.settings} icon="settings">
-            Paramètres
+            {_("Paramètres")}
           </Button>
         )}
         {routes.members && (
           <Button link href={routes.members} icon="users">
-            Membres
+            {_("Membres")}
           </Button>
         )}
       </RightSection>
@@ -71,21 +72,21 @@ const GroupAdminBar = (props) => {
             <li>
               <FeatherIcon inline small name="settings" color={style.primary} />
               &ensp;
-              <a href={routes.animation}>Animation</a>
+              <a href={routes.animation}>{_("Animation")}</a>
             </li>
           )}
           {routes.membershipTransfer && (
             <li>
               <FeatherIcon inline small name="settings" color={style.primary} />
               &ensp;
-              <a href={routes.membershipTransfer}>Transfer de membres</a>
+              <a href={routes.membershipTransfer}>{_("Transfer de membres")}</a>
             </li>
           )}
           {routes.admin && (
             <li>
               <FeatherIcon inline small name="settings" color={style.primary} />
               &ensp;
-              <a href={routes.admin}>Administration</a>
+              <a href={routes.admin}>{_("Administration")}</a>
             </li>
           )}
         </InlineMenuList>

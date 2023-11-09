@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useCallback, useState } from "react";
 import styled from "styled-components";
@@ -53,12 +54,12 @@ const EventSpeakerRequestForm = (props) => {
       const result = await patchEventSpeakerRequest(request);
       setIsLoading(false);
       if (result.error) {
-        sendToast("Une erreur est survenue. Veuillez ressayer.", "ERROR", {
+        sendToast(_("Une erreur est survenue. Veuillez ressayer."), "ERROR", {
           autoClose: true,
         });
         return;
       }
-      sendToast("Informations mises à jour", "SUCCESS", {
+      sendToast(_("Informations mises à jour"), "SUCCESS", {
         autoClose: true,
       });
       result.data && setRequest(result.data);
@@ -94,8 +95,8 @@ const EventSpeakerRequestForm = (props) => {
         small
         id={request.id + "_comment"}
         label=""
-        placeholder="Commentaire"
-        aria-label="Commentaire"
+        placeholder={_("Commentaire")}
+        aria-label={_("Commentaire")}
         value={request.comment}
         onChange={handleChangeComment}
         maxLength={255}
@@ -110,10 +111,10 @@ const EventSpeakerRequestForm = (props) => {
         disabled={isLoading || !hasChanged}
       >
         {!isNew && !hasChanged
-          ? "Enregistré"
+          ? _("Enregistré")
           : isNew
-          ? "Enregistrer"
-          : "Mettre à jour"}
+          ? _("Enregistrer")
+          : _("Mettre à jour")}
       </Button>
     </StyledForm>
   );

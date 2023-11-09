@@ -1,3 +1,4 @@
+import _ from  "gettext";
 import { animated, useSpring } from "@react-spring/web";
 import PropTypes from "prop-types";
 import React, { useCallback, useEffect, useState } from "react";
@@ -12,14 +13,14 @@ export const STATUS_CONFIG = {
   D: {
     id: "D",
     icon: "file-pen",
-    label: "Brouillon à compléter",
+    label: _("Brouillon à compléter"),
     color: "black500",
   },
   // AWAITING_PEER_REVIEW
   G: {
     id: "G",
     icon: "user-clock",
-    label: "En attente de vérification par une autre personne",
+    label: _("En attente de vérification par une autre personne"),
     color: "vermillon",
   },
   // AWAITING_ADMIN_REVIEW
@@ -27,15 +28,15 @@ export const STATUS_CONFIG = {
     id: "R",
     icon: "user-unlock",
     label:
-      "En attente de vérification par l'équipe de suivi des questions financières",
-    shortLabel: "En attente de vérification par l'équipe de suivi",
+      _("En attente de vérification par l'équipe de suivi des questions financières"),
+    shortLabel: _("En attente de vérification par l'équipe de suivi"),
     color: "black500",
   },
   // AWAITING_SUPPLEMENTARY_INFORMATION
   I: {
     id: "I",
     icon: "message-question",
-    label: "Informations supplémentaires requises",
+    label: _("Informations supplémentaires requises"),
     color: "vermillon",
   },
   // VALIDATED
@@ -43,16 +44,16 @@ export const STATUS_CONFIG = {
     id: "V",
     icon: "check-double",
     label:
-      "Validée par l'équipe de suivi des questions financières, en attente des fonds",
-    shortLabel: "Validée, en attente des fonds",
+      _("Validée par l'équipe de suivi des questions financières, en attente des fonds"),
+    shortLabel: _("Validée, en attente des fonds"),
     color: "green500",
   },
   // TO_PAY
   T: {
     id: "T",
     icon: "dollar-sign",
-    label: "Décomptée de l'allocation du groupe, à payer",
-    shortLabel: "Validée, en attente de paiement",
+    label: _("Décomptée de l'allocation du groupe, à payer"),
+    shortLabel: _("Validée, en attente de paiement"),
     color: "redNSP",
   },
   // PAID
@@ -66,8 +67,8 @@ export const STATUS_CONFIG = {
   B: {
     id: "B",
     icon: "xmark",
-    label: "Cette demande a été refusée",
-    shortLabel: "Refusée",
+    label: _("Cette demande a été refusée"),
+    shortLabel: _("Refusée"),
     color: "redNSP",
   },
 };

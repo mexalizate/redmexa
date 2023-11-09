@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useMemo } from "react";
 
@@ -31,7 +32,7 @@ const EventInfoCard = (props) => {
         )}
         {groups.length > 1 && (
           <IconListItem name="users">
-            Organisé par&nbsp;:
+           {_("Organisé par")}&nbsp;:
             {groups.map(({ name, id }, key) => (
               <div key={name + id}>
                 {id ? (
@@ -52,7 +53,7 @@ const EventInfoCard = (props) => {
         )}
         {groups.length === 1 && (
           <IconListItem name="users">
-            Organisé par{" "}
+            {_("Organisé par")}{" "}
             {groups.map(({ name, id }) => (
               <React.Fragment key={name + id}>
                 {id ? (
@@ -85,7 +86,7 @@ const EventInfoCard = (props) => {
           color="primary"
           backLink={backLink}
         >
-          Créer un événement similaire
+          {_("Créer un événement similaire")}
         </Button>
       )}
     </Card>

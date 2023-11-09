@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
@@ -129,7 +130,7 @@ const GroupItem = ({
       </Name>
       {selectGroup && (
         <Button color="choose" small onClick={() => selectGroup({ id, name })}>
-          Inviter
+          {_("Inviter")}
         </Button>
       )}
     </div>

@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
@@ -150,7 +151,7 @@ const StepActions = (props) => {
           disabled={isLoading}
           color="choose"
         >
-          Retour
+          {_("Retour")}
         </Hide>
       )}
       {onSave && (
@@ -162,7 +163,7 @@ const StepActions = (props) => {
           color="default"
           icon="save"
         >
-          Enregistrer
+         {_(" Enregistrer")}
         </Button>
       )}
       {goToNext && (
@@ -173,7 +174,7 @@ const StepActions = (props) => {
           disabled={isLoading}
           icon="arrow-right"
         >
-          Continuer
+          {_("Continuer")}
         </Button>
       )}
       {!goToNext && onSubmit ? (

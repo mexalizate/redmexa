@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
@@ -41,7 +42,7 @@ const GroupFinancePage = (props) => {
     <>
       <HeaderPanel onBack={onBack} illustration={illustration} />
       <StyledTitle style={{ fontSize: "1.25rem" }}>
-        Dons alloués à mon groupe
+        {_("Dons alloués à mon groupe")}
       </StyledTitle>
       <PageFadeIn ready={!!data} wait={<DonationSkeleton />}>
         <p style={{ fontSize: "2rem", margin: 0 }}>
@@ -53,13 +54,12 @@ const GroupFinancePage = (props) => {
         <Spacer size=".5rem" />
         {data?.donation === 0 && (
           <p style={{ color: style.black700 }}>
-            Personne n'a encore alloué de dons à vos actions.
+            {_("Personne n'a encore alloué de dons à vos actions.")}
           </p>
         )}
       </PageFadeIn>
       <p style={{ color: style.black700 }}>
-        Vous pouvez allouer des dons à vos actions de manière ponctuelle ou avec
-        une contribution financière sur l'année.
+        {_("Vous pouvez allouer des dons à vos actions de manière ponctuelle ou avec une contribution financière sur l'année.")}
       </p>
       <StyledButtons>
         <Button
@@ -68,7 +68,7 @@ const GroupFinancePage = (props) => {
           params={group?.id ? { group: group.id } : undefined}
           color="secondary"
         >
-          Devenir financeur·euse
+          {_("Devenir financeur·euse")}
         </Button>
         <Button
           link
@@ -76,18 +76,18 @@ const GroupFinancePage = (props) => {
           params={group?.id ? { group: group.id } : undefined}
           color="secondary"
         >
-          Allouer un don
+          {_("Allouer un don")}
         </Button>
       </StyledButtons>
 
       <Spacer size="2rem" />
 
       <StyledTitle style={{ fontSize: "1.25rem" }}>
-        Solliciter des dons pour mon groupe
+        {_("Solliciter des dons pour mon groupe")}
       </StyledTitle>
 
       <p style={{ color: style.black700 }}>
-        Partagez ce lien pour solliciter des dons pour votre groupe&nbsp;:
+        {_("Partagez ce lien pour solliciter des dons pour votre groupe&nbsp;:")}
       </p>
 
       <ShareLink
@@ -100,17 +100,13 @@ const GroupFinancePage = (props) => {
       <PageFadeIn ready={!!data}>
         <Spacer size="3rem" />
         <StyledTitle style={{ fontSize: "1.25rem" }}>
-          Demandes de dépense
+          {_("Demandes de dépense")}
         </StyledTitle>
         <p style={{ color: style.black700 }}>
-          Vous pouvez créer une demande de remboursement ou de paiement à tout
-          moment et en enregistrer le brouillon.
+          {_("Vous pouvez créer une demande de remboursement ou de paiement à tout moment et en enregistrer le brouillon.")}
         </p>
         <p style={{ color: style.black700 }}>
-          Si la demande est complète et l'allocation de votre groupe suffisante,
-          vous pourrez la transmettre pour vérification à un·e autre
-          animateur·ice ou gestionnaire de votre groupe, et ensuite la faire
-          valider par l'équipe de suivi des questions financières.
+          {_("Si la demande est complète et l'allocation de votre groupe suffisante, vous pourrez la transmettre pour vérification à un·e autre animateur·ice ou gestionnaire de votre groupe, et ensuite la faire valider par l'équipe de suivi des questions financières.")}
         </p>
         <Spacer size=".5rem" />
         <SpendingRequests

@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useMemo, useState } from "react";
 import styled from "styled-components";
@@ -176,7 +177,7 @@ const EventRequiredDocuments = (props) => {
       {!embedded && (
         <>
           <header>
-            <h3>Documents de l'événement public</h3>
+            <h3>{_("Documents de l'événement public")}</h3>
             <h2>{event.name}</h2>
             <h5>
               {dateFromISOString(event.endTime).toLocaleString({
@@ -217,14 +218,13 @@ const EventRequiredDocuments = (props) => {
           <h4>
             {required.length}{" "}
             {required.length > 1
-              ? "informations requises"
-              : "information requise"}
-            <small>À compléter avant le {displayShortDate(limitDate)}</small>
+              ? _("informations requises")
+              : _("information requise")}
+            <small>{_("À compléter avant le")} {displayShortDate(limitDate)}</small>
           </h4>
           <Spacer size="1rem" />
           <p style={{ textAlign: "inherit", lineHeight: 1.6 }}>
-            Si votre événement n’a pas eu recours a un élément demandé, vous
-            pouvez cliquer sur le bouton “non applicable”.
+            {_("Si votre événement n’a pas eu recours a un élément demandé, vous pouvez cliquer sur le bouton “non applicable”.")}
           </p>
           <Spacer size="1.5rem" />
           {required.map((type, i) => (
@@ -244,8 +244,8 @@ const EventRequiredDocuments = (props) => {
           {required.length > 0 && (
             <>
               <h4>
-                Ajouter d’autres documents
-                <small>Ajoutez-en autant que nécessaire</small>
+                {_("Ajouter d’autres documents")}
+                <small>{_("Ajoutez-en autant que nécessaire")}</small>
               </h4>
               <Spacer size="1.5rem" />
             </>
@@ -271,11 +271,11 @@ const EventRequiredDocuments = (props) => {
       )}
       <Spacer size="2rem" />
       <HelpLink>
-        Besoin d'aide&nbsp;?
+        {_("Besoin d'aide ?")}
         <Spacer size="1rem" />
         <div>
           <Button link rel="noopener noreferrer" target="_blank" route="help">
-            Accèder au centre d'aide
+            {_("Accèder au centre d'aide")}
           </Button>
         </div>
       </HelpLink>

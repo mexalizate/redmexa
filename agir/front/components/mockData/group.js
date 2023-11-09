@@ -1,10 +1,12 @@
-{
+import _ from "gettext";
+
+const group = {
   "id": "12345",
   "isMember": true,
   "isManager": true,
-  "name": "Comités d'appui et de travail pour une Vienne Insoumise",
+  "name": _("Comités d'appui et de travail pour une Vienne Insoumise"),
   "type": "Groupe local",
-  "description": "  <p>Chocolate cake gummies fruitcake. Lemon drops chocolate bar jelly beans danish candy bonbon. Cotton candy dessert bonbon topping macaroon. <strong>Marzipan croissant apple pie powder halvah brownie bear claw.</strong> Carrot cake jelly-o tootsie roll cake jelly beans. Croissant gingerbread icing pudding ice cream candy canes. Candy canes wafer caramels gingerbread.</p><p>Ice cream biscuit brownie gingerbread liquorice soufflé wafer soufflé. <a href='#'>Fruitcake cake lollipop</a>. Gummies sesame snaps chocolate bar soufflé jelly-o candy marzipan sweet jujubes. Lemon drops cheesecake wafer chocolate bar dessert pie sesame snaps fruitcake. Brownie gummies marshmallow chocolate halvah macaroon.</p>",
+  "description": _("  <p>Chocolate cake gummies fruitcake. Lemon drops chocolate bar jelly beans danish candy bonbon. Cotton candy dessert bonbon topping macaroon. <strong>Marzipan croissant apple pie powder halvah brownie bear claw.</strong> Carrot cake jelly-o tootsie roll cake jelly beans. Croissant gingerbread icing pudding ice cream candy canes. Candy canes wafer caramels gingerbread.</p><p>Ice cream biscuit brownie gingerbread liquorice soufflé wafer soufflé. <a href='#'>Fruitcake cake lollipop</a>. Gummies sesame snaps chocolate bar soufflé jelly-o candy marzipan sweet jujubes. Lemon drops cheesecake wafer chocolate bar dessert pie sesame snaps fruitcake. Brownie gummies marshmallow chocolate halvah macaroon.</p>"),
   "image": "https://www.fillmurray.com/300/600",
   "location": {
     "name": "Le café de la gare",
@@ -13,7 +15,7 @@
     "city": "Poitiers",
     "zip": "86000",
     "state": "Île-de-France",
-    "country": "France",
+    "country": _("France"),
     "coordinates": {
       "type": "Point",
       "coordinates": [-97.14704, 49.8844]
@@ -93,4 +95,6 @@
       "expiration": "2022-01-01 00:00:00"
     }
   ]
-}
+}; 
+
+export default group;

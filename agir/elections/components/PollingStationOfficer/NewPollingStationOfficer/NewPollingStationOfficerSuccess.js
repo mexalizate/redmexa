@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
@@ -9,24 +10,21 @@ import Spacer from "@agir/front/genericComponents/Spacer";
 
 const NewPollingStationOfficerSuccess = ({ PollingStationOfficer }) => (
   <FormSuccess>
-    <h2>Votre demande a été envoyée​</h2>
+    <h2>{_("Votre demande a été envoyée")}​</h2>
     <Spacer size="0.875rem" />
     <p>
-      Les équipes de campagne de votre circonscription législative recevront
-      bientôt votre demande et pourront vous recontacter.
+      {_("Les équipes de campagne de votre circonscription législative recevront bientôt votre demande et pourront vous recontacter.")}
     </p>
     <Spacer size="0.875rem" />
     <p>
-      Merci beaucoup, c'est grâce à votre implication que nous pouvons
-      participer à assurer la sincérité du scrutin. C'est une tâche politique
-      importante&nbsp;!​
+      {_("Merci beaucoup, c'est grâce à votre implication que nous pouvons participer à assurer la sincérité du scrutin. C'est une tâche politique importante&nbsp;!​")}
     </p>
     <Spacer size="1rem" />
     <p>
       <strong>
-        Soyons dans tous les bureaux de vote&nbsp;:
+        {_("Soyons dans tous les bureaux de vote&nbsp;:")}
         <br />
-        n'hésitez pas à partager ce formulaire​&nbsp;!
+        {_("n'hésitez pas à partager ce formulaire​&nbsp;!")}
       </strong>
     </p>
     <Spacer size="1.5rem" />
@@ -51,7 +49,7 @@ const NewPollingStationOfficerSuccess = ({ PollingStationOfficer }) => (
           color: ${({ theme }) => theme.primary500};
         `}
       >
-        Explorez les ressources pour les délégué·es et assesseur·es​
+        {_("Explorez les ressources pour les délégué·es et assesseur·es​")}
       </strong>
       <Spacer size=".75rem" />
       <span
@@ -74,7 +72,7 @@ const NewPollingStationOfficerSuccess = ({ PollingStationOfficer }) => (
           target="_blank"
           rel="noopener noreferrer"
         >
-          La vidéo de formation
+          {_("La vidéo de formation")}
         </Button>
         <Button
           link
@@ -85,7 +83,7 @@ const NewPollingStationOfficerSuccess = ({ PollingStationOfficer }) => (
           target="_blank"
           rel="noopener noreferrer"
         >
-          Le guide PDF
+          {_("Le guide PDF")}
         </Button>
       </span>
     </p>

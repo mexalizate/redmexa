@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useEffect, useState } from "react";
 import { usePrevious } from "react-use";
@@ -147,7 +148,7 @@ const RequiredDocumentModal = (props) => {
     >
       <StyledModalContent $isLoading={isLoading}>
         <StyledHeader>
-          <h4>Nouveau document</h4>
+          <h4>{_("Nouveau document")}</h4>
           <StyledIconButton
             type="button"
             onClick={onClose}
@@ -162,15 +163,15 @@ const RequiredDocumentModal = (props) => {
             name="file"
             value={data.file}
             onChange={(file) => setData({ ...data, file })}
-            label="Télécharger le document"
+            label={_("Télécharger le document")}
             helpText="Formats autorisés : .PDF .PNG .JPG .DOCX"
             accept=".pdf,.png,.jpg,.jpeg,.docx"
             error={errors?.file}
           />
           <Spacer size="1.25rem" />
           <TextField
-            label="Nom du document"
-            placeholder="Ex : prêt de retro-projecteur"
+            label={_("Nom du document")}
+            placeholder={_("Ex : prêt de retro-projecteur")}
             id="name"
             name="name"
             value={data.name}
@@ -184,7 +185,7 @@ const RequiredDocumentModal = (props) => {
           <TextField
             label={
               <>
-                Détails du document{" "}
+                {_("Détails du document")}{" "}
                 <span style={{ fontWeight: 400 }}>(facultatif)</span>
               </>
             }
@@ -200,7 +201,7 @@ const RequiredDocumentModal = (props) => {
           />
           <Spacer size="2rem" />
           <Button disabled={!maySubmit} type="submit" color="secondary">
-            Envoyer le document
+            {_("Envoyer le document")}
           </Button>
         </StyledForm>
       </StyledModalContent>
