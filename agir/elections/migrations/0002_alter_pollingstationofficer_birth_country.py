@@ -5,15 +5,16 @@ import django_countries.fields
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('elections', '0001_initial'),
+        ("elections", "0001_initial"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='pollingstationofficer',
-            name='birth_country',
-            field=django_countries.fields.CountryField(default='MX', max_length=2, verbose_name='pays de naissance'),
+            model_name="pollingstationofficer",
+            name="birth_country",
+            field=django_countries.fields.CountryField(
+                default="MX", max_length=2, verbose_name="pays de naissance"
+            ),
         ),
     ]

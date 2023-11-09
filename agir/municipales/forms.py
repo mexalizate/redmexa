@@ -25,10 +25,14 @@ class CommunePageForm(forms.ModelForm):
         self.helper = FormHelper()
         self.helper.add_input(Submit("submit", "Modifier"))
         self.helper.layout = Layout(
-            Fieldset(_("Informations sur la liste"), "contact_email", "mandataire_email"),
+            Fieldset(
+                _("Informations sur la liste"), "contact_email", "mandataire_email"
+            ),
             Fieldset(_("La liste sur internet"), "twitter", "facebook", "website"),
             Fieldset(
-                _("Les informations pour les dons par chèque"), "ordre_don", "adresse_don"
+                _("Les informations pour les dons par chèque"),
+                "ordre_don",
+                "adresse_don",
             ),
         )
 
@@ -103,7 +107,9 @@ class ProcurationForm(forms.Form):
         label=_("Numéro de votre bureau de vote"),
         required=False,
         help_text=format_html(
-            gettext('Le numéro de bureau figure sur votre carte électorale, ou <a href="{url}">vous pouvez l\'obtenir sur service-public.fr</a>'),
+            gettext(
+                'Le numéro de bureau figure sur votre carte électorale, ou <a href="{url}">vous pouvez l\'obtenir sur service-public.fr</a>'
+            ),
             url="https://www.service-public.fr/particuliers/vosdroits/services-en-ligne-et-formulaires/ISE",
         ),
     )
@@ -111,12 +117,16 @@ class ProcurationForm(forms.Form):
     autres = forms.CharField(
         label=_("Avez-vous d'autres informations ou remarques ?"),
         required=False,
-        help_text=_("Indiquez toute autre information pertinente pour établir votre procuration."),
+        help_text=_(
+            "Indiquez toute autre information pertinente pour établir votre procuration."
+        ),
         widget=forms.Textarea,
     )
 
     subscribed = forms.BooleanField(
-        label=_("Je souhaite recevoir les informations de la France insoumise dans ma boîte email."),
+        label=_(
+            "Je souhaite recevoir les informations de la France insoumise dans ma boîte email."
+        ),
         required=False,
         widget=forms.CheckboxInput,
     )

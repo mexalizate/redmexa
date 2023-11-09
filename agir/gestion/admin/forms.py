@@ -29,7 +29,9 @@ class DocumentForm(forms.ModelForm):
     titre_version = forms.CharField(
         label=_("Nom de la version"),
         required=False,
-        help_text=_("Indiquez brièvement en quoi cette version diffère de la précédente."),
+        help_text=_(
+            "Indiquez brièvement en quoi cette version diffère de la précédente."
+        ),
     )
     fichier = forms.FileField(label=_("Fichier de la version"), required=False)
 
@@ -40,14 +42,18 @@ class DocumentForm(forms.ModelForm):
             self.add_error(
                 "fichier",
                 ValidationError(
-                    _("Choisissez le fichier à télécharger pour cette nouvelle version."),
+                    _(
+                        "Choisissez le fichier à télécharger pour cette nouvelle version."
+                    ),
                     code="fichier_manquant",
                 ),
             )
         elif cleaned_data.get("fichier") and not cleaned_data.get("titre_version"):
             self.add_error(
                 "titre_version",
-                ValidationError(_("Indiquez le titre de la nouvelle version du fichier")),
+                ValidationError(
+                    _("Indiquez le titre de la nouvelle version du fichier")
+                ),
             )
 
     def _save_m2m(self):
@@ -152,15 +158,13 @@ class DepenseForm(forms.ModelForm):
 
             if total_factures:
                 if montant > total_factures:
-                    self.fields[
-                        "montant"
-                    ].help_text = gettext(
+                    self.fields["montant"].help_text = gettext(
                         "Supérieur à la somme des dépenses à refacturer ({montant} $)x"
                     )
                 else:
-                    self.fields[
-                        "montant"
-                    ].help_text = gettext(f"Sur un total de {montant} $ ({montant / total_factures:0.1%} %).")
+                    self.fields["montant"].help_text = gettext(
+                        f"Sur un total de {montant} $ ({montant / total_factures:0.1%} %)."
+                    )
 
         if "depenses_refacturees" in self.fields:
             depenses = self.get_initial_for_field(
@@ -203,7 +207,9 @@ class DepenseForm(forms.ModelForm):
             ):
                 errors.setdefault("depenses_refacturees", []).append(
                     ValidationError(
-                        _("Vous ne pouvez refacturer que des dépenses d'un autre compte."),
+                        _(
+                            "Vous ne pouvez refacturer que des dépenses d'un autre compte."
+                        ),
                         code="refacturation_meme_compte",
                     )
                 )
@@ -211,7 +217,9 @@ class DepenseForm(forms.ModelForm):
             if len({d.compte for d in cleaned_data["depenses_refacturees"]}) > 1:
                 errors.setdefault("depenses_refacturees", []).append(
                     ValidationError(
-                        _("Toutes les dépenses refacturées doivent appartenir au même compte."),
+                        _(
+                            "Toutes les dépenses refacturées doivent appartenir au même compte."
+                        ),
                         code="refacturation_comptes_multiples",
                     )
                 )
@@ -291,7 +299,9 @@ class AjoutRapideDepenseForm(forms.ModelForm):
             self.add_error(
                 "fichier",
                 ValidationError(
-                    _("Sélectionnez le fichier correspondant au type de document choisi.")
+                    _(
+                        "Sélectionnez le fichier correspondant au type de document choisi."
+                    )
                 ),
             )
         elif cleaned_data.get("fichier") and not cleaned_data.get("type_document"):
@@ -340,7 +350,7 @@ class ReglementForm(forms.ModelForm):
             (_("Règlement à enregistrer"), Reglement.Mode.choices),
             (
                 _("Via la plateforme"),
-                ((VIREMENT_PLATEFORME,_("Virement à effectuer via la plateforme")),),
+                ((VIREMENT_PLATEFORME, _("Virement à effectuer via la plateforme")),),
             ),
         ),
         required=True,
@@ -392,7 +402,9 @@ class ReglementForm(forms.ModelForm):
                 self.add_error(
                     "fournisseur",
                     ValidationError(
-                        _("Vous ne pouvez pas remplir les cases ci-dessous si vous avez sélectionné un fournisseur existant ici."),
+                        _(
+                            "Vous ne pouvez pas remplir les cases ci-dessous si vous avez sélectionné un fournisseur existant ici."
+                        ),
                         code="nouveau_ou_existant",
                     ),
                 )
@@ -403,7 +415,9 @@ class ReglementForm(forms.ModelForm):
                     self.add_error(
                         f"{f}_fournisseur",
                         ValidationError(
-                            gettext("Cette information est requise.", code=f"{f}_requis")
+                            gettext(
+                                "Cette information est requise.", code=f"{f}_requis"
+                            )
                         ),
                     )
 
@@ -428,7 +442,9 @@ class ReglementForm(forms.ModelForm):
                 if champs_fournisseurs_manquants:
                     self.add_error(
                         "fournisseur",
-                        gettext("Les informations {} doivent être avoir été renseignées.").format(
+                        gettext(
+                            "Les informations {} doivent être avoir été renseignées."
+                        ).format(
                             " ,".join(
                                 str(Fournisseur._meta.get_field(f).verbose_name)
                                 for f in champs_fournisseurs_manquants
@@ -439,7 +455,9 @@ class ReglementForm(forms.ModelForm):
                 self.add_error(
                     "fournisseur",
                     ValidationError(
-                        _("Sélectionner un fournisseur ici, ou créez-en un nouveau grâce aux champs ci-dessous.")
+                        _(
+                            "Sélectionner un fournisseur ici, ou créez-en un nouveau grâce aux champs ci-dessous."
+                        )
                     ),
                 )
 
@@ -452,7 +470,9 @@ class ReglementForm(forms.ModelForm):
                 self.add_error(
                     "preuve",
                     ValidationError(
-                        _("Il ne devrait pas y avoir de preuve de paiement pour un virement"),
+                        _(
+                            "Il ne devrait pas y avoir de preuve de paiement pour un virement"
+                        ),
                         code="preuve_interdite",
                     ),
                 )
@@ -463,7 +483,9 @@ class ReglementForm(forms.ModelForm):
                     if self.fournisseur._state.adding
                     else "fournisseur",
                     ValidationError(
-                        _("Un IBAN doit être indiqué pour le fournisseur pour réaliser un virement."),
+                        _(
+                            "Un IBAN doit être indiqué pour le fournisseur pour réaliser un virement."
+                        ),
                         code="iban_requis",
                     ),
                 )
@@ -485,7 +507,9 @@ class ReglementForm(forms.ModelForm):
                         if self.fournisseur._state.adding
                         else "fournisseur",
                         ValidationError(
-                            _("Le BIC doit être indiqué pour ce fournisseur (impossible de le déduire de l'IBAN)."),
+                            _(
+                                "Le BIC doit être indiqué pour ce fournisseur (impossible de le déduire de l'IBAN)."
+                            ),
                             code="bic_requis",
                         ),
                     )
@@ -496,7 +520,9 @@ class ReglementForm(forms.ModelForm):
                 self.add_error(
                     "preuve",
                     ValidationError(
-                        _("Vous devez fournir une preuve de paiement pour ce mode de règlement (le scan du chèque, le ticket de caisse, etc.)"),
+                        _(
+                            "Vous devez fournir une preuve de paiement pour ce mode de règlement (le scan du chèque, le ticket de caisse, etc.)"
+                        ),
                         code="preuve_requise",
                     ),
                 )
@@ -511,8 +537,10 @@ class ReglementForm(forms.ModelForm):
             self.preuve = Document.objects.create(
                 type=TypeDocument.PAIEMENT,
                 fichier=self.cleaned_data["preuve"],
-                description=gettext(f"Document créé automatiquement lors de l'ajout d'un règlement à la dépense "
-                f"{self.instance.depense.numero}."),
+                description=gettext(
+                    f"Document créé automatiquement lors de l'ajout d'un règlement à la dépense "
+                    f"{self.instance.depense.numero}."
+                ),
             )
             self.instance.preuve = self.preuve
             reglement_modifie = True
@@ -599,7 +627,9 @@ class OrdreVirementForm(forms.ModelForm):
 
         if len(id_comptes) > 1:
             raise ValidationError(
-                _("Impossible de créer un ordre de virement à partir de règlements provenant de plusieurs comptes."),
+                _(
+                    "Impossible de créer un ordre de virement à partir de règlements provenant de plusieurs comptes."
+                ),
             )
 
         return value

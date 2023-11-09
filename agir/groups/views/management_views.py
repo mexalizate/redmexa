@@ -195,7 +195,9 @@ class CreateSupportGroupView(VerifiedContactPhoneRequiredMixin, TemplateView):
                 "subtypes": subtypes,
                 "types": types,
                 "disabled": disabled,
-                "disabledMessage": _(f"Vous ne pouvez plus créer de nouveau groupe car vous avez atteint la limite de création ({self.max_groups_for_referent_number} groupes par personne)."),
+                "disabledMessage": _(
+                    f"Vous ne pouvez plus créer de nouveau groupe car vous avez atteint la limite de création ({self.max_groups_for_referent_number} groupes par personne)."
+                ),
             },
             **kwargs,
         )
@@ -393,7 +395,9 @@ class InvitationConfirmationView(VerifyLinkSignatureMixin, View):
                 request,
                 messages.SUCCESS,
                 format_html(
-                    _("Vous venez de rejoindre le groupe d'action <em>{group_name}</em>"),
+                    _(
+                        "Vous venez de rejoindre le groupe d'action <em>{group_name}</em>"
+                    ),
                     group_name=group.name,
                 ),
             )

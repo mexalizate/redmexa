@@ -62,7 +62,10 @@ class CheckPaymentAdmin(
                 )
             },
         ),
-        (_("Informations techniques"), {"fields": ("meta", "events", "status_buttons")}),
+        (
+            _("Informations techniques"),
+            {"fields": ("meta", "events", "status_buttons")},
+        ),
     )
     add_fieldsets = (
         (

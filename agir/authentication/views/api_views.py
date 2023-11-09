@@ -81,8 +81,10 @@ class LoginAPIView(APIView):
     queryset = Person.objects.all()
     messages = {
         "invalid_format": ("Saisissez une adresse e-mail valide."),
-        "throttled": _("Vous avez déjà demandé plusieurs emails de connexion. Veuillez laisser quelques minutes pour"
-        " vérifier la bonne réception avant d'en demander d'autres."),
+        "throttled": _(
+            "Vous avez déjà demandé plusieurs emails de connexion. Veuillez laisser quelques minutes pour"
+            " vérifier la bonne réception avant d'en demander d'autres."
+        ),
     }
 
     def validate(self, email):
@@ -140,12 +142,18 @@ class LoginAPIView(APIView):
 class CheckCodeAPIView(APIView):
     permission_classes = (IsActionPopulaireClientPermission,)
     messages = {
-        "invalid_format": _("Le code que vous avez entré n'est pas au bon format. Il est constitué de 5 lettres ou"
-        " chiffres et se trouve dans l'email qui vous a été envoyé."),
-        "invalid_code": _("Le code que vous avez entré n'est pas ou plus valide. Vérifiez qu'il s'agit bien du code "
-        "que vous avez reçu à l'instant, et pas d'un ancien code."),
-        "throttled": _("Vous avez fait plusieurs tentatives de connexions erronées d'affilée. Merci de patienter un"
-        " peu avant de retenter."),
+        "invalid_format": _(
+            "Le code que vous avez entré n'est pas au bon format. Il est constitué de 5 lettres ou"
+            " chiffres et se trouve dans l'email qui vous a été envoyé."
+        ),
+        "invalid_code": _(
+            "Le code que vous avez entré n'est pas ou plus valide. Vérifiez qu'il s'agit bien du code "
+            "que vous avez reçu à l'instant, et pas d'un ancien code."
+        ),
+        "throttled": _(
+            "Vous avez fait plusieurs tentatives de connexions erronées d'affilée. Merci de patienter un"
+            " peu avant de retenter."
+        ),
     }
 
     def validate_password(self, email, password):

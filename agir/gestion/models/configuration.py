@@ -38,7 +38,9 @@ class EngagementAutomatique:
             # Mieux vaut juste crasher que risque d'engager une dépense incorrectement une dépense,
             # ou même refuser silencieusement l'engagement d'un truc qui devrait être engagé.
             raise RuntimeError(
-                gettext(f"Valeur de plafond incorrect pour {self.compte!r} pour le type {item!r}")
+                gettext(
+                    f"Valeur de plafond incorrect pour {self.compte!r} pour le type {item!r}"
+                )
             )
 
     def __setitem__(self, key, value):

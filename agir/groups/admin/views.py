@@ -108,7 +108,9 @@ def maj_membres_boucles_departementales(model_admin, request, pk):
     if group.type != SupportGroup.TYPE_BOUCLE_DEPARTEMENTALE:
         messages.warning(
             request,
-            _("La mise à jour automatique des membres est disponible uniquement pour les boucles départementales"),
+            _(
+                "La mise à jour automatique des membres est disponible uniquement pour les boucles départementales"
+            ),
         )
         return response
 
@@ -121,7 +123,9 @@ def maj_membres_boucles_departementales(model_admin, request, pk):
     if not code:
         messages.warning(
             request,
-            _("Le département ou la circonscription FE n'ont pas pu être retrouvés pour cette boucle"),
+            _(
+                "Le département ou la circonscription FE n'ont pas pu être retrouvés pour cette boucle"
+            ),
         )
         return response
 
@@ -131,7 +135,9 @@ def maj_membres_boucles_departementales(model_admin, request, pk):
     if not result:
         messages.warning(
             request,
-            _("Le département ou la circonscription FE n'ont pas pu être retrouvés pour cette boucle"),
+            _(
+                "Le département ou la circonscription FE n'ont pas pu être retrouvés pour cette boucle"
+            ),
         )
         return response
 
@@ -140,7 +146,9 @@ def maj_membres_boucles_departementales(model_admin, request, pk):
     if not count:
         messages.warning(
             request,
-            _("Le département ou la circonscription FE n'ont pas pu être retrouvés pour cette boucle"),
+            _(
+                "Le département ou la circonscription FE n'ont pas pu être retrouvés pour cette boucle"
+            ),
         )
         return response
 

@@ -247,7 +247,9 @@ class CommunePageAdmin(admin.ModelAdmin):
 
     def toutes_les_listes(self, object):
         return format_html(
-            gettext('<a href="{}" class="button">Voir toutes les listes dans cette commune</a>'),
+            gettext(
+                '<a href="{}" class="button">Voir toutes les listes dans cette commune</a>'
+            ),
             f'{reverse("admin:municipales_liste_changelist",)}?q={object.code}',
         )
 

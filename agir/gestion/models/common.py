@@ -96,7 +96,9 @@ class ModeleGestionMixin(SearchableModel):
     commentaires = models.ManyToManyField(
         to="Commentaire",
         verbose_name=_("Commentaires"),
-        help_text=_("Ces commentaires permettent d'ajouter de garder la trace des opérations de traitement des différentes pièces."),
+        help_text=_(
+            "Ces commentaires permettent d'ajouter de garder la trace des opérations de traitement des différentes pièces."
+        ),
     )
 
     def __str__(self):
@@ -129,7 +131,9 @@ class Compte(TimeStampedModel):
         verbose_name=_("Désignation bancaire d'émetteur"),
         max_length=140,
         blank=True,
-        help_text=_("La désignation bancaire utilisée pour émettre des virements à partir de ce compte."),
+        help_text=_(
+            "La désignation bancaire utilisée pour émettre des virements à partir de ce compte."
+        ),
     )
 
     emetteur_iban = IBANField(
@@ -148,8 +152,10 @@ class Compte(TimeStampedModel):
         verbose_name=_("Désignation bancaire de créditeur"),
         max_length=140,
         blank=True,
-        help_text=_("La désignation bancaire utilisée comme créditeur pour un virement vers ce compte (pour une "
-        "refacturation par exemple)."),
+        help_text=_(
+            "La désignation bancaire utilisée comme créditeur pour un virement vers ce compte (pour une "
+            "refacturation par exemple)."
+        ),
     )
 
     beneficiaire_iban = IBANField(
@@ -182,11 +188,15 @@ class Compte(TimeStampedModel):
         permissions = [
             (
                 "acces_contenu_restreint",
-                _("Voir les projets, dépenses et documents dont l'accès est indiqué comme restreint."),
+                _(
+                    "Voir les projets, dépenses et documents dont l'accès est indiqué comme restreint."
+                ),
             ),
             (
                 "acces_contenu_secret",
-                _("Voir les projets, dépenses et documents dont l'accès est indiqué commme secret."),
+                _(
+                    "Voir les projets, dépenses et documents dont l'accès est indiqué commme secret."
+                ),
             ),
             ("engager_depense", _("Engager une dépense pour ce compte")),
             ("gerer_depense", _("Gérer les dépenses après engagement")),

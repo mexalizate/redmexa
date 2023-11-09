@@ -297,24 +297,38 @@ class SupportGroup(
     }
 
     TYPE_DESCRIPTION = {
-        TYPE_LOCAL_GROUP: _("Les groupes locaux réunissent les personnes sur la base d'un territoire réduit (quartier, "
-        "village ou petite ville), ceux étudiants d'un même lieu d'étude, professionnels d'un même "
-        "lieu de travail. Chacun·e ne peut animer qu'un seul groupe local, étudiant et "
-        "professionnel."),
-        TYPE_THEMATIC: _("Les groupes thématiques réunissent celles et ceux qui souhaitent agir ensemble sur un thème "
-        "donné en lien avec les livrets thématiques de l'Avenir en Commun."),
-        TYPE_FUNCTIONAL: _("Les groupes fonctionnels rassemblent les personnes d'une même zone s'organisant à plusieurs "
-        "pour accomplir des fonctions précises (gestion d'un local, organisation des manifestation, "
-        "etc.)"),
-        TYPE_BOUCLE_DEPARTEMENTALE: _("Les boucles départementales assurent la coordination des groupes d'action au sein"
-        "d'un département."),
+        TYPE_LOCAL_GROUP: _(
+            "Les groupes locaux réunissent les personnes sur la base d'un territoire réduit (quartier, "
+            "village ou petite ville), ceux étudiants d'un même lieu d'étude, professionnels d'un même "
+            "lieu de travail. Chacun·e ne peut animer qu'un seul groupe local, étudiant et "
+            "professionnel."
+        ),
+        TYPE_THEMATIC: _(
+            "Les groupes thématiques réunissent celles et ceux qui souhaitent agir ensemble sur un thème "
+            "donné en lien avec les livrets thématiques de l'Avenir en Commun."
+        ),
+        TYPE_FUNCTIONAL: _(
+            "Les groupes fonctionnels rassemblent les personnes d'une même zone s'organisant à plusieurs "
+            "pour accomplir des fonctions précises (gestion d'un local, organisation des manifestation, "
+            "etc.)"
+        ),
+        TYPE_BOUCLE_DEPARTEMENTALE: _(
+            "Les boucles départementales assurent la coordination des groupes d'action au sein"
+            "d'un département."
+        ),
     }
 
     TYPE_DISABLED_DESCRIPTION = {
-        TYPE_LOCAL_GROUP: _("✅ Il n'est possible d'animer que deux groupes par personne."),
+        TYPE_LOCAL_GROUP: _(
+            "✅ Il n'est possible d'animer que deux groupes par personne."
+        ),
         TYPE_THEMATIC: _("✅ Il n'est possible d'animer que deux groupes par personne."),
-        TYPE_FUNCTIONAL: _("✅ Il n'est possible d'animer que deux groupes par personne."),
-        TYPE_BOUCLE_DEPARTEMENTALE: _("✅ Il n'est possible d'animer que deux groupes par personne."),
+        TYPE_FUNCTIONAL: _(
+            "✅ Il n'est possible d'animer que deux groupes par personne."
+        ),
+        TYPE_BOUCLE_DEPARTEMENTALE: _(
+            "✅ Il n'est possible d'animer que deux groupes par personne."
+        ),
     }
 
     MEMBERSHIP_LIMIT = 30
@@ -709,8 +723,10 @@ class Membership(ExportModelOperationsMixin("membership"), TimeStampedModel):
 
         if not self.is_manager:
             raise ValidationError(
-                _("La modification de ce champ est autorisée uniquement pour les gestionnaires et "
-                "animateur·ices du groupe")
+                _(
+                    "La modification de ce champ est autorisée uniquement pour les gestionnaires et "
+                    "animateur·ices du groupe"
+                )
             )
 
         self.has_finance_managing_privilege = value

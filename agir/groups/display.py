@@ -2,6 +2,7 @@ from agir.groups.models import Membership
 from agir.lib.display import genrer
 from django.utils.translation import gettext as _, ngettext
 
+
 def genrer_membership(genre, membership_type):
     """
     Returns membership_type french word from the gender given
@@ -17,7 +18,9 @@ def genrer_membership(genre, membership_type):
     elif membership_type == Membership.MEMBERSHIP_TYPE_MANAGER:
         author_status = "Membre gestionnaire"
     elif membership_type == Membership.MEMBERSHIP_TYPE_REFERENT:
-        author_status = genrer(genre, _("Animateur"), _("Animatrice"), _("Animateur·ice"))
+        author_status = genrer(
+            genre, _("Animateur"), _("Animatrice"), _("Animateur·ice")
+        )
     else:
         raise Exception(_("The author status is unknown"))
 

@@ -56,7 +56,10 @@ class CreateUpdatePollingStationOfficerSerializer(serializers.ModelSerializer):
         required=True, source="last_name", label=_("Nom de famille")
     )
     birthName = serializers.CharField(
-        required=False, allow_blank=True, source="birth_name", label=_("Nom de naissance")
+        required=False,
+        allow_blank=True,
+        source="birth_name",
+        label=_("Nom de naissance"),
     )
     birthDate = serializers.DateField(
         required=True, source="birth_date", label=_("Date de naissance")
@@ -80,7 +83,9 @@ class CreateUpdatePollingStationOfficerSerializer(serializers.ModelSerializer):
     zip = serializers.CharField(
         required=True, source="location_zip", label=_("Code postal")
     )
-    city = serializers.CharField(required=True, source="location_city", label=_("Ville"))
+    city = serializers.CharField(
+        required=True, source="location_city", label=_("Ville")
+    )
     country = CountryField(required=True, source="location_country", label=_("Pays"))
 
     votingCirconscriptionLegislative = serializers.SlugRelatedField(
@@ -172,8 +177,12 @@ class CreateUpdatePollingStationOfficerSerializer(serializers.ModelSerializer):
         if commune is None and consulate is None:
             raise ValidationError(
                 {
-                    "votingCommune": _("Au moins une commune ou une circonscription consulaire doit être sélectionnée"),
-                    "votingConsulate": _("Au moins une commune ou une circonscription consulaire doit être sélectionnée"),
+                    "votingCommune": _(
+                        "Au moins une commune ou une circonscription consulaire doit être sélectionnée"
+                    ),
+                    "votingConsulate": _(
+                        "Au moins une commune ou une circonscription consulaire doit être sélectionnée"
+                    ),
                 },
                 code="invalid_missing_commune_and_consulate",
             )
@@ -181,10 +190,14 @@ class CreateUpdatePollingStationOfficerSerializer(serializers.ModelSerializer):
         if commune is not None and consulate is not None:
             raise ValidationError(
                 {
-                    "votingCommune": _("Une commune et une circonscription consulaire ne peuvent pas être sélectionnées en "
-                    "même temps"),
-                    "votingConsulate": _("Une commune et une circonscription consulaire ne peuvent pas être sélectionnées en "
-                    "même temps"),
+                    "votingCommune": _(
+                        "Une commune et une circonscription consulaire ne peuvent pas être sélectionnées en "
+                        "même temps"
+                    ),
+                    "votingConsulate": _(
+                        "Une commune et une circonscription consulaire ne peuvent pas être sélectionnées en "
+                        "même temps"
+                    ),
                 },
                 code="invalid_commune_and_consulate",
             )
@@ -196,7 +209,9 @@ class CreateUpdatePollingStationOfficerSerializer(serializers.ModelSerializer):
         if consulate is not None and circo.departement_id is not None:
             raise ValidationError(
                 {
-                    "votingConsulate": _("La circonscription consulaire ne fait pas partie de la circonscription législative indiquée"),
+                    "votingConsulate": _(
+                        "La circonscription consulaire ne fait pas partie de la circonscription législative indiquée"
+                    ),
                 },
                 code="consulate_and_circonscription_legislative_mismatch",
             )
@@ -211,7 +226,9 @@ class CreateUpdatePollingStationOfficerSerializer(serializers.ModelSerializer):
             if commune_departement_id != circo.departement_id:
                 raise ValidationError(
                     {
-                        "votingCommune": _("La commune ne fait pas partie de la circonscription législative indiquée"),
+                        "votingCommune": _(
+                            "La commune ne fait pas partie de la circonscription législative indiquée"
+                        ),
                     },
                     code="commune_and_circonscription_legislative_mismatch",
                 )

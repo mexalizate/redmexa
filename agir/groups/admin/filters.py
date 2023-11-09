@@ -88,7 +88,10 @@ class MembersFilter(admin.SimpleListFilter):
     parameter_name = "members"
 
     def lookups(self, request, model_admin):
-        return (("no_members", _("Aucun membre")), ("no_referent", _("Aucun animateur")))
+        return (
+            ("no_members", _("Aucun membre")),
+            ("no_referent", _("Aucun animateur")),
+        )
 
     def queryset(self, request, queryset):
         if self.value() == "no_members":

@@ -758,7 +758,9 @@ class GroupInvitationAPIView(GenericAPIView):
             pass
         else:
             raise exceptions.ValidationError(
-                detail={"email": _("Cette personne fait déjà partie de votre groupe !")},
+                detail={
+                    "email": _("Cette personne fait déjà partie de votre groupe !")
+                },
                 code="invalid_format",
             )
 

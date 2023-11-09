@@ -110,8 +110,8 @@ class CacherCommentaireView(AdminViewMixin, TemplateView):
     def post(self, request, *args, **kwargs):
         with reversion.create_revision():
             e = "e" if self.commentaire.type == Commentaire.Type.REM else ""
-            message = (
-                gettext(f"{self.commentaire.get_type_display()} indiqué{e} comme traité{e}")
+            message = gettext(
+                f"{self.commentaire.get_type_display()} indiqué{e} comme traité{e}"
             )
 
             reversion.set_user(request.user)
@@ -161,7 +161,10 @@ class FormHandlerView(View):
     def retour_page_modification(self):
         opts = self.model._meta
         next_url = reverse(
-            gettext(f"admin:{opts.app_label}_{opts.model_name}_change", args=(self.object_id,))
+            gettext(
+                f"admin:{opts.app_label}_{opts.model_name}_change",
+                args=(self.object_id,),
+            )
         )
         return HttpResponseRedirect(next_url)
 
@@ -258,8 +261,10 @@ class ObtenirFichierOrdreVirementView(View):
                     messages.WARNING,
                     format_html(
                         "<p>{}</p><p>{}</p>",
-                        _("Une erreur a été rencontré lors de la génération du fichier de virement. Merci de consulter les"
-                        " logs pour obtenir les détails."),
+                        _(
+                            "Une erreur a été rencontré lors de la génération du fichier de virement. Merci de consulter les"
+                            " logs pour obtenir les détails."
+                        ),
                         e.args[0],
                     ),
                 )

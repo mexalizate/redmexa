@@ -5,6 +5,7 @@ from agir.groups.models import SupportGroup, SupportGroupQuerySet
 from agir.groups.utils import certification
 from django.utils.translation import gettext as _
 
+
 class ThematicGroupManager(models.Manager.from_queryset(SupportGroupQuerySet)):
     def get_queryset(self):
         return super().get_queryset().filter(type=SupportGroup.TYPE_THEMATIC)

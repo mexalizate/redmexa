@@ -4,10 +4,13 @@ from agir.lib.form_fields import CustomJSONEncoder
 from agir.lib.models import DescriptionField
 from django.utils.translation import gettext_lazy as _
 
+
 class Cagnotte(models.Model):
     nom = models.CharField(
         max_length=100,
-        help_text=_("Utilisé notamment dans le profil sur la page des dons d'une personne."),
+        help_text=_(
+            "Utilisé notamment dans le profil sur la page des dons d'une personne."
+        ),
     )
     slug = models.SlugField(
         help_text=_("Utilisé dans l'URL pour cette cagnotte"), unique=True
@@ -19,11 +22,15 @@ class Cagnotte(models.Model):
     )
     legal = DescriptionField(
         blank=True,
-        help_text=_("Texte additionnel à indiquer en haut de la colonne de texte légal sur la page de dons."),
+        help_text=_(
+            "Texte additionnel à indiquer en haut de la colonne de texte légal sur la page de dons."
+        ),
     )
     description = DescriptionField(
         blank=True,
-        help_text=_("Texte affiché dans le profil sur la page des dons d'une personne."),
+        help_text=_(
+            "Texte affiché dans le profil sur la page des dons d'une personne."
+        ),
     )
 
     url_remerciement = models.URLField(
@@ -39,7 +46,9 @@ class Cagnotte(models.Model):
     )
 
     remerciements = DescriptionField(
-        help_text=_("Message de remerciement notamment utilisé dans le mail de confirmation."),
+        help_text=_(
+            "Message de remerciement notamment utilisé dans le mail de confirmation."
+        ),
         blank=True,
     )
 

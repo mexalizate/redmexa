@@ -6,15 +6,27 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('mailing', '0055_auto_20231020_1808'),
+        ("mailing", "0055_auto_20231020_1808"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='segment',
-            name='newsletters',
-            field=agir.lib.model_fields.ChoiceArrayField(base_field=models.CharField(choices=[('CAM', 'Newsletter Claudializate'), ('ACT', 'Newsletter Red Migrante'), ('LIA', "Correspondant·es d'immeuble ou de rue")], max_length=255), blank=True, default=agir.mailing.models.default_newsletters, help_text='Inclure les personnes abonnées aux newsletters suivantes.', size=None),
+            model_name="segment",
+            name="newsletters",
+            field=agir.lib.model_fields.ChoiceArrayField(
+                base_field=models.CharField(
+                    choices=[
+                        ("CAM", "Newsletter Claudializate"),
+                        ("ACT", "Newsletter Red Migrante"),
+                        ("LIA", "Correspondant·es d'immeuble ou de rue"),
+                    ],
+                    max_length=255,
+                ),
+                blank=True,
+                default=agir.mailing.models.default_newsletters,
+                help_text="Inclure les personnes abonnées aux newsletters suivantes.",
+                size=None,
+            ),
         ),
     ]
