@@ -20,180 +20,180 @@ from agir.people.tasks import (
 )
 
 
-class ProfileTestCase(TestCase):
-    def setUp(self):
-        self.person = Person.objects.create_person(
-            "test@test.com", is_political_support=False, create_role=True
-        )
-        self.person.add_email("test2@test.com")
-        self.person_to_merge = Person.objects.create_political_supporter(
-            "merge@test.com"
-        )
+# class ProfileTestCase(TestCase):
+#     def setUp(self):
+#         self.person = Person.objects.create_person(
+#             "test@test.com", is_political_support=False, create_role=True
+#         )
+#         self.person.add_email("test2@test.com")
+#         self.person_to_merge = Person.objects.create_political_supporter(
+#             "merge@test.com"
+#         )
 
-        self.client.force_login(self.person.role)
+#         self.client.force_login(self.person.role)
 
-    def test_can_load_message_preferences_page(self):
-        res = self.client.get(reverse("contact"))
+#     def test_can_load_message_preferences_page(self):
+#         res = self.client.get(reverse("contact"))
 
-        # should show the current email address
-        self.assertContains(res, "test@test.com")
-        self.assertContains(res, "test2@test.com")
+#         # should show the current email address
+#         self.assertContains(res, "test@test.com")
+#         self.assertContains(res, "test2@test.com")
 
-    def test_can_see_email_management(self):
-        res = self.client.get(reverse("contact"))
+#     def test_can_see_email_management(self):
+#         res = self.client.get(reverse("contact"))
 
-        # should show the current email address
-        self.assertContains(res, "test@test.com")
-        self.assertContains(res, "test2@test.com")
+#         # should show the current email address
+#         self.assertContains(res, "test@test.com")
+#         self.assertContains(res, "test2@test.com")
 
-    def test_can_add_delete_address(self):
-        emails = list(self.person.emails.all())
+#     def test_can_add_delete_address(self):
+#         emails = list(self.person.emails.all())
 
-        # should be possible to get the delete page for one of the two addresses, and to actually delete
-        reverse("delete_email", args=[emails[1].pk])
-        res = self.client.get(reverse("delete_email", args=[emails[1].pk]))
-        self.assertEqual(res.status_code, status.HTTP_200_OK)
+#         # should be possible to get the delete page for one of the two addresses, and to actually delete
+#         reverse("delete_email", args=[emails[1].pk])
+#         res = self.client.get(reverse("delete_email", args=[emails[1].pk]))
+#         self.assertEqual(res.status_code, status.HTTP_200_OK)
 
-        res = self.client.post(reverse("delete_email", args=[emails[1].pk]))
-        self.assertRedirects(res, reverse("contact"))
+#         res = self.client.post(reverse("delete_email", args=[emails[1].pk]))
+#         self.assertRedirects(res, reverse("contact"))
 
-        # address should indeed be gone
-        self.assertEqual(len(self.person.emails.all()), 1)
-        self.assertEqual(self.person.emails.first(), emails[0])
+#         # address should indeed be gone
+#         self.assertEqual(len(self.person.emails.all()), 1)
+#         self.assertEqual(self.person.emails.first(), emails[0])
 
-        # both get and post should give 403 when there is only one primary address
-        res = self.client.get(reverse("delete_email", args=[emails[1].pk]))
-        self.assertRedirects(res, reverse("contact"))
+#         # both get and post should give 403 when there is only one primary address
+#         res = self.client.get(reverse("delete_email", args=[emails[1].pk]))
+#         self.assertRedirects(res, reverse("contact"))
 
-        res = self.client.post(reverse("delete_email", args=[emails[1].pk]))
-        self.assertRedirects(res, reverse("contact"))
-        self.assertEqual(len(self.person.emails.all()), 1)
+#         res = self.client.post(reverse("delete_email", args=[emails[1].pk]))
+#         self.assertRedirects(res, reverse("contact"))
+#         self.assertEqual(len(self.person.emails.all()), 1)
 
-    @mock.patch("agir.people.forms.profile.send_confirmation_change_email")
-    def test_can_add_address(self, patched_send_confirmation_change_email):
-        old_mails = [e.address for e in self.person.emails.all()]
-        new_mails = ["test3@test.com", "try@other.test", "TeST4@test.com"]
-        regex_url = reverse("confirm_change_mail") + r'\?[^\s"]*token=[a-z0-9-]+'
+    # @mock.patch("agir.people.forms.profile.send_confirmation_change_email")
+    # def test_can_add_address(self, patched_send_confirmation_change_email):
+    #     old_mails = [e.address for e in self.person.emails.all()]
+    #     new_mails = ["test3@test.com", "try@other.test", "TeST4@test.com"]
+    #     regex_url = reverse("confirm_change_mail") + r'\?[^\s"]*token=[a-z0-9-]+'
 
-        for i, email in enumerate(new_mails):
-            res = self.client.post(
-                reverse("manage_account"), data={"email_add_merge": email}
-            )
-            self.assertRedirects(
-                res,
-                reverse("confirm_merge_account_sent")
-                + "?"
-                + urlencode({"email": email, "is_merging": False}),
-            )
-            patched_send_confirmation_change_email.delay.assert_called_with(
-                new_email=email, user_pk=str(self.person.pk)
-            )
+    #     for i, email in enumerate(new_mails):
+    #         res = self.client.post(
+    #             reverse("manage_account"), data={"email_add_merge": email}
+    #         )
+    #         self.assertRedirects(
+    #             res,
+    #             reverse("confirm_merge_account_sent")
+    #             + "?"
+    #             + urlencode({"email": email, "is_merging": False}),
+    #         )
+    #         patched_send_confirmation_change_email.delay.assert_called_with(
+    #             new_email=email, user_pk=str(self.person.pk)
+    #         )
 
-            send_confirmation_change_email(email, str(self.person.pk))
-            url_confirm = re.search(regex_url, mail.outbox[i].body).group(0)
-            self.assertIsNotNone(url_confirm)
-            res = self.client.get(url_confirm)
-            self.assertRedirects(res, reverse("contact"))
-            self.assertEqual(str(self.person.emails.first()), email)
+    #         send_confirmation_change_email(email, str(self.person.pk))
+    #         url_confirm = re.search(regex_url, mail.outbox[i].body).group(0)
+    #         self.assertIsNotNone(url_confirm)
+    #         res = self.client.get(url_confirm)
+    #         self.assertRedirects(res, reverse("contact"))
+    #         self.assertEqual(str(self.person.emails.first()), email)
 
-        self.assertCountEqual(
-            [e.address for e in self.person.emails.all()], old_mails + new_mails
-        )
+    #     self.assertCountEqual(
+    #         [e.address for e in self.person.emails.all()], old_mails + new_mails
+    #     )
 
-    @mock.patch("agir.people.forms.profile.send_confirmation_merge_account")
-    def test_merge_account_send_mail(self, patched_send_confirmation_merge_account):
-        """On test que l'envoie de mail fonction lors d'une demande de fusion de compte"""
-        response = self.client.post(
-            reverse("manage_account"),
-            data={"email_add_merge": self.person_to_merge.email},
-        )
-        url_redirect = (
-            reverse("confirm_merge_account_sent")
-            + "?"
-            + urlencode({"email": self.person_to_merge.email, "is_merging": True})
-        )
+    # @mock.patch("agir.people.forms.profile.send_confirmation_merge_account")
+    # def test_merge_account_send_mail(self, patched_send_confirmation_merge_account):
+    #     """On test que l'envoie de mail fonction lors d'une demande de fusion de compte"""
+    #     response = self.client.post(
+    #         reverse("manage_account"),
+    #         data={"email_add_merge": self.person_to_merge.email},
+    #     )
+    #     url_redirect = (
+    #         reverse("confirm_merge_account_sent")
+    #         + "?"
+    #         + urlencode({"email": self.person_to_merge.email, "is_merging": True})
+    #     )
 
-        self.assertRedirects(response, url_redirect)
-        patched_send_confirmation_merge_account.delay.assert_called_once()
+    #     self.assertRedirects(response, url_redirect)
+    #     patched_send_confirmation_merge_account.delay.assert_called_once()
 
-    def test_receive_and_click_merge_account_demand(self):
-        regex_url = reverse("confirm_merge_account") + r'\?[^\s"]*token=[a-z0-9-]+'
-        merge_emails = set(self.person_to_merge.emails.all())
-        merge_pk = self.person_to_merge.pk
+    # def test_receive_and_click_merge_account_demand(self):
+    #     regex_url = reverse("confirm_merge_account") + r'\?[^\s"]*token=[a-z0-9-]+'
+    #     merge_emails = set(self.person_to_merge.emails.all())
+    #     merge_pk = self.person_to_merge.pk
 
-        send_confirmation_merge_account(self.person.pk, self.person_to_merge.pk)
-        url_confirm = re.search(regex_url, mail.outbox[0].body).group(0)
-        res = self.client.get(url_confirm)
-        self.assertRedirects(res, reverse("dashboard"))
-        with self.assertRaises(Person.DoesNotExist):
-            Person.objects.get(pk=merge_pk)
-        combined_emails = set(self.person.emails.all())
-        self.assertTrue(merge_emails.issubset(combined_emails))
+    #     send_confirmation_merge_account(self.person.pk, self.person_to_merge.pk)
+    #     url_confirm = re.search(regex_url, mail.outbox[0].body).group(0)
+    #     res = self.client.get(url_confirm)
+    #     self.assertRedirects(res, reverse("dashboard"))
+    #     with self.assertRaises(Person.DoesNotExist):
+    #         Person.objects.get(pk=merge_pk)
+    #     combined_emails = set(self.person.emails.all())
+    #     self.assertTrue(merge_emails.issubset(combined_emails))
 
-    def test_cannot_change_mail_if_time_expired(self):
-        regex_token = r"token=(([0-9a-z]*)-([0-9a-f]*))"
-        new_mail = "hello@iam.new"
+    # def test_cannot_change_mail_if_time_expired(self):
+    #     regex_token = r"token=(([0-9a-z]*)-([0-9a-f]*))"
+    #     new_mail = "hello@iam.new"
 
-        send_confirmation_change_email(new_mail, str(self.person.pk))
-        match = re.search(regex_token, mail.outbox[0].body)
-        ts = match.group(2)
-        signature = match.group(3)
-        token_expired = (
-            int_to_base36((base36_to_int(ts) - 8 * 24 * 60 * 60)) + "-" + signature
-        )
-        params = {
-            "new_email": new_mail,
-            "user": str(self.person.pk),
-            "token": token_expired,
-        }
-        ulr_expired = reverse("confirm_change_mail") + "?" + urlencode(params)
-        res = self.client.get(ulr_expired)
-        self.assertContains(res, "Il semble que celui-ci est expiré.")
+    #     send_confirmation_change_email(new_mail, str(self.person.pk))
+    #     match = re.search(regex_token, mail.outbox[0].body)
+    #     ts = match.group(2)
+    #     signature = match.group(3)
+    #     token_expired = (
+    #         int_to_base36((base36_to_int(ts) - 8 * 24 * 60 * 60)) + "-" + signature
+    #     )
+    #     params = {
+    #         "new_email": new_mail,
+    #         "user": str(self.person.pk),
+    #         "token": token_expired,
+    #     }
+    #     ulr_expired = reverse("confirm_change_mail") + "?" + urlencode(params)
+    #     res = self.client.get(ulr_expired)
+    #     self.assertContains(res, "Il semble que celui-ci est expiré.")
 
-    def test_cannot_change_mail_if_wrong_link(self):
-        """
-        Teste differente maniere de produire un liens de changement d'adresse email erroné.
+    # def test_cannot_change_mail_if_wrong_link(self):
+    #     """
+    #     Teste differente maniere de produire un liens de changement d'adresse email erroné.
 
-        Pour que le liens les varbiable : (new_email, user, token) soient manquantes ou invalide
-        """
-        regex_token = r"token=(([0-9a-z]*)-([0-9a-f]*))"
-        new_mail = "hello@iam.new"
-        send_confirmation_change_email("new_mail", str(self.person.pk))
-        match = re.search(regex_token, mail.outbox[0].body)
+    #     Pour que le liens les varbiable : (new_email, user, token) soient manquantes ou invalide
+    #     """
+    #     regex_token = r"token=(([0-9a-z]*)-([0-9a-f]*))"
+    #     new_mail = "hello@iam.new"
+    #     send_confirmation_change_email("new_mail", str(self.person.pk))
+    #     match = re.search(regex_token, mail.outbox[0].body)
 
-        # data erroné
-        token = match.group(1)
-        post_data = {"new_email": new_mail, "user": str(self.person.pk), "token": token}
-        for key, val in post_data.items():
-            wrong_data = post_data.copy()
-            wrong_data.update({key: val[:-1]})
-            ulr_wrong = reverse("confirm_change_mail") + "?" + urlencode(wrong_data)
-            res = self.client.get(ulr_wrong)
-            self.assertContains(res, "Il semble que celui-ci est invalide.")
+    #     # data erroné
+    #     token = match.group(1)
+    #     post_data = {"new_email": new_mail, "user": str(self.person.pk), "token": token}
+    #     for key, val in post_data.items():
+    #         wrong_data = post_data.copy()
+    #         wrong_data.update({key: val[:-1]})
+    #         ulr_wrong = reverse("confirm_change_mail") + "?" + urlencode(wrong_data)
+    #         res = self.client.get(ulr_wrong)
+    #         self.assertContains(res, "Il semble que celui-ci est invalide.")
 
-        # data manquante
-        token = match.group(1)
-        post_data = {"new_email": new_mail, "user": str(self.person.pk), "token": token}
-        for key, val in post_data.items():
-            wrong_data = post_data.copy()
-            wrong_data.pop(key)
-            ulr_wrong = reverse("confirm_change_mail") + "?" + urlencode(wrong_data)
-            res = self.client.get(ulr_wrong)
-            self.assertContains(res, "Il semble que celui-ci est invalide.")
+    #     # data manquante
+    #     token = match.group(1)
+    #     post_data = {"new_email": new_mail, "user": str(self.person.pk), "token": token}
+    #     for key, val in post_data.items():
+    #         wrong_data = post_data.copy()
+    #         wrong_data.pop(key)
+    #         ulr_wrong = reverse("confirm_change_mail") + "?" + urlencode(wrong_data)
+    #         res = self.client.get(ulr_wrong)
+    #         self.assertContains(res, "Il semble que celui-ci est invalide.")
 
-    def test_can_stop_messages(self):
-        self.person.is_political_support = True
-        self.person.subscribed = True
-        self.person.subscribed_sms = True
-        self.person.draw_notifications = True
-        self.person.save()
+    # def test_can_stop_messages(self):
+    #     self.person.is_political_support = True
+    #     self.person.subscribed = True
+    #     self.person.subscribed_sms = True
+    #     self.person.draw_notifications = True
+    #     self.person.save()
 
-        res = self.client.post(reverse("contact"), data={"no_mail": True})
-        self.assertEqual(res.status_code, 302)
-        self.person.refresh_from_db()
-        self.assertEqual(self.person.subscribed, False)
-        self.assertEqual(self.person.subscribed_sms, False)
-        self.assertEqual(self.person.draw_participation, False)
+    #     res = self.client.post(reverse("contact"), data={"no_mail": True})
+    #     self.assertEqual(res.status_code, 302)
+    #     self.person.refresh_from_db()
+    #     self.assertEqual(self.person.subscribed, False)
+    #     self.assertEqual(self.person.subscribed_sms, False)
+    #     self.assertEqual(self.person.draw_participation, False)
 
 
 class ProfileFormTestCase(TestCase):

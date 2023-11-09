@@ -55,7 +55,7 @@ class RelatedEventFilter(AutocompleteRelatedModelFilter):
             value=self.used_parameters.get(self.parameter_name, ""),
             attrs=attrs,
         ) + format_html(
-            '<a style="margin-top: 5px" href="{}">{_("Gérer les événements")}</a>',
+            '<a style="margin-top: 5px" href="{}">Gérer les événements</a>',
             reverse("admin:events_event_changelist"),
         )
 
