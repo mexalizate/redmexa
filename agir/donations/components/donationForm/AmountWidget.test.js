@@ -9,7 +9,7 @@ import AmountWidget from "./AmountWidget";
 
 afterEach(cleanup);
 
-test(_("AmountWidget dans son état initial"), () => {
+test("AmountWidget dans son état initial", () => {
   const component = render(<AmountWidget />);
 
   const buttons = component.getAllByRole("button");
@@ -20,8 +20,7 @@ test(_("AmountWidget dans son état initial"), () => {
 
   expect(component.getByPlaceholderText("Autre montant")).toBeDefined();
 });
-
-test(_("AmountWidget avec un montant sélectionné"), () => {
+test("AmountWidget avec un montant sélectionné", () => {
   const component = render(<AmountWidget amount={50 * 100} />);
 
   const buttons = component.getAllByRole("button");
@@ -35,7 +34,7 @@ test(_("AmountWidget avec un montant sélectionné"), () => {
   }
 });
 
-test(_("Sélectionner des valeurs dans le AmountWidget"), () => {
+test("Sélectionner des valeurs dans le AmountWidget", () => {
   let currentValue = null;
 
   const component = render(
@@ -55,7 +54,7 @@ test(_("Sélectionner des valeurs dans le AmountWidget"), () => {
   expect(currentValue).toEqual(23 * 100);
 });
 
-test(_("utiliser des montants autres que ceux par défaut"), () => {
+test("utiliser des montants autres que ceux par défaut", () => {
   const choices = [1, 2, 3, 4];
   const component = render(<AmountWidget amountChoices={choices} />);
   const buttons = component.queryAllByText(/[0-9]+\s*\$/);
