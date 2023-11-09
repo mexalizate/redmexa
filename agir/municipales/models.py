@@ -244,7 +244,7 @@ class Liste(models.Model):
     )
 
     tour = models.IntegerField(
-        _("Tour"), choices=[(1, _("Premier tour"), (2, "Deuxième tour"))]
+        _("Tour"), choices=[(1, _("Premier tour")), (2, _("Deuxième tour"))]
     )
 
     nuance = models.CharField(
