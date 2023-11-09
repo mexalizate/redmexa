@@ -322,8 +322,10 @@ class SupportGroupAdmin(VersionAdmin, CenterOnFranceMixin, OSMGeoAdmin):
             " ", '<a class="button" href="{}">{}</a>', action_buttons
         ) + format_html(
             "<div class='help' style='margin: 0; padding: 0;'>",
-            gettext("Attention : cliquer sur ces boutons quitte la page et perd vos modifications courantes."),
-            "</div>"
+            gettext(
+                "Attention : cliquer sur ces boutons quitte la page et perd vos modifications courantes."
+            ),
+            "</div>",
         )
 
         return html
@@ -358,7 +360,9 @@ class SupportGroupAdmin(VersionAdmin, CenterOnFranceMixin, OSMGeoAdmin):
     def creation_date(self, obj):
         return obj.created.strftime("%d/%m/%Y")
 
-    @admin.display(description=_("Certifié"), boolean=True, ordering="certification_date")
+    @admin.display(
+        description=_("Certifié"), boolean=True, ordering="certification_date"
+    )
     def is_certified(self, obj):
         return obj.is_certified
 
@@ -367,8 +371,10 @@ class SupportGroupAdmin(VersionAdmin, CenterOnFranceMixin, OSMGeoAdmin):
         if obj.is_certified:
             status = (
                 f"<span style='font-size:14px;'>",
-                gettext(f"Certifié depuis le <strong>{obj.certification_date.strftime('%d %B %Y')}</strong>"),
-                f"</span>"
+                gettext(
+                    f"Certifié depuis le <strong>{obj.certification_date.strftime('%d %B %Y')}</strong>"
+                ),
+                f"</span>",
             )
             if obj.uncertifiable_warning_date:
                 diff_days = (timezone.now() - obj.uncertifiable_warning_date).days
@@ -382,7 +388,9 @@ class SupportGroupAdmin(VersionAdmin, CenterOnFranceMixin, OSMGeoAdmin):
                     f"{status}",
                     "<br />",
                     gettext(f"— Avertissement de décertification envoyé "),
-                    gettext(f"le <strong>{obj.uncertifiable_warning_date.strftime('%d %B %Y')}</strong> ({diff_days})")
+                    gettext(
+                        f"le <strong>{obj.uncertifiable_warning_date.strftime('%d %B %Y')}</strong> ({diff_days})"
+                    ),
                 )
             return mark_safe(status)
 

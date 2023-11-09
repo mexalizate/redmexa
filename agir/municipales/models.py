@@ -79,57 +79,75 @@ class CommunePage(TimeStampedModel, models.Model):
     first_name_1 = models.CharField(
         _("Prénom chef⋅fe de file 1"), max_length=255, blank=True
     )
-    last_name_1 = models.CharField(_("Nom chef⋅fe de file 1"), max_length=255, blank=True)
+    last_name_1 = models.CharField(
+        _("Nom chef⋅fe de file 1"), max_length=255, blank=True
+    )
     first_name_2 = models.CharField(
         _("Prénom chef⋅fe de file 2"), max_length=255, blank=True
     )
-    last_name_2 = models.CharField(_("Nom chef⋅fe de file 2"), max_length=255, blank=True)
+    last_name_2 = models.CharField(
+        _("Nom chef⋅fe de file 2"), max_length=255, blank=True
+    )
     twitter = TwitterProfileField(
         _("Identifiant Twitter"),
         blank=True,
-        help_text=_("Indiquez l'identifiant ou l'URL du compte Twitter de la campagne."),
+        help_text=_(
+            "Indiquez l'identifiant ou l'URL du compte Twitter de la campagne."
+        ),
     )
     facebook = FacebookPageField(
         _("Identifiant Facebook"),
         max_length=255,
         blank=True,
-        help_text=_("Indiquez l'identifiant ou l'URL de la page Facebook de la campagne"),
+        help_text=_(
+            "Indiquez l'identifiant ou l'URL de la page Facebook de la campagne"
+        ),
     )
 
     website = models.URLField(
         _("Site web"),
         max_length=255,
         blank=True,
-        help_text=_("Indiquez l'URL du site web de la liste en entier (avec le http:// ou le https://)"),
+        help_text=_(
+            "Indiquez l'URL du site web de la liste en entier (avec le http:// ou le https://)"
+        ),
     )
 
     ordre_don = models.CharField(
         _("Ordre des chèques"),
         max_length=255,
         blank=True,
-        help_text=_("Indiquez l'ordre auquel les chèques de dons doivent être adressés."),
+        help_text=_(
+            "Indiquez l'ordre auquel les chèques de dons doivent être adressés."
+        ),
     )
 
     adresse_don = models.TextField(
         _("Adresse complète pour les dons"),
         blank=True,
-        help_text=_("Cette adresse sera affichée sur la page pour inciter les visiteurs à envoyer leurs dons par chèque."),
+        help_text=_(
+            "Cette adresse sera affichée sur la page pour inciter les visiteurs à envoyer leurs dons par chèque."
+        ),
     )
 
     contact_email = models.EmailField(
         _("Adresse email de contact"),
         max_length=255,
         blank=True,
-        help_text=_("Une adresse email publique qui peut être utilisée pour contacter votre campagne"),
+        help_text=_(
+            "Une adresse email publique qui peut être utilisée pour contacter votre campagne"
+        ),
     )
 
     mandataire_email = models.EmailField(
         _("Adresse email du mandataire financier"),
         max_length=255,
         blank=True,
-        help_text=_("Nous aurons sans doute besoin pendant et après la campagne de transmettre des documents"
-        " légaux au mandataire financier. Indiquez-nous une adresse qui nous permettra de le⋅a contacter à"
-        " ce moment."),
+        help_text=_(
+            "Nous aurons sans doute besoin pendant et après la campagne de transmettre des documents"
+            " légaux au mandataire financier. Indiquez-nous une adresse qui nous permettra de le⋅a contacter à"
+            " ce moment."
+        ),
     )
 
     chefs_file = models.ManyToManyField(

@@ -265,10 +265,16 @@ class PushAnnouncementAdmin(admin.ModelAdmin):
             _("ENVOYER L'ANNONCE"),
         ) + format_html(
             "<div class='help' style='margin: 4px 0 0; padding: 0;'>",
-            _("Attention : cliquer sur ce bouton recharge la page sans sauvegarder vos modifications courantes."),
+            _(
+                "Attention : cliquer sur ce bouton recharge la page sans sauvegarder vos modifications courantes."
+            ),
             "<br />",
-            _("Les notifications seront envoyées aux appareils des personnes du segment spécifié et des notices "),
-            _("d'activité seront créés pour pouvoir compter le nombre de clics.<br />Une fois l'annonce envoyée il ne sera "),
+            _(
+                "Les notifications seront envoyées aux appareils des personnes du segment spécifié et des notices "
+            ),
+            _(
+                "d'activité seront créés pour pouvoir compter le nombre de clics.<br />Une fois l'annonce envoyée il ne sera "
+            ),
             _("plus possible de la renvoyer."),
             "</div>",
         )

@@ -64,8 +64,10 @@ class SocialLoginError(RedirectView):
             messages.add_message(
                 request=request,
                 level=messages.ERROR,
-                message=_("Une erreur inconnue est survenue lors de votre tentative de connexion."
-                " Veuillez vous connecter autrement ou réessayer plus tard."),
+                message=_(
+                    "Une erreur inconnue est survenue lors de votre tentative de connexion."
+                    " Veuillez vous connecter autrement ou réessayer plus tard."
+                ),
             )
 
         return super().get(request, *args, **kwargs)

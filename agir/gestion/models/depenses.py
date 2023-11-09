@@ -45,8 +45,8 @@ def depense_entierement_reglee(depense: "Depense", _role):
     return depense.depense_reglee
 
 
-depense_entierement_reglee.explication = (
-    _("La dépense doit être entièrement réglée pour pouvoir la clôturer.")
+depense_entierement_reglee.explication = _(
+    "La dépense doit être entièrement réglée pour pouvoir la clôturer."
 )
 
 
@@ -56,8 +56,8 @@ def valider_reglements_lies(depense: "Depense"):
     )
 
 
-engagement_autorise.explication = (
-    _("Vous n'avez pas les autorisations pour engager cette dépense")
+engagement_autorise.explication = _(
+    "Vous n'avez pas les autorisations pour engager cette dépense"
 )
 
 
@@ -192,7 +192,9 @@ class Depense(ModeleGestionMixin, TimeStampedModel):
 
     description = models.TextField(
         verbose_name=_("Description"),
-        help_text=_("La description doit permettre de pouvoir identifier de façon non ambigue la dépense et sa nature dans le cas où le titre ne suffit pas."),
+        help_text=_(
+            "La description doit permettre de pouvoir identifier de façon non ambigue la dépense et sa nature dans le cas où le titre ne suffit pas."
+        ),
         blank=True,
     )
 
@@ -238,35 +240,45 @@ class Depense(ModeleGestionMixin, TimeStampedModel):
         verbose_name=_("Quantité"),
         null=True,
         blank=True,
-        help_text=_("Lorsque la dépense correspond à l'achat de matériel, indiquez ici la quantité achetée."),
+        help_text=_(
+            "Lorsque la dépense correspond à l'achat de matériel, indiquez ici la quantité achetée."
+        ),
     )
 
     nature = models.CharField(
         verbose_name=_("Nature"),
         max_length=200,
         blank=True,
-        help_text=_("La nature du bien acheté, à remplir simultanément avec le champ quantité si applicable."),
+        help_text=_(
+            "La nature du bien acheté, à remplir simultanément avec le champ quantité si applicable."
+        ),
     )
 
     date_debut = models.DateField(
         _("Date de début"),
         blank=True,
         null=True,
-        help_text=_("Premier jour d'utilisation du matériel, premier jour de l'opération correspondante."),
+        help_text=_(
+            "Premier jour d'utilisation du matériel, premier jour de l'opération correspondante."
+        ),
     )
 
     date_fin = models.DateField(
         _("Date de fin"),
         blank=True,
         null=True,
-        help_text=_("Dernier jour d'utilisation du matériel, dernier jour de l'opération correspondante."),
+        help_text=_(
+            "Dernier jour d'utilisation du matériel, dernier jour de l'opération correspondante."
+        ),
     )
 
     date_depense = models.DateField(
         _("Date d'engagement de la dépense"),
         blank=True,
         null=True,
-        help_text=_("Date à laquelle la dépense a été engagée (généralement l'acceptation du contrat)"),
+        help_text=_(
+            "Date à laquelle la dépense a été engagée (généralement l'acceptation du contrat)"
+        ),
     )
 
     documents = models.ManyToManyField(
@@ -435,12 +447,16 @@ class Reglement(SearchableModel, TimeStampedModel):
         verbose_name=_("Numéro dans le relevé bancaire"),
         null=True,
         blank=True,
-        help_text=_("le numéro de la ligne correspondante dans le relevé bancaire du compte de campagne."),
+        help_text=_(
+            "le numéro de la ligne correspondante dans le relevé bancaire du compte de campagne."
+        ),
     )
 
     numero_complement = models.CharField(
         max_length=5,
-        verbose_name=_("Complément pour différencier plusieurs transactions avec le même numéro"),
+        verbose_name=_(
+            "Complément pour différencier plusieurs transactions avec le même numéro"
+        ),
         blank=True,
     )
 
@@ -467,15 +483,19 @@ class Reglement(SearchableModel, TimeStampedModel):
         unique=True,
         null=True,
         default=None,
-        help_text=_("Identifiant unique utilisé pour suivre une transaction de banque à banque."),
+        help_text=_(
+            "Identifiant unique utilisé pour suivre une transaction de banque à banque."
+        ),
     )
 
     intitule = models.CharField(
         verbose_name=_("Libellé dans le FEC"),
         max_length=200,
         blank=False,
-        help_text=_("Ce champ est utilisé comme intitulé dans le FEC, et comme intitulé dans le relevé bancaire pour les "
-        "virements générés."),
+        help_text=_(
+            "Ce champ est utilisé comme intitulé dans le FEC, et comme intitulé dans le relevé bancaire pour les "
+            "virements générés."
+        ),
     )
 
     mode = models.CharField(
@@ -527,7 +547,9 @@ class Reglement(SearchableModel, TimeStampedModel):
         null=True,
         blank=True,
         on_delete=models.PROTECT,
-        help_text=_("Indiquez laquelle des factures de la dépense est lié ce paiement."),
+        help_text=_(
+            "Indiquez laquelle des factures de la dépense est lié ce paiement."
+        ),
     )
 
     etat = models.CharField(
@@ -585,7 +607,9 @@ class Reglement(SearchableModel, TimeStampedModel):
     location_address2_fournisseur = models.CharField(
         _("adresse (2ère ligne)"), max_length=100, blank=True
     )
-    location_city_fournisseur = models.CharField(_("ville"), max_length=100, blank=False)
+    location_city_fournisseur = models.CharField(
+        _("ville"), max_length=100, blank=False
+    )
     location_zip_fournisseur = models.CharField(
         _("code postal"), max_length=20, blank=False
     )
@@ -598,7 +622,9 @@ class Reglement(SearchableModel, TimeStampedModel):
     commentaires = models.ManyToManyField(
         to="Commentaire",
         verbose_name=_("Commentaires"),
-        help_text=_("Ces commentaires permettent d'ajouter de garder la trace des opérations de traitement des différentes pièces."),
+        help_text=_(
+            "Ces commentaires permettent d'ajouter de garder la trace des opérations de traitement des différentes pièces."
+        ),
     )
 
     search_config = (
@@ -628,10 +654,14 @@ class Reglement(SearchableModel, TimeStampedModel):
 
     def generer_virement(self, date):
         if self.mode != Reglement.Mode.VIREMENT or self.etat != Reglement.Etat.ATTENTE:
-            raise ValueError(gettext(f"Mode ou état incorrect pour le règlement d'id {self.id}"))
+            raise ValueError(
+                gettext(f"Mode ou état incorrect pour le règlement d'id {self.id}")
+            )
 
         if not self.endtoend_id:
-            raise ValueError(gettext(f"Pas d'endtoend_id pour le règlement d'id {self.id}"))
+            raise ValueError(
+                gettext(f"Pas d'endtoend_id pour le règlement d'id {self.id}")
+            )
 
         if not self.iban_fournisseur:
             raise ValueError(gettext(f"IBAN manquant pour le règlement d'id {self.id}"))
@@ -720,7 +750,9 @@ class Fournisseur(LocationMixin, TimeStampedModel):
             if len(self.siren) not in (9, 14):
                 errors["siren"] = [
                     ValidationError(
-                        _("Indiquez soit un code SIREN (9 caractères), soit un code SIRET (14 caractères)."),
+                        _(
+                            "Indiquez soit un code SIREN (9 caractères), soit un code SIRET (14 caractères)."
+                        ),
                         code="siren_invalide",
                     )
                 ]
@@ -736,7 +768,9 @@ CONDITIONS = {
     TypeDepense.FOURNITURE_MARCHANDISES: (
         Todo(
             Q(documents__type=TypeDocument.PHOTOGRAPHIE),
-            _("Vous devez joindre une photographie de la marchandise pour justifier cette dépense."),
+            _(
+                "Vous devez joindre une photographie de la marchandise pour justifier cette dépense."
+            ),
             NiveauTodo.IMPERATIF,
         ),
     ),
@@ -803,8 +837,10 @@ def todos(depense: Depense):
         if not depense.documents.filter(Q(type=TypeDocument.DEVIS)).exists():
             todos_generaux.append(
                 (
-                    _("Vous devez joindre le devis pour permettre l'engagement de la dépense par le responsable"
-                    " du compte."),
+                    _(
+                        "Vous devez joindre le devis pour permettre l'engagement de la dépense par le responsable"
+                        " du compte."
+                    ),
                     NiveauTodo.IMPERATIF,
                 )
             )
@@ -817,7 +853,9 @@ def todos(depense: Depense):
         if not depense.documents.filter(type=TypeDocument.FACTURE).exists():
             todos_generaux.append(
                 (
-                    _("Une facture (ou ticket de caisse) doit impérativement être joint à la dépense."),
+                    _(
+                        "Une facture (ou ticket de caisse) doit impérativement être joint à la dépense."
+                    ),
                     NiveauTodo.IMPERATIF,
                 ),
             )

@@ -44,7 +44,9 @@ cache_decorators = [cache.cache_page(30), cache.cache_control(public=True)]
 
 class BasicOpenGraphMixin(SimpleOpengraphMixin):
     meta_title = _("Action Populaire")
-    meta_description = _("Action Populaire est le réseau social d'action de la France insoumise et de la NUPES.")
+    meta_description = _(
+        "Action Populaire est le réseau social d'action de la France insoumise et de la NUPES."
+    )
     meta_type = "website"
     meta_image = urljoin(
         settings.PLATFORM_FRONT_DOMAIN, static("front/assets/og_image_NSP.jpg")
@@ -233,9 +235,15 @@ class AlreadyContributorRedirectView(RedirectView):
             request=request,
             level=messages.WARNING,
             message=mark_safe(
-                gettext("Vous avez déjà effectuée une contribution financière pour cette année ! "),
-                gettext("Merci de votre soutien ! Si vous le souhaitez vous pouvez toujours faire un don ponctuel "),
-                gettext(f'<a href="{front_url("donation_amount", absolute=True)}">sur la page de don</a>.')
+                gettext(
+                    "Vous avez déjà effectuée une contribution financière pour cette année ! "
+                ),
+                gettext(
+                    "Merci de votre soutien ! Si vous le souhaitez vous pouvez toujours faire un don ponctuel "
+                ),
+                gettext(
+                    f'<a href="{front_url("donation_amount", absolute=True)}">sur la page de don</a>.'
+                ),
             ),
         )
         return super().get(request, *args, **kwargs)
@@ -335,7 +343,9 @@ class SearchView(BaseAppCachedView):
 class SupportGroupDetailView(
     SupportGroupDetailMixin, BaseDetailView, ObjectOpengraphMixin, ReactBaseView
 ):
-    meta_description = _("Rejoignez les groupes d'action de votre quartier pour soutenir les propositions de la France insoumise et de la NUPES")
+    meta_description = _(
+        "Rejoignez les groupes d'action de votre quartier pour soutenir les propositions de la France insoumise et de la NUPES"
+    )
 
     def get_api_preloads(self):
         return [
@@ -505,7 +515,9 @@ class PostElectionRedirectView(RedirectView):
         messages.add_message(
             request=request,
             level=messages.WARNING,
-            message=_("La page du lien que vous avez ouvert n'existe plus. Merci de votre soutien !"),
+            message=_(
+                "La page du lien que vous avez ouvert n'existe plus. Merci de votre soutien !"
+            ),
         )
         return super().get(request, *args, **kwargs)
 

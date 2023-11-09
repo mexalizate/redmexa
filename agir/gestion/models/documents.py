@@ -57,7 +57,9 @@ class Document(ModeleGestionMixin, TimeStampedModel):
         verbose_name=_("Numéro ou identifiant"),
         max_length=100,
         blank=True,
-        help_text=_("Indiquez ici si ce document a un identifiant ou un numéro (numéro de facture ou de devis, identifiant de transaction, etc.)"),
+        help_text=_(
+            "Indiquez ici si ce document a un identifiant ou un numéro (numéro de facture ou de devis, identifiant de transaction, etc.)"
+        ),
     )
 
     numero_piece = models.CharField(
@@ -67,7 +69,9 @@ class Document(ModeleGestionMixin, TimeStampedModel):
         unique=True,
         blank=True,
         null=True,
-        help_text=_("Le numéro de pièce justificative à utiliser pour l'export vers FinPol."),
+        help_text=_(
+            "Le numéro de pièce justificative à utiliser pour l'export vers FinPol."
+        ),
         default=None,
     )
 
@@ -84,13 +88,17 @@ class Document(ModeleGestionMixin, TimeStampedModel):
 
     description = models.TextField(
         _("Description du document"),
-        help_text=_("Toute description complémentaire nécessaire pour identifier clairement le document (et le rechercher)"),
+        help_text=_(
+            "Toute description complémentaire nécessaire pour identifier clairement le document (et le rechercher)"
+        ),
         blank=True,
     )
 
     source_url = models.URLField(
         verbose_name=_("URL d'origine"),
-        help_text=_("Si ce document provient d'internet, l'URL de la source d'origine."),
+        help_text=_(
+            "Si ce document provient d'internet, l'URL de la source d'origine."
+        ),
         blank=True,
     )
 
@@ -144,7 +152,9 @@ class Document(ModeleGestionMixin, TimeStampedModel):
             numero_piece = f"{compte}{code_dep}{ordre+1:04d}"
 
             if not NUMERO_PIECE_REF_RE.match(numero_piece):
-                raise ValueError(gettext(f"Numéro de pièce obtenu {numero_piece} incorrect !"))
+                raise ValueError(
+                    gettext(f"Numéro de pièce obtenu {numero_piece} incorrect !")
+                )
 
             self.numero_piece = numero_piece
             self.save(update_fields=["numero_piece"])

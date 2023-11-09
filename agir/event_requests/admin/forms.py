@@ -13,8 +13,10 @@ class EventRequestAdminForm(forms.ModelForm):
         value = self.cleaned_data.get("status")
         if value != models.EventRequest.Status.DONE and self.instance.event is not None:
             raise ValidationError(
-                _("Il n'est pas possible de changer le statut, car un événement a été créé "
-                "pour cette demande.")
+                _(
+                    "Il n'est pas possible de changer le statut, car un événement a été créé "
+                    "pour cette demande."
+                )
             )
 
         return value

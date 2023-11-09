@@ -204,7 +204,7 @@ class DocumentAdmin(BaseGestionModelAdmin, VersionAdmin):
             },
         ),
         (
-           _("Ajouter une version de ce document"),
+            _("Ajouter une version de ce document"),
             {"fields": ("titre_version", "fichier")},
         ),
     )

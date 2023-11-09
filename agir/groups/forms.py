@@ -261,7 +261,9 @@ class InvitationWithSubscriptionConfirmationForm(forms.Form):
     )
 
     subscribed = forms.BooleanField(
-        label=_("Je souhaite être tenu au courant de l'actualité de la France insoumise"),
+        label=_(
+            "Je souhaite être tenu au courant de l'actualité de la France insoumise"
+        ),
         required=False,
         help_text=_(
             "Si vous le souhaitez, nous pouvons vous envoyer notre lettre d'information hebdomadaire, et des"
@@ -305,14 +307,18 @@ class TransferGroupMembersForm(forms.Form):
         queryset=SupportGroup.objects.active(),
         label=_("Groupe de destination"),
         required=True,
-        help_text=_("Le nouveau groupe doit avoir déjà été créé pour pouvoir y transférer une partie de vos membres."),
+        help_text=_(
+            "Le nouveau groupe doit avoir déjà été créé pour pouvoir y transférer une partie de vos membres."
+        ),
     )
     members = MembershipMultipleChoiceField(
         queryset=Membership.objects.all(),
         label=_("Membres à transférer"),
         required=True,
         widget=forms.CheckboxSelectMultiple,
-        help_text=_("Les membres sélectionnés seront transférés dans le groupe de destination. Ses animateur·ices et les membres transférés recevront alors un e-mail de confirmation. Cette action est irréversible."),
+        help_text=_(
+            "Les membres sélectionnés seront transférés dans le groupe de destination. Ses animateur·ices et les membres transférés recevront alors un e-mail de confirmation. Cette action est irréversible."
+        ),
     )
 
     def __init__(self, manager, former_group, *args, **kwargs):

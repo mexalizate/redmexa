@@ -58,9 +58,13 @@ class EventAssetInline(admin.TabularInline):
     def render(self, obj):
         if obj and obj.renderable:
             return format_html(
-                gettext("<a href='{}' class='button' title='Régénérer le visuel'>⟳ Régénérer</a>"),
+                gettext(
+                    "<a href='{}' class='button' title='Régénérer le visuel'>⟳ Régénérer</a>"
+                ),
                 "<p class='help' style='margin:0;padding:8px 0 0;font-size:0.75rem;'>",
-                gettext("<strong>⚠ Le visuel existant sera définitivement supprimé</strong>"),
+                gettext(
+                    "<strong>⚠ Le visuel existant sera définitivement supprimé</strong>"
+                ),
                 "</p>",
                 admin_url(
                     f"{self.opts.app_label}_{self.opts.model_name}_render",
@@ -77,9 +81,13 @@ class EventAssetInline(admin.TabularInline):
 
         if obj.is_event_image_candidate:
             return format_html(
-                gettext('<a href="{}" class="button" title="Utiliser comme image de bannière">🖼️ Utiliser comme image</a>'),
+                gettext(
+                    '<a href="{}" class="button" title="Utiliser comme image de bannière">🖼️ Utiliser comme image</a>'
+                ),
                 "<p class='help' style='margin:0;padding:8px 0 0;font-size:0.75rem;'>",
-                gettext("<strong>⚠ L'image existante sera définitivement supprimée</strong>"),
+                gettext(
+                    "<strong>⚠ L'image existante sera définitivement supprimée</strong>"
+                ),
                 "</p>",
                 admin_url(
                     f"{self.opts.app_label}_{self.opts.model_name}_set_as_event_image",
@@ -115,8 +123,12 @@ class EventAssetInline(admin.TabularInline):
         if obj and not obj.published:
             return format_html(
                 gettext("<a href='{}' class='button'>✔ Publier</a>"),
-                gettext("<p class='help' style='margin:0;padding:8px 0 0;font-size:0.75rem;'>"),
-                gettext("Les organisateur·ices recevront une notification et pourront accèder au visuel "),
+                gettext(
+                    "<p class='help' style='margin:0;padding:8px 0 0;font-size:0.75rem;'>"
+                ),
+                gettext(
+                    "Les organisateur·ices recevront une notification et pourront accèder au visuel "
+                ),
                 gettext("dans le volet de gestion de la page de l'événement"),
                 "</p>",
                 admin_url(

@@ -7,6 +7,7 @@ from agir.lib.display import display_price
 from agir.lib.utils import front_url
 from django.utils.translation import gettext_lazy as _
 
+
 @admin.register(Cagnotte)
 class CagnotteAdmin(admin.ModelAdmin):
     list_display = ("nom", "slug", "public")

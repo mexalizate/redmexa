@@ -15,7 +15,9 @@ CERTIFICATION_CRITERIA_LABELS = {
     },
     "activity": {
         "label": _("Trois actions de terrain"),
-        "help": _("Le groupe a organisé trois actions de terrain dans les deux derniers mois"),
+        "help": _(
+            "Le groupe a organisé trois actions de terrain dans les deux derniers mois"
+        ),
     },
     "creation": {
         "label": _("Un mois d’existence"),
@@ -23,11 +25,15 @@ CERTIFICATION_CRITERIA_LABELS = {
     },
     "members": {
         "label": _("Trois membres actifs"),
-        "help": _("Le groupe doit compter plus de trois membres actifs, animateur·ices et gestionnaires compris"),
+        "help": _(
+            "Le groupe doit compter plus de trois membres actifs, animateur·ices et gestionnaires compris"
+        ),
     },
     "exclusivity": {
         "label": _("Un seul groupe certifié par animateur·ice"),
-        "help": _("Les animateur·ices du groupe n'animent pas d'autres groupes locaux certifiés"),
+        "help": _(
+            "Les animateur·ices du groupe n'animent pas d'autres groupes locaux certifiés"
+        ),
     },
 }
 

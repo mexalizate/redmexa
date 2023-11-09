@@ -115,7 +115,10 @@ class Activity(TimeStampedModel):
 
     TYPE_CHOICES = (
         (TYPE_WAITING_PAYMENT, _("Paiement en attente")),
-        (TYPE_NEW_EVENT_PARTICIPATION_MYGROUPS, _("Le groupe participe à un événement")),
+        (
+            TYPE_NEW_EVENT_PARTICIPATION_MYGROUPS,
+            _("Le groupe participe à un événement"),
+        ),
         (TYPE_GROUP_INVITATION, _("Invitation à un groupe")),
         (TYPE_NEW_FOLLOWER, _("Nouveau·lle abonné·e dans le groupe")),
         (TYPE_NEW_MEMBER, _("Nouveau membre dans le groupe")),
@@ -153,7 +156,10 @@ class Activity(TimeStampedModel):
             _("Invitation de mon groupe à coorganiser leur événement acceptée"),
         ),
         (TYPE_GROUP_INFO_UPDATE, _("Mise à jour des informations du groupe")),
-        (TYPE_ACCEPTED_INVITATION_MEMBER, _("Invitation à rejoindre un groupe acceptée")),
+        (
+            TYPE_ACCEPTED_INVITATION_MEMBER,
+            _("Invitation à rejoindre un groupe acceptée"),
+        ),
         (TYPE_NEW_ATTENDEE, _("Un nouveau participant à votre événement")),
         (TYPE_NEW_GROUP_ATTENDEE, _("Un nouveau groupe participant à votre événement")),
         (TYPE_EVENT_UPDATE, _("Mise à jour d'un événement")),
@@ -182,7 +188,9 @@ class Activity(TimeStampedModel):
         ),
         (
             TYPE_REMINDER_REPORT_FORM_FOR_EVENT,
-            _("Rappel au lendemain d'un événement de l'éventuel formulaire de bilan à remplir"),
+            _(
+                "Rappel au lendemain d'un événement de l'éventuel formulaire de bilan à remplir"
+            ),
         ),
         (
             TYPE_REMINDER_UPCOMING_EVENT_START,
@@ -190,7 +198,9 @@ class Activity(TimeStampedModel):
         ),
         (
             TYPE_UNCERTIFIABLE_GROUP_WARNING,
-            _("Avertissement aux animateur·ices d'un groupe certifié qui ne respecte plus les critères de certification"),
+            _(
+                "Avertissement aux animateur·ices d'un groupe certifié qui ne respecte plus les critères de certification"
+            ),
         ),
     )
 
@@ -365,7 +375,9 @@ class Announcement(BaseAPIResource):
     start_date = models.DateTimeField(
         verbose_name=_("Date de début"), default=timezone.now
     )
-    end_date = models.DateTimeField(verbose_name=_("Date de fin"), null=True, blank=True)
+    end_date = models.DateTimeField(
+        verbose_name=_("Date de fin"), null=True, blank=True
+    )
 
     segment = models.ForeignKey(
         to="mailing.Segment",
@@ -382,8 +394,10 @@ class Announcement(BaseAPIResource):
     priority = models.IntegerField(
         verbose_name=_("Priorité"),
         default=0,
-        help_text=_("Permet de modifier l'ordre d'affichage des annonces. Les valeurs plus élevées sont affichées avant."
-        " Deux annonces de même priorité sont affichées dans l'ordre anti-chronologique (par date de début)"),
+        help_text=_(
+            "Permet de modifier l'ordre d'affichage des annonces. Les valeurs plus élevées sont affichées avant."
+            " Deux annonces de même priorité sont affichées dans l'ordre anti-chronologique (par date de début)"
+        ),
     )
 
     def __str__(self):
@@ -413,13 +427,17 @@ class PushAnnouncement(BaseAPIResource):
         max_length=60,
         blank=True,
         default="",
-        help_text=_("Max. 60 caractères. Le sous-titre s'affichera uniquement sur iOS."),
+        help_text=_(
+            "Max. 60 caractères. Le sous-titre s'affichera uniquement sur iOS."
+        ),
     )
 
     message = models.TextField(
         verbose_name=_("Message"),
         blank=False,
-        help_text=_("Longueur max. conséillée env. 150 caractères sur iOS et 240 sur Android."),
+        help_text=_(
+            "Longueur max. conséillée env. 150 caractères sur iOS et 240 sur Android."
+        ),
     )
 
     link = models.URLField(
@@ -439,7 +457,9 @@ class PushAnnouncement(BaseAPIResource):
         ),
         null=True,
         blank=True,
-        help_text=_("Utiliser une image au format JPEG avec un ratio de 2:1 et de maximum 5 MB."),
+        help_text=_(
+            "Utiliser une image au format JPEG avec un ratio de 2:1 et de maximum 5 MB."
+        ),
     )
 
     thread_id = models.CharField(
@@ -447,8 +467,10 @@ class PushAnnouncement(BaseAPIResource):
         max_length=64,
         blank=True,
         default="",
-        help_text=_("Max. 64 caractères. Si indiqué, permet de regrouper les notifications avec le même "
-        "identifiant de groupe ensemble."),
+        help_text=_(
+            "Max. 64 caractères. Si indiqué, permet de regrouper les notifications avec le même "
+            "identifiant de groupe ensemble."
+        ),
     )
 
     ttl = models.IntegerField(
@@ -459,8 +481,10 @@ class PushAnnouncement(BaseAPIResource):
         ],
         blank=False,
         default=259200,  # 3 days
-        help_text=_("Max. 28 jours. La notification ne sera pas reçue si l'appareil n'est "
-        "pas connecté au réseau pendant le temps indiqué."),
+        help_text=_(
+            "Max. 28 jours. La notification ne sera pas reçue si l'appareil n'est "
+            "pas connecté au réseau pendant le temps indiqué."
+        ),
     )
 
     segment = models.ForeignKey(
@@ -482,7 +506,9 @@ class PushAnnouncement(BaseAPIResource):
         related_query_name="+",
         null=True,
         blank=True,
-        help_text=_("Segment des personnes auxquelles envoyer des notifications de test"),
+        help_text=_(
+            "Segment des personnes auxquelles envoyer des notifications de test"
+        ),
     )
 
     has_ios = models.BooleanField(

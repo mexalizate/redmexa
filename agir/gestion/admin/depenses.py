@@ -4,6 +4,7 @@ from agir.gestion.models import Compte, Reglement
 from agir.lib.display import display_price
 from django.utils.translation import gettext_lazy as _
 
+
 class DepenseListMixin:
     def get_list_display(self, request):
         list_display = super().get_list_display(request)
