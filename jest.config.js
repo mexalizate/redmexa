@@ -30,4 +30,5 @@ module.exports = {
   testPathIgnorePatterns: ["\\\\node_modules\\\\"],
   // Indicates whether each individual test should be reported during the run
   verbose: false,
+  testEnvironment: 'jsdom'
 };
