@@ -78,6 +78,7 @@ export const OVERSEAS_COUNTRY_CODE_TO_DEPARTEMENT = {
 
 export const getDefaultBoundsForUser = (user) => {
   if ([I18N.country].includes(user?.country) && user?.zip) {
+    Console.log("Zip user o codigoPostal" + user.zip);
     return JSON.stringify({ code_postal: user.zip });
   }
   if (OVERSEAS_COUNTRY_CODE_TO_DEPARTEMENT[user?.country]) {

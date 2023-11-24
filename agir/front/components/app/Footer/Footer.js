@@ -5,7 +5,7 @@ import styled from "styled-components";
 import style from "@agir/front/genericComponents/_variables.scss";
 import AppStore from "@agir/front/genericComponents/AppStore";
 import Link from "@agir/front/app/Link";
-import LogoAP from "@agir/front/genericComponents/LogoAP";
+import LogoAPFooter from "@agir/front/genericComponents/LogoAPFooter";
 import Spacer from "@agir/front/genericComponents/Spacer";
 import FooterBanner from "./FooterBanner";
 const StyledAppStore = styled(AppStore)``;
@@ -116,52 +116,52 @@ export const Footer = (props) => {
       <StyledFooter>
         <article>
           <div>
-            <LogoAP />
+            <LogoAPFooter/>
           </div>
           <div>
-            <h3>{_("Action populaire")}</h3>
+            <h3 className="secondaryTextColorLightRed">{/*_("Action populaire")*/}CLAUDIALÍZATE </h3>
             <p>
-              <Link route="eventMap">{_("Carte des événements")}</Link>
-              <Link route="groupMap">{_("Carte des groupes")}</Link>
-              <Link route="materiel" target="_blank">
+              <Link className="primaryTextColorPurple" route="eventMap">{_("Carte des événements")}</Link>
+              <Link className="primaryTextColorPurple" route="groupMap">{_("Carte des groupes")}</Link>
+              <Link className="primaryTextColorPurple" route="materiel" target="_blank">
                 {_(" Commander du matériel")}
               </Link>
             </p>
           </div>
 
           <div>
-            <h3>{_("Liens utiles")}</h3>
+            <h3 className="secondaryTextColorLightRed">{/*_("Liens utiles")*/} ENLACES ÚTILES</h3>
             <p>
               {isSignedIn ? (
-                <Link route="logout">{_("Se déconnecter")}</Link>
+                <Link className="primaryTextColorPurple" route="logout">{_("Se déconnecter")}</Link>
               ) : (
-                <Link route="login">{_("Se connecter")}</Link>
+                <Link className="primaryTextColorPurple" route="login">{_("Se connecter")}</Link>
               )}
-              <Link route="help">{_("Besoin d'aide ?")}</Link>
-              <Link route="legal">{_("Mentions légales")}</Link>
-              <Link route="contact">{_("Contact")}</Link>
+              <Link className="primaryTextColorPurple" route="help">{_("Besoin d'aide ?")}</Link>
+              <Link className="primaryTextColorPurple" route="legal">{_("Mentions légales")}</Link>
+              <Link className="primaryTextColorPurple" route="contact">{_("Contact")}</Link>
             </p>
           </div>
 
           <div>
-            <h3>{_("Le programme")}</h3>
+            <h3 className="secondaryTextColorLightRed">{_("Le programme")}</h3>
             <p>
-              <Link route="nupesPlatform" target="_blank">
+              <Link className="primaryTextColorPurple" route="nupesPlatform" target="_blank">
                 {_("Le programme de la")}{" "}
                 <abbr title="Nouvelle Union Populaire Écologique et sociale">
                   {_("NUPES")}
                 </abbr>
               </Link>
-              <Link route="programme" target="_blank">
+              <Link className="primaryTextColorPurple" route="programme" target="_blank">
                 {_("Le programme l'Avenir en commun")}
               </Link>
             </p>
           </div>
 
           <div>
-            <h3>{_("Les autres sites")}</h3>
+            <h3 className="secondaryTextColorLightRed">{/*_("Les autres sites")*/} OTROS SITIOS</h3>
             <p>
-              <Link route="nupes" target="_blank">
+              <Link className="primaryTextColorPurple" route="nupes" target="_blank">
                 {_("La")}{" "}
                 <abbr
                   title={_("Nouvelle Union Populaire Écologique et sociale")}
@@ -169,9 +169,9 @@ export const Footer = (props) => {
                   {_("NUPES")}
                 </abbr>
               </Link>
-              <Link route="lafranceinsoumise">{_("La France insoumise")}</Link>
-              <Link route="linsoumission">{_("L'insoumission")}</Link>
-              <Link route="jlmBlog">{_("Le blog de Jean-Luc Mélenchon")}</Link>
+              <Link className="primaryTextColorPurple" route="lafranceinsoumise">{_("La France insoumise")}</Link>
+              <Link className="primaryTextColorPurple" route="linsoumission">{_("L'insoumission")}</Link>
+              <Link className="primaryTextColorPurple" route="jlmBlog">{_("Le blog de Jean-Luc Mélenchon")}</Link>
             </p>
           </div>
 

@@ -186,7 +186,7 @@ export default async function listMap(
     geometryLayers.push(layer);
   }
 
-  bounds = bounds || [-5.3, 41.2, 9.6, 51.2]; // default bounds are metropolitan France
+  bounds = bounds || [-117.33, 14.53, -86.81, 32.72083]; // default bounds are mexico, usa and canada
 
   const map = setUpMap(
     htmlElementId,

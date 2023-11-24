@@ -13,7 +13,7 @@ const LogoAP = styled.img
   })
   .attrs(({ small }) => ({
     src: small ? svgLogoSmall : svgLogo,
-    width: small ? "182" : "149",
+    width: small ? "182" : "249",
     height: small ? "35" : "56",
   }))`
   font-size: 0;
@@ -31,7 +31,7 @@ LogoAP.propTypes = {
 };
 LogoAP.defaultProps = {
   small: false,
-  alt: "Action Populaire",
+  alt: "Claudializate",
 };
 
 export default LogoAP;

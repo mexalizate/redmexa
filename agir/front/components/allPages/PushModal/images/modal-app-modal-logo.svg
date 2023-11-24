@@ -1,1 +1,28 @@
-<svg width="123" height="123" fill="none" xmlns="http://www.w3.org/2000/svg"><g filter="url(#a)"><rect x="11" y="8" width="101" height="101" rx="20.2" fill="#F4ED0F"/><g clip-path="url(#b)"><path d="M68.14 90.45 52.5 74.862c-8.637-8.607-8.705-22.496-.15-31.02 8.553-8.525 22.49-8.457 31.128.15 8.637 8.608 8.705 22.497.15 31.021L68.14 90.45Z" fill="#fff"/><path fill-rule="evenodd" clip-rule="evenodd" d="m44.717 63.672 12.343 12.3 12.343-12.3c6.817-6.793 6.817-17.807 0-24.6-6.817-6.793-17.87-6.793-24.686 0-6.817 6.793-6.817 17.807 0 24.6ZM57.06 83.408 73.133 67.39c8.877-8.846 8.877-23.19 0-32.035-8.877-8.847-23.27-8.847-32.146 0-8.877 8.846-8.877 23.189 0 32.035L57.06 83.407Z" fill="#000A2C"/></g></g><defs><clipPath id="b"><path fill="#fff" transform="translate(34.189 28.612)" d="M0 0h56.168v61.837H0z"/></clipPath><filter id="a" x="0" y="0" width="123" height="123" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feMorphology radius="3" operator="dilate" in="SourceAlpha" result="effect1_dropShadow"/><feOffset dy="3"/><feGaussianBlur stdDeviation="4"/><feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0"/><feBlend in2="BackgroundImageFix" result="effect1_dropShadow"/><feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset/><feGaussianBlur stdDeviation="1.5"/><feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.6 0"/><feBlend in2="effect1_dropShadow" result="effect2_dropShadow"/><feBlend in="SourceGraphic" in2="effect2_dropShadow" result="shape"/></filter></defs></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 28.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 52 52" style="enable-background:new 0 0 52 52;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#30D7CF;}
+	.st1{clip-path:url(#SVGID_00000003087332882650560440000004600803424559621521_);}
+	.st2{fill:#FFFFFF;}
+	.st3{fill-rule:evenodd;clip-rule:evenodd;fill:#000A2C;}
+</style>
+<path class="st0" d="M11.1,0h29.9C47.1,0,52,4.9,52,11.1v29.9C52,47.1,47.1,52,40.9,52H11.1C4.9,52,0,47.1,0,40.9V11.1
+	C0,4.9,4.9,0,11.1,0z"/>
+<g>
+	<defs>
+		<rect id="SVGID_1_" x="11.9" y="10.6" width="28.9" height="31.8"/>
+	</defs>
+	<clipPath id="SVGID_00000009549250864948850850000006978672369789213612_">
+		<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+	</clipPath>
+	<g style="clip-path:url(#SVGID_00000009549250864948850850000006978672369789213612_);">
+		<path class="st2" d="M29.4,42.4l-8.1-8c-4.4-4.4-4.5-11.6-0.1-16c4.4-4.4,11.6-4.4,16,0.1c4.4,4.4,4.5,11.6,0.1,16L29.4,42.4
+			L29.4,42.4z"/>
+		<path class="st3" d="M17.4,28.7l6.4,6.3l6.4-6.3c3.5-3.5,3.5-9.1,0-12.6c0,0,0,0,0,0c-3.5-3.5-9.2-3.5-12.7,0
+			C13.9,19.5,13.8,25.1,17.4,28.7C17.3,28.6,17.3,28.7,17.4,28.7L17.4,28.7z M23.7,38.8l8.3-8.2c4.6-4.5,4.6-11.9,0-16.5
+			c0,0,0,0,0,0c-4.6-4.6-12-4.6-16.6,0c-4.6,4.5-4.6,11.9,0,16.5c0,0,0,0,0,0L23.7,38.8L23.7,38.8z"/>
+	</g>
+</g>
+</svg>
