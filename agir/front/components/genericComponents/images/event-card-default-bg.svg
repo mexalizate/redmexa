@@ -1,1 +1,16 @@
-<svg width="359" height="203" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#FAFAFA" d="M0 0h359v203H0z"/><path d="m190.09 162.922-29.111-29.133c-16.077-16.089-16.203-42.05-.281-57.983 15.922-15.933 41.862-15.807 57.94.282 16.077 16.09 16.203 42.049.281 57.983l-28.829 28.851Z" fill="#EEE"/><path fill-rule="evenodd" clip-rule="evenodd" d="m147.113 112.871 22.974 22.991 22.974-22.991c12.689-12.698 12.689-33.285 0-45.983-12.688-12.697-33.26-12.697-45.948 0-12.689 12.698-12.689 33.285 0 45.983Zm22.974 36.888 29.918-29.94c16.523-16.535 16.523-43.344 0-59.88-16.523-16.535-43.313-16.535-59.836 0-16.523 16.536-16.523 43.345 0 59.88l29.918 29.94Z" fill="#DFDFDF"/></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 28.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 359 203" style="enable-background:new 0 0 359 203;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FAFAFA;}
+	.st1{fill:#EEEEEE;}
+	.st2{fill-rule:evenodd;clip-rule:evenodd;fill:#950080;}
+</style>
+<path class="st0" d="M0,0h359v203H0V0z"/>
+<path class="st1" d="M190.1,162.9L161,133.8c-16.1-16.1-16.2-42.1-0.3-58s41.9-15.8,57.9,0.3c16.1,16.1,16.2,42,0.3,58L190.1,162.9
+	L190.1,162.9z"/>
+<path class="st2" d="M147.1,112.9l23,23l23-23c12.7-12.7,12.7-33.3,0-46c-12.7-12.7-33.3-12.7-45.9,0
+	C134.4,79.6,134.4,100.2,147.1,112.9z M170.1,149.8l29.9-29.9c16.5-16.5,16.5-43.3,0-59.9c-16.5-16.5-43.3-16.5-59.8,0
+	c-16.5,16.5-16.5,43.3,0,59.9L170.1,149.8z"/>
+</svg>
