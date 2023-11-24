@@ -28,8 +28,8 @@ const ARROW_SIZE = 20;
 
 export function setUpMap(elementId, layers) {
   const view = new View({
-    center: fromLonLat([2, 47]),
-    zoom: 6,
+    center: fromLonLat([-100, 40]),
+    zoom: 2,
     enableRotation: false,
   });
   return new Map({
