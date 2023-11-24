@@ -14,7 +14,7 @@ from django.urls import reverse, reverse_lazy
 from django.utils import timezone
 from django.utils.decorators import method_decorator
 from django.utils.html import format_html
-from django.utils.translation import gettext as _
+from django.utils.translation import gettext as _, gettext
 from django.views import View
 from django.views.decorators.cache import never_cache
 from django.views.generic import (
@@ -272,9 +272,7 @@ class TransferSupportGroupMembersView(
         messages.add_message(
             self.request,
             messages.SUCCESS,
-            _(
-                "Le transfert de %d membre(s) vers « %s » a été effectué. Ces dernier·ère·s ainsi que les animateur·ices de leur nouveau groupe ont été prévenu·es par e-mail."
-            )
+            "Le transfert de %d membre(s) vers « %s » a été effectué. Ces dernier·ère·s ainsi que les animateur·ices de leur nouveau groupe ont été prévenu·es par e-mail."
             % (p["transferred_memberships"].count(), p["target_group"].name),
         )
 
