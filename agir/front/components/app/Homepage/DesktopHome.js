@@ -29,10 +29,9 @@ const StyledMap = styled.iframe`
 const StyledHome = styled.main`
   header {
     text-align: center;
-    padding: 0 1.5rem 0;
-    height: 676px;
-    background-color: ${style.secondary500};
-    padding: 82px 0;
+    height: 896px;
+    background-color: ${style.primary500};
+    padding: 0;
 
     h2,
     h5 {
@@ -42,7 +41,6 @@ const StyledHome = styled.main`
 
     h2 {
       font-size: 66px;
-      line-height: 1.5;
       font-weight: 700;
       letter-spacing: -0.04em;
       white-space: nowrap;
@@ -52,7 +50,7 @@ const StyledHome = styled.main`
       font-size: 1.25rem;
       line-height: 1.5;
       font-weight: normal;
-      max-width: 580px;
+      max-width: 854px;
       margin: 0 auto;
       padding-bottom: 2.25rem;
     }
@@ -82,19 +80,25 @@ const Home = () => {
   return (
     <StyledHome>
       <header>
-        <h2>{_("Passez à l'action !")}</h2>
-        <h5>
+        {/*<h2 className="secondaryTextColorLightRed BigText">{_("Passez à l'action !")}</h2>*/}
+        <h2 className="secondaryTextColorLightRed TittleText">¡ÚNETE YA!</h2>
+        {/*<h5 className="secondaryTextColorLightRed">
           {_(
             "Action Populaire est le réseau social d'action de la France insoumise.",
           )}
+          </h5>*/}
+
+        <h5 className="secondaryTextColorLightRed SubTittleText">
+           A la red de acción de l@s
+           mexican@s en el mundo
         </h5>
         <div>
-          <Button color="primary" link route="signup">
-            {_("Je crée mon compte")}
+          <Button color="secondary" link route="signup">
+            {/*_("Je crée mon compte")*/} Crear mi cuenta
           </Button>
           <Spacer size="1rem" />
           <Button color="white" link route="login">
-            {_("Je me connecte")}
+            {/*_("Je me connecte")*/} Conectarme
           </Button>
         </div>
       </header>
@@ -108,6 +112,7 @@ const Home = () => {
       <Spacer size="4rem" />
       <HomeActions />
       <Spacer size="5.25rem" />
+
       <HomeExternalLinks />
       <Spacer size="5.25rem" />
       <HomeFooter />

@@ -17,10 +17,13 @@ const StyledArticle = styled(Link)``;
 const StyledActions = styled.main`
   display: grid;
   grid-gap: 3.5rem 2.5rem;
+  padding-top: 0px;
+  
 
   @media (min-width: ${style.collapse}px) {
     max-width: 1156px;
-    margin: 0 auto;
+    margin: 0 auto !important;
+    padding-top: 0px;
     grid-template-columns: 1fr 1fr 1fr;
   }
 
@@ -71,13 +74,13 @@ const HomeActions = () => {
           width="424"
           alt={_("manifestation")}
         />
-        <h4>{_("Rencontrez")}</h4>
-        <p>
-          {_("d'autres membres")}
+        <h4 className="secondaryTextColorLightRed tittleCard">{/*_("Rencontrez")*/} ORGANÍZATE</h4>
+        <p className="textCard primaryTextColorPurple">
+          {/*_("d'autres membres")*/} Otros miembros
           <br />
-          {_("et agissez ensemble !")}
+          {/*_("et agissez ensemble !")*/} actúan juntos
         </p>
-        <Button color="secondary">{_("Voir les groupes")}</Button>
+        <Button color="secondaryPurple">{/*_("Voir les groupes")*/} VER GRUPOS</Button>
       </StyledArticle>
       <StyledArticle route="help">
         <img
@@ -86,9 +89,9 @@ const HomeActions = () => {
           width="424"
           alt={_("distribution de tracts")}
         />
-        <h4>{_("Agissez concrètement")}</h4>
-        <p>{_("formez-vous et convainquez des gens près de chez vous !")}</p>
-        <Button color="secondary">{_("Lire les fiches pratiques")}</Button>
+        <h4 className="secondaryTextColorLightRed tittleCard">{/*_("Agissez concrètement")*/}ACTÚA</h4>
+        <p className="textCard primaryTextColorPurple" >{/*_("formez-vous et convainquez des gens près de chez vous !")*/} Entérate y convence a las personas cercanas a ti</p>
+        <Button color="secondaryPurple">{/*_("Lire les fiches pratiques")*/} LEER LAS FICHAS PRÁCTICAS </Button>
       </StyledArticle>
       <StyledArticle route="login">
         <img
@@ -97,13 +100,14 @@ const HomeActions = () => {
           width="424"
           alt={_("le premier cahier du programme l'Avenir en Commun")}
         />
-        <h4>{_("Organisez")}</h4>
-        <p>
-          {_(
+        <h4 className="secondaryTextColorLightRed tittleCard">{/*_("Organisez")*/}ENCONTRARSE</h4>
+        <p className="textCard primaryTextColorPurple">
+          {/*_(
             "Créez un groupe d'action, commandez du matériel, tracts et affiches !",
-          )}
+          )*/}
+          Crear un grupo de acción pide materiales folletos y carteles
         </p>
-        <Button color="secondary">{_("Passer à l'action")}</Button>
+        <Button color="secondaryPurple">{/*_("Passer à l'action")*/} PASA A LA ACCIÓN</Button>
       </StyledArticle>
     </StyledActions>
   );

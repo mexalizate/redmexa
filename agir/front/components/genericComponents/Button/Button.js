@@ -25,9 +25,9 @@ const DefaultButton = styled(BaseButton)`
   &[disabled]:hover,
   &[disabled]:focus,
   &[disabled]:active {
-    color: ${style.black1000 + "4D"};
-    background-color: ${style.black50 + "B7"};
-    border-color: ${style.black50 + "B7"};
+    color: ${style.black100 + "4D"};
+    background-color: ${style.black1000 + "B7"};
+    border-color: ${style.black1000 + "B7"};
 
     &:before {
       background-image: ${getIconDataUrl({
@@ -130,14 +130,14 @@ const PrimaryButton = styled(BaseButton)`
 `;
 
 const SecondaryButton = styled(BaseButton)`
-  color: ${style.black1000};
+  color: ${style.white};
   background-color: ${style.secondary500};
   border-color: ${style.secondary500};
 
   &:hover,
   &:focus,
   &:active {
-    color: ${style.black1000};
+    color: ${style.white};
     background-color: ${style.secondary600};
     border-color: ${style.secondary600};
   }
@@ -146,12 +146,38 @@ const SecondaryButton = styled(BaseButton)`
   &[disabled]:hover,
   &[disabled]:focus,
   &[disabled]:active {
-    background-color: ${style.secondary500 + "B7"};
-    border-color: ${style.secondary500 + "B7"};
+    background-color: ${style.nupesBlue + "B7"};
+    border-color: ${style.nupesBlue + "B7"};
   }
 
   &:before {
-    background-image: ${getIconDataUrl({ color: style.black1000 })};
+    background-image: ${getIconDataUrl({ color: style.white })};
+  }
+`;
+
+const SecondaryButtonPurple = styled(BaseButton)`
+  color: ${style.white};
+  background-color: ${style.nupesBlue};
+  border-color: ${style.nupesBlue};
+  font-size: 22pt;
+  &:hover,
+  &:focus,
+  &:active {
+    color: ${style.white};
+    background-color: ${style.nupesBlue600};
+    border-color: ${style.nupesBlue600};
+  }
+
+  &[disabled],
+  &[disabled]:hover,
+  &[disabled]:focus,
+  &[disabled]:active {
+    background-color: ${style.nupesBlue + "B7"};
+    border-color: ${style.nupesBlue + "B7"};
+  }
+
+  &:before {
+    background-image: ${getIconDataUrl({ color: style.white })};
   }
 `;
 
@@ -394,6 +420,7 @@ const variants = {
   whiteRed: WhiteRedButton,
   primary: PrimaryButton,
   secondary: SecondaryButton,
+  secondaryPurple: SecondaryButtonPurple,
   tertiary: TertiaryButton,
   confirmed: ConfirmedButton,
   unavailable: UnavailableButton,

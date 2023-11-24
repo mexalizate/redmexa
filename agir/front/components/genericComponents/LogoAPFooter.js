@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 import "@agir/front/genericComponents/_variables.scss";
 
-import svgLogo from "@agir/front/genericComponents/logos/action-populaire.svg";
+import svgLogo from "@agir/front/genericComponents/logos/LogoFooter.svg";
 import svgLogoSmall from "@agir/front/genericComponents/logos/action-populaire_small.svg";
 
 const LogoAP = styled.img
@@ -13,13 +13,13 @@ const LogoAP = styled.img
   })
   .attrs(({ small }) => ({
     src: small ? svgLogoSmall : svgLogo,
-    width: small ? "182" : "249",
-    height: small ? "35" : "56",
+    width: small ? "182px" : "100%",
+    height: small ? "35" : "120",
   }))`
   font-size: 0;
   color: transparent;
-  height: ${(props) => props.height + "px" || "auto"};
-  width: ${(props) => props.width + "px" || "auto"};
+  height: ${(props) => props.height + "px !important" || "auto"};
+  width: ${(props) => props.width + " !important" || "auto"};
   vertical-align: unset;
 `;
 

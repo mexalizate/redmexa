@@ -49,13 +49,14 @@ const StyledFooter = styled.main`
 const HomeFooter = () => {
   return (
     <StyledFooter>
-      <h2>{_("Passez à l'action !")}</h2>
+      {/*<h2 className="secondaryTextColorLightRed tittleText2">{_("Passez à l'action !")}</h2>*/}
+      <h2 className="secondaryTextColorLightRed tittleText2">¡TOMA ACCIÓN!</h2>
       <Spacer size="2rem" />
-      <Button link to="/inscription/" color="tertiary">
+      <Button link to="/inscription/" color="secondary">
         {_("S'inscrire")}
       </Button>
       <Spacer size="1rem" />
-      <Button link to="/connexion/" color="primary">
+      <Button link to="/connexion/" color="tertiary">
         {_("Se connecter")}
       </Button>
     </StyledFooter>

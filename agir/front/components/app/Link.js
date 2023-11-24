@@ -9,7 +9,7 @@ import { useRoute } from "./hooks";
 const ExternalLink = (props) => {
   const { params, forwardedRef, ...rest } = props;
   const href = params ? addQueryStringParams(props.href, params) : props.href;
-  return <a ref={forwardedRef} {...rest} href={href} />;
+  return <a className={props.className} ref={forwardedRef} {...rest} href={href} />;
 };
 ExternalLink.propTypes = {
   href: PropTypes.string.isRequired,

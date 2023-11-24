@@ -65,7 +65,7 @@ h5,
 h6 {
   font-weight: 600;
   line-height: 1.2;
-  color: #00232c;
+  color:  #00232c;
   margin-top: 0.8em;
   margin-bottom: 0.7em;
 }
@@ -241,3 +241,49 @@ mark {
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
 }
+
+.nightTextColor{
+  color:  #231063 !important;
+}
+
+.lightTextColor{
+  color:  #ffffff !important;
+}
+
+.primaryTexColortRed{
+  color:  #781136 !important;
+}
+
+.primaryTextColorPurple{
+  color:  #4b2c92 !important;
+}
+
+.secondaryTextColorLightRed{
+  color:  #f70b39 !important;
+}
+
+
+.TittleText{
+  font-size: 150pt !important;
+}
+
+.SubTittleText{
+  font-size: 49pt !important;
+}
+
+.tittleCard{
+  font-size: 30pt !important;
+}
+
+.textCard{
+  font-size: 23pt !important;
+}
+
+.buttonText{
+  font-size: 22pt !important;
+}
+
+.tittleText2{
+  font-size: 72pt !important;
+}
+

@@ -81,15 +81,21 @@ const StyledArticle = styled.article`
 const HomeExternalLinks = () => {
   return (
     <StyledArticle>
-      <h4>
+      {/*<h4>
         <span>{_("Retrouver")}</span> {_("l'actualité")}{" "}
         <span>{_("et les campagnes du mouvement")}</span>
-      </h4>
-      <p>
+  </h4>*/}
+    <h4 className="primaryTextColorPurple">
+          <span> Encuentra las noticias y campañas del movimiento</span>
+    </h4>
+      {/*<p>
         {_(
           "Action Populaire est le réseau social d’action de la France Insoumise. Pour retrouver l’actualité, rendez-vous sur nos sites :",
         )}
-      </p>
+        </p>*/}
+        <p className="secondaryTextColorLightRed" >
+       Claudializate es la red de acción social, para encontrar las últimas noticias, visita nuestros sitios:
+        </p>
       <nav>
         <a href="https://lafranceinsoumise.fr/">
           <img

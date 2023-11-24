@@ -64,7 +64,7 @@ export const DesktopNavBar = (props) => {
   return (
     <StyledBar>
       <LogoLink route="events">
-        <LogoAP height={56} width={149} />
+        <LogoAP height={56} width={249} />
       </LogoLink>
       <div
         css={`
