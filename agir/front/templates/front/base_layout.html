@@ -5,9 +5,9 @@
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% block title %}{% firstof meta_title "Action Populaire" %}{% endblock %}</title>
+  <title>{% block title %}{% firstof meta_title "Claudialízate" %}{% endblock %}</title>
   <link rel="manifest" href="{% static "front/manifest.json" %}" />
-  <meta name="theme-color" content="#F4ED0F">
+  <meta name="theme-color" content="#781136">
 
 
   {% include "front/includes/favicon.html" %}
@@ -16,14 +16,14 @@
     {% if show_opengraph %}
       <meta name="title" content="{{ meta_title }}"/>
       <meta name="description" content="{{ meta_description }}">
-      <link rel="canonical" href="https://actionpopulaire.fr{{ request.path }}"/>
+      <link rel="canonical" href="https://Claudialízate.mx{{ request.path }}"/>
       <meta property="og:locale" content="fr_FR"/>
       <meta property="og:type" content="{{ meta_type }}"/>
       <meta property="og:title" content="{{ meta_title }}"/>
       <meta property="og:description"
             content="{{ meta_description }}"/>
-      <meta property="og:url" content="https://actionpopulaire.fr{{ request.path }}"/>
-      <meta property="og:site_name" content="Action Populaire"/>
+      <meta property="og:url" content="https://Claudialízate.mx{{ request.path }}"/>
+      <meta property="og:site_name" content="Claudialízate"/>
       <meta property="fb:app" content="399717914004198"/>
       {% if meta_image %}
         <meta property="og:image" content="{{ meta_image }}">
