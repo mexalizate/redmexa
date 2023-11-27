@@ -19,9 +19,6 @@ from agir.people.tasks import (
     send_confirmation_merge_account,
 )
 
-import logging
-logger = logging.getLogger(__name__)
-
 # class ProfileTestCase(TestCase):
 #     def setUp(self):
 #         self.person = Person.objects.create_person(
@@ -423,8 +420,6 @@ class InformationContactFormTestCases(TestCase):
         self.person.refresh_from_db()
         self.assertTrue(self.person.subscribed)
         self.assertTrue(self.person.subscribed_sms)
-        # logger.error(response)
-        # print(response.__dict__)
         self.assertContains(
             response,
             "Algunas veces enviamos mensajitos de texto en lugar de",

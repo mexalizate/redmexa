@@ -623,9 +623,7 @@ class SpendingRequestTestCase(APITestCase):
             last_history_item["comment"],
             "Petite modification du montant",
         )
-        self.assertListEqual(
-            last_history_item["diff"], ["Monto del gasto", "RIB"]
-        )
+        self.assertListEqual(last_history_item["diff"], ["Monto del gasto", "RIB"])
 
     def test_can_add_document(self):
         """Un gestionnaire du groupe peut ajouter un document justificatif à une demande"""
