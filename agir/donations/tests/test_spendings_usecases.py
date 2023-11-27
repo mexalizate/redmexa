@@ -623,9 +623,7 @@ class SpendingRequestTestCase(APITestCase):
             last_history_item["comment"],
             "Petite modification du montant",
         )
-        self.assertListEqual(
-            last_history_item["diff"], ["Montant de la dépense", "RIB"]
-        )
+        self.assertListEqual(last_history_item["diff"], ["Monto del gasto", "RIB"])
 
     def test_can_add_document(self):
         """Un gestionnaire du groupe peut ajouter un document justificatif à une demande"""
@@ -1111,7 +1109,7 @@ class SpendingRequestTestCase(APITestCase):
                 {
                     "title": "Mise à jour de la demande",
                     "comment": "J'ai renforcé mon explication !",
-                    "diff": ["Motif de l'achat"],
+                    "diff": ["Motivo de la compra"],
                     "person": self.group_finance_admin,
                     "status": SpendingRequest.Status.DRAFT.value,
                 },
@@ -1165,7 +1163,7 @@ class SpendingRequestTestCase(APITestCase):
                 {
                     "title": "Mise à jour de la demande",
                     "comment": "J'ai corrigé le montant... j'avais mal lu !",
-                    "diff": ["Montant de la dépense"],
+                    "diff": ["Monto del gasto"],
                     "person": self.group_finance_admin,
                     "status": SpendingRequest.Status.AWAITING_SUPPLEMENTARY_INFORMATION.value,
                 },

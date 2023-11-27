@@ -5,9 +5,9 @@ import styled from "styled-components";
 import style from "@agir/front/genericComponents/_variables.scss";
 import AppStore from "@agir/front/genericComponents/AppStore";
 import Link from "@agir/front/app/Link";
-import LogoAPFooter from "@agir/front/genericComponents/LogoAPFooter";
 import Spacer from "@agir/front/genericComponents/Spacer";
 import FooterBanner from "./FooterBanner";
+import LogoAPFoot from "../../genericComponents/LogoAPFoot";
 const StyledAppStore = styled(AppStore)``;
 const StyledFooter = styled.div`
   width: 100%;
@@ -116,7 +116,7 @@ export const Footer = (props) => {
       <StyledFooter>
         <article>
           <div>
-            <LogoAPFooter/>
+            <LogoAPFoot/>
           </div>
           <div>
             <h3 className="secondaryTextColorLightRed">{/*_("Action populaire")*/}CLAUDIALÍZATE </h3>

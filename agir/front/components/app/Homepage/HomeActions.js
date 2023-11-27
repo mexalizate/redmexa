@@ -21,16 +21,24 @@ const StyledActions = styled.main`
   
 
   @media (min-width: ${style.collapse}px) {
-    max-width: 1156px;
-    margin: 0 auto !important;
-    padding-top: 0px;
-    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 1156px !important;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    align-items: FLEX-START;
+    justify-content: center;
   }
 
   ${StyledArticle} {
     text-align: center;
     padding: 0 1rem;
     color: ${style.black1000};
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex 1;
 
     @media (min-width: ${style.collapse}px) {
       padding: 0;
@@ -52,7 +60,14 @@ const StyledActions = styled.main`
         padding-top: 2rem;
       }
     }
-
+    imageHomeAction{
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
     p {
       padding: 0.5rem 0 1rem;
       line-height: 1.5;
@@ -69,6 +84,7 @@ const HomeActions = () => {
     <StyledActions>
       <StyledArticle route="groupMap">
         <img
+          className="imagenAc"
           src={meetImage}
           height="716"
           width="424"
@@ -84,9 +100,10 @@ const HomeActions = () => {
       </StyledArticle>
       <StyledArticle route="help">
         <img
+          className="imagenAc"
           src={actImage}
-          height="716"
-          width="424"
+          height="716 !important"
+          width="424 !important"
           alt={_("distribution de tracts")}
         />
         <h4 className="secondaryTextColorLightRed tittleCard">{/*_("Agissez concrètement")*/}ACTÚA</h4>
@@ -94,10 +111,11 @@ const HomeActions = () => {
         <Button color="secondaryPurple">{/*_("Lire les fiches pratiques")*/} LEER LAS FICHAS PRÁCTICAS </Button>
       </StyledArticle>
       <StyledArticle route="login">
-        <img
+        <img 
+          className="imagenAc"
           src={organizeImage}
-          height="716"
-          width="424"
+          height="716 !important"
+          width="424 !important"
           alt={_("le premier cahier du programme l'Avenir en Commun")}
         />
         <h4 className="secondaryTextColorLightRed tittleCard">{/*_("Organisez")*/}ENCONTRARSE</h4>

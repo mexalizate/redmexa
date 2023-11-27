@@ -5,7 +5,7 @@ import LogoAP from "./LogoAP";
 
 export default {
   component: LogoAP,
-  title: "Generic/Logo Action Populaire",
+  title: "Generic/Logo Claudialízate",
   parameters: {
     layout: "padded",
   },
@@ -28,7 +28,7 @@ const Template = (args) => <LogoAP {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  alt: _("Action Populaire"),
+  alt: _("Claudialízate"),
   height: "auto",
   width: "auto",
 };

@@ -73,7 +73,7 @@ const ProdProvider = ({ hasRouter = false, hasToasts = false, children }) => {
 };
 const DevProvider = (props) => {
   return (
-    <StateInspector name="actionpopulaire">
+    <StateInspector name="Claudialízate">
       <ProdProvider {...props} />
     </StateInspector>
   );

@@ -8,10 +8,10 @@ import { setPageTitle } from "@agir/front/globalContext/actions";
 import I18N from "@agir/lib/i18n";
 
 const DEFAULT_TYPE = "website";
-const DEFAULT_TITLE = "Action Populaire";
+const DEFAULT_TITLE = "Claudialízate";
 const DEFAULT_DESCRIPTION =
-  "Action Populaire est le réseau social d'action de la France insoumise et de la NUPES.";
-const DEFAULT_URL = "https://actionpopulaire.fr/";
+  "Claudialízate";
+const DEFAULT_URL = "https://claudializate.mx/";
 const DEFAULT_IMAGE = "/static/front/assets/og_image_NSP.jpg";
 
 export const usePageTitle = (title) => {
@@ -36,7 +36,7 @@ const OpenGraphTags = (props) => {
   return (
     <Helmet title={pageTitle}>
       <meta property="og:locale" content={I18N.locale} />
-      <meta property="og:site_name" content="Action Populaire" />
+      <meta property="og:site_name" content="Claudialízate" />
       <meta property="fb:app" content="399717914004198" />
       <meta name="twitter:card" content="summary_large_image" />
 
