@@ -19,6 +19,8 @@ from agir.people.tasks import (
     send_confirmation_merge_account,
 )
 
+import logging
+logger = logging.getLogger(__name__)
 
 # class ProfileTestCase(TestCase):
 #     def setUp(self):
@@ -421,10 +423,11 @@ class InformationContactFormTestCases(TestCase):
         self.person.refresh_from_db()
         self.assertTrue(self.person.subscribed)
         self.assertTrue(self.person.subscribed_sms)
-
+        # logger.error(response)
+        # print(response.__dict__)
         self.assertContains(
             response,
-            "Nous envoyons parfois des SMS plutôt que des",
+            "Algunas veces enviamos mensajitos de texto en lugar de",
         )
 
         person = Person.objects.get(pk=self.person.pk)

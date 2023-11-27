@@ -1132,14 +1132,14 @@ class SpendingRequestTestCase(APITestCase):
                     "status": SpendingRequest.Status.AWAITING_ADMIN_REVIEW.value,
                 },
                 {
-                    "title": "Mitivo del gasto",
+                    "title": "Mise à jour de la demande",
                     "comment": "Ajout d'une pièce-jointe : Mon super fichier",
                     "diff": [],
                     "person": self.group_finance_admin,
                     "status": SpendingRequest.Status.AWAITING_ADMIN_REVIEW.value,
                 },
                 {
-                    "title": "Mitivo del gasto",
+                    "title": "Mise à jour de la demande",
                     "comment": "Mise à jour du statut de la demande après une modification",
                     "diff": [],
                     "person": self.group_finance_admin,
@@ -1163,9 +1163,9 @@ class SpendingRequestTestCase(APITestCase):
                     "status": SpendingRequest.Status.AWAITING_SUPPLEMENTARY_INFORMATION.value,
                 },
                 {
-                    "title": "Mitivo del gasto",
+                    "title": "Mise à jour de la demande",
                     "comment": "J'ai corrigé le montant... j'avais mal lu !",
-                    "diff": ["Montant de la dépense"],
+                    "diff": ["Monto del gasto"],
                     "person": self.group_finance_admin,
                     "status": SpendingRequest.Status.AWAITING_SUPPLEMENTARY_INFORMATION.value,
                 },
