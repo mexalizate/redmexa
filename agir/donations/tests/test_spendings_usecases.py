@@ -624,7 +624,7 @@ class SpendingRequestTestCase(APITestCase):
             "Petite modification du montant",
         )
         self.assertListEqual(
-            last_history_item["diff"], ["Montant de la dépense", "RIB"]
+            last_history_item["diff"], ["Monto del gasto", "RIB"]
         )
 
     def test_can_add_document(self):
@@ -1111,7 +1111,7 @@ class SpendingRequestTestCase(APITestCase):
                 {
                     "title": "Mise à jour de la demande",
                     "comment": "J'ai renforcé mon explication !",
-                    "diff": ["Motif de l'achat"],
+                    "diff": ["Motivo de la compra"],
                     "person": self.group_finance_admin,
                     "status": SpendingRequest.Status.DRAFT.value,
                 },
@@ -1132,14 +1132,14 @@ class SpendingRequestTestCase(APITestCase):
                     "status": SpendingRequest.Status.AWAITING_ADMIN_REVIEW.value,
                 },
                 {
-                    "title": "Mise à jour de la demande",
+                    "title": "Mitivo del gasto",
                     "comment": "Ajout d'une pièce-jointe : Mon super fichier",
                     "diff": [],
                     "person": self.group_finance_admin,
                     "status": SpendingRequest.Status.AWAITING_ADMIN_REVIEW.value,
                 },
                 {
-                    "title": "Mise à jour de la demande",
+                    "title": "Mitivo del gasto",
                     "comment": "Mise à jour du statut de la demande après une modification",
                     "diff": [],
                     "person": self.group_finance_admin,
@@ -1163,7 +1163,7 @@ class SpendingRequestTestCase(APITestCase):
                     "status": SpendingRequest.Status.AWAITING_SUPPLEMENTARY_INFORMATION.value,
                 },
                 {
-                    "title": "Mise à jour de la demande",
+                    "title": "Mitivo del gasto",
                     "comment": "J'ai corrigé le montant... j'avais mal lu !",
                     "diff": ["Montant de la dépense"],
                     "person": self.group_finance_admin,
