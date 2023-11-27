@@ -48,8 +48,8 @@ class PersonAuthenticationForm(OTPAdminAuthenticationForm):
 
 class APIAdminSite(OTPAdminSite):
     login_form = PersonAuthenticationForm
-    site_header = "Claudializate"
-    site_title = "Claudializate"
+    site_header = "Action populaire"
+    site_title = "Action populaire"
     index_title = "Administration"
 
     def __init__(self, name=OTPAdminSite.name):

@@ -41,11 +41,11 @@ from django.utils.translation import gettext as _, gettext
 
 cache_decorators = [cache.cache_page(30), cache.cache_control(public=True)]
 
-#_("Action Populaire")
+
 class BasicOpenGraphMixin(SimpleOpengraphMixin):
-    meta_title = "Claudializate"
+    meta_title = _("Action Populaire")
     meta_description = _(
-        "Claudialízate"
+        "Action Populaire est le réseau social d'action de la France insoumise et de la NUPES."
     )
     meta_type = "website"
     meta_image = urljoin(
