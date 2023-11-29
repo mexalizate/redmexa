@@ -397,7 +397,7 @@ class Command(BaseCommand):
                             subject=config["email_subject"],
                             from_email=config.get(
                                 "email_from",
-                                "La France insoumise <nepasrepondre@lafranceinsoumise.fr>",
+                                "La France insoumise <nepasrepondre@preprod.redmexa.com>",
                             ),
                             text=text_message,
                             html=html_message,

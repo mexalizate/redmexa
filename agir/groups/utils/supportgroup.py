@@ -84,13 +84,13 @@ def get_supportgroup_routes(supportgroup, membership=None, user=None):
         "animation": front_url(
             "view_group_settings_management", kwargs={"pk": supportgroup.pk}
         ),
-        "animationChangeRequest": "https://actionpopulaire.fr/formulaires/demande-changement-animation-ga/",
+        "animationChangeRequest": "https://preprod.redmexa.com/formulaires/demande-changement-animation-ga/",
         "calendarExport": front_url("ics_group", kwargs={"pk": supportgroup.pk}),
         "createEvent": f'{front_url("create_event")}?group={str(supportgroup.pk)}',
         "createSpendingRequest": front_url(
             "create_group_spending_request", kwargs={"pk": supportgroup.pk}
         ),
-        "deleteGroup": "https://actionpopulaire.fr/formulaires/demande-suppression-ga/",
+        "deleteGroup": "https://preprod.redmexa.com/formulaires/demande-suppression-ga/",
         "details": front_url("view_group", kwargs={"pk": supportgroup.pk}),
         "donations": front_url("supportgroup_donation", kwargs={"pk": supportgroup.pk}),
         "contributions": front_url(
@@ -120,9 +120,9 @@ def get_supportgroup_routes(supportgroup, membership=None, user=None):
         "membershipTransfer": front_url(
             "transfer_group_members", kwargs={"pk": supportgroup.pk}
         ),
-        "orders": "https://materiel.actionpopulaire.fr/",
+        "orders": "https://materiel.preprod.redmexa.com/",
         "quit": front_url("quit_group", kwargs={"pk": supportgroup.pk}),
-        "referentResignmentRequest": "https://infos.actionpopulaire.fr/contact/",
+        "referentResignmentRequest": "https://infos.preprod.redmexa.com/contact/",
         "settings": front_url("view_group_settings", kwargs={"pk": supportgroup.pk}),
         "downloadMemberList": front_url(
             "download_member_list", kwargs={"pk": supportgroup.pk}
@@ -131,7 +131,7 @@ def get_supportgroup_routes(supportgroup, membership=None, user=None):
 
     if membership and not supportgroup.is_certified and supportgroup.is_certifiable:
         certification_request_url = (
-            "https://lafranceinsoumise.fr/groupes-appui/demande-de-certification/"
+            "https://preprod.redmexa.com/groupes-appui/demande-de-certification/"
         )
         certification_request_params = {
             "group-id": supportgroup.pk,

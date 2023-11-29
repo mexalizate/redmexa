@@ -57,7 +57,7 @@ const DonationPage = () => {
                   <Link route="personalPayments">
                     {_("l'onglet &laquo;&nbsp;Dons et paiements&nbsp;&raquo;")}
                   </Link>{" "}
-                  {_("de votre espace personnel sur actionpopulaire.fr.")}
+                  {_("de votre espace personnel sur preprod.redmexa.com.")}
                 </p>
               </div>
               <Spacer size="2rem" />

@@ -111,7 +111,7 @@ const SignUp = () => {
       setError({});
       if (!rgpdChecked) {
         setError({
-          rgpd: "Vous devez accepter la politique de conservation des données pour continuer",
+          rgpd: "Debes aceptar las políticas para continuar",
         });
         return;
       }
@@ -143,11 +143,11 @@ const SignUp = () => {
           {_("Je m’inscris pour rejoindre le groupe")}
         </h1>
       ) : (
-        <h1>{_("Je m'inscris")}</h1>
+        <h1>{/*_("Je m'inscris")*/}Registrarme</h1>
       )}
 
       <BlockSwitchLink>
-        <span>{_("Déjà inscrit·e ?")}</span>
+        <span>{/*_("Déjà inscrit·e ?")*/}¿Ya te registraste?</span>
         &nbsp;
         <span>
           <Link route="login" state={location.state}>
@@ -170,7 +170,7 @@ const SignUp = () => {
         </div>
         <div>
           <TextField
-            label={_("Code postal")}
+            label="Código postal"
             name="postalCode"
             error={error && error.postalCode}
             onChange={handleChange}
@@ -207,14 +207,14 @@ const SignUp = () => {
           name="rgpd"
           label={
             <>
-              {_("J'accepte que mes informations soient traitées par Action")}
-              {_("Populaire, conformément à la")}
+              {/*_("J'accepte que mes informations soient traitées par Action")*/}Acepto que mi información personal sea utilizada por &nbsp;
+              {/*_("Populaire, conformément à la")*/}Claudialízate conforme a la &nbsp;
               <a
-                href="https://infos.actionpopulaire.fr/mentions-legales/"
+                href="https://infos.preprod.redmexa.com/mentions-legales/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {_("politique de conservation des données")}
+                {/*_("politique de conservation des données")*/}política de protección de datos personales
               </a>
             </>
           }

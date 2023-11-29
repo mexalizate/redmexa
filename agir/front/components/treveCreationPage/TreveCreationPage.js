@@ -66,7 +66,7 @@ export const TreveCreationPage = () => {
           block
           link
           wrap
-          href="https://infos.actionpopulaire.fr/2022/04/08/treve-electorale/"
+          href="https://infos.preprod.redmexa.com/2022/04/08/treve-electorale/"
         >
           {_("Agir durant le week-end des élections")}
         </Button>

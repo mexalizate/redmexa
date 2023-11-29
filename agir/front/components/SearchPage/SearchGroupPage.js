@@ -39,7 +39,7 @@ export const SearchGroupPage = () => {
       <InputSearch
         inputSearch={search}
         updateSearch={(e) => setSearch(e.target.value)}
-        placeholder={_("Rechercher un groupe")}
+        placeholder="Buscar un grupo"
       />
 
       <SearchTooShort search={search} />

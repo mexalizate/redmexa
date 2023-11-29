@@ -154,7 +154,7 @@ const CodeConnexion = () => {
     <Container onSubmit={handleSubmit}>
       <RawFeatherIcon name="mail" width="41px" height="41px" />
 
-      <h1>{_("Un code de connexion vous a été envoyé par e-mail")}</h1>
+      <h1>{/*_("Un code de connexion vous a été envoyé par e-mail")*/}Recibiste un código de conexión por email</h1>
 
       {location.state && location.state.code && (
         <LocalCode onDoubleClick={() => setCode(location.state.code)}>
@@ -164,12 +164,12 @@ const CodeConnexion = () => {
 
       {isAuto ? (
         <p style={{ marginTop: "2rem" }}>
-          {_("Validez le code de connexion qui vous a été envoyé par e-mail pour accéder à cette page")}
+          {/*_("Validez le code de connexion qui vous a été envoyé par e-mail pour accéder à cette page")*/}Valide el código de conexión que le enviaron por correo electrónico para acceder a esta página
         </p>
       ) : (
         <>
           <p style={{ marginTop: "2rem" }}>
-            {_("Entrez le code de connexion que nous avons envoyé")}{" "}
+            {/*_("Entrez le code de connexion que nous avons envoyé")*/}Ingrese el código de inicio de sesión que le enviamos{" "}
             {location.state && location.state.email && (
               <>
                 à <strong>{location.state.email}</strong>
@@ -177,7 +177,7 @@ const CodeConnexion = () => {
             )}
           </p>
           <p style={{ marginBottom: "0" }}>
-           {_(" Si l’adresse e-mail n’est pas reconnue, il vous sera proposé de vous inscrire.")}
+           {/*_(" Si l’adresse e-mail n’est pas reconnue, il vous sera proposé de vous inscrire.")*/}Si no reconocemos tu email, te invitaremos a registrarte.
           </p>
         </>
       )}
@@ -185,7 +185,7 @@ const CodeConnexion = () => {
       <Form>
         <TextField
           error={error && error.code}
-          label="Code de connexion"
+          label="código de inicio de sesión"
           onChange={handleCode}
           value={code}
           disabled={isLoading}

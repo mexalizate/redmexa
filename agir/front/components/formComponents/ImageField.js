@@ -126,7 +126,7 @@ const ImageField = forwardRef((props, ref) => {
           />
           <Button type="button" wrap onClick={handleClick} disabled={disabled}>
             <RawFeatherIcon name="camera" style={{ marginRight: "0.5rem" }} />
-            {imageName ? _("Remplacer l'image") : _("Ajouter une image")}
+            {imageName ? _("Remplacer l'image") : "Agregar una imagen"}
           </Button>
           {imageName && (
             <Button

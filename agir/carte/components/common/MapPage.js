@@ -107,7 +107,7 @@ const MAP_TYPE_CONFIG = {
     searchRoute: "searchEvent",
     createRoute: "createEvent",
     itemLabel: "un événement",
-    tabLabel: "Événements",
+    tabLabel: "Acciones",
     tabRoute: "eventMap",
   },
   groups: {
@@ -153,7 +153,7 @@ const MapPage = (props) => {
         </StyledTabLinks>
         <StyledActionButtons>
           <Button small link icon="search" route={searchRoute}>
-            Rechercher
+            Buscar
             <Hide as="span" $under>
               &nbsp;{itemLabel}
             </Hide>
@@ -166,7 +166,7 @@ const MapPage = (props) => {
             href={createHref}
             icon="plus"
           >
-            Créer
+            Crear
             <Hide as="span" $under>
               &nbsp;{itemLabel}
             </Hide>

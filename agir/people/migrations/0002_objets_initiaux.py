@@ -88,7 +88,7 @@ agir_tags = [
     (
         "blog",
         "Utiliser votre blog pour appuyer le mouvement",
-        "Faire un lien vers lafranceinsoumise.fr, faire connaître nos idées...",
+        "Faire un lien vers preprod.redmexa.com, faire connaître nos idées...",
     ),
 ]
 

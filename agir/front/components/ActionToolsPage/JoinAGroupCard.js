@@ -42,15 +42,15 @@ export const JoinAGroupCard = (props) => {
     <StyledCard>
       <img src={illustration} />
       <h4>
-        {_("Créer ou rejoindre un groupe d’action")}{" "}
+        {/*_("Créer ou rejoindre un groupe d’action")*/}Crear o unirse a un grupo{" "}
         {commune?.nameOf
-          ? _(`${communeNameOfToIn(commune.nameOf)} et alentours`)
+          ? _(`${communeNameOfToIn(commune.nameOf)} y alrededores`)
           : city
-          ? _(`à ${city} et alentours`)
-          : _("près de chez vous")}
+          ? _(`à ${city} y alrededores`)
+          : " cerca de ti" /*_("près de chez vous")*/}
       </h4>
       <Button link route="groupMap" color="secondary">
-        {_("Voir la carte")}
+        {/*_("Voir la carte")*/} Ver Mapa
       </Button>
     </StyledCard>
   );

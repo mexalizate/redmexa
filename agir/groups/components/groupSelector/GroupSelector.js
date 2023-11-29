@@ -80,7 +80,7 @@ GroupSelector.defaultProps = {
   filter: () => true,
   groupChoices: [],
   value: null,
-  defaultOptionsLabel: _("Mes groupes"),
+  defaultOptionsLabel: "Mis grupos",
   search: debouncedSearch,
 };
 

@@ -7,7 +7,7 @@ La carte bancaire que vous avez utilisé va cependant expirer le {{ expiry_date 
 Si vous voulez continuer à nous soutenir, vous devez mettre à jour votre carte bancaire.
   
 >> Enregistrer ma nouvelle carte
-https://mosaico.lafranceinsoumise.fr/emails/{{ renew_subscription_link }}
+https://mosaico.preprod.redmexa.com/emails/{{ renew_subscription_link }}
   
 Pour rappel, voici les détails de votre don mensuel :
 

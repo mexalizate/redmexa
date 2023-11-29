@@ -164,7 +164,7 @@ const DateField = (props) => {
       <Field className={className}>
         <div>
           <DateTimeField
-            label={`Date et heure ${!duration?.value ? _("de début") : ""}`.trim()}
+            label={`Fecha y hora ${!duration?.value ? _("de début") : ""}`.trim()}
             value={startTime}
             onChange={updateStartTime}
             error={inlineError ? inlineError : error ? " " : error}
@@ -183,7 +183,7 @@ const DateField = (props) => {
         </div>
         {hasTimezone ? (
           <TimezoneField
-            label={_("Fuseau horaire")}
+            label="Huso horario local"
             value={timezone}
             onChange={onChangeTimezone}
             disabled={disabled}
@@ -191,9 +191,9 @@ const DateField = (props) => {
           />
         ) : (
           <TimezoneToggle>
-            <span>Fuseau horaire local</span>
+            <span>Huso horario local</span>
             <button type="button" onClick={() => setHasTimezone(true)}>
-              Personnaliser
+              Personalizar
             </button>
           </TimezoneToggle>
         )}

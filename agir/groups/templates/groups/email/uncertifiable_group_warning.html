@@ -1,86 +1,113 @@
-{% extends email_template %}
-
-{% block header %}{% endblock %}
-
-{% block subject %}
-  Attention, {{ group.name }} ne remplit plus les critères de certification
-{% endblock %}
-
-{% block html_content %}
-  <p>{{ greetings }}</p>
-  <p><em>Cet e-mail est un message automatique envoyé par Action populaire</em></p>
-  <p>
-    Votre groupe d’action <a href="{{ group.front_url }}"><strong>{{ group.name }}</strong></a> est un groupe
-    certifié.<br/>Aujourd'hui, selon les informations indiquées sur Action populaire, celui-ci ne remplit plus un ou
-    plusieurs des critères de certification&nbsp;:
-  </p>
-  <ul bgcolor="#EEEEEE" style="list-style:none;margin: 16px 0; padding: 16px; background:#EEEEEE; border-radius:8px;">
-    {% if not certification_criteria.gender %}
-      <li style="margin:8px;text-indent:-23px;padding-left:23px;"><strong>&mdash;&ensp;L’animation du groupe d’action n’est pas paritaire.</strong> Il est possible qu’un·e
-        des animateur·rices n’aie pas indiqué son genre sur la plateforme, cela n’est pas détecté de manière
-        automatique
-      </li>
-    {% endif %}
-
-    {% if not certification_criteria.activity %}
-      <li style="margin:8px;text-indent:-23px;padding-left:23px;">
-        <strong>&mdash;&ensp;Vous n'avez pas déclaré sur Action populaire avoir organisé au moins trois actions de terrain
-          (porte-à-porte, distributions de tracts, collages, caravane, etc.) dans les 2 derniers mois.</strong> Les
-        réunions et les participations aux manifestations ne sont pas considérées comme des actions de terrain. Si vous
-        indiquez vos actions de terrain en créant des événements sur Action populaire, le critère sera rempli à nouveau.
-      </li>
-    {% endif %}
-
-    {% if not certification_criteria.members %}
-      <li style="margin:8px;text-indent:-23px;padding-left:23px;"><strong>&mdash;&ensp;Le groupe a moins de 3 membres
-        actif·ves</strong> (animateur·rices et gestionnaires compris).
-      </li>
-    {% endif %}
-
-    {% if not certification_criteria.exclusivity %}
-      <li style="margin:8px;text-indent:-23px;padding-left:23px;"><strong>&mdash;&ensp;L’un·e des animateur·rices du
-        groupe anime un autre groupe d'action certifié</strong></li>
-    {% endif %}
-  </ul>
-  <p>
-    Les critères de certification sont définis par la
-    <a href="https://lafranceinsoumise.fr/groupes-action/charte-groupes-dappui-de-france-insoumise/">Charte des groupes
-      d'action</a>, que vous vous êtes engagé·e à respecter en demandant la certification de votre groupe.
-  </p>
-  <p>
-      Un groupe d'action certifié bénéficie&nbsp;:
-  </p>
-  <ul>
-    <li>d’un <strong>code promotionnel mensuel</strong> qui donne droit à la commande gratuite de matériel ainsi qu’à la prise en
-      charge des frais de livraison</li>
-    <li>des <strong>dons fléchés</strong> qui permettent de financer les actions du groupe d’action</li>
-  </ul>
-  <p>
-    Si votre groupe d'action est toujours actif, vous pouvez &nbsp;:
-  </p>
-  <ul>
-    <li>mettre à jour les informations de votre groupe d'action et les actions qu'il a organisées sur Action populaire</li>
-    <li>envoyer un mail à <a href="mailto:groupes@actionpopulaire.fr">groupes@actionpopulaire.fr</a> en indiquant
-      l'activité de votre groupe d'action</li>
-  </ul>
-  <p>Votre groupe conservera ainsi sa certification.</p>
-  <p>
-    <strong>Sans nouvelle de votre part et sans mise à jour de l'activité de votre groupe d'action d’ici
-      {{ expiration_in_days }} jours, celui-ci pourrait être amené à perdre sa certification.</strong>
-  </p>
-  <p>
-    Bien sûr, vous pouvez aussi nous contacter en cas de problème. Nous restons à votre disposition pour toutes questions.
-  </p>
-  <p>
-    Amitiés,
-    <br/>
-    <br/>
-    Alexandra et Clément
-    <br/>
-    pour le Pôle des groupes d’action
-    <br/>
-    <a href="mailto:groupes@actionpopulaire.fr">groupes@actionpopulaire.fr</a>
-  </p>
-{% endblock %}
-
-{% block html_footer %}{% endblock %}
+{% extends email_template %} {% block header %}{% endblock %} {% block subject
+%} Attention, {{ group.name }} ne remplit plus les critères de certification {%
+endblock %} {% block html_content %}
+<p>{{ greetings }}</p>
+<p>
+  <em>Cet e-mail est un message automatique envoyé par Action populaire</em>
+</p>
+<p>
+  Votre groupe d’action
+  <a href="{{ group.front_url }}"><strong>{{ group.name }}</strong></a> est un
+  groupe certifié.<br />Aujourd'hui, selon les informations indiquées sur Action
+  populaire, celui-ci ne remplit plus un ou plusieurs des critères de
+  certification&nbsp;:
+</p>
+<ul
+  bgcolor="#EEEEEE"
+  style="
+    list-style: none;
+    margin: 16px 0;
+    padding: 16px;
+    background: #eeeeee;
+    border-radius: 8px;
+  "
+>
+  {% if not certification_criteria.gender %}
+  <li style="margin: 8px; text-indent: -23px; padding-left: 23px">
+    <strong
+      >&mdash;&ensp;L’animation du groupe d’action n’est pas paritaire.</strong
+    >
+    Il est possible qu’un·e des animateur·rices n’aie pas indiqué son genre sur
+    la plateforme, cela n’est pas détecté de manière automatique
+  </li>
+  {% endif %} {% if not certification_criteria.activity %}
+  <li style="margin: 8px; text-indent: -23px; padding-left: 23px">
+    <strong
+      >&mdash;&ensp;Vous n'avez pas déclaré sur Action populaire avoir organisé
+      au moins trois actions de terrain (porte-à-porte, distributions de tracts,
+      collages, caravane, etc.) dans les 2 derniers mois.</strong
+    >
+    Les réunions et les participations aux manifestations ne sont pas
+    considérées comme des actions de terrain. Si vous indiquez vos actions de
+    terrain en créant des événements sur Action populaire, le critère sera
+    rempli à nouveau.
+  </li>
+  {% endif %} {% if not certification_criteria.members %}
+  <li style="margin: 8px; text-indent: -23px; padding-left: 23px">
+    <strong>&mdash;&ensp;Le groupe a moins de 3 membres actif·ves</strong>
+    (animateur·rices et gestionnaires compris).
+  </li>
+  {% endif %} {% if not certification_criteria.exclusivity %}
+  <li style="margin: 8px; text-indent: -23px; padding-left: 23px">
+    <strong
+      >&mdash;&ensp;L’un·e des animateur·rices du groupe anime un autre groupe
+      d'action certifié</strong
+    >
+  </li>
+  {% endif %}
+</ul>
+<p>
+  Les critères de certification sont définis par la
+  <a
+    href="https://preprod.redmexa.com/groupes-action/charte-groupes-dappui-de-france-insoumise/"
+    >Charte des groupes d'action</a
+  >, que vous vous êtes engagé·e à respecter en demandant la certification de
+  votre groupe.
+</p>
+<p>Un groupe d'action certifié bénéficie&nbsp;:</p>
+<ul>
+  <li>
+    d’un <strong>code promotionnel mensuel</strong> qui donne droit à la
+    commande gratuite de matériel ainsi qu’à la prise en charge des frais de
+    livraison
+  </li>
+  <li>
+    des <strong>dons fléchés</strong> qui permettent de financer les actions du
+    groupe d’action
+  </li>
+</ul>
+<p>Si votre groupe d'action est toujours actif, vous pouvez &nbsp;:</p>
+<ul>
+  <li>
+    mettre à jour les informations de votre groupe d'action et les actions qu'il
+    a organisées sur Action populaire
+  </li>
+  <li>
+    envoyer un mail à
+    <a href="mailto:groupes@preprod.redmexa.com">groupes@preprod.redmexa.com</a>
+    en indiquant l'activité de votre groupe d'action
+  </li>
+</ul>
+<p>Votre groupe conservera ainsi sa certification.</p>
+<p>
+  <strong
+    >Sans nouvelle de votre part et sans mise à jour de l'activité de votre
+    groupe d'action d’ici {{ expiration_in_days }} jours, celui-ci pourrait être
+    amené à perdre sa certification.</strong
+  >
+</p>
+<p>
+  Bien sûr, vous pouvez aussi nous contacter en cas de problème. Nous restons à
+  votre disposition pour toutes questions.
+</p>
+<p>
+  Amitiés,
+  <br />
+  <br />
+  Alexandra et Clément
+  <br />
+  pour le Pôle des groupes d’action
+  <br />
+  <a href="mailto:groupes@preprod.redmexa.com">groupes@preprod.redmexa.com</a>
+</p>
+{% endblock %} {% block html_footer %}{% endblock %}

@@ -12,38 +12,38 @@ describe("URL utils", function () {
       expect(result).toEqual(expected);
     });
     it("should return argument url if argument params is falsy", function () {
-      const args = ["https://actionpopulaire.fr/", null];
+      const args = ["https://preprod.redmexa.com/", null];
       const expected = args[0];
       const result = addQueryStringParams(...args);
       expect(result).toEqual(expected);
     });
     it("should return argument url if argument params type is not 'object'", function () {
-      const args = ["https://actionpopulaire.fr/", "not an object"];
+      const args = ["https://preprod.redmexa.com/", "not an object"];
       const expected = args[0];
       const result = addQueryStringParams(...args);
       expect(result).toEqual(expected);
     });
     it("should return argument url if argument params type has no properties", function () {
-      const args = ["https://actionpopulaire.fr/", {}];
+      const args = ["https://preprod.redmexa.com/", {}];
       const expected = args[0];
       const result = addQueryStringParams(...args);
       expect(result).toEqual(expected);
     });
     it("should add query string params to argument url if none are already present", function () {
-      const args = ["https://actionpopulaire.fr/", { a: "a" }];
-      const expected = "https://actionpopulaire.fr/?a=a";
+      const args = ["https://preprod.redmexa.com/", { a: "a" }];
+      const expected = "https://preprod.redmexa.com/?a=a";
       const result = addQueryStringParams(...args);
       expect(result).toEqual(expected);
     });
     it("should add query string params to argument url if some are present", function () {
-      const args = ["https://actionpopulaire.fr/?a=a", { b: "b" }];
-      const expected = "https://actionpopulaire.fr/?a=a&b=b";
+      const args = ["https://preprod.redmexa.com/?a=a", { b: "b" }];
+      const expected = "https://preprod.redmexa.com/?a=a&b=b";
       const result = addQueryStringParams(...args);
       expect(result).toEqual(expected);
     });
     it("should prefer arguent params values if they conflicts with argument url already present params", function () {
-      const args = ["https://actionpopulaire.fr/?a=a", { a: "b" }];
-      const expected = "https://actionpopulaire.fr/?a=b";
+      const args = ["https://preprod.redmexa.com/?a=a", { a: "b" }];
+      const expected = "https://preprod.redmexa.com/?a=b";
       const result = addQueryStringParams(...args);
       expect(result).toEqual(expected);
     });

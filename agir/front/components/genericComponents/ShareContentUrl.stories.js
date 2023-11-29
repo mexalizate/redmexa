@@ -11,5 +11,5 @@ const Template = (args) => <ShareContentUrl {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  url: "https://actionpopulaire.fr",
+  url: "https://preprod.redmexa.com",
 };

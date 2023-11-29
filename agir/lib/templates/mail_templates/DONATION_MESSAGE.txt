@@ -17,7 +17,7 @@ Fidèlement,
 Pour aller plus loin  
   
 >> Rejoindre un groupe d'action
-https://lafranceinsoumise.fr/groupes-action/carte-groupes/
+https://preprod.redmexa.com/groupes-action/carte-groupes/
   
 >> Remplir mon profil
 {{ PROFILE_LINK }}

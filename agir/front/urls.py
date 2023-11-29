@@ -457,7 +457,7 @@ urlpatterns = [
     ## REDIRECT / EXTERNAL VIEWS
     path("nsp/", views.NSPView.as_view(), name="nsp"),
     path("nsp/referral/", views.NSPReferralView.as_view(), name="nsp_referral"),
-    # https://lafranceinsoumise.fr/
+    # https://preprod.redmexa.com/
     path(
         "homepage/", RedirectView.as_view(url=settings.CAMPAIGN_DOMAIN), name="homepage"
     ),

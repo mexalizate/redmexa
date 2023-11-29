@@ -55,7 +55,7 @@ const ContributionSuccessPage = () => {
                   <Link route="personalPayments">
                     {_("l'onglet")} &laquo; {("Dons et paiements ")}&raquo;
                   </Link>{" "}
-                  {_("de votre espace personnel sur actionpopulaire.fr.")}
+                  {_("de votre espace personnel sur preprod.redmexa.com.")}
                 </p>
               </div>
               <Spacer size="2rem" />

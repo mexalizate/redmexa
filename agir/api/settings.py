@@ -109,20 +109,20 @@ SCANNER_API_SECRET = os.environ.get("SCANNER_API_SECRET", "prout")
 # these domain names are used when absolute URLs should be generated (e.g. to include in emails)
 PLATFORM_ADMIN_DOMAIN = os.environ.get(
     "PLATFORM_ADMIN_DOMAIN",
-    "http://agir.local:8000" if DEBUG else "https://api.lafranceinsoumise.fr",
+    "http://agir.local:8000" if DEBUG else "https://api.preprod.redmexa.com",
 )
 PLATFORM_FRONT_DOMAIN = os.environ.get(
     "PLATFORM_FRONT_DOMAIN",
-    "http://agir.local:8000" if DEBUG else "https://agir.lafranceinsoumise.fr",
+    "http://agir.local:8000" if DEBUG else "https://agir.preprod.redmexa.com",
 )
-CAMPAIGN_DOMAIN = os.environ.get("MAIN_DOMAIN", "https://lafranceinsoumise.fr")
+CAMPAIGN_DOMAIN = os.environ.get("MAIN_DOMAIN", "https://preprod.redmexa.com")
 ACTIVIST_DOMAIN = os.environ.get(
     "ACTIVIST_DOMAIN",
-    "http://agir.local:8000" if DEBUG else "https://agir.lafranceinsoumise.fr",
+    "http://agir.local:8000" if DEBUG else "https://agir.preprod.redmexa.com",
 )
 MAP_DOMAIN = os.environ.get(
     "MAP_DOMAIN",
-    "http://agir.local:8000" if DEBUG else "https://agir.lafranceinsoumise.fr",
+    "http://agir.local:8000" if DEBUG else "https://agir.preprod.redmexa.com",
 )
 
 ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "localhost,agir.local").split(",")
@@ -313,111 +313,111 @@ EMAIL_TEMPLATES = {
     ## TEMPLATE LFI
     ################
     # WELCOME_MESSAGE variables: [PROFILE_LINK]
-    "SUBSCRIPTION_WELCOME_MESSAGE__CAMPAIGN": "https://mosaico.lafranceinsoumise.fr/emails/ac205f71-61a3-465b-8161-cec5729ecdbb.html",
+    "SUBSCRIPTION_WELCOME_MESSAGE__CAMPAIGN": "https://mosaico.preprod.redmexa.com/emails/ac205f71-61a3-465b-8161-cec5729ecdbb.html",
     # CONFIRM_SUBSCRIPTION_MESSAGE variables: [CONFIRMATION_URL]
-    "SUBSCRIPTION_CONFIRMATION_MESSAGE__CAMPAIGN": "https://mosaico.lafranceinsoumise.fr/emails/cd878308-6fd7-4088-b525-a020c5bb3fe0.html",
+    "SUBSCRIPTION_CONFIRMATION_MESSAGE__CAMPAIGN": "https://mosaico.preprod.redmexa.com/emails/cd878308-6fd7-4088-b525-a020c5bb3fe0.html",
     # ALREADY_SUBSCRIBED_MESSAGE: [AGO], [PANEL_LINK]
-    "SUBSCRIPTION_ALREADY_SUBSCRIBED_MESSAGE__CAMPAIGN": "https://mosaico.lafranceinsoumise.fr/emails/d7040d22-703f-4ac7-883c-d2f04c13be1a.html",
+    "SUBSCRIPTION_ALREADY_SUBSCRIBED_MESSAGE__CAMPAIGN": "https://mosaico.preprod.redmexa.com/emails/d7040d22-703f-4ac7-883c-d2f04c13be1a.html",
     # DONATION_MESSAGE variables : [PROFILE_LINK]
-    "DONATION_MESSAGE": "https://mosaico.lafranceinsoumise.fr/emails/cab3c2ee-9444-4c70-b16e-9f7dce7929b1.html",
+    "DONATION_MESSAGE": "https://mosaico.preprod.redmexa.com/emails/cab3c2ee-9444-4c70-b16e-9f7dce7929b1.html",
     # DONATION_MESSAGE_2022 variables :
-    "DONATION_MESSAGE_2022": "https://mosaico.lafranceinsoumise.fr/emails/e4480ee7-5337-4119-ac37-0b4cbe11d7ba.html",
+    "DONATION_MESSAGE_2022": "https://mosaico.preprod.redmexa.com/emails/e4480ee7-5337-4119-ac37-0b4cbe11d7ba.html",
     # INVITATION_SUBSCRIPTION_MESSAGE: [GROUP_NAME], [CONFIRMATION_URL] [SIGNAL_URL]
-    "GROUP_INVITATION_WITH_SUBSCRIPTION_MESSAGE": "https://mosaico.lafranceinsoumise.fr/emails/1db59e8e-0ebd-4dab-8b2d-e7a2d679d6aa.html",
+    "GROUP_INVITATION_WITH_SUBSCRIPTION_MESSAGE": "https://mosaico.preprod.redmexa.com/emails/1db59e8e-0ebd-4dab-8b2d-e7a2d679d6aa.html",
     ################
     ## TEMPLATE NSP
     ################
-    "SUBSCRIPTION_CONFIRMATION_MESSAGE__ACTIVIST": "https://mosaico.lafranceinsoumise.fr/emails/a60a6bd0-5557-4527-94b3-72d1f0fce049.html",
+    "SUBSCRIPTION_CONFIRMATION_MESSAGE__ACTIVIST": "https://mosaico.preprod.redmexa.com/emails/a60a6bd0-5557-4527-94b3-72d1f0fce049.html",
     ################
     ## TEMPLATE AP
     ################
     # GROUP_INVITATION_ABUSE_MESSAGE
-    "GROUP_INVITATION_ABUSE_MESSAGE": "https://mosaico.lafranceinsoumise.fr/emails/5e8059a7-339a-40ff-8741-b5f742f2f63c.html",
+    "GROUP_INVITATION_ABUSE_MESSAGE": "https://mosaico.preprod.redmexa.com/emails/5e8059a7-339a-40ff-8741-b5f742f2f63c.html",
     # DONATION_MESSAGE_EUROPEENNES variables : [PROFILE_LINK]
-    "CARD_EXPIRATION": "https://mosaico.lafranceinsoumise.fr/emails/d571cda0-9227-4333-b4bd-fc067beb3ec8.html",
+    "CARD_EXPIRATION": "https://mosaico.preprod.redmexa.com/emails/d571cda0-9227-4333-b4bd-fc067beb3ec8.html",
     # UNSUBSCRIBE_CONFIRMATION variables [MANAGE_SUBSCRIPTIONS_LINK]
-    "UNSUBSCRIBE_CONFIRMATION": "https://mosaico.lafranceinsoumise.fr/emails/232528e5-af31-45cc-bdc6-7ef4c2ecf789.html",
+    "UNSUBSCRIBE_CONFIRMATION": "https://mosaico.preprod.redmexa.com/emails/232528e5-af31-45cc-bdc6-7ef4c2ecf789.html",
     # GROUP_CREATION variables: greetings, group_name,  MANAGE_GROUP_LINK
-    "GROUP_CREATION": "https://mosaico.lafranceinsoumise.fr/emails/d852c994-f46d-41ce-89a5-05cfa553476d.html",
+    "GROUP_CREATION": "https://mosaico.preprod.redmexa.com/emails/d852c994-f46d-41ce-89a5-05cfa553476d.html",
     # GROUP_CHANGED variables: GROUP_NAME, GROUP_CHANGES, GROUP_LINK
-    "GROUP_CHANGED": "https://mosaico.lafranceinsoumise.fr/emails/e3932ae5-3648-4686-b607-4b744d15dfe8.html",
+    "GROUP_CHANGED": "https://mosaico.preprod.redmexa.com/emails/e3932ae5-3648-4686-b607-4b744d15dfe8.html",
     # GROUP_SOMEONE_JOINED_NOTIFICATION variables: GROUP_NAME, PERSON_INFORMATION, MANAGE_GROUP_LINK
-    "GROUP_SOMEONE_JOINED_NOTIFICATION": "https://mosaico.lafranceinsoumise.fr/emails/d19f4012-40e5-44d9-87b6-e49ada121bed.html",
+    "GROUP_SOMEONE_JOINED_NOTIFICATION": "https://mosaico.preprod.redmexa.com/emails/d19f4012-40e5-44d9-87b6-e49ada121bed.html",
     # GROUP_EXTERNAL_JOIN_OPTION variables: [GROUP_NAME], [JOIN_LINK]
-    "GROUP_EXTERNAL_JOIN_OPTIN": "https://mosaico.lafranceinsoumise.fr/emails/5c106c1d-a46f-4072-9c4e-2e3bfbfea069.html",
+    "GROUP_EXTERNAL_JOIN_OPTIN": "https://mosaico.preprod.redmexa.com/emails/5c106c1d-a46f-4072-9c4e-2e3bfbfea069.html",
     # EVENT_CREATION variables: EVENT_NAME, EVENT_SCHEDULE, LOCATION_NAME, LOCATION_ADDRESS, EVENT_LINK, MANAGE_EVENT_LINK,
     # DOCUMENTS_LINK, EVENT_NAME_ENCODED, EVENT_LINK_ENCODED, DOCUMENT_DEADLINE, REQUIRED_DOCUMENT_TYPES, NEEDS_DOCUMENTS
-    "EVENT_CREATION": "https://mosaico.lafranceinsoumise.fr/emails/0add6793-5c29-406a-ac04-757ad77d5d33.html",
+    "EVENT_CREATION": "https://mosaico.preprod.redmexa.com/emails/0add6793-5c29-406a-ac04-757ad77d5d33.html",
     # EVENT_CHANGED variables: EVENT_NAME, EVENT_CHANGES, EVENT_LINK, EVENT_QUIT_LINK
-    "EVENT_CHANGED": "https://mosaico.lafranceinsoumise.fr/emails/7352ea4b-7766-46a9-9dc1-2e98bcd4c96e.html",
+    "EVENT_CHANGED": "https://mosaico.preprod.redmexa.com/emails/7352ea4b-7766-46a9-9dc1-2e98bcd4c96e.html",
     # EVENT_RSVP_NOTIFICATION variables EVENT_NAME, PERSON_INFORMATION, MANAGE_EVENT_LINK
-    "EVENT_RSVP_NOTIFICATION": "https://mosaico.lafranceinsoumise.fr/emails/2bde68d8-58dc-48d3-94c0-0469c4f468eb.html",
+    "EVENT_RSVP_NOTIFICATION": "https://mosaico.preprod.redmexa.com/emails/2bde68d8-58dc-48d3-94c0-0469c4f468eb.html",
     # EVENT_EXTERNAL_RSVP_OPTIN variables EVENT_NAME RSVP_LINK
-    "EVENT_EXTERNAL_RSVP_OPTIN": "https://mosaico.lafranceinsoumise.fr/emails/e7c3e2f6-1089-4f49-82a7-608ab038e6d3.html",
+    "EVENT_EXTERNAL_RSVP_OPTIN": "https://mosaico.preprod.redmexa.com/emails/e7c3e2f6-1089-4f49-82a7-608ab038e6d3.html",
     # EVENT_GUEST_CONFIRMATION variables EVENT_NAME  EVENT_SCHEDULE CONTACT_NAME CONTACT_EMAIL LOCATION_NAME LOCATION_ADDRESS EVENT_LINK
-    "EVENT_GUEST_CONFIRMATION": "https://mosaico.lafranceinsoumise.fr/emails/e07087c1-60f3-42e9-896a-497e9f589c55.html",
+    "EVENT_GUEST_CONFIRMATION": "https://mosaico.preprod.redmexa.com/emails/e07087c1-60f3-42e9-896a-497e9f589c55.html",
     # EVENT_CANCELLATION variables: EVENT_NAME
-    "EVENT_CANCELLATION": "https://mosaico.lafranceinsoumise.fr/emails/40d5812b-aacc-4ab2-b7b6-d944bf90e9d6.html",
+    "EVENT_CANCELLATION": "https://mosaico.preprod.redmexa.com/emails/40d5812b-aacc-4ab2-b7b6-d944bf90e9d6.html",
     # EVENT_SECRETARIAT_NOTIFICATION variables : EVENT_NAME EVENT_SCHEDULE CONTACT_NAME CONTACT_EMAIL LOCATION_NAME LOCATION_ADDRESS EVENT_LINK LEGAL_INFORMATIONS
-    "EVENT_SECRETARIAT_NOTIFICATION": "https://mosaico.lafranceinsoumise.fr/emails/d7ebb6a3-f693-4c33-934f-df4335b23621.html",
+    "EVENT_SECRETARIAT_NOTIFICATION": "https://mosaico.preprod.redmexa.com/emails/d7ebb6a3-f693-4c33-934f-df4335b23621.html",
     # EVENT_ORGANIZER_VALIDATION_NOTIFICATION variables : EVENT_NAME EVENT_SCHEDULE LOCATION_NAME LOCATION_ADDRESS EVENT_LINK MANAGE_EVENT_LINK
-    "EVENT_ORGANIZER_VALIDATION_NOTIFICATION": "https://mosaico.lafranceinsoumise.fr/emails/668ac434-423b-43b8-9ae0-6d1f3d29c3d4.html",
+    "EVENT_ORGANIZER_VALIDATION_NOTIFICATION": "https://mosaico.preprod.redmexa.com/emails/668ac434-423b-43b8-9ae0-6d1f3d29c3d4.html",
     # PRE_EVENT_REQUIRED_DOCUMENTS_REMINDER: EVENT_NAME, DOCUMENT_DEADLINE, DOCUMENTS_LINK, REQUIRED_DOCUMENT_TYPES
-    "PRE_EVENT_REQUIRED_DOCUMENTS_REMINDER": "https://mosaico.lafranceinsoumise.fr/emails/f116d4e3-058f-4115-8008-01b19ba78659.html",
+    "PRE_EVENT_REQUIRED_DOCUMENTS_REMINDER": "https://mosaico.preprod.redmexa.com/emails/f116d4e3-058f-4115-8008-01b19ba78659.html",
     # POST_EVENT_REQUIRED_DOCUMENTS_REMINDER: EVENT_NAME, DOCUMENT_DEADLINE, DOCUMENTS_LINK, REQUIRED_DOCUMENT_TYPES
-    "POST_EVENT_REQUIRED_DOCUMENTS_REMINDER": "https://mosaico.lafranceinsoumise.fr/emails/8c71d44e-f5e4-414d-b36d-725706fede73.html",
+    "POST_EVENT_REQUIRED_DOCUMENTS_REMINDER": "https://mosaico.preprod.redmexa.com/emails/8c71d44e-f5e4-414d-b36d-725706fede73.html",
     # SPENDING_REQUEST_TO_REVIEW_NOTIFICATION variables : SPENDING_REQUEST_NAME GROUP_NAME SPENDING_REQUEST_ADMIN_LINK
-    "SPENDING_REQUEST_TO_REVIEW_NOTIFICATION": "https://mosaico.lafranceinsoumise.fr/emails/12070f61-6aeb-4d2d-abe0-6ec347adf380.html",
+    "SPENDING_REQUEST_TO_REVIEW_NOTIFICATION": "https://mosaico.preprod.redmexa.com/emails/12070f61-6aeb-4d2d-abe0-6ec347adf380.html",
     # FORM_CONFIRMATION variables : CONFIRMATION_NOTE
-    "FORM_CONFIRMATION": "https://mosaico.lafranceinsoumise.fr/emails/28866993-acf3-45a7-aefd-e75c58e8b52a.html",
+    "FORM_CONFIRMATION": "https://mosaico.preprod.redmexa.com/emails/28866993-acf3-45a7-aefd-e75c58e8b52a.html",
     # FORM_NOTIFICATION variables : PERSON_EMAIL, INFORMATIONS
-    "FORM_NOTIFICATION": "https://mosaico.lafranceinsoumise.fr/emails/8ac7b301-07dd-457f-8de7-7414f171858e.html",
+    "FORM_NOTIFICATION": "https://mosaico.preprod.redmexa.com/emails/8ac7b301-07dd-457f-8de7-7414f171858e.html",
     # LOGIN_NO_ACCOUNT variables:
-    "LOGIN_SIGN_UP_MESSAGE": "https://mosaico.lafranceinsoumise.fr/emails/83367020-bfd1-409f-84f2-30df33790db5.html",
+    "LOGIN_SIGN_UP_MESSAGE": "https://mosaico.preprod.redmexa.com/emails/83367020-bfd1-409f-84f2-30df33790db5.html",
     # EVENT_REPORT variables: EVENT_NAME,EVENT_REPORT_SUMMARY, EVENT_REPORT_LINK, PREFERENCES_LINK, EMAIL
-    "EVENT_REPORT": "https://mosaico.lafranceinsoumise.fr/emails/6bea2d8b-4c03-4f1d-8b97-5e7cecff0c5b.html",
+    "EVENT_REPORT": "https://mosaico.preprod.redmexa.com/emails/6bea2d8b-4c03-4f1d-8b97-5e7cecff0c5b.html",
     # CHANGE_MAIL_CONFIRMATION variables: CONFIRMATION_URL
-    "CHANGE_MAIL_CONFIRMATION": "https://mosaico.lafranceinsoumise.fr/emails/7a2c3dfb-adb5-41dc-baa0-74afba42551f.html",
+    "CHANGE_MAIL_CONFIRMATION": "https://mosaico.preprod.redmexa.com/emails/7a2c3dfb-adb5-41dc-baa0-74afba42551f.html",
     # MERGE_ACCOUNT_CONFIRMATION variables: CONFIRMATION_URL, REQUESTER_EMAIL
-    "MERGE_ACCOUNT_CONFIRMATION": "https://mosaico.lafranceinsoumise.fr/emails/ad6ea640-22fb-4280-9e32-71bb191f1678.html",
+    "MERGE_ACCOUNT_CONFIRMATION": "https://mosaico.preprod.redmexa.com/emails/ad6ea640-22fb-4280-9e32-71bb191f1678.html",
     # CONTRACT_CONFIRMATION
-    "CONTRACT_CONFIRMATION": "https://mosaico.lafranceinsoumise.fr/emails/c63e76d7-d8a1-434c-bdd6-75337312ca28.html",
+    "CONTRACT_CONFIRMATION": "https://mosaico.preprod.redmexa.com/emails/c63e76d7-d8a1-434c-bdd6-75337312ca28.html",
     # CHECK INFORMATION
-    "CHECK_INFORMATION": "https://mosaico.lafranceinsoumise.fr/emails/b0850152-bf53-4979-b5d3-86f231fd98a8.html",
+    "CHECK_INFORMATION": "https://mosaico.preprod.redmexa.com/emails/b0850152-bf53-4979-b5d3-86f231fd98a8.html",
     # CONFIRM SUBSCRIPTION LFI
-    "CONFIRM_SUBSCRIPTION_LFI": "https://mosaico.lafranceinsoumise.fr/emails/eb8e6712-32d5-40bb-a69c-cdc1207e12dc.html",
+    "CONFIRM_SUBSCRIPTION_LFI": "https://mosaico.preprod.redmexa.com/emails/eb8e6712-32d5-40bb-a69c-cdc1207e12dc.html",
     # CONFIRM SUBSCRIPTION 2022
-    "CONFIRM_SUBSCRIPTION_2022": "https://mosaico.lafranceinsoumise.fr/emails/eb8e6712-32d5-40bb-a69c-cdc1207e12dc.html",
+    "CONFIRM_SUBSCRIPTION_2022": "https://mosaico.preprod.redmexa.com/emails/eb8e6712-32d5-40bb-a69c-cdc1207e12dc.html",
     # TRANSFER_SENDER variables : TRANSFERER_NAME, GROUP_DESTINATION, MEMBER_LIST, MEMBER_COUNT
-    "TRANSFER_SENDER": "https://mosaico.lafranceinsoumise.fr/emails/13cecf70-acd6-46a8-9bd8-63cf1bbb79ec.html",
+    "TRANSFER_SENDER": "https://mosaico.preprod.redmexa.com/emails/13cecf70-acd6-46a8-9bd8-63cf1bbb79ec.html",
     # TRANSFER_RECEIVER variables : GREETINGS, GROUP_SENDER, GROUP_SENDER_URL, MEMBER_COUNT, GROUP_DESTINATION, MEMBER_LIST, MANAGE_GROUP_LINK
-    "TRANSFER_RECEIVER": "https://mosaico.lafranceinsoumise.fr/emails/53046516-d961-4190-8302-4f239fd30caa.html",
+    "TRANSFER_RECEIVER": "https://mosaico.preprod.redmexa.com/emails/53046516-d961-4190-8302-4f239fd30caa.html",
     # YOU_HAVE_BEEN_TRANSFERED variables : GREETINGS, GROUP_SENDER, GROUP_SENDER_URL, GROUP_DESTINATION, GROUP_DESTINATION_URL
-    "TRANSFER_ALERT": "https://mosaico.lafranceinsoumise.fr/emails/8eca0332-bcb0-4e1d-816f-9da8bfcb570b.html",
+    "TRANSFER_ALERT": "https://mosaico.preprod.redmexa.com/emails/8eca0332-bcb0-4e1d-816f-9da8bfcb570b.html",
     # GROUP_ALERT_CAPACITY variables : GROUP_NAME, GROUP_NAME_URL, TRANSFER_LINK
-    "GROUP_ALERT_CAPACITY_21": "https://mosaico.lafranceinsoumise.fr/emails/8add9bc8-ef7a-4fc6-8591-d4bc0c8ec226.html",
+    "GROUP_ALERT_CAPACITY_21": "https://mosaico.preprod.redmexa.com/emails/8add9bc8-ef7a-4fc6-8591-d4bc0c8ec226.html",
     # GROUP_MAX_CAPACITY variables : GROUP_NAME, TRANSFER_LINK
-    "GROUP_ALERT_CAPACITY_30": "https://mosaico.lafranceinsoumise.fr/emails/a4cb42b0-1417-446a-af66-5d8e67b2047e.html",
+    "GROUP_ALERT_CAPACITY_30": "https://mosaico.preprod.redmexa.com/emails/a4cb42b0-1417-446a-af66-5d8e67b2047e.html",
     # NEW_MESSAGE variables: DISPLAY_NAME, AUTHOR_STATUS, MESSAGE_HTML, DISPLAY_NAME
-    "NEW_MESSAGE": "https://mosaico.lafranceinsoumise.fr/emails/0f9f599a-1dcf-4a49-963e-56078ce9d587.html",
+    "NEW_MESSAGE": "https://mosaico.preprod.redmexa.com/emails/0f9f599a-1dcf-4a49-963e-56078ce9d587.html",
     # SUBSCRIPTION_ALREADY_SUBSCRIBED_MESSAGE__PLATFORM
-    "SUBSCRIPTION_ALREADY_SUBSCRIBED_MESSAGE__PLATFORM": "https://mosaico.lafranceinsoumise.fr/emails/f175251e-ad1a-430a-9c07-bb0d415263ff.html",
+    "SUBSCRIPTION_ALREADY_SUBSCRIBED_MESSAGE__PLATFORM": "https://mosaico.preprod.redmexa.com/emails/f175251e-ad1a-430a-9c07-bb0d415263ff.html",
     # UNEXISTING_EMAIL_LOGIN variables: SUBSCRIPTION_URL
-    "UNEXISTING_EMAIL_LOGIN": "https://mosaico.lafranceinsoumise.fr/emails/1cc10994-38d6-45ea-8f70-a3102eb955e9.html",
+    "UNEXISTING_EMAIL_LOGIN": "https://mosaico.preprod.redmexa.com/emails/1cc10994-38d6-45ea-8f70-a3102eb955e9.html",
     # SUBSCRIPTION_CONFIRMATION_MESSAGE__PLATFORM variables: CONFIRMATION_URL
-    "SUBSCRIPTION_CONFIRMATION_MESSAGE__PLATFORM": "https://mosaico.lafranceinsoumise.fr/emails/315b969b-87a7-4b2e-9d61-697af4cbd4a7.html",
+    "SUBSCRIPTION_CONFIRMATION_MESSAGE__PLATFORM": "https://mosaico.preprod.redmexa.com/emails/315b969b-87a7-4b2e-9d61-697af4cbd4a7.html",
     # NEW_EVENT_MY_GROUPS_NOTIFICATION variables: GROUP, EVENT_NAME, EVENT_SCHEDULE, LOCATION_NAME, LOCATION_ZIP, EVENT_LINK
-    "NEW_EVENT_MY_GROUPS_NOTIFICATION": "https://mosaico.lafranceinsoumise.fr/emails/65c722ed-1958-40e8-95ea-1e644bb3239a.html",
+    "NEW_EVENT_MY_GROUPS_NOTIFICATION": "https://mosaico.preprod.redmexa.com/emails/65c722ed-1958-40e8-95ea-1e644bb3239a.html",
     # EVENT_SUGGESTION variables: TITLE, EVENT_NAME, EVENT_SCHEDULE, LOCATION_NAME, LOCATION_ZIP, EVENT_LINK
-    "EVENT_SUGGESTION": "https://mosaico.lafranceinsoumise.fr/emails/cddee054-74cb-4efa-8349-dbb925d6cdaf.html",
+    "EVENT_SUGGESTION": "https://mosaico.preprod.redmexa.com/emails/cddee054-74cb-4efa-8349-dbb925d6cdaf.html",
     # EVENT_GROUP_COORGANIZATION_INVITE variables: TITLE, EVENT_NAME, GROUP_NAME, MEMBER, ACCEPT_LINK, REFUSE_LINK, DATE
-    "EVENT_GROUP_COORGANIZATION_INVITE": "https://mosaico.lafranceinsoumise.fr/emails/83173a92-0069-4cba-882c-9e524aeff67f.html",
+    "EVENT_GROUP_COORGANIZATION_INVITE": "https://mosaico.preprod.redmexa.com/emails/83173a92-0069-4cba-882c-9e524aeff67f.html",
     # EVENT_GROUP_COORGANIZATION_ACCEPTED variables: TITLE, EVENT_NAME, GROUP_NAME, DATE
-    "EVENT_GROUP_COORGANIZATION_ACCEPTED": "https://mosaico.lafranceinsoumise.fr/emails/4433bd2c-2dfb-4646-97ee-7be8f9315637.html",
+    "EVENT_GROUP_COORGANIZATION_ACCEPTED": "https://mosaico.preprod.redmexa.com/emails/4433bd2c-2dfb-4646-97ee-7be8f9315637.html",
     # EVENT_GROUP_COORGANIZATION_REFUSED variables: TITLE, EVENT_NAME, GROUP_NAME, DATE
-    "EVENT_GROUP_COORGANIZATION_REFUSED": "https://mosaico.lafranceinsoumise.fr/emails/3af104fe-d230-4d40-be78-c49fc5b13da4.html",
+    "EVENT_GROUP_COORGANIZATION_REFUSED": "https://mosaico.preprod.redmexa.com/emails/3af104fe-d230-4d40-be78-c49fc5b13da4.html",
     # EVENT_REPORT_FORM_REMINDER variables: EVENT_SUBTYPE, EVENT_DATE, FORM_NAME, FORM_DESCRIPTION, FORM_LINK
-    "EVENT_REPORT_FORM_REMINDER": "https://mosaico.lafranceinsoumise.fr/emails/e091a810-1a74-4417-ac49-e1f3fce82267.html",
+    "EVENT_REPORT_FORM_REMINDER": "https://mosaico.preprod.redmexa.com/emails/e091a810-1a74-4417-ac49-e1f3fce82267.html",
     # VOTING_PROXY_CANDIDATE_INVITATION variables: VOTING_PROXY_REQUEST_CREATION_LINK
     "VOTING_PROXY_CANDIDATE_INVITATION": "",
     # VOTING_PROXY_REQUEST_EMAIL variables: MESSAGE_INTRO, MESSAGE_BODY, LINK_LABEL, LINK_HREF
@@ -427,28 +427,28 @@ EMAIL_TEMPLATES = {
     # LOCATION_ADDRESS2, LOCATION_CITY, LOCATION_ZIP, LOCATION_COUNTRY, VOTING_LOCATION,
     # VOTING_CIRCONSCRIPTION_LEGISLATIVE, POLLING_STATION, VOTER_ID, ROLE, HAS_MOBILITY, AVAILABLE_VOTING_DATES,
     # CONTACT_EMAIL, CONTACT_PHONE, REMARKS
-    "NEW_POLLING_STATION_OFFICER": "https://mosaico.lafranceinsoumise.fr/emails/9a53281d-1643-41be-b215-330b3ac433a3.html",
-    "DONATION_CAGNOTTE": "https://mosaico.lafranceinsoumise.fr/emails/373c404b-902d-4cc4-8edc-845c4c889b85.html",
+    "NEW_POLLING_STATION_OFFICER": "https://mosaico.preprod.redmexa.com/emails/9a53281d-1643-41be-b215-330b3ac433a3.html",
+    "DONATION_CAGNOTTE": "https://mosaico.preprod.redmexa.com/emails/373c404b-902d-4cc4-8edc-845c4c889b85.html",
 }
 
 EMAIL_FROM = os.environ.get(
-    "EMAIL_FROM", "Action populaire <noreply@actionpopulaire.fr>"
+    "EMAIL_FROM", "Action populaire <noreply@preprod.redmexa.com>"
 )
 EMAIL_FROM_LFI = os.environ.get(
     "EMAIL_FROM_LFI",
-    "La France insoumise <nepasrepondre@lafranceinsoumise.fr>",
+    "La France insoumise <nepasrepondre@preprod.redmexa.com>",
 )
 EMAIL_FROM_MELENCHON_2022 = os.environ.get(
     "EMAIL_FROM_MELENCHON_2022", "Mélenchon 2022 <nepasrepondre@melenchon2022.fr>"
 )
-EMAIL_SECRETARIAT = os.environ.get("EMAIL_SECRETARIAT", "nospam@lafranceinsoumise.fr")
+EMAIL_SECRETARIAT = os.environ.get("EMAIL_SECRETARIAT", "nospam@preprod.redmexa.com")
 EMAIL_EQUIPE_FINANCE = os.environ.get(
-    "EMAIL_EQUIPE_FINANCE", "nospam@lafranceinsoumise.fr"
+    "EMAIL_EQUIPE_FINANCE", "nospam@preprod.redmexa.com"
 )
 EMAIL_ILB = os.environ.get(
     "EMAIL_ILB", "Institut La Boétie <nepasrepondre@institutlaboetie.fr>"
 )
-EMAIL_SUPPORT = os.environ.get("EMAIL_SUPPORT", "support@actionpopulaire.fr")
+EMAIL_SUPPORT = os.environ.get("EMAIL_SUPPORT", "support@preprod.redmexa.com")
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -574,7 +574,7 @@ SOCIAL_AUTH_LOGIN_ERROR_URL = "social_login_error"
 
 # Admin
 
-OTP_TOTP_ISSUER = "api.lafranceinsoumise.fr"
+OTP_TOTP_ISSUER = "api.preprod.redmexa.com"
 
 # REST_FRAMEWORK
 
@@ -857,7 +857,7 @@ LOAN_MINIMUM = 400 * 100  # 400 $
 LOAN_MAXIMUM = 100_000 * 100  # 100 000 $
 LOAN_MAXIMUM_TOTAL = 207_119_700
 LOAN_MAXIMUM_THANK_YOU_PAGE = (
-    "https://lafranceinsoumise.fr/2019/04/07/succes-de-lemprunt-populaire/"
+    "https://preprod.redmexa.com/2019/04/07/succes-de-lemprunt-populaire/"
 )
 
 # France + most numerous communities in France
@@ -931,7 +931,7 @@ NUNTIUS_REDIS_CONNECTION_GETTER = "agir.api.redis.get_auth_redis_client"
 NUNTIUS_PUBLIC_URL = PLATFORM_FRONT_DOMAIN
 NUNTIUS_IMAGES_URL = None
 NUNTIUS_LINKS_URL = os.environ.get(
-    "NUNTIUS_LINKS_URL", "https://www.actionpopulaire.fr"
+    "NUNTIUS_LINKS_URL", "https://www.preprod.redmexa.com"
 )
 NUNTIUS_SUBSCRIBER_MODEL = "people.Person"
 NUNTIUS_SEGMENT_MODEL = "mailing.segment"
@@ -981,7 +981,7 @@ ANYMAIL = {
 BANNER_CONFIG = {"thumbnail": (400, 250), "banner": (1200, 400)}
 
 JITSI_GROUP_SIZE = 5
-JITSI_SERVERS = os.environ.get("JITSI_SERVERS", "visio.lafranceinsoumise.fr").split(",")
+JITSI_SERVERS = os.environ.get("JITSI_SERVERS", "visio.preprod.redmexa.com").split(",")
 
 
 # Municipales
@@ -1003,7 +1003,7 @@ PUSH_NOTIFICATIONS_SETTINGS = {
     "UPDATE_ON_DUPLICATE_REG_ID": True,
     "UNIQUE_REG_ID": True,
     "WP_PRIVATE_KEY": os.environ.get("WEBPUSH_PRIVATE_KEY"),
-    "WP_CLAIMS": {"sub": "mailto: site@lafranceinsoumise.fr"},
+    "WP_CLAIMS": {"sub": "mailto: site@preprod.redmexa.com"},
     "APNS_AUTH_KEY_PATH": os.environ.get(
         "APNS_AUTH_KEY_PATH", os.path.join(os.path.dirname(BASE_DIR), "..", "apns.p8")
     ),

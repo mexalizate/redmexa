@@ -10,7 +10,7 @@ Afin de favoriser l'implication de chacun·e et la répartition de l'action dans
 
 Pour pouvoir accueillir des nouvelles personnes qui souhaitent défendre notre programme, divisez votre groupe en **transférant une partie de vos membres dans un groupe plus petit.** Proposez à vos membres de créer des groupes voisins dans votre ville et transférez-y une partie de vos membres.
 
-Pour en savoir plus, visitez le [centre d'aide](https://infos.actionpopulaire.fr/groupes/).  
+Pour en savoir plus, visitez le [centre d'aide](https://infos.preprod.redmexa.com/groupes/).  
   
 [Transférer mes membres]({{ TRANSFER_LINK }})  
   

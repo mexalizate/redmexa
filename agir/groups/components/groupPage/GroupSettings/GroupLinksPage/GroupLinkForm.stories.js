@@ -25,7 +25,7 @@ Editing.args = {
   selectedLink: {
     id: 15,
     label: "An old link",
-    url: "https://actionpopulaire.fr",
+    url: "https://preprod.redmexa.com",
   },
 };
 

@@ -46,7 +46,7 @@ export const EventSettings = (props) => {
       {_("Cet événement n'est pas modifiable directement via Action Populaire.")}
       <br />
       {_("Pour toute question, veuillez contacter nos équipes à l'adresse e-mail")}{" "}
-      <strong>groupes@actionpopulaire.fr</strong>
+      <strong>groupes@preprod.redmexa.com</strong>
     </>
   ) : undefined;
 

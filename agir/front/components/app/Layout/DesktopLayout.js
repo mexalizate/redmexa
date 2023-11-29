@@ -83,7 +83,7 @@ const Layout = (props) => {
       </MainColumn>
       <RightColumn>
         <div>
-          <h4>{_("Moyens d'action")}</h4>
+          <h4>{/*_("Moyens d'action")*/}Activarse</h4>
           <ActionButtons />
         </div>
         <Spacer size="2rem" />

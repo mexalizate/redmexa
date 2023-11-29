@@ -20,5 +20,5 @@ const Template = ({ shouldShow, url }) => {
 export const Default = Template.bind({});
 Default.args = {
   shouldShow: true,
-  url: "https://actionpopulaire.fr",
+  url: "https://preprod.redmexa.com",
 };

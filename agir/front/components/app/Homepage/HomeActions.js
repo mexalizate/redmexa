@@ -92,9 +92,10 @@ const HomeActions = () => {
         />
         <h4 className="secondaryTextColorLightRed tittleCard">{/*_("Rencontrez")*/} ORGANÍZATE</h4>
         <p className="textCard primaryTextColorPurple">
-          {/*_("d'autres membres")*/} Otros miembros
+          {/*_("d'autres membres")*/} Actívate junto a otras 
+
           <br />
-          {/*_("et agissez ensemble !")*/} actúan juntos
+          {/*_("et agissez ensemble !")*/} personas de tu zona
         </p>
         <Button color="secondaryPurple">{/*_("Voir les groupes")*/} VER GRUPOS</Button>
       </StyledArticle>
@@ -107,8 +108,8 @@ const HomeActions = () => {
           alt={_("distribution de tracts")}
         />
         <h4 className="secondaryTextColorLightRed tittleCard">{/*_("Agissez concrètement")*/}ACTÚA</h4>
-        <p className="textCard primaryTextColorPurple" >{/*_("formez-vous et convainquez des gens près de chez vous !")*/} Entérate y convence a las personas cercanas a ti</p>
-        <Button color="secondaryPurple">{/*_("Lire les fiches pratiques")*/} LEER LAS FICHAS PRÁCTICAS </Button>
+        <p className="textCard primaryTextColorPurple" >{/*_("formez-vous et convainquez des gens près de chez vous !")*/} Crea acciones para que más gente se active</p>
+        <Button color="secondaryPurple">{/*_("Lire les fiches pratiques")*/} VER ACCIONES </Button>
       </StyledArticle>
       <StyledArticle route="login">
         <img 
@@ -118,12 +119,12 @@ const HomeActions = () => {
           width="424 !important"
           alt={_("le premier cahier du programme l'Avenir en Commun")}
         />
-        <h4 className="secondaryTextColorLightRed tittleCard">{/*_("Organisez")*/}ENCONTRARSE</h4>
+        <h4 className="secondaryTextColorLightRed tittleCard">{/*_("Organisez")*/}CONVENCE</h4>
         <p className="textCard primaryTextColorPurple">
           {/*_(
             "Créez un groupe d'action, commandez du matériel, tracts et affiches !",
           )*/}
-          Crear un grupo de acción pide materiales folletos y carteles
+          Con tus grupos y acciones, hagamos historia
         </p>
         <Button color="secondaryPurple">{/*_("Passer à l'action")*/} PASA A LA ACCIÓN</Button>
       </StyledArticle>

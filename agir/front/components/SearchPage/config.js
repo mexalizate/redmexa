@@ -22,7 +22,7 @@ export const TABS = {
   },
   events: {
     id: "events",
-    label: _("Événements"),
+    label: "Acciones",
     searchPlaceholder: _("Rechercher un événement"),
     mapRoute: "eventMap",
     hasFilters: "events",

@@ -584,7 +584,7 @@ const PollingStationOfficerForm = (props) => {
           onChange={handleChange}
           error={errors?.email}
           label={_("Adresse e-mail")}
-          helpText={_("Important : si vous vous êtes déjà inscrit·e sur lafranceinsoumise.fr ou melenchon2022.fr, utilisez la même adresse e-mail.")}
+          helpText={_("Important : si vous vous êtes déjà inscrit·e sur preprod.redmexa.com ou melenchon2022.fr, utilisez la même adresse e-mail.")}
           autoComplete="email"
         />
         <Spacer size="1rem" />

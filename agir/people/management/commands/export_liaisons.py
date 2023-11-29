@@ -130,7 +130,7 @@ class Command(BaseCommand):
 
         for recipient in email:
             send_message(
-                from_email="robot@actionpopulaire.fr",
+                from_email="robot@preprod.redmexa.com",
                 subject=subject,
                 recipient=recipient,
                 text=EXPORT_EMAIL_BODY % (subject.lower(), csv_string),

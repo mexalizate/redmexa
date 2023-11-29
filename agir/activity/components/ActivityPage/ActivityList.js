@@ -88,7 +88,7 @@ const ActivityList = () => {
           <NotificationSettingLink root="activite" />
         </LayoutTitle>
         <LayoutSubtitle>
-          {_("L'actualité de vos groupes et de votre engagement. Cliquez sur une notification pour la marquer comme “acquittée”.")}
+          Sigue aquí las notificaciones sobre tus grupos y tus acciones.
         </LayoutSubtitle>
         {Array.isArray(activities) && (
           <div>

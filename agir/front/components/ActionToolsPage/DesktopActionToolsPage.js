@@ -58,19 +58,19 @@ const DesktopActionToolsPage = (props) => {
         <ActionTools />
       </main>
       <aside>
-        <h2>{_("Besoin d'aide ?")}</h2>
+        <h2>{/*_("Besoin d'aide ?")*/}¿Necesitas ayuda?</h2>
         <StyledButtons>
           <Button link route="help">
-            {_("Centre d'aide")}
+            {/*_("Centre d'aide")*/} Centro ayuda
           </Button>
           <Button link route="contact">
-            {_("Nous contacter")}
+            {/*_("Nous contacter")*/} Contactarnos
           </Button>
         </StyledButtons>
         <PageFadeIn ready={typeof hasGroups !== "undefined"}>
           {!hasGroups && (
             <>
-              <h2>{_("Conseillé pour")} {firstName || _("vous")}</h2>
+              <h2>{/*_("Conseillé pour")*/} Recomendado para  {firstName || "ti"}</h2>
               <JoinAGroupCard city={city} commune={commune} />
             </>
           )}

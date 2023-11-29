@@ -149,7 +149,7 @@ const AmountStep = (props) => {
             <Link route="contributionHelp">En savoir plus</Link>
           </p>
           <p style={{ fontSize: "0.875rem" }}>
-            {_("* Dans l’éventualité où vous souhaitiez interrompre votre contribution volontaire, vous pourrez le faire à tout moment en vous rendant dans l'onglet &laquo;&nbsp;Dons et paiements&nbsp;&raquo; de votre espace personnel sur actionpopulaire.fr.")}
+            {_("* Dans l’éventualité où vous souhaitiez interrompre votre contribution volontaire, vous pourrez le faire à tout moment en vous rendant dans l'onglet &laquo;&nbsp;Dons et paiements&nbsp;&raquo; de votre espace personnel sur preprod.redmexa.com.")}
           </p>
           <form noValidate onSubmit={handleSubmit}>
             <AmountWidget
