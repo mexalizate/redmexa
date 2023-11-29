@@ -43,7 +43,8 @@ const TokTokPreview = () => {
           }
         >
           <BackButton link route="events">
-            {_("Retour à l'accueil")}
+            REGRESAR AL INICIO
+            {/*_("Retour à l'accueil")*/}
           </BackButton>
           <h2>{_("La carte collaborative du porte-à-porte")}</h2>
           <HowTo />

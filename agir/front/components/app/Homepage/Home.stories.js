@@ -12,7 +12,7 @@ export default {
 const Template = (args) => (
   <TestGlobalContextProvider
     value={{
-      routes: { eventsMap: "https://actionpopulaire.fr/carte/evenements/" },
+      routes: { eventsMap: "https://preprod.redmexa.com/carte/evenements/" },
     }}
   >
     <Home {...args} />

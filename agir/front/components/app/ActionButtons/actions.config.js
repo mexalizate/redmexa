@@ -8,7 +8,7 @@ const ACTIONS = {
   createEvent: {
     key: "createEvent",
     route: "createEvent",
-    label: ["Créer événement", "Créer un événement"],
+    label: ["Crear Acción", "Crear una acción"],
     color: style.primary500,
     icon: (
       <span style={{ backgroundColor: style.primary500 }}>
@@ -33,25 +33,17 @@ const ACTIONS = {
       </span>
     ),
   },
-  materiel: {
-    key: "materiel",
-    route: "materiel",
-    label: "Matériel",
-    icon: "shopping-bag",
-    color: style.secondary500,
-    textColor: style.black1000,
-  },
   createContact: {
     key: "createContact",
     route: "createContact",
-    label: ["Ajouter contact", "Ajouter un contact"],
+    label: ["Agregar contacto", "Agregar un contacto"],
     icon: "user-plus",
     color: "#4D26B9",
   },
   actionTools: {
     key: "actionTools",
     route: "actionTools",
-    label: "Voir tout",
+    label: "Ver todo",
     icon: (
       <RawFeatherIcon
         style={{
@@ -66,7 +58,7 @@ const ACTIONS = {
   help: {
     key: "help",
     route: "help",
-    label: ["Aide", "Centre d'aide"],
+    label: ["Ayuda", "Centro de ayuda"],
     icon: "help-circle",
     color: style.black100,
     textColor: style.black1000,
@@ -82,7 +74,6 @@ const ACTIONS = {
 
 const DEFAULT_ACTION_ORDER = [
   "createEvent",
-  "materiel",
   "createContact",
   "help",
   "actionTools",
@@ -90,7 +81,6 @@ const DEFAULT_ACTION_ORDER = [
 
 const GROUP_MANAGER_ACTION_ORDER = [
   "createEvent",
-  "materiel",
   "cafePopulaireRequest",
   "createContact",
   "help",

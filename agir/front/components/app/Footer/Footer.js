@@ -124,7 +124,7 @@ export const Footer = (props) => {
               <Link className="primaryTextColorPurple" route="eventMap">{_("Carte des événements")}</Link>
               <Link className="primaryTextColorPurple" route="groupMap">{_("Carte des groupes")}</Link>
               <Link className="primaryTextColorPurple" route="materiel" target="_blank">
-                {_(" Commander du matériel")}
+                {/*_(" Commander du matériel")*/} Bajar material
               </Link>
             </p>
           </div>
@@ -137,23 +137,23 @@ export const Footer = (props) => {
               ) : (
                 <Link className="primaryTextColorPurple" route="login">{_("Se connecter")}</Link>
               )}
-              <Link className="primaryTextColorPurple" route="help">{_("Besoin d'aide ?")}</Link>
-              <Link className="primaryTextColorPurple" route="legal">{_("Mentions légales")}</Link>
+              <Link className="primaryTextColorPurple" route="help">{/*_("Besoin d'aide ?")*/}Ayuda</Link>
+              <Link className="primaryTextColorPurple" route="legal">{/*_("Mentions légales")*/}Aviso legal</Link>
               <Link className="primaryTextColorPurple" route="contact">{_("Contact")}</Link>
             </p>
           </div>
 
           <div>
-            <h3 className="secondaryTextColorLightRed">{_("Le programme")}</h3>
+            <h3 className="secondaryTextColorLightRed">{/*_("Le programme")*/}EL PROGRAMA</h3>
             <p>
               <Link className="primaryTextColorPurple" route="nupesPlatform" target="_blank">
-                {_("Le programme de la")}{" "}
+                {/*_("Le programme de la")*/}El programa de la{" "}
                 <abbr title="Nouvelle Union Populaire Écologique et sociale">
-                  {_("NUPES")}
+                  {/*_("NUPES")*/}4T
                 </abbr>
               </Link>
               <Link className="primaryTextColorPurple" route="programme" target="_blank">
-                {_("Le programme l'Avenir en commun")}
+                {/*_("Le programme l'Avenir en commun")*/} La visión de Claudia
               </Link>
             </p>
           </div>
@@ -162,16 +162,16 @@ export const Footer = (props) => {
             <h3 className="secondaryTextColorLightRed">{/*_("Les autres sites")*/} OTROS SITIOS</h3>
             <p>
               <Link className="primaryTextColorPurple" route="nupes" target="_blank">
-                {_("La")}{" "}
+                {/*_("La")*/}{" "}
                 <abbr
-                  title={_("Nouvelle Union Populaire Écologique et sociale")}
+                  title="Claudializate"
                 >
-                  {_("NUPES")}
+                  {/*_("NUPES")*/}Claudialízate
                 </abbr>
               </Link>
-              <Link className="primaryTextColorPurple" route="lafranceinsoumise">{_("La France insoumise")}</Link>
-              <Link className="primaryTextColorPurple" route="linsoumission">{_("L'insoumission")}</Link>
-              <Link className="primaryTextColorPurple" route="jlmBlog">{_("Le blog de Jean-Luc Mélenchon")}</Link>
+              <Link className="primaryTextColorPurple" route="lafranceinsoumise">{/*_("La France insoumise")*/}Morena</Link>
+              <Link className="primaryTextColorPurple" route="linsoumission">{/*_("L'insoumission")*/}Youtube</Link>
+              <Link className="primaryTextColorPurple" route="jlmBlog">{/*_("Le blog de Jean-Luc Mélenchon")*/}TikTok</Link>
             </p>
           </div>
 

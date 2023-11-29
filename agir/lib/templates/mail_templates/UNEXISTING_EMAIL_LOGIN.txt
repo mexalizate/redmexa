@@ -10,7 +10,7 @@ Voulez-vous utiliser cette adresse e-mail pour vous inscrire ?
 OU  
   
 >> Me connecter avec un autre adresse e-mail
-https://actionpopulaire.fr/connexion/
+https://preprod.redmexa.com/connexion/
   
 Amitiés,   
 L’équipe d’Action Populaire  

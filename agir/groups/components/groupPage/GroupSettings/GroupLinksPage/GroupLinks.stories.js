@@ -20,7 +20,7 @@ Default.args = {
       label: "Présentation sur Youtube",
       url: "https://ap.fr",
     },
-    { id: 2, label: "Groupe Facebook", url: "https://actionpopulaire.fr" },
+    { id: 2, label: "Groupe Facebook", url: "https://preprod.redmexa.com" },
     { id: 3, label: "Boucle Telegram", url: "https://action-populaire.fr" },
   ],
 };

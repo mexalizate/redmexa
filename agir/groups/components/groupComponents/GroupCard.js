@@ -161,7 +161,7 @@ const GroupCard = ({
           >
             {_("Rejoindre")}
             <Hide as="span" $under={800}>
-              &nbsp;{_("le groupe")}
+              &nbsp;{/*_("le groupe")*/} al Grupo
             </Hide>
           </Button>
         )}
@@ -173,7 +173,7 @@ const GroupCard = ({
           routeParams={{ groupPk: id }}
           backLink={backLink}
         >
-          {_("Voir le groupe")}
+          {/*_("Voir le groupe")*/} Ver Grupo
         </Button>
         {isManager && (
           <Button

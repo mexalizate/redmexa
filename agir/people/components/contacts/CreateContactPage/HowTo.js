@@ -118,13 +118,13 @@ export const HowTo = (props) => {
           <li>
             <RawFeatherIcon strokeWidth={2} name="check-square" />
             <span>
-              <strong>{_("Faites rejoindre Action populaire")}</strong> {_("à de nouvelles personnes !")}
+              <strong>Ayuda a unirse a Claudialízate{/*_("Faites rejoindre Action populaire")*/}</strong> {_("à de nouvelles personnes !")}
             </span>
           </li>
           <li>
             <RawFeatherIcon strokeWidth={2} name="rss" />
             <span>
-              <strong>{_("Obtenez des contacts pour votre groupe d’action")}</strong>
+              <strong>Agrega nuevos contactos a tu grupo{/*_("Obtenez des contacts pour votre groupe d’action")*/}</strong>
               <br />
               {_("Les contacts sont enregistrés et visibles dans la partie gestion du groupe pour les gestionnaires et animateur·ices")}
             </span>
@@ -133,7 +133,8 @@ export const HowTo = (props) => {
             <RawFeatherIcon strokeWidth={2} name="map-pin" />
             <span>
               <strong>
-                {_("Essayez de recruter des correspondant·es d’immeuble ou de village,")}
+                Agrega a corresponsales de su edificio o barrio,
+                {/*_("Essayez de recruter des correspondant·es d’immeuble ou de village,")*/}
               </strong>{" "}
               {_("qui pourront diffuser nos propositions et inciter leurs voisins à aller voter")}
             </span>

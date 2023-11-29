@@ -266,10 +266,10 @@ export const ContactForm = (props) => {
       />
       <Spacer data-scroll="newsletters" size="2rem" />
       <h4>
-        &laquo;&nbsp;{_("Souhaitez-vous rejoindre la France insoumise")}&nbsp;?&nbsp;&raquo;
+        &laquo;&nbsp;¿Quieres registrarte en Claudialízate?{/*_("Souhaitez-vous rejoindre la France insoumise")*/}&nbsp;&nbsp;&raquo;
       </h4>
       <CheckboxField
-        label={_("Je souhaite rejoindre la France insoumise")}
+        label= "Sí, quiero registrarme"
         onChange={handleCheckisPoliticalSupport}
         value={data.isPoliticalSupport}
         id="isPoliticalSupport"
@@ -293,8 +293,8 @@ export const ContactForm = (props) => {
       ))}
       <Spacer data-scroll="group" size="1.5rem" />
       <SearchAndSelectField
-        label={_("Groupe auquel ajouter le contact")}
-        placeholder={_("Choisissez un groupe d'action")}
+        label= "Grupo al que se agrega el contacto"
+        placeholder= "Selecciona un grupo/*"
         onChange={handleSelectGroup}
         onSearch={handleSearchGroup}
         isLoading={typeof groupOptions === "undefined"}
@@ -322,11 +322,11 @@ export const ContactForm = (props) => {
         <>
           <Spacer size="1.5rem" />
           <h4>
-            {("Souhaitez-vous devenir correspondant·e pour votre immeuble ou votre village ?")}
+          ¿Quieres ser corresponsal de tu edificio o tu barrio? {/*("Souhaitez-vous devenir correspondant·e pour votre immeuble ou votre village ?")*/}
           </h4>
           <p>
             <em>
-              &laquo;&nbsp;{("Nous vous enverrons des informations et du matériel pour diffuser nos propositions et actions auprès de vos voisins et voisines")}&nbsp;&raquo;
+              &laquo;&nbsp;Te enviaremos información para difundir el movimiento y sus acciones entre tus vecin@s&nbsp;&raquo;
             </em>
           </p>
           <Spacer size=".5rem" />

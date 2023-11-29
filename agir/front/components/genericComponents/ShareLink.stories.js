@@ -16,7 +16,7 @@ export const Default = Template.bind({});
 Default.args = {
   title: "Un lien facile à copier ci-dessous",
   label: "Partager c'est sympa !",
-  url: "https://actionpopulaire.fr",
+  url: "https://preprod.redmexa.com",
 };
 
 export const Primary = Template.bind({});
@@ -33,5 +33,5 @@ Secondary.args = {
 
 export const NoLabelNoTitle = Template.bind({});
 NoLabelNoTitle.args = {
-  url: "https://actionpopulaire.fr",
+  url: "https://preprod.redmexa.com",
 };

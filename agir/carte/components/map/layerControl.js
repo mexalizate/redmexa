@@ -34,7 +34,7 @@ export default function makeLayerControl(layersConfig, drawingFunction) {
   });
   const activeCheckboxLabel = element("label", [
     activeCheckbox,
-    " Groupes les plus actifs",
+    " Grupos más activos",
   ]);
   activeCheckbox.addEventListener("change", function () {
     drawingFunction(activeCheckbox.checked);

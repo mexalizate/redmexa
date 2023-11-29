@@ -51,7 +51,7 @@ const GroupsPageHeader = () => {
   const routes = useSelector(getRoutes);
   return (
     <StyledHeader>
-      <LayoutTitle>{_("Mes groupes")}</LayoutTitle>
+      <LayoutTitle>Mis grupos{/*_("Mes groupes")*/}</LayoutTitle>
       <div>
         {routes.createGroup && (
           <Button
@@ -61,7 +61,7 @@ const GroupsPageHeader = () => {
             color="secondary"
             small
           >
-            {_("Créer un groupe")}
+            {/*_("Créer un groupe")*/}Crear un grupo
           </Button>
         )}
         <Button link icon="map" route="groupMap" small>

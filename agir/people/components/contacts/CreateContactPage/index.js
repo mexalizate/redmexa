@@ -107,7 +107,8 @@ const CreateContactPage = () => {
           {step === 0 && (
             <>
               <BackButton disabled={isLoading} link route="events">
-                {_("Retour à l'accueil")}
+                REGRESAR AL INICIO
+                {/*_("Retour à l'accueil")*/}
               </BackButton>
               <ContactForm
                 onSubmit={submitForm}

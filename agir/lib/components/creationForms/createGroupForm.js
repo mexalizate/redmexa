@@ -160,7 +160,7 @@ class GroupTypeStep extends FormStep {
           </p>
           <p>
             En créant votre groupe, vous vous engagez à respecter{" "}
-            <a href="https://infos.actionpopulaire.fr/charte-des-groupes-action-populaire/">
+            <a href="https://infos.preprod.redmexa.com/charte-des-groupes-action-populaire/">
               une charte d'éthique
             </a>{" "}
             dans l'animation du groupe.
@@ -380,7 +380,7 @@ class ValidateStep extends FormStep {
                 <input onChange={this.toggleMaySubmit} type="checkbox" />
                 Je m'engage à respecter{" "}
                 <a
-                  href="https://infos.actionpopulaire.fr/charte-des-groupes-action-populaire/"
+                  href="https://infos.preprod.redmexa.com/charte-des-groupes-action-populaire/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

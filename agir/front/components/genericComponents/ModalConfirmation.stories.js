@@ -53,5 +53,5 @@ WithConfirmation.args = {
   description: _("Ma description est sacrée :)"),
   dismissLabel: _("Non merci"),
   confirmationLabel: _("Allons à cette étape !"),
-  confirmationUrl: "https://actionpopulaire.fr",
+  confirmationUrl: "https://preprod.redmexa.com",
 };

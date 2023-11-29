@@ -26,7 +26,7 @@ def notify_commune_changed(commune_id, person_id, changed_data):
         subject=f"Modification commune {nom_commune}",
         body=body,
         from_email=settings.EMAIL_FROM,
-        to=["groupes-action@lafranceinsoumise.fr"],
+        to=["groupes-action@preprod.redmexa.com"],
     )
     message.send()
 
@@ -42,7 +42,7 @@ def send_procuration_email(commune_id, nom_complet, email, phone, bureau, autres
         personnel = True
 
     if not recipients:
-        recipients = ["groupes-action@lafranceinsoumise.fr"]
+        recipients = ["groupes-action@preprod.redmexa.com"]
 
     template = get_template("municipales/procuration_notification.txt")
     context = {

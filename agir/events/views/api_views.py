@@ -334,7 +334,7 @@ class CreateEventAPIView(CreateAPIView):
 class EventManagementPermissions(GlobalOrObjectPermissions):
     message = (
         "Vous n'avez pas la permission d'effectuer cette action."
-        "Veuillez contacter nos équipes à groupes@actionpopulaire.fr"
+        "Veuillez contacter nos équipes à groupes@preprod.redmexa.com"
     )
 
     perms_map = {

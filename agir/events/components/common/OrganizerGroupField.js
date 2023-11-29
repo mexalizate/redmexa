@@ -16,7 +16,7 @@ const OrganizerGroupField = (props) => {
 
   return (
     <SelectField
-      label={_("Organisateur")}
+      label="Organizador(a) de la acción"
       id={name}
       name={name}
       value={value}

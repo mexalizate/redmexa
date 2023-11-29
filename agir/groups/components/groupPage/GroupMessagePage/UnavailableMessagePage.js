@@ -38,7 +38,7 @@ const UnavailableMessagePage = (props) => {
       </p>
       {groupURL ? (
         <Button color="primary" link to={groupURL}>
-          {_("Voir le groupe")}
+          {/*_("Voir le groupe")*/} Ver Grupo
         </Button>
       ) : null}
       <Button color="white" link route="help">

@@ -94,19 +94,19 @@ const HomeExternalLinks = () => {
         )}
         </p>*/}
         <p className="secondaryTextColorLightRed" >
-       Claudializate es la red de acción social, para encontrar las últimas noticias, visita nuestros sitios:
+        Encuentra las últimas noticias en nuestros sitios
         </p>
       <nav>
-        <a href="https://lafranceinsoumise.fr/">
+        <a href="https://www.tiktok.com/@claudializate">
           <img
             src={lfiLogo}
-            alt={_("logo de la France insoumise")}
+            alt={_("Claudializate")}
             width="136"
             height="51"
           />
         </a>
         <Spacer size="1rem" />
-        <a href="https://nupes-2022.fr">
+        <a href="redmigrante.com">
           <img
             src={nupesLogo}
             alt={_("logo de la Nouvelle Union Populaire Écologique et Sociale")}
@@ -115,7 +115,7 @@ const HomeExternalLinks = () => {
           />
         </a>
         <Spacer size="1rem" />
-        <a href="https://linsoumission.fr">
+        <a href="https://youtube.com/@ClaudiaSheinbaumP?si=LF9lPRkWys1GOttW">
           <img
             src={linsoumissionLogo}
             alt={_("logo de l'insoumission")}

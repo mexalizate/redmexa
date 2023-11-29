@@ -116,7 +116,7 @@ const GroupSuggestionCard = (props) => {
           small
           color="secondary"
         >
-          {_("Voir le groupe")}
+          {/*_("Voir le groupe")*/} Ver Grupo
         </Button>
       </StyledBody>
     </StyledCard>

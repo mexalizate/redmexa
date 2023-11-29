@@ -102,10 +102,10 @@ const InfoBlock = (props) => (
     <Illustration aria-hidden="true" />
     <Spacer size="1rem" />
     <div>
-      {_("En publiant votre événement, ce dernier sera visible à toutes les personnes aux alentours.")}
+      {/*_("En publiant votre événement, ce dernier sera visible à toutes les personnes aux alentours.")*/}Al publicar tu acción, será visible para todas las personas cerca de tu zona
       <Spacer size="0.5rem" />
       <Link route="newGroupHelp" target="_blank" rel="noopener noreferrer">
-       {_(" Besoin d'idées d'événements&nbsp;?")}
+       {/*_(" Besoin d'idées d'événements&nbsp;?")*/}¿Necesitas ayuda?
       </Link>
       <Spacer size="0.5rem" />
       <Link route="help" target="_blank" rel="noopener noreferrer">
@@ -126,7 +126,7 @@ const CreateEvent = () => {
             <RawFeatherIcon name="arrow-left" color={style.black1000} />
           </BackLink>
           <Spacer size="1.5rem" />
-          <h2>{_("Nouvel événement")}</h2>
+          <h2>{/*_("Nouvel événement")*/}Nueva acción</h2>
           <Hide as={InfoBlock} $over />
           <Spacer size="1.5rem" />
           <EventForm />

@@ -2,7 +2,7 @@
 name = "agir"
 version = "0"
 description = ""
-authors = ["La France insoumise <site@lafranceinsoumise.fr>"]
+authors = ["La France insoumise <site@preprod.redmexa.com>"]
 license = "AGPL-3.0"
 
 [tool.poetry.dependencies]

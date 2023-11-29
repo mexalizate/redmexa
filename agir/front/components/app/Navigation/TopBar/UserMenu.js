@@ -149,7 +149,8 @@ export const UserMenu = (props) => {
           color="secondary"
           small
         >
-          Notifications et e-mails
+          Emails y notificaciones
+          /*Notifications et e-mails*/
         </Button>
         <br />
         <Button link route="logout" icon="power" color="choose" small>

@@ -486,7 +486,7 @@ msgid ""
 "* Dans l’éventualité où vous souhaitiez interrompre votre contribution "
 "volontaire, vous pourrez le faire à tout moment en vous rendant dans "
 "l'onglet &laquo;&nbsp;Dons et paiements&nbsp;&raquo; de votre espace "
-"personnel sur actionpopulaire.fr."
+"personnel sur preprod.redmexa.com."
 msgstr ""
 "En caso de que quisieras interrumpir tu contribución voluntaria, "
 "podrás hacerlo en cualquier momento en la sección de tu espacio "
@@ -513,7 +513,7 @@ msgstr ""
 
 #: agir/donations/components/contributionSuccessPage/ContributionSuccessPage.js:58
 #: agir/donations/components/donationSuccessPage/DonationSuccessPage.js:60
-msgid "de votre espace personnel sur actionpopulaire.fr."
+msgid "de votre espace personnel sur preprod.redmexa.com."
 msgstr "de tu espacio personal en claudializate.com"
 
 #: agir/donations/components/contributionSuccessPage/ContributionSuccessPage.js:65
@@ -1459,7 +1459,7 @@ msgstr "Dirección email"
 
 #: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/PollingStationOfficerForm.js:587
 msgid ""
-"Important : si vous vous êtes déjà inscrit·e sur lafranceinsoumise.fr ou "
+"Important : si vous vous êtes déjà inscrit·e sur preprod.redmexa.com ou "
 "melenchon2022.fr, utilisez la même adresse e-mail."
 msgstr ""
 "Importante: si ya te inscribiste en claudializate.com, utiliza por favor "

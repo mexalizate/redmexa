@@ -32,7 +32,8 @@ const DescriptionField = (props) => {
           margin-bottom: 5px;
         `}
       >
-        {_("Description de l'événement")}
+        Descripción de la acción
+        {/*_("Description de l'événement")*/}
       </strong>
       <br />
       <span
@@ -41,7 +42,8 @@ const DescriptionField = (props) => {
         `}
       >
         {!required && <em>{_("Facultative.")} </em>}
-        {_("La description apparaîtra sur la page publique de l'événement.")}
+        La descripción aparecerá en la página de la acción.
+        {/*_("La description apparaîtra sur la page publique de l'événement.")*/}
       </span>
       {isExpanded ? (
         <RichTextField
@@ -60,7 +62,8 @@ const DescriptionField = (props) => {
           `}
         >
           <Button small disabled={disabled} onClick={expand}>
-            {_("Ajouter une description à l'évenement")}
+            Agregar una descripción
+            {/*_("Ajouter une description à l'évenement")*/}
           </Button>
         </p>
       )}

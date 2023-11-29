@@ -15,11 +15,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lafranceinsoumise/agir.lafranceinsoumise.fr.git"
+    "url": "git+https://github.com/lafranceinsoumise/agir.preprod.redmexa.com.git"
   },
   "license": "AGPL",
   "bugs": {
-    "url": "https://github.com/lafranceinsoumise/agir.lafranceinsoumise.fr.git/issues"
+    "url": "https://github.com/lafranceinsoumise/agir.preprod.redmexa.com.git/issues"
   },
   "engines": {
     "npm": ">=8.19.2 <9.0.0",

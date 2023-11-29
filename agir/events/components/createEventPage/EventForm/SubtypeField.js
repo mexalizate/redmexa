@@ -181,7 +181,7 @@ const SubtypeField = (props) => {
 
   return (
     <StyledField>
-      <label htmlFor={name}>Type d'événement</label>
+      <label htmlFor={name}>Tipo de acción</label>
       {error && (
         <p
           style={{

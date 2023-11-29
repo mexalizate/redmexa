@@ -1,45 +1,51 @@
-{% extends "front/layout.html" %}
-{% load crispy_forms_tags %}
-{% load display_lib %}
-
-{% block title %}
-  Mes informations personnelles
-{% endblock %}
-
-{% block main %}
+{% extends "front/layout.html" %} {% load crispy_forms_tags %} {% load
+display_lib %} {% block title %} Mes informations personnelles {% endblock %} {%
+block main %}
 <div class="padtop padbottom">
   <div class="col-xs-12">
     {% if user.is_anonymous %}
-      <div class="alert alert-info">
-        <span aria-hidden="true" class="fa fa-arrow-up" style="font-weight: 700; text-shadow: 0 1px 0 #fff; float: right; font-size: 30px; margin-right: 20px;"></span>
-        <p>
-          Si vous avez un compte sur <strong>actionpopulaire.fr</strong>, vous pouvez vous connecter pour éviter d'avoir à
-          saisir toutes ces informations.
-        </p>
-      </div>
+    <div class="alert alert-info">
+      <span
+        aria-hidden="true"
+        class="fa fa-arrow-up"
+        style="
+          font-weight: 700;
+          text-shadow: 0 1px 0 #fff;
+          float: right;
+          font-size: 30px;
+          margin-right: 20px;
+        "
+      ></span>
+      <p>
+        Si vous avez un compte sur <strong>preprod.redmexa.com</strong>, vous
+        pouvez vous connecter pour éviter d'avoir à saisir toutes ces
+        informations.
+      </p>
+    </div>
     {% endif %}
     <h2 class="headline">
-    {% block donation_headline %}
-      Mon don à la France Insoumise
-    {% endblock %}
+      {% block donation_headline %} Mon don à la France Insoumise {% endblock %}
     </h2>
     <div class="row">
       <div class="col-md-7 padtop padbottom">
         <div class="alert alert-success">
           {% block donation_reminder %}
-            <p>
-              Je souhaite donner <strong>{% if monthly %}chaque mois {% endif %}{{ amount | display_price_in_cent }}</strong>
-              à {% block donation_dest %}la France insoumise.{% endblock %}
-            </p>
-          {% endblock %}
-          {% if allocations %}
-              {% include "donations/includes/allocation_description.html" with allocations=allocations national_amount=national only %}
-          {% endif %}
+          <p>
+            Je souhaite donner
+            <strong
+              >{% if monthly %}chaque mois {% endif %}{{ amount |
+              display_price_in_cent }}</strong
+            >
+            à {% block donation_dest %}la France insoumise.{% endblock %}
+          </p>
+          {% endblock %} {% if allocations %} {% include
+          "donations/includes/allocation_description.html" with
+          allocations=allocations national_amount=national only %} {% endif %}
           {% if monthly %}
-            <p>
-              Mon paiement s'effectuera automatiquement chaque 8 du mois. Je peux arrêter mon don mensuel
-              à tout moment.
-            </p>
+          <p>
+            Mon paiement s'effectuera automatiquement chaque 8 du mois. Je peux
+            arrêter mon don mensuel à tout moment.
+          </p>
           {% endif %}
         </div>
 
@@ -49,37 +55,38 @@
         <div class="alert alert-info">
           <p>
             <span class="fa fa-info-circle" aria-hidden="true"></span>
-            Un problème pour remplir ce formulaire&nbsp;? Du lundi au vendredi, de 10h à 18h, vous pouvez téléphoner
-            au 01.48.74.00.14&nbsp;: un ou une volontaire pourra vous aider.
+            Un problème pour remplir ce formulaire&nbsp;? Du lundi au vendredi,
+            de 10h à 18h, vous pouvez téléphoner au 01.48.74.00.14&nbsp;: un ou
+            une volontaire pourra vous aider.
           </p>
         </div>
         <div class="well">
           {% block legal %}
-            <div style="font-size: small">
-              {% include "donations/legal.html" %}
-            </div>
+          <div style="font-size: small">
+            {% include "donations/legal.html" %}
+          </div>
           {% endblock %}
         </div>
       </div>
     </div>
     {% block script %}
-      <script>
-        var fiscalResident = document.getElementById('id_fiscal_resident');
-        var nationality = document.getElementById('id_nationality');
+    <script>
+      var fiscalResident = document.getElementById("id_fiscal_resident");
+      var nationality = document.getElementById("id_nationality");
 
-        function updateFiscalResident() {
-          var currentNationality = nationality.value;
-          var display = currentNationality !== '' && currentNationality !== 'FR';
-          fiscalResident.parentNode.style.display = display ? 'block' : 'none';
-          fiscalResident.disabled = !display;
-          fiscalResident.required = display;
-        }
+      function updateFiscalResident() {
+        var currentNationality = nationality.value;
+        var display = currentNationality !== "" && currentNationality !== "FR";
+        fiscalResident.parentNode.style.display = display ? "block" : "none";
+        fiscalResident.disabled = !display;
+        fiscalResident.required = display;
+      }
 
-        if (fiscalResident) {
-          nationality.addEventListener('change', updateFiscalResident);
-          updateFiscalResident();
-        }
-      </script>
+      if (fiscalResident) {
+        nationality.addEventListener("change", updateFiscalResident);
+        updateFiscalResident();
+      }
+    </script>
     {% endblock %}
   </div>
 </div>

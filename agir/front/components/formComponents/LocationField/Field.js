@@ -111,7 +111,7 @@ const LocationField = (props) => {
         helpText={help && help.name}
       />
       <TextField
-        label={_("Adresse du lieu")}
+        label="Dirección del lugar"
         autoComplete="address-line1"
         name="address1"
         value={address1}
@@ -135,7 +135,8 @@ const LocationField = (props) => {
       ) : (
         <div style={{ paddingBottom: ".5rem" }}>
           <button type="button" onClick={displayAddress2} disabled={disabled}>
-           {_(" + Ajouter une deuxième ligne pour l'adresse")}
+          Agregar renglón a la dirección
+           {/*_(" + Ajouter une deuxième ligne pour l'adresse")*/}
           </button>
         </div>
       )}

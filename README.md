@@ -1,10 +1,10 @@
 <p align="center">
-  <img height="150" src="https://github.com/lafranceinsoumise/actionpopulaire.fr/blob/staging/agir/front/components/genericComponents/logos/action-populaire.svg">
+  <img height="150" src="https://github.com/lafranceinsoumise/preprod.redmexa.com/blob/staging/agir/front/components/genericComponents/logos/action-populaire.svg">
 </p>
 
-![Tests status](https://github.com/lafranceinsoumise/actionpopulaire.fr/actions/workflows/run-tests.yml/badge.svg)
+![Tests status](https://github.com/lafranceinsoumise/preprod.redmexa.com/actions/workflows/run-tests.yml/badge.svg)
 
-# actionpopulaire.fr
+# preprod.redmexa.com
 
 1. [Vagrant installation](#vagrant)
 2. [Useful commands](#frontend-pages)

@@ -41,7 +41,7 @@ export const ReferentMainPanel = (props) => {
       <Spacer size=".5rem" />
       <span style={{ color: style.black700 }}>
         {_("Pour respecter la")}{" "}
-        <a href="https://infos.actionpopulaire.fr/charte-des-groupes-action-populaire/">
+        <a href="https://infos.preprod.redmexa.com/charte-des-groupes-action-populaire/">
           {_("charte des groupes d'actions")}
         </a>
         {_(", votre groupe doit être animé à parité de genre.")}

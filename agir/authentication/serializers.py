@@ -106,13 +106,13 @@ class SessionSerializer(serializers.Serializer):
             "search": reverse("dashboard_search"),
             "signup": reverse("signup"),
             "login": reverse("short_code_login"),
-            "help": "https://infos.actionpopulaire.fr",
-            "resources": "https://infos.actionpopulaire.fr",
+            "help": "https://infos.preprod.redmexa.com",
+            "resources": "https://infos.preprod.redmexa.com",
             "logout": reverse("disconnect"),
             "personalInformation": reverse("personal_information"),
             "nspReferral": front_url("nsp_referral"),
-            "materiel": "https://materiel.actionpopulaire.fr/",
-            "news": "https://lafranceinsoumise.fr/actualites/",
+            "materiel": "https://materiel.preprod.redmexa.com/",
+            "news": "https://preprod.redmexa.com/actualites/",
             "thematicTeams": front_url("thematic_teams_list"),
         }
 

@@ -53,9 +53,9 @@ const LeftBlockDesktop = () => {
           />
         </Link>
         <Title>
-          {_("Le réseau social d’action")}{" "}
+          {/*_("Le réseau social d’action")*/}La red de acción de l@s mexican@s {" "}
           <InlineBlock>
-            {_("de la France insoumise et de la")} <em>{_("NUPES")}</em>
+            {/*_("de la France insoumise et de la")*/}en el mundo <em>{_("NUPES")}</em>
           </InlineBlock>
         </Title>
       </div>
