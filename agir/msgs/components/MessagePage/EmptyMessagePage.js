@@ -49,14 +49,13 @@ const EmptyMessagePage = () => (
   <StyledEmptyPage>
     <img src={illustration} width="246" height="145" aria-hidden="true" />
     <Spacer size="2.5rem" />
-    <h2>Vous n'avez pas encore reçu de messages</h2>
+    <h2>Todavía no recibes ningún mensaje</h2>
     <Spacer size="1rem" />
     <p>
-      Sur Action Populaire, les animateurs de groupe peuvent envoyer des
-      messages à leur membres pour organiser l'action.
+      En este espacio, l@s facilitadores de grupo pueden enviar mensajes a l@s participantes para organizarse mejor.
     </p>
     <Button link color="primary" route="groups">
-      Voir les groupes
+      Ver los grupos
     </Button>
   </StyledEmptyPage>
 );

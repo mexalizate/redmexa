@@ -1,20 +1,16 @@
 <li role="presentation" class="{% if tab_code == "IDENTITY" %} active {% endif %}">
-  <a href="{% url "personal_information" %}">Identité</a>
+  <a href="{% url "personal_information" %}">Tus datos</a>
 </li>
 <li role="presentation" class="{% if tab_code == "CONTACT" %} active {% endif %}">
-  <a href="{% url "contact" %}">Contacts</a>
+  <a href="{% url "contact" %}">Medios de contacto</a>
 </li>
 <li role="presentation" class="{% if tab_code == "SKILLS" %} active {% endif %}">
-  <a href="{% url "skills" %}">Expérience et savoir faire</a>
+  <a href="{% url "skills" %}">Perfil e Intereses</a>
 </li>
 <li role="presentation" class="{% if tab_code == "ACT" %} active {% endif %}">
-  <a href="{% url "volunteer" %}">Engagement</a>
-</li>
-<li role="presentation"
-    class="{% if tab_code == "PAYMENTS" %}active{% endif %}">
-  <a href="{% url "view_payments" %}">Dons et paiements</a>
+  <a href="{% url "volunteer" %}">Activarse de lleno</a>
 </li>
 <li role="presentation"
     class="{% if tab_code == "PERSONAL_DATA" %} active {% endif %}">
-  <a href="{% url "personal_data" %}">Données personnelles</a>
+  <a href="{% url "personal_data" %}">Mi Cuenta</a>
 </li>

@@ -183,7 +183,7 @@ export const useMessageSWR = (messagePk) => {
             }
           : {
               route: "events",
-              label: "Retour à l'accueil",
+              label: "REGRESAR AL INICIO",
             },
       ),
     );
