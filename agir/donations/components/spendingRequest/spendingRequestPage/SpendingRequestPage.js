@@ -222,7 +222,7 @@ const SpendingRequestPage = ({ spendingRequestPk }) => {
                 disabled={!spendingRequest.status.editable}
                 icon="edit-2"
               >
-                Modifier
+                Modificar
               </Button>
               <ValidateSpendingRequestButton
                 spendingRequestPk={spendingRequest.id}
@@ -265,7 +265,7 @@ const SpendingRequestPage = ({ spendingRequestPk }) => {
               disabled={!spendingRequest.status.editable}
               icon="edit-2"
             >
-              Modifier
+              Modificar
             </Button>
             <ValidateSpendingRequestButton
               spendingRequestPk={spendingRequest.id}

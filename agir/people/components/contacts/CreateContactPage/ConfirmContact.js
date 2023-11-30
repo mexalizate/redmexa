@@ -110,7 +110,7 @@ const ConfirmContact = (props) => {
       <Spacer size="1rem" />
       <footer>
         <Button icon="arrow-left" onClick={onBack} disabled={isLoading}>
-          {_("Modifier")}
+          Modificar
         </Button>
         <Spacer style={{ display: "inline-block" }} size="1rem" />
         <Button color="secondary" onClick={onConfirm} disabled={isLoading}>
