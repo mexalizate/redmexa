@@ -58,7 +58,9 @@ class PersonalInformationsForm(ImageFormMixin, forms.ModelForm):
         self.fields["location_address2"].label = False
         self.fields["location_country"].required = True
         self.fields["display_name"].required = True
-        self.fields["action_radius"].help_text = "La distancia indicada (en km) nos permite sugerirte acciones cerca de ti a máximo esa distancia."
+        self.fields[
+            "action_radius"
+        ].help_text = "La distancia indicada (en km) nos permite sugerirte acciones cerca de ti a máximo esa distancia."
 
         description_gender = HTML(
             format_html(
