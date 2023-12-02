@@ -56,7 +56,7 @@ const LocationItem = (props) => {
         </span>
       </p>
       <Button small disabled={disabled} onClick={handleClick} color="choose">
-        Choisir
+        Seleccionar
       </Button>
     </StyledItem>
   );

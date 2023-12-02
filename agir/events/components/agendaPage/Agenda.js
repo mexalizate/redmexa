@@ -194,7 +194,7 @@ const Agenda = () => {
               flex: "1 1 auto",
             }}
           >
-            {/*_("Événements")*/} Acciones 
+            Acciones {/*_("Événements")*/}
           </h2>
           <Button small link route="eventMap" icon="map">
             {_("Carte")}

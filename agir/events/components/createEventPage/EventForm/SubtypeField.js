@@ -216,7 +216,7 @@ const SubtypeField = (props) => {
             type="button"
             disabled={disabled}
           >
-            {value ? _("Modifier") : _("+ d'options")}
+            {value ? "Modificar" : _("+ opciones")}
           </StyledPanelTrigger>
         )}
         {!!info && (

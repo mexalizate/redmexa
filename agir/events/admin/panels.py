@@ -835,7 +835,7 @@ class EventSubtypeAdmin(admin.ModelAdmin):
             },
         ),
         (
-            "Liens",
+            "ENLACES",
             {
                 "fields": (
                     "event_list_link",

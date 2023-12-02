@@ -279,10 +279,10 @@ const SearchAndSelectField = (props) => {
   const noOptionsMessage = useCallback(
     ({ inputValue }) =>
       inputValue.length < minSearchTermLength
-        ? `Entrez au moins ${minSearchTermLength} lettre${
+        ? `El menos ingresa ${minSearchTermLength} letra${
             minSearchTermLength > 1 ? "s" : ""
-          } pour chercher`
-        : _("Pas de résultats"),
+          } para buscar`
+        : "Sin resultados",
     [minSearchTermLength],
   );
 

@@ -10,7 +10,7 @@
     <div class="col-xs-12 margintopmore text-right" style="line-height: 45px; margin-bottom: 0;">
       <div class="pull-left">
         <a class="menu-back-link" href="{% url "list_events" %}">
-          <i class="fa fa-arrow-left"></i>&emsp;Retour à l'accueil
+          <i class="fa fa-arrow-left"></i>&emsp;Regresar al inicio
         </a>
       </div>
       <div class="pull-right">
@@ -23,7 +23,7 @@
       {% include "people/profile/profile_title.html" with tab_code="CONTACT" %}
       <div>
         <fieldset>
-          <legend>Adresses e-mail</legend>
+          <legend>Direcciones email</legend>
         </fieldset>
         <div class="row">
         {% if emails|length > 1 %}
@@ -70,7 +70,7 @@
                 <td class="hidden-xs hidden-sm"></td>
                 <td class="hidden-xs hidden-sm"></td>
                 <td class="text-right" colspan="3">
-                  <a class="btn btn-sm btn-default btn-block" href="{% url "manage_account" %}">Ajouter ou changer d'adresse email</a>
+                  <a class="btn btn-sm btn-default btn-block"  style="color: white !important;" href="{% url "manage_account" %}">Agregar o cambiar dirección email</a>
                 </td>
               </tr>
             </tbody>
@@ -78,13 +78,13 @@
           </div>
         {% else %}
           <p class="col-xs-12 col-md-8">{{ person.email }}</p>
-          <p class="col-xs-12 col-md-4"><a class="btn btn-sm btn-default" href="{% url "manage_account" %}">Ajouter ou changer d'adresse email</a></p>
+          <p class="col-xs-12 col-md-4"><a class="btn btn-sm btn-default" style="color: white !important;" href="{% url "manage_account" %}">Agregar o cambiar dirección email</a></p>
         {% endif %}
         </div>
         <fieldset>
-          <legend>Notifications et e-mails Action Populaire</legend>
+          <legend>Emails y notificaciones Claudialízate</legend>
           <a href="{% url "list_activities.notification_settings" %}" class="btn btn-sm btn-info">
-            Paramétrer mes notifications et emails
+            Configurar mis emails y notificaciones
           </a>
         </fieldset>
         {% crispy form %}
