@@ -137,7 +137,7 @@ class Migration(migrations.Migration):
             model_name="eventthemetype",
             name="email_from",
             field=models.EmailField(
-                default="support@actionpopulaire.fr",
+                default="support@preprod.redmexa.com",
                 help_text="Cette adresse sera utilisé comme expéditeur de tous les e-mails transactionnels pour ce type de thème d'événement",
                 max_length=255,
                 verbose_name="expéditeur des e-mails",
@@ -147,7 +147,7 @@ class Migration(migrations.Migration):
             model_name="eventthemetype",
             name="email_to",
             field=models.EmailField(
-                default="support@actionpopulaire.fr",
+                default="support@preprod.redmexa.com",
                 help_text="Cette adresse sera utilisé comme destinataire de tous les e-mails transactionnels pour ce type de thème d'événement",
                 max_length=255,
                 verbose_name="destinataire des e-mails",

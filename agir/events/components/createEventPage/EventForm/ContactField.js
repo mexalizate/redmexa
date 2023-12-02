@@ -81,7 +81,7 @@ const ContactField = (props) => {
       ) : (
         <>
           <TextField
-            label={_("Nom de la personne à contacter")}
+            label="Nombre de la persona de contacto"
             name="name"
             autoComplete="name"
             value={name}
@@ -102,8 +102,8 @@ const ContactField = (props) => {
             error={error && error.email}
           />
           <PhoneField
-            label={_("Numéro de téléphone de contact")}
-            helpText={_("Obligatoire pour que l’équipe de coordination puisse vous contacter mais peut être caché aux participant·e·s.")}
+            label="Número de teléfono de contacto"
+            helpText="Obligatorio para que el equipo Claudialízate pueda contactarte, pero puede ser ocultado a l@s participantes."
             name="phone"
             autoComplete="tel"
             value={phone}

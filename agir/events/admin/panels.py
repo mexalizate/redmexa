@@ -835,7 +835,7 @@ class EventSubtypeAdmin(admin.ModelAdmin):
             },
         ),
         (
-            "Liens",
+            "ENLACES",
             {
                 "fields": (
                     "event_list_link",
@@ -1080,9 +1080,9 @@ class EventSubtypeAdmin(admin.ModelAdmin):
     class Media:
         css = {
             "all": (
-                "https://media.actionpopulaire.fr/fontawesome/css/all.min.css",
-                "https://media.actionpopulaire.fr/fontawesome/css/v4-font-face.min.css",
-                "https://media.actionpopulaire.fr/fontawesome/css/v4-shims.min.css",
+                "https://media.preprod.redmexa.com/fontawesome/css/all.min.css",
+                "https://media.preprod.redmexa.com/fontawesome/css/v4-font-face.min.css",
+                "https://media.preprod.redmexa.com/fontawesome/css/v4-shims.min.css",
             )
         }
 

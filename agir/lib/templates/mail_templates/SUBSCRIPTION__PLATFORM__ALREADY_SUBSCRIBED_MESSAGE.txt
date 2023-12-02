@@ -4,7 +4,7 @@ Nous sommes heureux que vous souhaitiez nous rejoindre...
 
 Vous pouvez vous connecter en passant par le formulaire de connexion, disponible en suivant le lien :
 
-https://actionpopulaire.fr/connexion/
+https://preprod.redmexa.com/connexion/
 
 
 Amitiés

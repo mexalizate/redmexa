@@ -13,7 +13,7 @@ import SecondaryMenu from "./SecondaryMenu";
 
 export const SecondarySideBar = () => (
   <SecondaryMenu
-    title="LIENS"
+    title="ENLACES"
     links={CONFIG.secondaryLinks}
     style={{ padding: 0 }}
   />

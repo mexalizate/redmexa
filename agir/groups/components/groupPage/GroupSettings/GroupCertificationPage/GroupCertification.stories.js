@@ -15,7 +15,7 @@ const Template = (args) => <GroupCertification {...args} />;
 export const Certifiable = Template.bind({});
 Certifiable.args = {
   certificationRequestURL:
-    "https://lafranceinsoumise.fr/groupes-appui/demande-de-certification/",
+    "https://preprod.redmexa.com/groupes-appui/demande-de-certification/",
   isCertified: false,
   certificationCriteria: {
     gender: true,

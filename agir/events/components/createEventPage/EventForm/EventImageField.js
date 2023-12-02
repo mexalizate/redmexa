@@ -45,7 +45,8 @@ const EventImageField = (props) => {
         `}
       >
         {!required && <em>{_("Facultative. ")}</em>}
-       {_(" L'image apparaîtra sur la page et sur les réseaux sociaux. Taille conseillée&nbsp;: 1200x630&nbsp;px ou plus.")}
+        La imagen aparecerá en la página y en redes sociales. Tamaño recomendado: 1200 x 630 px o más.
+       {/*_(" L'image apparaîtra sur la page et sur les réseaux sociaux. Taille conseillée&nbsp;: 1200x630&nbsp;px ou plus.")*/}
       </span>
       <ImageField
         name={name}

@@ -134,7 +134,7 @@ const GenericTab = (props) => {
       {Array.isArray(tabEvents) && tabEvents.length === 0 ? (
         <EmptyAgenda>
           <p>
-            {_("Pas d'événement")} {activeTab} ?{" "}
+            {/*_("Pas d'événement")*/} ¿No tiene acciones {activeTab} ?{" "}
             <Link route="createEvent">{_("Commencez par en créer un")}</Link>.
           </p>
         </EmptyAgenda>

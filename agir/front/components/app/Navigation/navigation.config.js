@@ -5,7 +5,7 @@ const config = {
     {
       id: "events",
       icon: "calendar",
-      title: _("Événements"),
+      title: "Acciones",
       route: "events",
       desktop: true,
       mobile: true,
@@ -58,7 +58,7 @@ const config = {
   secondaryLinks: [
     {
       id: "news",
-      title: _("Actualité de la France insoumise"),
+      title: "Noticias de Claudia",
       route: "news",
     },
     {
@@ -73,7 +73,7 @@ const config = {
     },
     {
       id: "help",
-      title: _("Besoin d'aide ?"),
+      title: "¿Necesitas ayuda?",
       route: "help",
     },
     {
@@ -83,7 +83,7 @@ const config = {
     },
     {
       id: "logout",
-      title: _("Déconnexion"),
+      title: "Desconectarse",
       route: "logout",
     },
   ],

@@ -53,7 +53,7 @@ const IconTextLink = styled(Link)`
 
 const DEFAULT_ROUTE = {
   route: "events",
-  label: "Retour à l'accueil",
+  label: "REGRESAR AL INICIO",
 };
 
 export const useBackLink = (link) => {

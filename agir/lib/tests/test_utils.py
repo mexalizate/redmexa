@@ -40,7 +40,7 @@ class YoutubeVideoIDfromURLTestCase(TestCase):
     invalid_urls = [
         "http://www.youtube.com/user/username#p/u/11/ZZ5LpwO-An4",
         "http://www.youtube.com/sandalsResorts#p/c/54B8C800269D7C1B/0/ZZ5LpwO-An4",
-        "https://visio.lafranceinsoumise.fr/ZZ5LpwO-An4",
+        "https://visio.preprod.redmexa.com/ZZ5LpwO-An4",
         "http://not-youtube/watch?v=ZZ5LpwO-An4",
         "https://www.youtube.evil/embed/ZZ5LpwO-An4",
     ]

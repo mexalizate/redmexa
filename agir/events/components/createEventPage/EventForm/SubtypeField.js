@@ -181,7 +181,7 @@ const SubtypeField = (props) => {
 
   return (
     <StyledField>
-      <label htmlFor={name}>Type d'événement</label>
+      <label htmlFor={name}>Tipo de acción</label>
       {error && (
         <p
           style={{
@@ -216,7 +216,7 @@ const SubtypeField = (props) => {
             type="button"
             disabled={disabled}
           >
-            {value ? _("Modifier") : _("+ d'options")}
+            {value ? "Modificar" : _("+ opciones")}
           </StyledPanelTrigger>
         )}
         {!!info && (

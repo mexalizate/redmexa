@@ -13,11 +13,11 @@ import {
 // import { useDebounce, useThrottle } from "@agir/lib/utils/hooks";
 
 export const EVENT_TYPES = {
-  nearEvents: "suggestions pour moi",
-  groupEvents: "dans mes groupes",
-  ongoingEvents: "en cours",
-  pastEvents: "passés",
-  organizedEvents: "organisés",
+  nearEvents: "SUGERIDOS",
+  groupEvents: "EN MIS GRUPOS",
+  ongoingEvents: "EN CURSO",
+  pastEvents: "PASADOS",
+  organizedEvents: "ORGANIZADOS",
 };
 
 const ENDPOINT = {

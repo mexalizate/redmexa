@@ -17,11 +17,11 @@ L'équipe de la France insoumise
 
 
 >> Je donne
-https://dons.lafranceinsoumise.fr/
+https://dons.preprod.redmexa.com/
 
 
 >> Je rejoins un groupe d'action
-https://lafranceinsoumise.fr/groupes-appui/carte-groupes-dappui/
+https://preprod.redmexa.com/groupes-appui/carte-groupes-dappui/
 
 
 -----------------------------------------------------------------

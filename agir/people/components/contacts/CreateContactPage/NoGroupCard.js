@@ -52,13 +52,13 @@ const NoGroupCard = () => {
       <div>
         <RawFeatherIcon name="alert-triangle" />
         <p>
-          <strong>{_("Vous ne faites partie d’aucun groupe d’action.")}</strong>{" "}
+          <strong>No formas parte de ningún grupo.{/*_("Vous ne faites partie d’aucun groupe d’action.")*/}</strong>{" "}
           {_("Rejoignez ou créez un groupe pour pouvoir abonner les soutiens que vous obtenez à votre groupe")}
         </p>
       </div>
       <footer>
         <Button link route="createGroup" color="primary">
-          {_("Créer un groupe")}
+        Crear un grupo{/*_("Créer un groupe")*/}
         </Button>
         <InlineSpacer size=".5rem" />
         <Button link route="groups">

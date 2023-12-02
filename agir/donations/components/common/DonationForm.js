@@ -66,7 +66,7 @@ const FORM_HELP_TEXT = {
   departement:
     "Indiquez le département auquel vous souhaitez reserver une partie de votre contribution",
   email:
-    "Si vous êtes déjà inscrit·e sur lafranceinsoumise.fr, utilisez l'adresse avec laquelle vous êtes inscrit·e",
+    "Si vous êtes déjà inscrit·e sur preprod.redmexa.com, utilisez l'adresse avec laquelle vous êtes inscrit·e",
   nationality: "Si double nationalité dont française : indiquez France",
   contactPhone:
     "Nous sommes dans l'obligation de pouvoir vous contacter en cas de demande de vérification par la CNCCFP.",
@@ -159,7 +159,7 @@ const DonationForm = ({
             Component={TextField}
             id="email"
             name="email"
-            label="E-mail*"
+            label="Email*"
             onChange={handleChange}
             value={formData.email}
             error={formErrors?.email}
@@ -265,7 +265,7 @@ const DonationForm = ({
             onClick={displayAddress2}
             type="button"
           >
-            + Ajouter une deuxième ligne pour l'adresse
+            + Agregar renglón a la dirección
           </CustomField>
         )}
         <GroupedFields>

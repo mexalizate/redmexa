@@ -148,8 +148,8 @@ export const MailTo = () => (
     {_("Besoin d'aide ? Une question ?")}
     <br />
     {_("Écrivez-nous à l'adresse")}{" "}
-    <Link href="mailto:procurations@actionpopulaire.fr">
-      procurations@actionpopulaire.fr
+    <Link href="mailto:procurations@preprod.redmexa.com">
+      procurations@preprod.redmexa.com
     </Link>
     &nbsp;!
   </div>

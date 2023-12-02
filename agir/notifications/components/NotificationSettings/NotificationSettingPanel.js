@@ -183,16 +183,12 @@ const NotificationSettingPanel = (props) => {
       >
         Paramètres de notifications&nbsp;<InlineBlock>et e-mails</InlineBlock>
       </h3>
-      <p>
-        Paramétrez la réception de vos e-mails et des notifications sur votre
-        téléphone.
-        <br />
-        Vous recevez les e-mails sur votre adresse <u>{user.email}</u>&nbsp;
-        <Link route="personalInformation">(modifier)</Link>
+      <p> Configura los emails y notificaciones que recibes en tu teléfono. Recibirás los emails en tu dirección email: [EMAIL]  <u>{user.email}</u>&nbsp;
+        <Link route="personalInformation">(modificarla)</Link>
       </p>
       <div style={{ marginLeft: "20px", marginBottom: "20px" }}>
         <Button small link route="contactConfiguration">
-          Gérer mes paramètres de contact
+        Configuración de contacto
         </Button>
       </div>
       <PageFadeIn ready={ready}>

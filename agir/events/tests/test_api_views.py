@@ -71,7 +71,7 @@ class CreateEventAPITestCase(APITestCase):
             "subtype": self.subtype.id,
             "organizerGroup": self.managed_group.id,
             "legal": "{}",
-            "onlineUrl": "https://visio.lafranceinsoumise.fr/abcdef",
+            "onlineUrl": "https://visio.preprod.redmexa.com/abcdef",
         }
 
     def test_anonymous_person_cannot_post(self):

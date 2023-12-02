@@ -105,11 +105,11 @@ const Login = () => {
       <h1>{_("Je me connecte")}</h1>
 
       <BlockSwitchLink>
-        <span>{_("Pas encore de compte ?")}</span>
+        <span>{/*_("Pas encore de compte ?")*/}¿No tienes cuenta? </span>
         &nbsp;
         <span>
           <Link route="signup" state={{ ...(location.state || {}), next }}>
-            {_("Je m'inscris")}
+            {/*_("Je m'inscris")*/}Registrarse
           </Link>
         </span>
       </BlockSwitchLink>
@@ -145,7 +145,7 @@ const Login = () => {
               fontSize: "14px",
             }}
           >
-            OU
+            O
           </div>
 
           {error && !!error.detail && (
@@ -166,14 +166,14 @@ const Login = () => {
                   fontSize: "14px",
                 }}
               >
-                {_("OU")}
+                {/*_("OU")*/}O
               </div>
             </>
           )}
 
           {!showMore ? (
             <ShowMore onClick={handleShowMore}>
-              {_("Se connecter avec un autre")}{" "}
+              {/*_("Se connecter avec un autre")*/}Conectarse con otro{" "}
               <InlineBlock>
                 {_("e-mail")}{" "}
                 <img
@@ -210,7 +210,7 @@ const Login = () => {
                   fontSize: "14px",
                 }}
               >
-                {_("OU")}
+                {/*_("OU")*/}O
               </div>
               <LoginFacebook />
             </>

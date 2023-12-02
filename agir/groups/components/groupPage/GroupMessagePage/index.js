@@ -74,7 +74,7 @@ const Page = ({ groupPk, messagePk }) => {
           group && group.isMember
             ? {
                 to: groupURL,
-                label: _("Voir le groupe"),
+                label: "Ver Grupo",
               }
             : {
                 route: "groups",

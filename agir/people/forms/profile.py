@@ -52,48 +52,45 @@ class PersonalInformationsForm(ImageFormMixin, forms.ModelForm):
 
         self.helper = FormHelper()
         self.helper.form_method = "POST"
-        self.helper.add_input(Submit("submit", "Enregistrer mes informations"))
+        self.helper.add_input(Submit("submit", "Guardar mis datos"))
 
         self.fields["location_address1"].label = _("Adresse")
         self.fields["location_address2"].label = False
         self.fields["location_country"].required = True
         self.fields["display_name"].required = True
-        self.fields["action_radius"].help_text = (
-            "Le rayon (en Km) autour de l'adresse indiquée qui sera utilisé pour "
-            "vous suggérer des actions près de vous (ex. suggestions d'événements "
-            "sur la page d'accueil)"
-        )
+        self.fields[
+            "action_radius"
+        ].help_text = "La distancia indicada (en km) nos permite sugerirte acciones cerca de ti a máximo esa distancia."
 
         description_gender = HTML(
             format_html(
                 """<p class="help-block">{help_text}</p>""",
-                help_text="Pour nous adresser à vous correctement, et pour mesurer la parité.",
+                help_text="Para dirigirnos a ti correctamente y asegurar la paridad de género.",
             )
         )
 
         description_address = HTML(
             format_html(
                 """<p class="help-block">{help_text}</p>""",
-                help_text="Permet de vous informer d'événements se déroulant près de chez vous.",
+                help_text="Para informarte de acciones cerca de ti.",
             )
         )
 
         description_birth_date = HTML(
             format_html(
                 """<p class="help-block">{help_text}</p>""",
-                help_text="Utilisée à des fins statistiques.",
+                help_text="Para fines estadísticos",
             )
         )
 
         description = HTML(
-            """<p class="marginbottommore">Ces informations nous permettront de nous adresser à vous plus correctement et
-            en fonction de votre situation géographique.</p>"""
+            """<p class="marginbottommore">Esta información nos permite dirigirte la información adecuada en función de tu zona y perfil.</p>"""
         )
 
         description_display_name = HTML(
             format_html(
                 """<p class="help-block">{help_text}</p>""",
-                help_text="Votre nom tel que les autres personnes le verront sur Action Populaire. Vous pouvez indiquer, par exemple, votre prénom ou un pseudonyme.",
+                help_text="El nombre con el que apareces en Claudialízate. Puede ser tu nombre o un apodo.",
             )
         )
 
@@ -273,33 +270,33 @@ class InformationConfidentialityForm(Form):
         help_text = '<p class="help-block">{}</p>'
 
         unsubscribe_title = HTML(
-            format_html(title, "Se désinscrire des lettres d'information")
+            format_html(title, "Desinscribirse de las listas de correos")
         )
         unsubscribe_button = Submit(
-            "unsubscribe", "Je veux me désabonner de toutes les lettres d'information"
+            "unsubscribe", "Quiero desinscribirme de todas las listas de correo"
         )
         unsubscribe_help_text = HTML(
             format_html(
                 help_text,
-                "Vous ne recevrez plus aucune des lettres d'information de la France insoumise. Vous pourrez continuer à utiliser Action populaire normalement.",
+                "Dejarás de recibir los emails de información de Claudialízate. Puedes seguir usando la plataforma como hasta ahora.",
             )
         )
         unsubscribe_block = Div(
             unsubscribe_title, unsubscribe_button, unsubscribe_help_text
         )
 
-        delete_account_title = HTML(format_html(title, "Supprimer votre compte"))
+        delete_account_title = HTML(format_html(title, "Eliminar mi cuenta"))
         delete_account_link = HTML(
             format_html(
                 '<a href="{url}" class="btn btn-wrap btn-danger">{label}</a>',
                 url=reverse("delete_account"),
-                label="Je veux supprimer mon compte définitivement",
+                label="Quiero eliminar mi cuenta definitivamente",
             )
         )
         delete_account_help_text = HTML(
             format_html(
                 help_text,
-                "Votre compte Action populaire et toutes vos données seront supprimées. Vous ne recevrez plus aucun mail de notre part.",
+                "Tu cuenta en Claudialízate y todos tus datos serán eliminados. Ya no recibirás emails de parte nuestra.",
             )
         )
         delete_account_block = Div(
@@ -309,8 +306,8 @@ class InformationConfidentialityForm(Form):
         description_block = HTML(
             format_html(
                 """<p>{description}<a href="{link_url}">{link_text}</a></p>""",
-                description="Vous pouvez en savoir plus sur le traitement de vos données personnelles en lisant ",
-                link_url="https://infos.actionpopulaire.fr/mentions-legales/",
+                description="Puedes saber más sobre el uso de tus datos personales consultando el aviso legal.",
+                link_url="https://infos.preprod.redmexa.com/mentions-legales/",
                 link_text="nos mentions légales.",
             )
         )
@@ -331,7 +328,7 @@ class ContactForm(LegacySubscribedMixin, ContactPhoneNumberMixin, forms.ModelFor
         self.helper.form_method = "POST"
         self.no_mail = data is not None and "no_mail" in data
         self.helper.layout = Layout(*self.get_fields())
-        self.fields["contact_phone"].label = "Numéro de contact"
+        self.fields["contact_phone"].label = "Número de celular"
 
     def get_fields(self, fields=None):
         fields = fields or []
@@ -344,7 +341,7 @@ class ContactForm(LegacySubscribedMixin, ContactPhoneNumberMixin, forms.ModelFor
                     </div>
                 """
         validation_link = format_html(
-            '<a href="{url}" class="btn btn-sm btn-default">{label}</a>',
+            '<a href="{url}" class="btn btn-sm btn-default" style="color: white !important;">{label}</a>',
             url=reverse("send_validation_sms"),
             label=_("Valider mon numéro de téléphone"),
         )
@@ -371,20 +368,20 @@ class ContactForm(LegacySubscribedMixin, ContactPhoneNumberMixin, forms.ModelFor
 
         btn_no_mails = Submit(
             "no_mail",
-            "Ne plus recevoir d'emails ou de SMS",
+            "Dejar de recibir emails o mensajes",
             css_class="btn-danger btn-block marginbottom",
         )
 
         btn_submit = Submit(
             "submit",
-            "Sauvegarder",
+            "Guardar",
             css_class="btn-primary btn-block marginbottom",
         )
 
         fields.extend(
             [
                 Fieldset(
-                    "Téléphone",
+                    "Teléfono",
                     Row(ThirdCol("contact_phone"), HalfCol(validation_block)),
                     "subscribed_sms",
                 ),
@@ -432,7 +429,7 @@ class ActivityAndSkillsForm(TagMixin, forms.ModelForm):
 
         self.helper = FormHelper()
         self.helper.form_method = "POST"
-        self.helper.add_input(Submit("submit", "Enregistrer mes informations"))
+        self.helper.add_input(Submit("submit", "Guardar mi perfil"))
 
         tag_cols = numpy.array_split([tag for tag, desc in skills_tags], 3)
 
@@ -440,8 +437,7 @@ class ActivityAndSkillsForm(TagMixin, forms.ModelForm):
             Row(
                 FullCol(
                     HTML(
-                        """<p>Lorsque nous cherchons des membres du mouvement avec des compétences particulières,
-                        nous utilisons les informations saisies dans ce formulaire.</p>"""
+                        """<p>Al indicar tu perfil e intereses, nos permites darte la información que más te puede interesar y ponerte en contacto con más personas de mismo perfil</p>"""
                     )
                 ),
                 FullCol(

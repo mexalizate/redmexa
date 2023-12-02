@@ -78,7 +78,7 @@ class Migration(migrations.Migration):
             model_name="eventthemetype",
             name="event_speaker_request_email_from",
             field=models.EmailField(
-                default="support@actionpopulaire.fr",
+                default="support@preprod.redmexa.com",
                 help_text="Cette adresse sera utilisé comme expéditeur de l'e-mail envoyé aux intervenant·es pour demander de renseigner leur disponibilité.",
                 max_length=255,
                 verbose_name="expéditeur de l'e-mail aux intervenant·es",

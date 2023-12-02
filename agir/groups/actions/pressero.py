@@ -20,7 +20,7 @@ class PresseroAuthentication(AuthBase):
 
 
 PRESSERO_LOGIN = "person-{pk}"
-PRESSERO_EMAIL = "person-{pk}@lafranceinsoumise.fr"
+PRESSERO_EMAIL = "person-{pk}@preprod.redmexa.com"
 
 
 def is_pressero_enabled():

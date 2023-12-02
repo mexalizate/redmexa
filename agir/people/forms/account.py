@@ -120,7 +120,7 @@ class SendValidationSMSForm(forms.ModelForm):
         )
 
         phone_input = Field("contact_phone")
-        submit_button = Submit("submit", "Recevoir mon code")
+        submit_button = Submit("submit", "Recibir código")
 
         fields = [Row(HalfCol(phone_input, submit_button))]
         self.helper = FormHelper()

@@ -65,7 +65,7 @@ const OnlineUrlField = (props) => {
       <span>{label}</span>
       <CheckboxField
         disabled={disabled}
-        label={_("Se déroule en ligne")}
+        label="La acción es solo en línea"
         value={isOnline}
         onChange={handleChangeOnline}
       />

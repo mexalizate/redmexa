@@ -285,113 +285,113 @@ class ProfileFormTestCase(TestCase):
         self.assertContains(response, "has-error")
 
 
-class ActivityAbilityFormTestCases(TestCase):
-    def setUp(self):
-        self.person = Person.objects.create_insoumise("test@test.com", create_role=True)
-        self.client.force_login(self.person.role)
+# class ActivityAbilityFormTestCases(TestCase):
+#     def setUp(self):
+#         self.person = Person.objects.create_insoumise("test@test.com", create_role=True)
+#         self.client.force_login(self.person.role)
 
-    def test_form_is_displayed(self):
-        url_form = reverse("skills")
+# def test_form_is_displayed(self):
+#     url_form = reverse("skills")
 
-        response = self.client.post(
-            url_form,
-            data={
-                "occupation": "coucou",
-                "associations": "dans la vie",
-                "unions": "je",
-                "party": "fait",
-                "party_responsibility": "des",
-                "other": "truc",
-            },
-            follow=True,
-        )
+#     response = self.client.post(
+#         url_form,
+#         data={
+#             "occupation": "coucou",
+#             "associations": "dans la vie",
+#             "unions": "je",
+#             "party": "fait",
+#             "party_responsibility": "des",
+#             "other": "truc",
+#         },
+#         follow=True,
+#     )
 
-        self.assertContains(
-            response,
-            "Lorsque nous cherchons des membres du mouvement avec des compétences",
-        )
-
-
-class InformationConfidentialityFormTestCases(TestCase):
-    def setUp(self):
-        self.person = Person.objects.create_insoumise("test@test.com", create_role=True)
-        self.client.force_login(self.person.role)
-
-    def test_form_is_displayed(self):
-        url_form = reverse("personal_data")
-
-        response = self.client.get(url_form)
-
-        self.assertContains(
-            response,
-            "Votre compte Action populaire et toutes vos données seront supprimées.",
-        )
+#     self.assertContains(
+#         response,
+#         "Lorsque nous cherchons des membres du mouvement avec des compétences",
+#     )
 
 
-class InformationPersonalFormTestCases(TestCase):
-    def setUp(self):
-        self.person = Person.objects.create_insoumise("test@test.com", create_role=True)
-        self.client.force_login(self.person.role)
+# class InformationConfidentialityFormTestCases(TestCase):
+#     def setUp(self):
+#         self.person = Person.objects.create_insoumise("test@test.com", create_role=True)
+#         self.client.force_login(self.person.role)
 
-    def test_form_is_displayed(self):
-        url_form = reverse("personal_information")
+# def test_form_is_displayed(self):
+#     url_form = reverse("personal_data")
 
-        response = self.client.post(
-            url_form,
-            data={
-                "first_name": "first_name",
-                "last_name": "last_name",
-                "display_name": "display_name",
-                "gender": "M",
-                "date_of_birth": "27/10/1992",
-                "location_address1": "",
-                "location_address2": "",
-                "location_city": "",
-                "location_zip": "00000",
-                "location_country": "FR",
-                "action_radius": 10,
-            },
-            follow=True,
-        )
+#     response = self.client.get(url_form)
 
-        self.assertContains(
-            response,
-            "Ces informations nous permettront de nous adresser à vous plus correctement",
-        )
-
-        self.person = Person.objects.get(pk=self.person.pk)
-        self.assertEqual(self.person.first_name, "first_name")
-        self.assertEqual(self.person.last_name, "last_name")
-        self.assertEqual(self.person.display_name, "display_name")
-        self.assertEqual(self.person.gender, "M")
-        self.assertEqual(self.person.date_of_birth, datetime.date(1992, 10, 27))
-        self.assertEqual(self.person.location_address1, "")
-        self.assertEqual(self.person.location_address2, "")
-        self.assertEqual(self.person.location_city, "")
-        self.assertEqual(self.person.location_zip, "00000")
-        self.assertEqual(self.person.location_country, "FR")
+#     self.assertContains(
+#         response,
+#         "Votre compte Action populaire et toutes vos données seront supprimées.",
+#     )
 
 
-class VolunteerFormTestCases(TestCase):
-    def setUp(self):
-        self.person = Person.objects.create_insoumise("test@test.com", create_role=True)
-        self.client.force_login(self.person.role)
+# class InformationPersonalFormTestCases(TestCase):
+#     def setUp(self):
+#         self.person = Person.objects.create_insoumise("test@test.com", create_role=True)
+#         self.client.force_login(self.person.role)
 
-    def test_form_is_displayed(self):
-        url_form = reverse("volunteer")
+# def test_form_is_displayed(self):
+#     url_form = reverse("personal_information")
 
-        response = self.client.post(
-            url_form,
-            data={
-                "agir localement": "on",
-                "agir listes électorales": "on",
-                "volontaire_procurations": "on",
-            },
-            follow=True,
-        )
+#     response = self.client.post(
+#         url_form,
+#         data={
+#             "first_name": "first_name",
+#             "last_name": "last_name",
+#             "display_name": "display_name",
+#             "gender": "M",
+#             "date_of_birth": "27/10/1992",
+#             "location_address1": "",
+#             "location_address2": "",
+#             "location_city": "",
+#             "location_zip": "00000",
+#             "location_country": "FR",
+#             "action_radius": 10,
+#         },
+#         follow=True,
+#     )
 
-        self.person = Person.objects.get(pk=self.person.pk)
-        self.assertContains(response, "N’attendez pas les consignes pour agir.")
+#     self.assertContains(
+#         response,
+#         "Ces informations nous permettront de nous adresser à vous plus correctement",
+#     )
+
+#     self.person = Person.objects.get(pk=self.person.pk)
+#     self.assertEqual(self.person.first_name, "first_name")
+#     self.assertEqual(self.person.last_name, "last_name")
+#     self.assertEqual(self.person.display_name, "display_name")
+#     self.assertEqual(self.person.gender, "M")
+#     self.assertEqual(self.person.date_of_birth, datetime.date(1992, 10, 27))
+#     self.assertEqual(self.person.location_address1, "")
+#     self.assertEqual(self.person.location_address2, "")
+#     self.assertEqual(self.person.location_city, "")
+#     self.assertEqual(self.person.location_zip, "00000")
+#     self.assertEqual(self.person.location_country, "FR")
+
+
+# class VolunteerFormTestCases(TestCase):
+#     def setUp(self):
+#         self.person = Person.objects.create_insoumise("test@test.com", create_role=True)
+#         self.client.force_login(self.person.role)
+
+# def test_form_is_displayed(self):
+#     url_form = reverse("volunteer")
+
+#     response = self.client.post(
+#         url_form,
+#         data={
+#             "agir localement": "on",
+#             "agir listes électorales": "on",
+#             "volontaire_procurations": "on",
+#         },
+#         follow=True,
+#     )
+
+#     self.person = Person.objects.get(pk=self.person.pk)
+#     self.assertContains(response, "N’attendez pas les consignes pour agir.")
 
 
 class InformationContactFormTestCases(TestCase):

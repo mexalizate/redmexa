@@ -103,7 +103,7 @@ class AnnouncementTestCase(TestCase):
     def test_can_get_all_announcements(self):
         a1 = Announcement.objects.create(
             title="1ère annonce",
-            link="https://lafranceinsoumise.fr",
+            link="https://preprod.redmexa.com",
             content="SUPER",
         )
 
@@ -120,7 +120,7 @@ class AnnouncementTestCase(TestCase):
         )
         a1 = Announcement.objects.create(
             title="1ère annonce",
-            link="https://lafranceinsoumise.fr",
+            link="https://preprod.redmexa.com",
             content="SUPER",
             segment=segment_insoumis,
         )
@@ -134,7 +134,7 @@ class AnnouncementTestCase(TestCase):
     def test_activity_is_created_if_none_exists_for_authenticated_person(self):
         announcement = Announcement.objects.create(
             title="1ère annonce",
-            link="https://lafranceinsoumise.fr",
+            link="https://preprod.redmexa.com",
             content="SUPER",
         )
         self.assertFalse(
@@ -152,7 +152,7 @@ class AnnouncementTestCase(TestCase):
     def test_activity_is_not_created_if_one_exists_for_the_authenticated_person(self):
         announcement = Announcement.objects.create(
             title="1ère annonce",
-            link="https://lafranceinsoumise.fr",
+            link="https://preprod.redmexa.com",
             content="SUPER",
         )
         Activity.objects.create(
@@ -270,13 +270,13 @@ class AnnouncementAPITestCase(TestCase):
         self.person = Person.objects.create_insoumise(email="a@a.a", create_role=True)
         self.non_custom_announcement = Announcement.objects.create(
             title="Non Custom Announcement",
-            link="https://lafranceinsoumise.fr",
+            link="https://preprod.redmexa.com",
             content="SUPER",
             custom_display="",
         )
         self.custom_announcement = Announcement.objects.create(
             title="Custom Announcement",
-            link="https://lafranceinsoumise.fr",
+            link="https://preprod.redmexa.com",
             content="SUPER",
             custom_display="custom",
         )
@@ -339,7 +339,7 @@ class UserCustomAnnouncementAPITestCase(TestCase):
         self.person = Person.objects.create_insoumise(email="a@a.a", create_role=True)
         self.custom_announcement = Announcement.objects.create(
             title="Custom Announcement",
-            link="https://lafranceinsoumise.fr",
+            link="https://preprod.redmexa.com",
             content="SUPER",
             custom_display="custom",
         )

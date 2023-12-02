@@ -29,7 +29,7 @@ def add_message(backend, user, details, new_association, *args, **kwargs):
                     f"Vous n'avez pas de compte sur la France insoumise avec l'adresse email {email}. "
                     "Si vous possédez un compte avec une autre adresse email, vous pouvez vous connecter avec cette adresse, "
                     "puis associer votre compte France insoumise à votre compte Facebook. "
-                    'Si vous n\'avez pas de compte, vous devez <a href="https://lafranceinsoumise.fr/">rejoindre'
+                    'Si vous n\'avez pas de compte, vous devez <a href="https://preprod.redmexa.com/">rejoindre'
                     "la France insoumise</a>."
                 ),
             )

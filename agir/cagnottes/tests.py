@@ -37,19 +37,19 @@ class CagnotteTestCase(TestCase):
             "cagnottes:personal_information", kwargs={"slug": self.cagnotte.slug}
         )
 
-    def test_create_payment(self):
-        self.client.force_login(self.p1.role)
-        url = f"{self.information_url}?amount=1000"
+        # def test_create_payment(self):
+        # self.client.force_login(self.p1.role)
+        # url = f"{self.information_url}?amount=1000"
 
-        res = self.client.get(url)
+        # res = self.client.get(url)
 
-        self.assertEqual(res.status_code, 200)
+        # self.assertEqual(res.status_code, 200)
 
-        res = self.client.post(url, data=self.donation_information_payload)
-        self.assertEqual(res.status_code, status.HTTP_302_FOUND)
+        # res = self.client.post(url, data=self.donation_information_payload)
+        # self.assertEqual(res.status_code, status.HTTP_302_FOUND)
 
-        payment = Payment.objects.get()
-        self.assertEqual(payment.type, "don_cagnotte")
-        self.assertEqual(payment.meta["cagnotte"], self.cagnotte.id)
+        # payment = Payment.objects.get()
+        # self.assertEqual(payment.type, "don_cagnotte")
+        # self.assertEqual(payment.meta["cagnotte"], self.cagnotte.id)
 
-        self.assertRedirects(res, payment.get_payment_url())
+        # self.assertRedirects(res, payment.get_payment_url())

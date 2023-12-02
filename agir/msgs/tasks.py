@@ -31,9 +31,9 @@ L'équipe d'Action populaire (“🤖”).
     with connection:
         email = EmailMultiAlternatives(
             connection=connection,
-            from_email="robot@actionpopulaire.fr",
+            from_email="robot@preprod.redmexa.com",
             subject=subject,
-            to=["groupes@actionpopulaire.fr"],
+            to=["groupes@preprod.redmexa.com"],
             body=body_text,
         )
 

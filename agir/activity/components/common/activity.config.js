@@ -130,7 +130,7 @@ const ACTIVITY_CONFIG = {
             to: routeConfig.groupDetails.getLink({
               groupPk: group.id,
             }),
-            label: _("Voir le groupe"),
+            label: "Ver Grupo",
           }
         : null,
   },

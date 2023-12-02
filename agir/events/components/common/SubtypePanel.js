@@ -115,7 +115,7 @@ const SubtypeOption = (props) => {
         )}
       </abbr>
       <Button type="button" color="choose" onClick={handleClick} small>
-        Choisir
+        Seleccionar
       </Button>
     </StyledOption>
   );
@@ -245,7 +245,7 @@ export const SubtypePicker = (props) => {
           name="ev-st-search"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          placeholder={_("Rechercher un type d'événement")}
+          placeholder="Buscar tipos de evento"
           aria-label={_("Rechercher un type d'événement")}
           icon="magnifying-glass:solid"
           label=""
@@ -297,7 +297,7 @@ const SubtypePanel = (props) => {
       shouldShow={shouldShow}
       onClose={onClose}
       onBack={onClose}
-      title={_("Type de l'événement")}
+      title={"Tipo de evento"}
       noScroll
     >
       <SubtypePicker {...rest} />

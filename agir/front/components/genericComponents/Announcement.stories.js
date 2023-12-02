@@ -31,5 +31,5 @@ Default.args = {
     mobile: "https://loremflickr.com/800/600",
     desktop: "https://loremflickr.com/510/260",
   },
-  link: "https://actionpopulaire.fr",
+  link: "https://preprod.redmexa.com",
 };

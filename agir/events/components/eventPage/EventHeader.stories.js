@@ -89,5 +89,5 @@ export const OnlineEvent = Template.bind({});
 OnlineEvent.args = {
   ...Upcoming.args,
   rsvped: true,
-  onlineUrl: "https://actionpopulaire.fr",
+  onlineUrl: "https://preprod.redmexa.com",
 };

@@ -17,11 +17,13 @@ const ONBOARDING_TYPE = {
     title: <>{_("Organisez un événement près de chez vous !")}</>,
     body: (
       <>
-       {_(" Agissez et organisez un événement, tel qu’une action de solidarité, une réunion en ligne pour discuter du programme, une écoute collective... Organisez-vous avec d’autres personnes pour soutenir et faire vivre le mouvement près de chez vous !")}
+        Organiza una acción, como una reunión, un brigadeo o una charla. ¡Organízate con más personas para darle vida al movimiento en tu zona!
+
+       {/*_(" Agissez et organisez un événement, tel qu’une action de solidarité, une réunion en ligne pour discuter du programme, une écoute collective... Organisez-vous avec d’autres personnes pour soutenir et faire vivre le mouvement près de chez vous !")*/}
       </>
     ),
     primaryLink: {
-      label: _("Créer un événement"),
+      label: "Crear una acción",
       route: "createEvent",
     },
   },
@@ -33,18 +35,19 @@ const ONBOARDING_TYPE = {
           {_("Les groupes d'action permettent aux militants de s’organiser dans leur quartier ou dans leur commune.")}
         </p>
         <p>
-          {_("Rejoignez un groupe, agissez sur le terrain et organisez des moments de réflexions politiques !")}
+          {/*_("Rejoignez un groupe, agissez sur le terrain et organisez des moments de réflexions politiques !")*/}
+          ¡Únase a un grupo, actúe  y organice momentos de reflexión política!
         </p>
       </>
     ),
     mapIframe: "groupsMap",
     primaryLink: {
-      label: _("Voir les groupes dans ma commune"),
+      label: "Ver los grupos de mi zona",
       route: "groupMap",
     },
   },
   group__creation: {
-    title: <>{_("Ou bien créez votre groupe !")}</>,
+    title: <>¡O crea tu grupo!{/*_("Ou bien créez votre groupe !")*/}</>,
     body: (
       <>
         <p>
@@ -53,7 +56,7 @@ const ONBOARDING_TYPE = {
         <p>
          {_(" Besoin d’inspiration pour animer votre groupe ?")}{" "}
           <a
-            href="https://infos.actionpopulaire.fr/"
+            href="https://infos.preprod.redmexa.com/"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -64,7 +67,7 @@ const ONBOARDING_TYPE = {
       </>
     ),
     primaryLink: {
-      label: _("Créer un groupe"),
+      label: "Crear un grupo",
       route: "createGroup",
     },
   },
@@ -88,19 +91,21 @@ const ONBOARDING_TYPE = {
   group__action: {
     img: onboardingActionImage,
     title:
-      _("Rejoignez un groupe d’action de votre commune pour militer localement"),
+      "Únase a una acción en su municipio para hacer campaña a nivel local",
     body: (
       <>
-        {_("Les groupes d’actions permettent aux militants de s’organiser dans leur quartier ou dans leur commune. Rejoignez un groupe, agissez sur le terrain et organisez des moments de réflexions politiques !")}
+      
+Los grupos de acción permiten a los activistas organizarse en su barrio o municipio. ¡Únase a un grupo, actúe sobre el terreno y organice momentos de reflexión política!
+        {/*_("Les groupes d’actions permettent aux militants de s’organiser dans leur quartier ou dans leur commune. Rejoignez un groupe, agissez sur le terrain et organisez des moments de réflexions politiques !")*/}
       </>
     ),
     primaryLink: {
-      label: _("Rejoindre un groupe"),
+      label: "Unirse a un grupo",
       route: "groupMap",
     },
     secondaryLink: {
       href: "groupes/creer/",
-      label: _("Créer un groupe"),
+      label: "Crear un grupo",
     },
   },
 };

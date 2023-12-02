@@ -646,7 +646,7 @@ const MessageCard = (props) => {
                           name="edit-2"
                           color={style.primary500}
                         />
-                        {_("Modifier")}
+                        Modificar
                       </button>
                     )}
                     {canDelete && (

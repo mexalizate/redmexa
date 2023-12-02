@@ -90,9 +90,10 @@ export const ActionTools = () => {
           <RawFeatherIcon name="calendar" />
         </i>
         <span>
-          <strong>{_("Organiser une action")}</strong>
+          <strong>{/*_("Organiser une action")*/}Organizar una acción</strong>
           <span>
-           {_(" Porte-à-porte, tractage, caravane... Des fiches pratiques sont à votre disposition vour vous aider dans l'organisation de vos actions.")}
+          Brigadeo, caravanas… hay guías de acción a tu disposición para ayudar a organizar tus acciones
+           {/*_(" Porte-à-porte, tractage, caravane... Des fiches pratiques sont à votre disposition vour vous aider dans l'organisation de vos actions.")*/}
           </span>
           <span
             css={`
@@ -103,15 +104,15 @@ export const ActionTools = () => {
             `}
           >
             <Button small link route="createEvent">
-              {_("Créer un événement")}
+              {/*_("Créer un événement")*/}Crear una acción
             </Button>
             <Button small link route="helpIndex">
-              {_("Voir les fiches pratiques")}
+              {/*_("Voir les fiches pratiques")*/}Ver las fichas prácticas
             </Button>
           </span>
         </span>
       </StyledCardItem>
-      <StyledCardItem route="materiel">
+      {/*<StyledCardItem route="materiel">
         <i
           aria-hidden="true"
           css={`
@@ -128,12 +129,12 @@ export const ActionTools = () => {
           </span>
         </span>
         <RawFeatherIcon aria-hidden="true" name="chevron-right" />
-      </StyledCardItem>
+      </StyledCardItem>*/}
       <StyledCardItem route="cafePopulaireRequest">
         <i
           aria-hidden="true"
           css={`
-            background-color: #00b171;
+            background-color: ${({ theme }) => theme.secondary500};
             color: ${({ theme }) => theme.white};
           `}
         >
@@ -142,7 +143,8 @@ export const ActionTools = () => {
         <span>
           <strong>{_("Organiser un café populaire")}</strong>
           <span>
-            {_("Le café populaire est un exercice d’éducation populaire, de débat d’idées, et de formation politique mis en place par la France insoumise et organisé par l’Institut La Boétie, qui fournit un catalogue de thèmes et d'intervenant·es. Les cafés populaires peuvent être organisés partout en France et sont ouvert à tou·tes les citoyen·nes.")}
+          Un encuentro de formación política es un espacio abierto de debate y de discusión política, en el que se pueden proponer temas y participantes.
+            {/*_("Le café populaire est un exercice d’éducation populaire, de débat d’idées, et de formation politique mis en place par la France insoumise et organisé par l’Institut La Boétie, qui fournit un catalogue de thèmes et d'intervenant·es. Les cafés populaires peuvent être organisés partout en France et sont ouvert à tou·tes les citoyen·nes.")*/}
           </span>
           <span
             css={`
@@ -168,7 +170,8 @@ export const ActionTools = () => {
         <span>
           <strong>{_("Ajouter un contact")}</strong>
           <span>
-           {_(" Ajoutez un nouveau soutien à Action Populaire et à votre groupe d’action en quelques clics.")}
+          Agrega a tus amig@s y conocid@s a Claudialízate y a tu grupo.
+           {/*_(" Ajoutez un nouveau soutien à Action Populaire et à votre groupe d’action en quelques clics.")*/}
           </span>
         </span>
         <RawFeatherIcon aria-hidden="true" name="chevron-right" />
