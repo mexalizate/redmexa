@@ -912,7 +912,8 @@ SMS_DISABLED = os.environ.get("SMS_DISABLED", "true").lower() == "true"
 
 INFOBIP_BASE_URL = os.environ.get("INFOBIP_BASE_URL")
 INFOBIP_API_KEY = os.environ.get("INFOBIP_API_KEY")
-INFOBIP_DEFAULT_SENDER
+INFOBIP_DEFAULT_SENDER = os.environ.get("INFOBID_DEFAULT_SENDER")
+
 
 # Short login codes settings
 SHORT_CODE_VALIDITY = 90
