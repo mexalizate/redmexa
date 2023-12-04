@@ -3,7 +3,7 @@ import logging
 from django.conf import settings
 from phonenumbers import number_type, PhoneNumberType
 
-from agir.lib.sms import ovh, sfr
+from agir.lib.sms import ovh, sfr, infobip
 from agir.lib.sms.common import (
     compute_sms_length_information,
     SMSSendException,
@@ -14,7 +14,7 @@ from agir.lib.utils import grouper
 
 logger = logging.getLogger(__name__)
 
-SMS_PROVIDERS = {"OVH": ovh, "SFR": sfr}
+SMS_PROVIDERS = {"OVH": ovh, "SFR": sfr, "INFOBIP": infobip}
 SMS_PROVIDER = SMS_PROVIDERS.get(settings.SMS_PROVIDER)
 
 

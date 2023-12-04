@@ -488,6 +488,7 @@ if not DEBUG:
         "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
     )
 
+
 MEDIA_URL = "/media/"
 
 MEDIA_ROOT = os.environ.get("MEDIA_ROOT", "media")
@@ -889,25 +890,29 @@ PAYMENT_MODES = [
 ]
 
 # SMS settings
-SMS_PROVIDER = os.environ.get("SMS_PROVIDER", "SFR")  # OVH or SFR
+SMS_PROVIDER = os.environ.get("SMS_PROVIDER", "INFOBIP")  # OVH or SFR
 SMS_DISABLED = os.environ.get("SMS_DISABLED", "true").lower() == "true"
 
 # OVH Settings
-OVH_SMS_SERVICE = os.environ.get("OVH_SMS_SERVICE")
-OVH_APPLICATION_KEY = os.environ.get("OVH_APPLICATION_KEY")
-OVH_APPLICATION_SECRET = os.environ.get("OVH_APPLICATION_SECRET")
-OVH_CONSUMER_KEY = os.environ.get("OVH_CONSUMER_KEY")
-OVH_DEFAULT_SENDER = os.environ.get("OVH_DEFAULT_SENDER", "FI")
-SMS_BUCKET_MAX = 3
-SMS_BUCKET_INTERVAL = 600
-SMS_BUCKET_IP_MAX = 10
-SMS_BUCKET_IP_INTERVAL = 600
+# OVH_SMS_SERVICE = os.environ.get("OVH_SMS_SERVICE")
+# OVH_APPLICATION_KEY = os.environ.get("OVH_APPLICATION_KEY")
+# OVH_APPLICATION_SECRET = os.environ.get("OVH_APPLICATION_SECRET")
+# OVH_CONSUMER_KEY = os.environ.get("OVH_CONSUMER_KEY")
+# OVH_DEFAULT_SENDER = os.environ.get("OVH_DEFAULT_SENDER", "FI")
+# SMS_BUCKET_MAX = 3
+# SMS_BUCKET_INTERVAL = 600
+# SMS_BUCKET_IP_MAX = 10
+# SMS_BUCKET_IP_INTERVAL = 600
 
 # SFR settings
-SFR_SERVICE_ID = os.environ.get("SFR_SERVICE_ID")
-SFR_SPACE_ID = os.environ.get("SFR_SPACE_ID")
-SFR_PASSWORD = os.environ.get("SFR_PASSWORD")
-SFR_DEFAULT_SENDER = "LFI"
+# SFR_SERVICE_ID = os.environ.get("SFR_SERVICE_ID")
+# SFR_SPACE_ID = os.environ.get("SFR_SPACE_ID")
+# SFR_PASSWORD = os.environ.get("SFR_PASSWORD")
+# SFR_DEFAULT_SENDER = "LFI"
+
+INFOBIP_BASE_URL = os.environ.get("INFOBIP_BASE_URL")
+INFOBIP_API_KEY = os.environ.get("INFOBIP_API_KEY")
+INFOBIP_DEFAULT_SENDER
 
 # Short login codes settings
 SHORT_CODE_VALIDITY = 90
@@ -970,7 +975,7 @@ ANYMAIL = {
     "AMAZON_SES_CLIENT_PARAMS": {
         "aws_access_key_id": os.environ.get("AWS_ACCESS_KEY_FOR_ANYMAIL_SES"),
         "aws_secret_access_key": os.environ.get("AWS_SECRET_KEY_FOR_ANYMAIL_SES"),
-        "region_name": "eu-west-1",
+        "region_name": os.environ.get("AWS_REGION_NAME_FOR_ANYMAIL_SES"),
         "config": {"connect_timeout": 30, "read_timeout": 30},
     },
     "WEBHOOK_SECRET": os.environ.get("SENDGRID_SES_WEBHOOK_USER", "fi")
