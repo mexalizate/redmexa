@@ -28,7 +28,7 @@ def send_sms(
         body["messages"][0]["sendAt"] = at.isoformat()
 
     r = requests.post(
-        settings.INFOBIP_BASE_URL,
+        f"{settings.INFOBIP_BASE_URL}/text/advanced",
         json=body,
         headers={"Authorization": f"App {settings.INFOBIP_API_KEY}"},
     )
