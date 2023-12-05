@@ -54,7 +54,7 @@ class SMSSendingTestCase(TestCase):
         from agir.lib import sms
 
         self.original_send_sms = agir.lib.sms.SMS_PROVIDER.send_sms
-        self.original_bulk_group_size = sms.SMS_PROVIDER.BULK_GROUP_SIZE
+        self.original_bulk_group_size = sms.SMS_PROVIDER.BULK_GROUP_SIZE = 2
 
         agir.lib.sms.SMS_PROVIDER.send_sms = _mock_send_sms
         sms.SMS_PROVIDER.BULK_GROUP_SIZE = 2
