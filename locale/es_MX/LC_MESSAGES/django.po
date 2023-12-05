@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-23 17:59-0600\n"
+"POT-Creation-Date: 2023-11-29 11:53-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -394,11 +394,11 @@ msgstr "Otro dato"
 
 #: agir/activity/models.py:299
 msgid "Notice d'activité"
-msgstr ""
+msgstr "Notificación de actividad"
 
 #: agir/activity/models.py:300
 msgid "Notices d'activité"
-msgstr ""
+msgstr "Notificaciones de actividad"
 
 #: agir/activity/models.py:335
 #, fuzzy
@@ -467,7 +467,7 @@ msgstr ""
 
 #: agir/activity/models.py:407
 msgid "Annonce"
-msgstr ""
+msgstr "Notificación"
 
 #: agir/activity/models.py:418 agir/donations/models.py:381
 #: agir/gestion/admin/panels.py:932 agir/people/person_forms/models.py:54
@@ -588,11 +588,11 @@ msgstr ""
 
 #: agir/activity/models.py:741
 msgid "Annonce push"
-msgstr ""
+msgstr "Notificación push"
 
 #: agir/activity/models.py:742
 msgid "Annonces push"
-msgstr ""
+msgstr "Notificaciones push"
 
 #: agir/api/admin_site.py:13
 msgid "Email address"
