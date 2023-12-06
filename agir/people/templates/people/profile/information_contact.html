@@ -90,5 +90,23 @@
         {% crispy form %}
       </div>
     </div>
+    <script>
+      const id_contact_phone = document.getElementById('id_contact_phone');
+      const intlTel_idp = window.intlTelInput(id_contact_phone, {
+        autoHideDialCode:true,
+        separateDialCode: false,
+        nationalMode: true,
+        formatOnDisplay: false,
+        initialCountry: 'auto',
+        utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js",
+      });
+      events = ['input', 'click', 'change'];
+      events.forEach(element => {
+        id_contact_phone.addEventListener(element, function() {
+          var fullNumber = intlTel_idp.getNumber();
+          id_contact_phone.value = fullNumber;
+        });
+      });
+    </script>
   </div>
 {% endblock %}
