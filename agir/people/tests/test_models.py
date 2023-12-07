@@ -130,7 +130,7 @@ class ContactPhoneTestCase(TestCase):
 
     def test_unverified_when_changing_number(self):
         self.person.contact_phone_status = Person.CONTACT_PHONE_VERIFIED
-        self.person.contact_phone = "0687654321"
+        self.person.contact_phone = "+525566778899"
         self.assertEqual(
             self.person.contact_phone_status, Person.CONTACT_PHONE_UNVERIFIED
         )
@@ -138,7 +138,7 @@ class ContactPhoneTestCase(TestCase):
     def test_still_verified_when_changing_for_same_number(self):
         self.person.contact_phone_status = Person.CONTACT_PHONE_VERIFIED
 
-        self.person.contact_phone = "0612345678"
+        self.person.contact_phone = "+526644556677"
         self.assertEqual(
             self.person.contact_phone_status, Person.CONTACT_PHONE_VERIFIED
         )
