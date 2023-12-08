@@ -237,7 +237,7 @@ MIDDLEWARE = [
 if ENABLE_DEBUG_TOOLBAR:
     INSTALLED_APPS.append("debug_toolbar")
     MIDDLEWARE.insert(0, "debug_toolbar.middleware.DebugToolbarMiddleware")
-    INTERNAL_IPS = ["127.0.0.1", "192.168.33.1"]
+    INTERNAL_IPS = ["127.0.0.1", "192.168.33.1", "192.168.1.113"]
 
 SILKY_INTERCEPT_FUNC = (
     lambda request: (
@@ -760,7 +760,7 @@ CELERY_RESULT_BACKEND = os.environ.get("CELERY_BROKER_URL", "redis://")
 
 DEFAULT_EVENT_IMAGE = "front/images/default_event_pic.jpg"
 
-PHONENUMBER_DEFAULT_REGION = "FR"
+# PHONENUMBER_DEFAULT_REGION = "MX"
 
 CONNECTION_LINK_VALIDITY = 7
 

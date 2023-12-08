@@ -61,10 +61,10 @@ class ProcurationTestCase(TestCase):
             data={
                 "nom": "Groing",
                 "prenom": "Jean",
-                "code_postal": "75003",
+                "code_postal": "06000",
                 "bureau": "0389",
                 "email": "jean.groing@gmail.com",
-                "phone": "0683920482",
+                "phone": "+525566235784",
                 "autres": "Rien de spécial",
             },
         )
@@ -82,7 +82,7 @@ class ProcurationTestCase(TestCase):
         self.assertIn("Jean Groing", message.body)
         self.assertIn("jean.groing@gmail.com", message.body)
         self.assertIn("0389", message.body)
-        self.assertIn("+33 6 83 92 04 82", message.body)
+        self.assertIn("+52 55 6623 5784", message.body)
         self.assertIn("Rien de spécial", message.body)
 
     # def test_can_subscribe(self):
@@ -144,10 +144,10 @@ class ProcurationTestCase(TestCase):
             data={
                 "nom": "Groing",
                 "prenom": "Jean",
-                "code_postal": "75003",
+                "code_postal": "06000",
                 "bureau": "0389",
                 "email": "jean.groing@gmail.com",
-                "phone": "0683920482",
+                "phone": "+525566235784",
                 "autres": "Rien de spécial",
                 "subscribed": "Y",
             },
@@ -164,4 +164,4 @@ class ProcurationTestCase(TestCase):
         self.assertEqual(p.first_name, "Jean")
         self.assertEqual(p.last_name, "Groing")
         self.assertEqual(p.location_zip, "75004")
-        self.assertEqual(p.contact_phone.as_international, "+33 6 83 92 04 82")
+        self.assertEqual(p.contact_phone.as_international, "+52 55 6623 5784")

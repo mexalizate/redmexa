@@ -31,7 +31,13 @@ class PhoneNumberFormField(formfields.PhoneNumberField):
             return self.empty_value
 
         if phone_number and not phone_number.is_valid():
-            if self.region == "FR":
+            if (
+                self.region == "FR"
+                or self.region == "MX"
+                or self.region == "CA"
+                or self.region == "US"
+                or self.region == "ES"
+            ):
                 # As django-phonenumber-field does not support validation of
                 # french overseas territories numbers when region defaults to 'FR',
                 # we try to validate the phone number against all these territories
