@@ -56,8 +56,8 @@ class APISubscriptionTestCase(WordpressClientMixin, APITestCase):
             "email": "ragah@fez.com",
             "first_name": "Jim",
             "last_name": "Ballade",
-            "location_zip": "75001",
-            "contact_phone": "06 98 45 78 45",
+            "location_zip": "06000",
+            "contact_phone": "+525566235522",
             "metadata": {"universite": "Université Paris"},
             "type": SUBSCRIPTION_TYPE_CAMPAIGN,
             "referrer": generate_referrer_id(),
@@ -70,7 +70,7 @@ class APISubscriptionTestCase(WordpressClientMixin, APITestCase):
         send_confirmation_email.delay.assert_called_once()
         self.assertEqual(
             send_confirmation_email.delay.call_args[1],
-            {**data, "location_country": "FR", "contact_phone": "+33698457845"},
+            {**data, "location_country": "MX", "contact_phone": "+525566235522"},
         )
 
     def test_cannot_subscribe_with_new_api_and_unauthorized_client(self):
@@ -79,8 +79,8 @@ class APISubscriptionTestCase(WordpressClientMixin, APITestCase):
             "email": "ragah@fez.com",
             "first_name": "Jim",
             "last_name": "Ballade",
-            "location_zip": "75001",
-            "contact_phone": "06 98 45 78 45",
+            "location_zip": "06000",
+            "contact_phone": "55 6623 5522",
             "type": SUBSCRIPTION_TYPE_ACTIVIST,
             "metadata": {"universite": "Université Paris"},
             "referrer": generate_referrer_id(),
@@ -95,14 +95,14 @@ class APISubscriptionTestCase(WordpressClientMixin, APITestCase):
         self, send_confirmation_email
     ):
         person = Person.objects.create_insoumise(
-            email="type@boite.pays", first_name="Marc", location_zip="75001"
+            email="type@boite.pays", first_name="Marc", location_zip="06000"
         )
 
         data = {
             "email": person.email,
             "first_name": "Marco",
             "last_name": "Polo",
-            "location_zip": "75004",
+            "location_zip": "06000",
             "contact_phone": "",
             "type": SUBSCRIPTION_TYPE_ACTIVIST,
             "metadata": {"universite": "Université Paris"},
@@ -117,7 +117,7 @@ class APISubscriptionTestCase(WordpressClientMixin, APITestCase):
         person.refresh_from_db()
         self.assertEqual(person.first_name, "Marc")
         self.assertEqual(person.last_name, "Polo")
-        self.assertEqual(person.location_zip, "75001")
+        self.assertEqual(person.location_zip, "06000")
 
 
 class SubscriptionConfirmationTestCase(TestCase):
@@ -129,7 +129,7 @@ class SubscriptionConfirmationTestCase(TestCase):
     def test_can_receive_mail_and_confirm_subscription(self):
         data = {
             "email": "guillaume@email.com",
-            "location_zip": "75001",
+            "location_zip": "06000",
             "metadata": {"universite": "Université Paris"},
             "type": SUBSCRIPTION_TYPE_CAMPAIGN,
         }
@@ -159,7 +159,7 @@ class SubscriptionConfirmationTestCase(TestCase):
 
         data = {
             "email": "person@server.fr",
-            "location_zip": "75001",
+            "location_zip": "06000",
             "metadata": {"universite": "Université Paris"},
             "type": SUBSCRIPTION_TYPE_CAMPAIGN,
         }

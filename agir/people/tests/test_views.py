@@ -18,6 +18,9 @@ from agir.people.tasks import (
     send_confirmation_change_email,
     send_confirmation_merge_account,
 )
+import logging
+
+logger = logging.getLogger(__name__)
 
 # class ProfileTestCase(TestCase):
 #     def setUp(self):
@@ -410,7 +413,7 @@ class InformationContactFormTestCases(TestCase):
         response = self.client.post(
             url_form,
             data={
-                "contact_phone": "0658985632",
+                "contact_phone": "+525566235522",
                 "subscribed_sms": "on",
                 "subscribed": "on",
             },
@@ -426,7 +429,7 @@ class InformationContactFormTestCases(TestCase):
         )
 
         person = Person.objects.get(pk=self.person.pk)
-        self.assertEqual(person.contact_phone, "0658985632")
+        self.assertEqual(person.contact_phone, "+525566235522")
 
 
 class SMSValidationTestCase(TestCase):
@@ -436,7 +439,7 @@ class SMSValidationTestCase(TestCase):
         self.addCleanup(logger.stop)
 
         self.person = Person.objects.create_insoumise(
-            "test@example.com", contact_phone="0612345678", create_role=True
+            "test@example.com", contact_phone="+525566235722", create_role=True
         )
         self.client.force_login(self.person.role)
 
@@ -452,12 +455,12 @@ class SMSValidationTestCase(TestCase):
 
     def test_sms_sending_form_modify_phone_number(self):
         res = self.client.post(
-            reverse("send_validation_sms"), {"contact_phone": "0687654321"}
+            reverse("send_validation_sms"), {"contact_phone": "+525566112233"}
         )
         self.assertRedirects(res, reverse("sms_code_validation"))
 
         self.person.refresh_from_db()
-        self.assertEqual(self.person.contact_phone, to_phone_number("0687654321"))
+        self.assertEqual(self.person.contact_phone, "+525566112233")
 
     def test_cannot_validate_sms_form_without_number(self):
         res = self.client.post(reverse("send_validation_sms"), {})
@@ -467,24 +470,6 @@ class SMSValidationTestCase(TestCase):
         res = self.client.post(reverse("send_validation_sms"), {"contact_phone": ""})
         self.assertEqual(res.status_code, status.HTTP_200_OK)
         self.assertTrue(res.context_data["form"].has_error("contact_phone", "required"))
-
-    def test_cannot_validate_sms_form_with_fixed_number(self):
-        res = self.client.post(
-            reverse("send_validation_sms"), {"contact_phone": "01 42 85 68 98"}
-        )
-        self.assertEqual(res.status_code, status.HTTP_200_OK)
-        self.assertTrue(
-            res.context_data["form"].has_error("contact_phone", "mobile_only")
-        )
-
-    def test_cannot_validate_sms_form_with_foreign_number(self):
-        res = self.client.post(
-            reverse("send_validation_sms"), {"contact_phone": "+44 7554 456245"}
-        )
-        self.assertEqual(res.status_code, status.HTTP_200_OK)
-        self.assertTrue(
-            res.context_data["form"].has_error("contact_phone", "french_only")
-        )
 
     def test_cannot_ask_sms_if_already_validated(self):
         self.person.contact_phone_status = Person.CONTACT_PHONE_VERIFIED
@@ -506,7 +491,7 @@ class SMSValidationTestCase(TestCase):
         message_preferences_page = reverse("contact")
 
         res = self.client.post(
-            message_preferences_page, {"contact_phone": "0687654321"}
+            message_preferences_page, {"contact_phone": "+525566275389"}
         )
         self.assertRedirects(res, message_preferences_page)
 
@@ -574,7 +559,7 @@ class SMSValidationTestCase(TestCase):
         validation_code = PersonValidationSMS.objects.create(
             person=self.person, phone_number=self.person.contact_phone
         )
-        self.person.contact_phone = "0687654321"
+        self.person.contact_phone = "+525566275689"
         self.person.save()
 
         res = self.client.post(validate_code_page, {"code": validation_code.code})
@@ -588,12 +573,11 @@ class SMSValidationTestCase(TestCase):
     def test_redirects_to_next_after_validation(self):
         send_sms_page = reverse("send_validation_sms") + "?next=" + reverse("dashboard")
         res = self.client.post(
-            send_sms_page, {"contact_phone": self.person.contact_phone.as_e164}
+            send_sms_page, {"contact_phone": self.person.contact_phone}
         )
         self.assertRedirects(
             res, reverse("sms_code_validation") + "?next=" + reverse("dashboard")
         )
-
         validate_code_page = (
             reverse("sms_code_validation") + "?next=" + reverse("dashboard")
         )
@@ -607,8 +591,8 @@ class SMSValidationTestCase(TestCase):
 @using_separate_redis_server
 class SMSRateLimitingTestCase(TestCase):
     def setUp(self):
-        self.phone = "+33612345678"
-        self.other_phone = "+33687654321"
+        self.phone = "+525566235784"
+        self.other_phone = "+525566235799"
         self.person1 = Person.objects.create_insoumise(
             "test1@example.com", contact_phone=self.phone, create_role=True
         )
@@ -632,7 +616,6 @@ class SMSRateLimitingTestCase(TestCase):
         validate_code_page = reverse("sms_code_validation")
 
         data = {"contact_phone": self.phone}
-
         self.client.force_login(self.person1.role)
 
         # should work

@@ -151,19 +151,19 @@ class ViewPersonFormTestCase(SetUpPersonFormsMixin, TestCase):
 
         # check can validate
         res = self.client.post(
-            "/formulaires/formulaire-simple/", data={"contact_phone": "06 04 03 02 04"}
+            "/formulaires/formulaire-simple/", data={"contact_phone": "+525566235522"}
         )
         self.assertRedirects(res, "/formulaires/formulaire-simple/confirmation/")
 
         # check user has been well modified
         self.person.refresh_from_db()
 
-        self.assertEqual(self.person.contact_phone, "+33604030204")
+        self.assertEqual(self.person.contact_phone, "+525566235522")
         self.assertIn(self.tag1, self.person.tags.all())
 
         submissions = PersonFormSubmission.objects.all()
         self.assertEqual(len(submissions), 1)
-        self.assertEqual(submissions[0].data["contact_phone"], "+33604030204")
+        self.assertEqual(submissions[0].data["contact_phone"], "+525566235522")
 
         send_confirmation.delay.assert_called_once()
         send_notification.delay.assert_called_once()
@@ -177,12 +177,12 @@ class ViewPersonFormTestCase(SetUpPersonFormsMixin, TestCase):
         res = self.client.get("/formulaires/formulaire-simple/")
 
         res = self.client.post(
-            "/formulaires/formulaire-simple/", data={"contact_phone": "06 04 03 02 04"}
+            "/formulaires/formulaire-simple/", data={"contact_phone": "+525566235522"}
         )
         self.assertRedirects(res, "/formulaires/formulaire-simple/confirmation/")
 
         with self.assertRaises(Person.DoesNotExist):
-            Person.objects.get(contact_phone="+33604030204")
+            Person.objects.get(contact_phone="+525566235522")
 
     def test_can_validate_complex_form(self):
         res = self.client.get("/formulaires/formulaire-complexe/")
@@ -195,7 +195,7 @@ class ViewPersonFormTestCase(SetUpPersonFormsMixin, TestCase):
         res = self.client.post(
             "/formulaires/formulaire-complexe/",
             data={
-                "contact_phone": "06 34 56 78 90",
+                "contact_phone": "55 6623 5522",
                 "custom-field": "valeur du champ libre person_field false",
             },
         )
@@ -206,7 +206,7 @@ class ViewPersonFormTestCase(SetUpPersonFormsMixin, TestCase):
             "/formulaires/formulaire-complexe/",
             data={
                 PersonForm.MAIN_QUESTION_FIELD_ID: self.tag2.id,
-                "contact_phone": "06 34 56 78 90",
+                "contact_phone": "+525566235522",
                 "custom-field": "valeur du champ libre person_field false",
                 "custom-person-field": "valeur du champ libre avec person_field true",
             },
@@ -259,7 +259,7 @@ class ViewPersonFormTestCase(SetUpPersonFormsMixin, TestCase):
             edit_url,
             data={
                 PersonForm.MAIN_QUESTION_FIELD_ID: self.tag1.id,
-                "contact_phone": "06 34 56 78 91",
+                "contact_phone": "+525566235522",
                 "custom-field": "valeur modifié du champ libre person_field false",
                 "custom-person-field": "valeur modifiée du champ libre person_field true",
             },
@@ -303,7 +303,7 @@ class ViewPersonFormTestCase(SetUpPersonFormsMixin, TestCase):
             edit_url,
             data={
                 PersonForm.MAIN_QUESTION_FIELD_ID: self.tag1.id,
-                "contact_phone": "06 34 56 78 91",
+                "contact_phone": "+525566235522",
                 "custom-field": "valeur modifié du champ libre person_field false",
                 "custom-person-field": "valeur modifiée du champ libre person_field true",
             },
@@ -341,7 +341,7 @@ class ViewPersonFormTestCase(SetUpPersonFormsMixin, TestCase):
             reverse("view_person_form", args=[self.complex_form.slug]),
             data={
                 PersonForm.MAIN_QUESTION_FIELD_ID: self.tag1.id,
-                "contact_phone": "06 34 56 78 91",
+                "contact_phone": "+525566235522",
                 "custom-field": "valeur modifié du champ libre person_field false",
                 "custom-person-field": "valeur modifiée du champ libre person_field true",
             },
@@ -454,7 +454,7 @@ class AccessControlTestCase(SetUpPersonFormsMixin, TestCase):
             "/formulaires/formulaire-complexe/",
             data={
                 PersonForm.MAIN_QUESTION_FIELD_ID: self.tag2.id,
-                "contact_phone": "06 34 56 78 90",
+                "contact_phone": "55 6623 5522",
                 "custom-field": "valeur du champ libre person_field false",
                 "custom-person-field": "valeur du champ libre avec person_field true",
             },
@@ -478,7 +478,7 @@ class AccessControlTestCase(SetUpPersonFormsMixin, TestCase):
             "/formulaires/formulaire-complexe/",
             data={
                 PersonForm.MAIN_QUESTION_FIELD_ID: self.tag2.id,
-                "contact_phone": "06 34 56 78 90",
+                "contact_phone": "55 6623 5522",
                 "custom-field": "valeur du champ libre person_field false",
                 "custom-person-field": "valeur du champ libre avec person_field true",
             },
@@ -495,7 +495,7 @@ class AccessControlTestCase(SetUpPersonFormsMixin, TestCase):
         self.assertNotContains(res, "SENTINEL")
 
         res = self.client.post(
-            "/formulaires/formulaire-simple/", {"contact_phone": "06 23 45 67 89"}
+            "/formulaires/formulaire-simple/", {"contact_phone": "+525566235786"}
         )
         self.assertRedirects(res, "/formulaires/formulaire-simple/confirmation/")
 
@@ -508,7 +508,7 @@ class AccessControlTestCase(SetUpPersonFormsMixin, TestCase):
         self.assertContains(res, "SENTINEL")
 
         res = self.client.post(
-            "/formulaires/formulaire-simple/", {"contact_phone": "06 23 45 67 89"}
+            "/formulaires/formulaire-simple/", {"contact_phone": "55 6623 5786"}
         )
         self.assertEqual(res.status_code, 200)
 
@@ -696,7 +696,7 @@ class CampaignTemplateTestCase(SetUpPersonFormsMixin, TestCase):
             "/formulaires/formulaire-complexe/",
             data={
                 PersonForm.MAIN_QUESTION_FIELD_ID: self.tag2.id,
-                "contact_phone": "06 34 56 78 90",
+                "contact_phone": "+525566235789",
                 "custom-field": "Super titre<script>alert('xss');{{ malicious_template }}",
                 "custom-person-field": "valeur du champ libre avec person_field true",
             },

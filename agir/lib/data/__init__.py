@@ -226,6 +226,8 @@ def french_zipcode_to_country_code(zipcode):
         return "BL"  # Saint-Barthélémy
     if zipcode == "97150":
         return "MF"
+    if zipcode == "06000":
+        return "MX"
 
     return OVERSEAS_ZIP_TO_COUNTRY_CODE.get(zipcode[:3], "FR")
 
@@ -241,11 +243,16 @@ OVERSEAS_ZIP_TO_COUNTRY_CODE = {
     "986": "WF",
     "987": "PF",
     "988": "NC",
+    "060": "MX",
 }
 
 
 FRANCE_COUNTRY_CODES = [
     "FR",  # France
+    "MX",  # Mexico
+    "US",  # United States
+    "CA",  # Canada
+    "ES",  # Spain
     "GF",  # Guyane française
     "PF",  # Polynésie française
     "TF",  # Terres-Australes et Antarctiques

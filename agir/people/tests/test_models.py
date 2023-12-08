@@ -120,7 +120,7 @@ class BasicPersonTestCase(TestCase):
 class ContactPhoneTestCase(TestCase):
     def setUp(self):
         self.person = Person.objects.create_insoumise(
-            email="test@domain.com", contact_phone="0612345678"
+            email="test@domain.com", contact_phone="5566235785"
         )
 
     def test_unverified_contact_phone_by_default(self):
@@ -130,7 +130,7 @@ class ContactPhoneTestCase(TestCase):
 
     def test_unverified_when_changing_number(self):
         self.person.contact_phone_status = Person.CONTACT_PHONE_VERIFIED
-        self.person.contact_phone = "+525566778899"
+        self.person.contact_phone = "5566235784"
         self.assertEqual(
             self.person.contact_phone_status, Person.CONTACT_PHONE_UNVERIFIED
         )
@@ -138,12 +138,12 @@ class ContactPhoneTestCase(TestCase):
     def test_still_verified_when_changing_for_same_number(self):
         self.person.contact_phone_status = Person.CONTACT_PHONE_VERIFIED
 
-        self.person.contact_phone = "+526644556677"
+        self.person.contact_phone = "5566235785"
         self.assertEqual(
             self.person.contact_phone_status, Person.CONTACT_PHONE_VERIFIED
         )
 
-        self.person.contact_phone = "+33612345678"
+        self.person.contact_phone = "5566235785"
         self.assertEqual(
             self.person.contact_phone_status, Person.CONTACT_PHONE_VERIFIED
         )

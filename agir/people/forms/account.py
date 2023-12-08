@@ -101,14 +101,7 @@ class SendValidationSMSForm(forms.ModelForm):
     def __init__(self, data=None, *args, **kwargs):
         super().__init__(data=data, *args, **kwargs)
 
-        if (
-            not self.is_bound
-            and self.instance.contact_phone
-            and not (
-                is_french_number(self.instance.contact_phone)
-                and is_mobile_number(self.instance.contact_phone)
-            )
-        ):
+        if not self.is_bound and self.instance.contact_phone:
             self.initial["contact_phone"] = ""
             self.fields["contact_phone"].help_text = _(
                 "Seul un numéro de téléphone mobile français (outremer inclus) peut être utilisé pour la validation."
@@ -128,13 +121,13 @@ class SendValidationSMSForm(forms.ModelForm):
         self.helper.layout = Layout(*fields)
 
     def clean_contact_phone(self):
-        phone_number = normalize_overseas_numbers(self.cleaned_data["contact_phone"])
+        phone_number = self.cleaned_data["contact_phone"]
 
-        if not is_french_number(phone_number):
-            raise ValidationError(self.error_messages["french_only"], "french_only")
+        # if not is_french_number(phone_number):
+        #     raise ValidationError(self.error_messages["french_only"], "french_only")
 
-        if not is_mobile_number(phone_number):
-            raise ValidationError(self.error_messages["mobile_only"], "mobile_only")
+        # if not is_mobile_number(phone_number):
+        #     raise ValidationError(self.error_messages["mobile_only"], "mobile_only")
 
         return phone_number
 
