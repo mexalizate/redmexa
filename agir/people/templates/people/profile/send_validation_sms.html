@@ -40,18 +40,18 @@
       const intlTel_idp = window.intlTelInput(id_contact_phone, {
         nationalMode: false,
         formatOnDisplay: true,
-        preferredCountries: ['mx'],
-        onlyCountries: ["mx", "es", "us", "ca"],
+        preferredCountries: ["mx", "es", "us", "ca"],
+        initialCountry: "mx",
         utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js",
       });
       if(!id_contact_phone.value){
-        const dialCode = `+${intlTel_idp.getSelectedCountryData().dialCode}`;
+        const dialCode = `+${intlTel_idp.getSelectedCountryData().dialCode} `;
         intlTel_idp.setNumber(dialCode);
       }
       id_contact_phone.addEventListener("countrychange", function() {
         const phoneValue = id_contact_phone.value;
         if (intlTel_idp.getSelectedCountryData()) {
-          const dialCode = `+${intlTel_idp.getSelectedCountryData().dialCode}`;
+          const dialCode = `+${intlTel_idp.getSelectedCountryData().dialCode} `;
           intlTel_idp.setNumber(dialCode);
         }
       });
