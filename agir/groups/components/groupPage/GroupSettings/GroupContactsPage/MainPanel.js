@@ -43,8 +43,8 @@ const GroupContactsMainPanel = (props) => {
           align-items: center;
         `}
       >
-        {`${followers.length || ""} Contact${
-          followers.length === 1 ? "" : "s"
+        {`${followers.length || ""} Seguidor${
+          followers.length === 1 ? "" : "es"
         }`.trim()}
       </StyledTitle>
       <p
@@ -53,7 +53,7 @@ const GroupContactsMainPanel = (props) => {
           margin: 0;
         `}
       >
-        {_("Toutes les personnes intéressées par votre groupe.")}
+        {"Son las personas que siguen tu grupo"}
       </p>
       {emails ? (
         <>
@@ -80,13 +80,13 @@ const GroupContactsMainPanel = (props) => {
         <>
           <Spacer size="1.5rem" />
           <p>
-            {_("Vous n’avez pas encore de contact !")}
+            {"¡Todavía no tienes seguidores!"}
             <Spacer size="0.5rem" />
-            {_("Obtenez des contacts pour partager les actions de votre groupe d’action et du mouvement.")}
+            {"Agrega seguidores para difundir las acciones y mensajes de tu grupo. "}
           </p>
           <Spacer size=".5rem" />
           <Button link icon="user-plus" route="createContact" color="secondary">
-            {_("Ajouter un contact")}
+            {"Agregar seguidor manualmente"}
           </Button>
         </>
       )}
@@ -98,12 +98,11 @@ const GroupContactsMainPanel = (props) => {
         `}
       >
         <p>
-          {_("Lorsque vous ajoutez un contact, ou bien quand un membre d’Action Populaire clique sur “Suivre le groupe”, ses informations s’affichent ici.")}
+          Aquí se muestran l@s seguidores que agregaste manualmente o que dieron clic en ‘Seguir’ en la página del grupo.
         </p>
         <p>
-         {_(" Vos contacts qui reçoivent vos messages et nouveaux événements par e-mail sont indiqués comme « abonnés ».")}
-        </p>
-        <p>{_("Les contacts ne comptent pas dans le total des membres du groupe.")}</p>
+        L@s seguidores recibirán correos y notificaciones de acciones realizadas por tu grupo.        </p>
+        <p>L@s seguidores no cuentan como miembros activos del grupo.</p>
       </footer>
     </>
   );

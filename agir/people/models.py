@@ -452,7 +452,7 @@ class Person(
     )
 
     contact_phone = ValidatedPhoneNumberField(
-        _("Numéro de téléphone de contact"),
+        "Número de celular de contacto",
         blank=True,
         validated_field_name="contact_phone_status",
         unverified_value=CONTACT_PHONE_UNVERIFIED,

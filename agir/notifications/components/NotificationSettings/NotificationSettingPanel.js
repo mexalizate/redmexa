@@ -181,9 +181,9 @@ const NotificationSettingPanel = (props) => {
           padding: "0 1.5rem 0.5rem",
         }}
       >
-        Paramètres de notifications&nbsp;<InlineBlock>et e-mails</InlineBlock>
+        Configuración de emails &nbsp;<InlineBlock>y notificaciones</InlineBlock>
       </h3>
-      <p> Configura los emails y notificaciones que recibes en tu teléfono. Recibirás los emails en tu dirección email: [EMAIL]  <u>{user.email}</u>&nbsp;
+      <p> Configura los emails y notificaciones que recibes en tu teléfono. Recibirás los emails en tu dirección email: <u>{user.email}</u>&nbsp;
         <Link route="personalInformation">(modificarla)</Link>
       </p>
       <div style={{ marginLeft: "20px", marginBottom: "20px" }}>
@@ -200,8 +200,8 @@ const NotificationSettingPanel = (props) => {
                 <StyledGroup key={subtype}>
                   <StyledGroupName>
                     <span>{subtype}</span>
-                    <small>Téléphone</small>
-                    <small>E-mail</small>
+                    <small>Teléfono</small>
+                    <small>Email</small>
                   </StyledGroupName>
                   {byType[type][subtype].map((notificationId) => (
                     <NotificationSettingItem

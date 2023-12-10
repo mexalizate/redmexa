@@ -173,7 +173,7 @@ const Agenda = () => {
                 lineHeight: 1.4,
               }}
             >
-              {_("Mes événements prévus")}
+              Mis acciones por venir
             </h2>
             <UpcomingEvents events={rsvpedEvents} />
           </Hide>

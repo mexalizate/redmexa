@@ -61,7 +61,7 @@ const GroupsPageHeader = () => {
             color="secondary"
             small
           >
-            {/*_("Créer un groupe")*/}Crear un grupo
+            Crear un grupo {/*_("Créer un groupe")*/}
           </Button>
         )}
         <Button link icon="map" route="groupMap" small>

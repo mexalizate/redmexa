@@ -79,15 +79,14 @@ const GroupContactPage = (props) => {
       </span>
       <Spacer size="0.5rem" />
       <span style={{ color: style.black700 }}>
-        {_("Conseillé : créez une adresse e-mail pour votre groupe et n’utilisez pas une adresse personnelle.")}
-      </span>
+      Puedes crear y usar una dirección email compartida por el grupo en lugar de indicar un email personal.      </span>
 
       <Spacer size="2rem" />
 
       <TextField
         id="name"
         name="name"
-        label={_("Personnes à contacter*")}
+        label="Persona de contacto*"
         onChange={handleChange}
         value={contact?.name}
         error={errors?.name}
@@ -99,7 +98,7 @@ const GroupContactPage = (props) => {
         id="email"
         name="email"
         type="email"
-        label={_("Adresse e-mail du groupe")}
+        label="Email del grupo"
         onChange={handleChange}
         value={contact?.email}
         error={errors?.email}

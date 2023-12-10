@@ -252,7 +252,7 @@ const EventRequiredDocuments = (props) => {
           )}
           {isCollapsed ? (
             <Button style={{ width: "100%" }} onClick={expand}>
-              Voir tout&ensp;
+              Ver todo&ensp;
               <FeatherIcon width="1rem" height="1rem" name="chevron-down" />
             </Button>
           ) : (

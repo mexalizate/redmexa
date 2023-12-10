@@ -43,7 +43,7 @@ const GroupDescription = (props) => {
 
   return (
     <StyledCard
-      title={_("Présentation")}
+      title={"Descripción"}
       editLinkTo={editLinkTo}
       outlined={outlined}
     >

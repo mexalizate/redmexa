@@ -265,7 +265,7 @@ const Panel = (props) => {
               <StyledBackButton type="button" onClick={onBack}>
                 <RawFeatherIcon
                   name="arrow-left"
-                  aria-label="Retour"
+                  aria-label="Regresar"
                   width="1.5rem"
                   height="1.5rem"
                 />

@@ -124,8 +124,7 @@ const GroupLocalizationPage = (props) => {
         {_("Si vous ne souhaitez pas rendre votre adresse personnelle publique, indiquez un endroit à proximité (café, mairie...)")}
         <Spacer size="0.5rem" />
         <strong>
-          {_("Merci d'indiquer une adresse précise avec numéro de rue, sans quoi le groupe n'apparaîtra pas sur la carte.")}
-        </strong>
+        Indica una dirección precisa, con número de calle, para que el grupo pueda aparecer en el mapa.        </strong>
       </span>
 
       <Spacer size="1.5rem" />

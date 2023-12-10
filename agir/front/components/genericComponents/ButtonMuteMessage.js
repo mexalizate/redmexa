@@ -109,7 +109,7 @@ const ButtonMuteMessage = ({ message }) => {
         </StyledMuteButton>
       )}
       <ModalConfirmation
-        title={_("Rendre muet cette conversation ?")}
+        title="¿Silenciar esta conversación?"
         confirmationLabel={_("Rendre muet")}
         dismissLabel={_("Annuler")}
         shouldShow={isModalOpen}
@@ -120,7 +120,7 @@ const ButtonMuteMessage = ({ message }) => {
         <Spacer size="1rem" />
         {_("Vous ne recevrez plus de notifications et e-mails concernant cette conversation.")}
         <Spacer size="0.5rem" />
-        {_("Vous pourrez réactiver les notifications et e-mails à tout moment")}
+        Puedes reactivar las notificaciones en todo momento.
       </ModalConfirmation>
     </>
   );

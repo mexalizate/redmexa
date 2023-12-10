@@ -118,14 +118,14 @@ export const HeaderSearch = ({ querySearch, mapRoute }) => (
         {!querySearch && <Hide $under>Recherche : "{querySearch}"</Hide>}
       </h1>
       <Hide $under as="div" style={{ marginTop: "0.5rem" }}>
-        {_("Recherchez des événements et des groupes d'actions par nom, commune, code postal...")}
+        Encuentra grupos y acciones buscando por nombre, ciudad, código postal...
       </Hide>
     </div>
     {!!mapRoute && (
       <StyledMapButton>
         <StyledLink route={mapRoute}>
           <div />
-          <div>{_("Voir la carte")}</div>
+          <div>Ver el mapa</div>
         </StyledLink>
       </StyledMapButton>
     )}
@@ -177,7 +177,7 @@ export const EventFilters = ({ filters, setFilter }) => {
         options={OPTIONS.EventSort}
       />
       <SelectField
-        label={_("Catégorie d'événement")}
+        label={"Categoría de la acción"}
         placeholder={_("Categories")}
         name="eventSchedule"
         value={filters?.eventSchedule}

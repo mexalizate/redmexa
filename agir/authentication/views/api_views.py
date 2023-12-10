@@ -80,7 +80,7 @@ class LoginAPIView(APIView):
     permission_classes = (IsActionPopulaireClientPermission,)
     queryset = Person.objects.all()
     messages = {
-        "invalid_format": ("Saisissez une adresse e-mail valide."),
+        "invalid_format": ("Introduzca una dirección de correo electrónico válida."),
         "throttled": _(
             "Vous avez déjà demandé plusieurs emails de connexion. Veuillez laisser quelques minutes pour"
             " vérifier la bonne réception avant d'en demander d'autres."

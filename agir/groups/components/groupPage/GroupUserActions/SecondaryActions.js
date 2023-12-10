@@ -76,7 +76,7 @@ const SecondaryActions = ({
       <ModalConfirmation
         shouldShow={isShareOpen}
         onClose={handleShareClose}
-        title={_("Partager le groupe")}
+        title={"Comparte la página del grupo"}
       >
         <ShareContentUrl url={routes.details} />
       </ModalConfirmation>

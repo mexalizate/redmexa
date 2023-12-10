@@ -41,7 +41,7 @@ const DescriptionField = (props) => {
           line-height: 1.5;
         `}
       >
-        {!required && <em>{_("Facultative.")} </em>}
+        {!required && <em>{"Opcional. "} </em>}
         La descripción aparecerá en la página de la acción.
         {/*_("La description apparaîtra sur la page publique de l'événement.")*/}
       </span>

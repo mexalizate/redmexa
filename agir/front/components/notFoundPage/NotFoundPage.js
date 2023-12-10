@@ -67,8 +67,8 @@ export const NotFoundPage = ({
   return (
     <ErrorPage
       icon="?"
-      title={_(`${title} introuvable`).trim()}
-      subtitle={_(`${subtitle} n’existe pas ou plus`).trim()}
+      title={_(`${title} no encontrada`).trim()}
+      subtitle={_(`${subtitle} (ya) no existe`).trim()}
       hasReload={false}
       hasTopBar={hasTopBar}
     />

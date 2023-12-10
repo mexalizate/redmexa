@@ -169,10 +169,10 @@ const CodeConnexion = () => {
       ) : (
         <>
           <p style={{ marginTop: "2rem" }}>
-            {/*_("Entrez le code de connexion que nous avons envoyé")*/}Ingrese el código de inicio de sesión que le enviamos{" "}
+            {/*_("Entrez le code de connexion que nous avons envoyé")*/} Ingrese el código de inicio de sesión que le enviamos{" "}
             {location.state && location.state.email && (
               <>
-                à <strong>{location.state.email}</strong>
+                a <strong>{location.state.email}</strong>
               </>
             )}
           </p>
@@ -185,7 +185,7 @@ const CodeConnexion = () => {
       <Form>
         <TextField
           error={error && error.code}
-          label="código de inicio de sesión"
+          label="Código de conexión"
           onChange={handleCode}
           value={code}
           disabled={isLoading}

@@ -1,14 +1,14 @@
 {{ TITLE }}
   
-Bonjour,
+Hola,
 
-Pour valider votre transaction, il vous faut maintenant envoyer votre chèque.
+Para validar tu transacción, es necesario enviar tu cheque.
 
-* Ordre : {{ ORDER }}
-* Montant : {{ AMOUNT }}
-* Numéro de transaction **à inscrire au dos du chèque** : {{ PAYMENT_ID }}
+* A la orden de: {{ ORDER }}
+* Monto : {{ AMOUNT }}
+* Número de transacción **a indicar en el cheque** : {{ PAYMENT_ID }}
 
-Merci d'envoyer votre chèque à l'adresse suivante :
+Gracias por enviar tu cheque a la siguiente dirección:
 
 {{ ADDRESS }}
 
@@ -17,10 +17,10 @@ Merci d'envoyer votre chèque à l'adresse suivante :
 {{ WARNINGS }}
 
 ------------------------------------------------------------------
-Cet email a été envoyé à {{ email }}. Il est personnel, ne le transférez pas.
+Este mensaje se envió a {{ email }}. Es personal y no debería ser reenviado.
 
->> Choisir les emails que vous recevez
+>> Escoge los mensajes que recibes
 {{ preferences_link }}
 
->> Arrêter complètement de recevoir des emails
+>> No recibir más emails
 {{ unsubscribe_link }}

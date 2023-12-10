@@ -168,10 +168,7 @@ const items = [
     img: promo1,
     content: (
       <p>
-        <strong>
-          Lancez une première conversation dans votre groupe&nbsp;!{" "}
-        </strong>
-        Discustez de vos prochaines actions sur Action Populaire
+        Inicia tu primer mensaje de grupo y organiza tus próximas acciones en Claudialízate y organiza tus próximas acciones en Claudialízate
       </p>
     ),
   },
@@ -223,7 +220,7 @@ export const PromoMessage = (props) => {
 
   return (
     <Container>
-      <Title>La messagerie de votre groupe</Title>
+      <Title>Mensajes de tu grupo</Title>
       <div>
         <Arrow>
           <RawFeatherIcon
@@ -257,7 +254,7 @@ export const PromoMessage = (props) => {
       <StyledContent>{items[itemIndex].content}</StyledContent>
 
       <Button color="confirmed" onClick={handleClick} wrap icon="edit">
-        {goToMessages ? "Voir l'onglet messages" : "Nouveau message de groupe"}
+        {goToMessages ? "Ver la sección Mensajes" : "Nuevo mensaje grupal"}
       </Button>
     </Container>
   );

@@ -124,7 +124,7 @@ const GroupGeneralPage = (props) => {
       <TextField
         id="name"
         name="name"
-        label={_("Nom du groupe*")}
+        label= "Nombre del grupo"
         onChange={handleChange}
         value={formData.name}
         error={errors?.name}
@@ -135,7 +135,7 @@ const GroupGeneralPage = (props) => {
       <RichTextField
         id="description"
         name="description"
-        label={_("Description du groupe*")}
+        label= "Descripción del grupo"
         placeholder=""
         onChange={handleDescriptionChange}
         value={formData.description}
@@ -146,7 +146,7 @@ const GroupGeneralPage = (props) => {
       <span style={{ color: style.black700 }}>
         {_("Elle apparaîtra sur la page sur les réseaux sociaux.")}
         <br />
-        {_("Utilisez une image à peu près deux fois plus large que haute. Elle doit faire au minimum 1200px de large et 630px de haut pour une qualité optimale.")}
+        {_("Utilisez une image à peu près deux fois plus large que haute. Elle doit faire au minimum 1200 pixeles de large et 630 pixeles de haut pour une qualité optimale.")}
       </span>
 
       <Spacer size="1.5rem" />

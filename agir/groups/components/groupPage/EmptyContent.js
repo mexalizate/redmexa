@@ -159,7 +159,7 @@ export const MemberEmptyEvents = () => (
 
 export const ManagerEmptyEvents = () => (
   <EmptyContent icon="calendar">
-    <p>{_("Vous n’avez pas encore créé d’événement.")}</p>
+    <p>No has creado ningúna acción para tu grupo.</p>
     <p>
       {_("Besoin d’idée ? Consultez notre")}{" "}
       <Link route="newGroupHelp" target="_blank" rel="noopener noreferrer">
@@ -171,9 +171,9 @@ export const ManagerEmptyEvents = () => (
 
 export const EmptyReports = () => (
   <EmptyContent icon="file-text">
-    <p>{_("Votre groupe n’a pas encore publié de compte rendu.")}</p>
+    <p>Tu grupo no ha publicado ningún resumen.</p>
     <p>
-      {_("Ajoutez-en à vos événement passés pour tenir au courant les membres de comment s’est déroulé votre événement&nbsp;!")}
+      <strong>Agrega un resumen</strong> a acciones pasadas para que <strong>más personas</strong> puedan saber cómo se realizó la acción.   
     </p>
   </EmptyContent>
 );

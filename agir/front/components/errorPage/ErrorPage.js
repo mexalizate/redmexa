@@ -117,7 +117,7 @@ export const ErrorPage = (props) => {
           ) : null}
           <Spacer size="1rem" />
           <span>
-            {_("ou consulter le")} <Link route="helpIndex">{_("centre d'aide")}</Link>
+            o consultar el <Link route="helpIndex">centro de ayuda</Link>
           </span>
         </StyledContainer>
       )}

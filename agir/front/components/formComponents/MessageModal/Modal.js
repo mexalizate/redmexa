@@ -16,12 +16,12 @@ import MessageStep from "./MessageStep";
 const EMPTY_EVENTS = [
   {
     id: null,
-    name: _("Ne concerne pas un événement"),
+    name: "Mensaje sin relación con una acción",
     type: "NULL",
   },
   {
     id: null,
-    name: _("Événement futur"),
+    name: "Seleccionar una acción por venir",
   },
 ];
 

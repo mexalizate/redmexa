@@ -51,11 +51,11 @@ const ConnectivityWarning = ({ hasTopBar }) => {
   const [backgroundColor, color, warning] = useMemo(() => {
     switch (offline) {
       case false:
-        return [style.green500, style.green100, "Connexion rétablie"];
+        return [style.green500, style.green100, "CONEXIÓN RESTAURADA"];
       case true:
-        return [style.redNSP, style.red100, "Aucune connexion internet"];
+        return [style.redNSP, style.red100, "SIN CONEXIÓN A INTERNET"];
       default:
-        return [style.primary500, style.primary100, "Connexion en cours..."];
+        return [style.primary500, style.primary100, "CONEXIÓN EN CURSO..."];
     }
   }, [offline]);
 

@@ -56,8 +56,8 @@ const ButtonLockMessage = ({ message }) => {
     mutate(`/api/groupes/messages/${messagePk}/`);
     sendToast(
       locked
-        ? _("Le fil de conversation est verrouillé")
-        : _("Le fil de conversation est déverrouillé"),
+        ? "La conversación fue pausada"
+        : "Se reactivó la conversación",
       "INFO",
       { autoClose: true },
     );
@@ -76,7 +76,7 @@ const ButtonLockMessage = ({ message }) => {
           loading={loading}
           onClick={() => !loading && setIsModalOpen(true)}
         >
-          {isLocked ? _("Déverrouiller") : _("Verrouiller")}
+          {isLocked ? "Reactivar" : "Pausar"}
         </Button>
       ) : (
         <StyledButton
@@ -89,10 +89,9 @@ const ButtonLockMessage = ({ message }) => {
       )}
 
       <ModalConfirmation
-        title={`Souhaitez-vous ${isLocked ? "dé" : ""}verrouiller cette
-            conversation ?`}
-        confirmationLabel={!isLocked ? "Verrouiller" : "Déverrouiller"}
-        dismissLabel="Annuler"
+        title="¿Pausar esta conversación?"
+        confirmationLabel={!isLocked ? "Pausar " : "reactivar"} 
+        dismissLabel="Regresar"
         shouldShow={isModalOpen}
         onConfirm={switchLockedMessage}
         onClose={() => setIsModalOpen(false)}
@@ -101,12 +100,12 @@ const ButtonLockMessage = ({ message }) => {
         <Spacer size="1rem" />
         {!isLocked ? (
           <>
-            {_("Plus personne ne pourra y répondre.")}
+            Nadie más podrá escribir en ella.
             <Spacer size="0.5rem" />
             {_("Les gestionnaires du groupe pourront déverrouiller la conversation n'importe quand.")}
           </>
         ) : (
-          _("Les participant·es pourront de nouveau y écrire des réponses")
+          "Más participantes podrán escribir en ella"
         )}
       </ModalConfirmation>
     </>

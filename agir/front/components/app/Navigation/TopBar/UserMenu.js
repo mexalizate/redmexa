@@ -153,7 +153,7 @@ export const UserMenu = (props) => {
         </Button>
         <br />
         <Button link route="logout" icon="power" color="choose" small>
-          Cerrar sesion
+          Desconectarme
         </Button>
       </article>
       <footer>

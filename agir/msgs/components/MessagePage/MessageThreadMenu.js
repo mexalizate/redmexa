@@ -99,11 +99,11 @@ export const MessageOptions = () => {
       <StyledInlineMenuItems>
         <button onClick={markAllRead}>
           <RawFeatherIcon name="check-circle" color={style.primary500} />
-          Tout marquer comme lu
+          Marcar todo como leído
         </button>
         <Link to={route} icon="settings">
           <RawFeatherIcon name="settings" color={style.primary500} />
-          Paramètres de notifications
+          Configurar notificaciones
         </Link>
       </StyledInlineMenuItems>
     </InlineMenu>
@@ -127,7 +127,7 @@ const MessageThreadMenu = (props) => {
       <Hide $under>
         <header>
           <h2>
-            Messages{typeof writeNewMessage !== "function" ? " reçus" : ""}
+            Mensajes{typeof writeNewMessage !== "function" ? " reçus" : ""}
           </h2>
           <MessageOptions />
         </header>
@@ -141,7 +141,7 @@ const MessageThreadMenu = (props) => {
             disabled={isLoading}
             block
           >
-            Nouveau message
+            Nuevo mensaje
           </Button>
         </StyledNewMessageButton>
       ) : null}

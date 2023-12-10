@@ -20,10 +20,9 @@ const GroupHelpPage = (props) => {
       <StyledTitle>{_("Ressources")}</StyledTitle>
       <Spacer size="1rem" />
       <span style={{ color: style.black700 }}>
-        {_("Retrouvez ici la liste des ressources qui pourront vous être utiles pour l'animation et la gestion de votre groupe.")}
-      </span>
+      La siguiente información te ayudará a mejorar la facilitación y gestión de tu grupo.      </span>
       <Spacer size="1rem" />
-      <StyledTitle>{_("Centre d'aide")}</StyledTitle>
+      <StyledTitle>Centro de ayuda</StyledTitle>
       <Spacer size=".5rem" />
       <HelpCenterCard type="group" />
       <Spacer size="1rem" />

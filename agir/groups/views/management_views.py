@@ -223,7 +223,7 @@ class PerformCreateSupportGroupView(HardLoginRequiredMixin, FormMixin, ProcessFo
         messages.add_message(
             request=self.request,
             level=messages.SUCCESS,
-            message=_("Votre groupe a été correctement créé."),
+            message=_("¡Tu grupo fue creado con éxito!"),
         )
 
         form.save()

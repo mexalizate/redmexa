@@ -6,7 +6,7 @@ import { useBeforeUnload } from "react-use";
 import { routeConfig } from "@agir/front/app/routes.config";
 
 const DEFAULT_MESSAGE =
-  "Cette page vous demande de confirmer sa fermeture; des données que vous avez saisies pourraient ne pas être enregistrées. Confirmez-vous vouloir quitter la page ?";
+  "Esta página pide confirmar que quieres cerrarla; la información que hayas ingresado NO se guardará. ¿Confirmas que deseas cerrarla?";
 
 const UnloadPrompt = (props) => {
   const { enabled, message = DEFAULT_MESSAGE, allowedRoutes } = props;

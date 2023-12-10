@@ -1,18 +1,18 @@
 {{ CHER_PRETEUR }},
 
-Vous trouverez ci-joint à ce mail **le contrat de prêt signé** qui correspond à votre versement. Son texte est identique à la version qui vous avait été présenté lors de la validation.  
+Encontrarás adjunto a este email **el contrato de préstamo firmado** que corresponde a tu depósito. El texto es idéntico a la versión que te fue compartida durante la validación.
 
-Avec tous nous remerciements,  
-L'équipe du pôle numérique de la France insoumise
+Agradeciéndote tu apoyo,
+El equipo Claudialízate
 
 ------------------------------------------------------------------
-Cet email a été envoyé à {{ EMAIL }}. Il est personnel, ne le transférez pas.
+Este mensaje se envió a {{ email }}. Es personal y no debería ser reenviado.
 
->> Voir cet email dans votre navigateur
+>> Ver este email en tu navegador
 {{ LINK_BROWSER }}
 
->> Choisir les emails que vous recevez
-{{ PREFERENCES_LINK }}
+>> Escoge los mensajes que recibes
+{{ preferences_link }}
 
->> Arrêter complètement de recevoir des emails
-{{ UNSUBSCRIBE_LINK }}
+>> No recibir más emails
+{{ unsubscribe_link }}

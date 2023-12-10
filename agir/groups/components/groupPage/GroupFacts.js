@@ -54,7 +54,7 @@ const GroupFacts = (props) => {
   } = facts;
 
   return (
-    <Card title="À propos">
+    <Card title="Más información">
       <StyledList>
         {!!eventCount && (
           <li>
@@ -82,7 +82,7 @@ const GroupFacts = (props) => {
         {!!creationDate && (
           <li>
             <FeatherIcon name="clock" small inline />
-            <span>Créé {timeAgo(creationDate)}</span>
+            <span>Creado {timeAgo(creationDate)}</span>
           </li>
         )}
         {!!lastActivityDate && (

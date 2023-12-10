@@ -1,23 +1,23 @@
-Les organisateurs de l'événement {{ EVENT_NAME }} ont changé des informations de l'événement.
+L@s organizadores de la acción {{ EVENT_NAME }} cambiaron la información de la acción.
 
-Les éléments suivants ont été modifiés :
+Cambiaron los siguientes elementos:
 
 {{ EVENT_CHANGES }}
 
->> voir les informations mises à jour de cet événement :
+>> Ver la información actualizada de la acción:
 {{ EVENT_LINK }}
 
->> Vous ne souhaitez ou ne pouvez plus participer à cet événement :
+>> Ya no quieres o no puedes participar en la acción:
 {{ EVENT_QUIT_LINK }}
 
-Amitiés,  
-L’équipe d’Action Populaire  
+Saludos,  
+El equipo Claudialízate
 
 ------------------------------------------------------------------
-Cet email a été envoyé à {{ email }}. Il est personnel, ne le transférez pas.
+Este mensaje se envió a {{ EMAIL }}. Es personal y no debería ser reenviado.
 
->> Choisir les emails que vous recevez
-{{ preferences_link }}
+>> Escoge los emails que recibes
+{{ PREFERENCES_LINK }}
 
->> Arrêter complètement de recevoir des emails
-{{ unsubscribe_link }}
+>> No recibir más emails
+{{ UNSUBSCRIBE_LINK }}

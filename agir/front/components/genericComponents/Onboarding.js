@@ -14,7 +14,7 @@ import onboardingActionImage from "./images/onboarding__action.jpg";
 const ONBOARDING_TYPE = {
   event: {
     img: onboardingEventImage,
-    title: <>{_("Organisez un événement près de chez vous !")}</>,
+    title: <>Organiza una acción cerca de tu zona</>,
     body: (
       <>
         Organiza una acción, como una reunión, un brigadeo o una charla. ¡Organízate con más personas para darle vida al movimiento en tu zona!
@@ -36,7 +36,7 @@ const ONBOARDING_TYPE = {
         </p>
         <p>
           {/*_("Rejoignez un groupe, agissez sur le terrain et organisez des moments de réflexions politiques !")*/}
-          ¡Únase a un grupo, actúe  y organice momentos de reflexión política!
+          Únete a un grupo, actúa en tu zona y ayuda a más personas a activarse
         </p>
       </>
     ),
@@ -47,11 +47,11 @@ const ONBOARDING_TYPE = {
     },
   },
   group__creation: {
-    title: <>¡O crea tu grupo!{/*_("Ou bien créez votre groupe !")*/}</>,
+    title: <>¡O crea tu propio grupo!{/*_("Ou bien créez votre groupe !")*/}</>,
     body: (
       <>
         <p>
-          {_("Commencez dès aujourd’hui à organiser des actions pour soutenir les propositions de la France insoumise et de la")} <em>{_("NUPES")}</em>.
+        Actívate desde hoy para apoyar la misión de <em>{"Claudialízate"}</em>.
         </p>
         <p>
          {_(" Besoin d’inspiration pour animer votre groupe ?")}{" "}
@@ -91,11 +91,11 @@ const ONBOARDING_TYPE = {
   group__action: {
     img: onboardingActionImage,
     title:
-      "Únase a una acción en su municipio para hacer campaña a nivel local",
+      "Unirse a un grupo en tu zona para activarse de verdad",
     body: (
       <>
       
-Los grupos de acción permiten a los activistas organizarse en su barrio o municipio. ¡Únase a un grupo, actúe sobre el terreno y organice momentos de reflexión política!
+      Los grupos permiten a las personas organizarse en su barrio o en su región. Únete a un grupo, actúa en territorio y ayúdanos a crecer con Claudialízate
         {/*_("Les groupes d’actions permettent aux militants de s’organiser dans leur quartier ou dans leur commune. Rejoignez un groupe, agissez sur le terrain et organisez des moments de réflexions politiques !")*/}
       </>
     ),
@@ -207,7 +207,7 @@ const Onboarding = (props) => {
         )}
         {secondaryLink && (
           <Button link href={secondaryLink.href}>
-            {secondaryLink.label || "Voir la carte"}
+            {secondaryLink.label || "Ver el mapa"}
           </Button>
         )}
       </footer>

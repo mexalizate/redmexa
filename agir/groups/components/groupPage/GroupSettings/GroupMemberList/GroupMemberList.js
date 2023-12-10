@@ -63,7 +63,7 @@ const SORTING_OPTIONS = [
     sortingFn: (members) => _sortBy(members, "membershipType").reverse(),
   },
   {
-    label: "Ordre alphabétique",
+    label: "Orden alfabético",
     value: "alpha",
     sortingFn: (members) => _sortBy(members, "displayName"),
   },

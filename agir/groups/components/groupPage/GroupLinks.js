@@ -38,7 +38,7 @@ const GroupLinks = (props) => {
   }
 
   return (
-    <Card title="Nos liens" editLinkTo={editLinkTo}>
+    <Card title="Nuestros enlaces" editLinkTo={editLinkTo}>
       <StyledList>
         {links.map((link) => (
           <li title={link.label} key={link.id}>

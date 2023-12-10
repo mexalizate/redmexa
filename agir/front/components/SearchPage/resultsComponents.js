@@ -103,7 +103,7 @@ export const ListTitle = ({ name, length = 0, onShowMore }) => (
     </div>
     {onShowMore && (
       <Button color="primary" small onClick={onShowMore}>
-        {_("Voir tout")}
+        {"Ver todo"}
       </Button>
     )}
   </h2>

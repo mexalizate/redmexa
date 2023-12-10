@@ -57,9 +57,9 @@ const ContactSuccess = (props) => {
         />
       </svg>
       <Spacer size="0.875rem" />
-      <h2>Contact enregistré</h2>
+      <h2>Contacto guardado</h2>
       <Spacer size="0.875rem" />
-      <p>{`Merci pour votre aide ${user?.firstName || ""}`.trim()}&nbsp;!</p>
+      <p> ¡Gracias por ayudar {` ${user?.firstName || ""}`.trim()}&nbsp;!</p>
       {data?.group?.name ? (
         <p>
           {_("Les gestionnaires et animateur·ices du groupe")}{" "}
@@ -69,7 +69,7 @@ const ContactSuccess = (props) => {
       <Spacer size="2.5rem" />
       <footer>
         <Button onClick={onReset} color="primary">
-          {_("Ajouter un nouveau contact")}
+           Agregar nuevo contacto
         </Button>
         <Button link route="events">
           {_("Fermer")}

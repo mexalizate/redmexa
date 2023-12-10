@@ -52,11 +52,11 @@ const GroupLinks = (props) => {
         <div>
           {_("Vous n’avez pas encore de lien !")}
           <Spacer size="0.5rem" />
-          {_("Ajoutez vos réseaux sociaux et sites web pour permettre à tout le monde de les retrouver facilement")}
+          {"Agrega tus redes sociales y sitio web para que tod@s puedan dar contigo fácilmente."}
         </div>
         <Spacer size="1rem" />
         <Button color="secondary" onClick={createNewLink}>
-          {_("Ajouter un lien")}
+          {"Agregar un enlace"}
         </Button>
       </>
     );
@@ -72,7 +72,7 @@ const GroupLinks = (props) => {
         </GroupLink>
       ))}
       <Button icon="plus" color="link" onClick={createNewLink}>
-        {_("Ajouter un lien")}
+        {"Agregar un enlace"}
       </Button>
     </>
   );

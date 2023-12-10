@@ -57,8 +57,8 @@ const GroupLinkForm = (props) => {
         <TextField
           id="label"
           name="label"
-          label={_("Titre à afficher")}
-          helpText={_("Exemple : « Vidéo de présentation »")}
+          label="Texto a mostrar"
+          helpText="Por ejemplo: FB del grupo o Video de presentación"
           onChange={handleChange}
           value={linkData.label || ""}
           error={errors?.label}
@@ -68,7 +68,7 @@ const GroupLinkForm = (props) => {
         <TextField
           id="url"
           name="url"
-          label="URL"
+          label="Enlace a la página (URL)"
           onChange={handleChange}
           value={linkData.url || ""}
           error={errors?.url}

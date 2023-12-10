@@ -442,7 +442,7 @@ const PollingStationOfficerForm = (props) => {
           value={data.country}
           onChange={handleChangeCountry}
           error={errors?.country}
-          label={_("Pays")}
+          label={"País"}
         />
       </fieldset>
       <fieldset>
@@ -583,7 +583,7 @@ const PollingStationOfficerForm = (props) => {
           value={data.email}
           onChange={handleChange}
           error={errors?.email}
-          label={_("Adresse e-mail")}
+          label={"Dirección de email"}
           helpText={_("Important : si vous vous êtes déjà inscrit·e sur preprod.redmexa.com ou melenchon2022.fr, utilisez la même adresse e-mail.")}
           autoComplete="email"
         />

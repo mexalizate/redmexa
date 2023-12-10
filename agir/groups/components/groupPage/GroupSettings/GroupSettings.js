@@ -35,7 +35,7 @@ export const GroupSettings = (props) => {
   const subtitle = useMemo(
     () =>
       group?.type
-        ? `Gestion de votre ${getGroupTypeWithLocation(
+        ? `Gestión del Grupo ${getGroupTypeWithLocation(
             group.type,
           ).toLowerCase()}`
         : "",

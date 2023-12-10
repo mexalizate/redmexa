@@ -61,12 +61,12 @@ const EditionPanel = (props) => {
       <StyledTitle>
         {selectedMembershipType === MEMBERSHIP_TYPES.REFERENT
           ? "Ajouter un binôme animateur"
-          : "Ajouter un·e gestionnaire"}
+          : "Agregar un gestor"}
       </StyledTitle>
       <Spacer size="1rem" />
       {members.length === 1 ? (
         <span style={{ color: style.black700 }}>
-         {_(" Accueillez d’abord un·e membre dans votre groupe pour pouvoir lui donner un rôle de gestionnaire.")}
+         {"Debes tener más participantes para poder darles el rol de gestores."}
         </span>
       ) : candidates.length === 0 ? (
         <span style={{ color: style.black700 }}>

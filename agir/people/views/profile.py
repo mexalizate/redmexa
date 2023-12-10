@@ -110,7 +110,7 @@ class ContactView(SoftLoginRequiredMixin, UpdateView):
             messages.add_message(
                 self.request,
                 messages.INFO,
-                "Vous êtes maintenant désinscrit⋅e de tous les envois de lettres d'information, SMS et notifications.",
+                "¡Te desinscribiste de todos los newsletters, mensajitos y notificaciones!",
             )
 
         return res

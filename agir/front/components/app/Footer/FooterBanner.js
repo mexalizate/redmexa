@@ -149,9 +149,8 @@ export const FooterBanner = () => {
         <h3>{_("Agissez dans votre ville !")}</h3>
         <article>
           <p>
-            <strong>{_("Action Populaire")}</strong>{" "}
-            {_("est le réseau social d’action de")}
-            {_("la France insoumise.")}
+            <strong>Claudialízate</strong>{" "}
+            es la red de l@s mexican@s en el mundo.
           </p>
         </article>
         <div>
@@ -160,7 +159,7 @@ export const FooterBanner = () => {
           </Button>
         </div>
         <p>
-          {_("Vous avez déjà un compte ?")}
+          {_("Vous avez déjà un compte ?")} &nbsp;
           <Link route="login">{_("Je me connecte")}</Link>
         </p>
       </FooterForm>

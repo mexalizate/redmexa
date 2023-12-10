@@ -1,11 +1,11 @@
-Bonjour,
+Hola,
 
-Les organisateurs de l'événement « {{ EVENT_NAME }} » viennent de signaler son annulation.
+Malas noticias. L@s organizadores de la acción « {{ EVENT_NAME }} » acaban de anularla.
 
-Vous recevez ce message automatique car vous aviez signalé votre souhait de participer à cet événement.
+Recibes este mensaje automático porque indicaste que querías participar en la acción.
 
-Amitiés,  
-L’équipe d’Action Populaire  
+Saludos,  
+El equipo Claudialízate
 
 ------------------------------------------------------------------
-Cet email a été envoyé à {{ email }}. Il est personnel, ne le transférez pas.
+Este mensaje se envió a {{ EMAIL }}. Es personal y no debería ser reenviado.

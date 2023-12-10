@@ -588,7 +588,7 @@ const MessageCard = (props) => {
               <RawFeatherIcon name={"eye"} style={{ paddingRight: "6px" }} />
               <div>
                 {_("Cette discussion privée se déroule entre")}{" "}
-                {message.author.displayName} {_("et les animateur·ices du groupe")}{" "}
+                {message.author.displayName} y l@s facilitadores del grupo {" "}
                 <StyledGroupLink to={groupURL}>{group.name}</StyledGroupLink>
               </div>
             </StyledPrivateVisibility>
@@ -614,7 +614,7 @@ const MessageCard = (props) => {
               {!!encodedMessageURL && (
                 <InlineMenu triggerIconName="share-2" triggerSize="1rem">
                   <StyledInlineMenuItems>
-                    <span>{_("Partager avec d’autres membres du groupe :")}</span>
+                    <span>Compartir con más participantes del grupo: </span>
                     <a href={`https://t.me/share/url?url=${encodedMessageURL}`}>
                       <FaTelegram color={style.primary500} />
                       Telegram
@@ -628,7 +628,7 @@ const MessageCard = (props) => {
                         name={isURLCopied ? "check" : "copy"}
                         color={style.primary500}
                       />
-                      {isURLCopied ? "Lien copié" : "Copier le lien"}
+                      {isURLCopied ? "Enlace copiado" : "Copiar el enlace"}
                     </button>
                   </StyledInlineMenuItems>
                 </InlineMenu>
@@ -652,7 +652,7 @@ const MessageCard = (props) => {
                     {canDelete && (
                       <button onClick={handleDelete} disabled={isLoading}>
                         <RawFeatherIcon name="x" color={style.primary500} />
-                        Supprimer
+                        Eliminar
                       </button>
                     )}
                     {canReport && (

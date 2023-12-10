@@ -53,19 +53,19 @@ class CreateGroupForm extends React.Component {
   render() {
     let steps = [
       {
-        name: "Informations de contact",
+        name: "Datos de contacto",
         component: (
           <ContactStep setFields={this.setFields} fields={this.state.fields} />
         ),
       },
       {
-        name: "Localisation",
+        name: "Lugar",
         component: (
           <LocationStep setFields={this.setFields} fields={this.state.fields} />
         ),
       },
       {
-        name: "Validation et nom",
+        name: "Nombre y validación",
         component: (
           <ValidateStep fields={this.state.fields} types={this.state.types} />
         ),
@@ -73,7 +73,7 @@ class CreateGroupForm extends React.Component {
     ];
 
     let typeStep = {
-      name: "Un groupe pour quoi ?",
+      name: "¿Un grupo para qué?",
       component: (
         <GroupTypeStep
           disabled={this.props.disabled}
@@ -150,26 +150,15 @@ class GroupTypeStep extends FormStep {
           </div>
         )}
         <div className="col-sm-4">
-          <h3>Quel type de groupe voulez-vous créer&nbsp;?</h3>
+          <h3>¿Para qué crear un grupo?&nbsp;?</h3>
           <p>
-            Chaque personne peut créer un groupe local et en rejoindre plusieurs
-            dès lors qu'elle respecte le cadre et la démarche qui nous réunit
-            autour des propositions de la France Insoumise et de la{" "}
-            <em>NUPES</em>, dans un esprit d'ouverture, de bienveillance et de
-            volonté de se projeter dans l'action.
+          Toda persona puede formar un nuevo grupo y puede unirse a otros grupos creados por otras personas.
           </p>
           <p>
-            En créant votre groupe, vous vous engagez à respecter{" "}
-            <a href="https://infos.preprod.redmexa.com/charte-des-groupes-action-populaire/">
-              une charte d'éthique
-            </a>{" "}
-            dans l'animation du groupe.
+          Los grupos necesitan tener una dirección exacta, pues aparecen en el mapa, permitiendo que las personas de esa zona se conozcan y actúen juntas, lo que hace todo más valioso y divertido.
           </p>
           <p>
-            Ces groupes répondent à des besoins différents. Vous pouvez
-            parfaitement participer à plusieurs groupes en fonction de vos
-            intérêts. En revanche, vous ne pouvez animer qu'un seul groupe de
-            chaque type.
+          Es muy importante mantener una actitud de respeto y tolerancia hacia las demás personas y los demás grupos. Por eso, al crear un grupo te comprometes a respetar los Principios de Grupos.
           </p>
         </div>
 
@@ -242,7 +231,7 @@ class GroupTypeStep extends FormStep {
                     }}
                   >
                     <div>
-                      <em>Précisez le type de votre groupe</em>
+                      <em>Precisa el tipo de tu grupo</em>
                       <NavSelect
                         choices={this.subtypesFor(type.id).map((s) => ({
                           value: s.label,
@@ -262,7 +251,7 @@ class GroupTypeStep extends FormStep {
           ))}
           {this.state.hasError && (
             <div className="alert alert-warning margintopless marginbottomless">
-              Veuillez choisir un type de groupe avant de continuer.
+              Elija un tipo de grupo antes de continuar.
             </div>
           )}
         </div>
@@ -324,23 +313,23 @@ class ValidateStep extends FormStep {
     return (
       <div className="row padtopmore padbottommore">
         <div className="col-md-6">
-          <p>Voici les informations que vous avez entrées&nbsp;:</p>
+          <p>Verifica la información para tu grupo:&nbsp;:</p>
           <dl className="well confirmation-data-list">
-            <dt>Type&nbsp;:</dt> <dd>{groupType.label}</dd>
-            <dt>Numéro de téléphone&nbsp;:</dt>
+            <dt>Tipo&nbsp;:</dt> <dd>{groupType.label}</dd>
+            <dt>Número de celular&nbsp;:</dt>
             <dd>
               {fields.phone}&ensp;
               <small>({fields.hidePhone ? "caché" : "public"})</small>
             </dd>
             {fields.name && (
               <>
-                <dt>Nom du contact&nbsp;:</dt>
+                <dt>Nombre del contacto&nbsp;:</dt>
                 <dd>{fields.name}</dd>
               </>
             )}
-            <dt>Adresse email&nbsp;:</dt>
+            <dt>Dirección email&nbsp;:</dt>
             <dd>{fields.email}</dd>
-            <dt>Lieu&nbsp;:</dt>
+            <dt>Lugar &nbsp;:</dt>
             <dd>{fields.locationAddress1}</dd>
             {fields.locationAddress2 ? (
               <dd>{fields.locationAddress2}</dd>
@@ -352,9 +341,7 @@ class ValidateStep extends FormStep {
         </div>
         <div className="col-md-6">
           <p>
-            Pour finir, il vous reste juste à choisir un nom pour votre
-            groupe&nbsp;! Choisissez un nom simple et descriptif (par exemple :
-            &laquo;&nbsp;Groupe d'action de la Porte d'Arras&nbsp;&raquo;).
+          Para terminar, ponle nombre a tu grupo (por ejemplo: ‘Barrio La Angostura’, ‘Cancha Fut Teotitlán’, ‘Facultad FyL’…).
           </p>
           <form onSubmit={this.post}>
             <div className="form-group">
@@ -362,7 +349,7 @@ class ValidateStep extends FormStep {
                 className="form-control"
                 ref={(i) => (this.groupName = i)}
                 type="text"
-                placeholder="Nom du groupe"
+                placeholder="Nombre de mi grupo"
                 required
               />
             </div>
@@ -371,20 +358,20 @@ class ValidateStep extends FormStep {
               type="submit"
               disabled={!this.state.maySubmit || this.state.processing}
             >
-              Créer mon groupe
+              Crear grupo
             </button>
           </form>
           <form>
             <div className="checkbox">
               <label>
                 <input onChange={this.toggleMaySubmit} type="checkbox" />
-                Je m'engage à respecter{" "}
+                Me comprometo a respetar los{" "}
                 <a
                   href="https://infos.preprod.redmexa.com/charte-des-groupes-action-populaire/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  la charte des groupes d'action
+                  Principios de Grupos
                 </a>
               </label>
             </div>
@@ -402,7 +389,7 @@ class ValidateStep extends FormStep {
                   )}
                 </ul>
               ) : (
-                "Une erreur s'est produite. Merci de réessayer plus tard."
+                "Se ha producido un error. Gracias, inténtalo de nuevo más tarde."
               )}
             </div>
           )}

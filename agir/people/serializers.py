@@ -386,7 +386,7 @@ class ContactSerializer(serializers.ModelSerializer):
         if not data.get("email") and not data.get("contact_phone"):
             raise ValidationError(
                 detail={
-                    "global": "Veuillez indiquer obligatoirement une adresse email ou un numéro de téléphone mobile"
+                    "global": "Debes indicar obligatoriamente un email o un número de celular del nuevo contacto"
                 }
             )
 

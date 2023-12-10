@@ -214,7 +214,7 @@ export const POLLING_STATION_OFFICER_CONSTRAINTS = {
       message: "Ce champ ne peut être vide.",
     },
     email: {
-      message: _("Saisissez une adresse e-mail valide."),
+      message: "Introduzca una dirección de correo electrónico válida.",
     },
   },
   phone: {

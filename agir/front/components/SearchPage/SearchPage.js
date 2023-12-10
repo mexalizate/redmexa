@@ -147,10 +147,10 @@ export const SearchPage = () => {
 
       <StyledSelectCountry>
         <SearchAndSelectField
-          label="Pays"
+          label="País"
           name="country"
           autoComplete="country-name"
-          placeholder="Pays"
+          placeholder="País"
           minSearchTermLength={2}
           value={filters.country}
           defaultOptions={optionsCountry}
