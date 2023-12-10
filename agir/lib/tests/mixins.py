@@ -419,8 +419,8 @@ def update_fake_data():
         "test_thematic_booklet": SupportGroupSubtype.objects.get(label="livret test"),
     }
     groups = {
-        "user1_group": SupportGroup.objects.get(name="Groupe géré par user1"),
-        "user2_group": SupportGroup.objects.get(name="Groupe géré par user2"),
+        "user1_group": SupportGroup.objects.get(name="Grupo facilitado por user1"),
+        "user2_group": SupportGroup.objects.get(name="Grupo facilitado por user2"),
     }
     thematic_groups = {
         "thematic_booklet": SupportGroup.objects.get(name="Livret thématique fictif"),
@@ -515,11 +515,11 @@ def load_fake_data():
     }
     groups = {
         "user1_group": SupportGroup.objects.create(
-            name="Groupe géré par user1",
+            name="Grupo facilitado por user1",
             coordinates=Point(2.349722, 48.853056),  # ND de Paris),
         ),
         "user2_group": SupportGroup.objects.create(
-            name="Groupe géré par user2",
+            name="Grupo facilitado por user2",
             coordinates=Point(2.301944, 49.8944),  # ND d'Amiens
         ),
     }

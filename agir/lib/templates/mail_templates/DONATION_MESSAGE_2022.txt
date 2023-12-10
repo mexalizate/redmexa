@@ -1,25 +1,19 @@
-Merci pour votre don
+Gracias por donar
 
-Chère donatrice, Cher donateur,
+Querid@ donante
 
-Vous venez d’apporter votre appui financier à notre campagne pour les présidentielles de 2022.
+Acabas de apoyar financieramente a este movimiento. Te agradecemos mucho tu apoyo, que es crucial.
 
-Je vous remercie très chaleureusement. Cet appui est crucial pour nous. En effet, nous ne pouvons pas compter comme nos adversaires sur le soutien des oligarques ni de la finance. Notre force, c’est notre nombre. Ils ont les millions, mais nous sommes des millions !
-
-Je mesure combien donner quelques euros est souvent un effort financier important tant les temps sont durs pour beaucoup de Français. Votre argent ne sera pas gaspillé. Il sera utilisé avec rigueur et un souci constant de le rendre utile à notre action commune. Je m’y engage.
-
-Courage, les mauvais jours finiront.
-
-Jean-Luc Mélenchon  
-
+Saludos,
+El equipo Claudialízate
 ------------------------------------------------------------------
-Cet email a été envoyé à {{ EMAIL }}. Il est personnel, ne le transférez pas.
+Este mensaje se envió a {{ EMAIL }}. Es personal y no debería ser reenviado.
 
->> Voir cet email dans votre navigateur
+>> Ver este email en tu navegador
 {{ LINK_BROWSER }}
 
->> Choisir les emails que vous recevez
+>> Escoge los emails que recibes
 {{ PREFERENCES_LINK }}
 
->> Arrêter complètement de recevoir des emails
+>> No recibir más emails
 {{ UNSUBSCRIBE_LINK }}

@@ -100,7 +100,7 @@ const GroupLinksPage = (props) => {
   return (
     <>
       <HeaderPanel onBack={onBack} illustration={illustration} />
-      <StyledTitle>{_("Liens et réseaux sociaux du groupe")}</StyledTitle>
+      <StyledTitle>{"Enlaces y redes sociales del grupo"}</StyledTitle>
       <Spacer size="1rem" />
       <PageFadeIn ready={!!group} wait={<Skeleton />}>
         <GroupLinks links={group.links} onEdit={setSelectedLink} />

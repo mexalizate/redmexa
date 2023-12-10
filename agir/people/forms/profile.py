@@ -206,7 +206,7 @@ class PersonalInformationsForm(ImageFormMixin, forms.ModelForm):
 class AddEmailMergeAccountForm(Form):
     email_add_merge = forms.EmailField(
         max_length=200,
-        label="adresse e-mail",
+        label="Nueva dirección email",
         required=False,
         error_messages={
             "rate_limit": "Trop d'email de confirmation envoyés. Merci de réessayer dans quelques minutes.",
@@ -218,10 +218,10 @@ class AddEmailMergeAccountForm(Form):
         super().__init__(*args, **kwargs)
 
         self.user_pk = user_pk
-        self.fields["email_add_merge"].label = "Adresse e-mail"
+        self.fields["email_add_merge"].label = "Nueva dirección email"
         self.helper = FormHelper()
         self.helper.form_method = "POST"
-        self.helper.add_input(Submit("submit", "Envoyer"))
+        self.helper.add_input(Submit("submit", "Enviar"))
         self.helper.layout = Layout(("email_add_merge"))
 
     def is_rate_limited(self):

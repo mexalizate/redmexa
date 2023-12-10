@@ -92,7 +92,7 @@ const ManagerActions = (props) => {
   return (
     <StyledWrapper>
       <StyledPanel>
-        <h6>{_("Gestion du groupe")}</h6>
+        <h6>{_("Gestión del grupo")}</h6>
         <Button
           link
           route="createEvent"
@@ -101,25 +101,25 @@ const ManagerActions = (props) => {
           icon="plus"
           small
         >
-          {_("Créer un événement du groupe")}
+          Crear una acción del grupo {/*_("Créer un événement du groupe")*/}
         </Button>
         <ul>
           {groupSettingsLinks?.members && (
             <li>
               <RawFeatherIcon color={style.primary500} name="users" />
-              <Link to={groupSettingsLinks.members}>{_("Membres")}</Link>
+              <Link to={groupSettingsLinks.members}>{_("Miembr@s")}</Link>
             </li>
           )}
           {groupSettingsLinks?.contacts && (
             <li>
               <RawFeatherIcon color={style.primary500} name="rss" />
-              <Link to={groupSettingsLinks.contacts}>{_("Contacts")}</Link>
+              <Link to={groupSettingsLinks.contacts}>{_("Seguidores")}</Link>
             </li>
           )}
           {groupSettingsLinks?.general && (
             <li>
               <RawFeatherIcon name="file-text" color={style.primary500} />
-              <Link to={groupSettingsLinks.general}>{_("Informations")}</Link>
+              <Link to={groupSettingsLinks.general}>{_("Información")}</Link>
             </li>
           )}
           {groupSettingsLinks?.manage && (
@@ -139,13 +139,13 @@ const ManagerActions = (props) => {
           {groupSettingsLinks?.links && (
             <li>
               <RawFeatherIcon color={style.primary500} name="loader" />
-              <Link to={groupSettingsLinks.links}>{_("Liens externes")}</Link>
+              <Link to={groupSettingsLinks.links}>{_("Enlaces externos")}</Link>
             </li>
           )}
         </ul>
       </StyledPanel>
       <Button link route="createEvent" color="primary" icon="plus" small>
-        {_("Créer un événement du groupe")}
+      Crear una acción del grupo {/*_("Créer un événement du groupe")*/}
       </Button>
       <Button link to={groupSettingsLinks?.menu} icon="settings" small>
         {_("Gestion du groupe")}

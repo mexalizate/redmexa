@@ -277,7 +277,7 @@ export const ContactForm = (props) => {
         disabled={isLoading}
       />
       <Spacer data-scroll="newsletters" size="1.5rem" />
-      <h4>{_("Souhaitez-vous recevoir :")}</h4>
+      <h4>Quieres recibir :{/*_("Souhaitez-vous recevoir :")*/}</h4>
       {newsletterOptions.map((option) => (
         <React.Fragment key={option.value}>
           <CheckboxField
@@ -293,8 +293,8 @@ export const ContactForm = (props) => {
       ))}
       <Spacer data-scroll="group" size="1.5rem" />
       <SearchAndSelectField
-        label= "Grupo al que se agrega el contacto"
-        placeholder= "Selecciona un grupo/*"
+        label= "Grupo al que se agrega un seguidor(a)"
+        placeholder= "Selecciona un grupo"
         onChange={handleSelectGroup}
         onSearch={handleSearchGroup}
         isLoading={typeof groupOptions === "undefined"}
@@ -344,10 +344,11 @@ export const ContactForm = (props) => {
         <>
           <Spacer data-scroll="address" size="1rem" />
           <TextField
-            label={_("Numéro et nom de la rue")}
+            label={"Número y Calle"}
             helpText={
               <em>
-                {_("Pour pouvoir vous envoyer des informations en tant que correspondant·e")}
+                {/*_("Pour pouvoir vous envoyer des informations en tant que correspondant·e")*/}
+                Para identificar el lugar y enviarte la información adecuada
               </em>
             }
             id="address"
@@ -371,7 +372,7 @@ export const ContactForm = (props) => {
           />
           <Spacer data-scroll="country" size="1rem" />
           <CountryField
-            label={_("Pays")}
+            label={"País"}
             id="country"
             name="country"
             error={errors?.country}

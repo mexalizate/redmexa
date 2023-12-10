@@ -27,7 +27,7 @@ const NameField = (props) => {
 
   return (
     <TextField
-      label="Nombre del lugar de la acción"
+      label="Título de la acción"
       id={name}
       name={name}
       value={value}

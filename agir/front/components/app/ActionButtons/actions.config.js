@@ -36,7 +36,7 @@ const ACTIONS = {
   createContact: {
     key: "createContact",
     route: "createContact",
-    label: ["Agregar contacto", "Agregar un contacto"],
+    label: ["Agregar seguidor", "Agregar seguidores"],
     icon: "user-plus",
     color: "#4D26B9",
   },
@@ -66,9 +66,9 @@ const ACTIONS = {
   cafePopulaireRequest: {
     key: "cafePopulaireRequest",
     route: "cafePopulaireRequest",
-    label: ["Café populaire", "Organiser un café populaire"],
+    label: ["Café populaire", "Organizar un encuentro"],
     icon: "coffee",
-    color: "#00B171",
+    color: "#f70b39",
   },
 };
 

@@ -10,8 +10,8 @@ export default function MultiStepForm({ steps, startAtStep }) {
         startAtStep={startAtStep}
         stepsNavigation={true}
         showNavigation={true}
-        nextButtonText="Suivant&nbsp;&rarr;"
-        backButtonText="&larr;&nbsp;Précédent"
+        nextButtonText="Siguiente&nbsp;&rarr;"
+        backButtonText="&larr;&nbsp;Regresar"
         nextButtonCls="btn btn-primary pull-right"
         backButtonCls="btn btn-default pull-left"
       />

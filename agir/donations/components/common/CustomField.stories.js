@@ -53,7 +53,7 @@ export const WithCountryField = TemplateCountryField.bind({});
 WithCountryField.args = {
   id: 42,
   Component: CountryField,
-  label: "Pays",
+  label: "País",
   name: "country",
   helpText:
     "Pour savoir où l'on va il est intéressant de savoir d'où l'on vient",

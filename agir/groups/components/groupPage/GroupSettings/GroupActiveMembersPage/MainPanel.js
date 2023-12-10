@@ -64,14 +64,14 @@ const GroupMemberMainPanel = (props) => {
     <>
       <StyledTitle>
         {activeMembers.length}&nbsp;
-        {activeMembers.length > 1 ? "Membres actifs" : "Membre actif"}
+        {activeMembers.length > 1 ? "Participantes activ@s" : "Participante activ@"}
       </StyledTitle>
       <p style={{ color: style.black700, margin: 0 }}>
-        {_("Vos membres impliqués activement. Quand une personne rejoint votre groupe, elle est considérée comme membre actif.")}
+        {"Los participantes activos, es decir, que se unieron a tu grupo."}
       </p>
       <Spacer size="1rem" />
       <ShareLink
-        label={_("Copier les e-mails")}
+        label={"Copiar sus emails"}
         color="primary"
         url={emails}
         $wrap
@@ -97,7 +97,7 @@ const GroupMemberMainPanel = (props) => {
           style={{ paddingTop: "3px" }}
         />
         <Spacer size="0.5rem" />
-        {_("Télécharger la liste des membres et contacts au format CSV")}
+        {"Bajar la lista de participantes y seguidores en formato CSV"}
       </Link>
       <Spacer size="0.5rem" />
       <Link
@@ -111,7 +111,7 @@ const GroupMemberMainPanel = (props) => {
           style={{ paddingTop: "3px" }}
         />
         <Spacer size="0.5rem" />
-        {_("Transférer des membres vers un autre groupe")}
+        {"Transferir algunos participantes a otro grupo"}
       </Link>
     </>
   );

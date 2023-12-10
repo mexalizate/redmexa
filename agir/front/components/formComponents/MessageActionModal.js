@@ -83,7 +83,7 @@ const Steps = {
             onClick={onDelete}
             disabled={isLoading}
           >
-            {_("Supprimer")}
+            Eliminar
           </Button>
         </StyledModalFooter>
       </>
@@ -181,7 +181,7 @@ const Steps = {
               onClick={onDelete}
               disabled={isLoading}
             >
-             {_(" Supprimer")}
+             Eliminar
             </Button>
           ) : null}
           <Button color="default" onClick={onClose} disabled={isLoading}>

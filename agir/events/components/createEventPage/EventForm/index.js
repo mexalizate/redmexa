@@ -343,7 +343,7 @@ const EventForm = () => {
       <fieldset>
         <legend style={{ paddingBottom: "0" }}>
           <strong>{/*_("Lieu de l'événement")*/}Lugar de la acción</strong>
-          <em>{/*_("Même s'il se déroule en ligne")*/}Incluso si se lleva a cabo en línea</em>, {/*_("indiquez un lieu pour suggérer l’événement aux personnes à proximité, une mairie ou un café pour ne pas rendre votre adresse publique.")*/}ndica un lugar específico para invitar a otras personas en la zona (indica un restaurante o lugar público de referencia si no quieres indicar tu dirección).
+          <em>{/*_("Même s'il se déroule en ligne")*/}Incluso si se lleva a cabo en línea</em>, {/*_("indiquez un lieu pour suggérer l’événement aux personnes à proximité, une mairie ou un café pour ne pas rendre votre adresse publique.")*/}indica un lugar específico para invitar a otras personas en la zona (indica un restaurante o lugar público de referencia si no quieres indicar tu dirección).
         </legend>
         <Spacer size="1.5rem" data-scroll="onlineUrl" />
         <OnlineUrlField
@@ -352,7 +352,7 @@ const EventForm = () => {
           onChange={updateValue}
           error={errors && errors.onlineUrl}
           value={formData.onlineUrl}
-          placeholder={_("URL de la Videoconferencia (facultativo)")}
+          placeholder={"Enlace de la videoconferencia (opcional)"}
         />
         {options?.recentLocations?.length > 0 && (
           <>

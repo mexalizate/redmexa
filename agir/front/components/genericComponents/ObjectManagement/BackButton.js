@@ -22,7 +22,7 @@ const BackButton = (props) => {
     <StyledBackButton {...props} type="button">
       <RawFeatherIcon
         name="arrow-left"
-        aria-label="Retour"
+        aria-label="Regresar"
         width="1.5rem"
         height="1.5rem"
       />

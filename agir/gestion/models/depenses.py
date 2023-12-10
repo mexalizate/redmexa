@@ -614,7 +614,7 @@ class Reglement(SearchableModel, TimeStampedModel):
         _("code postal"), max_length=20, blank=False
     )
     location_country_fournisseur = CountryField(
-        _("pays"), blank_label=_("(sélectionner un pays)"), default="MX", blank=False
+        "país", blank_label="(Seleccione un país)", default="MX", blank=False
     )
 
     libre = models.TextField(verbose_name=_("Commentaire libre"), blank=True)

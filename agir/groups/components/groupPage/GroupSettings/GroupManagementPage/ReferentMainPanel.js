@@ -36,15 +36,15 @@ export const ReferentMainPanel = (props) => {
     <>
       <StyledTitle>{_("Animateurs et animatrices")}</StyledTitle>
       <span style={{ color: style.black700 }}>
-        {_("Les animateur·ices organisent la vie du groupe.")}
+        {"L@s facilitadores organizan y dan vida al grupo."}
       </span>
       <Spacer size=".5rem" />
       <span style={{ color: style.black700 }}>
-        {_("Pour respecter la")}{" "}
+        {"Para respetar la "}{" "}
         <a href="https://infos.preprod.redmexa.com/charte-des-groupes-action-populaire/">
-          {_("charte des groupes d'actions")}
+          {"paridad de género"}
         </a>
-        {_(", votre groupe doit être animé à parité de genre.")}
+        {_(", L@s facilitadores organizan y dan vida al grupo.")}
       </span>
       <Spacer size="1.5rem" />
       <GroupMemberList
@@ -69,7 +69,7 @@ export const ReferentMainPanel = (props) => {
             style={{ paddingTop: "3px" }}
           />
           <Spacer size="0.5rem" />
-          {_("Changer l'animation du groupe")}
+          {"Cambiar de animadores"}
         </a>
       )}
       {routes?.animationChangeRequest && routes?.referentResignmentRequest && (
@@ -87,12 +87,12 @@ export const ReferentMainPanel = (props) => {
             style={{ paddingTop: "3px" }}
           />
           <Spacer size="0.5rem" />
-          {_("Je ne souhaite plus animer mon groupe")}
+          {"Ya no quiero ser facilitador(a) de mi grupo"}
         </a>
       )}
       {(routes?.animationChangeRequest ||
         routes?.referentResignmentRequest) && <Spacer size="1.5rem" />}
-      <StyledTitle>Gestionnaires</StyledTitle>
+      <StyledTitle>Gestores</StyledTitle>
       <span style={{ color: style.black700 }}>
         {_("Ajoutez des gestionnaires pour vous assister sur Action Populaire.")}
       </span>
@@ -103,7 +103,7 @@ export const ReferentMainPanel = (props) => {
       <Spacer size="1.5rem" />
       <GroupMemberList
         members={managers}
-        addButtonLabel="Ajouter un·e gestionnaire"
+        addButtonLabel="Agregar un gestor"
         onAdd={addManager}
         isLoading={isLoading}
         onClickMember={onClickMember}
@@ -112,7 +112,7 @@ export const ReferentMainPanel = (props) => {
         <>
           <hr />
           <a href={routes.deleteGroup} style={{ color: style.redNSP }}>
-            {_("Supprimer le groupe")}
+            {"Eliminar el grupo"}
           </a>
         </>
       )}

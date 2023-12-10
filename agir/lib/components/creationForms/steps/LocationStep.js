@@ -48,13 +48,13 @@ export default class LocationStep extends FormStep {
 
     for (let f of requiredFields) {
       if (!fields[f] || fields[f].trim() === "") {
-        this.setError(f, "Ce champ est requis.");
+        this.setError(f, "Campo obligatorio.");
       }
     }
 
     if (fields.locationCountryCode === I18N.country) {
       if (!fields.locationZip) {
-        this.setError("locationZip", "Ce champ est requis.");
+        this.setError("locationZip", "Campo obligatorio.");
       } else if (!fields.locationZip.match("^[0-9]{5}$")) {
         this.setError("locationZip", "Ce code postal est incorrect.");
       }
@@ -68,15 +68,9 @@ export default class LocationStep extends FormStep {
     return (
       <div className="row padtopmore padbottommore">
         <div className="col-md-6">
-          <h4>Localisation</h4>
+          <h4>Lugar de reunión</h4>
           <p>
-            Merci d'indiquer une adresse précise avec numéro de rue, sans quoi
-            le point n'apparaîtra pas sur la carte.
-          </p>
-          <p>
-            S'il s'agit d'une adresse personnelle et que vous ne souhaitez pas
-            la rendre publique, vous pouvez indiquer un endroit à proximité,
-            comme un café, ou votre mairie.
+          Por favor indica una dirección exacta, con calle y número, para que aparezca en el mapa de grupos. Si se trata de una dirección personal y no quieres que aparezca, indica la dirección de un lugar muy cercano que sirva de referencia.
           </p>
           {helpText ? <p>{helpText}</p> : null}
         </div>
@@ -86,12 +80,12 @@ export default class LocationStep extends FormStep {
               "form-group" + (this.hasError("locationName") ? " has-error" : "")
             }
           >
-            <label>Nom du lieu</label>
+            <label>Nombre o tipo de lugar</label>
             <input
               name="locationName"
               onChange={this.handleInputChange}
               value={fields.locationName || ""}
-              placeholder="Exemple : café de la gare, rue des postes..."
+              placeholder="Ejemplo : café Péndulo, centro cultural Raíz…"
               className="form-control"
               type="text"
               required
@@ -104,12 +98,12 @@ export default class LocationStep extends FormStep {
               (this.hasError("locationAddress1") ? " has-error" : "")
             }
           >
-            <label className="control-label">Adresse</label>
+            <label className="control-label">Dirección </label>
             <input
               name="locationAddress1"
               onChange={this.handleInputChange}
               value={fields.locationAddress1 || ""}
-              placeholder="1ère ligne"
+              placeholder="Calle y número"
               className="form-control"
               type="text"
               required
@@ -118,7 +112,7 @@ export default class LocationStep extends FormStep {
               name="locationAddress2"
               onChange={this.handleInputChange}
               value={fields.locationAddress2 || ""}
-              placeholder="2ème ligne"
+              placeholder="Más dirección (colonia, municipio)"
               className="form-control"
               type="text"
             />
@@ -132,7 +126,7 @@ export default class LocationStep extends FormStep {
                   (this.hasError("locationZip") ? " has-error" : "")
                 }
               >
-                <label className="control-label">Code postal</label>
+                <label className="control-label">Código Postal/ZIP</label>
                 <input
                   name="locationZip"
                   onChange={this.handleInputChange}
@@ -151,7 +145,7 @@ export default class LocationStep extends FormStep {
                   (this.hasError("locationCity") ? " has-error" : "")
                 }
               >
-                <label className="control-label">Commune</label>
+                <label className="control-label">Ciudad</label>
                 <input
                   name="locationCity"
                   onChange={this.handleInputChange}
@@ -170,7 +164,7 @@ export default class LocationStep extends FormStep {
               (this.hasError("locationCountryCode") ? " has-error" : "")
             }
           >
-            <label className="control-label">Pays</label>
+            <label className="control-label">País</label>
             <select
               name="locationCountryCode"
               onChange={this.handleInputChange}

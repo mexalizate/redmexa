@@ -1,8 +1,7 @@
-{% extends "front/layout.html" %}
-{% load static i18n %}
+{% extends "front/layout.html" %} {% load static i18n %} {% block main %}
+<p>
+  {% translate "El servidor encontró un error. Ya nos fue señalado. Hacemos lo
+  posible para corregirlo rápidamente." %}
+</p>
 
-{% block main %}
-  <p>
-    {% translate "Le serveur a rencontré une erreur. Elle nous a déjà été signalée. Nous faisons de notre mieux pour corriger cela rapidement !" %}
-  <p>
-{% endblock %}
+<p>{% endblock %}</p>

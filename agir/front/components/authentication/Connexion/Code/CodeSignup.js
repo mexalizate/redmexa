@@ -39,16 +39,16 @@ const CodeSignup = () => {
     <Container>
       <RawFeatherIcon name="mail" width="41px" height="41px" />
       <h1>
-        {_("Plus qu’une étape pour")} <br />
+        Sólo un paso más para <br />
         {_("rejoindre l’action !")}
       </h1>
       <div style={{ marginTop: "2rem" }}>
         <p>
-          {_("Cliquez sur le lien que nous vous avons envoyé à")}{" "}
-          <strong>{location.state?.email}</strong> {_("pour valider votre inscription.")}
+            Haz clic en el enlace que te enviamos a{" "}
+          <strong>{location.state?.email}</strong> para validar tu registro
         </p>
         <p style={{ marginBottom: "0" }}>
-          {_("Si l’adresse e-mail n’est pas reconnue, il vous sera proposé de vous inscrire.")}
+          Si no reconocemos tu email, te invitaremos a registrarte.
         </p>
       </div>
     </Container>

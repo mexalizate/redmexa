@@ -39,7 +39,7 @@ export const Empty = Template.bind({});
 Empty.args = {
   value: "",
   name: "country",
-  label: _default("Pays"),
+  label: _default("País"),
   error: "",
   maxLength: undefined,
   disabled: false,

@@ -225,7 +225,7 @@ const MessageStep = (props) => {
                   {_("Les animateur·ices du groupe ont été informé·es de votre arrivée dans le groupe. Envoyez-leur un message pour vous présenter !")}
                 </>
               ) : (
-                <>{_("Contactez les animateur·ices du groupe !")}</>
+                <>{"Contacta a l@s facilitadores del grupo"}</>
               )}
               <Spacer size="0.5rem" />
             </>
@@ -234,8 +234,8 @@ const MessageStep = (props) => {
               {_("Vous souhaitez rejoindre ce groupe ou bien recevoir des informations ? Entamez votre discussion ici ! ")}
             </>
           )}
-          {_("Vous recevrez leur réponse")}{" "}
-          <strong>{_("par notification et sur votre e-mail")}</strong> (
+          {"Recibirás su respuesta"}{" "}
+          <strong>{"por notificación y por email "}</strong> (
           <span style={{ color: style.primary500 }}>{user.email}</span>)
         </div>
       )}
@@ -268,7 +268,7 @@ const MessageStep = (props) => {
             onChange={(e) => onChange("subject", e.target.value)}
             autoFocus
             disabled={disabled}
-            placeholder="Objet du message"
+            placeholder="Asunto del mensaje"
             maxLength={subjectMaxLength}
             hasCounter={false}
             autoComplete="off"
@@ -281,7 +281,7 @@ const MessageStep = (props) => {
           value={text}
           onChange={(e) => onChange("text", e.target.value)}
           disabled={disabled}
-          placeholder="Votre message"
+          placeholder="Tu mensaje"
           maxLength={maxLength}
           hasCounter={false}
         />

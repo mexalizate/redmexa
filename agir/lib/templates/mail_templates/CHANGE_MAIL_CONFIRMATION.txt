@@ -1,20 +1,20 @@
-Changement d'adresse e-mail
+Cambio de dirección email
   
-Bonjour,
+Hola,
 
->> Je confirme souhaiter changer d'adresse e-mail :
+>> Confirmo que deseo cambiar de dirección email:
 {{ CONFIRMATION_URL }})
 
->> Pourquoi cette confirmation ?
-Cette étape nous permet de vérifier que vous êtes bien que vous êtes bien propriétaire de l'adresse e-mail dont le changement est demandé.  
+>> ¿Por qué es necesario confirmar?
+Esta etapa nos permite verificar que eres propietari@ de la cuenta email que deseas cambiar.
 
-Si vous n'êtes pas à l'origine de cette demande ignorez ce message : nous ne conserverons pas votre adresse email.
+Si no iniciaste esta solicitud, puedes ignorar este mensaje: no conservaremos tu dirección email.
 
 ------------------------------------------------------------------
-Cet email a été envoyé à {{ email }}. Il est personnel, ne le transférez pas.
+Este mensaje se envió a {{ email }}. Es personal y no debería ser reenviado.
 
->> Choisir les emails que vous recevez
+>> Escoge los mensajes que recibes
 {{ preferences_link }}
 
->> Arrêter complètement de recevoir des emails
+>> No recibir más emails
 {{ unsubscribe_link }}

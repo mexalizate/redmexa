@@ -239,7 +239,7 @@ const StyledWrapper = styled.form`
   }
 `;
 
-const PLACEHOLDER_MESSAGE = "Écrire une réponse";
+const PLACEHOLDER_MESSAGE = "Responder";
 
 export const CommentButton = (props) => {
   const { onClick } = props;

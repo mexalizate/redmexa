@@ -163,7 +163,7 @@ const LocationField = (props) => {
         helpText={help && help.city}
       />
       <CountryField
-        label={_("Pays")}
+        label={"País"}
         name="country"
         autoComplete="country-name"
         placeholder=""

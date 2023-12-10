@@ -298,10 +298,9 @@ class SupportGroup(
 
     TYPE_DESCRIPTION = {
         TYPE_LOCAL_GROUP: _(
-            "Les groupes locaux réunissent les personnes sur la base d'un territoire réduit (quartier, "
-            "village ou petite ville), ceux étudiants d'un même lieu d'étude, professionnels d'un même "
-            "lieu de travail. Chacun·e ne peut animer qu'un seul groupe local, étudiant et "
-            "professionnel."
+            "Un grupo tiene una función territorial. Es importante que tu grupo se relacione a la zona donde "
+            "vives o a tu escuela o a tu lugar de trabajo, para que otras personas de ese espacio o zona puedan"
+            "entrar en contacto contigo"
         ),
         TYPE_THEMATIC: _(
             "Les groupes thématiques réunissent celles et ceux qui souhaitent agir ensemble sur un thème "

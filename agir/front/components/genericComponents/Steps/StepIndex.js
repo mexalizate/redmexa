@@ -151,7 +151,7 @@ const StepActions = (props) => {
           disabled={isLoading}
           color="choose"
         >
-          {_("Retour")}
+          Regresar
         </Hide>
       )}
       {onSave && (

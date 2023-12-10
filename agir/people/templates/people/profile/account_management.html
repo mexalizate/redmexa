@@ -21,18 +21,16 @@
     {% block navbar %} {% include "people/profile/profile_nav.html" with tab_code="CONTACT" %} {% endblock %}
     <div class="col-xs-12 col-md-9 margintopmore">
       {% include "people/profile/profile_title.html" with tab_code="CONTACT" %}
-      <p>Ce champ vous permet d'ajouter une adresse e-mail à votre compte.</p>
+      <p>Aquí puedes agregar un email a tu cuenta.</p>
       <ul>
         <li>
-          Après confirmation, il sera possible d'utiliser cette adresse pour se connecter à votre compte.
+          Podrás utilizar ese nuevo email para conectarte a tu cuenta.
         </li>
         <li>
-          Si l'adresse e-mail correspond à un autre compte sur la plateforme, une demande de fusion de compte
-          sera envoyée.
+          Si el email ya está registrado, se te propondrá fusionar ambas cuentas
         </li>
       </ul>
-      <p>Dans les deux cas un e-mail sera envoyé à cette adresse afin de vérifier que vous en êtes bien le
-        propriétaire.</p>
+      <p>Te enviaremos un email de verificación para que confirmes que eres dueñ@ de esa dirección de email.</p>
       <div>
         {% crispy form %}
       </div>

@@ -190,7 +190,7 @@ const SignUp = () => {
         {hasCountryField && (
           <div>
             <CountryField
-              label={_("Pays")}
+              label={"País"}
               name="country"
               error={error && error.country}
               placeholder=""

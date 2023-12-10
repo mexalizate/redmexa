@@ -265,7 +265,7 @@ const DonationForm = ({
             onClick={displayAddress2}
             type="button"
           >
-            + Agregar renglón a la dirección
+            +<a> Agregar renglón a la dirección</a>
           </CustomField>
         )}
         <GroupedFields>
@@ -306,7 +306,7 @@ const DonationForm = ({
         <Spacer size="1rem" />
         <CustomField
           Component={CountryField}
-          label="Pays*"
+          label="País*"
           name="locationCountry"
           placeholder=""
           value={formData.locationCountry}

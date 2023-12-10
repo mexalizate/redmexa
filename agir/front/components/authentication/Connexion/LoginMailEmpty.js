@@ -55,9 +55,9 @@ const LoginMailEmpty = (props) => {
       <div>
         <TextField
           id="email"
-          label="Adresse e-mail"
+          label="Tu dirección email"
           error={error?.email || error?.detail}
-          placeholder="Adresse e-mail"
+          placeholder="Email"
           onChange={handleInputChange}
           value={email}
           name="email"
@@ -77,7 +77,7 @@ const LoginMailEmpty = (props) => {
           loading={isLoading}
           disabled={isLoading}
         >
-          {_("Me connecter")}
+          {"Conectarme"}
         </Button>
       </div>
     </Form>

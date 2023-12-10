@@ -85,7 +85,7 @@ const EventLocation = (props) => {
   return (
     <form onSubmit={handleSubmit}>
       <HeaderPanel onBack={onBack} illustration={illustration} />
-      <StyledTitle>{_("Localisation")}</StyledTitle>
+      <StyledTitle>{"Localisation"}</StyledTitle>
       <Spacer size="1rem" />
       <StyledMap
         center={event?.location?.coordinates?.coordinates || []}

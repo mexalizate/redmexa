@@ -124,9 +124,10 @@ export const HowTo = (props) => {
           <li>
             <RawFeatherIcon strokeWidth={2} name="rss" />
             <span>
-              <strong>Agrega nuevos contactos a tu grupo{/*_("Obtenez des contacts pour votre groupe d’action")*/}</strong>
+              <strong>Agrega Nuev@ seguidor(a) a tu grupo{/*_("Obtenez des contacts pour votre groupe d’action")*/}</strong>
               <br />
-              {_("Les contacts sont enregistrés et visibles dans la partie gestion du groupe pour les gestionnaires et animateur·ices")}
+              Al registrar seguidores, serán visibles en la sección de gestión del grupo para l@s gestores y facilitadores
+              {/*_("Les contacts sont enregistrés et visibles dans la partie gestion du groupe pour les gestionnaires et animateur·ices")*/}
             </span>
           </li>
           <li>

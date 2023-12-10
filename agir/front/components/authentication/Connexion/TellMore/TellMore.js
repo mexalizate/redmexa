@@ -296,7 +296,7 @@ const TellMore = ({ dismiss }) => {
               </div>
             </InputGroup>
             <CountryField
-              label={_("Pays")}
+              label={"País"}
               id="country"
               name="country"
               placeholder=""

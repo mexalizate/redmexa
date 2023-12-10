@@ -90,7 +90,7 @@ const Layout = (props) => {
         {Array.isArray(events) && events.length > 0 ? (
           <>
             <div>
-              <h4>{_("Mes événements prévus")}</h4>
+              <h4>Mis acciones por venir</h4>
               <UpcomingEvents orientation="vertical" events={events} />
             </div>
             <Spacer size="2rem" />

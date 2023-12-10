@@ -114,7 +114,7 @@ const ConfirmContact = (props) => {
         </Button>
         <Spacer style={{ display: "inline-block" }} size="1rem" />
         <Button color="secondary" onClick={onConfirm} disabled={isLoading}>
-          {_("Enregistrer le contact")}
+          {/*_("Enregistrer le contact")*/} Guardar el contacto
         </Button>
       </footer>
     </StyledWrapper>

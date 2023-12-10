@@ -74,7 +74,7 @@ const ContactButton = (props) => {
           icon="mail"
           onClick={user ? handleMessageOpen : redirectToLogin}
         >
-          Contacter
+          Contacto 
         </Button>
       ) : (
         <button

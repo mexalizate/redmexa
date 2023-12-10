@@ -81,7 +81,7 @@ const GroupLocation = (props) => {
   }
 
   return (
-    <Card title="Accès" editLinkTo={groupSettingsLinks?.location} outlined>
+    <Card title="Ubicación" editLinkTo={groupSettingsLinks?.location} outlined>
       {coordinates && Array.isArray(coordinates.coordinates) ? (
         <StyledMap>
           <Map
@@ -114,7 +114,7 @@ const GroupLocation = (props) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Itinéraire
+              Cómo llegar
             </a>
           ) : null}
         </p>

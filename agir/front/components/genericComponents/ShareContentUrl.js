@@ -43,7 +43,7 @@ const ShareContentUrl = ({ url }) => {
         href={`https://www.facebook.com/sharer/sharer.php?u=${urlEncoded}`}
       >
         <FaFacebook size="1.5rem" height="32" width="32" color={style.white} />
-        &nbsp; {_("Partager sur Facebook")}
+        &nbsp; {"Compartir por Facebook"}
       </Button>
       <Button
         style={{ backgroundColor: style.twitter }}
@@ -54,7 +54,7 @@ const ShareContentUrl = ({ url }) => {
         href={`https://twitter.com/intent/tweet?text=${urlEncoded}`}
       >
         <RawFeatherIcon name="twitter" width="1.5rem" height="1.5rem" />
-        &nbsp; {_("Partager sur Twitter")}
+        &nbsp; {"Compartir por Twitter"}
       </Button>
       <Button
         style={{ backgroundColor: style.telegram }}
@@ -65,7 +65,7 @@ const ShareContentUrl = ({ url }) => {
         href={`https://t.me/share/url?url=${urlEncoded}`}
       >
         <FaTelegram size="1.5rem" height="32" width="32" color={style.white} />
-        &nbsp; {_("Partager sur Telegram")}
+        &nbsp; {"Compartir por Telegram"}
       </Button>
       <Button
         style={{ backgroundColor: style.whatsapp }}
@@ -76,7 +76,7 @@ const ShareContentUrl = ({ url }) => {
         href={`https://wa.me/?text=${urlEncoded}`}
       >
         <FaWhatsapp size="1.5rem" height="32" width="32" color={style.white} />
-        &nbsp; {_("Partager sur Whatsapp")}
+        &nbsp; {"Compartir por Whatsapp"}
       </Button>
       <ShareLink $wrap label={_("Copier le lien")} url={url} />
     </StyledContainer>

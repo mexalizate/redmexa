@@ -209,7 +209,7 @@ const Comment = (props) => {
                   {canDelete && (
                     <button onClick={handleDelete}>
                       <RawFeatherIcon name="x" color={style.primary500} />
-                      {_("Supprimer")}
+                      Eliminar
                     </button>
                   )}
                   {canReport && (

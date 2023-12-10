@@ -119,7 +119,7 @@ export const UpdateAddressModal = (props) => {
           />
           <Spacer size="1rem" />
           <CountryField
-            label={_("Pays")}
+            label={"País"}
             id="country"
             error={errors?.country}
             name="country"

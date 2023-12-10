@@ -13,7 +13,7 @@ class ContactStep extends FormStep {
     super(props);
     this.emailInputRef = React.createRef();
   }
-
+  
   isValidated() {
     return [
       this.validateName(),
@@ -26,7 +26,7 @@ class ContactStep extends FormStep {
     const { name } = this.props.fields;
 
     if (!name || name === "") {
-      this.setError("name", "Vous devez indiquer le nom du contact");
+      this.setError("name", "Obligatorio: indica la menos el nombre");
       return false;
     }
 
@@ -40,8 +40,7 @@ class ContactStep extends FormStep {
     if (!email || email === "") {
       this.setError(
         "email",
-        "Vous devez indiquer une adresse email de contact pour les personnes qui souhaiteraient" +
-          " se renseigner sur votre groupe",
+        "Email obligatorio, para que las personas puedan contactarte",
       );
       return false;
     }
@@ -59,7 +58,7 @@ class ContactStep extends FormStep {
     const { phone } = this.props.fields;
 
     if (!phone || phone === "") {
-      this.setError("phone", "Vous devez indiquer un numéro de téléphone.");
+      this.setError("phone", "Número obligatorio");
       return false;
     }
 
@@ -89,33 +88,26 @@ class ContactStep extends FormStep {
     return (
       <div className="row padtopmore padbottommore">
         <div className={"col-md-6" + (this.hasErrors() ? " has-error" : "")}>
-          <h4>Informations de contact</h4>
+          <h4>Información de contacto</h4>
           <p>
-            Ces informations sont les informations de contact. Vous devez
-            indiquer une adresse email et un numéro de téléphone. Vous pouvez
-            également préciser le nom d'un·e contact. Ce ne sont pas forcément
-            vos informations de contact personnelles&nbsp;: en particulier,
-            l'adresse email peut être créée pour l'occasion et être relevée par
-            plusieurs personnes.
+            Esta información es vital para que otras personas puedan contactar a 
+            tu grupo. El email no tiene que ser personal, puede ser uno creado 
+            para el grupo y compartido, pero asegúrate de que una persona esté 
+            siempre a cargo de responder. El número de celular nos permitirá 
+            contactarte directamente.
           </p>
           <p>
-            À l'exception du téléphone que vous pouvez choisir de ne pas rendre
-            public,{" "}
-            <strong>ces informations seront visibles par tout le monde</strong>.
-            Elle seront aussi indexées par les moteurs de recherche, donc
-            n'entrez pas votre nom complet si vous ne souhaitez pas apparaître
-            dans les résultats de recherche.
+            La información (excepto el número, si así lo indicas) será publicada 
+            en la página del grupo y podrá aparecer en motores de búsqueda.
           </p>
           <p className={errors.phone ? "help-block" : ""}>
-            Vous pouvez ne pas rendre le numéro de téléphone public (surtout si
-            c'est votre numéro personnel). Néanmoins, il est obligatoire de le
-            fournir pour que la coordination des groupes d'action puisse vous
-            contacter.
+            Puedes no hacer público tu número, pero es obligatorio indicarlo 
+            para que podamos contactarte desde Claudialízate.
           </p>
         </div>
         <div className="col-md-6">
           <div className={"form-group" + (errors.name ? " has-error" : "")}>
-            <label>Nom du contact</label>
+            <label>Nombre de la persona de contacto</label>
             <input
               className="form-control"
               name="name"
@@ -127,7 +119,7 @@ class ContactStep extends FormStep {
             {this.showError("name")}
           </div>
           <div className={"form-group" + (errors.email ? " has-error" : "")}>
-            <label>Adresse email de contact</label>
+            <label>Email de contacto del grupo</label>
             <input
               className="form-control"
               name="email"
@@ -139,7 +131,7 @@ class ContactStep extends FormStep {
             />
             {this.showError("email")}
           </div>
-          <label>Numéro de téléphone du contact</label>
+          <label> Número de celular del grupo</label>
           <div className="row">
             <div className="col-md-6">
               <div
@@ -167,17 +159,17 @@ class ContactStep extends FormStep {
                     checked={hidePhone || false}
                     onChange={this.handleInputChange}
                   />{" "}
-                  Ne pas rendre public
+                  No publicar mi número
                 </label>
               </div>
             </div>
           </div>
-          <div className="row padtopmore">
+          {/*<div className="row padtopmore">
             <p className="col-xs-12">
               Ces informations seront <strong>visibles par tous</strong> et{" "}
               <strong>indexées par les moteurs de recherche.</strong>
             </p>
-          </div>
+                </div>*/}
         </div>
       </div>
     );

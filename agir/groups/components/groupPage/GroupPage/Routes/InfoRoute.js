@@ -70,7 +70,7 @@ const MobileInfoRoute = (props) => {
       <StyledShareCard>
         <ShareCard
           url={group.routes?.details}
-          title={_("Partager le lien du groupe")}
+          title= {_("Comparte la página pública del grupo")}
         />
       </StyledShareCard>
 
@@ -108,7 +108,7 @@ const DesktopInfoRoute = (props) => {
           <GroupLocation {...group} groupSettingsLinks={groupSettingsLinks} />
           <ShareCard
             url={group.routes?.details}
-            title={_("Partager le lien du groupe")}
+            title={_("Comparte la página pública del grupo")}
           />
         </>
       ) : (
@@ -121,7 +121,7 @@ const DesktopInfoRoute = (props) => {
           />
           <ShareCard
             url={group.routes?.details}
-            title={_("Partager le lien du groupe")}
+            title={_("Comparte la página pública del grupo")}
           />
           <GroupLocation {...group} groupSettingsLinks={groupSettingsLinks} />
         </>

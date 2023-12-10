@@ -1,27 +1,28 @@
 {{ greetings }},
 
+Cada mes aportas tu apoyo financiero a Claudialízate. Te agradecemos por eso.
 
-Vous apportez chaque mois votre appui financier à la France insoumise, et nous vous en remercions.
-La carte bancaire que vous avez utilisé va cependant expirer le {{ expiry_date }}.
+Sin embargo, la tarjeta bancaria que has utilizado va a expirar el {{ expiry_date }}.
 
-Si vous voulez continuer à nous soutenir, vous devez mettre à jour votre carte bancaire.
+Si quieres seguir apoyando este gran movimiento, es necesario actualizar tu tarjeta bancaria.
   
->> Enregistrer ma nouvelle carte
-https://mosaico.preprod.redmexa.com/emails/{{ renew_subscription_link }}
+>> Registrar mi nueva tarjeta:
+https://pordefinir.com/emails/{{ renew_subscription_link }}
   
-Pour rappel, voici les détails de votre don mensuel :
+Estos son los datos de tu donación mensual:
 
 {{ subscription_description }}  
 
-Merci encore pour votre soutien.
+¡Gracias de nuevo por tu invaluable apoyo!
 
-Amitiés insoumises
+Saludos,
+El equipo Claudialízate
 
 ------------------------------------------------------------------
-Cet email a été envoyé à {{ email }}. Il est personnel, ne le transférez pas.
+Este mensaje se envió a {{ email }}. Es personal y no debería ser reenviado.
 
->> Choisir les emails que vous recevez
+>> Escoge los mensajes que recibes
 {{ preferences_link }}
 
->> Arrêter complètement de recevoir des emails
+>> No recibir más emails
 {{ unsubscribe_link }}

@@ -61,7 +61,7 @@ export const DONATION_DATA_CONSTRAINTS = {
       message: "Ce champ ne peut pas être vide.",
     },
     email: {
-      message: "Saisissez une adresse e-mail valide.",
+      message: "Introduzca una dirección de correo electrónico válida.",
     },
   },
   firstName: {

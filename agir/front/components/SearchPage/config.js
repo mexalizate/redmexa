@@ -41,11 +41,11 @@ export const SORTERS = {
 export const EventSort = [
   { label: <>Date &uarr;</>, value: SORTERS.DATE_ASC },
   { label: <>Date &darr;</>, value: SORTERS.DATE_DESC },
-  { label: <>Alphabétique &uarr;</>, value: SORTERS.ALPHA_ASC },
-  { label: <>Alphabétique &darr;</>, value: SORTERS.ALPHA_DESC },
+  { label: <>Orden alfabético &uarr;</>, value: SORTERS.ALPHA_ASC },
+  { label: <>Orden alfabético &darr;</>, value: SORTERS.ALPHA_DESC },
 ];
 export const EventCategory = [
-  { label: _("Tous les événements"), value: 0 },
+  { label: "Todas las acciones", value: 0 },
   { label: _("Passés"), value: "PAST" },
   { label: _("A venir"), value: "FUTURE" },
 ];
@@ -58,11 +58,11 @@ export const EventType = [
 ];
 
 export const GroupSort = [
-  { label: <>Alphabétique &uarr;</>, value: SORTERS.ALPHA_ASC },
-  { label: <>Alphabétique &darr;</>, value: SORTERS.ALPHA_DESC },
+  { label: <>Orden alfabético &uarr;</>, value: SORTERS.ALPHA_ASC },
+  { label: <>Orden alfabético &darr;</>, value: SORTERS.ALPHA_DESC },
 ];
 export const GroupType = [
-  { label: _("Tous les groupes"), value: 0 },
+  { label: "Todos los grupos", value: 0 },
   { label: _("Certifiés"), value: "CERTIFIED" },
   { label: _("Non certifiés"), value: "NOT_CERTIFIED" },
   { label: _("Groupe local"), value: "L" },
