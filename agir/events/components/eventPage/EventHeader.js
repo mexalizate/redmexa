@@ -220,7 +220,7 @@ const Actions = (props) => {
             to={routeConfig.eventSettings.getLink({ eventPk: id })}
             color="primary"
           >
-            {_("Gérer l'événement")}
+            Gestionar la acción
           </Button>
         )}
         {canRSVP && !rsvped && (
@@ -239,7 +239,7 @@ const Actions = (props) => {
             <StyledButtonMenu
               color="success"
               icon="check-circle"
-              text="Je participe"
+              text="Participó"
               shouldDismissOnClick
               MobileLayout={Popin}
             >
