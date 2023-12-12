@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-11 18:03-0600\n"
+"POT-Creation-Date: 2023-12-11 18:14-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2184,7 +2184,7 @@ msgstr ""
 "imagen.\n"
 "        "
 
-#: agir/events/models.py:421 agir/groups/models.py:331 agir/lib/models.py:318
+#: agir/events/models.py:421 agir/groups/models.py:339 agir/lib/models.py:318
 msgid "nom"
 msgstr "nombre"
 
@@ -5610,7 +5610,7 @@ msgstr "Grupo coordinador"
 msgid "Boucle départementale"
 msgstr "Otro tipo de grupo"
 
-#: agir/groups/models.py:300
+#: agir/groups/models.py:301
 msgid ""
 "Les groupes locaux réunissent les personnes sur la base d'un territoire "
 "réduit (quartier, village ou petite ville), ceux étudiants d'un même lieu "
@@ -5621,7 +5621,7 @@ msgstr ""
 "un barrio, una escuela… Toda persona puede organizar su grupo local y "
 "participar en otros."
 
-#: agir/groups/models.py:304
+#: agir/groups/models.py:307
 msgid ""
 "Les groupes thématiques réunissent celles et ceux qui souhaitent agir "
 "ensemble sur un thème donné en lien avec les livrets thématiques de l'Avenir "
@@ -5631,7 +5631,7 @@ msgstr ""
 "estudiantes, empresarios, sindicalistas, artistas… Para poder participar en "
 "uno, primero completa tu perfil"
 
-#: agir/groups/models.py:306
+#: agir/groups/models.py:311
 msgid ""
 "Les groupes fonctionnels rassemblent les personnes d'une même zone "
 "s'organisant à plusieurs pour accomplir des fonctions précises (gestion d'un "
@@ -5640,46 +5640,46 @@ msgstr ""
 "Los grupos coordinadores son organizados por el equipo Claudialízate para "
 "apoyar a los grupos locales y los grupos temáticos"
 
-#: agir/groups/models.py:309
+#: agir/groups/models.py:316
 msgid ""
 "Les boucles départementales assurent la coordination des groupes d'action au "
 "seind'un département."
 msgstr "Claudialízate puede proponerte participar en otros tipos de grupos."
 
-#: agir/groups/models.py:315 agir/groups/models.py:317
-#: agir/groups/models.py:319 agir/groups/models.py:322
+#: agir/groups/models.py:323 agir/groups/models.py:325
+#: agir/groups/models.py:327 agir/groups/models.py:330
 msgid "✅ Il n'est possible d'animer que deux groupes par personne."
 msgstr ""
 
-#: agir/groups/models.py:331
+#: agir/groups/models.py:339
 msgid "Le nom du groupe"
 msgstr "El nombre del grupo"
 
-#: agir/groups/models.py:335 agir/groups/models.py:570
+#: agir/groups/models.py:343 agir/groups/models.py:578
 msgid "type de groupe"
 msgstr "tipo de grupo"
 
-#: agir/groups/models.py:353
+#: agir/groups/models.py:361
 msgid "publié"
 msgstr "publicado"
 
-#: agir/groups/models.py:356
+#: agir/groups/models.py:364
 msgid "Le groupe est visible publiquement"
 msgstr "El grupo es visible públicamente"
 
-#: agir/groups/models.py:360
+#: agir/groups/models.py:368
 msgid "ouvert"
 msgstr "abierto"
 
-#: agir/groups/models.py:364
+#: agir/groups/models.py:372
 msgid "Le groupe accueilir de nouveaux membres ou abonné·es"
 msgstr "El grupo puede recibir a nuev@s miembros o seguidores"
 
-#: agir/groups/models.py:368
+#: agir/groups/models.py:376
 msgid "éditable"
 msgstr "editable"
 
-#: agir/groups/models.py:373
+#: agir/groups/models.py:381
 msgid ""
 "Les informations du groupe peuvent être éditées par ses animateur·ices et "
 "gestionnaires"
@@ -5687,19 +5687,19 @@ msgstr ""
 "Las informaciones del grupo pueden ser editadas por sus facilitadores y "
 "gestores"
 
-#: agir/groups/models.py:378
+#: agir/groups/models.py:386
 msgid "messagerie privée activée"
 msgstr "mensajería privada activada"
 
-#: agir/groups/models.py:381
+#: agir/groups/models.py:389
 msgid "La messagerie privée est activée pour le groupe"
 msgstr "La mensajería privada está activada para el grupo"
 
-#: agir/groups/models.py:385
+#: agir/groups/models.py:393
 msgid "date de certification"
 msgstr "fecha de certificación"
 
-#: agir/groups/models.py:390
+#: agir/groups/models.py:398
 msgid ""
 "La date à laquelle le groupe a été certifié, vide pour les groupes non "
 "certifiés"
@@ -5707,43 +5707,43 @@ msgstr ""
 "La fecha en la que el grupo fue certificado, vacía para los grupos no "
 "certificados"
 
-#: agir/groups/models.py:539 agir/people/models.py:947
+#: agir/groups/models.py:547 agir/people/models.py:947
 msgid "groupe d'action"
 msgstr "grupo"
 
-#: agir/groups/models.py:540
+#: agir/groups/models.py:548
 msgid "groupes d'action"
 msgstr "grupos"
 
-#: agir/groups/models.py:543
+#: agir/groups/models.py:551
 msgid "Peut afficher les groupes non publiés"
 msgstr "Puede mostrar los grupos no publicados"
 
-#: agir/groups/models.py:555 agir/people/models.py:854
+#: agir/groups/models.py:563 agir/people/models.py:854
 msgid "tag"
 msgstr "etiqueta"
 
-#: agir/groups/models.py:580
+#: agir/groups/models.py:588
 msgid "sous-type"
 msgstr "sub-tipo"
 
-#: agir/groups/models.py:618
+#: agir/groups/models.py:626
 msgid "Statut dans le groupe"
 msgstr "Estatus en el grupo"
 
-#: agir/groups/models.py:624
+#: agir/groups/models.py:632
 msgid "Recevoir les notifications de ce groupe"
 msgstr "Recibir las notificaciones de este grupo"
 
-#: agir/groups/models.py:626
+#: agir/groups/models.py:634
 msgid "Je recevrai des messages en cas de modification du groupe."
 msgstr "Recibiré mensajes en caso de modificación del grupo"
 
-#: agir/groups/models.py:630
+#: agir/groups/models.py:638
 msgid "Ajout des notifications par défaut du groupe après création"
 msgstr "Agregar notificaciones por default del grupo tras su creación"
 
-#: agir/groups/models.py:633
+#: agir/groups/models.py:641
 msgid ""
 "J'accepte de recevoir les notifications par défaut de ce groupe. Je pourrai "
 "changer mes préferences de notifications à tout moment. "
@@ -5751,7 +5751,7 @@ msgstr ""
 "Acepto recibir notificaciones por default de este grupo. Podré cambiar mis "
 "preferencias de notificaciones en todo momento."
 
-#: agir/groups/models.py:640
+#: agir/groups/models.py:648
 msgid ""
 "Consentement au partage des informations personnelles avec les "
 "animateur·ices et gestionnaires du groupe"
@@ -5759,7 +5759,7 @@ msgstr ""
 "Consentimiento para compartir ciertos datos personales con los facilitadores "
 "y gestores del grupo"
 
-#: agir/groups/models.py:644
+#: agir/groups/models.py:652
 msgid ""
 "J'accepte de partager mes informations personnelles avec les animateur·ices "
 "et gestionnaires de ce groupe"
@@ -5767,11 +5767,11 @@ msgstr ""
 "Acepto compartir ciertos datos personales con los facilitadores y gestores "
 "de este grupo"
 
-#: agir/groups/models.py:656
+#: agir/groups/models.py:664
 msgid "Accès à la gestion des finances du groupe"
 msgstr "Acceso a la gestión de finanzas del grupo"
 
-#: agir/groups/models.py:660
+#: agir/groups/models.py:668
 msgid ""
 "La valeur de ce champ indique si la personne aura le droit de gérer les "
 "finances du groupe et de créer/suivre/valider des demandes de dépense. N.B. "
@@ -5783,42 +5783,42 @@ msgstr ""
 "Esta facultad es válida únicamente para l@s facilitadores y l@s gestores de "
 "grupo"
 
-#: agir/groups/models.py:667
+#: agir/groups/models.py:675
 msgid "adhésion"
 msgstr "adhesión"
 
-#: agir/groups/models.py:668
+#: agir/groups/models.py:676
 msgid "adhésions"
 msgstr "adhesiones"
 
-#: agir/groups/models.py:673
+#: agir/groups/models.py:681
 #, python-brace-format
 msgid "{person} --> {supportgroup},  ({type})"
 msgstr "{person} --> {supportgroup},  ({type})"
 
-#: agir/groups/models.py:719
+#: agir/groups/models.py:727
 msgid ""
 "La modification de ce champ est autorisée uniquement pour les gestionnaires "
 "et animateur·ices du groupe"
 msgstr ""
 
-#: agir/groups/models.py:747
+#: agir/groups/models.py:755
 #, fuzzy
 #| msgid "Nombre de membres"
 msgid "Transfert de membres"
 msgstr "Número de miembros"
 
-#: agir/groups/models.py:748
+#: agir/groups/models.py:756
 #, fuzzy
 #| msgid "Nombre de membres"
 msgid "Transferts de membres"
 msgstr "Número de miembros"
 
-#: agir/groups/models.py:763
+#: agir/groups/models.py:771
 msgid "Lien ou réseau social de l’équipe"
 msgstr ""
 
-#: agir/groups/models.py:764
+#: agir/groups/models.py:772
 msgid "Liens et réseaux sociaux de l’équipe"
 msgstr ""
 
