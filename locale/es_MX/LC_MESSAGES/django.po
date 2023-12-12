@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-29 11:53-0600\n"
+"POT-Creation-Date: 2023-12-11 18:14-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1570,8 +1570,7 @@ msgstr "Fecha de nacimiento"
 msgid "pays de naissance"
 msgstr "Fecha de nacimiento"
 
-#: agir/elections/models.py:100 agir/gestion/models/depenses.py:617
-#: agir/lib/models.py:94
+#: agir/elections/models.py:100 agir/lib/models.py:94
 msgid "(sélectionner un pays)"
 msgstr "(seleccionar país)"
 
@@ -2393,19 +2392,19 @@ msgstr "La fecha de fin del evento debe ser posterior a la fecha de inicio."
 
 #: agir/events/models.py:1031
 msgid "Réunion privée de groupe"
-msgstr "Reunión privada del grupo"
+msgstr "Reunión de grupo"
 
 #: agir/events/models.py:1032
 msgid "Événement public"
-msgstr "Evento público"
+msgstr "Actividad pública"
 
 #: agir/events/models.py:1033
 msgid "Action publique"
-msgstr "Acción pública"
+msgstr "Claudiactivación"
 
 #: agir/events/models.py:1034
 msgid "Autre"
-msgstr "Otra"
+msgstr "Otra acción"
 
 #: agir/events/models.py:1046
 msgid ""
@@ -3193,8 +3192,8 @@ msgstr "Informaciones de contacto"
 msgid ""
 "Attention, même si vous inscrivez une autre personne, vous devez entrer les "
 "informations de la personne qui détient le compte preprod.redmexa.com ou "
-"preprod.redmexa.com associé à l'adresse %(user_person_email)s et qui effectue "
-"le paiement."
+"preprod.redmexa.com associé à l'adresse %(user_person_email)s et qui "
+"effectue le paiement."
 msgstr ""
 
 #: agir/events/templates/events/pay_event.html:40
@@ -3202,8 +3201,8 @@ msgstr ""
 msgid ""
 "Attention, même si vous inscrivez une autre personne, vous devez entrer les "
 "informations de la personne qui détient le compte preprod.redmexa.com ou "
-"preprod.redmexa.com associé à l'adresse %(user.person.email)s et qui effectue "
-"le paiement."
+"preprod.redmexa.com associé à l'adresse %(user.person.email)s et qui "
+"effectue le paiement."
 msgstr ""
 
 #: agir/events/templates/events/payment_confirmation.html:4
@@ -3461,12 +3460,6 @@ msgstr ""
 #| msgid "Vous devez être inscrit⋅e à l'événement pour accéder à cette page."
 msgid "Vous n'êtes pas autorisé⋅e à accéder à cette page."
 msgstr "Debes estar inscrit@ en el evento para acceder a esta página."
-
-#: agir/front/templates/500.html:6
-msgid ""
-"Le serveur a rencontré une erreur. Elle nous a déjà été signalée. Nous "
-"faisons de notre mieux pour corriger cela rapidement !"
-msgstr ""
 
 #: agir/front/view_mixins.py:78 agir/front/views.py:46
 #, fuzzy
@@ -4811,10 +4804,6 @@ msgstr "ciudad"
 msgid "code postal"
 msgstr "código postal"
 
-#: agir/gestion/models/depenses.py:617 agir/lib/models.py:94
-msgid "pays"
-msgstr "país"
-
 #: agir/gestion/models/depenses.py:620
 msgid "Commentaire libre"
 msgstr ""
@@ -5475,11 +5464,11 @@ msgstr "Estatus en el grupo"
 msgid "Sauvegarder et publier"
 msgstr ""
 
-#: agir/groups/forms.py:127 agir/people/forms/profile.py:129
+#: agir/groups/forms.py:127 agir/people/forms/profile.py:126
 msgid "1ère ligne"
 msgstr "1era línea"
 
-#: agir/groups/forms.py:128 agir/people/forms/profile.py:132
+#: agir/groups/forms.py:128 agir/people/forms/profile.py:129
 msgid "2ème ligne"
 msgstr "2da línea"
 
@@ -5606,28 +5595,20 @@ msgstr[1] ""
 "found and sent to the admin."
 
 #: agir/groups/models.py:286
-#, fuzzy
-#| msgid "Groupe participant"
 msgid "Groupe local"
-msgstr "Grupo participante"
+msgstr "Grupo local"
 
 #: agir/groups/models.py:287 agir/groups/proxys.py:19
-#, fuzzy
-#| msgid "Groupe et événement"
 msgid "Groupe thématique"
-msgstr "Grupo y evento"
+msgstr "Grupo temático"
 
 #: agir/groups/models.py:288
-#, fuzzy
-#| msgid "groupe d'action"
 msgid "Groupe fonctionnel"
-msgstr "grupo"
+msgstr "Grupo coordinador"
 
 #: agir/groups/models.py:289
-#, fuzzy
-#| msgid "à une caisse départementale"
 msgid "Boucle départementale"
-msgstr "a una región"
+msgstr "Otro tipo de grupo"
 
 #: agir/groups/models.py:301
 msgid ""
@@ -5636,6 +5617,9 @@ msgid ""
 "d'étude, professionnels d'un même lieu de travail. Chacun·e ne peut animer "
 "qu'un seul groupe local, étudiant et professionnel."
 msgstr ""
+"Los grupos locales reúnen a las personas en una zona específica una calle, "
+"un barrio, una escuela… Toda persona puede organizar su grupo local y "
+"participar en otros."
 
 #: agir/groups/models.py:307
 msgid ""
@@ -5643,6 +5627,9 @@ msgid ""
 "ensemble sur un thème donné en lien avec les livrets thématiques de l'Avenir "
 "en Commun."
 msgstr ""
+"Los grupos temáticos reúnen a las personas por perfil por ejemplo: "
+"estudiantes, empresarios, sindicalistas, artistas… Para poder participar en "
+"uno, primero completa tu perfil"
 
 #: agir/groups/models.py:311
 msgid ""
@@ -5650,12 +5637,14 @@ msgid ""
 "s'organisant à plusieurs pour accomplir des fonctions précises (gestion d'un "
 "local, organisation des manifestation, etc.)"
 msgstr ""
+"Los grupos coordinadores son organizados por el equipo Claudialízate para "
+"apoyar a los grupos locales y los grupos temáticos"
 
 #: agir/groups/models.py:316
 msgid ""
 "Les boucles départementales assurent la coordination des groupes d'action au "
 "seind'un département."
-msgstr ""
+msgstr "Claudialízate puede proponerte participar en otros tipos de grupos."
 
 #: agir/groups/models.py:323 agir/groups/models.py:325
 #: agir/groups/models.py:327 agir/groups/models.py:330
@@ -5956,10 +5945,8 @@ msgid ""
 msgstr ""
 
 #: agir/groups/views/management_views.py:226
-#, fuzzy
-#| msgid "Votre numéro a été correctement validé."
-msgid "Votre groupe a été correctement créé."
-msgstr "Tu número fue validado correctamente."
+msgid "¡Tu grupo fue creado con éxito!"
+msgstr ""
 
 #: agir/groups/views/management_views.py:319
 msgid "{} n'est plus un gestionnaire du groupe."
@@ -6226,6 +6213,10 @@ msgstr "dirección (2da línea)"
 #: agir/lib/models.py:89
 msgid "code INSEE"
 msgstr "distrito"
+
+#: agir/lib/models.py:94
+msgid "pays"
+msgstr "país"
 
 #: agir/lib/models.py:114
 msgid "Pas de localisation"
@@ -7494,7 +7485,7 @@ msgstr ""
 "Usar este campo para agregar una dirección email adicional que podrás "
 "utilizar para conectarte"
 
-#: agir/people/forms/account.py:114
+#: agir/people/forms/account.py:106
 msgid ""
 "Seul un numéro de téléphone mobile français (outremer inclus) peut être "
 "utilisé pour la validation."
@@ -7502,14 +7493,14 @@ msgstr ""
 "Utiliza un número de teléfono celular para poder validar el número de tu "
 "cuenta."
 
-#: agir/people/forms/account.py:119
+#: agir/people/forms/account.py:111
 msgid ""
 "Vous devez indiquer le numéro de mobile qui vous servira à valider votre "
 "compte."
 msgstr ""
 "Debes indicar el número de teléfono que te servirá para validar tu cuenta"
 
-#: agir/people/forms/account.py:157
+#: agir/people/forms/account.py:149
 msgid "Code reçu par SMS"
 msgstr "Código recibido por mensajero"
 
@@ -7517,24 +7508,24 @@ msgstr "Código recibido por mensajero"
 msgid "Municipalité mexicaine d'origine"
 msgstr "Municipio mexicano de origen"
 
-#: agir/people/forms/profile.py:122
+#: agir/people/forms/profile.py:119
 msgid "JJ/MM/AAAA"
 msgstr "DD/MM/AAAA"
 
-#: agir/people/forms/profile.py:175
+#: agir/people/forms/profile.py:172
 msgid "Merci d'indiquer un code postal valide"
 msgstr "Por favor indica un código postal válido"
 
-#: agir/people/forms/profile.py:349
+#: agir/people/forms/profile.py:346
 #: agir/people/templates/people/profile/send_validation_sms.html:6
 msgid "Valider mon numéro de téléphone"
 msgstr "Validar mi número de teléfono celular"
 
-#: agir/people/forms/profile.py:359
+#: agir/people/forms/profile.py:356
 msgid "Vérification de votre numéro de téléphone"
 msgstr "Verificación de tu número de teléfono celular"
 
-#: agir/people/forms/profile.py:364
+#: agir/people/forms/profile.py:361
 msgid ""
 "Faites vérifiez votre numéro de téléphone (cette certification facultative "
 "n'est possible que pour les numéros français)."
@@ -7641,10 +7632,6 @@ msgstr "Verificado"
 #: agir/people/models.py:451
 msgid "En attente de validation manuelle"
 msgstr "En espera de validación manual"
-
-#: agir/people/models.py:455
-msgid "Numéro de téléphone de contact"
-msgstr "Número de teléfono de contacto"
 
 #: agir/people/models.py:461
 msgid "Statut du numéro de téléphone"
@@ -8236,6 +8223,14 @@ msgstr "Clear all filters"
 #: agir/system_pay/__init__.py:169
 msgid "Par carte bleue"
 msgstr "Con tarjeta de débito"
+
+#, fuzzy
+#~| msgid "Votre numéro a été correctement validé."
+#~ msgid "Votre groupe a été correctement créé."
+#~ msgstr "Tu número fue validado correctamente."
+
+#~ msgid "Numéro de téléphone de contact"
+#~ msgstr "Número de teléfono de contacto"
 
 #~ msgid ""
 #~ "Le transfert de %d membre(s) vers « %s » a été effectué. Ces "
