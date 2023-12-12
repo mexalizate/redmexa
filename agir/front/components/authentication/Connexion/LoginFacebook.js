@@ -17,7 +17,7 @@ const LoginFacebook = (props) => {
   return (
     <ButtonFacebook {...props} link color="choose" href={routes.facebookLogin}>
       <img src={facebookImg} width="24" height="24" />
-      {/*_("  Connexion avec Facebook")*/}Acceder con tu Facebook
+      {"  Acceder con tu Facebook"}
     </ButtonFacebook>
   );
 };

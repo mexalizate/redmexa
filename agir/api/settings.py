@@ -432,7 +432,7 @@ EMAIL_TEMPLATES = {
 }
 
 EMAIL_FROM = os.environ.get(
-    "EMAIL_FROM", "Action populaire <noreply@preprod.redmexa.com>"
+    "EMAIL_FROM", "Claudialízate <noreply@preprod.redmexa.com>"
 )
 EMAIL_FROM_LFI = os.environ.get(
     "EMAIL_FROM_LFI",

@@ -44,10 +44,10 @@ const MobileActionToolsPage = (props) => {
       <StyledPage>
         <StyledButtons>
           <Button link route="help">
-            {_("Centre d'aide")}
+            {"Centro de ayuda"}
           </Button>
           <Button link route="contact">
-            {_("Nous contacter")}
+            {"Contactarnos"}
           </Button>
         </StyledButtons>
         <PageFadeIn ready={typeof hasGroups !== "undefined"}>

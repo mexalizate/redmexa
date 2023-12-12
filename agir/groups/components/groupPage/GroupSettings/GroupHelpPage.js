@@ -17,7 +17,7 @@ const GroupHelpPage = (props) => {
   return (
     <div>
       <HeaderPanel onBack={onBack} illustration={illustration} />
-      <StyledTitle>{_("Ressources")}</StyledTitle>
+      <StyledTitle>{"Información útil"}</StyledTitle>
       <Spacer size="1rem" />
       <span style={{ color: style.black700 }}>
       La siguiente información te ayudará a mejorar la facilitación y gestión de tu grupo.      </span>
@@ -33,7 +33,7 @@ const GroupHelpPage = (props) => {
         text={_("Document utile en cas de réservation d'une salle pour les événements publics")}
         icon="file-text"
         route="attestationAssurance"
-        downloadLabel="Télécharger l'attestation"
+        downloadLabel="Bajar la guía"
       />
       <Spacer size="1rem" />
       <FileCard

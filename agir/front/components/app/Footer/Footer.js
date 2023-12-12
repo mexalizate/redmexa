@@ -119,7 +119,7 @@ export const Footer = (props) => {
             <LogoAPFoot/>
           </div>
           <div>
-            <h3 className="secondaryTextColorLightRed">{/*_("Action populaire")*/}CLAUDIALÍZATE </h3>
+            <h3 className="secondaryTextColorLightRed">{"CLAUDIALÍZATE"} </h3>
             <p>
               <Link className="primaryTextColorPurple" route="eventMap">{_("Carte des événements")}</Link>
               <Link className="primaryTextColorPurple" route="groupMap">{_("Carte des groupes")}</Link>

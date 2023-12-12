@@ -75,7 +75,7 @@ class SimpleOpengraphMixin(ContextMixin):
 
 
 class ObjectOpengraphMixin(SimpleOpengraphMixin):
-    title_suffix = _("Action Populaire")
+    title_suffix = "Claudialízate"
 
     # noinspection PyUnresolvedReferences
     def get_meta_title(self):

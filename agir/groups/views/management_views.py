@@ -196,7 +196,7 @@ class CreateSupportGroupView(VerifiedContactPhoneRequiredMixin, TemplateView):
                 "types": types,
                 "disabled": disabled,
                 "disabledMessage": _(
-                    f"Vous ne pouvez plus créer de nouveau groupe car vous avez atteint la limite de création ({self.max_groups_for_referent_number} groupes par personne)."
+                    f"Llegaste al límite de grupos que puedes crear ({self.max_groups_for_referent_number} grupos por persona)."
                 ),
             },
             **kwargs,

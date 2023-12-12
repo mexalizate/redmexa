@@ -18,7 +18,7 @@ const ReferralUpdateCard = (props) => {
     return (
       <GenericCardContainer {...props}>
         {_("Grâce à vous,")} <strong>{individual?.displayName}</strong> {_("a rejoint")}{" "}
-        <em>{_("Action populaire")}</em>.
+        <em>{"Claudialízate"}</em>.
         <br />
         {_("Merci beaucoup, continuez à partager !")} 👍
       </GenericCardContainer>
@@ -35,7 +35,7 @@ const ReferralUpdateCard = (props) => {
     return (
       <GenericCardContainer {...props}>
         {_("Encore un !")} <strong>{individual?.displayName}</strong> {_("a rejoint")}{" "}
-        <em>{_("Action populaire")}</em>.
+        <em>{"Claudialízate"}</em>.
         <br />
         {_("C'est super, vous avez fait rejoindre")} {totalReferrals} {_("personnes")}&nbsp;!
         {_("Continuez comme ça")}&nbsp;! 😀
@@ -45,7 +45,7 @@ const ReferralUpdateCard = (props) => {
   if (totalReferrals === 10) {
     return (
       <GenericCardContainer {...props}>
-        {_("Vous avez convaincu 10 personnes de rejoindre")} <em>{_("Action populaire")}</em>
+        {_("Vous avez convaincu 10 personnes de rejoindre")} <em>{"Claudialízate"}</em>
         &nbsp;! {_("Quel est votre secret")}&nbsp;?!
         <br />
         {_("Si vous n'y aviez pas encore songé, il est peut-être temps de")}{" "}
@@ -62,7 +62,7 @@ const ReferralUpdateCard = (props) => {
   if (totalReferrals === 20) {
     return (
       <GenericCardContainer {...props}>
-        {_("Grâce à vous, 20 personnes ont rejoint")} <em>{_("Action populaire")}</em>&nbsp;!
+        {_("Grâce à vous, 20 personnes ont rejoint")} <em>{"Claudialízate"}</em>&nbsp;!
         <br />
         {_("Beau travail")}&nbsp;! {_("Prochaine étape")}&nbsp;:{" "}
         <Link route="createEvent">{_("organiser un événement en ligne")}</Link>&nbsp;!
@@ -71,7 +71,7 @@ const ReferralUpdateCard = (props) => {
   }
   return (
     <GenericCardContainer {...props}>
-      {_("Et de")} {totalReferrals}&nbsp;! <strong>{individual?.displayName}</strong> {_("a rejoint")} <em>{_("Action populaire")}</em>. {_("Génial")}&nbsp;! 😍
+      {_("Et de")} {totalReferrals}&nbsp;! <strong>{individual?.displayName}</strong> {_("a rejoint")} <em>{"Claudialízate"}</em>. {_("Génial")}&nbsp;! 😍
     </GenericCardContainer>
   );
 };

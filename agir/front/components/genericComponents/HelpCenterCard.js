@@ -18,8 +18,7 @@ const HelpCenterCard = (props) => {
         {_("Un centre d'aide est à votre disposition avec des fiches pratiques et les réponses aux questions le plus fréquemment posées.")}
       </p>
       <p>
-      También puedes contactarnos en caso de que el Centro de Ayuda no responda a tu pregunta
-      </p>
+      También puedes contactarnos directamente en caso de preguntas complejas.      </p>
       <Spacer size="0.5rem" />
       <Button link small route={route} color="secondary">
       Ir al centro de ayuda

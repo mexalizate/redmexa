@@ -273,7 +273,7 @@ class PersonalDataView(ProfileViewMixin, FormView):
         messages.add_message(
             self.request,
             messages.INFO,
-            "Vous êtes maintenant désinscrit·e de toutes les lettres d'information.",
+            "Te desinscribimos de todas las listas de correo",
         )
         return self.render_to_response(self.get_context_data())
 

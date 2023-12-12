@@ -79,7 +79,7 @@ export const ConnectedEventPage = (props) => {
       dispatch(
         setTopBarRightLink({
           to: routeConfig.eventSettings.getLink({ eventPk: eventData.id }),
-          label: "Gestion de l'événement",
+          label: "Gestión de la acción",
         }),
       );
     }

@@ -46,7 +46,7 @@ const EventSubtypeField = (props) => {
   return (
     <>
       <div>
-        <label>{_("Type de l'événement")}</label>
+        <label>Tipo de acción</label>
       </div>
 
       <div>
@@ -76,7 +76,7 @@ const EventSubtypeField = (props) => {
           item && (
             <PanelWrapper style={style}>
               <BackButton onClick={closeMenu} />
-              <StyledTitle>{_("Choisir le type de l'événement")}</StyledTitle>
+              <StyledTitle>{"Seleccionar tipo de acción"}</StyledTitle>
               <Spacer size="1rem" />
               <SubtypePicker
                 value={selectedSubtype}

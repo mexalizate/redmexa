@@ -202,7 +202,7 @@ const Actions = (props) => {
     return (
       <StyledActions>
         <Button color="secondary" disabled={true}>
-          {_("Participer à l'événement")}
+          {"Participa en la acción"}
         </Button>
       </StyledActions>
     );
@@ -231,7 +231,7 @@ const Actions = (props) => {
             disabled={isLoading}
             onClick={handleRSVP}
           >
-            {_("Participer à l'événement")}
+            {"Participa en la acción"}
           </Button>
         )}
         {rsvped && !hasPrice && (
@@ -244,7 +244,7 @@ const Actions = (props) => {
               MobileLayout={Popin}
             >
               <a href="" onClick={handleQuitEvent}>
-                {_("Annuler")}
+                {"Cancelar"}
               </a>
             </StyledButtonMenu>
             <QuitEventButton
@@ -335,16 +335,16 @@ const AdditionalMessage = (props) => {
           route="login"
           state={{ from: "event", next: location.pathname }}
         >
-          {_("Je me connecte")}
+          {"Conéctate"}
         </ActionLink>{" "}
-        ou{" "}
+         o {" "}
         <ActionLink
           route="signup"
           state={{ from: "event", next: location.pathname }}
         >
-          {_("je m'inscris")}
+          {"regístrate"}
         </ActionLink>{" "}
-       {_(" pour participer à l'événement")}
+       {" en Claudialízate para participar en la acción. "}
       </div>
     );
   }

@@ -89,7 +89,7 @@ const GroupLinkForm = (props) => {
             color="secondary"
             style={{ flex: "0 0 auto" }}
           >
-            {isNew ? _("Ajouter ce lien") : _("Enregistrer")}
+            {isNew ? "Agregar enlace" : _("Enregistrer")}
           </Button>
           {handleDelete && (
             <Button

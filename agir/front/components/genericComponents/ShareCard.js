@@ -89,7 +89,7 @@ const ShareCard = (props) => {
   const inputEl = useRef(null);
   return (
     <StyledCard style={{ padding: "1.5rem" }} {...rest}>
-      <h4>{title || "Partager"}</h4>
+      <h5>{title || "Compartir"}</h5>
       <nav>
         <a
           href={`https://wa.me/?text=${encodedLocation}`}

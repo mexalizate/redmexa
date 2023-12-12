@@ -67,7 +67,7 @@ export const UpdateAddressModal = (props) => {
   return (
     <Modal shouldShow={shouldShow} noScroll>
       <StyledModalContent>
-        <h4>{_("Localisation")}</h4>
+        <h4>{"Ubicación"}</h4>
         <Spacer size=".5rem" />
         <p>
           {_("Entrez votre adresse pour que nous puissions vous suggérer les événements à proximité de chez vous.")}

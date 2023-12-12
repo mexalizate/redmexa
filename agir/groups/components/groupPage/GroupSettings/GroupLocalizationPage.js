@@ -87,7 +87,7 @@ const GroupLocalizationPage = (props) => {
             setConfig(false);
           }}
         />
-        <StyledTitle>{_("Personnaliser la localisation")}</StyledTitle>
+        <StyledTitle>Personalizar la ubicacioón en el mapa</StyledTitle>
 
         <Spacer size="1rem" />
         <StyledMapConfig center={group?.location?.coordinates?.coordinates} />

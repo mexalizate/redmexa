@@ -19,29 +19,25 @@
       {% include "people/profile/profile_title.html" with tab_code="PERSONAL_DATA" %}
       <form action="" method="post">{% csrf_token %}
         <div class="alert alert-danger">
-          <p>Voulez-vous vraiment effacer le compte <strong>{{ object.email }}</strong> ?</p>
+          <p>¿Confirmas que deseas eliminar tu cuenta <strong>{{ object.email }}</strong> ?</p>
 
-          <p>Toute votre activité sur la plateforme de la France insoumise sera perdue. Vos participations aux
-            événements
-            et aux groupes d'action seront définitivement effacée.</p>
+          <p>Se perderá toda tu actividad en la plataforma Claudialízate, incluyendo tu participación en acciones y grupos.</p>
 
-          <p>Les groupes et événements publics dont vous êtes gestionnaire ne seront pas supprimés mais vous perdrez
-            toutes les autorisations dont vous disposez dessus.</p>
+          <p>No se eliminarán los grupos y acciones que gestionas, pero perderás la autorización para gestionarlos.</p>
 
-          <p><strong>Cette action est irréversible.</strong></p>
+          <p><strong>Esta acción es irreversible</strong></p>
         </div>
         <div class="checkbox">
           <label>
             <input type="checkbox" class="checkboxinput" required>
-            J'ai bien compris que cette action est irréversible et je veux effacer
-            mon compte <strong>{{ object.email }}</strong>.
+            Entiendo que esta acción es irreversible y quiero eliminar mi cuenta <strong>{{ object.email }}</strong>.
           </label>
         </div>
         <div class="row">
           <div class="col-xs-12 col-md-4 margintop">
             <input
             type="submit"
-            class="btn btn-primary btn-lg btn-block" value="Effacer  mon compte"/>
+            class="btn btn-primary btn-lg btn-block" value="Eliminar mi cuenta"/>
           </div>
           <div class="col-xs-12 col-md-4 margintop">
             {#<a class="btn btn-default btn-lg btn-block" href="{% url 'message_preferences' %}">Retour à mes préférences</a>#}
