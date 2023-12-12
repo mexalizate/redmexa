@@ -216,9 +216,7 @@ class GeocodingBaseForm(forms.ModelForm):
         form_elements.append(
             Row(
                 ThirdCol(
-                    Submit(
-                        "submit", "Guardar", css_class="btn btn-default btn-block"
-                    ),
+                    Submit("submit", "Guardar", css_class="btn btn-default btn-block"),
                     css_class="padtopmore",
                 )
             )

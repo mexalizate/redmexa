@@ -431,9 +431,7 @@ EMAIL_TEMPLATES = {
     "DONATION_CAGNOTTE": "https://mosaico.preprod.redmexa.com/emails/373c404b-902d-4cc4-8edc-845c4c889b85.html",
 }
 
-EMAIL_FROM = os.environ.get(
-    "EMAIL_FROM", "Claudialízate <noreply@preprod.redmexa.com>"
-)
+EMAIL_FROM = os.environ.get("EMAIL_FROM", "Claudialízate <noreply@preprod.redmexa.com>")
 EMAIL_FROM_LFI = os.environ.get(
     "EMAIL_FROM_LFI",
     "La France insoumise <nepasrepondre@preprod.redmexa.com>",
