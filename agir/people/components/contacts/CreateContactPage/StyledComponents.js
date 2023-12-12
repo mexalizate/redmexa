@@ -44,7 +44,7 @@ export const Banner = (props) => {
 export const BackButton = styled(Button).attrs((props) => ({
   ...props,
   icon: "arrow-left",
-  children: props.children || "Retour",
+  children: props.children || "Regresar",
 }))`
   &,
   &:hover,

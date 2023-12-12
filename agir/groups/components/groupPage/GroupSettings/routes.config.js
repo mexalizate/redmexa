@@ -79,7 +79,7 @@ export const routeConfig = {
     id: "members",
     path: "membres/",
     exact: true,
-    label: _("Membres actifs"),
+    label: "Participantes activos",
     icon: "users",
     getComponent: (group) =>
       group.isEditable
@@ -133,7 +133,7 @@ export const routeConfig = {
     id: "general",
     path: "general/",
     exact: true,
-    label: _("Général"),
+    label: "Datos generales",
     icon: "file-text",
     Component: GroupSettingsGeneral,
     illustration: illustrationGeneral,
@@ -176,7 +176,7 @@ export const routeConfig = {
     id: "help",
     path: "ressources/",
     exact: true,
-    label: _("Ressources"),
+    label: "Información útil",
     icon: "more-horizontal",
     Component: GroupSettingsHelp,
     illustration: illustrationHelp,

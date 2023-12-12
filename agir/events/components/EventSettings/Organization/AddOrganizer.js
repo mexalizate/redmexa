@@ -99,7 +99,7 @@ export const AddOrganizer = ({ eventPk, participants, onBack }) => {
             </StyledList>
             <StyledList>
               <div />
-              {_("Annuler l’événement")}
+              {"Cancelar la acción"}
             </StyledList>
           </div>
           <Spacer size="1rem" />

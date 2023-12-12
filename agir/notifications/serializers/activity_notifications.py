@@ -153,7 +153,7 @@ class GroupMembershipLimitReminderActivityNotificationSerializer(
         ]
         if membership_limit_notification_step > 3:
             return "Action requise pour votre groupe"
-        return "Action Populaire"
+        return "Claudialízate"
 
     def get_body(self, activity):
         membership_count = activity.meta["membershipCount"]

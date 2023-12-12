@@ -95,7 +95,7 @@ const EventParticipants = (props) => {
           {_("Les groupes ayant indiqué leur participation. Ils ne sont pas indiqués co-organisateurs de l'événement. Vous pouvez les inviter à co-organiser cet événement depuis l'onglet")}&nbsp;
           <Link to={organizationLink} style={{ display: "inline-block" }}>
             <RawFeatherIcon name="settings" height="14px" />
-            {_("Organisation")}
+            {"Organización"}
           </Link>
           .
           <Spacer size="1rem" />

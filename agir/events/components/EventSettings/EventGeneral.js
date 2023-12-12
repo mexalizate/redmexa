@@ -157,13 +157,13 @@ const EventGeneral = (props) => {
         <HeaderPanel onBack={onBack} illustration={illustration} />
         <StyledTitle>Général</StyledTitle>
         <span style={{ color: style.black700 }}>
-          {_("Ces informations seront affichées en public.")}
+          {"Esta información será pública."}
         </span>
         <Spacer size="1rem" />
         <TextField
           id="name"
           name="name"
-          label={_("Nom de l'événement*")}
+          label={"Nombre de la acción"}
           onChange={handleChange}
           value={formData.name}
           error={errors?.name}
@@ -189,7 +189,7 @@ const EventGeneral = (props) => {
         <RichTextField
           id="description"
           name="description"
-          label={_("Description*")}
+          label={"Descripción"}
           placeholder=""
           onChange={handleDescriptionChange}
           value={formData.description}
@@ -200,7 +200,7 @@ const EventGeneral = (props) => {
         <TextField
           id="facebook"
           name="facebook"
-          label={_("Url de l'événement sur Facebook")}
+          label={"Enlace a evento Facebook correspondiente"}
           onChange={handleChange}
           value={formData.facebook}
           error={errors?.facebook}
@@ -208,7 +208,7 @@ const EventGeneral = (props) => {
         />
         <h4>{_("Image mise en avant")}</h4>
         <span style={{ color: style.black700 }}>
-          {_("Taille : 1200*630px ou plus. Elle apparaîtra sur la page et sur les réseaux sociaux.")}
+          {"Tamaño: 1,200 x 630 pixeles o más. Aparecerá en la página de la acción y en redes sociales."}
         </span>
         <Spacer size="0.5rem" />
         <ImageField

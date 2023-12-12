@@ -62,16 +62,16 @@ const EventVisio = (props) => {
   return (
     <form onSubmit={handleSubmit}>
       <HeaderPanel onBack={onBack} illustration={illustration} />
-      <StyledTitle>Visioconférence</StyledTitle>
+      <StyledTitle>Videoconferencia</StyledTitle>
 
       <span style={{ color: style.black700 }}>
-        {_("Pour vos réunions en ligne, utilisez le service d’Action Populaire. Votre salon de visioconférence est déjà prêt si vous voulez l’utiliser&nbsp;!")}
+        Si tu reunión es solamente en línea, por favor indícalo aquí.
       </span>
 
       <Spacer size="1rem" />
       <OnlineUrlField
-        label={_("URL de votre visio-conférence sur Action Populaire")}
-        placeholder={_("URL de la visio-conférence")}
+        label={"Enlace a tu videoconferencia (Google Meet, Zoom, Jitsi…)"}
+        placeholder={"Enlace a videoconferencia"}
         name="onlineUrl"
         value={onlineUrl}
         onChange={updateValue}

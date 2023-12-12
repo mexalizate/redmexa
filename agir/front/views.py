@@ -43,7 +43,7 @@ cache_decorators = [cache.cache_page(30), cache.cache_control(public=True)]
 
 
 class BasicOpenGraphMixin(SimpleOpengraphMixin):
-    meta_title = _("Action Populaire")
+    meta_title = "Claudialízate"
     meta_description = _(
         "Action Populaire est le réseau social d'action de la France insoumise et de la NUPES."
     )

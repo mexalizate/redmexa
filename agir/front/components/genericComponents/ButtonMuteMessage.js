@@ -97,7 +97,7 @@ const ButtonMuteMessage = ({ message }) => {
           loading={loading}
           onClick={handleSwitchNotification}
         >
-          {isMuted ? _("Réactiver") : _("Rendre muet")}
+          {isMuted ? _("Réactiver") : "Silenciar"}
         </Button>
       ) : (
         <StyledMuteButton
@@ -110,8 +110,8 @@ const ButtonMuteMessage = ({ message }) => {
       )}
       <ModalConfirmation
         title="¿Silenciar esta conversación?"
-        confirmationLabel={_("Rendre muet")}
-        dismissLabel={_("Annuler")}
+        confirmationLabel={"Silenciar"}
+        dismissLabel={"Regresar"}
         shouldShow={isModalOpen}
         onConfirm={switchNotificationMessage}
         onClose={() => setIsModalOpen(false)}

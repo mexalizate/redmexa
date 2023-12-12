@@ -107,7 +107,7 @@ const EditSpendingRequestPage = ({ spendingRequestPk }) => {
               icon="arrow-right"
               route="spendingRequestHelp"
             >
-              {_("Un doute ? Consultez le")} <strong>{_("centre d'aide")}</strong>
+              {_("Un doute ? Consultez le")} <strong>Centro de ayuda</strong>
             </Button>
           </nav>
           <h2>{_("Modification de la demande")}</h2>

@@ -143,7 +143,7 @@ const MEMBERSHIP_TYPE_LABEL = {
   [MEMBERSHIP_TYPES.FOLLOWER]: ["Abonné·e", "Abonnée", "Abonné"],
   [MEMBERSHIP_TYPES.MEMBER]: "Membre actif",
   [MEMBERSHIP_TYPES.MANAGER]: "Gestionnaire",
-  [MEMBERSHIP_TYPES.REFERENT]: ["Animateur·ice", "Animatrice", "Animateur"],
+  [MEMBERSHIP_TYPES.REFERENT]: ["Facilitadores", "Animatrice", "Animateur"],
 };
 
 const MembershipType = ({ gender, membershipType, hasGroupNotifications }) => {

@@ -139,7 +139,7 @@ const AddGroupAttendee = ({ id, groups, groupsAttendees }) => {
     <>
       {!!managingGroups?.length && (
         <Button onClick={showModalJoinAsGroup}>
-          {_("Participer avec mon groupe")}
+          {"Participar con mi grupo"}
         </Button>
       )}
       <ResponsiveLayout
@@ -161,7 +161,7 @@ const AddGroupAttendee = ({ id, groups, groupsAttendees }) => {
           <div>
             {!groupJoined ? (
               <>
-                <h2>{_("Participer avec mon groupe")}</h2>
+                <h2>{"Participar con mi grupo"}</h2>
                {_(" Ajoutez un groupe dont vous êtes gestionnaire comme participant à l’événement.")}
                 <Spacer size="0.5rem" />
                 {_("L’événement sera ajouté à l’agenda du groupe.")}

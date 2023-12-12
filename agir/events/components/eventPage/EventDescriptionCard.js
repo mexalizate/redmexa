@@ -63,7 +63,7 @@ const EventDescriptionCard = ({
   return (
     <StyleDescriptionCard>
       <DescriptionSection>
-        <h5>{_("L'événement")}</h5>
+        <h5>{"La acción"}</h5>
 
         <Spacer size="1rem" />
 
@@ -91,13 +91,13 @@ const EventDescriptionCard = ({
               link
               to={routeConfig.eventSettings.getLink({ eventPk: id })}
             >
-              {description ? _("Modifier la") : _("Ajouter une")} {_("description")}
+              {description ? "Modificar" : "Agregar "} {"descripción"}
             </Button>
             <Button
               link
               to={routeConfig.eventSettings.getLink({ eventPk: id })}
             >
-              {image ? _("Changer l'") : _("Ajouter une ")}{_("image d'illustration")}
+              {image ? _("Changer l'") : "Agregar "}{"imagen de portada"}
             </Button>
           </StyledActionButtons>
         )}

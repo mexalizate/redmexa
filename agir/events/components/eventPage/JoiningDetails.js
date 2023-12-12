@@ -64,7 +64,7 @@ const RSVP = ({ hasPrice, eventPk, rsvpRoute }) => (
         {rsvpRoute ? (
           <Link route={rsvpRoute}>{_("Vous participez à l'événement")}</Link>
         ) : (
-          _("Vous participez à l'événement")
+          "Participas en la acción"
         )}
       </div>
       {!hasPrice && <QuitEventButton eventPk={eventPk} />}
@@ -87,7 +87,7 @@ const GroupRSVP = ({ eventPk, group, backLink }) => (
     />
     <StyledContent>
       <div>
-        {_("Votre groupe")}&nbsp;
+        {"Tu grupo"}&nbsp;
         <Link
           route="groupDetails"
           routeParams={{ groupPk: group.id }}
@@ -95,7 +95,7 @@ const GroupRSVP = ({ eventPk, group, backLink }) => (
         >
           {group.name}
         </Link>
-        &nbsp;{_("participe à l'événement")}
+        &nbsp;{"Participa en la acción"}
       </div>
       {group.isManager && <QuitEventButton eventPk={eventPk} group={group} />}
     </StyledContent>
