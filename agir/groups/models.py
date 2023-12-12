@@ -297,24 +297,17 @@ class SupportGroup(
     }
 
     TYPE_DESCRIPTION = {
-        TYPE_LOCAL_GROUP: _(
-            "Un grupo tiene una función territorial. Es importante que tu grupo se relacione a la zona donde "
-            "vives o a tu escuela o a tu lugar de trabajo, para que otras personas de ese espacio o zona puedan"
-            "entrar en contacto contigo"
-        ),
-        TYPE_THEMATIC: _(
-            "Les groupes thématiques réunissent celles et ceux qui souhaitent agir ensemble sur un thème "
-            "donné en lien avec les livrets thématiques de l'Avenir en Commun."
-        ),
-        TYPE_FUNCTIONAL: _(
-            "Les groupes fonctionnels rassemblent les personnes d'une même zone s'organisant à plusieurs "
-            "pour accomplir des fonctions précises (gestion d'un local, organisation des manifestation, "
-            "etc.)"
-        ),
-        TYPE_BOUCLE_DEPARTEMENTALE: _(
-            "Les boucles départementales assurent la coordination des groupes d'action au sein"
-            "d'un département."
-        ),
+        TYPE_LOCAL_GROUP: _("Les groupes locaux réunissent les personnes sur la base d'un territoire réduit (quartier, "
+        "village ou petite ville), ceux étudiants d'un même lieu d'étude, professionnels d'un même "
+        "lieu de travail. Chacun·e ne peut animer qu'un seul groupe local, étudiant et "
+        "professionnel."),
+        TYPE_THEMATIC: _("Les groupes thématiques réunissent celles et ceux qui souhaitent agir ensemble sur un thème "
+        "donné en lien avec les livrets thématiques de l'Avenir en Commun."),
+        TYPE_FUNCTIONAL: _("Les groupes fonctionnels rassemblent les personnes d'une même zone s'organisant à plusieurs "
+        "pour accomplir des fonctions précises (gestion d'un local, organisation des manifestation, "
+        "etc.)"),
+        TYPE_BOUCLE_DEPARTEMENTALE: _("Les boucles départementales assurent la coordination des groupes d'action au sein"
+        "d'un département."),
     }
 
     TYPE_DISABLED_DESCRIPTION = {
