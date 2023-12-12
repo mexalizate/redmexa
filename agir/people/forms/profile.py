@@ -307,7 +307,7 @@ class InformationConfidentialityForm(Form):
             format_html(
                 """<p>{description}<a href="{link_url}">{link_text}</a></p>""",
                 description="Puedes saber más sobre el uso de tus datos personales consultando el aviso legal.",
-                link_url="https://infos.preprod.redmexa.com/mentions-legales/",
+                link_url="https://info.preprod.redmexa.com/mentions-legales/",
                 link_text="nos mentions légales.",
             )
         )

@@ -42,7 +42,7 @@ export const EVENT_DOCUMENT_TYPES = {
         <Spacer size=".5rem" />
         <strong>{_("À noter")}&nbsp;:</strong> {_("pour réserver une salle, il vous sera demandé de l’assurer ! Durant la campagne présidentielle, vous pourrez utiliser notre")}{" "}
         <a
-          href="https://infos.preprod.redmexa.com/wp-content/uploads/2021/12/Attestation-assurance-RC-2022.pdf"
+          href="https://info.preprod.redmexa.com/wp-content/uploads/2021/12/Attestation-assurance-RC-2022.pdf"
           target="_blank"
           rel="noopener noreferrer"
         >

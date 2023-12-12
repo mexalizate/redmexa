@@ -120,9 +120,9 @@ def get_supportgroup_routes(supportgroup, membership=None, user=None):
         "membershipTransfer": front_url(
             "transfer_group_members", kwargs={"pk": supportgroup.pk}
         ),
-        "orders": "https://materiel.preprod.redmexa.com/",
+        "orders": "https://materiales.preprod.redmexa.com/",
         "quit": front_url("quit_group", kwargs={"pk": supportgroup.pk}),
-        "referentResignmentRequest": "https://infos.preprod.redmexa.com/contact/",
+        "referentResignmentRequest": "https://info.preprod.redmexa.com/contact/",
         "settings": front_url("view_group_settings", kwargs={"pk": supportgroup.pk}),
         "downloadMemberList": front_url(
             "download_member_list", kwargs={"pk": supportgroup.pk}

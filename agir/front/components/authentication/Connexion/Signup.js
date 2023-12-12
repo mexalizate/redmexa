@@ -210,7 +210,7 @@ const SignUp = () => {
               {/*_("J'accepte que mes informations soient traitées par Action")*/}Acepto que mi información personal sea utilizada por &nbsp;
               {/*_("Populaire, conformément à la")*/}Claudialízate conforme a la &nbsp;
               <a
-                href="https://infos.preprod.redmexa.com/mentions-legales/"
+                href="https://info.preprod.redmexa.com/mentions-legales/"
                 target="_blank"
                 rel="noopener noreferrer"
               >

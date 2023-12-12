@@ -113,16 +113,16 @@ PLATFORM_ADMIN_DOMAIN = os.environ.get(
 )
 PLATFORM_FRONT_DOMAIN = os.environ.get(
     "PLATFORM_FRONT_DOMAIN",
-    "http://agir.local:8000" if DEBUG else "https://agir.preprod.redmexa.com",
+    "http://agir.local:8000" if DEBUG else "https://preprod.redmexa.com",
 )
 CAMPAIGN_DOMAIN = os.environ.get("MAIN_DOMAIN", "https://preprod.redmexa.com")
 ACTIVIST_DOMAIN = os.environ.get(
     "ACTIVIST_DOMAIN",
-    "http://agir.local:8000" if DEBUG else "https://agir.preprod.redmexa.com",
+    "http://agir.local:8000" if DEBUG else "https://preprod.redmexa.com",
 )
 MAP_DOMAIN = os.environ.get(
     "MAP_DOMAIN",
-    "http://agir.local:8000" if DEBUG else "https://agir.preprod.redmexa.com",
+    "http://agir.local:8000" if DEBUG else "https://preprod.redmexa.com",
 )
 
 ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "localhost,agir.local").split(",")
