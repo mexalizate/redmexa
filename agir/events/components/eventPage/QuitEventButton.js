@@ -120,7 +120,7 @@ const QuitEventButton = ({ eventPk, group, isOpen, setIsOpen }) => {
     <StyledWrapper>
       {!setIsOpen && (
         <a href="" onClick={openDialog}>
-          Annuler
+          Cancelar
         </a>
       )}
       <ResponsiveLayout
@@ -137,21 +137,21 @@ const QuitEventButton = ({ eventPk, group, isOpen, setIsOpen }) => {
           <main>
             <h4>
               {!groupPk ? (
-                _("Annuler ma participation à l'événement")
+                "Cancelar mi participación en la acción"
               ) : (
-                <>{_("Annuler la participation du groupe à l’évément&nbsp;?")}</>
+                <>{"Cancelar la participación del grupo en la acción"}</>
               )}
             </h4>
             <p>
               {!groupPk ? (
                 <>
-                  {_("Souhaitez-vous réellement ne plus participer à l'événement&nbsp;?")}
+                  {"¿Estás segur@ de no querer participar en la acción?"}
                 </>
               ) : (
                 <>
-                  <b>{group.name}</b> {_("ne sera plus indiqué comme participant à l’événement.")}
+                  <b>{group.name}</b> {" dejará de aparecer como participante en la acción."}
                   <Spacer size="1rem" />
-                  {_("L’événement sera retiré de l’agenda du groupe.")}
+                  {"El evento será retirado de la agenda del grupo "}
                 </>
               )}
             </p>
@@ -163,10 +163,10 @@ const QuitEventButton = ({ eventPk, group, isOpen, setIsOpen }) => {
               isLoading={isLoading}
               disabled={isLoading}
             >
-              {!groupPk ? _("Quitter l'événement") : _("Confirmer")}
+              {!groupPk ? "Cancelar mi participación" : "Cancelar participación"}
             </Button>
             <Button color="default" onClick={closeDialog} disabled={isLoading}>
-              {_("Annuler")}
+              {"Regresar"}
             </Button>
           </footer>
         </StyledDialog>

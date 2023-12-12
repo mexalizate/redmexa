@@ -98,7 +98,7 @@ const Home = () => {
           </Button>
           <Spacer size="1rem" />
           <Button color="white" link route="login">
-            {/*_("Je me connecte")*/} Conectarme
+            {"Conectarme "}
           </Button>
         </div>
       </header>

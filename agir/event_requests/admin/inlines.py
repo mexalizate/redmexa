@@ -249,7 +249,7 @@ class EventSpeakerRequestInline(admin.TabularInline):
                     "admin:event_requests_eventspeakerrequest_unaccept",
                     args=(obj.pk,),
                 ),
-                _("Annuler"),
+                "Cancelar",
                 button=True,
             )
 

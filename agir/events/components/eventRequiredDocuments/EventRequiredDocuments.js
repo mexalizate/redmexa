@@ -275,7 +275,7 @@ const EventRequiredDocuments = (props) => {
         <Spacer size="1rem" />
         <div>
           <Button link rel="noopener noreferrer" target="_blank" route="help">
-            {_("Accèder au centre d'aide")}
+            {"Ir al Centro de ayuda"}
           </Button>
         </div>
       </HelpLink>

@@ -92,7 +92,7 @@ export const DownloadApp = ({ onClick }) => (
     </div>
     <AppLogo src={logo} width="52" height="52" alt="Logo Action Populaire" />
     <Content>
-      <Title>{_("ACTION POPULAIRE")}</Title>
+      <Title>{"Claudialízate"}</Title>
       <Description>
         {_("Téléchargez l’appli des actions près")}{" "}
         <InlineBlock>de chez vous</InlineBlock>
@@ -102,14 +102,14 @@ export const DownloadApp = ({ onClick }) => (
       <Download
         link
         href={"iOS" === OS ? CONFIG.apple.href : CONFIG.google.href}
-        aria-label="Télécharger"
+        aria-label="Salir"
       >
         <ResponsiveLayout
           breakpoint={421}
           MobileLayout={() => (
             <FeatherIcon name="download" color={style.primary500} />
           )}
-          DesktopLayout={() => "Télécharger"}
+          DesktopLayout={() => "Salir"}
         />
       </Download>
     </div>

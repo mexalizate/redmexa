@@ -107,7 +107,7 @@ export const ActionTools = () => {
               {/*_("Créer un événement")*/}Crear una acción
             </Button>
             <Button small link route="helpIndex">
-              {/*_("Voir les fiches pratiques")*/}Ver las fichas prácticas
+              {"Ver las guías de acción"}
             </Button>
           </span>
         </span>

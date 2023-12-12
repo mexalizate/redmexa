@@ -53,7 +53,7 @@ const EventInfoCard = (props) => {
         )}
         {groups.length === 1 && (
           <IconListItem name="users">
-            {_("Organisé par")}{" "}
+            {"Organizado por "}{" "}
             {groups.map(({ name, id }) => (
               <React.Fragment key={name + id}>
                 {id ? (
@@ -86,7 +86,7 @@ const EventInfoCard = (props) => {
           color="primary"
           backLink={backLink}
         >
-          {_("Créer un événement similaire")}
+          {"Crear una acción similar"}
         </Button>
       )}
     </Card>

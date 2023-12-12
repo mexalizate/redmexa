@@ -15,14 +15,14 @@
     </div>
     <div class="pull-right">
       <a
-        class="btn btn-sm btn-default"
+        class="btn btn-sm btn-default" style="color:white !important"
         href="{% url "manage_event" event.pk %}">
-        <i class="fa fa-cog"></i> {% translate "Gestion de l'événement" %}
+        <i class="fa fa-cog"></i> {% translate "Gestión de la acción" %}
       </a>
       <a
-        class="btn btn-sm btn-default"
+        class="btn btn-sm btn-default" style="color:white !important"
         href="{% url "view_event" event.pk %}">
-        {% translate "Page publique de l'événement" %}
+        {% translate "Página de la acción" %}
       </a>
     </div>
     <div class="clearfix"></div>
@@ -33,16 +33,14 @@
       {{ event.name }}
     </h2>
     <hr />
-    <h3>{% translate "Modification de la localisation" %}</h3>
+    <h3>{% translate "Modificar la ubicación" %}</h3>
     <div class="padtop padbottom form-group">
       <p>
-        { translate "Si votre événement n'apparaît au bon endroit sur la carte, vous pouvez utiliser ci-dessous la petite carte pour le localiser correctement. Cliquez-déplacez le point existant, ou cliquez sur le lien « Supprimer toutes les localisations » puis directement sur la carte." %}
-      </p>
+        Si tu acción no aparece en el mapa o aparece en un lugar incorrecto, puedes ubicarla manualmente arrastrando el punto en el mapa o eliminarlo para indicar nuevas coordenadas.      </p>
       <p>
-        {% translate "Si vous souhaitez revenir à une localisation automatique de votre événement à partir de son adresse, cochez la case correspondante et sauvegardez le formulaire." %}
-      </p>
+        Podrás reactivar la geolocalización automática regresando a esta página.      </p>
       <p>
-        <strong>{% translate "Après sauvegarde de ce formulaire, les modifications peuvent mettre jusqu'à 5 minutes pour apparaître sur la carte." %}</strong>
+        <strong>Una vez guardados los cambios, la nueva ubicación puede tardar hasta 5 minutos en aparecer en el mapa.</strong>
       </p>
       <div class="row">
         <div class="col-sm-12 form-group">

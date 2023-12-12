@@ -85,7 +85,7 @@ const CreateSpendingRequestPage = ({ groupPk }) => {
               icon="arrow-right"
               route="spendingRequestHelp"
             >
-              {_("Un doute ? Consultez le")} <strong>{_("centre d'aide")}</strong>
+              {_("Un doute ? Consultez le")} <strong>Centro de ayuda</strong>
             </Button>
           </nav>
           <h2>{_("Nouvelle dépense")}</h2>

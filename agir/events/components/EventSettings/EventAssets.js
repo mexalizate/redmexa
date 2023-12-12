@@ -25,13 +25,12 @@ const EventAssets = (props) => {
   return (
     <div>
       <HeaderPanel onBack={onBack} illustration={illustration} />
-      <StyledTitle>{_("Ressources")}</StyledTitle>
+      <StyledTitle>{"Información útil"}</StyledTitle>
       <Spacer size="1rem" />
       <span style={{ color: style.black700 }}>
-       {_(" Retrouvez ici la liste des ressources qui pourront vous être utiles dans l'organisation de votre événement.")}
-      </span>
+      Encuentra información valiosa para ayudarte a organizar mejor tu acción.</span>
       <Spacer size="1rem" />
-      <StyledTitle>{_("Centre d'aide")}</StyledTitle>
+      <StyledTitle>{"Centro de ayuda"}</StyledTitle>
       <Spacer size=".5rem" />
       <HelpCenterCard type="event" />
       <Spacer size="1rem" />
@@ -57,11 +56,11 @@ const EventAssets = (props) => {
             </Fragment>
           ))}
         <FileCard
-          title={_("Attestation d'assurance de la France insoumise")}
-          text={_("Document utile en cas de réservation d'une salle pour les événements publics")}
+          title={"Guía para la realización de acciones"}
+          text={"Contiene la información esencial para organizar acciones de todo tipo"}
           icon="file-text"
           route="attestationAssurance"
-          downloadLabel={_("Télécharger l'attestation")}
+          downloadLabel={"Bajar la guía"}
         />
       </PageFadeIn>
       <Spacer size="2rem" />

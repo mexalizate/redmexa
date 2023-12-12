@@ -40,7 +40,7 @@ class UnsubscribeView(SimpleOpengraphMixin, FormView):
         messages.add_message(
             self.request,
             messages.INFO,
-            "Vous êtes maintenant désinscrit⋅e de toutes les lettres d'information.",
+            "Te desinscribimos de todas las listas de correo",
         )
         return reverse_lazy("contact")
 

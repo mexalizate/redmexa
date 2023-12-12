@@ -82,7 +82,7 @@ const EventContact = (props) => {
       <StyledTitle>{_("Moyens de contact")}</StyledTitle>
 
       <span style={{ color: style.black700 }}>
-        {_("Ces informations seront affichées en public. Conseillé : créez une adresse e-mail pour votre groupe et n’utilisez pas une adresse personnelle.")}
+        Estos datos serán mostrados al público. Consejo de privacidad: puedes crear una cuenta email para tu grupo y no usar tu dirección personal.
       </span>
 
       <Spacer size="1rem" />

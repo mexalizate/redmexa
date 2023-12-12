@@ -35,7 +35,7 @@ const EventReportCard = ({
           fadingOverflow
         />
       ) : (
-        <p>{_("Il n'y a pas encore de compte rendu de cet événement.")}</p>
+        <p>{"Aún no hay resumen de esta acción"}</p>
       )}
       {isEditable && isOrganizer && (
         <Button

@@ -77,7 +77,7 @@ const StyledWrapper = styled.div`
 `;
 
 const AddToCalendarWidget = (props) => {
-  const { children = "Ajouter à mon agenda", name, routes } = props;
+  const { children = "Agregar a mi agenda", name, routes } = props;
   const { isIOS } = useMobileApp();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const openMenu = () => setIsMenuOpen(true);

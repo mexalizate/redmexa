@@ -206,7 +206,7 @@ class GeocodingBaseForm(forms.ModelForm):
         if self.instance.has_manual_location():
             self.fields["use_geocoding"] = forms.BooleanField(
                 required=False,
-                label="Revenir à la localisation automatique à partir de l'adresse",
+                label="Reactivar la geolocalización automática usando la dirección de la acción",
                 help_text=_(
                     "Cochez cette case pour annuler la localisation manuelle de votre groupe d'action."
                 ),
@@ -216,9 +216,7 @@ class GeocodingBaseForm(forms.ModelForm):
         form_elements.append(
             Row(
                 ThirdCol(
-                    Submit(
-                        "submit", "Sauvegarder", css_class="btn btn-default btn-block"
-                    ),
+                    Submit("submit", "Guardar", css_class="btn btn-default btn-block"),
                     css_class="padtopmore",
                 )
             )

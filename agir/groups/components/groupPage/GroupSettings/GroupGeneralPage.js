@@ -117,7 +117,7 @@ const GroupGeneralPage = (props) => {
   return (
     <form onSubmit={handleSubmit}>
       <HeaderPanel onBack={onBack} illustration={illustration} />
-      <StyledTitle>{_("Général")}</StyledTitle>
+      <StyledTitle>{"Datos generales"}</StyledTitle>
 
       <Spacer size="1rem" />
 

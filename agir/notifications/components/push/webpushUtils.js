@@ -55,7 +55,7 @@ export function getSubscriptionData(pushSubscription) {
     auth: btoa(
       String.fromCharCode(...new Uint8Array(pushSubscription.getKey("auth"))),
     ),
-    name: "Action populaire",
+    name: "CLAUDIALÍZATE",
     registration_id: registration_id,
   };
 }

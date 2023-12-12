@@ -75,7 +75,7 @@ const Steps = {
         </StyledModalBody>
         <StyledModalFooter $inline>
           <Button color="default" onClick={onClose} disabled={isLoading}>
-            {_("Annuler")}
+              Cancelar
           </Button>
           <Button
             color="danger"
@@ -144,7 +144,7 @@ const Steps = {
         </StyledModalBody>
         <StyledModalFooter $inline>
           <Button color="default" onClick={onClose} disabled={isLoading}>
-            {_("Annuler")}
+              Cancelar
           </Button>
           <Button
             color="danger"

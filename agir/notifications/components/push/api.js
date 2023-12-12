@@ -32,7 +32,7 @@ export const getSubscription = async (deviceType, token) => {
 export const subscribe = async (deviceType, token) => {
   try {
     await axios.post(`/api/device/${deviceType}/`, {
-      name: "Action populaire",
+      name: "Claudialízate",
       registration_id: token,
       cloud_message_type:
         deviceType === DEVICE_TYPE.ANDROID ? "FCM" : undefined,

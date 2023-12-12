@@ -37,19 +37,19 @@ const GroupLinkForm = (props) => {
 
   const handleDelete = selectedLink.id
     ? () => {
-        onDelete(selectedLink.id);
-      }
+      onDelete(selectedLink.id);
+    }
     : undefined;
 
   return (
     <>
       <BackButton disabled={isLoading} onClick={onBack} />
       <StyledTitle>
-        {isNew ? _("Nouveau lien personnalisé") : _("Modifier le lien")}
+        {isNew ? "Nuevo enlace personalizado" : "Editar enlace"}
       </StyledTitle>
       <Spacer size="1rem" />
       <div>
-        {_("Attention : ces liens seront disponibles")} <strong>{_("publiquement")}</strong>{" "}
+        {"Attention : ces liens seront disponibles"} <strong>{_("publiquement")}</strong>{" "}
         {_("et tout le monde pourra y accéder. Ne partagez pas de boucles privées.")}
       </div>
       <Spacer size="1.5rem" />
@@ -89,7 +89,7 @@ const GroupLinkForm = (props) => {
             color="secondary"
             style={{ flex: "0 0 auto" }}
           >
-            {isNew ? _("Ajouter ce lien") : _("Enregistrer")}
+            {isNew ? "Agregar enlace" : _("Enregistrer")}
           </Button>
           {handleDelete && (
             <Button

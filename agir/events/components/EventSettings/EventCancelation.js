@@ -40,21 +40,20 @@ const EventCancelation = (props) => {
   return (
     <>
       <HeaderPanel onBack={onBack} illustration={illustration} />
-      <StyledTitle>{_("Annuler l'événement")}</StyledTitle>
+      <StyledTitle>{"Cancelar la acción"}</StyledTitle>
 
       <Spacer size="1rem" />
 
       <p>
-        {_("Voulez-vous annuler votre événement")} <strong>{event.name}</strong> ?
+      ¿Quieres cancelar tu acción <strong>{event.name}</strong> ?
       </p>
       <p>
-        {_("Tous les participant·es recevront une notification leur indiquant que vous avez annulé l’événement.")}
-      </p>
+      Tod@s los participantes de la acción serán notificad@s de la cancelación de la acción.      </p>
       <p>{_("Cette action est irréversible.")}</p>
 
       <Spacer size="1rem" />
       <Button onClick={handleCancel} color="danger">
-        {_("Annuler l'événement")}
+        {"Cancelar la acción"}
       </Button>
     </>
   );

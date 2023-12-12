@@ -89,8 +89,8 @@ const GroupLine = ({
       </h3>
       {isDetailed && (
         <small style={{ color: style.black500 }}>
-          {eventCount} {_("événement")}{eventCount > 1 ? "s" : ""} &bull;{" "}
-          {membersCount} {_("membre")}{membersCount > 1 ? "s" : ""}
+          {eventCount} {"Acción"}{eventCount > 1 ? "es" : ""} &bull;{" "}
+          {membersCount} {"Participante"}{membersCount > 1 ? "s" : ""}
         </small>
       )}
     </div>
@@ -124,7 +124,7 @@ export const GroupsOrganizingCard = ({
       : "";
 
   return (
-    <StyledCard outlined title={_("Organisé par")} editLinkTo={editLink}>
+    <StyledCard outlined title={"Organizada por"} editLinkTo={editLink}>
       {groups.map((group) => (
         <GroupLine
           key={group.id}

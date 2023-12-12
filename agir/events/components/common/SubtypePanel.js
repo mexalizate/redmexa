@@ -245,7 +245,7 @@ export const SubtypePicker = (props) => {
           name="ev-st-search"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          placeholder="Buscar tipos de evento"
+          placeholder="Buscar tipo de acción"
           aria-label={_("Rechercher un type d'événement")}
           icon="magnifying-glass:solid"
           label=""

@@ -109,7 +109,7 @@ const EventFeedback = (props) => {
       <RichTextField
         id="feedback"
         name="compteRendu"
-        label={_("Écrire un compte rendu*")}
+        label={"Escribir un resumen*"}
         placeholder=""
         onChange={(e) => handleChange("compteRendu", e)}
         value={formData.compteRendu}
