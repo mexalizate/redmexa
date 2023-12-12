@@ -1,5 +1,5 @@
 import _ from "gettext";
-const attAssTemplate = "https://infos.preprod.redmexa.com/assurance.pdf";
+const attAssTemplate = "https://info.preprod.redmexa.com/assurance.pdf";
 
 export const EVENT_DOCUMENT_TYPES = {
   "ATT-ASS": {

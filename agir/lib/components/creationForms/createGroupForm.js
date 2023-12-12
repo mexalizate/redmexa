@@ -367,7 +367,7 @@ class ValidateStep extends FormStep {
                 <input onChange={this.toggleMaySubmit} type="checkbox" />
                 Me comprometo a respetar los{" "}
                 <a
-                  href="https://infos.preprod.redmexa.com/charte-des-groupes-action-populaire/"
+                  href="https://info.preprod.redmexa.com/charte-des-groupes-action-populaire/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

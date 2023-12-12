@@ -429,8 +429,8 @@ class NBUrlsView(View):
         "/le_projet": "https://avenirencommun.fr/avenir-en-commun/",
         "/livrets_thematiques": "https://avenirencommun.fr/livrets-thematiques/",
         "/convention": "https://convention.jlm2017.fr/",
-        "/commander_du_materiel": "https://materiel.preprod.redmexa.com/",
-        "/materiel": "https://materiel.preprod.redmexa.com/",
+        "/commander_du_materiel": "https://materiales.preprod.redmexa.com/",
+        "/materiel": "https://materiales.preprod.redmexa.com/",
         "/actualites": "https://preprod.redmexa.com/actualites/",
         "/le_blog": "http://melenchon.fr/",
         "/donner": "https://dons.preprod.redmexa.com/",
@@ -449,7 +449,7 @@ class NBUrlsView(View):
         "/merci": "https://preprod.redmexa.com/merci",
         "/18_mrs": "https://18mars2017.fr/",
         "/universites_populaires": "https://avenirencommun.fr/univpop_programme/",
-        "/agenda_melenchon": "https://agir.preprod.redmexa.com/agenda/melenchon/",
+        "/agenda_melenchon": "https://preprod.redmexa.com/agenda/melenchon/",
     }
 
     def get(self, request, nb_path):
