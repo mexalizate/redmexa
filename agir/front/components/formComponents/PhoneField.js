@@ -88,6 +88,7 @@ const PhoneField = forwardRef((props, ref) => {
         ...e,
         target: {
           ...e.target,
+          name: e.target.name,
           value:
             parsedValue && parsedValue.isValid()
               ? parsedValue.number

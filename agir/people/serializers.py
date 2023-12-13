@@ -352,7 +352,10 @@ class ContactSerializer(serializers.ModelSerializer):
     zip = serializers.CharField(
         required=True, source="location_zip", label="Code postal"
     )
-    email = serializers.EmailField(required=False, allow_blank=True)
+    email = serializers.EmailField(
+        required=True,
+        source="_email"
+    )
     phone = PhoneField(
         source="contact_phone",
         required=False,
@@ -382,23 +385,23 @@ class ContactSerializer(serializers.ModelSerializer):
     hasGroupNotifications = serializers.BooleanField(write_only=True, default=False)
     subscriber = CurrentPersonField()
 
-    def validate(self, data):
-        if not data.get("email") and not data.get("contact_phone"):
-            raise ValidationError(
-                detail={
-                    "global": "Debes indicar obligatoriamente un email o un número de celular del nuevo contacto"
-                }
-            )
+    # def validate(self, data):
+    #     if not data.get("email") and not data.get("contact_phone"):
+    #         raise ValidationError(
+    #             detail={
+    #                 "global": "Debes indicar obligatoriamente un email o un número de celular del nuevo contacto"
+    #             }
+    #         )
 
-        if (
-            not data.get("location_country")
-            or data.get("location_country") in FRANCE_COUNTRY_CODES
-        ):
-            data["location_country"] = french_zipcode_to_country_code(
-                data["location_zip"]
-            )
+    #     if (
+    #         not data.get("location_country")
+    #         or data.get("location_country") in FRANCE_COUNTRY_CODES
+    #     ):
+    #         data["location_country"] = french_zipcode_to_country_code(
+    #             data["location_zip"]
+    #         )
 
-        return data
+    #     return data
 
     def create(self, validated_data):
         return save_contact_information(validated_data)

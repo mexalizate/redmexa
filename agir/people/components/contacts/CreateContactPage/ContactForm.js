@@ -78,6 +78,7 @@ export const ContactForm = (props) => {
     firstName: "",
     lastName: "",
     zip: "",
+    country: I18N.country,
     email: "",
     phone: "",
     isPoliticalSupport: true,
@@ -114,7 +115,6 @@ export const ContactForm = (props) => {
         : state.newsletters.filter((nl) => nl !== LIAISON_NEWSLETTER.value),
       address: checked ? state.address : undefined,
       city: checked ? state.city : undefined,
-      country: checked ? state.country : undefined,
     }));
   }, []);
 
@@ -128,7 +128,6 @@ export const ContactForm = (props) => {
       if (name === LIAISON_NEWSLETTER.value) {
         newState["address"] = checked ? "" : undefined;
         newState["city"] = checked ? "" : undefined;
-        newState["country"] = checked ? I18N.country : undefined;
       }
       return newState;
     });
@@ -239,6 +238,17 @@ export const ContactForm = (props) => {
         placeholder=""
         onChange={handleChange}
         value={data.zip}
+        disabled={isLoading}
+      />
+<     Spacer data-scroll="country" size="1rem" />
+      <CountryField
+        label={"País"}
+        id="country"
+        name="country"
+        error={errors?.country}
+        placeholder=""
+        onChange={handleSelectCountry}
+        value={data.country}
         disabled={isLoading}
       />
       <Spacer data-scroll="email" size="1rem" />
@@ -368,17 +378,6 @@ export const ContactForm = (props) => {
             placeholder=""
             onChange={handleChange}
             value={data.city}
-            disabled={isLoading}
-          />
-          <Spacer data-scroll="country" size="1rem" />
-          <CountryField
-            label={"País"}
-            id="country"
-            name="country"
-            error={errors?.country}
-            placeholder=""
-            onChange={handleSelectCountry}
-            value={data.country}
             disabled={isLoading}
           />
           <Spacer size="1rem" />
