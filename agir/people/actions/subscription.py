@@ -188,8 +188,8 @@ def save_contact_information(data):
 
     with transaction.atomic():
         try:
-            if data.get("email"):
-                person = Person.objects.get_by_natural_key(data["email"])
+            if data.get("_email"):
+                person = Person.objects.get_by_natural_key(data["_email"])
             else:
                 # If no email address has been sent, check if the given phone number
                 # relates to a unique Person instance (create a new person otherwise)
@@ -219,7 +219,7 @@ def save_contact_information(data):
                     }
                 }
             }
-            person = Person.objects.create_person(data.pop("email", ""), **data)
+            person = Person.objects.create_person(data.pop("_email", ""), **data)
             is_new = True
 
         if person.is_liaison and not person.meta.get(LIAISON_SINCE_META_PROPERTY, None):
