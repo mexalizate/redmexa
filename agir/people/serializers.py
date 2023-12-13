@@ -352,10 +352,7 @@ class ContactSerializer(serializers.ModelSerializer):
     zip = serializers.CharField(
         required=True, source="location_zip", label="Code postal"
     )
-    email = serializers.EmailField(
-        required=True,
-        source="_email"
-    )
+    email = serializers.EmailField(required=True, source="_email")
     phone = PhoneField(
         source="contact_phone",
         required=False,
