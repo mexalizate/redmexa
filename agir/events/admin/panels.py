@@ -1089,9 +1089,9 @@ class EventSubtypeAdmin(admin.ModelAdmin):
         else:
             css = {
                 "all": (
-                    "https://media.preprod.redmexa.com/fontawesome/css/all.min.css",
-                    "https://media.preprod.redmexa.com/fontawesome/css/v4-font-face.min.css",
-                    "https://media.preprod.redmexa.com/fontawesome/css/v4-shims.min.css",
+                    "https://preprod.redmexa.com/static/front/fontawesome/Font-Awesome-6.x/css/all.min.css",
+                    "https://preprod.redmexa.com/static/front/fontawesome/Font-Awesome-6.x/css/v4-font-face.min.css",
+                    "https://preprod.redmexa.com/static/front/fontawesome/Font-Awesome-6.x/css/v4-shims.min.css",
                 )
             }
 
