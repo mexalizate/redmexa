@@ -257,7 +257,7 @@ def get_group_queryset_from_choices(choices, instance):
             memberships__membership_type__gte=Membership.MEMBERSHIP_TYPE_MANAGER,
         )
 
-    if choices in ["membre", "member"]:
+    if choices in ["Participante", "member"]:
         return base_qs.filter(memberships__person_id=instance.id)
 
     if choices:

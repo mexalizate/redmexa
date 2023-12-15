@@ -176,9 +176,7 @@ const items = [
     img: promo2,
     content: (
       <p>
-        <strong>Joignez simplement vos membres&nbsp;: </strong>
-        tous vos membres recevront un e-mail avec le contenu de votre message et
-        pourront y répondre sur le site
+        Al escribir un mensaje, l@s participantes del grupo serán notificad@s y podrán responder
       </p>
     ),
   },
@@ -186,8 +184,7 @@ const items = [
     img: promo3,
     content: (
       <p>
-        <strong>Organisez ensemble vos actions&nbsp;: </strong>
-        les membres du groupe sont les seuls à voir et commenter
+        Sólo quienes participan en el grupo pueden ver y comentar mensajes: ideal para organizarse
       </p>
     ),
   },
@@ -195,8 +192,7 @@ const items = [
     img: promo4,
     content: (
       <p>
-        <strong>Restez connecté·es&nbsp;! </strong>
-        Recevez les notifications de message en téléchargeant l’application
+        No te desconectes: recibe tus notificaciones y mensajes de grupo en la app Claudialízate
       </p>
     ),
   },

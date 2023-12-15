@@ -104,7 +104,7 @@ export const CollapsibleAnnouncementCard = (props) => {
             color="secondary"
             onClick={close}
           >
-            {_("Compris")}
+            {"Entendido"}
           </Button>
         </StyledFooter>
       </div>

@@ -182,7 +182,7 @@ const Actions = (props) => {
     return (
       <StyledActions>
         <Button disabled color="unavailable">
-          Événement terminé
+        Acción concluida
         </Button>
         {isManager && (
           <Button

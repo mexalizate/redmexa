@@ -69,7 +69,7 @@ const GroupFacts = (props) => {
             <FeatherIcon name="users" small inline />
             <span>
               {activeMemberCount}{" "}
-              {activeMemberCount > 1 ? "Participantes activos" : "Participante activo"}
+              {activeMemberCount > 1 ? "Participantes activ@s" : "Participante activ@"}
             </span>
           </li>
         )}

@@ -148,7 +148,7 @@ export const UpdateAddressModal = (props) => {
             type="submit"
             color="primary"
           >
-            Valider
+            Validar
           </Button>
         </form>
       </StyledModalContent>

@@ -54,13 +54,13 @@ const SearchPageTab = (props) => {
         {tab.hasGroups && (
           <>
             <ListTitle
-              name="Groupes"
+              name="Grupos"
               length={tab.id === "groups" ? groups.length : 0}
               onShowMore={
                 tab.id !== "groups" ? () => onTabChange("groups") : undefined
               }
             />
-            {hasSearch && <NoResults name="groupe" list={groups} />}
+            {hasSearch && <NoResults name="grupo" list={groups} />}
             <GroupList groups={groups} inline={tab.hasEvents && !isDesktop} />
           </>
         )}
@@ -68,13 +68,13 @@ const SearchPageTab = (props) => {
         {tab.hasEvents && (
           <>
             <ListTitle
-              name="Événements"
+              name="acciones"
               length={tab.id === "events" ? events.length : 0}
               onShowMore={
                 tab.id !== "events" ? () => onTabChange("events") : undefined
               }
             />
-            {hasSearch && <NoResults name="événement" list={events} />}
+            {hasSearch && <NoResults name="acción" list={events} />}
             <EventList events={events} />
           </>
         )}

@@ -262,7 +262,7 @@ const GenericCard = (props) => {
     case "new-members-through-transfer":
       return (
         <GenericCardContainer {...props}>
-          {meta && meta.transferredMemberships} {_("membre")}
+          {meta && meta.transferredMemberships} {"Participantes"}
           {meta && meta.transferredMemberships > 0 ? "s" : ""} {_("ont rejoint")}{" "}
           <Link
             to={routeConfig.groupSettings.getLink({ groupPk: group.id })}

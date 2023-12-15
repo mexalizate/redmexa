@@ -13,7 +13,7 @@ export const TABS = {
   },
   groups: {
     id: "groups",
-    label: _("Groupes"),
+    label: "Grupos",
     searchPlaceholder: _("Rechercher un groupe"),
     mapRoute: "groupMap",
     hasFilters: "groups",

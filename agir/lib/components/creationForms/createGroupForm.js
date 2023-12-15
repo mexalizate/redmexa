@@ -150,7 +150,7 @@ class GroupTypeStep extends FormStep {
           </div>
         )}
         <div className="col-sm-4">
-          <h3>¿Para qué crear un grupo?&nbsp;?</h3>
+          <h3>¿Para qué crear un grupo&nbsp;?</h3>
           <p>
           Toda persona puede formar un nuevo grupo y puede unirse a otros grupos creados por otras personas.
           </p>

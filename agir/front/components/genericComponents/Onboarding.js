@@ -67,7 +67,7 @@ const ONBOARDING_TYPE = {
       </>
     ),
     primaryLink: {
-      label: "Crear un grupo",
+      label: "Crear una acción",
       route: "createGroup",
     },
   },
@@ -105,7 +105,7 @@ const ONBOARDING_TYPE = {
     },
     secondaryLink: {
       href: "groupes/creer/",
-      label: "Crear un grupo",
+      label: "Crear una acción",
     },
   },
 };

@@ -146,14 +146,14 @@ class SendValidationSMSForm(forms.ModelForm):
 
 
 class CodeValidationForm(Form):
-    code = CharField(label=_("Code reçu par SMS"))
+    code = CharField(label="Código recibido en celular")
 
     def __init__(self, *args, person, **kwargs):
         super().__init__(*args, **kwargs)
         self.person = person
 
         phone_input = Field("code")
-        submit_button = Submit("submit", "Valider mon numéro")
+        submit_button = Submit("submit", "Validar mi celular")
 
         fields = [Row(HalfCol(phone_input, submit_button))]
 
@@ -191,4 +191,4 @@ class CodeValidationForm(Form):
                 "de l'expéditeur (5 chiffres)."
             )
 
-        raise ValidationError("Votre code est incorrect ou expiré.")
+        raise ValidationError("Código erróneo o que ya expiró.")

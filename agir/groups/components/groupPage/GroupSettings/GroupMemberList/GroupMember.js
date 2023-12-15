@@ -140,7 +140,7 @@ const StyledMember = styled.div`
 `;
 
 const MEMBERSHIP_TYPE_LABEL = {
-  [MEMBERSHIP_TYPES.FOLLOWER]: ["Abonné·e", "Abonnée", "Abonné"],
+  [MEMBERSHIP_TYPES.FOLLOWER]: ["Seguidor(a)", "Seguidor", "Abonné"],
   [MEMBERSHIP_TYPES.MEMBER]: "Membre actif",
   [MEMBERSHIP_TYPES.MANAGER]: "Gestionnaire",
   [MEMBERSHIP_TYPES.REFERENT]: ["Facilitadores", "Animatrice", "Animateur"],

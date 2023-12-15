@@ -62,7 +62,7 @@ const GroupAdminBar = (props) => {
         )}
         {routes.members && (
           <Button link href={routes.members} icon="users">
-            {_("Membres")}
+            {"participantes"}
           </Button>
         )}
       </RightSection>

@@ -141,7 +141,7 @@ export const ActionTools = () => {
           <RawFeatherIcon name="coffee" />
         </i>
         <span>
-          <strong>Organizar un encuentro</strong>
+          <strong>Convocar a figura pública</strong>
           <span>
           Un encuentro de formación política es un espacio abierto de debate y de discusión política, en el que se pueden proponer temas y participantes.
             {/*_("Le café populaire est un exercice d’éducation populaire, de débat d’idées, et de formation politique mis en place par la France insoumise et organisé par l’Institut La Boétie, qui fournit un catalogue de thèmes et d'intervenant·es. Les cafés populaires peuvent être organisés partout en France et sont ouvert à tou·tes les citoyen·nes.")*/}

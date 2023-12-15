@@ -211,7 +211,7 @@ const Modal = (props) => {
   const handleSend = useCallback(() => {
     if (!subject || !text) {
       setErrors({
-        subject: !subject && _("L'objet du message est obligatoire"),
+        subject: !subject && "El asunto del mensaje es obligatorio",
         text: !text && _("Un corps de message est obligatoire"),
       });
       return false;

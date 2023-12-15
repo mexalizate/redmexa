@@ -22,7 +22,7 @@ const config = {
     {
       id: "groups",
       icon: "users",
-      title: _("Groupes"),
+      title: "Grupos",
       route: "groups",
       desktop: true,
       mobile: true,

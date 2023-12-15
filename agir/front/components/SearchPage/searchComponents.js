@@ -115,7 +115,7 @@ export const HeaderSearch = ({ querySearch, mapRoute }) => (
     <div>
       <h1>
         <Hide $over>{_("Rechercher")}</Hide>
-        {!querySearch && <Hide $under>Recherche : "{querySearch}"</Hide>}
+        {!querySearch && <Hide $under>Busqueda : "{querySearch}"</Hide>}
       </h1>
       <Hide $under as="div" style={{ marginTop: "0.5rem" }}>
         Encuentra grupos y acciones buscando por nombre, ciudad, código postal...

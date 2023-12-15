@@ -118,7 +118,7 @@ export const FORM_FIELD_CONSTRAINTS = {
   "location.zip": {
     presence: {
       allowEmpty: false,
-      message: _("Indiquez un code postal"),
+      message: "Indica C.P./ZIP",
     },
   },
   "location.country": {
@@ -147,7 +147,7 @@ export const FORM_FIELD_CONSTRAINTS = {
   "contact.phone": {
     presence: {
       allowEmpty: false,
-      message: _("Indiquez un numéro de téléphone"),
+      message: "Corrige el número de teléfono",
     },
     phone: {
       message: _("Indiquez un numéro de téléphone valide"),

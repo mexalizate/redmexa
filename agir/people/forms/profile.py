@@ -356,7 +356,7 @@ class ContactForm(LegacySubscribedMixin, ContactPhoneNumberMixin, forms.ModelFor
                 label=_("Vérification de votre numéro de téléphone"),
                 value=validation_link
                 if unverified
-                else f"Compte {self.instance.get_contact_phone_status_display().lower()}",
+                else f"Cuenta {self.instance.get_contact_phone_status_display().lower()}",
                 help_text=_(
                     "Faites vérifiez votre numéro de téléphone (cette certification "
                     "facultative n'est possible que pour les numéros français)."

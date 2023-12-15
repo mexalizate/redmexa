@@ -124,7 +124,7 @@ export const Footer = (props) => {
               <Link className="primaryTextColorPurple" route="eventMap">{_("Carte des événements")}</Link>
               <Link className="primaryTextColorPurple" route="groupMap">{_("Carte des groupes")}</Link>
               <Link className="primaryTextColorPurple" route="materiel" target="_blank">
-                {/*_(" Commander du matériel")*/} Bajar material
+                {"Bajar material"}
               </Link>
             </p>
           </div>
