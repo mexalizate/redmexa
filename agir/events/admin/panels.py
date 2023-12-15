@@ -1078,13 +1078,22 @@ class EventSubtypeAdmin(admin.ModelAdmin):
         )
 
     class Media:
-        css = {
-            "all": (
-                "https://media.preprod.redmexa.com/fontawesome/css/all.min.css",
-                "https://media.preprod.redmexa.com/fontawesome/css/v4-font-face.min.css",
-                "https://media.preprod.redmexa.com/fontawesome/css/v4-shims.min.css",
-            )
-        }
+        if settings.DEBUG:
+            css = {
+                "all": (
+                    "http://agir.local:8000/static/front/fontawesome/Font-Awesome-6.x/css/all.min.css",
+                    "http://agir.local:8000/static/front/fontawesome/Font-Awesome-6.x/css/v4-font-face.min.css",
+                    "http://agir.local:8000/static/front/fontawesome/Font-Awesome-6.x/css/v4-shims.min.css",
+                )
+            }
+        else:
+            css = {
+                "all": (
+                    "https://media.preprod.redmexa.com/fontawesome/css/all.min.css",
+                    "https://media.preprod.redmexa.com/fontawesome/css/v4-font-face.min.css",
+                    "https://media.preprod.redmexa.com/fontawesome/css/v4-shims.min.css",
+                )
+            }
 
 
 @admin.register(models.JitsiMeeting)

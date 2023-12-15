@@ -240,7 +240,7 @@ export const ContactForm = (props) => {
         value={data.zip}
         disabled={isLoading}
       />
-<     Spacer data-scroll="country" size="1rem" />
+      <Spacer data-scroll="country" size="1rem" />
       <CountryField
         label={"País"}
         id="country"

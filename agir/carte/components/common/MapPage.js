@@ -106,7 +106,7 @@ const MAP_TYPE_CONFIG = {
     mapBaseURL: nonReactRoutes.eventsMap,
     searchRoute: "searchEvent",
     createRoute: "createEvent",
-    itemLabel: "un evento",
+    itemLabel: "una acción",
     tabLabel: "Acciones",
     tabRoute: "eventMap",
   },
@@ -115,7 +115,7 @@ const MAP_TYPE_CONFIG = {
     searchRoute: "searchGroup",
     createHref: nonReactRoutes.createGroup,
     itemLabel: "un grupo",
-    tabLabel: "Editar tus grupos",
+    tabLabel: "Grupos",
     tabRoute: "groupMap",
   },
 };

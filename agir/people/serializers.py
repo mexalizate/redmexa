@@ -352,7 +352,11 @@ class ContactSerializer(serializers.ModelSerializer):
     zip = serializers.CharField(
         required=True, source="location_zip", label="Code postal"
     )
-    email = serializers.EmailField(required=True, source="_email")
+    email = serializers.EmailField(
+        required=True,
+        # allow_blank=True,
+        source="_email",
+    )
     phone = PhoneField(
         source="contact_phone",
         required=False,
@@ -383,7 +387,7 @@ class ContactSerializer(serializers.ModelSerializer):
     subscriber = CurrentPersonField()
 
     # def validate(self, data):
-    #     if not data.get("email") and not data.get("contact_phone"):
+    #     if not data.get("_email") and not data.get("contact_phone"):
     #         raise ValidationError(
     #             detail={
     #                 "global": "Debes indicar obligatoriamente un email o un número de celular del nuevo contacto"
@@ -398,7 +402,7 @@ class ContactSerializer(serializers.ModelSerializer):
     #             data["location_zip"]
     #         )
 
-    #     return data
+    # return data
 
     def create(self, validated_data):
         return save_contact_information(validated_data)
