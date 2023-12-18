@@ -1,18 +1,18 @@
-Bonjour,
+Hola,
 
-Bonne nouvelle,  {{ PERSON_INFORMATION }} s'est inscrit·e à votre événement « {{ EVENT_NAME }} » !
+Buenas noticias: {{ PERSON_INFORMATION }} se registró a tu acción « {{ EVENT_NAME }} ».
 
->> Voir la liste de toutes les personnes inscrites à votre événement
+>> Ver la lista de personas registradas en la acción:
 {{ MANAGE_EVENT_LINK }}
 
-Amitiés,  
-L’équipe d’Action Populaire  
+Saludos,  
+El equipo Claudialízate
   
 ------------------------------------------------------------------
-Cet email a été envoyé à {{ EMAIL }}. Il est personnel, ne le transférez pas.
+Este mensaje se envió a {{ EMAIL }}. Es personal y no debería ser reenviado.
 
->> Choisir les emails que vous recevez
-{{ preferences_link }}
+>> Escoge los emails que recibes
+{{ PREFERENCES_LINK }}
 
->> Arrêter complètement de recevoir des emails
-{{ unsubscribe_link }}
+>> No recibir más emails
+{{ UNSUBSCRIBE_LINK }}

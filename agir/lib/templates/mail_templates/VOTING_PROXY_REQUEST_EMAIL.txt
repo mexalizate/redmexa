@@ -1,4 +1,4 @@
-Bonjour,
+Hola,
 
 {% if MESSAGE_INTRO %}
 {{ MESSAGE_INTRO }}
@@ -14,11 +14,11 @@ Bonjour,
 
 {% endif %}
 
-Merci pour votre aide ! Notre force est dans le nombre.
+¡Gracias por tu ayuda! La fuerza de este movimiento eres tú.
 
 
-Amitiés,
-L’équipe d’Action Populaire
+Saludos,
+El equipo Claudialízate
 
 ------------------------------------------------------------------
-Cet email a été envoyé à {{ email }}. Il est personnel, ne le transférez pas.
+Este mensaje se envió a {{ email }}. Es personal y no debería ser reenviado.

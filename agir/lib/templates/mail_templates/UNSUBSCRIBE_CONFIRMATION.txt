@@ -1,19 +1,20 @@
-Bonjour,
+Hola,
 
-Quelqu'un, sûrement vous, a demandé à vous désabonner des lettres d'information et des notifications de la France insoumise.
+Alguien, probablemente tu mism@, solicitó desinscribirte de los mensajes informativos y notificaciones de Claudialízate.
 
-Vous avez bien été désabonné⋅e.
+Por ello procedimos a desinscribirte.
 
->> Si vous pensez que c'est une erreur, vous pouvez vous réabonner aux emails
+>> Si crees que fue un error, o no fuiste tú, puedes reinscribirte en las listas de correo en el siguiente enlace:
 {{ MANAGE_SUBSCRIPTIONS_LINK }}
 
-L'équipe Action Populaire
+Saludos,
+El equipo Claudialízate
 
 ------------------------------------------------------------------
-Cet email a été envoyé à {{ email }}. Il est personnel, ne le transférez pas.
+Este mensaje se envió a {{ email }}. Es personal y no debería ser reenviado.
 
->> Choisir les emails que vous recevez
+>> Escoge los mensajes que recibes
 {{ preferences_link }}
 
->> Arrêter complètement de recevoir des emails
+>> No recibir más emails
 {{ unsubscribe_link }}

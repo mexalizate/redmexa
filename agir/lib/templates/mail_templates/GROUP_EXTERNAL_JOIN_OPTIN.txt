@@ -1,15 +1,15 @@
-Bonjour,
+Hola,
 
-Vous avez demandé à vous rejoindre « {{ GROUP_NAME }} ». En confirmant cette demande, votre adresse email sera transmise au gestionnaire de ce groupe et un compte sera créé pour vous sur la plateforme d'action de la France insoumise.  
+Solicitaste unirte al grupo « {{ GROUP_NAME }} ». Si confirmas esta solicitud, enviaremos tu email a l@s facilitadores del grupo y te crearemos una cuenta en Claudialízate para agregarte a ese grupo.  
   
->>  Je rejoins « {{ GROUP_NAME }} »
+>>  Me uno al grupo « {{ GROUP_NAME }} »
 {{ JOIN_LINK }}
 
-Si vous n'êtes pas à l'origine de cette demande, merci d'ignorer cet email.  
+Si tu no iniciaste esta solicitud, por favor ignora este email.
   
 
 -----------------------------------------------------------------
-Cet email a été envoyé à {{ EMAIL }}.
+Este mensaje se envió a {{ EMAIL }}. Es personal y no debería ser reenviado.
 
->> Voir cet email dans votre navigateur
+>> Ver este email en tu navegador
 {{ LINK_BROWSER }}

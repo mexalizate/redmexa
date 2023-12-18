@@ -1,25 +1,25 @@
-Bonne nouvelle !
+¡Buenas noticias! 
 
-Vous avez correctement inscrit⋅e un invité à l'événement suivant :
+se registró correctamente a la persona que invitaste a la acción:
 
-Nom de l'événement : {{ EVENT_NAME }}
-Horaires : {{ EVENT_SCHEDULE }}
-Lieu : {{ LOCATION_NAME }}
-Adresse : {{ LOCATION_ADDRESS }}
+Acción: {{ EVENT_NAME }}
+Horario: {{ EVENT_SCHEDULE }}
+Lugar: {{ LOCATION_NAME }}
+Dirección: {{ LOCATION_ADDRESS }}
 
-Pour toute demande ou information, vous pouvez contacter {{ CONTACT_NAME }} par e-mail à l'adresse : {{ CONTACT_EMAIL }}
+Para más información, puedes contactar a {{ CONTACT_NAME }} por email en: {{ CONTACT_EMAIL }}
 
->> Si l'inscription ne comportait pas de participation financière, vous pouvez à tout moment annuler votre participation en vous rendant sur la page de l'événement
+Puedes consultar la página pública de la acción en:
 {{ EVENT_LINK }}
 
-Amitiés,  
-L’équipe d’Action Populaire  
+Saludos,  
+El equipo Claudialízate
 
 ------------------------------------------------------------------
-Cet email a été envoyé à {{ email }}. Il est personnel, ne le transférez pas.
+Este mensaje se envió a {{ EMAIL }}. Es personal y no debería ser reenviado.
 
->> Choisir les emails que vous recevez
-{{ preferences_link }}
+>> Escoge los emails que recibes
+{{ PREFERENCES_LINK }}
 
->> Arrêter complètement de recevoir des emails
-{{ unsubscribe_link }}
+>> No recibir más emails
+{{ UNSUBSCRIBE_LINK }}

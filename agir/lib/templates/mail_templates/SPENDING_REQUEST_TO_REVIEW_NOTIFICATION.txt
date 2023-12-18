@@ -1,28 +1,23 @@
   
   
-[Voir dans le navigateur]({{ LINK_BROWSER }})  
+[Ver en el navegador]({{ LINK_BROWSER }})  
   
-Bonjour Marie-Pierre et Maxime,  
+Hola compañer@s,  
+
+Una nueva solicitud de gasto o de rembolso está en línea. Se llama « {{ SPENDING_REQUEST_NAME }} », y fue creada por el grupo « {{ GROUP_NAME }} ».    
+  
+[Gestionar el gasto]({{ SPENDING_REQUEST_ADMIN_LINK }})  
+  
+Saludos !  
 
 
-Une nouvelle demande de dépense ou de remboursement est en ligne. Elle s'intitule « {{ SPENDING_REQUEST_NAME }} », et a été créée par le groupe « {{ GROUP_NAME }} ».  
+Los Administradores
   
-  
-[Traiter la dépense]({{ SPENDING_REQUEST_ADMIN_LINK }})  
-  
-Bises !  
-
-
-Jill et Arthur  
-  
-  
-
-
 ------------------------------------------------------------------
-Cet email a été envoyé à {{ EMAIL }}. Il est personnel, ne le transférez pas.
+Este mensaje se envió a {{ EMAIL }}. Es personal y no debería ser reenviado.
 
->> Choisir les emails que vous recevez
-{{ preferences_link }}
+>> Escoge los emails que recibes
+{{ PREFERENCES_LINK }}
 
->> Arrêter complètement de recevoir des emails
-{{ unsubscribe_link }}
+>> No recibir más emails
+{{ UNSUBSCRIBE_LINK }}

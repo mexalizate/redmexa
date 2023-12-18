@@ -1,10 +1,11 @@
-*Confirmez votre e-mail pour valider votre signature*
+*Confirma tu email para validar tu firma*
 
->>> Je confirme mon email en suivant l'URL ci-dessous
+>>> Confirmo mi email haciendo clic en:
 {{ CONFIRMATION_URL }}
 
-Vous pourrez paramétrer vos préférences de contact une fois votre mail confirmé.
+Puedes configurar tus preferencias de contacto una vez confirmado tu email.
 
-Vous n’êtes pas à l’origine de cette signature ? Ignorez simplement ce message, et aucune donnée vous concernant ne sera conservée.
 
-https://melenchon2022.fr
+Si tu no iniciaste esta solicitud, puedes ignorar este mensaje: no conservaremos ninguna información sobre ti.
+
+https://claudializate.com

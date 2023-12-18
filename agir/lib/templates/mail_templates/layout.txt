@@ -1,9 +1,9 @@
 {% load htmltotext %}{% autoescape off %}{% block text_content %}{% filter html_to_text %}{% block html_content %}{% endblock %}{% endfilter %}{% endblock %}
 ------------------------------------------------------------------
-{% block text_footer %}Cet email a été envoyé à {{ EMAIL }}. Il est personnel, ne le transférez pas.
+{% block text_footer %}Este mensaje se envió a {{ EMAIL }}. Es personal y no debería ser reenviado.
 
->> Choisir les emails que vous recevez
-{{ preferences_link }}
+>> Escoge los emails que recibes
+{{ PREFERENCES_LINK }}
 
->> Arrêter complètement de recevoir des emails
-{{ unsubscribe_link }}{% endblock %}{% endautoescape %}
+>> No recibir más emails
+{{ UNSUBSCRIBE_LINK }}{% endblock %}{% endautoescape %}

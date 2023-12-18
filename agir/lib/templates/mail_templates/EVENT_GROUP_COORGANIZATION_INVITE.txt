@@ -1,15 +1,15 @@
-{{ MEMBER }} a invité votre groupe {{ GROUP_NAME }} a co-organiser l’événement {{ EVENT_NAME }} ({{ DATE }}).
+{{ MEMBER }} invitó a tu grupo {{ GROUP_NAME }} a co-organizar la acción {{ EVENT_NAME }} en ({{ DATE }}).
 
-Acceptez l’invitation pour faire apparaître votre groupe sur la page publique de l’événement.
+Acepta la invitación para que tu grupo aparezca en la página pública de la acción.
 
-Accepter de co-organiser :
+Aceptar co-organizar la acción:
 {{ ACCEPT_LINK }}
 
-Vous ne voulez pas co-organiser cet événement ?
+¿No quieres co-organizar esta acción?
 
-Refuser de co-organiser :
+Rechazar co-organizar la acción:
 {{ REFUSE_LINK }}
 
 
 ------------------------------------------------------------------
-Ce mail a été adressé à {{ email }}.
+Este email se envió a {{ email }}.

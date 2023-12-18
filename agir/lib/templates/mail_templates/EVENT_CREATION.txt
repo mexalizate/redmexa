@@ -45,7 +45,7 @@ Je complète les informations : {{ MANAGE_EVENT_LINK }}
 
 3. Découvrez les fiches pratiques
 Visitez le centre d'aide qui contient des astuces et conseils pour les organisateurs d'événement.
-Aller au centre d'aide : https://info.preprod.redmexa.com/
+Aller au centre d'aide : https://infos.preprod.redmexa.com/
 
 
 

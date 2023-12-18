@@ -1,17 +1,17 @@
-Suite à votre {{ EVENT_SUBTYPE }} du {{ EVENT_DATE }} : {{ FORM_NAME }}
+Luego de tu {{ EVENT_SUBTYPE }} de fecha {{ EVENT_DATE }} : {{ FORM_NAME }}
   
-Vous avez effectué une action le {{ EVENT_DATE }}.  
+Realizaste una acción el día {{ EVENT_DATE }}.  
 
 {{ FORM_DESCRIPTION }}  
   
-Compléter les informations:
+Completa la información:
 {{ FORM_LINK }}
 
 ------------------------------------------------------------------
-Cet email a été envoyé à {{ EMAIL }}. Il est personnel, ne le transférez pas.
+Este mensaje se envió a {{ EMAIL }}. Es personal y no debería ser reenviado.
 
->> Choisir les emails que vous recevez
-{{ preferences_link }}
+>> Escoge los emails que recibes
+{{ PREFERENCES_LINK }}
 
->> Arrêter complètement de recevoir des emails
-{{ unsubscribe_link }}
+>> No recibir más emails
+{{ UNSUBSCRIBE_LINK }}

@@ -1,23 +1,23 @@
-Bonjour,
+Hola,
 
-Vous êtes sur le point d'accepter une fusion du compte {{ EMAIL }} avec {{ REQUESTER_EMAIL }}.
+Estas a punto de aceptar una fusión de cuenta {{ EMAIL }} con {{ REQUESTER_EMAIL }}.
 
-Une fois effectuée, les droits de gestions et d'administrations des groupes et des événements seront partagées.
+Une vez efectuada, los derechos de gestión y administración de grupos y acciones serán compartidos.
 
-Les adresses e-mail permettant de se connecter à chacun des comptes seront toujours disponibles pour se connecter.
+Los emails para conectarse a ambas cuentas seguirán estando disponibles para conectarse.
   
->> Je confirme ma nouvelle adresse e-mail
+>> Confirmo mi nuevo email
 {{ CONFIRMATION_URL }}
 
-Cette étape nous permet de vérifier que vous êtes bien que vous êtes bien propriétaire de l'adresse e-mail dont la fusion de compte est demandée.
+Al confirmar, nos permites verificar que eres el propietario del email que solicitaste fusionar con otro email.
 
-Si vous n'êtes pas à l'origine de cette demande, vous pouvez ignorer ce message.
+Si tú iniciaste esta solicitud, por favor ignora este correo.
 
 ------------------------------------------------------------------
-Cet email a été envoyé à {{ email }}. Il est personnel, ne le transférez pas.
+Este mensaje se envió a {{ EMAIL }}. Es personal y no debería ser reenviado.
 
->> Choisir les emails que vous recevez
-{{ preferences_link }}
+>> Escoge los emails que recibes
+{{ PREFERENCES_LINK }}
 
->> Arrêter complètement de recevoir des emails
-{{ unsubscribe_link }}
+>> No recibir más emails
+{{ UNSUBSCRIBE_LINK }}

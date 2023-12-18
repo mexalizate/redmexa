@@ -1,23 +1,22 @@
-{{ MEMBER_COUNT }} membres ont été transférés  
+
+{{ MEMBER_COUNT }} miembros fueron transferidos.  
   
-  
-À la demande de {{ TRANSFERER_NAME }}, les membres suivants ont été transférés à **{{ GROUP_DESTINATION }}**  :
+A solicitud de {{ TRANSFERER_NAME }}, los siguientes miembros fueron transferidos a **{{ GROUP_DESTINATION }}** :
 
 {% for MEMBER in MEMBER_LIST %}
 - {{ MEMBER }}
 {% endfor %}
 
-Ces derniers ainsi que les animateur·ices de {{ GROUP_DESTINATION }} ont été prévenu·es par e-mail.  
+Cada un@ de est@s miembros, así como l@s facilitadores de {{ GROUP_DESTINATION }} fueron prevenidos por email.  
   
-Amitiés,
-
-L'équipe d'Action Populaire
+Saludos,
+El equipo Claudialízate
 
 ------------------------------------------------------------------
-Cet email a été envoyé à {{ EMAIL }}. Il est personnel, ne le transférez pas.
+Este mensaje se envió a {{ email }}. Es personal y no debería ser reenviado.
 
->> Choisir les emails que vous recevez
+>> Escoge los mensajes que recibes
 {{ preferences_link }}
 
->> Arrêter complètement de recevoir des emails
+>> No recibir más emails
 {{ unsubscribe_link }}

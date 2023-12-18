@@ -1,20 +1,22 @@
-Bonjour,
+Hola,
 
-Des citoyen·nes ont besoin d'une procuration de vote près de chez vous !
+Hay gente que necesita ayuda cerca de tu zona para registrarse para votar.
 
-Si vous êtes disponible les jours de vote, inscrivez-vous comme volontaire pour prendre
-la procuration de vote d'une personne absente le jour J.
+Si estás disponible, por favor inscríbete como voluntari@ para ayudar a los demás a registrarse.
 
-Merci pour votre aide ! Notre force est dans le nombre.
+¡Muchas gracias por tu ayuda! La fuerza de este movimiento eres tú.
 
->> Je me porte volontaire pour prendre une procuration :
+>> Quiero ayudar a otras personas a registrarse para votar:
 {{ VOTING_PROXY_REQUEST_CREATION_LINK }}
 
-------------------------------------------------------------------
-Cet email a été envoyé à {{ email }}. Il est personnel, ne le transférez pas.
+Saludos,
+El equipo Claudialízate
 
->> Choisir les emails que vous recevez
+------------------------------------------------------------------
+Este mensaje se envió a {{ email }}. Es personal y no debería ser reenviado.
+
+>> Escoge los mensajes que recibes
 {{ preferences_link }}
 
->> Arrêter complètement de recevoir des emails
+>> No recibir más emails
 {{ unsubscribe_link }}

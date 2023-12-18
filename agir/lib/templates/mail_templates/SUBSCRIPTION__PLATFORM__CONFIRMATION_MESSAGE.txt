@@ -1,14 +1,14 @@
-Confirmez votre adresse e-mail
+Confirma tu dirección email
 
-Terminez votre inscription à Action Populaire en cliquant sur ce bouton pour confirmer que vous êtes propriétaire de cette adresse e-mail :
-  
->> Je confirme mon e-mail
+Termina tu inscripción en Claudialízate haciendo clic en el siguiente botón para confirmar que eres propietario@ de esta dirección email:
+
+>> Confirmo mi email
 {{ CONFIRMATION_URL }}
 
-Si vous n'êtes pas à l'origine de cette demande d'inscription, ignorez ce message : nous ne conserverons aucune information vous concernant.
+Si tú no solicitaste inscribirte en Claudialízate, puedes ignorar este mensaje: no conservaremos ninguna información tuya.
 
-Amitiés,
-L’équipe d’Action Populaire  
+Saludos,
+El equipo Claudialízate
 
 ------------------------------------------------------------------
-Cet email a été envoyé à {{ email }}. Il est personnel, ne le transférez pas.
+Este mensaje se envió a {{ email }}. Es personal y no debería ser reenviado.
