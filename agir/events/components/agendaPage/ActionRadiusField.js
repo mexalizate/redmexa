@@ -26,7 +26,7 @@ const ActionRadiusField = (props) => {
           label={_("Proposer des événements dans un rayon de :")}
           helpText={
             <p style={{ margin: "0.25rem 0 0", textAlign: "right" }}>
-             {_("Un doute sur la localisation utilisée ? ")}
+              {_("Un doute sur la localisation utilisée ? ")} &nbsp;
               <Link route="personalInformation">{_("Vérifiez ici")}</Link>
             </p>
           }

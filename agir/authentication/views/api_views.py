@@ -143,8 +143,7 @@ class CheckCodeAPIView(APIView):
     permission_classes = (IsActionPopulaireClientPermission,)
     messages = {
         "invalid_format": _(
-            "Le code que vous avez entré n'est pas au bon format. Il est constitué de 5 lettres ou"
-            " chiffres et se trouve dans l'email qui vous a été envoyé."
+            "Debes ingresar el código de 5 caracteres que te enviamos por email"
         ),
         "invalid_code": _(
             "Le code que vous avez entré n'est pas ou plus valide. Vérifiez qu'il s'agit bien du code "
