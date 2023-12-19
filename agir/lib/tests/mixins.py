@@ -425,7 +425,7 @@ def update_fake_data():
     thematic_groups = {
         "thematic_booklet": SupportGroup.objects.get(name="Livret thématique fictif"),
         "thematic_group": SupportGroup.objects.get(
-            name="Groupe thématique rattaché au livret"
+            name="Grupo de perfil"
         ),
     }
 
@@ -545,7 +545,7 @@ def load_fake_data():
             name="Livret thématique fictif", type="B"
         ),
         "thematic_group": SupportGroup.objects.create(
-            name="Groupe thématique rattaché au livret", type="B"
+            name="Grupo de perfil", type="B"
         ),
     }
     groups_subtypes["test_thematic_booklet"].supportgroups.set(thematic_groups.values())

@@ -9,7 +9,7 @@
   <div class="col-xs-12 margintopmore text-right" style="line-height: 45px; margin-bottom: 0;">
     <div class="pull-left">
       <a class="menu-back-link" href="{% url "view_group_settings_members" supportgroup.pk %}">
-        <i class="fa fa-arrow-left"></i>&emsp;Retour à la page du groupe
+        <i class="fa fa-arrow-left"></i>&emsp; Volver a la página del grupo
       </a>
     </div>
     <div class="clearfix"></div>
@@ -21,15 +21,15 @@
       {{ supportgroup.name }}
     </h2>
     <hr />
-    <h4 class="padbottom">Transférer mes membres vers un autre groupe</h4>
+    <h4 class="padbottom">Transferir participantes a otro grupo</h4>
     <p>
-      Depuis cette page, vous pouvez transférer des membres de <strong>{{ supportgroup.name }}</strong> vers un autre groupe.
+      En lugar de “Depuis cette page”: Desde aquí puede transferir a participantes de <strong>{{ supportgroup.name }}</strong> hacia otro grupo.
     </p>
     <p>
-      Pour ce faire, commencez par proposez à vos membres de créer un nouveau groupe. Une fois le nouveau groupe créé, sélectionnez les membres dans la liste que vous souhaitez transférer et validez le transfert.
+      Para poder continuar, un participante de tu grupo debe crear un nuevo grupo. Una vez creado, puedes seleccionarlo aquí e indicar qué participantes deben ser transferidos a ese grupo.
     </p>
     <p>
-      <a href="https://info.preprod.redmexa.com/nombre-ideal-division/">En savoir plus sur la division des groupes &rarr;</a>
+      <a href="https://info.preprod.redmexa.com/nombre-ideal-division/">Saber más sobre la división de grupos &rarr;</a>
     </p>
     <div class="padtop padbottom">
       {% crispy form %}

@@ -91,7 +91,7 @@ class SendValidationSMSForm(forms.ModelForm):
     error_messages = {
         "french_only": "Por favor verifica que el país y el número de celular que indicaste sean correctos. ",
         "mobile_only": "Vous devez donner un numéro de téléphone mobile.",
-        "rate_limited": "Trop de SMS envoyés. Merci de réessayer dans quelques minutes.",
+        "rate_limited": "Demasiados intentos. Prueba de nuevo en 10 minutos.",
         "already_used": "Ce numéro a déjà été utilisé pour voter. Si vous le partagez avec une autre"
         ' personne, <a href="{}">vous pouvez'
         " exceptionnellement en demander le déblocage</a>.",

@@ -90,7 +90,7 @@ const ButtonLockMessage = ({ message }) => {
 
       <ModalConfirmation
         title="¿Reactivar esta conversación?"
-        confirmationLabel={!isLocked ? "Pausar " : "reactivar"} 
+        confirmationLabel={!isLocked ? "Pausar " : "Reactivar"} 
         dismissLabel="Regresar"
         shouldShow={isModalOpen}
         onConfirm={switchLockedMessage}

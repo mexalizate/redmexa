@@ -13,7 +13,7 @@
     <p>
       {% blocktrans payment_first_name=payment.first_name payment_last_name=payment.last_name payment_get_price_display=payment.get_price_display event_name=event.name %}{{ payment_first_name }} {{ payment_last_name }}, votre paiement de {{ payment_get_price_display }} pour l'événement «&nbsp;{{ event.name }}&nbsp;» a bien été reçu. Votre inscription est confirmée.{% endblocktrans %}
     </p>
-    <a href="{% url 'homepage' %}">{% translate "Retour à la page d'accueil" %}</a>
+    <a href="{% url 'homepage' %}">REGRESAR AL INICIO</a>
   </div>
 
 {% endblock %}

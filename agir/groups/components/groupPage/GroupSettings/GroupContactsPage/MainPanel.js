@@ -59,7 +59,7 @@ const GroupContactsMainPanel = (props) => {
         <>
           <Spacer size="1rem" />
           <ShareLink
-            label={_("Copier les e-mails")}
+            label={"Copiar los emails"}
             color="primary"
             url={emails}
             $wrap

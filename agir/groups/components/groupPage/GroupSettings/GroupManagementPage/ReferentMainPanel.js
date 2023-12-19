@@ -40,16 +40,16 @@ export const ReferentMainPanel = (props) => {
       </span>
       <Spacer size=".5rem" />
       <span style={{ color: style.black700 }}>
-        {"Para respetar la "}{" "}
+      Para poder certificar el grupo, debemos respetar 
         <a href="https://info.preprod.redmexa.com/charte-des-groupes-action-populaire/">
-          {"paridad de género"}
+        la paridad de género
         </a>
-        {_(", L@s facilitadores organizan y dan vida al grupo.")}
+        con dos facilitadores hombre y mujer.
       </span>
       <Spacer size="1.5rem" />
       <GroupMemberList
         members={referents}
-        addButtonLabel={_("Ajouter votre binôme")}
+        addButtonLabel={"Agregar co-facilitador"}
         onAdd={
           referents.length < 2 && members.length > 1 ? addReferent : undefined
         }

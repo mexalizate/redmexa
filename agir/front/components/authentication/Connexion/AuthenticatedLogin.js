@@ -52,7 +52,7 @@ const AuthenticatedLogin = ({ user }) => {
     <>
       <TopBar />
       <StyledWrapper>
-        <h2>{_("Vous êtes déjà connecté")}</h2>
+        <h2>Ya estás conectad@</h2>
         <Spacer size="1rem" />
         <p>
           {_("Vous êtes déjà connecté·e à votre")}
@@ -61,11 +61,11 @@ const AuthenticatedLogin = ({ user }) => {
         </p>
         <Spacer size="2rem" />
         <Button link route="events" color="secondary">
-          {_("Revenir à l’accueil")}
+          Volver al inicio
         </Button>
         <Spacer size="3.25rem" />
         <p>
-          {_("Mauvais compte&nbsp;? ")}<Link route="logout">{_("Se déconnecter")}</Link>
+          ¿No es tu cuenta?<Link route="logout"> <strong> {_("Se déconnecter")} </strong> </Link>
         </p>
       </StyledWrapper>
     </>

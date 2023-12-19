@@ -239,7 +239,7 @@ const Actions = (props) => {
             <StyledButtonMenu
               color="success"
               icon="check-circle"
-              text="Participó"
+              text="Participo"
               shouldDismissOnClick
               MobileLayout={Popin}
             >

@@ -42,7 +42,7 @@ class ActivityNotificationSerializer(FlexibleFieldsMixin, serializers.ModelSeria
     id = serializers.IntegerField(read_only=True)
     type = serializers.CharField(read_only=True)
     tag = serializers.CharField(read_only=True, source="type")
-    title = serializers.ReadOnlyField(default="Action Populaire")
+    title = serializers.ReadOnlyField(default="Claudialízate")
     body = serializers.SerializerMethodField()
     url = serializers.SerializerMethodField()
     icon = serializers.ReadOnlyField(default=None)
