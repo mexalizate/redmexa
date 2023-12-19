@@ -1,17 +1,17 @@
 Hola,
 
-Estas a punto de aceptar una fusión de cuenta {{ EMAIL }} con {{ REQUESTER_EMAIL }}.
+Estas a punto de aceptar una fusión entre la cuenta {{ EMAIL }} y la cuenta {{ REQUESTER_EMAIL }}.
 
-Une vez efectuada, los derechos de gestión y administración de grupos y acciones serán compartidos.
+Une vez efectuada, los derechos de gestión y administración de grupos y acciones de ambas cuentas serán combinados.
 
 Los emails para conectarse a ambas cuentas seguirán estando disponibles para conectarse.
   
 >> Confirmo mi nuevo email
 {{ CONFIRMATION_URL }}
 
-Al confirmar, nos permites verificar que eres el propietario del email que solicitaste fusionar con otro email.
+Al confirmar, nos permites verificar que eres propietari@ del email que solicitaste fusionar con otro email.
 
-Si tú iniciaste esta solicitud, por favor ignora este correo.
+Si tú NO iniciaste esta solicitud, por favor ignora este correo.
 
 ------------------------------------------------------------------
 Este mensaje se envió a {{ EMAIL }}. Es personal y no debería ser reenviado.

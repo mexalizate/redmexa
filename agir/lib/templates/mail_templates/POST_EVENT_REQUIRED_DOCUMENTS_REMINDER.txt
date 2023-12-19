@@ -1,30 +1,30 @@
-Rappel : envoyez les justificatifs de l'événement d'hier
+Recordatorio : Envía comprobantes de la acción de ayer
   
 {{ GREETINGS }},
 
-Votre événement >> {{ EVENT_NAME }} << a eu lieu hier, félicitations !
+Tu acción >> {{ EVENT_NAME }} << tuvo lugar ayer. ¡Felicidades!
 
-Envoyez a minima ces justificatifs ou indiquez qu'ils ne sont pas nécessaire avant le {{ DOCUMENT_DEADLINE }} :
+Envía al menos estos comprobantes o indica que no son necesarios antes de la fecha límite, {{ DOCUMENT_DEADLINE }}:
   {% if "ATT-CON" in REQUIRED_DOCUMENT_TYPES %}
-  * Attestation de concours en nature - {{ DOCUMENTS_LINK }}
+  * Carta precisando que ninguna persona moral interviene - {{ DOCUMENTS_LINK }}
   {% endif %}
   {% if "ATT-REG" in REQUIRED_DOCUMENT_TYPES %}
-  * Attestation de règlement des consommations - {{ DOCUMENTS_LINK }}
+  * Comprobante de gastos de consumo - {{ DOCUMENTS_LINK }}
   {% endif %}
   {% if "ATT-GRA" in REQUIRED_DOCUMENT_TYPES %}
-  * Attestation pour les salles municipales - {{ DOCUMENTS_LINK }}
+  * Carta para espacios municipales - {{ DOCUMENTS_LINK }}
   {% endif %}
   {% if "ATT-ESP" in REQUIRED_DOCUMENT_TYPES %}
-  * Copie de la demande d'autorisation d'occupation de l'espace public - {{ DOCUMENTS_LINK }}
+  * Copia de la solicitud de autorización de ocupación del espacio público - {{ DOCUMENTS_LINK }}
   {% endif %}
 
-Attention :
-vous ne pourrez plus créer d’événement public après le {{ DOCUMENT_DEADLINE }} sans avoir complété la page des documents de cet événement.
+Ojo: 
+Ojo : No podrás crear más acciones públicas tras la fecha límite, {{ DOCUMENT_DEADLINE }}, si no has completado la página de comprobantes.
 
-> J'envoie les documents : {{ DOCUMENTS_LINK }}
+> Envío los comprobantes : {{ DOCUMENTS_LINK }}
   
- Si nécessaire, vous pouvez téléchargez dès maintenant les modèles vierges qui vous seront nécessaires sur la page des documents de l'événement :
-> https://mosaico.preprod.redmexa.com/mosaico/{{ DOCUMENTS_LINK }}
+  Descarga ya el modelo que necesitarás para la página de comprobantes de la acción
+>> {{ DOCUMENTS_LINK }}
 
-Amitiés,  
-L’équipe d’Action Populaire
+Saludos,  
+El equipo Claudialízate

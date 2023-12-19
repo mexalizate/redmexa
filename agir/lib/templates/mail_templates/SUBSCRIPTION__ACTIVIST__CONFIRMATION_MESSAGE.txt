@@ -1,4 +1,4 @@
-*Confirma tu email para validar tu firma*
+*Confirma tu email para validar tu cuenta*
 
 >>> Confirmo mi email haciendo clic en:
 {{ CONFIRMATION_URL }}

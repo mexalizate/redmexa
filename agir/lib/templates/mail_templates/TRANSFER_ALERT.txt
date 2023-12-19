@@ -12,7 +12,7 @@ Recibes este email porque l@s facilitadores de {{ GROUP_SENDER }} te han transfe
   
 L@s facilitadores de {{ GROUP_DESTINATION }} recibieron un email notificándoles de tu llegada y te contactarán directamente.
 
-También puedes contactarlos utilizando los emails de contacto indicados en [la página de {{ GROUP_DESTINATION }}]({{ GROUP_DESTINATION_URL }}).
+También puedes contactarl@s utilizando los emails de contacto indicados en [la página de {{ GROUP_DESTINATION }}]({{ GROUP_DESTINATION_URL }}).
   
 Saludos,
 El equipo Claudialízate

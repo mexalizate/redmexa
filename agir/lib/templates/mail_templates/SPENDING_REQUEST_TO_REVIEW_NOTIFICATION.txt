@@ -4,7 +4,7 @@
   
 Hola compañer@s,  
 
-Una nueva solicitud de gasto o de rembolso está en línea. Se llama « {{ SPENDING_REQUEST_NAME }} », y fue creada por el grupo « {{ GROUP_NAME }} ».    
+Una nueva solicitud de gasto o de rembolso está en línea. Se llama « {{ SPENDING_REQUEST_NAME }} » y fue creada por el grupo « {{ GROUP_NAME }} ».    
   
 [Gestionar el gasto]({{ SPENDING_REQUEST_ADMIN_LINK }})  
   

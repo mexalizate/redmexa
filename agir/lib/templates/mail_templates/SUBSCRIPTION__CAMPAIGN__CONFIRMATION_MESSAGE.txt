@@ -3,11 +3,11 @@ Hola,
 **Estás a un clic de unirte a Claudialízate**
   
   
->> Confirmo mi suscripción a Claudialízate
+>> Confirmar mi registro a Claudialízate
 {{ CONFIRMATION_URL }}
 
 
- **¿Por qué confirmar?** Para saber que eres el propietario del email con el cual acabas de registrarte.
+ **¿Para qué esta etapa?** Para confirmar que eres propietari@ del email con el cual acabas de registrarte.
 
 
 Si tu no iniciaste esta solicitud, puedes ignorar este mensaje: no conservaremos ninguna información sobre ti.

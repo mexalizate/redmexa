@@ -1,6 +1,6 @@
 Hola,
 
-Buenas noticias: {{ PERSON_INFORMATION }} se registró a tu acción « {{ EVENT_NAME }} ».
+{{ PERSON_INFORMATION }} se registró en tu acción « {{ EVENT_NAME }} ».
 
 >> Ver la lista de personas registradas en la acción:
 {{ MANAGE_EVENT_LINK }}

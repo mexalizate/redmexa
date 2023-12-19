@@ -9,7 +9,7 @@
 {{ EVENT_DESCRIPTION }}
 {% endif %}
 
->> Participar
+>> Confirmar mi participación:
 >> {{ EVENT_LINK }}
 
 Confirmar tu presencia ayuda a l@s facilitadores a preparar mejor la acción.

@@ -1,7 +1,6 @@
 Hola,
 
-Tu acción **«  {{ EVENT_NAME }} »** fue validada. Ahora es pública y visible para todas las personas registradas en Claudialízate.
-
+Tu acción **« {{ EVENT_NAME }} »** fue validada. Ahora es pública y visible para todas las personas registradas en Claudialízate.
 
 Te recordamos la información de tu acción:
 

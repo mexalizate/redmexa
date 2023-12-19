@@ -12,7 +12,7 @@ Te recomendamos leer las ideas y consejos que preparamos para l@s facilitadores.
 >> ¿Qué hacer tras crear un grupo?
 https://info.claudializate.com/grupos/
 
-No olvides agregar una descripción de tu grupo, para atraer a más personas de tu zona, que puedan unirse a Claudialízate y activarse contigo.
+No olvides agregar una descripción de tu grupo, para atraer a más personas de tu zona y que puedan unirse a tu grupo y activarse contigo.
 
 >> Puedes invitar a amigos y vecinos a unirse a tu grupo con este enlace:
 {{ GROUP_LINK }}

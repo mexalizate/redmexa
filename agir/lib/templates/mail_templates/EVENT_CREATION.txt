@@ -1,4 +1,4 @@
-Votre événement a été mis en ligne !
+¡Tu acción fue publicada!
   
 {{ EVENT_NAME }}
 {{ EVENT_LINK }}
@@ -8,49 +8,46 @@ Votre événement a été mis en ligne !
 {{ LOCATION_ADDRESS }}  
 
 {% if NEEDS_DOCUMENTS == "True" %}
-    #### À lire : justificatifs à envoyer après vos événements publics
+    #### A consultar : comprobantes a enviar luego de acciones públicas
 
-    À l’exception des réunions internes, la loi vous interdit d'engager des frais personnels dans le cadre de la campagne présidentielle
-    Vous devrez envoyer a minima les justificatifs suivants ou indiquer qu'ils ne sont pas nécessaire.
+    Excepto para reunión internas, está prohibido realizar gastos personales en una campaña
+    Deberás enviar los comprobantes siguientes o indicar que no son necesarios:
 
-      {% if "ATT-CON" in REQUIRED_DOCUMENT_TYPES %}
-      * Attestation de concours en nature - {{ DOCUMENTS_LINK }}
-      {% endif %}
-      {% if "ATT-REG" in REQUIRED_DOCUMENT_TYPES %}
-      * Attestation de règlement des consommations - {{ DOCUMENTS_LINK }}
-      {% endif %}
-      {% if "ATT-GRA" in REQUIRED_DOCUMENT_TYPES %}
-      * Attestation pour les salles municipales - {{ DOCUMENTS_LINK }}
-      {% endif %}
-      {% if "ATT-ESP" in REQUIRED_DOCUMENT_TYPES %}
-      * Copie de la demande d'autorisation d'occupation de l'espace public - {{ DOCUMENTS_LINK }}
-      {% endif %}
+  {% if "ATT-CON" in REQUIRED_DOCUMENT_TYPES %}
+  * Carta precisando que ninguna persona moral interviene - {{ DOCUMENTS_LINK }}{% endif %}
+  {% if "ATT-REG" in REQUIRED_DOCUMENT_TYPES %}
+  * Comprobante de gastos de consumo - {{ DOCUMENTS_LINK }}
+  {% endif %}
+  {% if "ATT-GRA" in REQUIRED_DOCUMENT_TYPES %}
+  * Carta para espacios municipales - {{ DOCUMENTS_LINK }}
+  {% endif %}
+  {% if "ATT-ESP" in REQUIRED_DOCUMENT_TYPES %}
+  * Copia de la solicitud de autorización de ocupación del espacio público - {{ DOCUMENTS_LINK }}
+  {% endif %}
 
-     Téléchargez dès maintenant les modèles vierges qui vous seront nécessaires sur la page des documents de l'événement :
-    {{ DOCUMENTS_LINK }}
-    Attention : vous ne pourrez plus créer d’événement public après le {{ DOCUMENT_DEADLINE }} sans action de votre part.
+ Descarga ya el modelo que necesitarás para la página de comprobantes de la acción
+>> {{ DOCUMENTS_LINK }}
+
+Ojo : No podrás crear más acciones públicas tras la fecha límite, {{ DOCUMENT_DEADLINE }}, si no has completado la página de comprobantes.
 {% endif %}
 
-Pour encourager les autres membres à rejoindre votre événement, complétez ces 3 étapes :  
+Para facilitar que más personas se unan a tu acción, sigue estos 3 pasos:
 
-1. Ajoutez une description et une image
-Comment accéder au lieu, quel est le programme et les liens pour être tenu au courant : rassurez les membres qui voudraient participer !
-Je complète les informations : {{ MANAGE_EVENT_LINK }}
+1. Agrega una descripción y una imagen:
+Indica cómo llegar al lugar, cuál es la agenda y los enlaces para estar al pendiente. Ayuda a las demás personas a tener la información clave de la acción.
+Agregar información a la acción : {{ MANAGE_EVENT_LINK }}
   
-2. Invitez vos amis à participer à l'événement
-[➡ Partager sur Facebook](https://www.facebook.com/sharer.php?u={{ EVENT_LINK_ENCODED }})  
-[➡ Partager sur Twitter](https://twitter.com/intent/tweet?text=Participez%20à%20{{ EVENT_NAME_ENCODED }}%20{{ EVENT_LINK_ENCODED }})  
-[➡ Partager sur Whatsapp](https://api.whatsapp.com/send?text={{ EVENT_LINK_ENCODED }})  
+2. Invita a tus amig@s a participar en la acción:
+[➡ Compartir en Facebook](https://www.facebook.com/sharer.php?u={{ EVENT_LINK_ENCODED }})  
+[➡ Compartir en X](https://twitter.com/intent/tweet?text=Participez%20à%20{{ EVENT_NAME_ENCODED }}%20{{ EVENT_LINK_ENCODED }})  
+[➡ Compartir por Whatsapp](https://api.whatsapp.com/send?text={{ EVENT_LINK_ENCODED }})  
+
+3. Descubre la información útil para tu acción:
+Visita el centro de ayuda, con todos los consejos para organizar tu acción exitosamente:
+Ir al centro de ayuda: https://info.claudializate.com/acciones
 
 
-3. Découvrez les fiches pratiques
-Visitez le centre d'aide qui contient des astuces et conseils pour les organisateurs d'événement.
-Aller au centre d'aide : https://infos.preprod.redmexa.com/
+¡Gracias por organizar esta acción! Cada acción ayuda a construir este gran movimiento.
 
-
-
-Merci d’organiser un événement. Chacune des actions que vous menez participe à la construction de notre mouvement.
-Un long travail de terrain nous attend encore. Ensemble, nous pouvons faire triompher nos idées et construire l’Avenir en commun.
-
-Amitiés,  
-L’équipe d’Action Populaire
+Saludos,  
+El equipo Claudialízate

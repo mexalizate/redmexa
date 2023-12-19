@@ -1,14 +1,14 @@
-Bonjour,
+Hola,
 
-{{ ANSWER_EMAIL }} a répondu a votre formulaire « {{ FORM_NAME }} ».
+{{ ANSWER_EMAIL }} respondió a tu formulario « {{ FORM_NAME }} ».
 
 {{ INFORMATIONS }}
 
 ------------------------------------------------------------------
-Cet email a été envoyé à {{ email }}. Il est personnel, ne le transférez pas.
+Este mensaje se envió a {{ EMAIL }}. Es personal y no debería ser reenviado.
 
->> Choisir les emails que vous recevez
-{{ preferences_link }}
+>> Escoge los emails que recibes
+{{ PREFERENCES_LINK }}
 
->> Arrêter complètement de recevoir des emails
-{{ unsubscribe_link }}
+>> No recibir más emails
+{{ UNSUBSCRIBE_LINK }}

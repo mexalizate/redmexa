@@ -1,9 +1,9 @@
 Únete a Claudialízate
 ==========================
 
-No encontramos ninguna cuenta en Claudialízate asociada al email {{ email }}.
+No encontramos ninguna cuenta asociada a {{ email }} en Claudialízate.
 
-Prueba con otro email ya registrado o bien regístrate en:
+Prueba con otro email ya registrado o bien regístrate ya:
 https://claudializate.com
 
 Saludos,

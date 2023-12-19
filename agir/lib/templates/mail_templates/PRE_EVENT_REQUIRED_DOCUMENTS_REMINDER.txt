@@ -1,30 +1,29 @@
-Votre événement a lieu demain : pensez aux justificatifs
+Tu acción será mañana: no olvides los comprobantes
   
 {{ GREETINGS }},
 
-Votre événement >> {{ EVENT_NAME }} << a bientôt lieu !
+¡Tu acción >> {{ EVENT_NAME }} << ya casi empieza!
 
-À l’exception des réunions internes, la loi vous interdit d'engager des frais personnels dans le cadre de la campagne présidentielle.
-Étant donné qu'il s'agit d'un événement public,
-vous devrez envoyer a minima ces justificatifs ou indiquer qu'ils ne sont pas nécessaire :
+Excepto para reuniones internas de grupo, está prohibido realizar gastos personales en el marco de una campaña presidencial.
+
+Como se trata de un evento público, debes enviar comprobantes o precisar que no son necesarios:
   {% if "ATT-CON" in REQUIRED_DOCUMENT_TYPES %}
-  * Attestation de concours en nature - {{ DOCUMENTS_LINK }}{% endif %}
+  * Carta precisando que ninguna persona moral interviene - {{ DOCUMENTS_LINK }}{% endif %}
   {% if "ATT-REG" in REQUIRED_DOCUMENT_TYPES %}
-  * Attestation de règlement des consommations - {{ DOCUMENTS_LINK }}
+  * Comprobante de gastos de consumo - {{ DOCUMENTS_LINK }}
   {% endif %}
   {% if "ATT-GRA" in REQUIRED_DOCUMENT_TYPES %}
-  * Attestation pour les salles municipales - {{ DOCUMENTS_LINK }}
+  * Carta para espacios municipales - {{ DOCUMENTS_LINK }}
   {% endif %}
   {% if "ATT-ESP" in REQUIRED_DOCUMENT_TYPES %}
-  * Copie de la demande d'autorisation d'occupation de l'espace public - {{ DOCUMENTS_LINK }}
+  * Copia de la solicitud de autorización de ocupación del espacio público - {{ DOCUMENTS_LINK }}
   {% endif %}
 
- Téléchargez dès maintenant les modèles vierges qui vous seront nécessaires sur la page des documents de l'événement
+ Descarga ya el modelo que necesitarás para la página de comprobantes de la acción
 >> {{ DOCUMENTS_LINK }}
 
-Attention :
-vous ne pourrez plus créer d’événement public après le {{ DOCUMENT_DEADLINE }} sans avoir complété la page des documents.
-Aller aux documents de l'événement : {{ DOCUMENTS_LINK }}
+Ojo : No podrás crear más acciones públicas tras la fecha límite, {{ DOCUMENT_DEADLINE }}, si no has completado la página de comprobantes.
+Ir a los comprobantes de la acción : {{ DOCUMENTS_LINK }}
   
-Amitiés,  
-L’équipe d’Action Populaire
+Saludos,  
+El equipo Claudialízate

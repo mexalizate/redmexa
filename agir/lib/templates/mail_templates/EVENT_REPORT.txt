@@ -1,6 +1,6 @@
 Hola,
 
-L@s facilitadores de la acción « {{ EVENT_NAME }} » postearon un reporte de la acción.
+L@s facilitadores de la acción « {{ EVENT_NAME }} » postearon un resumen de la acción.
 
 {{ EVENT_REPORT_SUMMARY }}
 

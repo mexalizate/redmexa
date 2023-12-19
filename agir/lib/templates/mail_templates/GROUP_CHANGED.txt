@@ -3,10 +3,9 @@ Hola,
 L@s facilitadores del grupo {{ GROUP_NAME }} cambiaron la información del grupo.
 
 Cambió lo siguiente:
-
 {{ GROUP_CHANGES }}
 
->> Ver la información actualizada
+>> Ver la información actualizada del grupo:
 {{ GROUP_LINK }}
 
 Saludos,  

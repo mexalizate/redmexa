@@ -1,6 +1,6 @@
 Confirma tu dirección email
 
-Termina tu inscripción en Claudialízate haciendo clic en el siguiente botón para confirmar que eres propietario@ de esta dirección email:
+Completa tu inscripción en Claudialízate haciendo clic en el siguiente botón para confirmar que eres propietario@ de esta dirección email:
 
 >> Confirmo mi email
 {{ CONFIRMATION_URL }}

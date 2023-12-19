@@ -1,10 +1,8 @@
-Luego de tu {{ EVENT_SUBTYPE }} de fecha {{ EVENT_DATE }} : {{ FORM_NAME }}
+Respecto a tu {{ EVENT_SUBTYPE }} de fecha {{ EVENT_DATE }} : {{ FORM_NAME }}
   
-Realizaste una acción el día {{ EVENT_DATE }}.  
-
 {{ FORM_DESCRIPTION }}  
   
-Completa la información:
+Completa la información por favor:
 {{ FORM_LINK }}
 
 ------------------------------------------------------------------

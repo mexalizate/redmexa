@@ -1,12 +1,12 @@
 Hola,
 
-Acabas de unirte a Claudialízate. ¡Nos da mucho gusto! Este movimiento es de todas y todos.
+Acabas de unirte a Claudialízate y ¡nos da mucho gusto! Este movimiento es de todas y todos.
 
-Cada persona puede participar a su manera, con sus propias habilidades y según su disponibilidad. Junt@s hacemos este movimiento. 
+Cada persona puede participar a su manera, con sus propias habilidades y según su disponibilidad.
 
-Para iniciar, puedes buscar un grupo cerca de ti para activarte con más personas. O puedes crear tu propio grupo, y otras personas podrán unirse a él.
+Para iniciar, puedes buscar un grupo cerca de ti para activarte con más personas. También puedes crear tu propio grupo, al que otras personas podrán unirse.
 
-También puedes indicarnos tu perfil y en qué te gustaría ayudar, para poderte involucrar en acciones específicas.
+Completa tu perfil indicándonos tus áreas e interés, en qué te gustaría ayudar y tu municipio de origen. Así podrás ayudarnos en acciones concretas.
 
 Muchos saludos,  
 
@@ -14,11 +14,11 @@ Muchos saludos,
 El equipo Claudialízate
   
 
->> Lleno mi perfil y habilidades
+>> Completar mi perfil y habilidades
 {{ PROFILE_LINK }}
 
 
->> Me uno a un grupo
+>> Unirme a un grupo
 https://claudializate.com/groupes/carte/
 
 

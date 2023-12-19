@@ -1,5 +1,5 @@
 {{ GREETINGS }}
-Participa en la acción del grupo {{ GROUP }} !  
+Participa en la acción del grupo {{ GROUP }}.  
 
 >> {{ EVENT_NAME }}
 >> {{ EVENT_SCHEDULE }}
@@ -9,7 +9,7 @@ Participa en la acción del grupo {{ GROUP }} !
 {{ EVENT_DESCRIPTION }}
 {% endif %}
 
->> ¡Quiero participar!
+>> Haz clic para participar:
 >> {{ EVENT_LINK }}
 
 Al confirmar, permites a l@s facilitadores de la acción organizar mejor la acción.

@@ -1,7 +1,7 @@
 
 {{ MEMBER_COUNT }} miembros fueron transferidos.  
   
-A solicitud de {{ TRANSFERER_NAME }}, los siguientes miembros fueron transferidos a **{{ GROUP_DESTINATION }}** :
+A solicitud de {{ TRANSFERER_NAME }}, l@s siguientes miembros fueron transferidos a **{{ GROUP_DESTINATION }}** :
 
 {% for MEMBER in MEMBER_LIST %}
 - {{ MEMBER }}
