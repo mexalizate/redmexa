@@ -308,7 +308,8 @@ class TransferGroupMembersForm(forms.Form):
         label=_("Groupe de destination"),
         required=True,
         help_text=_(
-        "El grupo de destino debe haber sido creado previamente para poder transferirle participantes"        ),
+            "El grupo de destino debe haber sido creado previamente para poder transferirle participantes"
+        ),
     )
     members = MembershipMultipleChoiceField(
         queryset=Membership.objects.all(),
@@ -316,7 +317,8 @@ class TransferGroupMembersForm(forms.Form):
         required=True,
         widget=forms.CheckboxSelectMultiple,
         help_text=_(
-        "L@s participantes seleccionados serán enviados al grupo de destino y ell@s y los facilitadores de ese grupo recibirán una notificación por email."        ),
+            "L@s participantes seleccionados serán enviados al grupo de destino y ell@s y los facilitadores de ese grupo recibirán una notificación por email."
+        ),
     )
 
     def __init__(self, manager, former_group, *args, **kwargs):

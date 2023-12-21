@@ -424,9 +424,7 @@ def update_fake_data():
     }
     thematic_groups = {
         "thematic_booklet": SupportGroup.objects.get(name="Livret thématique fictif"),
-        "thematic_group": SupportGroup.objects.get(
-            name="Grupo de perfil"
-        ),
+        "thematic_group": SupportGroup.objects.get(name="Grupo de perfil"),
     }
 
     # Events
@@ -544,9 +542,7 @@ def load_fake_data():
         "thematic_booklet": SupportGroup.objects.create(
             name="Livret thématique fictif", type="B"
         ),
-        "thematic_group": SupportGroup.objects.create(
-            name="Grupo de perfil", type="B"
-        ),
+        "thematic_group": SupportGroup.objects.create(name="Grupo de perfil", type="B"),
     }
     groups_subtypes["test_thematic_booklet"].supportgroups.set(thematic_groups.values())
     groups_subtypes["booklet_redaction"].supportgroups.set(
