@@ -182,7 +182,7 @@ const Actions = (props) => {
     return (
       <StyledActions>
         <Button disabled color="unavailable">
-          Événement terminé
+        Acción concluida
         </Button>
         {isManager && (
           <Button
@@ -239,7 +239,7 @@ const Actions = (props) => {
             <StyledButtonMenu
               color="success"
               icon="check-circle"
-              text="Participó"
+              text="Participo"
               shouldDismissOnClick
               MobileLayout={Popin}
             >

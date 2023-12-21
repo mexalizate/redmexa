@@ -131,7 +131,7 @@ export const AgendaRoutePreview = (props) => {
             {nextEvents.length > 0 && (
               <>
                 <h3>
-                  <span>{_("À venir")}</span>
+                  <span>Por venir</span>
                   {goToAgendaTab && (
                     <button onClick={goToAgendaTab}>
                       {_("Agenda")}{" "}

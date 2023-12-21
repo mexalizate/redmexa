@@ -5,7 +5,7 @@ import group from "@agir/front/mockData/group.json";
 import GroupBanner from "./GroupBanner";
 
 const groupTypes = [
-  "Groupe local",
+  "Delimitar tu grupo",
   "Groupe thématique",
   "Groupe fonctionnel",
   "Groupe professionel",

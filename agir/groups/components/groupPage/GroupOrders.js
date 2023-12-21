@@ -41,10 +41,10 @@ const GroupOrders = (props) => {
   const orderURL = routes && routes.orders;
 
   return isManager ? (
-    <StyledCard title={_("Commander du matériel")} outlined>
+    <StyledCard title={"Consultar material"} outlined>
       {orderURL ? (
         <Button link href={orderURL} color="primary" small>
-          {_("Commander du matériel")}
+          {"Consultar material"}
         </Button>
       ) : null}
     </StyledCard>

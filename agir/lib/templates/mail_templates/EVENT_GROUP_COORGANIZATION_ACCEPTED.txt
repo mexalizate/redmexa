@@ -1,9 +1,8 @@
-{{ GROUP_NAME }} a rejoint les co-organisateurs de l'événement {{ EVENT_NAME }}
+{{ GROUP_NAME }} se unió como co-organizador de la acción {{ EVENT_NAME }}
 
-Le groupe {{ GROUP_NAME }} a accepté de co-organiser l’événement {{ EVENT_NAME }} ({{ DATE }}).
+El grupo {{ GROUP_NAME }} aceptó co-organizar la acción {{ EVENT_NAME }} en {{ DATE }}.
 
-Ce groupe apparaît désormais publiquement sur la page de l'événement dans la liste des groupes co-organisateurs.
-
+Ese grupo aparece ahora públicamente como co-organizador en la página de la acción.
 
 ------------------------------------------------------------------
-Ce mail a été adressé à {{ email }}.
+Este mensaje se envió a {{ email }}.

@@ -1,21 +1,21 @@
-Bonjour,
+Hola,
 
-Une nouvelle personne a rejoint {{ GROUP_NAME }}
+Una nueva persona se integró al grupo {{ GROUP_NAME }}
 
 {{ PERSON_INFORMATION }}
 
->> Accéder à la page de gestion de {{ GROUP_NAME }}
+>> Ir a la página de gestión del grupo {{ GROUP_NAME }}
 {{ MANAGE_GROUP_LINK }}
 
 
-Amitiés,
-L’équipe d’Action Populaire
+Saludos,
+El equipo Claudialízate
 
 ------------------------------------------------------------------
-Cet email a été envoyé à {{ email }}. Il est personnel, ne le transférez pas.
+Este mensaje se envió a {{ EMAIL }}. Es personal y no debería ser reenviado.
 
->> Choisir les emails que vous recevez
-{{ preferences_link }}
+>> Escoge los emails que recibes
+{{ PREFERENCES_LINK }}
 
->> Arrêter complètement de recevoir des emails
-{{ unsubscribe_link }}
+>> No recibir más emails
+{{ UNSUBSCRIBE_LINK }}

@@ -1,19 +1,19 @@
-Votre adresse e-mail n’est pas associée à un compte Action Populaire
+Tu email no está asociado a ninguna cuenta Claudialízate
 
-Nous n’avons pas trouvé de compte sur Action Populaire à l’adresse {{ EMAIL }}.  
+No encontrarmos ninguna cuenta Claudialízate ligada a {{ EMAIL }}.  
 
-Voulez-vous utiliser cette adresse e-mail pour vous inscrire ?
+¿Quieres usar este email para registrarter?
   
->> Créer un compte avec {{ EMAIL }}
+>> Crear una cuenta con {{ EMAIL }}
 {{ SUBSCRIPTION_URL }}
   
-OU  
+O BIEN 
   
->> Me connecter avec un autre adresse e-mail
+>> Conectarme con otro email
 https://preprod.redmexa.com/connexion/
   
-Amitiés,   
-L’équipe d’Action Populaire  
+Saludos,   
+El equipo Claudialízate
 
 ------------------------------------------------------------------
-Cet email a été envoyé à {{ EMAIL }}. Il est personnel, ne le transférez pas.
+Este email fue enviado a {{ EMAIL }}. Es personal y no debería ser reenviado.

@@ -79,7 +79,7 @@ const EventDescriptionCard = ({
           ) : (
             canEdit && (
               <p>
-                <strong>{_("Ajoutez une description !")}</strong> {_("Donner tous les informations nécessaires aux participants de votre événement. Comment accéder au lieu, quel est le programme, les liens pour être tenu au courant...")} {!image && "Et ajoutez une image\xa0!"}
+                <strong>{_("Ajoutez une description !")}</strong> Indica la información útil para l@s participantes: cómo llegar al lugar, el programa de la acción, etc.
               </p>
             )
           )}

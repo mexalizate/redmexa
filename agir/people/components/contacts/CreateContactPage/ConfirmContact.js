@@ -60,7 +60,7 @@ const ConfirmContact = (props) => {
     ),
     data.group?.id &&
       data.hasGroupNotifications &&
-      "Les actualités du groupe d'action",
+      "Notificaciones del grupo",
   ].filter(Boolean);
 
   return (
@@ -78,11 +78,11 @@ const ConfirmContact = (props) => {
       <Spacer size="1.5rem" />
       <ul>
         {data.isPoliticalSupport ? (
-          <li>{_("Veut rejoindre la France insoumise")}</li>
+          <li>Quiere unirse a Claudialízate</li>
         ) : null}
         {newsletters.length > 0 ? (
           <li>
-            {_("Recevra les lettres d'information suivantes&nbsp;:")}{" "}
+            Recibirá también la información siguiente &nbsp;:"{" "}
             <ul>
               {newsletters.map((n) => (
                 <li key={n} style={{ fontSize: "0.875rem" }}>
@@ -97,15 +97,15 @@ const ConfirmContact = (props) => {
         ) : null}
         {data.group?.id ? (
           <li>
-           {_(" Ces informations seront accessibles aux gestionnaires et animateur·ices du groupe")} <strong>{data.group.name}</strong>
+           Esta información será accesible a gestores y facilitadores del grupo <strong>{data.group.name}</strong>
           </li>
         ) : null}
       </ul>
       <Spacer size="2rem" />
-      <p>{_("Le contact recevra un e-mail lui confirmant ces informations.")}</p>
+      <p>La persona recibirá un email para confirmar sus datos.</p>
       <Spacer size="0.5rem" />
       <p>
-        {_("En enregistrant cette personne vous confirmez avoir reçu son consentement oral. Tout abus sera sanctionné.")}
+      Ojo: es importante asegurarte de que la persona está de acuerdo antes de agregarla. 
       </p>
       <Spacer size="1rem" />
       <footer>

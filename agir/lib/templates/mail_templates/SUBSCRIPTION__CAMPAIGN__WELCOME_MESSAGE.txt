@@ -1,37 +1,35 @@
-Bonjour,
+Hola,
 
-Vous venez de rejoindre la France insoumise. Nous en sommes très heureux. Nous vous accueillons avec plaisir dans ce mouvement que nous animons ensemble désormais.
+Acabas de unirte a Claudialízate y ¡nos da mucho gusto! Este movimiento es de todas y todos.
 
-C'est ce mouvement qui a permis la formidable campagne de l'élection présidentielle. Chacun⋅e y est bienvenu⋅e pour contribuer à l'action collective en fonction de ses savoir-faire et de ses disponibilités. Chacun⋅e peut prendre sa part des batailles qui s'annoncent. 
+Cada persona puede participar a su manera, con sus propias habilidades y según su disponibilidad.
 
-Pour commencer, nous vous proposons ci-dessous des moyens d'agir et nous vous invitons à contribuer financièrement ou à rejoindre un groupe d'action pour rencontrer d'autres insoumis⋅es près de chez vous.
+Para iniciar, puedes buscar un grupo cerca de ti para activarte con más personas. También puedes crear tu propio grupo, al que otras personas podrán unirse.
 
-Amitiés insoumises,  
+Completa tu perfil indicándonos tus áreas e interés, en qué te gustaría ayudar y tu municipio de origen. Así podrás ayudarnos en acciones concretas.
+
+Muchos saludos,  
 
 
-L'équipe de la France insoumise  
+El equipo Claudialízate
   
 
->> J'en dis plus sur moi
+>> Completar mi perfil y habilidades
 {{ PROFILE_LINK }}
 
 
->> Je donne
-https://dons.preprod.redmexa.com/
-
-
->> Je rejoins un groupe d'action
-https://preprod.redmexa.com/groupes-appui/carte-groupes-dappui/
+>> Unirme a un grupo
+https://claudializate.com/groupes/carte/
 
 
 -----------------------------------------------------------------
-Cet email a été envoyé à {{ EMAIL }}.
+Este mensaje se envió a {{ EMAIL }}. Es personal y no debería ser reenviado.
 
->> Voir cet email dans votre navigateur
+>> Ver este email en tu navegador
 {{ LINK_BROWSER }}
 
->> Choisir les emails que vous recevez
+>> Escoge los emails que recibes
 {{ PREFERENCES_LINK }}
 
->> Arrêter complètement de recevoir des emails
+>> No recibir más emails
 {{ UNSUBSCRIBE_LINK }}

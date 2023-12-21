@@ -144,7 +144,7 @@ const GroupGeneralPage = (props) => {
 
       <h4>{_("Image de la bannière")}</h4>
       <span style={{ color: style.black700 }}>
-        {_("Elle apparaîtra sur la page sur les réseaux sociaux.")}
+      La imagen estará en la página y en redes sociales.
         <br />
         {_("Utilisez une image à peu près deux fois plus large que haute. Elle doit faire au minimum 1200 pixeles de large et 630 pixeles de haut pour une qualité optimale.")}
       </span>

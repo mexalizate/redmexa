@@ -1,30 +1,32 @@
 {{ greetings }},
 
-« {{ group_name }} » est en ligne !
+El grupo « {{ group_name }} » fue publicado.
 
-En tant qu'animateur-ice, vous pouvez gérer « {{ group_name }} » à tout moment depuis le bouton « Gestion » sur le site ou via le lien ci-dessous. N'oubliez pas également d'ajouter une description à votre groupe. Vous aurez ainsi plus de chance d'intéresser d'autres membres d'Action Populaire.
+Como facilitador(a), puedes gestionar el grupo en cualquier momento usando el botón "Gestión" en Claudialízate o con el enlace más abajo. 
 
->> Gérer votre groupe
+>> Gestionar mi grupo
 {{ MANAGE_GROUP_LINK }}
 
-Nous vous conseillons de lire ces idées et conseils à destination des nouveaux animateur-ices.
+Te recomendamos leer las ideas y consejos que preparamos para l@s facilitadores.
 
->> Que faire après avoir créé mon groupe d'action ?
-https://info.preprod.redmexa.com/groupes/nouveau-groupe/
+>> ¿Qué hacer tras crear un grupo?
+https://info.claudializate.com/grupos/
 
->> Vous pouvez inviter vos amis à vous rejoindre avec ce lien :
+No olvides agregar una descripción de tu grupo, para atraer a más personas de tu zona y que puedan unirse a tu grupo y activarse contigo.
+
+>> Puedes invitar a amigos y vecinos a unirse a tu grupo con este enlace:
 {{ GROUP_LINK }}
 
-Chacune des actions que vous menez participe à la construction de notre mouvement. Un long travail de terrain nous attend encore. Ensemble, nous pouvons faire triompher nos idées et construire l’Avenir en commun.
+Cada acción que realizas ayuda a construir este movimiento. El futuro lo construimos juntos.
 
-Amitiés,  
-L’équipe d’Action Populaire
+Saludos,  
+El equipo Claudialízate
 
 ------------------------------------------------------------------
-Cet email a été envoyé à {{ EMAIL }}. Il est personnel, ne le transférez pas.
+Este mensaje se envió a {{ EMAIL }}. Es personal y no debería ser reenviado.
 
->> Choisir les emails que vous recevez
-{{ preferences_link }}
+>> Escoge los emails que recibes
+{{ PREFERENCES_LINK }}
 
->> Arrêter complètement de recevoir des emails
-{{ unsubscribe_link }}
+>> No recibir más emails
+{{ UNSUBSCRIBE_LINK }}

@@ -266,7 +266,7 @@ class InvitationTestCase(TestCase):
         )
 
         self.assertIn(
-            "Vous avez été invité⋅e à rejoindre la France insoumise et le groupe d'action « Nom du groupe » par un de ses animateurs",
+            "Te acaban de invitar a unirte a Claudialízate y al grupo",
             email.body,
         )
 

@@ -1,5 +1,5 @@
 {{ GREETINGS }}
-Participez à l'action de {{ GROUP }} !  
+Participa en la acción del grupo {{ GROUP }}.  
 
 >> {{ EVENT_NAME }}
 >> {{ EVENT_SCHEDULE }}
@@ -9,16 +9,13 @@ Participez à l'action de {{ GROUP }} !
 {{ EVENT_DESCRIPTION }}
 {% endif %}
 
->> Je participe !
+>> Haz clic para participar:
 >> {{ EVENT_LINK }}
 
-Sauf mention contraire, il n'est pas obligatoire de valider
-votre présence sur le site pour vous rendre à l'événement.
-Cependant, en prévenant à l'avance votre animateur·ice,
-cela lui permet de mieux préparer son organisation.
+Al confirmar, permites a l@s facilitadores de la acción organizar mejor la acción.
 
-Amitiés,
-L’équipe d’Action Populaire
+Saludos,
+El equipo Claudialízate
 
 ------------------------------------------------------------------
-Cet email a été envoyé à {{ email }}. Il est personnel, ne le transférez pas.
+Este mensaje se envió a {{ EMAIL }}. Es personal y no debería ser reenviado.

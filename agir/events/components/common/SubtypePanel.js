@@ -297,7 +297,7 @@ const SubtypePanel = (props) => {
       shouldShow={shouldShow}
       onClose={onClose}
       onBack={onClose}
-      title={"Tipo de evento"}
+      title={"Tipo de acción"}
       noScroll
     >
       <SubtypePicker {...rest} />

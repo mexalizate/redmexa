@@ -1,14 +1,13 @@
-Nous sommes heureux que vous souhaitiez nous rejoindre...
+Estamos felices de que hayas decidido unirte...
 
-...mais vous avez déjà un compte Action Populaire associé à cette adresse e-mail !
+...pero ya tienes una cuenta Claudialízate asociada a esta dirección email.
 
-Vous pouvez vous connecter en passant par le formulaire de connexion, disponible en suivant le lien :
+Puedes conectarte usando la página de conexión, disponible en:
+https://claudializate.com
 
-https://preprod.redmexa.com/connexion/
 
-
-Amitiés
-L'équipe d'Action Populaire
+Saludos,
+El equipo Claudialízate
 
 ------------------------------------------------------------------
-Cet email a été envoyé à {{ email }}. Il est personnel, ne le transférez pas.
+Este mensaje se envió a {{ email }}. Es personal y no debería ser reenviado.

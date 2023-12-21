@@ -55,7 +55,7 @@ export const ListUser = ({ message, participants }) => {
       <div>
         {isOrganizerMessage
           ? "Discussion privée avec les animateur·ices du groupe"
-          : "Conversation du groupe"}
+          : "Conversación del grupo"}
         &nbsp;
         <Link
           route="groupDetails"

@@ -150,7 +150,7 @@ const RightLinks = (props) => {
           </IconLink>
           <IconLink route="groups" $active={routeConfig.groups.match(path)}>
             <FeatherIcon name="users" />
-            <span>{_("Groupes")}</span>
+            <span>Grupos</span>
           </IconLink>
           <CounterIconLink
             route="activities"

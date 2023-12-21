@@ -30,22 +30,19 @@ export const EVENT_DEFAULT_DURATIONS = [
 
 export const EVENT_TYPES = {
   A: {
-    label: _("Action publique"),
+    label: "Claudiactivación",
     description:
-      _("Une action qui se déroulera dans un lieu public et qui aura comme objectif principal  d'aller à la rencontre ou d'atteindre des personnes extérieures à la France insoumise"),
-  },
+"Una acción de grupo(s) que busca llegar a gente nueva, como un brigadeo, una charla, un concierto, una caravana…"  },
   M: {
-    label: _("Événement public"),
+    label: "Actividad pública",
     description:
-      _("Un événement ouvert à tous les publics, au-delà des membres du groupe, mais qui aura lieu dans un lieu privé. Par exemple, un événement public avec un orateur, une projection ou un concert"),
-  },
+"Una serie de acciones coordinadas entre muchos grupos, en una fecha específica y con una agenda en común…"  },
   G: {
-    label: _("Réunion privée de groupe"),
+    label: "Reunión de grupo",
     description:
-      _("Une réunion qui concerne principalement les membres du groupes, et non le public de façon générale. Par exemple, la réunion hebdomadaire du groupe, une réunion de travail, ou l'audition d'une association"),
-  },
+"Una acción interna de un grupo, como la reunión semanal o una reunión de trabajo…"  },
   O: {
-    label: _("Autre"),
+    label: "Otra acción",
     description:
       _("Tout autre type d'événement qui ne rentre pas dans les autres catégories"),
   },

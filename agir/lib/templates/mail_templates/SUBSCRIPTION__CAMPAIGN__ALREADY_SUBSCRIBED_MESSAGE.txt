@@ -1,20 +1,21 @@
-Nous sommes heureux que vous souhaitiez nous rejoindre...
+Estamos felices de que hayas decidido unirte...
 
-...mais vous êtes déjà avec nous ! Nous pouvons même vous dire que vous nous avez rejoint {{ AGO }}.
+...pero ya tienes una cuenta Claudialízate asociada a esta dirección email. Incluso, te uniste en {{ AGO }}.
 
-Si vous souhaitiez simplement accéder à votre compte, utilisez le bouton ci-dessous :  
+Si querías entrar a tu cuenta, utiliza el siguiente enlace:  
   
->> J'accède à mon tableau de bord
+>> Acceder a mi cuenta
 {{ PANEL_LINK }}
 
 -----------------------------------------------------------------
-Cet email a été envoyé à {{ EMAIL }}.
+Este mensaje se envió a {{ EMAIL }}. Es personal y no debería ser reenviado.
 
->> Voir cet email dans votre navigateur
+>> Ver este email en tu navegador
 {{ LINK_BROWSER }}
 
->> Choisir les emails que vous recevez
+>> Escoge los emails que recibes
 {{ PREFERENCES_LINK }}
 
->> Arrêter complètement de recevoir des emails
+>> No recibir más emails
 {{ UNSUBSCRIBE_LINK }}
+

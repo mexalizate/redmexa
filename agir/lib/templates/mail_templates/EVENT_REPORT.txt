@@ -1,17 +1,17 @@
-Bonjour,
+Hola,
 
-L'organisateur⋅ice de l'événement « {{ EVENT_NAME }} » a posté un compte rendu de celui-ci.
+L@s facilitadores de la acción « {{ EVENT_NAME }} » postearon un resumen de la acción.
 
 {{ EVENT_REPORT_SUMMARY }}
 
->> Lire la suite
+>> Leer más
 {{ EVENT_REPORT_LINK }}
 
 ------------------------------------------------------------------
-Cet email a été envoyé à {{ email }}. Il est personnel, ne le transférez pas.
+Este mensaje se envió a {{ EMAIL }}. Es personal y no debería ser reenviado.
 
->> Choisir les emails que vous recevez
-{{ preferences_link }}
+>> Escoge los emails que recibes
+{{ PREFERENCES_LINK }}
 
->> Arrêter complètement de recevoir des emails
-{{ unsubscribe_link }}
+>> No recibir más emails
+{{ UNSUBSCRIBE_LINK }}

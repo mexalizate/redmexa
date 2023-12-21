@@ -29,28 +29,28 @@ const GroupHelpPage = (props) => {
       <StyledTitle>{_("Documents")}</StyledTitle>
       <Spacer size=".5rem" />
       <FileCard
-        title={_("Attestation d'assurance de la France insoumise")}
-        text={_("Document utile en cas de réservation d'une salle pour les événements publics")}
+        title="Guía de acción para facilitadores/gestores"
+        text="Guía con instrucciones y consejos para facilitadores y gestores de grupo"
         icon="file-text"
         route="attestationAssurance"
         downloadLabel="Bajar la guía"
       />
       <Spacer size="1rem" />
       <FileCard
-        title={_("Charte des groupes d'action")}
-        text={_("La charte que tous les animateurs et toutes les animatrices de groupe s’engagent à respecter.")}
+        title="Centro de Ayuda para grupos"
+        text="Consulta toda la información que preparamos para ayudar a los participantes de grupos a organizarse mejor."
         icon="file-text"
         route="charteEquipes"
-        downloadLabel="Voir la charte"
+        downloadLabel="Centro de Ayuda"
         downloadIcon="eye"
       />
       <Spacer size="1rem" />
       <FileCard
-        title={_("Livret de l’animateur·rice")}
-        text={_("Un guide pratique qui répond à la plupart des intérrogations concernant l'animation d'un groupe d'action.")}
+        title="Principios de Grupos"
+        text="Consulta los Principios de Grupos que tod@s nos comprometemos a respetar al formar parte de un grupo."
         icon="file-text"
         route="livretAnimateurice"
-        downloadLabel="Télécharger le livret"
+        downloadLabel="Bajar Principios"
       />
       <Spacer size="2rem" />
     </div>

@@ -1,19 +1,18 @@
   
   
-Notification de changement de groupe  
+Notificación de cambio de grupo
   
 {{ GREETINGS }},
 
-[{{ GROUP_SENDER }}]({{ GROUP_SENDER_URL }}) dont vous faites partie dépassait le nombre idéal de membre. Les animateur·ices l'ont donc divisée en plusieurs groupes.
+[{{ GROUP_SENDER }}]({{ GROUP_SENDER_URL }}) del que formas parte, sobrepasó el número ideal de miembros. Por ello l@s facilitadores decidieron dividirlo en varios grupos.
 
-Vous recevez ce mail parce que les animateur·ices de {{ GROUP_SENDER }} vous ont transféré·e : vous avez rejoint [{{ GROUP_DESTINATION }}]({{ GROUP_DESTINATION_URL }}) et avez quitté {{ GROUP_SENDER }}.
+Recibes este email porque l@s facilitadores de {{ GROUP_SENDER }} te han transferido: ahora formas parte de [{{ GROUP_DESTINATION }}]({{ GROUP_DESTINATION_URL }}) y ya no de {{ GROUP_SENDER }}.
   
-[Découvrir mon nouveau groupe]({{ GROUP_DESTINATION_URL }})
+[Descubrir mi nuevo grupo]({{ GROUP_DESTINATION_URL }})
   
-Les animateur·ices de {{ GROUP_DESTINATION }} ont reçu un e-mail leur notifiant de votre arrivée et prendront contact avec vous.
+L@s facilitadores de {{ GROUP_DESTINATION }} recibieron un email notificándoles de tu llegada y te contactarán directamente.
 
-Vous pouvez également les contacter depuis les e-mails présents sur [la page de {{ GROUP_DESTINATION }}]({{ GROUP_DESTINATION_URL }}).
+También puedes contactarl@s utilizando los emails de contacto indicados en [la página de {{ GROUP_DESTINATION }}]({{ GROUP_DESTINATION_URL }}).
   
-Amitiés,
-
-L'équipe d'Action Populaire
+Saludos,
+El equipo Claudialízate

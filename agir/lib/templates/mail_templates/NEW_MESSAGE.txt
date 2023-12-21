@@ -1,24 +1,23 @@
 
-Vous avez un nouveau message  
+Tienes un nuevo mensaje
   
 ### {{ DISPLAY_NAME }}
 
 {{ AUTHOR_STATUS }}  
   
-  
 {{ MESSAGE_HTML }}  
   
-[Répondre à {{ DISPLAY_NAME }}]({{ MESSAGE_LINK }})  
+Responder a {{ DISPLAY_NAME }}]({{ MESSAGE_LINK }})  
   
-Vous souhaitez recevoir moins de mails de notre part : [modifier ses préférences ou se désinscrire]({{ preferences_link }}).
+¿Quieres recibir menos emails de nuestra parte? Puedes [modificar tus preferencias de emails y notificaciones]({{ preferences_link }}).
 
-Ce mail a été adressé à {{ email }}.
+Este email se dirige a {{ email }}.
 
 ------------------------------------------------------------------
-Cet email a été envoyé à {{ EMAIL }}. Il est personnel, ne le transférez pas.
+Este mensaje se envió a {{ EMAIL }}. Es personal y no debería ser reenviado.
 
->> Choisir les emails que vous recevez
-{{ preferences_link }}
+>> Escoge los emails que recibes
+{{ PREFERENCES_LINK }}
 
->> Arrêter complètement de recevoir des emails
-{{ unsubscribe_link }}
+>> No recibir más emails
+{{ UNSUBSCRIBE_LINK }}

@@ -34,7 +34,7 @@ const NonMemberActions = (props) => {
         onClick={onJoin}
         icon="plus"
       >
-       {_(" Rejoindre")}
+       Participar
       </Button>
       {isOpen && (
         <Button
@@ -44,7 +44,7 @@ const NonMemberActions = (props) => {
           onClick={onFollow}
           icon="rss"
         >
-         {_("Suivre")}
+         Seguir
         </Button>
       )}
     </StyledWrapper>

@@ -1,19 +1,19 @@
-Bonjour,
+Hola,
 
-**Vous n'êtes plus qu'à un clic de rejoindre la France insoumise !**
+**Estás a un clic de unirte a Claudialízate**
   
   
->> Je confirme rejoindre la France insoumise
+>> Confirmar mi registro a Claudialízate
 {{ CONFIRMATION_URL }}
 
 
- **Pourquoi cette confirmation ?** Cette étape nous permet de vérifier que vous êtes bien propriétaire de l'adresse email dont l'inscription est demandée.  
+ **¿Para qué esta etapa?** Para confirmar que eres propietari@ del email con el cual acabas de registrarte.
 
 
-Si vous n'êtes pas à l'origine de cette demande d'inscription, ignorez ce message : nous ne conserverons aucune information vous concernant.   
+Si tu no iniciaste esta solicitud, puedes ignorar este mensaje: no conservaremos ninguna información sobre ti.
 
 ------------------------------------------------------------------
-Cet email a été envoyé à {{ EMAIL }}. Il est personnel, ne le transférez pas.
+Este mensaje se envió a {{ EMAIL }}. Es personal y no debería ser reenviado.
 
->> Voir cet email dans votre navigateur
+>> Ver este email en tu navegador
 {{ LINK_BROWSER }}

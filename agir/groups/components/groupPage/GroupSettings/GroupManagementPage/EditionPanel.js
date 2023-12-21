@@ -60,7 +60,7 @@ const EditionPanel = (props) => {
       <BackButton onClick={onBack} />
       <StyledTitle>
         {selectedMembershipType === MEMBERSHIP_TYPES.REFERENT
-          ? "Ajouter un binôme animateur"
+          ? "Agregar co-facilitador"
           : "Agregar un gestor"}
       </StyledTitle>
       <Spacer size="1rem" />
@@ -76,7 +76,7 @@ const EditionPanel = (props) => {
         <>
           <Spacer size="1rem" />
           <SelectField
-            label={_("Choisir un membre")}
+            label={"Selecciona a un(a) participante"}
             placeholder={_("Sélection")}
             options={candidates.map((candidate) => ({
               label: `${candidate.displayName} (${candidate.email})`,
@@ -92,7 +92,7 @@ const EditionPanel = (props) => {
           <GroupMemberList members={[selectedMember]} />
           <Spacer size="1rem" />
           <div>
-            {_("Ce membre pourra :")}
+            {"Un co-facilitador puede: "}
             <Spacer size="0.5rem" />
             {selectedMembershipType === MEMBERSHIP_TYPES.REFERENT && (
               <StyledList>
@@ -110,7 +110,7 @@ const EditionPanel = (props) => {
             </StyledList>
             <StyledList>
               <div />
-              {_("Créer des événements au nom du groupe")}
+              {"Crear acciones a nombre del grupo"}
             </StyledList>
           </div>
           {errors?.membershipType && (

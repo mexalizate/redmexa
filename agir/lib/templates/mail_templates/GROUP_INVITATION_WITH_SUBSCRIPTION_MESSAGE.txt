@@ -1,18 +1,18 @@
-Bonjour,
+Hola,
 
-Vous avez été invité⋅e à rejoindre la France insoumise et le groupe d'action « {{ GROUP_NAME }} » par un de ses animateurs.
+Te acaban de invitar a unirte a Claudialízate y al grupo {{ GROUP_NAME }}.
   
->> Je rejoins la France insoumise
+>> Unirme a Claudialízate
 {{ CONFIRMATION_URL }}
 
-Vous n'avez pas sollicité ce mail ?  Vous n'auriez pas dû le recevoir : nous vous serions reconnaissants de bien vouloir nous le signaler.
+Si no solicitaste recibir este email, por favor dínoslo.
 
->> Je signale n'avoir pas sollicité cet email
+>> Reportar que no solicité este email
 {{ REPORT_URL }}).
 
 
-Si vous ne souhaitez pas nous faire de signalement, vous pouvez tout simplement ignorer ce message. Nous ne conservons pas de données vous concernant, et aucun autre email ne vous sera envoyé.
+Si no deseas unirte a Claudialízate en esto momento, puedes ignorar este mensaje. No conservamos ninguno de tus datos y no recibirás más emails.
   
   
 ------------------------------------------------------------------
-Cet email a été envoyé à {{ email }}. Il est personnel, ne le transférez pas.
+Este mensaje se envió a {{ EMAIL }}. Es personal y no debería ser reenviado.

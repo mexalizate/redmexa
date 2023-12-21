@@ -24,8 +24,8 @@ const GroupMaterielPage = (props) => {
       <HeaderPanel onBack={onBack} illustration={illustration} />
       <StyledTitle>{_("Matériel")}</StyledTitle>
       <span style={{ color: style.black700 }}>
-        {_("Accédez à du matériel (affiches, tracts, autocollants...) gratuit en utilisant les codes promos mis à disposition de votre groupe.")}
-      </span>
+        Accede al sitio de material para poner a disposición de tu grupo todos los materiales que necesitan (flyers, posters, etiquetas…)     
+       </span>
       {ordersURL && (
         <>
           <Spacer size=".5rem" />

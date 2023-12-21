@@ -127,7 +127,7 @@
                     <table class="vb-content" style="border-collapse: separate; width: 100%;" width="276" cellspacing="9" cellpadding="0" border="0" align="left">
                       <tbody><tr>
                         <td style="font-weight: normal; text-align: left; font-size: 13px; font-family: Arial, Helvetica, sans-serif; color: #919191;" width="100%" valign="top" align="left">
-                          <a style="text-decoration: underline; color: #919191;" target="_new" href="{{  preferences_link }}">Préférences de contact</a>
+                          <a style="text-decoration: underline; color: #919191;" target="_new" href="{{  preferences_link }}">Escoge los emails que recibes</a>
                           <span style="font-size: 16px; color: #919191; font-weight: normal; text-align: center; font-family: Arial, Helvetica, sans-serif; display: none;"></span>
                         </td>
                       </tr>
@@ -140,7 +140,9 @@
                       <tbody><tr>
                         <td style="font-weight: normal; font-size: 13px; font-family: Arial, Helvetica, sans-serif; color: #919191;" width="100%" valign="top">
                       <span style="color: #919191; text-decoration: underline;">
-                          <a style="text-decoration: underline; color: #919191;" target="_new" href="{{ unsubscribe_link }}">Ne plus recevoir de mails</a>
+                          <a style="text-decoration: underline; color: #919191;" target="_new" href="{{ unsubscribe_link }}">
+                            No recibir más emails
+                          </a>
                          </span>
                        </td>
                       </tr>
@@ -172,7 +174,7 @@
 
                                   <!--[if (gte mso 9)|(lte ie 8)]><table align="center" border="0" cellspacing="0" cellpadding="0" width="112" style="width: 112px;"><tr><td align="center" valign="top"><![endif]-->
                                   <div style="display: inline-block; max-width: 258px; vertical-align: top; width: 100%;" class="mobile-full">
-                                      <img style="border: 0px; display: block; width: 100%; max-width: 167px;" src="{{ FRONT_DOMAIN }}{% static "emails/logo_ap.png" %}" alt="Logo Action populaire" width="167" vspace="0" hspace="0" border="0">
+                                      <img style="border: 0px; display: block; width: 100%; max-width: 167px;" src="{{ FRONT_DOMAIN }}{% static "emails/logo_ap.png" %}" alt="Logo Claudialízate" width="167" vspace="0" hspace="0" border="0">
                                   </div>
                                   <!--[if (gte mso 9)|(lte ie 8)]></td></tr></table><![endif]-->
 
@@ -254,9 +256,9 @@
           <tbody><tr>
             <td class="long-text links-color" style="text-align: left; font-size: 13px; font-family: Arial, Helvetica, sans-serif; color: #0A1C2D;" align="left">
               {% block html_footer %}
-                Vous souhaitez recevoir moins d'emails de notre part ?
-                <a href="{{ preferences_link }}">Modifiez vos préférences</a> ou
-                <a href="{{ unsubscribe_link }}">désinscrivez-vous</a>.
+              ¿Quieres recibir menos correos electrónicos nuestros?
+                <a href="{{ preferences_link }}">Cambiar tus preferencias</a> o
+                <a href="{{ unsubscribe_link }}">darse de baja</a>.
               {% endblock %}
             </td>
           </tr>

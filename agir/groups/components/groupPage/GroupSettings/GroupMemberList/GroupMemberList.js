@@ -68,7 +68,7 @@ const SORTING_OPTIONS = [
     sortingFn: (members) => _sortBy(members, "displayName"),
   },
   {
-    label: "Arrivée dans le groupe",
+    label: "Ingreso al grupo",
     value: "created",
     sortingFn: (members) => _sortBy(members, "created"),
   },

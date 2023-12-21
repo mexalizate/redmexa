@@ -162,11 +162,11 @@ const AddGroupAttendee = ({ id, groups, groupsAttendees }) => {
             {!groupJoined ? (
               <>
                 <h2>{"Participar con mi grupo"}</h2>
-               {_(" Ajoutez un groupe dont vous êtes gestionnaire comme participant à l’événement.")}
+               {"Agrega un grupo que facilitas como participante en la acción."}
                 <Spacer size="0.5rem" />
                 {_("L’événement sera ajouté à l’agenda du groupe.")}
                 <Spacer size="0.5rem" />
-                {_("Les groupes participants n'ont pas de droit d'organisation de l'événement. Seuls les groupes co-organisateurs peuvent inviter d'autres groupes à co-organiser.")}
+                {"Un grupo participante no es lo mismo que un grupo organizador de la acción. Sólo un grupo organizador puede invitar a otro grupo a co-organizar la acción."}
                 <Spacer size="1rem" />
                 {managingGroups.map((group) => (
                   <GroupItem
@@ -191,7 +191,7 @@ const AddGroupAttendee = ({ id, groups, groupsAttendees }) => {
                 </h2>
                 <b>{groupJoined.name}</b> {_("est désormais indiqué comme participant à l’événement.")}
                 <Spacer size="1rem" />
-                {_("Tous les membres du groupe présents doivent également indiquer leur présence individuelle sur Action Populaire pour aider les organisateur·ices à définir le nombre de participants.")}
+                {"Por favor solicita a l@s participantes de tu grupo que también se registren individualmente en la acción, para que l@s organizadores puedan calcular cuántas personas asistirán."}
                 <Spacer size="1rem" />
                 <Button onClick={closeModalJoin}>Compris</Button>
               </>

@@ -22,7 +22,7 @@ const OrganizerGroupField = (props) => {
       value={value}
       onChange={handleChange}
       options={options}
-      placeholder={_("Choisissez un organisateur")}
+      placeholder="Selecciona persona o grupo organizador"
       required={required}
       disabled={disabled}
       error={error}

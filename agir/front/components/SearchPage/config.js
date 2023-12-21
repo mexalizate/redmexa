@@ -13,7 +13,7 @@ export const TABS = {
   },
   groups: {
     id: "groups",
-    label: _("Groupes"),
+    label: "Grupos",
     searchPlaceholder: _("Rechercher un groupe"),
     mapRoute: "groupMap",
     hasFilters: "groups",
@@ -51,10 +51,10 @@ export const EventCategory = [
 ];
 export const EventType = [
   { label: _("Tous les types"), value: 0 },
-  { label: _("Réunion privée de groupe"), value: "G" },
-  { label: _("Événement public"), value: "M" },
-  { label: _("Action publique"), value: "A" },
-  { label: _("Autre"), value: "O" },
+  { label: "Reunión de grupo", value: "G" },
+  { label: "Actividad pública", value: "M" },
+  { label: "Claudiactivación", value: "A" },
+  { label: "Otra acción", value: "O" },
 ];
 
 export const GroupSort = [

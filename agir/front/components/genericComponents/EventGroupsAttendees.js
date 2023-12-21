@@ -44,15 +44,15 @@ export const EventGroupsAttendees = ({ groupsAttendees, isPast }) => {
         height="1rem"
         style={{ marginRight: "0.5rem" }}
       />
-      Votre groupe&nbsp;<strong>{userGroupsAttendees[0].name}</strong>
+      Tu grupo &nbsp;<strong>{userGroupsAttendees[0].name}</strong>
       &nbsp;
       {userGroupsAttendees.length > 1 ? (
         <>
-          et {userGroupsAttendees.length - 1} autres groupes&nbsp;
-          {isPast ? _("y ont participé") : _("y participent")}
+          y {userGroupsAttendees.length - 1} otros grupos &nbsp;
+          {isPast ? _("y ont participé") : "panticipan"}
         </>
       ) : (
-        <>{isPast ? _("y a participé") : _("y participe")}</>
+        <>{isPast ? _("y a participé") : "y participa"}</>
       )}
     </StyledGroupsAttendees>
   );

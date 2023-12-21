@@ -76,7 +76,7 @@ const ContactField = (props) => {
           <p>{name}</p>
           <p>{email}</p>
           <p>{phone}</p>
-          <button onClick={editDefaultContact}>{_("Modifier le contact")}</button>
+          <button onClick={editDefaultContact}>Modificar el contacto</button>
         </StyledDefaultField>
       ) : (
         <>

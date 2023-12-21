@@ -309,7 +309,7 @@
                                     "
                                     target="_new"
                                     href="{{ preferences_link }}"
-                                    >Préférences de contact</a
+                                    >Escoge los emails que recibes</a
                                   >
                                   <span
                                     style="
@@ -376,7 +376,7 @@
                                       "
                                       target="_new"
                                       href="{{ unsubscribe_link }}"
-                                      >Ne plus recevoir de mails</a
+                                      >No recibir más emails</a
                                     >
                                   </span>
                                 </td>
@@ -460,11 +460,11 @@
                               width: 100%;
                               max-width: 167px;
                             "
-                            src="https://mosaico.preprod.redmexa.com/templates/custom/action-populaire/img/logo_ap.png"
+                            src="https://info.claudializate.com/wp-content/uploads/2023/12/HEADER-MAILING-3.png"
                             vspace="0"
                             hspace="0"
                             border="0"
-                            alt="Logo Action populaire"
+                            alt="Logo Claudialízate"
                           />
                         </div>
                         <!--[if (gte mso 9)|(lte ie 8)]></td></tr></table><![endif]-->
@@ -533,13 +533,12 @@
                         "
                       >
                         <p style="margin: 1em 0px; margin-top: 0px">
-                          Bonne nouvelle !
+                          Hola,
                         </p>
                         <p style="margin: 1em 0px">
-                          Vous avez correctement inscrit⋅e un invité à
-                          l'événement suivant :
+                          La persona que invitaste a la acción fue registrada correctamente en:
                         </p>
-                        <h3>
+                        <h3>Acción: 
                           <a
                             href="{{ EVENT_LINK }}"
                             style="
@@ -550,8 +549,11 @@
                             >{{ EVENT_NAME }}</a
                           >
                         </h3>
-                        <h4>{{ EVENT_SCHEDULE }}</h4>
-                        <h5>{{ LOCATION_NAME }}<br />{{ LOCATION_ADDRESS }}</h5>
+                          <strong>Horario:{{ EVENT_SCHEDULE }}</strong>
+                          <br />
+                          <strong>Lugar: {{ LOCATION_NAME }}</strong>
+                          <br />
+                          <strong>Dirección: {{ LOCATION_ADDRESS }}<strong>
                       </td>
                     </tr>
                   </tbody>
@@ -634,7 +636,7 @@
                                   font-weight: bold;
                                   padding-left: 14px;
                                   padding-right: 14px;
-                                  background-color: #f4ed0f;
+                                  background-color: #781136;
                                   border-radius: 5px;
                                 "
                               >
@@ -643,10 +645,10 @@
                                   href="{{ EVENT_LINK }}"
                                   style="
                                     text-decoration: none;
-                                    color: #000a2c;
+                                    color: #ffffff;
                                     font-weight: bold;
                                   "
-                                  >Voir l'événement</a
+                                  >Ver acción</a
                                 >
                               </td>
                             </tr>
@@ -717,18 +719,13 @@
                         "
                       >
                         <p style="margin: 1em 0px; margin-top: 0px">
-                          Pour toute demande ou information, vous pouvez
-                          contacter {{ CONTACT_NAME }} par e-mail à l'adresse
-                          :&nbsp;{{ CONTACT_EMAIL }}
+                          Para más información, puedes contactar a {{ CONTACT_NAME }} por email en:&nbsp;{{ CONTACT_EMAIL }}
                         </p>
                         <p style="margin: 1em 0px">
-                          Si l'inscription ne comportait pas de participation
-                          financière, vous pouvez à tout moment annuler votre
-                          participation en vous rendant sur la page de
-                          l'événement :&nbsp;{{ EVENT_LINK }}
+                          Puedes consultar la página de la acción en: {{ EVENT_LINK }}
                         </p>
                         <p style="margin: 1em 0px; margin-bottom: 0px">
-                          Amitiés,<br />L’équipe d’Action Populaire
+                          Saludos,<br />El equipo Claudialízate
                         </p>
                       </td>
                     </tr>
@@ -874,7 +871,7 @@
                         "
                       >
                         <div class="longText">
-                          Vous souhaitez recevoir moins de mails de notre part :
+                          Quieres recibir menos correos electrónicos nuestros:
                           <a
                             href="{{ preferences_link }}"
                             style="
@@ -882,11 +879,11 @@
                               color: #919191;
                               text-decoration: underline;
                             "
-                            >modifier ses préférences ou se désinscrire</a
+                            >cambiar tus preferencias o darte de baja</a
                           >.
                         </div>
                         <p style="margin: 1em 0px; margin-bottom: 0px">
-                          Ce mail a été adressé à {{ email }}.
+                          Este mensaje se envió a {{ email }}.
                         </p>
                       </td>
                     </tr>

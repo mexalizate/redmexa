@@ -241,7 +241,7 @@ def send_person_form_notification(submission_pk):
 def send_validation_sms(sms_id):
     sms = PersonValidationSMS.objects.get(id=sms_id)
     formatted_code = sms.code[:3] + " " + sms.code[3:]
-    message = f"Votre code de validation pour votre compte France insoumise est {formatted_code}"
+    message = f"Tu código de validación para Claudialízate es {formatted_code}"
 
     send_sms(message, sms.phone_number)
 

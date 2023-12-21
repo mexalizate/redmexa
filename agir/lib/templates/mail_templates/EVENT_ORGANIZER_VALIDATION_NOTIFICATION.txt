@@ -1,31 +1,28 @@
-Bonjour,
+Hola,
 
-Votre événement **«  {{ EVENT_NAME }} »** a été validé. Il est maintenant public et visible par l'ensemble des insoumis⋅es sur la plateforme.
+Tu acción **« {{ EVENT_NAME }} »** fue validada. Ahora es pública y visible para todas las personas registradas en Claudialízate.
 
+Te recordamos la información de tu acción:
 
-Pour rappel, voici les informations de votre événement :
+ **Horario:** {{ EVENT_SCHEDULE }}  
+ **Lugar de la acción:** {{ LOCATION_NAME }}  
+ **Dirección del lugar:** {{ LOCATION_ADDRESS }}  
 
- **Horaires :** {{ EVENT_SCHEDULE }}  
- **Nom du lieu de RDV :** {{ LOCATION_NAME }}  
- **Adresse de RDV :** {{ LOCATION_ADDRESS }}  
-
-
->> J'accède à la page publique de mon événement
+>> Ir a la página pública de mi acción
 {{ EVENT_LINK }}
 
-
->> J'accède à la page de gestion de mon événement
+>> Ir a la página de gestión de mi acción
 {{ MANAGE_EVENT_LINK }}
 
 
 -----------------------------------------------------------------
-Cet email a été envoyé à {{ EMAIL }}. Il est personnel, ne le transférez pas.
+Este mensaje se envió a {{ EMAIL }}. Es personal y no debería ser reenviado.
 
->> Voir cet email dans votre navigateur
+>> Ver este email en tu navegador
 {{ LINK_BROWSER }}
 
->> Choisir les emails que vous recevez
+>> Escoge los emails que recibes
 {{ PREFERENCES_LINK }}
 
->> Arrêter complètement de recevoir des emails
+>> No recibir más emails
 {{ UNSUBSCRIBE_LINK }}

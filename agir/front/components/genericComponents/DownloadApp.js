@@ -94,8 +94,8 @@ export const DownloadApp = ({ onClick }) => (
     <Content>
       <Title>{"Claudialízate"}</Title>
       <Description>
-        {_("Téléchargez l’appli des actions près")}{" "}
-        <InlineBlock>de chez vous</InlineBlock>
+        {"Baja la app y descubre acciones "}{" "}
+        <InlineBlock>en tu zona</InlineBlock>
       </Description>
     </Content>
     <div style={{ paddingRight: "18px" }}>

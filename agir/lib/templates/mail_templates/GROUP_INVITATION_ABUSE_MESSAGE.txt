@@ -1,14 +1,14 @@
-Bonjour,
+Hola,
 
-Nous avons reçu un signalement de la part d'une personne que vous avez invité indiquant que vous aviez envoyé cette invitation sans avoir préalablement recueilli son consentement.
+Una persona que agregaste como seguidora nos reportó que fue invitada sin su consentimiento a participar en Claudialízate.
 
-Nous vous rappelons que cette fonctionnalité ne doit être utilisé que pour inviter des personnes dont vous avez recueilli les adresses emails à cette fin, après avoir sollicité leur accord expresse, conformément aux obligations légales qui nous incombent en matière de traitement des données personnelles.
+Recuerda que la funcionalidad de agregar contactos debe ser utilizada para invitar únicamente a personas que aceptaron claramente dar su email para ser registradas en Claudialízate. Esto es importante para respetar la política de protección de datos personales.
 
-Ce message est envoyé automatiquement en cas de signalement : si vous estimez que vous avez respecté les règles énoncées ci-dessus et que le signalement était malveillant, vous pouvez simplement ignorer ce message. Mais dans le cas où nous recevrions plusieurs signalements, nous pourrions être conduits à vous retirer la possibilité d'inviter des personnes à votre groupe.
+Este mensaje se envía automáticamente luego de un reporte. Si crees que fue un error de la persona, puedes hacer caso omiso de este mensaje. Pero si recibimos varios reportes, estaremos obligados a limitar el uso de esta funcionalidad para invitar a a personas a tus grupos.
 
 
-Amitiés insoumises,  
-L'équipe outils numériques  
+Saludos,  
+El equipo Claudialízate
 
 ------------------------------------------------------------------
-Cet email a été envoyé à {{ email }}. Il est personnel, ne le transférez pas.
+Este mensaje se envió a {{ EMAIL }}. Es personal y no debería ser reenviado.

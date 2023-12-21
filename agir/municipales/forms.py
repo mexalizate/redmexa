@@ -23,7 +23,7 @@ class CommunePageForm(forms.ModelForm):
         self.person = person
 
         self.helper = FormHelper()
-        self.helper.add_input(Submit("submit", "Modifier"))
+        self.helper.add_input(Submit("submit", "Modificar"))
         self.helper.layout = Layout(
             Fieldset(
                 _("Informations sur la liste"), "contact_email", "mandataire_email"

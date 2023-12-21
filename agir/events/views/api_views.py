@@ -685,7 +685,7 @@ class RSVPEventAsGroupAPIView(CreateAPIView):
             )
         except IntegrityError:
             raise exceptions.ValidationError(
-                detail={"text": "Ce groupe participe déjà à l'événement !"},
+                detail={"text": "¡Este grupo ya participa en la acción!"},
                 code="invalid_format",
             )
 

@@ -640,7 +640,7 @@ def send_group_coorganization_invitation_notification(invitation_pk):
     group = invitation.group
     member = invitation.person_sender
 
-    subject = f"Votre groupe {group.name} est invité à co-organiser {event.name}"
+    subject = f"Tu grupo {group.name} participa {event.name}"
     recipients = group.referents
 
     bindings = {

@@ -73,7 +73,7 @@ class RequiredMembershipListFilter(admin.SimpleListFilter):
 
     def lookups(self, request, model_admin):
         return (
-            (Membership.MEMBERSHIP_TYPE_FOLLOWER, _("Abonné·e")),
+            (Membership.MEMBERSHIP_TYPE_FOLLOWER, "Seguidor(a)"),
             (Membership.MEMBERSHIP_TYPE_MEMBER, _("Membre actif·ve")),
             (Membership.MEMBERSHIP_TYPE_MANAGER, _("Gestionnaire")),
             (Membership.MEMBERSHIP_TYPE_REFERENT, _("Animateur·ice")),

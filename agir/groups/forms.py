@@ -308,7 +308,7 @@ class TransferGroupMembersForm(forms.Form):
         label=_("Groupe de destination"),
         required=True,
         help_text=_(
-            "Le nouveau groupe doit avoir déjà été créé pour pouvoir y transférer une partie de vos membres."
+            "El grupo de destino debe haber sido creado previamente para poder transferirle participantes"
         ),
     )
     members = MembershipMultipleChoiceField(
@@ -317,7 +317,7 @@ class TransferGroupMembersForm(forms.Form):
         required=True,
         widget=forms.CheckboxSelectMultiple,
         help_text=_(
-            "Les membres sélectionnés seront transférés dans le groupe de destination. Ses animateur·ices et les membres transférés recevront alors un e-mail de confirmation. Cette action est irréversible."
+            "L@s participantes seleccionados serán enviados al grupo de destino y ell@s y los facilitadores de ese grupo recibirán una notificación por email."
         ),
     )
 

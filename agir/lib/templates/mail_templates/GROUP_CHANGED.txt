@@ -1,22 +1,21 @@
-Bonjour,
+Hola,
 
-Les animateurs du groupe {{ GROUP_NAME }} ont changé ses informations.
+L@s facilitadores del grupo {{ GROUP_NAME }} cambiaron la información del grupo.
 
-Les informations suivantes ont été changées :
-
+Cambió lo siguiente:
 {{ GROUP_CHANGES }}
 
->> Voir les informations mises à jour
+>> Ver la información actualizada del grupo:
 {{ GROUP_LINK }}
 
-Amitiés,  
-L’équipe d’Action Populaire
+Saludos,  
+El equipo Claudialízate
 
 ------------------------------------------------------------------
-Cet email a été envoyé à {{ email }}. Il est personnel, ne le transférez pas.
+Este mensaje se envió a {{ EMAIL }}. Es personal y no debería ser reenviado.
 
->> Choisir les emails que vous recevez
-{{ preferences_link }}
+>> Escoge los emails que recibes
+{{ PREFERENCES_LINK }}
 
->> Arrêter complètement de recevoir des emails
-{{ unsubscribe_link }}
+>> No recibir más emails
+{{ UNSUBSCRIBE_LINK }}
