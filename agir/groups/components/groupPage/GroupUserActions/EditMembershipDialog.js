@@ -44,7 +44,7 @@ const EditMembershipDialog = (props) => {
             value
           />
           <CheckboxField
-            label={_("Coordonées complètes (nom complet, téléphone et adresse).")}
+            label={("Datos adicionales (nombre completo, teléfono, dirección).")}
             onChange={handleCheck}
             disabled={isLoading}
             value={personalInfoConsent}
@@ -59,7 +59,7 @@ const EditMembershipDialog = (props) => {
             block
             wrap
           >
-           {_(" Mettre à jour")}
+            {_(" Mettre à jour")}
           </Button>
         </footer>
       </StyledDialog>

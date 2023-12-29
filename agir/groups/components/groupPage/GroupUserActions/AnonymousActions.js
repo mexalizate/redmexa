@@ -58,7 +58,7 @@ const AnonymousActions = ({ isOpen }) => {
           }}
           icon="rss"
         >
-          Suivre
+          Seguir
         </Button>
       )}
     </StyledWrapper>

@@ -78,7 +78,7 @@ const ConfirmContact = (props) => {
       <Spacer size="1.5rem" />
       <ul>
         {data.isPoliticalSupport ? (
-          <li>Quiere unirse a Claudialízate</li>
+          <li> Quiere unirse a Claudialízate</li>
         ) : null}
         {newsletters.length > 0 ? (
           <li>

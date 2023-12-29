@@ -33,7 +33,7 @@ const MemberActions = ({ onQuit, onEdit }) => {
         icon="chevron-down"
         rightIcon
       >
-        {_("Vous êtes membre")}
+        Eres miembro
       </Button>
       <ResponsiveLayout
         MobileLayout={BottomSheet}
@@ -53,7 +53,7 @@ const MemberActions = ({ onQuit, onEdit }) => {
           <li>
             <button type="button" onClick={onQuit}>
               <RawFeatherIcon name="x" width="1rem" height="1rem" />
-              {_("Quitter le groupe")}
+              Salir del grupo
             </button>
           </li>
         </StyledMenuList>

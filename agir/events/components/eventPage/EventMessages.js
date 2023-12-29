@@ -46,7 +46,7 @@ export const EventMessages = (props) => {
 
   return (
     <>
-      <StyledH3 style={{ marginTop: "2.5rem" }}>Messages</StyledH3>
+      <StyledH3 style={{ marginTop: "2.5rem" }}>Mensajes</StyledH3>
       <article>
         {messages.map((message) => (
           <Fragment key={message.id}>
