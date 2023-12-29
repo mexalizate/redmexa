@@ -83,7 +83,7 @@
     "reinspect": "^1.1.0",
     "resize-observer-polyfill": "^1.5.1",
     "rxjs": "^7.8.1",
-    "sass": "~1.69.3",
+    "sass": "~1.69.6",
     "sass-loader": "13.3.2",
     "short-uuid": "^4.2.2",
     "styled-components": "^6.0.8",
