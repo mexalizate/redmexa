@@ -13,7 +13,7 @@ const GroupMembershipLimitReminderCard = (props) => {
   const SupportGroup = group ? (
     <Link
       to={routeConfig.groupDetails.getLink({ groupPk: group.id })}
-      backLink={_("activities")}
+      backLink="activities"
     >
       {group.name}
     </Link>

@@ -44,10 +44,10 @@ export const JoinGroup = (props) => {
               block
               wrap
             >
-             {_(" Je rejoins&nbsp;!")}
+              Unirme
             </Button>
             <Button disabled={isLoading} onClick={onClose} block wrap>
-             {_(" Annuler")}
+              Regresar
             </Button>
           </footer>
         </StyledDialog>
@@ -74,14 +74,14 @@ export const JoinGroup = (props) => {
       return (
         <StyledDialog>
           <header>
-            <h3>{_("Bienvenue dans le groupe,")} {personName}&nbsp;!&nbsp;👍</h3>
+            <h3>Te damos la bienvenida  {personName}&nbsp;!&nbsp;👍</h3>
           </header>
           <article>
             <strong>
-              {_("Faites la rencontre avec")} {referentNames} {_("qui animent ce groupe.")}
+              Conoce a {referentNames} responsables de facilitar este grupo.
             </strong>
             <Spacer size=".5rem" />
-            {_("Partagez vos coordonnées (nom complet, téléphone et adresse) avec eux pour qu'ils puissent prendre contact avec vous.")}
+            Comparte tus datos (nombre, teléfono, dirección) para que puedan contactarte.
             <Spacer size=".5rem" />
             {_("Vous pourrez retirer cette autorisation à tout moment. C'est maintenant que tout se joue&nbsp;!")}
           </article>
@@ -93,7 +93,7 @@ export const JoinGroup = (props) => {
               block
               wrap
             >
-              {_("Partager mes coordonnées avec")} {referentNames}
+              Compartir mis datos de contacto con {referentNames}
             </Button>
             <Button
               disabled={isLoading}
@@ -111,16 +111,16 @@ export const JoinGroup = (props) => {
       return (
         <StyledDialog>
           <header>
-            <h3>{_("Présentez-vous&nbsp;!")}</h3>
+            <h3>Puedes presentarte</h3>
           </header>
           <article>
             <strong>
               {personalInfoConsent
-                ? _("C’est noté, les gestionnaires du groupe pourront vous contacter sur la messagerie d’Action Populaire, par e-mail et par téléphone.")
-                : _("C’est noté, les gestionnaires du groupe pourront vous contacter sur la messagerie d’Action Populaire et par e-mail.")}
+                ? ("Listo, l@s facilitadores del grupo podrán contactarte por la mensajería de Claudialízate, por email o por teléfono.")
+                : ("Listo, l@s facilitadores del grupo podrán contactarte por la mensajería de Claudialízate  o por email.")}
             </strong>
             <Spacer size=".5rem" />
-            {_("Envoyez-leur un message pour vous présenter&nbsp;:")}
+              ¡Envíales un mensaje para presentarte!
             <Spacer size="1rem" />
             <footer>
               {openMessageModal ? (

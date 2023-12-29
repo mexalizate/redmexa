@@ -145,7 +145,7 @@ const ConnectedUserActions = (props) => {
     }));
     sendToast(
       <>
-        {_("Vous avez quitté le groupe")} <strong>{name}</strong>.
+        {("Saliste del grupo")} <strong>{name}</strong>.
       </>,
       "SUCCESS",
       {

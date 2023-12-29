@@ -21,23 +21,23 @@ const QuitGroupDialog = (props) => {
       <StyledDialog>
         <header>
           {isActiveMember ? (
-            <h3>{_("Quitter le groupe ")}{groupName}&nbsp;?</h3>
+            <h3>Salir del grupo {groupName}&nbsp;?</h3>
           ) : (
-            <h3>{_("Ne plus suivre le groupe")} {groupName}&nbsp;?</h3>
+            <h3>Dejar de seguir el grupo {groupName}&nbsp;?</h3>
           )}
         </header>
         <article>
           {isActiveMember ? (
             <p>
-             {_(" Voulez-vous vraiment quitter le groupe&nbsp;? Vous ne recevrez plus aucune actualité de ce groupe.")}
+              ¿Estás segur@ de salir? Ya no recibirás noticias del grupo
               <Spacer size=".5rem" />
-              {_("Vous pourrez rejoindre le groupe à nouveau à tout moment.")}
+              Puedes volver a seguir este grupo en cualquier momento
             </p>
           ) : (
             <p>
-              {_("Vous ne recevrez plus les actualités de ce groupe.")}
+              Ya no recibirás noticias de este grupo.
               <Spacer size=".5rem" />
-              {_("Vous pouvez suivre ce groupe à nouveau à tout moment.")}
+              Puedes volver a seguir este grupo en cualquier momento.
             </p>
           )}
         </article>
@@ -48,10 +48,10 @@ const QuitGroupDialog = (props) => {
             disabled={isLoading}
             loading={isLoading}
           >
-            {isActiveMember ? "Quitter le groupe" : "Ne plus suivre"}
+            {isActiveMember ? "Salir del grupo" : "No seguir más"}
           </Button>
           <Button onClick={onClose} disabled={isLoading}>
-            {_("Annuler")}
+            Regresar
           </Button>
         </footer>
       </StyledDialog>

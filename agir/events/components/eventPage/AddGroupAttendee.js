@@ -191,7 +191,7 @@ const AddGroupAttendee = ({ id, groups, groupsAttendees }) => {
                 </h2>
                 <b>{groupJoined.name}</b> {_("est désormais indiqué comme participant à l’événement.")}
                 <Spacer size="1rem" />
-                {"Por favor solicita a l@s participantes de tu grupo que también se registren individualmente en la acción, para que l@s organizadores puedan calcular cuántas personas asistirán."}
+                  Por favor solicita a l@s participantes de tu grupo que también se registren individualmente en la acción, para que l@s organizadores puedan calcular cuántas personas asistirán.
                 <Spacer size="1rem" />
                 <Button onClick={closeModalJoin}>Compris</Button>
               </>

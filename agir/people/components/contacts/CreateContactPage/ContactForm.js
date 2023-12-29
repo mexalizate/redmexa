@@ -319,7 +319,7 @@ export const ContactForm = (props) => {
         <>
           <Spacer size=".5rem" />
           <CheckboxField
-            label={_("Je veux recevoir les actualités du groupe")}
+            label={"Quiero recibir notificaciones del grupo"}
             onChange={handleCheck}
             value={data.hasGroupNotifications}
             id="hasGroupNotifications"
