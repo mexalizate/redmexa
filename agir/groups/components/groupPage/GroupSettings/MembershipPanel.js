@@ -74,9 +74,9 @@ export const ReadOnlyMembershipPanel = (props) => {
 
   const { data: selectedMemberData } = useSWR(
     selectedMember?.id &&
-      getGroupEndpoint("getMemberPersonalInformation", {
-        memberPk: selectedMember?.id,
-      }),
+    getGroupEndpoint("getMemberPersonalInformation", {
+      memberPk: selectedMember?.id,
+    }),
   );
 
   const selectMember = useCallback(
@@ -157,9 +157,9 @@ const EditableMembershipPanel = (props) => {
     mutate: mutateSelectedMember,
   } = useSWR(
     selectedMember?.id &&
-      getGroupEndpoint("getMemberPersonalInformation", {
-        memberPk: selectedMember?.id,
-      }),
+    getGroupEndpoint("getMemberPersonalInformation", {
+      memberPk: selectedMember?.id,
+    }),
   );
 
   const updateMembershipType = useCallback(
@@ -174,13 +174,13 @@ const EditableMembershipPanel = (props) => {
       if (res.error) {
         sendToast(
           res.error?.membershipType ||
-            _("Une erreur est survenue. Veuillez ressayer."),
+          _("Une erreur est survenue. Veuillez ressayer."),
           "ERROR",
           { autoClose: true },
         );
         return;
       }
-      sendToast(_("Informations mises à jour"), "SUCCESS", {
+      sendToast("Información actualizada", "SUCCESS", {
         autoClose: true,
       });
       !unselectMemberAfterUpdate && mutateSelectedMember();

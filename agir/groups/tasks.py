@@ -81,7 +81,7 @@ def send_support_group_creation_notification(membership_pk):
 
     send_mosaico_email(
         code="GROUP_CREATION",
-        subject="Les informations de votre nouveau groupe",
+        subject="Info sobre tu nuevo grupo",
         from_email=settings.EMAIL_FROM,
         recipients=[referent],
         bindings=bindings,
@@ -179,7 +179,7 @@ def send_joined_notification_email(membership_pk):
     }
     send_mosaico_email(
         code="GROUP_SOMEONE_JOINED_NOTIFICATION",
-        subject="Un nouveau membre dans votre groupe",
+        subject="¡Nuev@ miembro en tu grupo!",
         from_email=settings.EMAIL_FROM,
         recipients=recipients,
         bindings=bindings,

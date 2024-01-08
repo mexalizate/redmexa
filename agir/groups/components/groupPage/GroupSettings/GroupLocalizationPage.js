@@ -59,7 +59,7 @@ const GroupLocalizationPage = (props) => {
         setErrors(res.error?.location);
         return;
       }
-      sendToast(_("Informations mises à jour"), "SUCCESS", { autoClose: true });
+      sendToast("Información actualizada", "SUCCESS", { autoClose: true });
       mutate((group) => {
         return { ...group, ...res.data };
       });
@@ -105,7 +105,7 @@ const GroupLocalizationPage = (props) => {
   return (
     <form onSubmit={handleSubmit}>
       <HeaderPanel onBack={onBack} illustration={illustration} />
-      <StyledTitle>Localisation</StyledTitle>
+      <StyledTitle>Ubicación</StyledTitle>
       <Spacer size="1rem" />
       <StyledMap
         center={group?.location?.coordinates?.coordinates || []}

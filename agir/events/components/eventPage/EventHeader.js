@@ -191,7 +191,7 @@ const Actions = (props) => {
             to={routeConfig.eventSettings.getLink({ eventPk: id })}
             color="primary"
           >
-            {_("Gérer l'événement")}
+            Gestionar la acción
           </Button>
         )}
       </StyledActions>
@@ -376,7 +376,7 @@ const AdditionalMessage = (props) => {
   if (!isOrganizer && !rsvped) {
     return (
       <SmallText>
-        {_("Votre adresse e-mail sera communiquée à l'organisateur·ice")}
+        Tu email será comunicado a l@s organizadores
       </SmallText>
     );
   }

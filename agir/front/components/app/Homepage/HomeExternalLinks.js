@@ -106,7 +106,7 @@ const HomeExternalLinks = () => {
           />
         </a>
         <Spacer size="1rem" />
-        <a href="redmigrante.com">
+        <a href="HTTPS://REDMIGRANTE.COM">
           <img
             src={nupesLogo}
             alt={_("logo de la Nouvelle Union Populaire Écologique et Sociale")}

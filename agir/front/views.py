@@ -299,8 +299,7 @@ class EventDetailView(
     EventDetailMixin, BaseDetailView, ObjectOpengraphMixin, ReactBaseView
 ):
     meta_description = gettext(
-        "Participez et organisez des événements pour soutenir les propositions de la France insoumise et "
-        "de la NUPES"
+        "¡Participa en acciones en Claudialízate!"
     )
 
     def get_api_preloads(self):
@@ -344,7 +343,7 @@ class SupportGroupDetailView(
     SupportGroupDetailMixin, BaseDetailView, ObjectOpengraphMixin, ReactBaseView
 ):
     meta_description = _(
-        "Rejoignez les groupes d'action de votre quartier pour soutenir les propositions de la France insoumise et de la NUPES"
+        "¡Únete a un grupo en Claudialízate!"
     )
 
     def get_api_preloads(self):

@@ -54,7 +54,7 @@ const GroupContactPage = (props) => {
         setErrors(res.error?.contact);
         return;
       }
-      sendToast(_("Informations mises à jour"), "SUCCESS", { autoClose: true });
+      sendToast("Información actualizada", "SUCCESS", { autoClose: true });
       mutate((group) => {
         return { ...group, ...res.data };
       });

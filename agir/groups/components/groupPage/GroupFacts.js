@@ -60,7 +60,7 @@ const GroupFacts = (props) => {
           <li>
             <FeatherIcon name="calendar" small inline />
             <span>
-              {eventCount} {_("événement")}{eventCount > 1 && "s"}
+              {eventCount} {("acci")}{eventCount > 1 ? "ones" : "ón"}
             </span>
           </li>
         )}

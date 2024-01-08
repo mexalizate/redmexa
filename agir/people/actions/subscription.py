@@ -56,21 +56,21 @@ SUBSCRIPTIONS_EMAILS = {
     SUBSCRIPTION_TYPE_PLATFORM: {
         "already_subscribed": SubscriptionMessageInfo(
             code="SUBSCRIPTION__PLATFORM__ALREADY_SUBSCRIBED_MESSAGE",
-            subject="Vous êtes déjà inscrit·e !",
+            subject="¡Ya estás registrad@!",
         ),
         "confirmation": SubscriptionMessageInfo(
             code="SUBSCRIPTION__PLATFORM__CONFIRMATION_MESSAGE",
-            subject="Plus qu'un clic pour vous inscrire",
+            subject="Confirma tu email para ingresar a Claudialízate",
         ),
     },
     SUBSCRIPTION_TYPE_CAMPAIGN: {
         "already_subscribed": SubscriptionMessageInfo(
             "SUBSCRIPTION__CAMPAIGN__ALREADY_SUBSCRIBED_MESSAGE",
-            "Vous êtes déjà inscrit·e !",
+            "¡Ya estás registrad@!",
         ),
         "confirmation": SubscriptionMessageInfo(
             code="SUBSCRIPTION__CAMPAIGN__CONFIRMATION_MESSAGE",
-            subject="Plus qu'un clic pour vous inscrire",
+            subject="Confirma tu email para ingresar a Claudialízate",
             from_email=settings.EMAIL_FROM_LFI,
         ),
         "welcome": SubscriptionMessageInfo(

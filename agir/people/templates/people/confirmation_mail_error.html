@@ -3,16 +3,16 @@
 {% block title %}Bienvenue !{% endblock %}
 
 {% block main %}
-  <h2 class="headline">Aïe aïe aïe !</h2>
+  <h2 class="headline">Ups…</h2>
 
   <div id="content">
     <div class="text-content">
       <p>
-        Il y a eu un problème avec votre lien de confirmation. {{ message }}
+        Hubo un problema con tu enlace de confirmación {{ message }}
       </p>
       {% if show_retry %}
         <p>
-          Vous pouvez réessayer de <a href="{% url "signup" %}">vous inscrire avec ce formulaire</a>.
+          Puedes intentar inscribirte de nuevo con <a href="{% url "signup" %}"> este formulario</a>.
         </p>
       {% endif %}
 

@@ -348,10 +348,10 @@ class RedirectToPresseroView(BaseSupportGroupAdminView, DetailView):
         person = request.user.person
 
         if not is_pressero_enabled():
-            raise Http404(_("Cette page n'existe pas"))
+            raise Http404("Esta página (ya) no existe")
 
         if not group.is_certified:
-            raise Http404(_("Cette page n'existe pas"))
+            raise Http404("Esta página (ya) no existe")
 
         try:
             return redirect_to_pressero(person)

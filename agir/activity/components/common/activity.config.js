@@ -102,7 +102,7 @@ const ACTIVITY_CONFIG = {
             to: routeConfig.groupDetails.getLink({
               groupPk: group.id,
             }),
-            label: _("Rejoindre"),
+            label: ("Unirse"),
           }
         : null,
   },
@@ -118,7 +118,7 @@ const ACTIVITY_CONFIG = {
               groupPk: group.id,
               activePanel: "membres",
             }),
-            label: _("Voir les membres"),
+            label: "Ver participantes",
           }
         : null,
   },

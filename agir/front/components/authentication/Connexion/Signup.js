@@ -136,7 +136,7 @@ const SignUp = () => {
     >
       {location.state?.from === "event" ? (
         <h1 style={{ fontSize: "26px" }}>
-          {_("Je m’inscris pour participer à l’événement")}
+        Registrarme en Claudialízate
         </h1>
       ) : location.state?.from === "group" ? (
         <h1 style={{ fontSize: "26px" }}>

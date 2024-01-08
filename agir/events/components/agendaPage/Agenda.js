@@ -48,12 +48,23 @@ const TopBar = styled.div`
     margin: 0;
   }
 
+  & ${Hide} {
+    &.colorButton {
+      background-color:  #781136;
+      color: #fff;
+      font-weight: bold;
+      
+    }
+  }
+
   & > div {
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
     flex-wrap: wrap;
     gap: 0.5rem;
+
+   
 
     @media only screen and (max-width: ${style.collapse}px) {
       flex-direction: row;
@@ -65,6 +76,11 @@ const TopBar = styled.div`
   & ${Button} + ${Button} {
     @media only screen and (min-width: ${style.collapse}px) {
       margin-right: 0.5rem;
+    }
+  }
+  & ${Button} {
+    &[icon="map"] {
+      color: #fff; /* Cambiar el color del icono a blanco */
     }
   }
 `;
@@ -149,8 +165,8 @@ const Agenda = () => {
               : user?.firstName || user?.displayName}{" "}
             👋
           </LayoutTitle>
-          <Hide $under as={Button} small link route="eventMap" icon="map">
-            {_("Carte")}
+          <Hide $under as={Button} className="colorButton" large link route="groupMap" icon="map">
+            {_("Carte")}  
           </Hide>
         </TopBar>
       </header>

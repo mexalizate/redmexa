@@ -49,7 +49,7 @@ export const AddOrganizer = ({ eventPk, participants, onBack }) => {
       onBack();
       return;
     }
-    sendToast("Informations mises à jour", "SUCCESS", { autoClose: true });
+    sendToast("Información actualizada", "SUCCESS", { autoClose: true });
     mutate(api.getEventEndpoint("getDetailAdvanced", { eventPk }));
     onBack();
   };

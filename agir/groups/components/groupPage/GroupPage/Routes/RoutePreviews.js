@@ -131,7 +131,7 @@ export const AgendaRoutePreview = (props) => {
             {nextEvents.length > 0 && (
               <>
                 <h3>
-                  <span>Por venir</span>
+                  <span>Últimas acciones</span>
                   {goToAgendaTab && (
                     <button onClick={goToAgendaTab}>
                       {_("Agenda")}{" "}
@@ -209,7 +209,7 @@ export const MessagesRoutePreview = (props) => {
           <span>{_("Derniers messages")}</span>
           {goToMessagesTab && (
             <button onClick={goToMessagesTab}>
-              Messages{" "}
+              Ver mensajes {" "}
               <RawFeatherIcon
                 name="arrow-right"
                 width="1rem"

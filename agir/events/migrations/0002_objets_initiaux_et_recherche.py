@@ -22,7 +22,7 @@ def create_default_subtypes(apps, schema):
 
     subtypes = {
         "autre reunion groupe": {
-            "description": "Autre type de réunion de groupe",
+            "description": "Otro tipo de reunión de grupo",
             "hide_text_label": True,
             "color": "#00B400",
             "type": "G",

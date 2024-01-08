@@ -31,7 +31,7 @@ const config = {
     {
       id: "messages",
       icon: "mail",
-      title: _("Messages"),
+      title: "Mensajes",
       route: "messages",
       unreadMessageBadge: true,
       desktop: true,

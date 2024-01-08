@@ -61,7 +61,7 @@ const EventPhotosCard = (props) => {
 
   return (
     <StyledCard>
-      <h5>Photos</h5>
+      <h5>Imágenes</h5>
       <Spacer size="0.5rem" />
 
       {photos.length > 0 ? (
@@ -88,7 +88,7 @@ const EventPhotosCard = (props) => {
           })}
         </Thumbnails>
       ) : (
-        <p>{_("Il n'y a pas encore de photo de cet événement.")}</p>
+        <p>Aún no hay imágenes de esta acción</p>
       )}
       {isPast && isRSVP && (
         <div style={{ paddingTop: "1rem" }}>

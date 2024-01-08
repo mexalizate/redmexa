@@ -1,10 +1,13 @@
 import React from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
+import debug from "debug";
 
 const Button = (props) => {
   const { children, bsStyle, bsSize, active, type, ...otherProps } = props;
+  debugger;
   return (
+    
     <button
       className={classNames(
         "btn",

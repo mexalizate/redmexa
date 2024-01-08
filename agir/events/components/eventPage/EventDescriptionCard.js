@@ -97,7 +97,7 @@ const EventDescriptionCard = ({
               link
               to={routeConfig.eventSettings.getLink({ eventPk: id })}
             >
-              {image ? _("Changer l'") : "Agregar "}{"imagen de portada"}
+              {image ? "Cambiar " : "Agregar "}{" imagen de portada"}
             </Button>
           </StyledActionButtons>
         )}

@@ -39,8 +39,8 @@ export const SORTERS = {
 };
 
 export const EventSort = [
-  { label: <>Date &uarr;</>, value: SORTERS.DATE_ASC },
-  { label: <>Date &darr;</>, value: SORTERS.DATE_DESC },
+  { label: <>Fecha &uarr;</>, value: SORTERS.DATE_ASC },
+  { label: <>Fecha &darr;</>, value: SORTERS.DATE_DESC },
   { label: <>Orden alfabético &uarr;</>, value: SORTERS.ALPHA_ASC },
   { label: <>Orden alfabético &darr;</>, value: SORTERS.ALPHA_DESC },
 ];
@@ -50,7 +50,7 @@ export const EventCategory = [
   { label: _("A venir"), value: "FUTURE" },
 ];
 export const EventType = [
-  { label: _("Tous les types"), value: 0 },
+  { label: "Todos los tipos", value: 0 },
   { label: "Reunión de grupo", value: "G" },
   { label: "Actividad pública", value: "M" },
   { label: "Claudiactivación", value: "A" },

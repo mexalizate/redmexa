@@ -61,7 +61,7 @@ const DesktopActionToolsPage = (props) => {
         <h2>{/*_("Besoin d'aide ?")*/}¿Necesitas ayuda?</h2>
         <StyledButtons>
           <Button link route="help">
-            {/*_("Centre d'aide")*/} Centro ayuda
+            {/*_("Centre d'aide")*/} Centro de ayuda
           </Button>
           <Button link route="contact">
             {/*_("Nous contacter")*/} Contactarnos

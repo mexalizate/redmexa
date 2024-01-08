@@ -218,7 +218,7 @@ class CampagneMixin:
         campagne = get_campagne(self.kwargs["code_departement"], self.kwargs["slug"])
 
         if campagne is None:
-            raise Http404("Cette page n'existe pas.")
+            raise Http404("Esta página (ya) no existe")
         return {
             **campagne,
             "commune": CommunePage.objects.get(

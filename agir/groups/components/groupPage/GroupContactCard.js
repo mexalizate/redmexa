@@ -62,7 +62,7 @@ const GroupContactCard = (props) => {
         )}
         {!!contact?.phone && (
           <a href={`tel:${contact.phone}`} style={{ color: "inherit" }}>
-            {contact.phone} {!!contact?.hidePhone && " (caché)"}
+            {contact.phone}
           </a>
         )}
         <Spacer size="0" />

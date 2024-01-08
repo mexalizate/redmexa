@@ -82,7 +82,7 @@ const ConfirmContact = (props) => {
         ) : null}
         {newsletters.length > 0 ? (
           <li>
-            Recibirá también la información siguiente &nbsp;:"{" "}
+            Recibirá también la información siguiente &nbsp;:{" "}
             <ul>
               {newsletters.map((n) => (
                 <li key={n} style={{ fontSize: "0.875rem" }}>
