@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-08 03:47-0600\n"
+"POT-Creation-Date: 2024-01-08 04:07-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -8057,6 +8057,101 @@ msgstr "No, take me back"
 msgid "Voir les résultats"
 msgstr "Ver los resultados"
 
+#: agir/people/templates/people/email/contact_creation.html:5
+msgid "Merci de votre soutien !"
+msgstr ""
+
+#: agir/people/templates/people/email/contact_creation.html:10
+#, python-format
+msgid ""
+"\n"
+"<p>\n"
+"  Vous avez rejoint la plateforme\n"
+"  <a style=\"font-weight: bold\" href=\"%(dashboard_link)s?%(merge_login)s"
+"\"\n"
+"    >Action populaire</a\n"
+"  >\n"
+"  parce qu'un autre membre vous a ajouté·e.\n"
+"</p>\n"
+msgstr ""
+
+#: agir/people/templates/people/email/contact_creation.html:21
+msgid "Bienvenue et merci à vous de votre soutien&nbsp;!"
+msgstr ""
+
+#: agir/people/templates/people/email/contact_creation.html:24
+msgid ""
+"Pour en savoir plus sur Action populaire et sur le mouvement de la France "
+"insoumise nous vous invitons à découvrir nos sites&nbsp;:"
+msgstr ""
+
+#: agir/people/templates/people/email/contact_creation.html:47
+#, fuzzy
+#| msgid "Action publique"
+msgid "Voir Action populaire"
+msgstr "Acción pública"
+
+#: agir/people/templates/people/email/contact_creation.html:65
+#, fuzzy
+#| msgid "Me désinscrire des emails de la France insoumise"
+msgid "Voir le site de la France insoumise"
+msgstr "Desinscribirse de los emails de Claudialízate"
+
+#: agir/people/templates/people/email/contact_creation.html:73
+msgid ""
+"Vous n’êtes pas à l’origine de cette action et vous souhaitez pas être "
+"recontacté·e&nbsp;? Cliquez sur le lien ci-dessous&nbsp;:"
+msgstr ""
+
+#: agir/people/templates/people/email/contact_creation.html:89
+#, fuzzy
+#| msgid "Formulaire d'inscription"
+msgid "Annuler l'inscription"
+msgstr "Formulario de inscripción"
+
+#: agir/people/templates/people/email/contact_creation.html:93
+msgid ""
+"Il vous sera demandé d'entrer un code que vous recevrez sur votre adresse  e-"
+"mail et vous pourrez ensuite demander la suppression du compte"
+msgstr ""
+
+#: agir/people/templates/people/email/contact_creation.html:96
+#, python-format
+msgid ""
+"\n"
+"<p>\n"
+"  Vous aviez déjà un compte sur\n"
+"  <a style=\"font-weight: bold\" href=\"%(dashboard_link)s?%(merge_login)s"
+"\"\n"
+"    >Action populaire</a\n"
+"  >\n"
+"  depuis le %(subscription_date)s&nbsp;: par sécurité, vos informations "
+"n'ont\n"
+"  pas été mises à jour.\n"
+"</p>\n"
+"  "
+msgstr ""
+
+#: agir/people/templates/people/email/contact_creation.html:107
+msgid ""
+"Vous pouvez à tout moment vérifier et mettre à jour vos informations "
+"directement sur la plateforme, sur la page de votre profil&nbsp;:"
+msgstr ""
+
+#: agir/people/templates/people/email/contact_creation.html:123
+#, fuzzy
+#| msgid "Enregistrer mes informations"
+msgid "Voir mes informations personnelles"
+msgstr "Guardar mi información"
+
+#: agir/people/templates/people/email/contact_creation.html:128
+msgid ""
+"\n"
+"  <p>Amitiés<br />\n"
+"  <br />\n"
+"  L'équipe d'Action Populaire</p>\n"
+msgstr ""
+
 #: agir/people/templates/people/profile/account_management.html:6
 msgid "Mes adresses emails"
 msgstr "Mis emails"
@@ -8188,11 +8283,6 @@ msgstr "Con tarjeta de débito"
 #~| msgid "page précédente"
 #~ msgid "Précédent"
 #~ msgstr "página anterior"
-
-#, fuzzy
-#~| msgid "Action publique"
-#~ msgid "Action Populaire"
-#~ msgstr "Acción pública"
 
 #~ msgid "Groupe local"
 #~ msgstr "Grupo local"
