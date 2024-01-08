@@ -14,9 +14,9 @@ from agir.lib.models import LocationMixin
 logger = logging.getLogger(__name__)
 
 
-NON_DIGIT = re.compile("[^\d]+")
-NON_WORD = re.compile("[^\w]+")
-MULTIPLE_SPACES = re.compile("\s\s+")
+NON_DIGIT = re.compile(r"[^\d]+")
+NON_WORD = re.compile(r"[^\w]+")
+MULTIPLE_SPACES = re.compile(r"\s\s+")
 BAN_ENDPOINT = "https://api-adresse.data.gouv.fr/search"
 NOMINATIM_ENDPOINT = "https://nominatim.openstreetmap.org/"
 
