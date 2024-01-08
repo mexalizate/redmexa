@@ -1045,3 +1045,6 @@ ILB_DONS_URL = os.environ.get("ILB_DONS_URL", "https://institutlaboetie.fr/don/"
 ILB_DONS_REMERCIEMENTS_URL = os.environ.get(
     "ILB_DONS_REMERCIEMENTS_URL", "https://institutlaboetie.fr/don/merci/"
 )
+
+
+GOOGLE_MAPS_KEY = os.environ.get("GOOGLE_MAPS_KEY")
