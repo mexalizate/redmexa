@@ -1,7 +1,13 @@
-{% extends email_template %} {% block subject %} Merci de votre soutien ! {%
-endblock %} {% block html_content %}
-<p>{{ greetings }}</p>
+{% extends email_template %}
+{% load i18n %}
 
+{% block subject %}
+  {%  translate "Merci de votre soutien !" %}
+{% endblock %}
+
+{% block html_content %}
+<p>{{ greetings }}</p>
+{% blocktranslate %}
 <p>
   Vous avez rejoint la plateforme
   <a style="font-weight: bold" href="{{ dashboard_link }}?{{ merge_login }}"
@@ -9,11 +15,13 @@ endblock %} {% block html_content %}
   >
   parce qu'un autre membre vous a ajouté·e.
 </p>
-<p>Bienvenue et merci à vous de votre soutien&nbsp;!</p>
+{% endblocktranslate %}
+
+
+<p>{% translate "Bienvenue et merci à vous de votre soutien&nbsp;!" %}</p>
 
 <p>
-  Pour en savoir plus sur Action populaire et sur le mouvement de la France
-  insoumise nous vous invitons à découvrir nos sites&nbsp;:
+  {% translate "Pour en savoir plus sur Action populaire et sur le mouvement de la France insoumise nous vous invitons à découvrir nos sites&nbsp;:" %}
 </p>
 
 <p
@@ -36,7 +44,7 @@ endblock %} {% block html_content %}
       font-size: 1.25em;
     "
   >
-    Voir Action populaire
+    {% translate "Voir Action populaire" %}
   </a>
 </p>
 
@@ -54,7 +62,7 @@ endblock %} {% block html_content %}
       font-size: 1.25em;
     "
   >
-    Voir le site de la France insoumise
+    {% translate "Voir le site de la France insoumise" %}
   </a>
 </p>
 
@@ -62,8 +70,7 @@ endblock %} {% block html_content %}
 
 {% if is_new %}
 <p>
-  Vous n’êtes pas à l’origine de cette action et vous souhaitez pas être
-  recontacté·e&nbsp;? Cliquez sur le lien ci-dessous&nbsp;:
+  {%  translate "Vous n’êtes pas à l’origine de cette action et vous souhaitez pas être recontacté·e&nbsp;? Cliquez sur le lien ci-dessous&nbsp;:" %}
 </p>
 <p style="font-family: Arial, Helvetica, sans-serif; text-align: center">
   <a
@@ -79,14 +86,14 @@ endblock %} {% block html_content %}
       font-size: 1.25em;
     "
   >
-    Annuler l'inscription
+    {% translate "Annuler l'inscription" %}
   </a>
 </p>
 <p>
-  Il vous sera demandé d'entrer un code que vous recevrez sur votre adresse
-  e-mail et vous pourrez ensuite demander la suppression du compte.
+  {% translate "Il vous sera demandé d'entrer un code que vous recevrez sur votre adresse  e-mail et vous pourrez ensuite demander la suppression du compte" %}
 </p>
 {% else %}
+  {% blocktranslate %}
 <p>
   Vous aviez déjà un compte sur
   <a style="font-weight: bold" href="{{ dashboard_link }}?{{ merge_login }}"
@@ -95,9 +102,9 @@ endblock %} {% block html_content %}
   depuis le {{ subscription_date }}&nbsp;: par sécurité, vos informations n'ont
   pas été mises à jour.
 </p>
+  {% endblocktranslate %}
 <p>
-  Vous pouvez à tout moment vérifier et mettre à jour vos informations
-  directement sur la plateforme, sur la page de votre profil&nbsp;:
+  {% translate "Vous pouvez à tout moment vérifier et mettre à jour vos informations directement sur la plateforme, sur la page de votre profil&nbsp;:" %}
 </p>
 <p style="font-family: Arial, Helvetica, sans-serif; text-align: center">
   <a
@@ -113,12 +120,14 @@ endblock %} {% block html_content %}
       font-size: 1.25em;
     "
   >
-    Voir mes informations personnelles
+    {% translate "Voir mes informations personnelles" %}
   </a>
 </p>
 {% endif %}
-
 <br />
-
-<p>Amitiés<br /><br />L'équipe d'Action Populaire</p>
+{% blocktranslate %}
+  <p>Amitiés<br />
+  <br />
+  L'équipe d'Action Populaire</p>
+{% endblocktranslate %}
 {% endblock %}
