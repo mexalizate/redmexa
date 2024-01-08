@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-11 18:14-0600\n"
+"POT-Creation-Date: 2024-01-08 03:47-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -717,7 +717,16 @@ msgid ""
 "étiez il y a un instant"
 msgstr ""
 
-#: agir/authentication/templates/authentication/login_email.html:25
+#: agir/authentication/templates/authentication/login_email.html:19
+#, python-format
+msgid ""
+"\n"
+"  <p>Remarque : ce code est valable jusqu'à %(expiry_time)s et ne peut être "
+"utilisé qu'une seule fois.</p>\n"
+"  <p>Amitiés<br>L'équipe d'Action Populaire</p>\n"
+msgstr ""
+
+#: agir/authentication/templates/authentication/login_email.html:28
 msgid ""
 "Vous n'êtes pas à l'origine de cette demande de connexion ? Ignorez "
 "simplement ce message"
@@ -738,18 +747,16 @@ msgid ""
 msgstr ""
 
 #: agir/authentication/views/api_views.py:146
-msgid ""
-"Le code que vous avez entré n'est pas au bon format. Il est constitué de 5 "
-"lettres ou chiffres et se trouve dans l'email qui vous a été envoyé."
+msgid "Debes ingresar el código de 5 caracteres que te enviamos por email"
 msgstr ""
 
-#: agir/authentication/views/api_views.py:150
+#: agir/authentication/views/api_views.py:149
 msgid ""
 "Le code que vous avez entré n'est pas ou plus valide. Vérifiez qu'il s'agit "
 "bien du code que vous avez reçu à l'instant, et pas d'un ancien code."
 msgstr ""
 
-#: agir/authentication/views/api_views.py:154
+#: agir/authentication/views/api_views.py:153
 msgid ""
 "Vous avez fait plusieurs tentatives de connexions erronées d'affilée. Merci "
 "de patienter un peu avant de retenter."
@@ -1839,11 +1846,6 @@ msgstr "Panelistas"
 msgid "demandes de disponibilité"
 msgstr ""
 
-#: agir/event_requests/admin/inlines.py:252
-#: agir/events/templates/events/cancel.html:6
-msgid "Annuler"
-msgstr ""
-
 #: agir/event_requests/admin/inlines.py:260 agir/events/models.py:640
 msgid "événement"
 msgstr "evento"
@@ -2806,17 +2808,6 @@ msgstr ""
 msgid "Résumé des événements"
 msgstr "Creador(a) del evento"
 
-#: agir/events/templates/events/calendar.html:14
-#: agir/events/templates/events/cancel.html:13
-#: agir/events/templates/events/change_location.html:13
-#: agir/events/templates/events/edit_legal.html:13
-#: agir/events/templates/events/event_search.html:12
-#: agir/events/templates/events/participation.html:16
-#: agir/events/templates/events/quit.html:11
-#: agir/events/templates/events/upload_event_image.html:12
-msgid "Retour à l'accueil"
-msgstr ""
-
 #: agir/events/templates/events/calendar.html:22
 msgid "S'abonner"
 msgstr ""
@@ -2824,7 +2815,6 @@ msgstr ""
 #: agir/events/templates/events/calendar.html:52
 #: agir/events/templates/events/calendar.html:73
 #: agir/events/templates/events/cancel.html:25
-#: agir/events/templates/events/change_location.html:25
 #: agir/events/templates/events/edit_legal.html:25
 #: agir/events/templates/events/participation.html:23
 #: agir/events/templates/events/pay_event.html:11
@@ -2840,7 +2830,7 @@ msgstr "el lugar del evento"
 #: agir/events/templates/events/calendar.html:95
 #, fuzzy
 #| msgid "Ajouter mon image"
-msgid "Ajouter à mon agenda"
+msgid "Agregar a mi agenda"
 msgstr "Agregar mi imagen"
 
 #: agir/events/templates/events/calendar.html:106
@@ -2864,8 +2854,11 @@ msgid ""
 "importez le lien suivant depuis votre calendrier"
 msgstr ""
 
+#: agir/events/templates/events/cancel.html:6
+msgid "Annuler"
+msgstr ""
+
 #: agir/events/templates/events/cancel.html:20
-#: agir/events/templates/events/change_location.html:20
 #: agir/events/templates/events/edit_legal.html:20
 #, fuzzy
 #| msgid "Le nom de l'événement"
@@ -2894,25 +2887,19 @@ msgstr ""
 msgid "Modifier la localisation de mon événement"
 msgstr "Recibir notificaciones de eventos"
 
+#: agir/events/templates/events/change_location.html:20
+msgid "Gestión de la acción"
+msgstr ""
+
+#: agir/events/templates/events/change_location.html:25
+msgid "Página de la acción"
+msgstr ""
+
 #: agir/events/templates/events/change_location.html:36
-#: agir/groups/forms.py:231
 #, fuzzy
-#| msgid "Pas de localisation"
-msgid "Modification de la localisation"
-msgstr "Sin localización"
-
-#: agir/events/templates/events/change_location.html:42
-msgid ""
-"Si vous souhaitez revenir à une localisation automatique de votre événement "
-"à partir de son adresse, cochez la case correspondante et sauvegardez le "
-"formulaire."
-msgstr ""
-
-#: agir/events/templates/events/change_location.html:45
-msgid ""
-"Après sauvegarde de ce formulaire, les modifications peuvent mettre jusqu'à "
-"5 minutes pour apparaître sur la carte."
-msgstr ""
+#| msgid "Mode de paiement"
+msgid "Modificar la ubicación"
+msgstr "Modo de pago"
 
 #: agir/events/templates/events/edit_legal.html:6
 #, fuzzy
@@ -3114,12 +3101,6 @@ msgstr "Con tarjeta de débito"
 msgid "Aucun événement à venir."
 msgstr ""
 
-#: agir/events/templates/events/includes/events_list.html:41
-#, fuzzy
-#| msgid "page précédente"
-msgid "Précédent"
-msgstr "página anterior"
-
 #: agir/events/templates/events/includes/events_list.html:49
 #, fuzzy
 #| msgid "page suivante"
@@ -3222,10 +3203,6 @@ msgid ""
 "%(payment_first_name)s %(payment_last_name)s, votre paiement de "
 "%(payment_get_price_display)s pour l'événement «&nbsp;%(event.name)s&nbsp;» "
 "a bien été reçu. Votre inscription est confirmée."
-msgstr ""
-
-#: agir/events/templates/events/payment_confirmation.html:16
-msgid "Retour à la page d'accueil"
 msgstr ""
 
 #: agir/events/templates/events/payment_description.html:4
@@ -3461,16 +3438,8 @@ msgstr ""
 msgid "Vous n'êtes pas autorisé⋅e à accéder à cette page."
 msgstr "Debes estar inscrit@ en el evento para acceder a esta página."
 
-#: agir/front/view_mixins.py:78 agir/front/views.py:46
-#, fuzzy
-#| msgid "Action publique"
-msgid "Action Populaire"
-msgstr "Acción pública"
-
 #: agir/front/views.py:48
-msgid ""
-"Action Populaire est le réseau social d'action de la France insoumise et de "
-"la NUPES."
+msgid "Claudialízate es la red de acción de l@s mexican@s en el mundo."
 msgstr ""
 
 #: agir/front/views.py:130 agir/front/views.py:135
@@ -5502,6 +5471,12 @@ msgstr ""
 "La localización de tu grupo fue actualizada con éxito. Espera algunos "
 "minutos para que aparezca en el mapa."
 
+#: agir/groups/forms.py:231
+#, fuzzy
+#| msgid "Pas de localisation"
+msgid "Modification de la localisation"
+msgstr "Sin localización"
+
 #: agir/groups/forms.py:246
 #, fuzzy
 #| msgid "code postal"
@@ -5549,8 +5524,8 @@ msgstr "Grupo de destino"
 
 #: agir/groups/forms.py:311
 msgid ""
-"Le nouveau groupe doit avoir déjà été créé pour pouvoir y transférer une "
-"partie de vos membres."
+"El grupo de destino debe haber sido creado previamente para poder "
+"transferirle participantes"
 msgstr ""
 
 #: agir/groups/forms.py:316
@@ -5559,9 +5534,8 @@ msgstr "Miembros a transferir"
 
 #: agir/groups/forms.py:320
 msgid ""
-"Les membres sélectionnés seront transférés dans le groupe de destination. "
-"Ses animateur·ices et les membres transférés recevront alors un e-mail de "
-"confirmation. Cette action est irréversible."
+"L@s participantes seleccionados serán enviados al grupo de destino y ell@s y "
+"los facilitadores de ese grupo recibirán una notificación por email."
 msgstr ""
 
 #: agir/groups/forms.py:347
@@ -5593,10 +5567,6 @@ msgstr[0] "One uncertifiable group has been found and sent to the admin."
 msgstr[1] ""
 "{str(apnumber(uncertifiable)).capitalize()} uncertifiable groups have been "
 "found and sent to the admin."
-
-#: agir/groups/models.py:286
-msgid "Groupe local"
-msgstr "Grupo local"
 
 #: agir/groups/models.py:287 agir/groups/proxys.py:19
 msgid "Groupe thématique"
@@ -5940,8 +5910,8 @@ msgstr ""
 #: agir/groups/views/management_views.py:199
 #, python-brace-format
 msgid ""
-"Vous ne pouvez plus créer de nouveau groupe car vous avez atteint la limite "
-"de création ({self.max_groups_for_referent_number} groupes par personne)."
+"Llegaste al límite de grupos que puedes crear ({self."
+"max_groups_for_referent_number} grupos por persona)."
 msgstr ""
 
 #: agir/groups/views/management_views.py:226
@@ -6170,7 +6140,7 @@ msgid ""
 "d'action."
 msgstr "Selecciona esta opción para anular la localización manual de tu grupo."
 
-#: agir/lib/form_mixins.py:258
+#: agir/lib/form_mixins.py:256
 msgid "Indiquez une autre adresse autour de laquelle rechercher"
 msgstr "Indica otra dirección de referencia para la búsqueda"
 
@@ -6734,12 +6704,6 @@ msgstr "tipo de grupo"
 #: agir/msgs/admin.py:72
 msgid "required_membership_type"
 msgstr ""
-
-#: agir/msgs/admin.py:76
-#, fuzzy
-#| msgid "Données"
-msgid "Abonné·e"
-msgstr "Datos"
 
 #: agir/msgs/admin.py:77
 msgid "Membre actif·ve"
@@ -7500,10 +7464,6 @@ msgid ""
 msgstr ""
 "Debes indicar el número de teléfono que te servirá para validar tu cuenta"
 
-#: agir/people/forms/account.py:149
-msgid "Code reçu par SMS"
-msgstr "Código recibido por mensajero"
-
 #: agir/people/forms/profile.py:46
 msgid "Municipalité mexicaine d'origine"
 msgstr "Municipio mexicano de origen"
@@ -8223,6 +8183,27 @@ msgstr "Clear all filters"
 #: agir/system_pay/__init__.py:169
 msgid "Par carte bleue"
 msgstr "Con tarjeta de débito"
+
+#, fuzzy
+#~| msgid "page précédente"
+#~ msgid "Précédent"
+#~ msgstr "página anterior"
+
+#, fuzzy
+#~| msgid "Action publique"
+#~ msgid "Action Populaire"
+#~ msgstr "Acción pública"
+
+#~ msgid "Groupe local"
+#~ msgstr "Grupo local"
+
+#, fuzzy
+#~| msgid "Données"
+#~ msgid "Abonné·e"
+#~ msgstr "Datos"
+
+#~ msgid "Code reçu par SMS"
+#~ msgstr "Código recibido por mensajero"
 
 #, fuzzy
 #~| msgid "Votre numéro a été correctement validé."
