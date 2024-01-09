@@ -1,8 +1,9 @@
 {% extends "front/layout.html" %}
-{% load static %}
-{% load crispy_forms_tags %}
+{% load crispy_forms_tags i18n static %}
 
-{% block title %}{% translate "Ajouter une image pour" %} «&nbsp;{{ event.name }}&nbsp;»{% endblock %}
+{% block title %}
+  {% translate "Ajouter une image pour" %} «&nbsp;{{ event.name }}&nbsp;»
+{% endblock %}
 
 {% block main %}
 <div class="row">

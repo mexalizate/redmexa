@@ -247,23 +247,19 @@ OVERSEAS_ZIP_TO_COUNTRY_CODE = {
 }
 
 
+# source: https://www.iso.org/obp/ui/#iso:code:3166:FR
 FRANCE_COUNTRY_CODES = [
-    "FR",  # France
-    "MX",  # Mexico
-    "US",  # United States
-    "CA",  # Canada
-    "ES",  # Spain
-    "GF",  # Guyane française
-    "PF",  # Polynésie française
-    "TF",  # Terres-Australes et Antarctiques
-    "BL",  # Saint-Barthélémy
-    "MF",  # Saint-Martin
-    "PM",  # Saint-Pierre-et-Miquelon
+    "FR",  # France métropolitaine
     "GP",  # Guadeloupe
+    "GF",  # Guyane française
+    "RE",  # La Réunion
     "MQ",  # Martinique
     "YT",  # Mayotte
-    "RE",  # La Réunion
     "NC",  # Nouvelle-Calédonie
+    "PF",  # Polynésie française
+    "BL",  # Saint-Barthélemy
+    "MF",  # Saint-Martin
+    "PM",  # Saint-Pierre-et-Miquelon
+    "TF",  # Terres australes françaises
     "WF",  # Wallis-et-Futuna
-    "",  # en cas d'absence du pays,
 ]

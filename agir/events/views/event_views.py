@@ -334,7 +334,7 @@ class UploadEventImageView(
     permission_denied_to_not_found = True
 
     def get_queryset(self):
-        return Event.objects.public().past()
+        return Event.objects.public()
 
     def get_success_url(self):
         return reverse("view_event", args=(self.event.pk,))
