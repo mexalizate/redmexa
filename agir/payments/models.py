@@ -211,8 +211,8 @@ class Payment(ExportModelOperationsMixin("payment"), TimeStampedModel, LocationM
     class Meta:
         get_latest_by = "created"
         ordering = ("-created",)
-        verbose_name = "Paiement"
-        verbose_name_plural = "Paiements"
+        verbose_name = "Pago"
+        verbose_name_plural = "Pagos"
 
 
 class Subscription(ExportModelOperationsMixin("subscription"), TimeStampedModel):
@@ -304,5 +304,5 @@ class Subscription(ExportModelOperationsMixin("subscription"), TimeStampedModel)
         return "Abonnement n°" + str(self.id)
 
     class Meta:
-        verbose_name = "Paiement récurrent"
-        verbose_name_plural = "Paiements récurrents"
+        verbose_name = "Pago recurrente"
+        verbose_name_plural = "Pagos recurrentes"

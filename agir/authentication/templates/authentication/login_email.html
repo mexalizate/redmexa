@@ -10,16 +10,13 @@
 {% block html_content %}
 <p>{% translate "Bonjour" %} {{ name }} !</p>
 <p>{% translate "Vous nous avez demandé de vous connecter à Action Populaire" %}.</p>
-<p>{% translate "C'est très simple ! Entrez le code suivant dans la page de connexion où vous étiez il y a un instant" %} :</p>
 
 <div style="text-align: center; background-color: #eeeeee; padding: 16px 0; font-size: 30px; font-weight: bold;">
   {{ code }}
 </div>
 
-{% blocktranslate %}
-  <p>Remarque : ce code est valable jusqu'à {{ expiry_time }} et ne peut être utilisé qu'une seule fois.</p>
-  <p>Amitiés<br>L'équipe d'Action Populaire</p>
-{% endblocktranslate %}
+{% blocktranslate %}<p>Remarque : ce code est valable jusqu'à {{ expiry_time }} et ne peut être utilisé qu'une seule fois.</p>{% endblocktranslate %}
+{% blocktranslate %}<p>Amitiés<br>L'équipe d'Action Populaire</p>{% endblocktranslate %}
 
 {% endblock %}
 

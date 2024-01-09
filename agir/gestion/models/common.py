@@ -183,8 +183,8 @@ class Compte(TimeStampedModel):
         return f"{self.designation}"
 
     class Meta:
-        verbose_name = _("Compte")
-        verbose_name_plural = _("Comptes")
+        verbose_name = "Cuenta"
+        verbose_name_plural = "Cuentas"
         permissions = [
             (
                 "acces_contenu_restreint",
@@ -261,6 +261,6 @@ class InstanceCherchable(models.Model):
         )
 
     class Meta:
-        verbose_name = "Recherche"
-        verbose_name_plural = "Recherche"
+        verbose_name = "Búsqueda"
+        verbose_name_plural = "Búsqueda"
         indexes = (GinIndex(fields=("recherche",)),)

@@ -91,6 +91,8 @@ class Poll(BaseAPIResource):
 
     class Meta:
         ordering = ("-start",)
+        verbose_name = "encuesta"
+        verbose_name_plural = "encuestas"
 
 
 class PollOption(BaseAPIResource):

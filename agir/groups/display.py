@@ -9,19 +9,18 @@ def genrer_membership(genre, membership_type):
     """
 
     if membership_type is None:
-        return genrer(genre, _("Visiteur"), _("Visiteuse"), _("Visiteur⋅se"))
+        # return genrer(genre, _("Visiteur"), _("Visiteuse"), _("Visiteur⋅se"))
+        return "Visitante"
 
     if membership_type == Membership.MEMBERSHIP_TYPE_FOLLOWER:
-        author_status = genrer(genre, _("Abonné"), _("Abonnée"), _("Abonné⋅e"))
+        author_status = "Seguidor(a)"
     elif membership_type == Membership.MEMBERSHIP_TYPE_MEMBER:
-        author_status = "Membre"
+        author_status = "Miembro"
     elif membership_type == Membership.MEMBERSHIP_TYPE_MANAGER:
-        author_status = "Membre gestionnaire"
+        author_status = "Miembro gestor(a)"
     elif membership_type == Membership.MEMBERSHIP_TYPE_REFERENT:
-        author_status = genrer(
-            genre, _("Animateur"), _("Animatrice"), _("Animateur·ice")
-        )
+        author_status = "Facilitador(a)"
     else:
-        raise Exception(_("The author status is unknown"))
+        raise Exception("El estatus del autor no está identificado")
 
     return author_status

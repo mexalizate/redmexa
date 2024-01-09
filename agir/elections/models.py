@@ -190,8 +190,8 @@ class PollingStationOfficer(BaseAPIResource, SimpleLocationMixin):
     remarks = models.TextField("remarques", blank=True, null=False, default="")
 
     class Meta:
-        verbose_name = "assesseur·e / délégué·e de bureau de vote"
-        verbose_name_plural = "assesseur·es / délégué·es de bureau de vote"
+        verbose_name = "Delegados de casilla de votación"
+        verbose_name_plural = "Delegados de casilla de votación"
         ordering = ("-modified",)
         indexes = (
             models.Index(

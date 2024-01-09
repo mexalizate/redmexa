@@ -214,8 +214,8 @@ class Projet(ModeleGestionMixin, TimeStampedModel):
     )
 
     class Meta:
-        verbose_name = "Projet"
-        verbose_name_plural = "Projets"
+        verbose_name = "Proyecto"
+        verbose_name_plural = "Proyectos"
 
 
 @reversion.register()
@@ -342,6 +342,8 @@ class ProjetMilitant(Projet):
     objects = ProjetMilitantManager()
 
     class Meta:
+        verbose_name = "Proyecto militante"
+        verbose_name_plural = "Proyectos militantes"
         proxy = True
 
 

@@ -390,8 +390,8 @@ class Depense(ModeleGestionMixin, TimeStampedModel):
     )
 
     class Meta:
-        verbose_name = _("Dépense")
-        verbose_name_plural = _("Dépenses")
+        verbose_name = "Gasto"
+        verbose_name_plural = "Gastos"
 
 
 @reversion.register(follow=["depense"])
@@ -690,7 +690,8 @@ class Reglement(SearchableModel, TimeStampedModel):
         return self.depense.compte
 
     class Meta:
-        verbose_name = _("règlement")
+        verbose_name = "Pago"
+        verbose_name_plural = "Pagos"
         ordering = ("-date",)
 
 
@@ -761,6 +762,8 @@ class Fournisseur(LocationMixin, TimeStampedModel):
             raise ValidationError(errors)
 
     class Meta:
+        verbose_name = "Proveedor"
+        verbose_name_plural = "Proveedores"
         ordering = ("nom", "location_city")
 
 

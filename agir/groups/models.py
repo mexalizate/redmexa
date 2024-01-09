@@ -283,7 +283,7 @@ class SupportGroup(
     TYPE_BOUCLE_DEPARTEMENTALE = "D"
 
     TYPE_CHOICES = (
-        (TYPE_LOCAL_GROUP, "Delimitar tu grupo"),
+        (TYPE_LOCAL_GROUP, "Grupo local"),
         (TYPE_THEMATIC, _("Groupe thématique")),
         (TYPE_FUNCTIONAL, _("Groupe fonctionnel")),
         (TYPE_BOUCLE_DEPARTEMENTALE, _("Boucle départementale")),
@@ -600,10 +600,10 @@ class Membership(ExportModelOperationsMixin("membership"), TimeStampedModel):
     MEMBERSHIP_TYPE_MANAGER = 50
     MEMBERSHIP_TYPE_REFERENT = 100
     MEMBERSHIP_TYPE_CHOICES = (
-        (MEMBERSHIP_TYPE_FOLLOWER, "Abonné⋅e du groupe"),
-        (MEMBERSHIP_TYPE_MEMBER, "Membre actif du groupe"),
-        (MEMBERSHIP_TYPE_MANAGER, "Membre gestionnaire"),
-        (MEMBERSHIP_TYPE_REFERENT, "Animateur⋅rice"),
+        (MEMBERSHIP_TYPE_FOLLOWER, _("Abonné⋅e du groupe")),
+        (MEMBERSHIP_TYPE_MEMBER, _("Membre actif du groupe")),
+        (MEMBERSHIP_TYPE_MANAGER, _("Membre gestionnaire")),
+        (MEMBERSHIP_TYPE_REFERENT, _("Animateur⋅rice")),
     )
 
     objects = MembershipManager()
@@ -752,8 +752,8 @@ class TransferOperation(models.Model):
     members = models.ManyToManyField("people.Person", related_name="+", editable=False)
 
     class Meta:
-        verbose_name = _("Transfert de membres")
-        verbose_name_plural = _("Transferts de membres")
+        verbose_name = "Transferencia de participante"
+        verbose_name_plural = "Transferencia de participantes"
         ordering = ("timestamp", "former_group")
 
 

@@ -27,8 +27,8 @@ class UserReport(TimeStampedModel):
         return f"Signalement ({self.id})"
 
     class Meta:
-        verbose_name = _("Signalement")
-        verbose_name_plural = _("Signalements")
+        verbose_name = "Alertado"
+        verbose_name_plural = "Alertados"
 
 
 class SupportGroupMessageQuerySet(models.QuerySet):
@@ -116,8 +116,8 @@ class SupportGroupMessage(AbstractMessage):
         return f"id: {self.pk} | {self.author} --> '{self.text}' | required_membership_type: {str(self.required_membership_type)} | supportgroup: {self.supportgroup}"
 
     class Meta:
-        verbose_name = _("Message de groupe")
-        verbose_name_plural = _("Messages de groupe")
+        verbose_name = "Mensaje de grupo"
+        verbose_name_plural = "Mensajes de grupos"
 
 
 @reversion.register()
@@ -132,8 +132,8 @@ class SupportGroupMessageComment(AbstractMessage):
     )
 
     class Meta:
-        verbose_name = _("Commentaire de messages de groupe")
-        verbose_name_plural = _("Commentaires de messages de groupe")
+        verbose_name = "comentario de mensaje de grupo"
+        verbose_name_plural = "comentarios de mensajes de grupos"
 
 
 class SupportGroupMessageRecipient(TimeStampedModel):

@@ -19,8 +19,8 @@ from agir.lib.admin.form_fields import CleavedDateInput
 
 
 class BaseDocumentInline(admin.TabularInline):
-    verbose_name = _("Document justificatif")
-    verbose_name_plural = _("Documents justificatifs")
+    verbose_name = "Comprobante"
+    verbose_name_plural = "Comprobantes"
     extra = 0
     classes = ("retirer-original",)
     can_delete = False
@@ -95,8 +95,8 @@ class DepenseDocumentInline(BaseDocumentInline):
 
 
 class DepenseInline(DepenseListMixin, SearchableModelMixin, admin.TabularInline):
-    verbose_name = _("Dépense")
-    verbose_name_plural = _("Dépenses du projet")
+    verbose_name = "Gasto"
+    verbose_name_plural = "Gastos"
 
     model = Depense
     extra = 0

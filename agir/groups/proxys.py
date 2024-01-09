@@ -16,8 +16,8 @@ class ThematicGroup(SupportGroup):
 
     class Meta:
         default_permissions = ("view", "change")
-        verbose_name = _("Groupe thématique")
-        verbose_name_plural = _("Groupes thématiques")
+        verbose_name = "Grupo temático"
+        verbose_name_plural = "Grupos temáticos"
         proxy = True
 
 
@@ -51,6 +51,6 @@ class UncertifiableGroup(SupportGroup):
 
     class Meta:
         default_permissions = ("view", "change")
-        verbose_name = _("Groupe décertifiable")
-        verbose_name_plural = _("Groupes décertifiables")
+        verbose_name = "Grupo des-certificable"
+        verbose_name_plural = "Grupos des-certificables"
         proxy = True

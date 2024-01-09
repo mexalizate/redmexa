@@ -58,8 +58,8 @@ class EventAssetTemplate(BaseAPIResource):
         return render_svg_template(self.file, data)
 
     class Meta:
-        verbose_name = "Template de visuel"
-        verbose_name_plural = "Templates de visuels"
+        verbose_name = "Templates de visuales"
+        verbose_name_plural = "Templates de visuales"
 
 
 class EventAssetQueryset(models.QuerySet):
@@ -210,8 +210,8 @@ class EventAsset(BaseAPIResource):
         )
 
     class Meta:
-        verbose_name = "Visuel de l'événement"
-        verbose_name_plural = "Visuels des événements"
+        verbose_name = "Visuales de acciones"
+        verbose_name_plural = "Visuales de acciones"
         ordering = ("-published", "-created")
         indexes = (
             models.Index(fields=("-published", "-created"), name="ordering_index"),
@@ -375,8 +375,8 @@ class EventThemeType(models.Model):
         }
 
     class Meta:
-        verbose_name = "Type de thème d'événement"
-        verbose_name_plural = "Types de thème d'évenement"
+        verbose_name = "Tipos de temas de acciones"
+        verbose_name_plural = "Tipos de temas de acciones"
 
 
 class EventThemeQuerySet(models.QuerySet):
@@ -592,8 +592,8 @@ class EventTheme(BaseAPIResource):
         }
 
     class Meta:
-        verbose_name = "Thème d'événement"
-        verbose_name_plural = "Thèmes d'évenement"
+        verbose_name = "Temas de acciones"
+        verbose_name_plural = "Temas de acciones"
 
 
 class EventSpeakerQuerySet(models.QuerySet):
@@ -724,8 +724,8 @@ class EventSpeaker(BaseAPIResource):
         return strg
 
     class Meta:
-        verbose_name = "Intervenant·e"
-        verbose_name_plural = "Intervenant·es"
+        verbose_name = "Presentadores"
+        verbose_name_plural = "Presentadores"
 
 
 class EventRequestQueryset(models.QuerySet):
@@ -824,8 +824,8 @@ class EventRequest(BaseAPIResource):
         )
 
     class Meta:
-        verbose_name = "Demande d'événement"
-        verbose_name_plural = "Demandes d'évenement"
+        verbose_name = "Solicitud de acción"
+        verbose_name_plural = "Solicitudes de acciones"
         ordering = ("status", "-created")
         indexes = (
             models.Index(
@@ -938,8 +938,8 @@ class EventSpeakerRequest(BaseAPIResource):
         return f"{self.event_speaker.person} / {self.simple_datetime} / {self.event_request}"
 
     class Meta:
-        verbose_name = "Demande de disponibilité d'intervenant·e"
-        verbose_name_plural = "Demandes de disponibilité d'intervenant·e"
+        verbose_name = "Solicitud de presentadores disponibles"
+        verbose_name_plural = "Solicitudes de presentadores disponibles"
         ordering = ("datetime",)
         indexes = (
             models.Index(

@@ -94,3 +94,7 @@ class OrdreVirement(ModeleGestionMixin, TimeStampedModel):
         )
 
         self.save(update_fields=["date", "fichier"])
+
+    class Meta:
+        verbose_name = "Órden de pago"
+        verbose_name_plural = "Órdenes de pago"
