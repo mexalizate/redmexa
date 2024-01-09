@@ -147,7 +147,7 @@ class Command(BaseCommand):
                     message = EmailMessage(
                         subject=f"Export des abonnements — {month[0].strftime('%m/%Y')}",
                         body=MESSAGE_BODY,
-                        from_email=settings.EMAIL_FROM_LFI,
+                        from_email=settings.EMAIL_FROM_CAMPAIGN,
                         to=[e],
                         connection=connection,
                     )
