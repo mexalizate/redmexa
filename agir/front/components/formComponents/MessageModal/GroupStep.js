@@ -129,9 +129,9 @@ const GroupStep = (props) => {
       <h4>{_("À qui s'adresse ce message ?")}</h4>
       <StyledWarning>
         <span>
-          {_("Les membres et abonné·es de votre groupe ")}
-          <strong>{_("recevront un e-mail")}</strong>{_(" avec le contenu de votre message")}
-          et <strong>{_("pourront y répondre !")}</strong>
+          {"Los participantes y seguidores de tu grupo"}
+          <strong>{" recibirán un email"}</strong> { " con tu mensaje y" }
+           &nbsp; <strong>{"podrán responder !"}</strong>
         </span>
       </StyledWarning>
       {groups.map((group) => (

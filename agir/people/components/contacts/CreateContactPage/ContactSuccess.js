@@ -63,7 +63,7 @@ const ContactSuccess = (props) => {
       {data?.group?.name ? (
         <p>
           {_("Les gestionnaires et animateur·ices du groupe")}{" "}
-          <strong>{data.group.name}</strong> {_("pourront accéder aux informations du nouveau contact dans la gestion de leur groupe")}
+          <strong>{data.group.name}</strong> {"podrán acceder a la información del nuevo contacto en la gestión de su grupo"}
         </p>
       ) : null}
       <Spacer size="2.5rem" />

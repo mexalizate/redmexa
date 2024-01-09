@@ -152,13 +152,13 @@ class GroupTypeStep extends FormStep {
         <div className="col-sm-4">
           <h3>¿Para qué crear un grupo&nbsp;?</h3>
           <p>
-          Toda persona puede formar un nuevo grupo y puede unirse a otros grupos creados por otras personas.
+            Toda persona puede formar un nuevo grupo y puede unirse a otros grupos creados por otras personas.
           </p>
           <p>
-          Los grupos necesitan tener una dirección exacta, pues aparecen en el mapa, permitiendo que las personas de esa zona se conozcan y actúen juntas, lo que hace todo más valioso y divertido.
+            Los grupos necesitan tener una dirección exacta, pues aparecen en el mapa, permitiendo que las personas de esa zona se conozcan y actúen juntas, lo que hace todo más valioso y divertido.
           </p>
           <p>
-          Es muy importante mantener una actitud de respeto y tolerancia hacia las demás personas y los demás grupos. Por eso, al crear un grupo te comprometes a respetar los Principios de Grupos.
+            Es muy importante mantener una actitud de respeto y tolerancia hacia las demás personas y los demás grupos. Por eso, al crear un grupo te comprometes a respetar los Principios de Grupos.
           </p>
         </div>
 
@@ -172,9 +172,8 @@ class GroupTypeStep extends FormStep {
               }}
             >
               <button
-                className={`btn btn-default ${
-                  fields.type === type.id ? "active" : ""
-                }`.trim()}
+                className={`btn btn-default ${fields.type === type.id ? "active" : ""
+                  }`.trim()}
                 style={{
                   whiteSpace: "normal",
                   backgroundColor: type.disabled ? "transparent" : undefined,
@@ -319,7 +318,7 @@ class ValidateStep extends FormStep {
             <dt>Número de celular&nbsp;:</dt>
             <dd>
               {fields.phone}&ensp;
-              <small>({fields.hidePhone ? "caché" : "public"})</small>
+
             </dd>
             {fields.name && (
               <>
@@ -341,7 +340,7 @@ class ValidateStep extends FormStep {
         </div>
         <div className="col-md-6">
           <p>
-          Para terminar, ponle nombre a tu grupo (por ejemplo: ‘Barrio La Angostura’, ‘Cancha Fut Teotitlán’, ‘Facultad FyL’…).
+            Para terminar, ponle nombre a tu grupo (por ejemplo: ‘Barrio La Angostura’, ‘Cancha Fut Teotitlán’, ‘Facultad FyL’…).
           </p>
           <form onSubmit={this.post}>
             <div className="form-group">
@@ -379,7 +378,7 @@ class ValidateStep extends FormStep {
           {this.state.error && (
             <div className="alert alert-warning margintopless">
               {this.state.error.response.status === 400 &&
-              this.state.error.response.data.errors ? (
+                this.state.error.response.data.errors ? (
                 <ul>
                   {Object.entries(this.state.error.response.data.errors).map(
                     ([field, msg]) => {

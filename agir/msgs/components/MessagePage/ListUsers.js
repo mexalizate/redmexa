@@ -54,11 +54,11 @@ export const ListUser = ({ message, participants }) => {
     <StyledContainer>
       <div>
         {isOrganizerMessage
-          ? "Discussion privée avec les animateur·ices du groupe"
+          ? "Discusión privada con l@s facilitadores del grupo"
           : "Conversación del grupo"}
         &nbsp;
         <Link
-          route="groupDetails"
+          route="groupDetails" 
           routeParams={{
             groupPk: message?.group.id,
           }}
@@ -84,7 +84,7 @@ export const ListUser = ({ message, participants }) => {
           <div style={{ width: "1.5rem", marginRight: "0.5rem" }}>
             <RawFeatherIcon name="users" />
           </div>
-          {totalAnonymous} autre{totalAnonymous > 1 ? "s" : ""}
+          {totalAnonymous} otro{totalAnonymous > 1 ? "s" : ""}
         </StyledBlock>
       )}
       <Spacer size="1rem" />

@@ -99,7 +99,7 @@ const HomeActions = () => {
         </p>
         <Button color="secondaryPurple">{/*_("Voir les groupes")*/} VER GRUPOS</Button>
       </StyledArticle>
-      <StyledArticle route="help">
+      <StyledArticle route="eventMap">
         <img
           className="imagenAc"
           src={actImage}

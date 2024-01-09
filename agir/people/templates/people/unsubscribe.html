@@ -23,16 +23,16 @@
         {% include "people/profile/profile_nav.html" with tab_code="CONTACT" %}
       {% endblock %}
       <div class="col-xs-12 col-md-9 margintopmore">
-        <h2 class="headline">Désabonnement</h2>
+        <h2 class="headline">Desinscripción</h2>
         <div class="row">
           <div class="col-xs-12 intro">
-            Pour confirmer votre désinscription de nos lettres d'information avec l'adresse
-            <strong>{{ email }}</strong>, cliquez sur le bouton ci-dessous.
+            Para confirmar que ya no quieres recibir nuestros emails informativos en tu email
+            <strong>{{ email }}</strong>, haz clic en el botón.
           </div>
           <form method="post" action="" class="col-xs-12 col-md-4">
             {% csrf_token %}
             <input type="hidden" name="email" value="{{ email }}" />
-            <button type="submit" class="btn btn-primary btn-block margintopmore">Je me désinscris</button>
+            <button type="submit" class="btn btn-primary btn-block margintopmore">Me desinscribo</button>
           </form>
         </div>
       </div>
@@ -41,7 +41,7 @@
         <h2 class="headline">Désabonnement</h2>
         <div class="row">
           <div class="col-xs-12 intro">
-            <p>Vous pouvez vous désabonner des emails de la France insoumise en indiquant votre adresse email ci-dessous.
+            <p>Puede darse de baja de los correos electrónicos de Claudializate indicando tu correo electrónico a continuación
             </p>
           </div>
           <div class="col-xs-12">

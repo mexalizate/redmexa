@@ -59,7 +59,7 @@ const eventSubtypes = [
   {
     "id": 1,
     "label": _("autre reunion groupe"),
-    "description": _("Autre type de réunion de groupe"),
+    "description": "Otro tipo de reunión de grupo",
     "color": "#00B400",
     "icon": null,
     "iconName": "comments",

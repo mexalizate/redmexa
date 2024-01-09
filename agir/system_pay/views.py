@@ -423,7 +423,7 @@ def failure_view(request, pk):
     try:
         sp_transaction = SystemPayTransaction.objects.get(pk=pk)
     except SystemPayTransaction.DoesNotExist:
-        raise Http404("Cette page n'existe pas.")
+        raise Http404("Esta página (ya) no existe")
 
     status = request.GET.get("status", "unknown")
 

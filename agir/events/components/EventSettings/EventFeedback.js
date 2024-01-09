@@ -84,7 +84,7 @@ const EventFeedback = (props) => {
       setErrors(res.error);
       return;
     }
-    sendToast(_("Informations mises à jour"), "SUCCESS", { autoClose: true });
+    sendToast("Información actualizada", "SUCCESS", { autoClose: true });
     mutate((event) => {
       return { ...event, ...res.data };
     });

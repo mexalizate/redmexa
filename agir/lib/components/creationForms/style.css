@@ -1,8 +1,11 @@
 .step-progress ol.progtrckr {
   text-align: center;
+  color: white;
 }
+
 .step-progress ol.progtrckr li span {
   padding: 0;
+  color: white;
 }
 
 .type-selectors {
@@ -59,6 +62,6 @@
   font-weight: 400 !important;
 }
 
-.confirmation-data-list dt + dd {
+.confirmation-data-list dt+dd {
   margin-bottom: 1em;
 }

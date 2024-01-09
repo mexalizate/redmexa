@@ -400,7 +400,7 @@ const CommentField = (props) => {
   if (isLocked) {
     return (
       <StaticToast $color="grey" style={{ marginTop: 0 }}>
-        {_("Cette conversation est close. Vous ne pouvez pas y écrire de réponse.")}
+        {"Esta conversación fue pausada. No puedes escribir en ella."}
       </StaticToast>
     );
   }

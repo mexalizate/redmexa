@@ -82,7 +82,7 @@ const GenericCard = (props) => {
     case "group-invitation": {
       return (
         <GenericCardContainer {...props}>
-          {("Vous avez été invité⋅e à rejoindre")} {SupportGroup}
+          {("Has sido invitado a unirte")} {SupportGroup}
         </GenericCardContainer>
       );
     }
@@ -93,7 +93,7 @@ const GenericCard = (props) => {
           {meta?.email && (
             <button onClick={copyEmail}>&lt;{meta.email}&gt;</button>
           )}{" "}
-          {("suit désormais votre groupe")} {SupportGroup}.
+          {("ahora sigue a tu grupo")} {SupportGroup} .
         </GenericCardContainer>
       );
     }
@@ -104,7 +104,7 @@ const GenericCard = (props) => {
           {meta?.email && (
             <button onClick={copyEmail}>&lt;{meta.email}&gt;</button>
           )}{" "}
-          {("a rejoint")} {SupportGroup}{(". Prenez le temps de l’accueillir&nbsp;!")}
+          {("se unió a")} {SupportGroup}{(". ¡Dile hola!")}
         </GenericCardContainer>
       );
     }
@@ -112,42 +112,42 @@ const GenericCard = (props) => {
       return (
         <GenericCardContainer {...props}>
           <strong>
-            {("Vous n’êtes plus membre actif du groupe")} {SupportGroup}
+            {("Ya no eres un miembro activo del grupo")} {SupportGroup}
           </strong>
           <br />
-          {("Vous avez été indiqué comme \"abonné·e\" par les gestionnaires de ce groupe.")}
+          {("Los administradores de esté grupo de han etiquetado como  \"suscriptor\" .")}
           <br />
-          {("Vous continuerez de recevoir la plupart des informations du groupe, sauf les messages destinés uniquement aux membres actifs.")}
+          {("Continuará recibiendo la mayor parte de la información del grupo, excepto los mensajes destinados únicamente a miembros activos.")}
         </GenericCardContainer>
       );
     }
     case "waiting-location-group": {
       return (
         <GenericCardContainer {...props}>
-          {("Précisez la localisation de")} {SupportGroup}
+          {("Especifique la ubicación de")} {SupportGroup}
         </GenericCardContainer>
       );
     }
     case "waiting-location-event": {
       return (
         <GenericCardContainer {...props}>
-          {("Précisez la localisation de votre événement&nbsp;:")} {Event}
+          {("Especifica la ubicación de tu acción :")} {Event}
         </GenericCardContainer>
       );
     }
     case "new-event-speaker-request": {
       return (
         <GenericCardContainer {...props}>
-          {("Une nouvelle demande d'événement à été créée pour un de vos thèmes d'intervention.")}
+          {("Se ha creado una nueva solicitud de evento para uno de sus temas de intervención.")}
           <br />
-          {("Indiquez si vous êtes ou pas disponible pour une ou plusieurs des dates demandées.")}
+          {("Indique si está disponible o no para una o más de las fechas solicitadas.")}
         </GenericCardContainer>
       );
     }
     case "group-coorganization-invite": {
       return (
         <GenericCardContainer {...props}>
-          {Individual || "Quelqu'un"} {("a proposé à")} {SupportGroup} {("de co-organiser")}{" "}
+          {Individual || "Alguien"} {("propuesta a ")} {SupportGroup} {("de coorganizar")}{" "}
           {Event}
         </GenericCardContainer>
       );
@@ -175,36 +175,36 @@ const GenericCard = (props) => {
     case "group-info-update":
       return (
         <GenericCardContainer {...props}>
-          {SupportGroup} {("a été mis à jour")}
+          {SupportGroup} {(" fue actualizado ")}
         </GenericCardContainer>
       );
     case "accepted-invitation-member":
       return (
         <GenericCardContainer {...props}>
-          {Individual || "Quelqu'un"} {("a rejoint")} {SupportGroup} {("en acceptant une")}
-          invitation.
+          {Individual || "Alguien"} {("se a unido ")} {SupportGroup} {("al aceptar una")}
+          invitación.
         </GenericCardContainer>
       );
     case "new-attendee":
       return (
         <GenericCardContainer {...props}>
           <strong>
-            {(individual && individual.displayName) || "Quelqu'un"}
+            {(individual && individual.displayName) || "Alguien"}
           </strong>{" "}
-          {("s'est")} {getGenderedWord(individual && individual.gender, "inscrit·e")}{" "}
-          {("à votre événement")} {Event}
+          {("se")} {getGenderedWord(individual && individual.gender, "inscribió")}{" "}
+          {("en tu acción")} {Event}
         </GenericCardContainer>
       );
     case "new-group-attendee":
       return (
         <GenericCardContainer {...props}>
-          {SupportGroup} {("s'est inscrit à votre événement")} {Event}
+          {SupportGroup} {("se inscribió en tu acción")} {Event}
         </GenericCardContainer>
       );
     case "event-update": {
       return (
         <GenericCardContainer {...props}>
-          {("Mise à jour : l'événement")} {Event} {("auquel vous participez a changé")}
+          {("Actualización :  cambió la acción ")} {Event} {("en que participas")}
           {changedDataLabel}.
         </GenericCardContainer>
       );
@@ -212,19 +212,19 @@ const GenericCard = (props) => {
     case "new-event-mygroups":
       return (
         <GenericCardContainer {...props}>
-          {SupportGroup || Individual || ("Quelqu'un")} {("a publié un nouvel événement")}
+          {SupportGroup || Individual || ("Alguien")} {("publicó una nueva acción")}
         </GenericCardContainer>
       );
     case "new-event-participation-mygroups":
       return (
         <GenericCardContainer {...props}>
-          {SupportGroup} {("participe à l'événement")} {Event}
+          {SupportGroup} {("participar en la acción")} {Event}
         </GenericCardContainer>
       );
     case "new-report":
       return (
         <GenericCardContainer {...props}>
-          {("Le compte rendu de l'événement")} {Event} {("a été ajouté par les organisateurs")}
+          {("El resumen de la acción")} {Event} {(" fue agregado por l@s organizadores ")}
         </GenericCardContainer>
       );
     case "event-suggestion":
@@ -241,51 +241,51 @@ const GenericCard = (props) => {
     case "group-coorganization-info":
       return (
         <GenericCardContainer {...props}>
-          {SupportGroup} {("a rejoint l'organisation de l'événement")} {Event}
+          {SupportGroup} {("Se unió a la organización de la acción")} {Event}
         </GenericCardContainer>
       );
     case "cancelled-event":
       return (
         <GenericCardContainer {...props}>
-          {("L'événement")} {Event} {("a été annulé.")}
+          {("La acción")} {Event} {("ha sido cancelado.")}
         </GenericCardContainer>
       );
     case "transferred-group-member":
       return (
         <GenericCardContainer {...props}>
-          {("Vous avez été transféré·e de")} &laquo;&nbsp;{meta && meta.oldGroup}
-          &nbsp;&raquo; {("et avez rejoint")} {SupportGroup}.<br />
-          {("Votre nouveau groupe vous attend !")}
+          {("Has sido transferido de")} &laquo;&nbsp;{meta && meta.oldGroup}
+          &nbsp;&raquo; {("y se unió")} {SupportGroup}.<br />
+          {("¡Tu nuevo grupo te está esperando!")}
         </GenericCardContainer>
       );
     case "new-members-through-transfer":
       return (
         <GenericCardContainer {...props}>
           {meta && meta.transferredMemberships} {"Participantes"}
-          {meta && meta.transferredMemberships > 0 ? "s" : ""} {("ont rejoint")}{" "}
+          {meta && meta.transferredMemberships > 0 ? "s" : ""} {("nos unimos")}{" "}
           <Link
             to={routeConfig.groupSettings.getLink({ groupPk: group.id })}
             backLink="activities"
           >
             {group.name}
           </Link>{" "}
-          {("suite à un transfert depuis")} &laquo;&nbsp;
+          {(" tras una transferencia de ")} &laquo;&nbsp;
           {meta && meta.oldGroup}&nbsp;&raquo;.
         </GenericCardContainer>
       );
     case "group-creation-confirmation": {
       return (
         <GenericCardContainer {...props}>
-          {SupportGroup} {("est en ligne !")}<br />
-          {("En tant qu'animateur·ice, vous pouvez gérer")} {SupportGroup} {("à tout moment depuis le bouton &laquo;&nbsp;Gestion&nbsp;&raquo; ou bien en cliquant sur")}{" "}
+          {SupportGroup} {("ya está en línea !")}<br />
+          {("Como facilitador(a), puedes gestionar")} {SupportGroup} {("n todo momento mediante el botón  «  Gestión »  o haciendo clic aquí.")}{" "}
           <Link
             to={routeConfig.groupSettings.getLink({ groupPk: group.id })}
             backLink="activities"
           >
-            {("ce lien")}
+            {("este enlace")}
           </Link>
           .<br />
-          {("Nous vous conseillons de lire ces conseils à destination des nouveaux animateur·ice·s.")}
+          {("Te recomendamos leer los consejos destinados a nuev@s facilitadores ")}
         </GenericCardContainer>
       );
     }

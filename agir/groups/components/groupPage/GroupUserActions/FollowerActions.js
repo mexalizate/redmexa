@@ -66,7 +66,7 @@ const FollowerActions = ({ isLoading, onJoin, onEdit, onQuit }) => {
         disabled={isLoading}
         icon="plus"
       >
-        {_("Rejoindre")}
+        Unirse
       </Button>
     </StyledWrapper>
   );

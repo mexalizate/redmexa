@@ -34,7 +34,7 @@ Default.args = {
 export const WithHelp = Template.bind({});
 WithHelp.args = {
   ...Default.args,
-  helpText: _("Veuillez choisir une valeur entre 0 et 500"),
+  helpText: "Indica un valor entre 1 y 500",
 };
 
 export const WithValue = Template.bind({});

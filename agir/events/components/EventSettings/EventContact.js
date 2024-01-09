@@ -67,7 +67,7 @@ const EventContact = (props) => {
       setErrors(res.error?.contact);
       return;
     }
-    sendToast("Informations mises à jour", "SUCCESS", { autoClose: true });
+    sendToast("Información actualizada", "SUCCESS", { autoClose: true });
     mutateAPI((event) => {
       return { ...event, ...res.data };
     });

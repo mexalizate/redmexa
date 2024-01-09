@@ -246,12 +246,12 @@ const MessageStep = (props) => {
           {event && !!event.name && (
             <em>
               {event.id
-                ? `À propos de ${event.name}${
+                ? `Relacionada con ${event.name}${
                     event.startTime
                       ? _(" du ") + displayShortDate(event.startTime)
                       : ""
                   }`
-                : _(`Aucun événément associé`)}
+                : _(` Sin relación con una acción`)}
               &ensp;
               <button disabled={disabled} onClick={onClearEvent}>
                 {_("Changer")}

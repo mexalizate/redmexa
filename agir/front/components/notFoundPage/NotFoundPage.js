@@ -25,8 +25,8 @@ const OfflineBlock = styled.div`
 
 export const NotFoundPage = ({
   hasTopBar = true,
-  title = "Page",
-  subtitle = "Cette page",
+  title = "Página",
+  subtitle = "Está página",
   reloadOnReconnection = true,
 }) => {
   const isOffline = useIsOffline();
@@ -53,7 +53,7 @@ export const NotFoundPage = ({
             height="175"
             style={{ marginBottom: "2rem" }}
           />
-          <h2 style={{ marginBottom: ".5rem" }}>{_("Pas de connexion")}</h2>
+          <h2 style={{ marginBottom: ".5rem" }}>No hay conexión</h2>
           <p>
             {_("Connectez-vous à un")}
             <br />

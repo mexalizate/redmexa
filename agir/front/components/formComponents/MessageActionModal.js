@@ -1,3 +1,4 @@
+import _ from "gettext";
 import PropTypes from "prop-types";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
@@ -67,7 +68,7 @@ const Steps = {
         <StyledModalBody>
           <h4>{_("Supprimer ce message ?")}</h4>
           <p>
-            {_("Ce message")} <strong>{_("disparaîtra")}</strong> {_("de la discussion et plus personne ne pourra le voir.")}
+            Este mensaje <strong>desaparecerá</strong> {_("de la discussion et plus personne ne pourra le voir.")}
           </p>
           <p>
             {_("Il n'est pas possible d'annuler cette opération. Tout abus sera sanctionné.")}

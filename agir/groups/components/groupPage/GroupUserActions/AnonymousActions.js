@@ -45,7 +45,7 @@ const AnonymousActions = ({ isOpen }) => {
         }}
         icon="plus"
       >
-        Rejoindre
+        Unirse
       </Button>
       {isOpen && (
         <Button

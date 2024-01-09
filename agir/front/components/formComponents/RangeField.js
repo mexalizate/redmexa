@@ -292,7 +292,7 @@ const RangeField = (props) => {
   return (
     <StyledField
       tabIndex="1"
-      title={`Veuillez choisir une valeur entre ${min} et ${max}`}
+      title={`Indica un valor entre ${min} et ${max}`}
       className={className}
       style={style}
     >

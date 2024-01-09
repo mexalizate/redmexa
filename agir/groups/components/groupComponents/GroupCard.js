@@ -119,9 +119,9 @@ const GroupCard = ({
             {eventCount || membersCount
               ? [
                   eventCount &&
-                    `${eventCount} événement${eventCount > 1 ? "s" : ""}`,
+                    `${eventCount} acci${eventCount > 1 ? "ones" : "ón"}`,
                   membersCount &&
-                    `${membersCount} membre${membersCount > 1 ? "s" : ""}`,
+                    `${membersCount} participante${membersCount > 1 ? "s" : ""}`,
                 ]
                   .filter(Boolean)
                   .join(" · ")
@@ -159,7 +159,7 @@ const GroupCard = ({
             routeParams={{ groupPk: id }}
             backLink={backLink}
           >
-            {_("Rejoindre")}
+            Unirse
             <Hide as="span" $under={800}>
               &nbsp;{/*_("le groupe")*/} al Grupo
             </Hide>
@@ -184,7 +184,7 @@ const GroupCard = ({
             backLink={backLink}
             icon="settings"
           >
-           {_(" Gestion")}
+           Gestión
           </Button>
         )}
       </StyledRow>

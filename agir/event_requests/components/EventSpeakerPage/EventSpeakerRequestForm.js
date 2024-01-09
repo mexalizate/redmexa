@@ -59,7 +59,7 @@ const EventSpeakerRequestForm = (props) => {
         });
         return;
       }
-      sendToast(_("Informations mises à jour"), "SUCCESS", {
+      sendToast("Información actualizada", "SUCCESS", {
         autoClose: true,
       });
       result.data && setRequest(result.data);
@@ -114,7 +114,7 @@ const EventSpeakerRequestForm = (props) => {
           ? _("Enregistré")
           : isNew
           ? _("Enregistrer")
-          : _("Mettre à jour")}
+          : "Actualizar"}
       </Button>
     </StyledForm>
   );

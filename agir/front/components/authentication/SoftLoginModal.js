@@ -114,22 +114,19 @@ const SoftLoginModalContent = (props) => {
   if (type === LOGGED_IN_TO_SOFT_LOGIN_CONNECTION) {
     return (
       <StyledModalContent>
-        <h3>{_("Validez votre identité")}</h3>
+        <h3>Confirma tu identidad</h3>
         <Spacer size="0.625rem" />
         <p>
-          <strong>{_("Vous êtes déjà connecté en tant que :")}</strong>
+          <strong>Estás conectad@ como:</strong>
           <br />
           {username} <em>({user.email})</em>
         </p>
         <p>
-          <strong>
-           {(" Vous avez cliqué sur un lien qui est sur le point de vous connecter") }
-            {_("au compte de :")}
-          </strong>
+          <strong>El enlace que utilizaste busca conectarte a la cuenta de: </strong>
           <br />
           {softLoginUserName} <em>({softLoginUserEmail})</em>
         </p>
-        <p>{_("Validez votre identité :")}</p>
+        <p>Confirma tu identidad :</p>
         <Spacer size=".5rem" />
         <footer>
           <Button wrap onClick={onClose}>
