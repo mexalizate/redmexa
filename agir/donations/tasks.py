@@ -58,7 +58,7 @@ def send_monthly_donation_confirmation_email(
     data,
     confirmation_view_name="monthly_donation_confirm",
     email_template="donations/confirmation_email.html",
-    from_email=settings.EMAIL_FROM_LFI,
+    from_email=settings.EMAIL_FROM_CAMPAIGN,
 ):
     data = data.copy()
     email = data.pop("email")

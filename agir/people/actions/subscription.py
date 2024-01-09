@@ -71,7 +71,7 @@ SUBSCRIPTIONS_EMAILS = {
         "confirmation": SubscriptionMessageInfo(
             code="SUBSCRIPTION__CAMPAIGN__CONFIRMATION_MESSAGE",
             subject="Confirma tu email para ingresar a Claudialízate",
-            from_email=settings.EMAIL_FROM_LFI,
+            from_email=settings.EMAIL_FROM_CAMPAIGN,
         ),
         "welcome": SubscriptionMessageInfo(
             "SUBSCRIPTION__CAMPAIGN__WELCOME_MESSAGE",
@@ -82,7 +82,7 @@ SUBSCRIPTIONS_EMAILS = {
         "confirmation": SubscriptionMessageInfo(
             code="SUBSCRIPTION__ACTIVIST__CONFIRMATION_MESSAGE",
             subject="Confirmez votre e-mail pour valider votre signature !",
-            from_email=settings.EMAIL_FROM_MELENCHON_2022,
+            from_email=settings.EMAIL_FROM_ACTIVIST,
         )
     },
     SUBSCRIPTION_TYPE_EXTERNAL: {},

@@ -219,7 +219,7 @@ class Command(LoggingCommand):
                 message = EmailMessage(
                     subject=f"Export des paiements",
                     body=MESSAGE_BODY,
-                    from_email=settings.EMAIL_FROM_LFI,
+                    from_email=settings.EMAIL_FROM_CAMPAIGN,
                     to=[e],
                     connection=connection,
                 )

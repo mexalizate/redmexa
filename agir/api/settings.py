@@ -432,13 +432,8 @@ EMAIL_TEMPLATES = {
 }
 
 EMAIL_FROM = os.environ.get("EMAIL_FROM", "Claudialízate <noreply@preprod.redmexa.com>")
-EMAIL_FROM_LFI = os.environ.get(
-    "EMAIL_FROM_LFI",
-    "La France insoumise <nepasrepondre@preprod.redmexa.com>",
-)
-EMAIL_FROM_MELENCHON_2022 = os.environ.get(
-    "EMAIL_FROM_MELENCHON_2022", "Mélenchon 2022 <nepasrepondre@melenchon2022.fr>"
-)
+EMAIL_FROM_CAMPAIGN = os.environ.get("EMAIL_FROM_CAMPAIGN", EMAIL_FROM)
+EMAIL_FROM_ACTIVIST = os.environ.get("EMAIL_FROM_ACTIVIST", EMAIL_FROM)
 EMAIL_SECRETARIAT = os.environ.get("EMAIL_SECRETARIAT", "nospam@preprod.redmexa.com")
 EMAIL_EQUIPE_FINANCE = os.environ.get(
     "EMAIL_EQUIPE_FINANCE", "nospam@preprod.redmexa.com"
