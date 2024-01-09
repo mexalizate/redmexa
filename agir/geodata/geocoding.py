@@ -3,6 +3,7 @@ import re
 
 import requests
 from data_france.models import CodePostal, Commune
+from django.conf import settings
 from django.contrib.gis.geos import Point
 from unidecode import unidecode
 
@@ -13,12 +14,13 @@ from agir.lib.models import LocationMixin
 logger = logging.getLogger(__name__)
 
 
-NON_DIGIT = re.compile("[^\d]+")
-NON_WORD = re.compile("[^\w]+")
-MULTIPLE_SPACES = re.compile("\s\s+")
+NON_DIGIT = re.compile(r"[^\d]+")
+NON_WORD = re.compile(r"[^\w]+")
+MULTIPLE_SPACES = re.compile(r"\s\s+")
 BAN_ENDPOINT = "https://api-adresse.data.gouv.fr/search"
 NOMINATIM_ENDPOINT = "https://nominatim.openstreetmap.org/"
 
+GMAPS_ENDPOINT = "https://maps.googleapis.com/maps/api/geocode/json"
 
 FRENCH_COUNTRY_CODES = [
     "FR",  # France métropolitaine
@@ -346,30 +348,28 @@ def geocode_internationally(item):
 
     :return: True if the item has changed (and should be saved), False in the other case
     """
-    q = " ".join(
-        l
-        for l in [
-            item.location_address1,
-            item.location_address2,
-            item.location_zip,
-            item.location_city,
-            item.location_state,
-        ]
-        if l
-    )
+    address = " ".join([item.location_address1, item.location_address2]).strip()
+    components = {
+        "postal_code": item.location_zip,
+        "country": item.location_country,
+        "locality": item.location_city,
+        "administrative_area": item.location_state,
+    }
+    components = "|".join(f"{k}:{v}" for k, v in components.items() if v)
 
-    query = {"format": "json", "q": q, "limit": 1}
+    query = {"key": settings.GOOGLE_MAPS_KEY}
+    if address:
+        query["address"] = address
 
-    if item.location_country:
-        query["countrycodes"] = str(item.location_country)
+    if components:
+        query["components"] = components
 
-    display_address = f"{q} ({item.location_country})"
+    display_address = f"{address} {components}"
 
     try:
         res = requests.get(
-            NOMINATIM_ENDPOINT,
+            GMAPS_ENDPOINT,
             params=query,
-            headers={"User-Agent": "RedMexa (alertas@redmexa.com)"},
         )
         res.raise_for_status()
         results = res.json()
@@ -386,8 +386,10 @@ def geocode_internationally(item):
         )
         raise
 
-    if results:
-        item.coordinates = Point(float(results[0]["lon"]), float(results[0]["lat"]))
+    if results["results"] and "geometry" in results["results"][0]:
+        location = results["results"][0]["geometry"]["location"]
+
+        item.coordinates = Point(float(location["lng"]), float(location["lat"]))
         item.coordinates_type = LocationMixin.COORDINATES_UNKNOWN_PRECISION
         return True
     else:
