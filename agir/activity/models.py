@@ -404,7 +404,8 @@ class Announcement(BaseAPIResource):
         return f"« {self.title} »"
 
     class Meta:
-        verbose_name = _("Annonce")
+        verbose_name = "Notificación"
+        verbose_name_plural = "Notificaciones"
         indexes = (
             models.Index(
                 fields=("-start_date", "end_date"), name="announcement_date_index"

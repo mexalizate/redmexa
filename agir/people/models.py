@@ -725,19 +725,19 @@ class Person(
         nom = self.first_name
 
         if nom:
-            cher = genrer(self.gender, "Cher", "Chère", "Chèr⋅e")
+            cher = genrer(self.gender, _("Cher"), _("Chère"), _("Chèr⋅e"))
             return f"{cher} {nom}"
 
-        return "Bonjour"
+        return _("Bonjour")
 
     @property
     def formule_adresse_insoumise(self):
-        cher = genrer(self.gender, "Cher", "Chère", "Chèr⋅e")
+        cher = genrer(self.gender, _("Cher"), _("Chère"), _("Chèr⋅e"))
 
         if self.first_name and self.last_name:
             designation = self.get_full_name()
         else:
-            designation = genrer(self.gender, "insoumis⋅e")
+            designation = genrer(self.gender, _("insoumis⋅e"))
 
         return f"{cher} {designation}"
 

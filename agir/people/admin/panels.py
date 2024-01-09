@@ -920,6 +920,8 @@ class PersonFormSubmissionAdmin(admin.ModelAdmin):
 
 class Contact(Person):
     class Meta:
+        verbose_name = "Contacto"
+        verbose_name_plural = "Contactos"
         proxy = True
 
 
@@ -997,8 +999,8 @@ class ContactAdmin(admin.ModelAdmin):
 class Liaison(Person):
     class Meta:
         proxy = True
-        verbose_name = "correspondant·e d'immeuble et de quartier"
-        verbose_name_plural = "correspondant·es d'immeuble et de quartier"
+        verbose_name = "Corresponsal de Edificio y Barrio"
+        verbose_name_plural = "Corresponsales de Edificio y Barrio"
 
 
 @admin.register(Liaison)

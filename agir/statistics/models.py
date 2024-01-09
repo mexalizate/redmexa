@@ -160,7 +160,7 @@ class AbsoluteStatistics(TimeStampedModel):
         return f"Statistiques du {self.date}"
 
     class Meta:
-        verbose_name = "statistique absolue"
-        verbose_name_plural = "statistiques absolues"
+        verbose_name = "estadísticas absolutas"
+        verbose_name_plural = "estadísticas absolutas"
         ordering = ("-date",)
         get_latest_by = "date"

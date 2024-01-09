@@ -160,8 +160,8 @@ class Document(ModeleGestionMixin, TimeStampedModel):
             self.save(update_fields=["numero_piece"])
 
     class Meta:
-        verbose_name = _("Document justificatif")
-        verbose_name_plural = _("Documents justificatifs")
+        verbose_name = "Comprobante"
+        verbose_name_plural = "Comprobantes"
 
 
 @reversion.register()

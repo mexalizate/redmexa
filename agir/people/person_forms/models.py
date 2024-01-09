@@ -322,3 +322,7 @@ class PersonFormSubmission(
 
     def __str__(self):
         return f"{self.form.title} : réponse de {str(self.person)}"
+
+    class Meta:
+        verbose_name = "Formulario enviado por personas"
+        verbose_name_plural = "Formularios enviados por personas"

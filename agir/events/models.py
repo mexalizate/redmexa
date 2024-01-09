@@ -1222,7 +1222,8 @@ class EventSubtype(BaseSubtype):
 
 class EventTag(AbstractLabel):
     class Meta:
-        verbose_name = "tag"
+        verbose_name = "Estiqueta"
+        verbose_name_plural = "Estiquetas"
 
 
 class CalendarManager(models.Manager):
@@ -1415,8 +1416,8 @@ class RSVP(ExportModelOperationsMixin("rsvp"), TimeStampedModel):
     )
 
     class Meta:
-        verbose_name = "RSVP"
-        verbose_name_plural = "RSVP"
+        verbose_name = "Confirmaciones (RSVP)"
+        verbose_name_plural = "Confirmaciones (RSVP)"
         unique_together = ("event", "person")
 
     def __str__(self):
@@ -1574,7 +1575,8 @@ class JitsiMeeting(models.Model):
         return self.room_name
 
     class Meta:
-        verbose_name = "Visio-conférence"
+        verbose_name = "Videoconferencia"
+        verbose_name_plural = "Videoconferencias"
 
 
 class Invitation(TimeStampedModel):

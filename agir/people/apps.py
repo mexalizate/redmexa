@@ -3,7 +3,7 @@ from django.apps import AppConfig
 
 class PeopleConfig(AppConfig):
     name = "agir.people"
-    verbose_name = "Personnes"
+    verbose_name = "Personas"
 
     def ready(self):
         from . import signals

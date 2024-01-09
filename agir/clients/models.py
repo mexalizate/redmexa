@@ -116,7 +116,7 @@ class Client(BaseAPIResource, AbstractApplication):
 
     class Meta:
         verbose_name = "Client"
-        verbose_name_plural = "Clients"
+        verbose_name_plural = "Clientes"
         ordering = ("name",)
         default_permissions = ("add", "change", "delete", "view")
 
