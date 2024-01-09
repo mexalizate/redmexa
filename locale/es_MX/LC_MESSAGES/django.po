@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-08 04:07-0600\n"
+"POT-Creation-Date: 2024-01-08 20:14-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -379,7 +379,7 @@ msgstr "Type"
 #: agir/activity/models.py:237 agir/checks/admin/forms.py:62
 #: agir/checks/templates/admin/checks/checkpayment/validate_check.html:32
 #: agir/donations/models.py:397 agir/events/admin/panels.py:54
-#: agir/events/models.py:1398 agir/events/models.py:1448
+#: agir/events/models.py:1399 agir/events/models.py:1449
 #: agir/groups/admin/panels.py:369 agir/groups/views/management_views.py:516
 msgid "Statut"
 msgstr "Estado"
@@ -465,132 +465,128 @@ msgid ""
 "dans l'ordre anti-chronologique (par date de début)"
 msgstr ""
 
-#: agir/activity/models.py:407
-msgid "Annonce"
-msgstr "Notificación"
-
-#: agir/activity/models.py:418 agir/donations/models.py:381
+#: agir/activity/models.py:419 agir/donations/models.py:381
 #: agir/gestion/admin/panels.py:932 agir/people/person_forms/models.py:54
 msgid "Titre"
 msgstr "Título"
 
-#: agir/activity/models.py:422
+#: agir/activity/models.py:423
 msgid "Max. 50 caractères."
 msgstr ""
 
-#: agir/activity/models.py:426
+#: agir/activity/models.py:427
 #, fuzzy
 #| msgid "Sous-type"
 msgid "Sous-titre"
 msgstr "Sub-tipo"
 
-#: agir/activity/models.py:431
+#: agir/activity/models.py:432
 msgid "Max. 60 caractères. Le sous-titre s'affichera uniquement sur iOS."
 msgstr ""
 
-#: agir/activity/models.py:436 agir/msgs/admin.py:201 agir/msgs/models.py:150
+#: agir/activity/models.py:437 agir/msgs/admin.py:201 agir/msgs/models.py:150
 msgid "Message"
 msgstr ""
 
-#: agir/activity/models.py:439
+#: agir/activity/models.py:440
 msgid ""
 "Longueur max. conséillée env. 150 caractères sur iOS et 240 sur Android."
 msgstr ""
 
-#: agir/activity/models.py:444
+#: agir/activity/models.py:445
 msgid "Lien"
 msgstr ""
 
-#: agir/activity/models.py:446
+#: agir/activity/models.py:447
 msgid "Le lien à ouvrir lors du clic sur la notification."
 msgstr ""
 
-#: agir/activity/models.py:450
+#: agir/activity/models.py:451
 #, fuzzy
 #| msgid "image"
 msgid "Image"
 msgstr "imagen"
 
-#: agir/activity/models.py:461
+#: agir/activity/models.py:462
 msgid ""
 "Utiliser une image au format JPEG avec un ratio de 2:1 et de maximum 5 MB."
 msgstr ""
 
-#: agir/activity/models.py:466
+#: agir/activity/models.py:467
 #, fuzzy
 #| msgid "Identifiant anonyme"
 msgid "Idéntifiant de groupe"
 msgstr "Identificador anónimo"
 
-#: agir/activity/models.py:471
+#: agir/activity/models.py:472
 msgid ""
 "Max. 64 caractères. Si indiqué, permet de regrouper les notifications avec "
 "le même identifiant de groupe ensemble."
 msgstr ""
 
-#: agir/activity/models.py:477
+#: agir/activity/models.py:478
 msgid "Durée de vie (en secondes)"
 msgstr ""
 
-#: agir/activity/models.py:485
+#: agir/activity/models.py:486
 msgid ""
 "Max. 28 jours. La notification ne sera pas reçue si l'appareil n'est pas "
 "connecté au réseau pendant le temps indiqué."
 msgstr ""
 
-#: agir/activity/models.py:492 agir/activity/models.py:503
+#: agir/activity/models.py:493 agir/activity/models.py:504
 msgid "Segment"
 msgstr ""
 
-#: agir/activity/models.py:498
+#: agir/activity/models.py:499
 #, fuzzy
 #| msgid "Segment des personnes auquel cet événement sera suggéré."
 msgid "Segment des personnes auquel ce message sera envoyé."
 msgstr "Segmento de las personas a las que se sugerirá este evento."
 
-#: agir/activity/models.py:510
+#: agir/activity/models.py:511
 #, fuzzy
 #| msgid "Segment des personnes auquel cet événement sera suggéré."
 msgid "Segment des personnes auxquelles envoyer des notifications de test"
 msgstr "Segmento de las personas a las que se sugerirá este evento."
 
-#: agir/activity/models.py:515
+#: agir/activity/models.py:516
 msgid "Envoyer aux appareils iOS"
 msgstr ""
 
-#: agir/activity/models.py:519
+#: agir/activity/models.py:520
 msgid "Envoyer aux appareils Android"
 msgstr ""
 
-#: agir/activity/models.py:523
+#: agir/activity/models.py:524
 msgid "Résultats de l'envoi"
 msgstr ""
 
-#: agir/activity/models.py:526
+#: agir/activity/models.py:527
 #, fuzzy
 #| msgid "Date de naissance"
 msgid "Date d'envoi"
 msgstr "Fecha de nacimiento"
 
-#: agir/activity/models.py:696
+#: agir/activity/models.py:697
 #, fuzzy
 #| msgid "Votre numéro a déjà été validé."
 msgid "Cette annonce a déjà été envoyée"
 msgstr "Tu número de celular ya fue validado."
 
-#: agir/activity/models.py:702
+#: agir/activity/models.py:703
 msgid "Aucun destinataire n'a été trouvé pour le segment spécifié"
 msgstr ""
 
-#: agir/activity/models.py:730
+#: agir/activity/models.py:731
 msgid "Aucun segment de test n'a été défini."
 msgstr ""
 
-#: agir/activity/models.py:741
+#: agir/activity/models.py:742
 msgid "Annonce push"
 msgstr "Notificación push"
 
-#: agir/activity/models.py:742
+#: agir/activity/models.py:743
 msgid "Annonces push"
 msgstr "Notificaciones push"
 
@@ -701,36 +697,38 @@ msgstr ""
 #, fuzzy
 #| msgid "Paramètres de connexion"
 msgid "Votre code de connexion"
-msgstr "Parámetros de conexión"
+msgstr "Tu código de conexión:"
 
 #: agir/authentication/templates/authentication/login_email.html:11
+#: agir/people/models.py:731
 msgid "Bonjour"
-msgstr ""
+msgstr "Hola"
 
 #: agir/authentication/templates/authentication/login_email.html:12
 msgid "Vous nous avez demandé de vous connecter à Action Populaire"
 msgstr ""
+"Acabas de solicitar acceso a Claudialízate. Usa el siguiente código para "
+"conectarte:"
 
-#: agir/authentication/templates/authentication/login_email.html:13
-msgid ""
-"C'est très simple ! Entrez le code suivant dans la page de connexion où vous "
-"étiez il y a un instant"
-msgstr ""
-
-#: agir/authentication/templates/authentication/login_email.html:19
+#: agir/authentication/templates/authentication/login_email.html:18
 #, python-format
 msgid ""
-"\n"
-"  <p>Remarque : ce code est valable jusqu'à %(expiry_time)s et ne peut être "
-"utilisé qu'une seule fois.</p>\n"
-"  <p>Amitiés<br>L'équipe d'Action Populaire</p>\n"
+"<p>Remarque : ce code est valable jusqu'à %(expiry_time)s et ne peut être "
+"utilisé qu'une seule fois.</p>"
 msgstr ""
+"<p>Ojo: este código expira a las %(expiry_time)s y solo puede usarse una vez."
+"</p>"
 
-#: agir/authentication/templates/authentication/login_email.html:28
+#: agir/authentication/templates/authentication/login_email.html:19
+#: agir/events/templates/events/email/rsvp_confirmation.html:72
+msgid "<p>Amitiés<br>L'équipe d'Action Populaire</p>"
+msgstr "<p>Saludos,<br>El equipo de Claudialízate</p>"
+
+#: agir/authentication/templates/authentication/login_email.html:25
 msgid ""
 "Vous n'êtes pas à l'origine de cette demande de connexion ? Ignorez "
 "simplement ce message"
-msgstr ""
+msgstr "Si no solicitaste este código, puedes ignorar este mensaje"
 
 #: agir/authentication/view_mixins.py:44
 msgid ""
@@ -1397,7 +1395,7 @@ msgstr "Título del documento"
 msgid "Type de document"
 msgstr "Tipo de documento"
 
-#: agir/donations/models.py:700 agir/events/models.py:1527
+#: agir/donations/models.py:700 agir/events/models.py:1528
 #: agir/gestion/admin/forms.py:293
 msgid "Fichier"
 msgstr "Archivo"
@@ -1684,7 +1682,7 @@ msgid "Adresse e-mail"
 msgstr "email"
 
 #: agir/elections/serializers.py:147 agir/gestion/models/depenses.py:598
-#: agir/gestion/models/depenses.py:728 agir/municipales/forms.py:104
+#: agir/gestion/models/depenses.py:729 agir/municipales/forms.py:104
 #, fuzzy
 #| msgid "Numéro de téléphone du contact"
 msgid "Numéro de téléphone"
@@ -2600,40 +2598,40 @@ msgstr "Sub-tipo de evento"
 msgid "Sous-types d'événement"
 msgstr "Sub-tipos de evento"
 
-#: agir/events/models.py:1239
+#: agir/events/models.py:1240
 msgid "titre"
 msgstr "título"
 
-#: agir/events/models.py:1240
+#: agir/events/models.py:1241
 msgid "slug"
 msgstr "slug"
 
-#: agir/events/models.py:1241
+#: agir/events/models.py:1242
 msgid "Calendrier archivé"
 msgstr "Calendario archivado"
 
-#: agir/events/models.py:1256
+#: agir/events/models.py:1257
 msgid "Les utilisateurs peuvent ajouter des événements"
 msgstr "L@s usuari@s pueden agregar eventos"
 
-#: agir/events/models.py:1260 agir/lib/models.py:319 agir/lib/models.py:506
+#: agir/events/models.py:1261 agir/lib/models.py:319 agir/lib/models.py:506
 #: agir/people/models.py:954
 msgid "description"
 msgstr "descripción"
 
-#: agir/events/models.py:1262
+#: agir/events/models.py:1263
 msgid "Saisissez une description (HTML accepté)"
 msgstr "Ingresa una descripción (HTML aceptado)"
 
-#: agir/events/models.py:1266
+#: agir/events/models.py:1267
 msgid "bannière"
 msgstr "banner"
 
-#: agir/events/models.py:1275
+#: agir/events/models.py:1276
 msgid "Agenda"
 msgstr "Agenda"
 
-#: agir/events/models.py:1298
+#: agir/events/models.py:1299
 msgid ""
 "Impossible d'utiliser ce calendrier comme parent : cela excéderait la "
 "profondeur maximale autorisée."
@@ -2641,88 +2639,88 @@ msgstr ""
 "Imposible usar este calendario como parent : excedería la profundidad máxima "
 "autorizada."
 
-#: agir/events/models.py:1315
+#: agir/events/models.py:1316
 msgid "Élément de calendrier"
 msgstr "Elemento del calendario"
 
-#: agir/events/models.py:1339
+#: agir/events/models.py:1340
 msgid "Groupe participant"
 msgstr "Grupo participante"
 
-#: agir/events/models.py:1340
+#: agir/events/models.py:1341
 msgid "Groupes participants"
 msgstr "Grupos participantes"
 
-#: agir/events/models.py:1345
+#: agir/events/models.py:1346
 #, python-brace-format
 msgid "{group} participe à l'événement --> {event} | Par {organizer}"
 msgstr "{group} participa en el evento --> {event} | Por {organizer}"
 
-#: agir/events/models.py:1360
+#: agir/events/models.py:1361
 msgid "En attente du paiement"
 msgstr "En espera del pago"
 
-#: agir/events/models.py:1361
+#: agir/events/models.py:1362
 msgid "Inscription confirmée"
 msgstr "Inscripción confirmada"
 
-#: agir/events/models.py:1362
+#: agir/events/models.py:1363
 msgid "Inscription annulée"
 msgstr "Inscripción anulada"
 
-#: agir/events/models.py:1374
+#: agir/events/models.py:1375
 msgid "nombre d'invités supplémentaires"
 msgstr "número de invitados adicionales"
 
-#: agir/events/models.py:1406 agir/events/models.py:1493
+#: agir/events/models.py:1407 agir/events/models.py:1494
 msgid "Recevoir les notifications"
 msgstr "Recibir las notificaciones"
 
-#: agir/events/models.py:1431
+#: agir/events/models.py:1432
 msgid " paiement(s) en attente"
 msgstr " pago(s) en espera"
 
-#: agir/events/models.py:1468
+#: agir/events/models.py:1469
 msgid "Créateur de l'événement"
 msgstr "Creador(a) del evento"
 
-#: agir/events/models.py:1506
+#: agir/events/models.py:1507
 msgid "Le groupe doit être un groupe que vous gérez."
 msgstr "El grupo debe ser un grupo que gestionas"
 
-#: agir/events/models.py:1534
+#: agir/events/models.py:1535
 msgid "légende"
 msgstr "leyenda"
 
-#: agir/events/models.py:1554
+#: agir/events/models.py:1555
 msgid "Seulement des lettres minuscules, des chiffres, des _ et des -."
 msgstr "Únicamnete letras minúsculas, cifras, _ y -."
 
-#: agir/events/models.py:1566
+#: agir/events/models.py:1567
 msgid "Début effectif"
 msgstr "Inicio efectivo"
 
-#: agir/events/models.py:1567
+#: agir/events/models.py:1568
 msgid "Fin effective"
 msgstr "Fin efectivo"
 
-#: agir/events/models.py:1586
+#: agir/events/models.py:1588
 msgid "En attente"
 msgstr "En espera"
 
-#: agir/events/models.py:1587
+#: agir/events/models.py:1589
 msgid "Acceptée"
 msgstr "Aceptada"
 
-#: agir/events/models.py:1588
+#: agir/events/models.py:1590
 msgid "Refusée"
 msgstr "Rechazada"
 
-#: agir/events/models.py:1594
+#: agir/events/models.py:1596
 msgid "Personne qui émet l'invitation"
 msgstr "Persona que realiza la invitación"
 
-#: agir/events/models.py:1602
+#: agir/events/models.py:1604
 msgid "Personne qui répond à l'invitation"
 msgstr "Persona que responde a la invitación"
 
@@ -2798,10 +2796,6 @@ msgstr "Agregar un(a) miembro"
 msgid "Ajouter un participant payant"
 msgstr "Agregar un participante pagador"
 
-#: agir/events/templates/admin/events/event/change_list.html:7
-msgid "Exporter un résumé"
-msgstr ""
-
 #: agir/events/templates/admin/events/event_summary.html:5
 #, fuzzy
 #| msgid "Créateur de l'événement"
@@ -2821,7 +2815,7 @@ msgstr ""
 #: agir/events/templates/events/payment_confirmation.html:10
 #: agir/events/templates/events/quit.html:18
 #: agir/events/templates/events/rsvp_event.html:21
-#: agir/events/templates/events/upload_event_image.html:19
+#: agir/events/templates/events/upload_event_image.html:20
 #, fuzzy
 #| msgid "le lieu de l'événement"
 msgid "Page publique de l'événement"
@@ -3051,10 +3045,6 @@ msgstr ""
 msgid ""
 "Pour toute demande ou information, vous pouvez contacter <strong>"
 "%(event_contact_name|safe)s</strong> par e-mail à l'adress&nbsp;:"
-msgstr ""
-
-#: agir/events/templates/events/email/rsvp_confirmation.html:72
-msgid "<p>Amitiés<br>L'équipe d'Action Populaire</p>"
 msgstr ""
 
 #: agir/events/templates/events/event_search.html:17
@@ -3362,7 +3352,7 @@ msgstr ""
 msgid "Ajouter une image pour"
 msgstr "Agregar mi imagen"
 
-#: agir/events/templates/events/upload_event_image.html:30
+#: agir/events/templates/events/upload_event_image.html:31
 #, fuzzy
 #| msgid "Ajouter un organisateur à l'événement: %s"
 msgid "Ajouter un image pour l'événement"
@@ -3936,14 +3926,6 @@ msgid ""
 "plusieurs comptes."
 msgstr ""
 
-#: agir/gestion/admin/inlines.py:22 agir/gestion/models/documents.py:163
-msgid "Document justificatif"
-msgstr ""
-
-#: agir/gestion/admin/inlines.py:23 agir/gestion/models/documents.py:164
-msgid "Documents justificatifs"
-msgstr ""
-
 #: agir/gestion/admin/inlines.py:55
 msgid "<strong>Fichier manquant</strong>"
 msgstr ""
@@ -3971,15 +3953,6 @@ msgstr "Número de contacto"
 #| msgid "Dates"
 msgid "Date"
 msgstr "Fechas"
-
-#: agir/gestion/admin/inlines.py:98 agir/gestion/admin/inlines.py:351
-#: agir/gestion/models/depenses.py:393
-msgid "Dépense"
-msgstr ""
-
-#: agir/gestion/admin/inlines.py:99
-msgid "Dépenses du projet"
-msgstr ""
 
 #: agir/gestion/admin/inlines.py:167
 #, fuzzy
@@ -4011,6 +3984,10 @@ msgstr ""
 
 #: agir/gestion/admin/inlines.py:311
 msgid "Règlements clos"
+msgstr ""
+
+#: agir/gestion/admin/inlines.py:351
+msgid "Dépense"
 msgstr ""
 
 #: agir/gestion/admin/panels.py:70
@@ -4169,7 +4146,7 @@ msgstr ""
 msgid "Pour les paiements via la plateforme"
 msgstr ""
 
-#: agir/gestion/admin/panels.py:1022 agir/gestion/models/common.py:186
+#: agir/gestion/admin/panels.py:1022
 #, fuzzy
 #| msgid "Compte-rendu"
 msgid "Compte"
@@ -4279,7 +4256,7 @@ msgid "Nom complet du compte"
 msgstr ""
 
 #: agir/gestion/models/common.py:126 agir/gestion/models/depenses.py:194
-#: agir/gestion/models/depenses.py:723
+#: agir/gestion/models/depenses.py:724
 #: agir/groups/views/management_views.py:520
 #: agir/people/person_forms/models.py:82
 msgid "Description"
@@ -4332,12 +4309,6 @@ msgstr ""
 #: agir/gestion/models/common.py:169
 msgid "Le BIC utilisé comme créditeur pour un virement vers ce compte."
 msgstr ""
-
-#: agir/gestion/models/common.py:187
-#, fuzzy
-#| msgid "Compte-rendu"
-msgid "Comptes"
-msgstr "Resumen"
 
 #: agir/gestion/models/common.py:192
 msgid ""
@@ -4590,10 +4561,6 @@ msgstr ""
 msgid "Niveau d'accès"
 msgstr ""
 
-#: agir/gestion/models/depenses.py:394
-msgid "Dépenses"
-msgstr ""
-
 #: agir/gestion/models/depenses.py:401
 msgid "Réglé"
 msgstr ""
@@ -4735,21 +4702,21 @@ msgstr ""
 msgid "Code INSEE du lieu de dépense"
 msgstr ""
 
-#: agir/gestion/models/depenses.py:591 agir/gestion/models/depenses.py:721
+#: agir/gestion/models/depenses.py:591 agir/gestion/models/depenses.py:722
 #, fuzzy
 #| msgid "nom du lieu"
 msgid "Nom du fournisseur"
 msgstr "nombre del lugar"
 
-#: agir/gestion/models/depenses.py:594 agir/gestion/models/depenses.py:725
+#: agir/gestion/models/depenses.py:594 agir/gestion/models/depenses.py:726
 msgid "IBAN du fournisseur"
 msgstr ""
 
-#: agir/gestion/models/depenses.py:595 agir/gestion/models/depenses.py:726
+#: agir/gestion/models/depenses.py:595 agir/gestion/models/depenses.py:727
 msgid "BIC du fournisseur"
 msgstr ""
 
-#: agir/gestion/models/depenses.py:601 agir/gestion/models/depenses.py:729
+#: agir/gestion/models/depenses.py:601 agir/gestion/models/depenses.py:730
 #, fuzzy
 #| msgid "adresse email"
 msgid "Adresse email"
@@ -4792,67 +4759,61 @@ msgstr ""
 msgid "IBAN manquant pour le règlement d'id {self.id}"
 msgstr ""
 
-#: agir/gestion/models/depenses.py:693
-#, fuzzy
-#| msgid "Engagement"
-msgid "règlement"
-msgstr "Activarse"
-
-#: agir/gestion/models/depenses.py:698
+#: agir/gestion/models/depenses.py:699
 #, fuzzy
 #| msgid "Personne"
 msgid "Personne morale"
 msgstr "Persona"
 
-#: agir/gestion/models/depenses.py:699
+#: agir/gestion/models/depenses.py:700
 #, fuzzy
 #| msgid "Personnes ayant cliqué"
 msgid "Personne physique"
 msgstr "Personas que hicieron clic"
 
-#: agir/gestion/models/depenses.py:713
+#: agir/gestion/models/depenses.py:714
 #, fuzzy
 #| msgid "Type de dépense"
 msgid "Type de fournisseur"
 msgstr "Tipo de gasto"
 
-#: agir/gestion/models/depenses.py:731
+#: agir/gestion/models/depenses.py:732
 msgid "SIREN/SIRET"
 msgstr ""
 
-#: agir/gestion/models/depenses.py:754
+#: agir/gestion/models/depenses.py:755
 msgid ""
 "Indiquez soit un code SIREN (9 caractères), soit un code SIRET (14 "
 "caractères)."
 msgstr ""
 
-#: agir/gestion/models/depenses.py:772
+#: agir/gestion/models/depenses.py:775
 msgid ""
 "Vous devez joindre une photographie de la marchandise pour justifier cette "
 "dépense."
 msgstr ""
 
-#: agir/gestion/models/depenses.py:841
+#: agir/gestion/models/depenses.py:844
 msgid ""
 "Vous devez joindre le devis pour permettre l'engagement de la dépense par le "
 "responsable du compte."
 msgstr ""
 
-#: agir/gestion/models/depenses.py:850
+#: agir/gestion/models/depenses.py:853
 msgid "La dépense doit être réglée avant clôture."
 msgstr ""
 
-#: agir/gestion/models/depenses.py:857
+#: agir/gestion/models/depenses.py:860
 msgid ""
 "Une facture (ou ticket de caisse) doit impérativement être joint à la "
 "dépense."
 msgstr ""
 
-#: agir/gestion/models/depenses.py:864
+#: agir/gestion/models/depenses.py:867
 msgid "Obligations générales"
 msgstr ""
 
-#: agir/gestion/models/depenses.py:874
+#: agir/gestion/models/depenses.py:877
 #, fuzzy
 #| msgid "Précisions sur le type de demande"
 msgid "Obligations pour ce type de dépense"
@@ -5361,62 +5322,6 @@ msgstr ""
 msgid "Le format {as_format} n'est pas supporté pour l'export"
 msgstr ""
 
-#: agir/groups/display.py:12
-#, fuzzy
-#| msgid "View on site"
-msgid "Visiteur"
-msgstr "View on site"
-
-#: agir/groups/display.py:12
-msgid "Visiteuse"
-msgstr ""
-
-#: agir/groups/display.py:12
-#, fuzzy
-#| msgid "Animateur⋅ices"
-msgid "Visiteur⋅se"
-msgstr "Facilitadores"
-
-#: agir/groups/display.py:15
-#, fuzzy
-#| msgid "Données"
-msgid "Abonné"
-msgstr "Datos"
-
-#: agir/groups/display.py:15
-#, fuzzy
-#| msgid "Données"
-msgid "Abonnée"
-msgstr "Datos"
-
-#: agir/groups/display.py:15
-#, fuzzy
-#| msgid "Données"
-msgid "Abonné⋅e"
-msgstr "Datos"
-
-#: agir/groups/display.py:22
-#, fuzzy
-#| msgid "Animateur⋅ices"
-msgid "Animateur"
-msgstr "Facilitadores"
-
-#: agir/groups/display.py:22
-#, fuzzy
-#| msgid "Animateur⋅ices"
-msgid "Animatrice"
-msgstr "Facilitadores"
-
-#: agir/groups/display.py:22 agir/msgs/admin.py:79
-#, fuzzy
-#| msgid "Animateur·ices de GA"
-msgid "Animateur·ice"
-msgstr "Facilitadores de Grupo"
-
-#: agir/groups/display.py:25
-msgid "The author status is unknown"
-msgstr ""
-
 #: agir/groups/filters.py:38
 #, fuzzy
 #| msgid "Groupe certifiés"
@@ -5568,7 +5473,7 @@ msgstr[1] ""
 "{str(apnumber(uncertifiable)).capitalize()} uncertifiable groups have been "
 "found and sent to the admin."
 
-#: agir/groups/models.py:287 agir/groups/proxys.py:19
+#: agir/groups/models.py:287
 msgid "Groupe thématique"
 msgstr "Grupo temático"
 
@@ -5697,6 +5602,22 @@ msgstr "etiqueta"
 msgid "sous-type"
 msgstr "sub-tipo"
 
+#: agir/groups/models.py:603
+msgid "Abonné⋅e du groupe"
+msgstr "Suscriptor de grupo"
+
+#: agir/groups/models.py:604
+msgid "Membre actif du groupe"
+msgstr "Miembro activo de grupo"
+
+#: agir/groups/models.py:605
+msgid "Membre gestionnaire"
+msgstr "Miembro gestor"
+
+#: agir/groups/models.py:606
+msgid "Animateur⋅rice"
+msgstr "Facilitador"
+
 #: agir/groups/models.py:626
 msgid "Statut dans le groupe"
 msgstr "Estatus en el grupo"
@@ -5772,18 +5693,6 @@ msgid ""
 "et animateur·ices du groupe"
 msgstr ""
 
-#: agir/groups/models.py:755
-#, fuzzy
-#| msgid "Nombre de membres"
-msgid "Transfert de membres"
-msgstr "Número de miembros"
-
-#: agir/groups/models.py:756
-#, fuzzy
-#| msgid "Nombre de membres"
-msgid "Transferts de membres"
-msgstr "Número de miembros"
-
 #: agir/groups/models.py:771
 msgid "Lien ou réseau social de l’équipe"
 msgstr ""
@@ -5791,24 +5700,6 @@ msgstr ""
 #: agir/groups/models.py:772
 msgid "Liens et réseaux sociaux de l’équipe"
 msgstr ""
-
-#: agir/groups/proxys.py:20
-#, fuzzy
-#| msgid "Groupes participants"
-msgid "Groupes thématiques"
-msgstr "Grupos participantes"
-
-#: agir/groups/proxys.py:54
-#, fuzzy
-#| msgid "Groupe certifiés"
-msgid "Groupe décertifiable"
-msgstr "Grupos certficados"
-
-#: agir/groups/proxys.py:55
-#, fuzzy
-#| msgid "Groupe certifiés"
-msgid "Groupes décertifiables"
-msgstr "Grupos certficados"
 
 #: agir/groups/tasks.py:51
 msgid "le nom ou la description du groupe"
@@ -6713,6 +6604,12 @@ msgstr ""
 msgid "Gestionnaire"
 msgstr ""
 
+#: agir/msgs/admin.py:79
+#, fuzzy
+#| msgid "Animateur·ices de GA"
+msgid "Animateur·ice"
+msgstr "Facilitadores de Grupo"
+
 #: agir/msgs/admin.py:115
 #, fuzzy
 #| msgid "Animateur·ices de GA"
@@ -6759,18 +6656,6 @@ msgstr "Suprimido"
 msgid "Personne à l'origine du signalement"
 msgstr ""
 
-#: agir/msgs/models.py:30
-#, fuzzy
-#| msgid "Engagement"
-msgid "Signalement"
-msgstr "Activarse"
-
-#: agir/msgs/models.py:31
-#, fuzzy
-#| msgid "Engagement"
-msgid "Signalements"
-msgstr "Activarse"
-
 #: agir/msgs/models.py:61
 msgid "Auteur"
 msgstr ""
@@ -6807,26 +6692,6 @@ msgstr ""
 
 #: agir/msgs/models.py:112
 msgid "Le message s'affichera mais il ne sera pas possible d'y répondre"
-msgstr ""
-
-#: agir/msgs/models.py:119
-#, fuzzy
-#| msgid "type de groupe"
-msgid "Message de groupe"
-msgstr "tipo de grupo"
-
-#: agir/msgs/models.py:120
-#, fuzzy
-#| msgid "type de groupe"
-msgid "Messages de groupe"
-msgstr "tipo de grupo"
-
-#: agir/msgs/models.py:135
-msgid "Commentaire de messages de groupe"
-msgstr ""
-
-#: agir/msgs/models.py:136
-msgid "Commentaires de messages de groupe"
 msgstr ""
 
 #: agir/msgs/models.py:143
@@ -7629,6 +7494,22 @@ msgstr ""
 msgid "personnes"
 msgstr "personas"
 
+#: agir/people/models.py:728 agir/people/models.py:735
+msgid "Cher"
+msgstr "Estimad@"
+
+#: agir/people/models.py:728 agir/people/models.py:735
+msgid "Chère"
+msgstr "Estimad@"
+
+#: agir/people/models.py:728 agir/people/models.py:735
+msgid "Chèr⋅e"
+msgstr "Estimad@"
+
+#: agir/people/models.py:740
+msgid "insoumis⋅e"
+msgstr "compañer@"
+
 #: agir/people/models.py:851
 msgid "Exporté vers mailtrain"
 msgstr "Exportado a mailtrain"
@@ -8249,15 +8130,15 @@ msgstr ""
 msgid "Note montrée à l'utilisateur une fois la participation enregistrée."
 msgstr "Nota mostrada al usuario una vez que se registra la participación."
 
-#: agir/polls/models.py:98
+#: agir/polls/models.py:100
 msgid "Option"
 msgstr "Opción"
 
-#: agir/polls/models.py:98
+#: agir/polls/models.py:100
 msgid "Option telle qu'elle apparaîtra aux insoumis⋅es."
 msgstr "Opción tal como aparece a l@s usuari@s"
 
-#: agir/polls/models.py:118
+#: agir/polls/models.py:120
 msgid "Identifiant anonyme"
 msgstr "Identificador anónimo"
 
@@ -8278,6 +8159,94 @@ msgstr "Clear all filters"
 #: agir/system_pay/__init__.py:169
 msgid "Par carte bleue"
 msgstr "Con tarjeta de débito"
+
+#~ msgid "Annonce"
+#~ msgstr "Notificación"
+
+#, fuzzy
+#~| msgid "Compte-rendu"
+#~ msgid "Comptes"
+#~ msgstr "Resumen"
+
+#, fuzzy
+#~| msgid "Engagement"
+#~ msgid "règlement"
+#~ msgstr "Activarse"
+
+#, fuzzy
+#~| msgid "View on site"
+#~ msgid "Visiteur"
+#~ msgstr "View on site"
+
+#, fuzzy
+#~| msgid "Animateur⋅ices"
+#~ msgid "Visiteur⋅se"
+#~ msgstr "Facilitadores"
+
+#, fuzzy
+#~| msgid "Données"
+#~ msgid "Abonné"
+#~ msgstr "Datos"
+
+#, fuzzy
+#~| msgid "Données"
+#~ msgid "Abonnée"
+#~ msgstr "Datos"
+
+#, fuzzy
+#~| msgid "Animateur⋅ices"
+#~ msgid "Animateur"
+#~ msgstr "Facilitadores"
+
+#, fuzzy
+#~| msgid "Animateur⋅ices"
+#~ msgid "Animatrice"
+#~ msgstr "Facilitadores"
+
+#, fuzzy
+#~| msgid "Nombre de membres"
+#~ msgid "Transfert de membres"
+#~ msgstr "Número de miembros"
+
+#, fuzzy
+#~| msgid "Nombre de membres"
+#~ msgid "Transferts de membres"
+#~ msgstr "Número de miembros"
+
+#, fuzzy
+#~| msgid "Groupes participants"
+#~ msgid "Groupes thématiques"
+#~ msgstr "Grupos participantes"
+
+#, fuzzy
+#~| msgid "Groupe certifiés"
+#~ msgid "Groupe décertifiable"
+#~ msgstr "Grupos certficados"
+
+#, fuzzy
+#~| msgid "Groupe certifiés"
+#~ msgid "Groupes décertifiables"
+#~ msgstr "Grupos certficados"
+
+#, fuzzy
+#~| msgid "Engagement"
+#~ msgid "Signalement"
+#~ msgstr "Activarse"
+
+#, fuzzy
+#~| msgid "Engagement"
+#~ msgid "Signalements"
+#~ msgstr "Activarse"
+
+#, fuzzy
+#~| msgid "type de groupe"
+#~ msgid "Message de groupe"
+#~ msgstr "tipo de grupo"
+
+#, fuzzy
+#~| msgid "type de groupe"
+#~ msgid "Messages de groupe"
+#~ msgstr "tipo de grupo"
 
 #, fuzzy
 #~| msgid "page précédente"
