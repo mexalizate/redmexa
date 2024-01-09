@@ -9,19 +9,19 @@
 <p>{{ greetings }}</p>
 {% blocktranslate %}
 <p>
-  Vous avez rejoint la plateforme
+  Te uniste a 
   <a style="font-weight: bold" href="{{ dashboard_link }}?{{ merge_login }}"
-    >Action populaire</a
+    >Claudialízate</a
   >
-  parce qu'un autre membre vous a ajouté·e.
+  por invitación de otro usuario.
 </p>
 {% endblocktranslate %}
 
 
-<p>{% translate "Bienvenue et merci à vous de votre soutien&nbsp;!" %}</p>
+<p>{% translate "Te damos la bienvenida a esta gran aventura.&nbsp;!" %}</p>
 
 <p>
-  {% translate "Pour en savoir plus sur Action populaire et sur le mouvement de la France insoumise nous vous invitons à découvrir nos sites&nbsp;:" %}
+  {% translate "Puedes ingresar a Claudialízate con el siguiente botón :" %}
 </p>
 
 <p
@@ -36,15 +36,15 @@
     style="
       display: inline-block;
       text-decoration: none;
-      color: #000a2c;
+      color: #ffffff;
       font-weight: bold;
       padding: 14px;
-      background-color: #f4ed0f;
+      background-color: #781136;
       border-radius: 5px;
       font-size: 1.25em;
     "
   >
-    {% translate "Voir Action populaire" %}
+    {% translate "Ver claudialízate" %}
   </a>
 </p>
 
@@ -54,15 +54,15 @@
     style="
       display: inline-block;
       text-decoration: none;
-      color: #000a2c;
+      color: #ffffff;
       font-weight: bold;
       padding: 14px;
-      background-color: #f4ed0f;
+      background-color: #781136;
       border-radius: 5px;
       font-size: 1.25em;
     "
   >
-    {% translate "Voir le site de la France insoumise" %}
+    {% translate "Ver el sitio de claudialízate" %}
   </a>
 </p>
 
@@ -70,7 +70,7 @@
 
 {% if is_new %}
 <p>
-  {%  translate "Vous n’êtes pas à l’origine de cette action et vous souhaitez pas être recontacté·e&nbsp;? Cliquez sur le lien ci-dessous&nbsp;:" %}
+  {%  translate "Si no solicitaste que te inscribieran en Claudializate, puedes anular tu inscripción haciendo clic aquí&nbsp;:" %}
 </p>
 <p style="font-family: Arial, Helvetica, sans-serif; text-align: center">
   <a
@@ -81,30 +81,29 @@
       color: white;
       font-weight: bold;
       padding: 14px;
-      background-color: #571aff;
+      background-color: #4b2c92;
       border-radius: 5px;
       font-size: 1.25em;
     "
   >
-    {% translate "Annuler l'inscription" %}
+    {% translate "Cancelar inscripción" %}
   </a>
 </p>
 <p>
-  {% translate "Il vous sera demandé d'entrer un code que vous recevrez sur votre adresse  e-mail et vous pourrez ensuite demander la suppression du compte" %}
+  {% translate "Recibirás un código para confirmar tu desinscripción." %}
 </p>
 {% else %}
   {% blocktranslate %}
 <p>
-  Vous aviez déjà un compte sur
+  Ya tenías una cuenta en
   <a style="font-weight: bold" href="{{ dashboard_link }}?{{ merge_login }}"
-    >Action populaire</a
+    >Claudialízate </a
   >
-  depuis le {{ subscription_date }}&nbsp;: par sécurité, vos informations n'ont
-  pas été mises à jour.
+  desde el {{ subscription_date }}&nbsp;: Por seguridad no actualizamos tu información.
 </p>
   {% endblocktranslate %}
 <p>
-  {% translate "Vous pouvez à tout moment vérifier et mettre à jour vos informations directement sur la plateforme, sur la page de votre profil&nbsp;:" %}
+  {% translate "Puedes verificar y actualizar tus datos en todo momento, en la sección Configuración de Claudialízate" %}
 </p>
 <p style="font-family: Arial, Helvetica, sans-serif; text-align: center">
   <a
@@ -115,19 +114,19 @@
       color: white;
       font-weight: bold;
       padding: 14px;
-      background-color: #571aff;
+      background-color: #4b2c92;
       border-radius: 5px;
       font-size: 1.25em;
     "
   >
-    {% translate "Voir mes informations personnelles" %}
+    {% translate "Ver mis datos en Claudialízate" %}
   </a>
 </p>
 {% endif %}
 <br />
 {% blocktranslate %}
-  <p>Amitiés<br />
+  <p>Saludos<br />
   <br />
-  L'équipe d'Action Populaire</p>
+  El equipo de Claudialízate</p>
 {% endblocktranslate %}
 {% endblock %}
