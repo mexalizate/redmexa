@@ -353,7 +353,7 @@ def geocode_internationally(item):
         "postal_code": item.location_zip,
         "country": item.location_country,
         "locality": item.location_city,
-        "administrative_area": item.location_state
+        "administrative_area": item.location_state,
     }
     components = "|".join(f"{k}:{v}" for k, v in components.items() if v)
 
