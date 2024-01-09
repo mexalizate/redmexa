@@ -298,9 +298,7 @@ class SupportGroupContributionView(RedirectView):
 class EventDetailView(
     EventDetailMixin, BaseDetailView, ObjectOpengraphMixin, ReactBaseView
 ):
-    meta_description = gettext(
-        "¡Participa en acciones en Claudialízate!"
-    )
+    meta_description = gettext("¡Participa en acciones en Claudialízate!")
 
     def get_api_preloads(self):
         return [reverse_lazy("api_event_details", kwargs=self.kwargs)]
@@ -342,9 +340,7 @@ class SearchView(BaseAppCachedView):
 class SupportGroupDetailView(
     SupportGroupDetailMixin, BaseDetailView, ObjectOpengraphMixin, ReactBaseView
 ):
-    meta_description = _(
-        "¡Únete a un grupo en Claudialízate!"
-    )
+    meta_description = _("¡Únete a un grupo en Claudialízate!")
 
     def get_api_preloads(self):
         return [
