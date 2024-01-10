@@ -283,7 +283,7 @@ class SupportGroup(
     TYPE_BOUCLE_DEPARTEMENTALE = "D"
 
     TYPE_CHOICES = (
-        (TYPE_LOCAL_GROUP, "Grupo local"),
+        (TYPE_LOCAL_GROUP, _("Groupe local")),
         (TYPE_THEMATIC, _("Groupe thématique")),
         (TYPE_FUNCTIONAL, _("Groupe fonctionnel")),
         (TYPE_BOUCLE_DEPARTEMENTALE, _("Boucle départementale")),

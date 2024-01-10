@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-08 20:14-0600\n"
+"POT-Creation-Date: 2024-01-10 14:15-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -872,12 +872,6 @@ msgid ""
 msgstr ""
 "El parámetro Xbox debería ser una tabla de 4 floats [[lon1, lat1, lon2, "
 "lat2]."
-
-#: agir/carte/views.py:330
-#, fuzzy
-#| msgid "Le chèque n°{n} n'existe pas."
-msgid "Cette page n'existe pas."
-msgstr "El cheque n°{n} no existe."
 
 #: agir/checks/admin/forms.py:18
 msgid "Saisissez les numéros de transaction du chèque, séparés par des espaces"
@@ -3478,63 +3472,59 @@ msgstr "Desinscribirse de los emails de Claudialízate"
 msgid "Faire un don - Mélenchon 2022"
 msgstr ""
 
-#: agir/front/views.py:302
-msgid ""
-"Participez et organisez des événements pour soutenir les propositions de la "
-"France insoumise et de la NUPES"
+#: agir/front/views.py:301
+msgid "¡Participa en acciones en Claudialízate!"
 msgstr ""
 
-#: agir/front/views.py:336
+#: agir/front/views.py:333
 msgid "Rechercher"
 msgstr ""
 
-#: agir/front/views.py:337
+#: agir/front/views.py:334
 #, fuzzy
 #| msgid "Groupe et événement"
 msgid "Rechercher un groupe, un événement"
 msgstr "Grupo y evento"
 
-#: agir/front/views.py:347
-msgid ""
-"Rejoignez les groupes d'action de votre quartier pour soutenir les "
-"propositions de la France insoumise et de la NUPES"
+#: agir/front/views.py:343
+msgid "¡Únete a un grupo en Claudialízate!"
 msgstr ""
 
-#: agir/front/views.py:408
+#: agir/front/views.py:403
 msgid "Cette demande ne peut pas être modifiée"
 msgstr ""
 
-#: agir/front/views.py:519
+#: agir/front/views.py:514
 msgid ""
 "La page du lien que vous avez ouvert n'existe plus. Merci de votre soutien !"
 msgstr ""
 
-#: agir/front/views.py:526
+#: agir/front/views.py:521
 msgid "Se porter volontaire pour voter par procuration - Action Populaire"
 msgstr ""
 
-#: agir/front/views.py:528
+#: agir/front/views.py:523
 msgid ""
 "Prenez une procuration près de chez vous, pour voter pour les candidats-es "
 "de l'Union Populaire aux élections législatives le 12 et 19 juin 2022."
 msgstr ""
 
-#: agir/front/views.py:538
+#: agir/front/views.py:533
 msgid "Voter par procuration — Action Populaire"
 msgstr ""
 
-#: agir/front/views.py:540
+#: agir/front/views.py:535
 msgid ""
 "Faites la demande qu'un·e volontaire de votre ville vote à votre place pour "
 "les candidats-es de l'Union Populaire aux élections législatives du 12 et 19 "
 "juin 2022."
 msgstr ""
 
-#: agir/front/views.py:550
+#: agir/front/views.py:545
 msgid "Devenir assesseur·e ou délégué·e — Action Populaire"
 msgstr ""
 
-#: agir/front/views.py:552
+#: agir/front/views.py:547
 msgid ""
 "Pour la réussite de ce scrutin, il est nécessaire que nous ayons un maximum "
 "d'assesseur⋅es et de délégué⋅es dans le plus grand nombre de bureaux de vote "
@@ -5473,6 +5463,10 @@ msgstr[1] ""
 "{str(apnumber(uncertifiable)).capitalize()} uncertifiable groups have been "
 "found and sent to the admin."
 
+#: agir/groups/models.py:286 agir/groups/views/management_views.py:131
+msgid "Groupe local"
+msgstr "Grupo local"
+
 #: agir/groups/models.py:287
 msgid "Groupe thématique"
 msgstr "Grupo temático"
@@ -5717,6 +5711,10 @@ msgstr "la información de contacto de l@s facilitadores del grupo"
 msgid "Les informations de votre groupe d'action ont été changées"
 msgstr "La información de tu grupo cambió"
 
+#: agir/groups/templates/groups/create.html:5
+msgid "Créer un groupe"
+msgstr "Crear un grupo"
+
 #: agir/groups/utils/certification.py:13
 msgid "Animation paritaire"
 msgstr ""
@@ -5812,11 +5810,6 @@ msgstr ""
 #: agir/groups/views/management_views.py:319
 msgid "{} n'est plus un gestionnaire du groupe."
 msgstr "{} no es un gestor del grupo"
-
-#: agir/groups/views/management_views.py:351
-#: agir/groups/views/management_views.py:354
-msgid "Cette page n'existe pas"
-msgstr ""
 
 #: agir/groups/views/management_views.py:382
 msgid "Le groupe qui vous a invité n'existe plus."
@@ -7947,53 +7940,45 @@ msgstr ""
 msgid ""
 "\n"
 "<p>\n"
-"  Vous avez rejoint la plateforme\n"
+"  Te uniste a \n"
 "  <a style=\"font-weight: bold\" href=\"%(dashboard_link)s?%(merge_login)s"
 "\"\n"
-"    >Action populaire</a\n"
+"    >Claudialízate</a\n"
 "  >\n"
-"  parce qu'un autre membre vous a ajouté·e.\n"
+"  por invitación de otro usuario.\n"
 "</p>\n"
 msgstr ""
 
 #: agir/people/templates/people/email/contact_creation.html:21
-msgid "Bienvenue et merci à vous de votre soutien&nbsp;!"
+msgid "Te damos la bienvenida a esta gran aventura.&nbsp;!"
 msgstr ""
 
 #: agir/people/templates/people/email/contact_creation.html:24
-msgid ""
-"Pour en savoir plus sur Action populaire et sur le mouvement de la France "
-"insoumise nous vous invitons à découvrir nos sites&nbsp;:"
+msgid "Puedes ingresar a Claudialízate con el siguiente botón :"
 msgstr ""
 
 #: agir/people/templates/people/email/contact_creation.html:47
-#, fuzzy
-#| msgid "Action publique"
-msgid "Voir Action populaire"
-msgstr "Acción pública"
+msgid "Ver claudialízate"
+msgstr ""
 
 #: agir/people/templates/people/email/contact_creation.html:65
-#, fuzzy
-#| msgid "Me désinscrire des emails de la France insoumise"
-msgid "Voir le site de la France insoumise"
-msgstr "Desinscribirse de los emails de Claudialízate"
+msgid "Ver el sitio de claudialízate"
+msgstr ""
 
 #: agir/people/templates/people/email/contact_creation.html:73
 msgid ""
-"Vous n’êtes pas à l’origine de cette action et vous souhaitez pas être "
-"recontacté·e&nbsp;? Cliquez sur le lien ci-dessous&nbsp;:"
+"Si no solicitaste que te inscribieran en Claudializate, puedes anular tu "
+"inscripción haciendo clic aquí&nbsp;:"
 msgstr ""
 
 #: agir/people/templates/people/email/contact_creation.html:89
 #, fuzzy
 #| msgid "Formulaire d'inscription"
-msgid "Annuler l'inscription"
+msgid "Cancelar inscripción"
 msgstr "Formulario de inscripción"
 
 #: agir/people/templates/people/email/contact_creation.html:93
-msgid ""
-"Il vous sera demandé d'entrer un code que vous recevrez sur votre adresse  e-"
-"mail et vous pourrez ensuite demander la suppression du compte"
+msgid "Recibirás un código para confirmar tu desinscripción."
 msgstr ""
 
 #: agir/people/templates/people/email/contact_creation.html:96
@@ -8001,36 +7986,33 @@ msgstr ""
 msgid ""
 "\n"
 "<p>\n"
-"  Vous aviez déjà un compte sur\n"
+"  Ya tenías una cuenta en\n"
 "  <a style=\"font-weight: bold\" href=\"%(dashboard_link)s?%(merge_login)s"
 "\"\n"
-"    >Action populaire</a\n"
+"    >Claudialízate </a\n"
 "  >\n"
-"  depuis le %(subscription_date)s&nbsp;: par sécurité, vos informations "
-"n'ont\n"
-"  pas été mises à jour.\n"
+"  desde el %(subscription_date)s&nbsp;: Por seguridad no actualizamos tu "
+"información.\n"
 "</p>\n"
 "  "
 msgstr ""
 
-#: agir/people/templates/people/email/contact_creation.html:107
+#: agir/people/templates/people/email/contact_creation.html:106
 msgid ""
-"Vous pouvez à tout moment vérifier et mettre à jour vos informations "
-"directement sur la plateforme, sur la page de votre profil&nbsp;:"
+"Puedes verificar y actualizar tus datos en todo momento, en la sección "
+"Configuración de Claudialízate"
 msgstr ""
 
-#: agir/people/templates/people/email/contact_creation.html:123
-#, fuzzy
-#| msgid "Enregistrer mes informations"
-msgid "Voir mes informations personnelles"
-msgstr "Guardar mi información"
+#: agir/people/templates/people/email/contact_creation.html:122
+msgid "Ver mis datos en Claudialízate"
+msgstr ""
 
-#: agir/people/templates/people/email/contact_creation.html:128
+#: agir/people/templates/people/email/contact_creation.html:127
 msgid ""
 "\n"
-"  <p>Amitiés<br />\n"
+"  <p>Saludos<br />\n"
 "  <br />\n"
-"  L'équipe d'Action Populaire</p>\n"
+"  El equipo de Claudialízate</p>\n"
 msgstr ""
 
 #: agir/people/templates/people/profile/account_management.html:6
@@ -8160,6 +8142,26 @@ msgstr "Clear all filters"
 msgid "Par carte bleue"
 msgstr "Con tarjeta de débito"
 
+#, fuzzy
+#~| msgid "Le chèque n°{n} n'existe pas."
+#~ msgid "Cette page n'existe pas."
+#~ msgstr "El cheque n°{n} no existe."
+
+#, fuzzy
+#~| msgid "Action publique"
+#~ msgid "Voir Action populaire"
+#~ msgstr "Acción pública"
+
+#, fuzzy
+#~| msgid "Me désinscrire des emails de la France insoumise"
+#~ msgid "Voir le site de la France insoumise"
+#~ msgstr "Desinscribirse de los emails de Claudialízate"
+
+#, fuzzy
+#~| msgid "Enregistrer mes informations"
+#~ msgid "Voir mes informations personnelles"
+#~ msgstr "Guardar mi información"
+
 #~ msgid "Annonce"
 #~ msgstr "Notificación"
 
@@ -8252,9 +8254,6 @@ msgstr "Con tarjeta de débito"
 #~| msgid "page précédente"
 #~ msgid "Précédent"
 #~ msgstr "página anterior"
-
-#~ msgid "Groupe local"
-#~ msgstr "Grupo local"
 
 #, fuzzy
 #~| msgid "Données"
