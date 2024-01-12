@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-10 14:15-0600\n"
+"POT-Creation-Date: 2024-01-11 21:35-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -5312,6 +5312,54 @@ msgstr ""
 msgid "Le format {as_format} n'est pas supporté pour l'export"
 msgstr ""
 
+#: agir/groups/display.py:12
+msgid "Visiteur"
+msgstr "Visitante"
+
+#: agir/groups/display.py:12
+msgid "Visiteuse"
+msgstr "Visitante"
+
+#: agir/groups/display.py:12
+msgid "Visiteur⋅se"
+msgstr "Visitante"
+
+#: agir/groups/display.py:15
+msgid "Abonné"
+msgstr "Seguidor"
+
+#: agir/groups/display.py:15
+msgid "Abonnée"
+msgstr "Seguidora"
+
+#: agir/groups/display.py:15
+msgid "Abonné⋅e"
+msgstr "Seguidor(a)"
+
+#: agir/groups/display.py:17
+msgid "Membre"
+msgstr "Miembro"
+
+#: agir/groups/display.py:19 agir/groups/models.py:605
+msgid "Membre gestionnaire"
+msgstr "Miembro gestor(a)"
+
+#: agir/groups/display.py:22
+msgid "Animateur"
+msgstr "Facilitador"
+
+#: agir/groups/display.py:22
+msgid "Animatrice"
+msgstr "Facilitadora"
+
+#: agir/groups/display.py:22 agir/msgs/admin.py:79
+msgid "Animateur·ice"
+msgstr "Facilitador(a)"
+
+#: agir/groups/display.py:25
+msgid "The author status is unknown"
+msgstr "El estatus del autor no está identificado"
+
 #: agir/groups/filters.py:38
 #, fuzzy
 #| msgid "Groupe certifiés"
@@ -5603,10 +5651,6 @@ msgstr "Suscriptor de grupo"
 #: agir/groups/models.py:604
 msgid "Membre actif du groupe"
 msgstr "Miembro activo de grupo"
-
-#: agir/groups/models.py:605
-msgid "Membre gestionnaire"
-msgstr "Miembro gestor"
 
 #: agir/groups/models.py:606
 msgid "Animateur⋅rice"
@@ -6597,12 +6641,6 @@ msgstr ""
 msgid "Gestionnaire"
 msgstr ""
 
-#: agir/msgs/admin.py:79
-#, fuzzy
-#| msgid "Animateur·ices de GA"
-msgid "Animateur·ice"
-msgstr "Facilitadores de Grupo"
-
 #: agir/msgs/admin.py:115
 #, fuzzy
 #| msgid "Animateur·ices de GA"
@@ -7489,11 +7527,11 @@ msgstr "personas"
 
 #: agir/people/models.py:728 agir/people/models.py:735
 msgid "Cher"
-msgstr "Estimad@"
+msgstr "Estimado"
 
 #: agir/people/models.py:728 agir/people/models.py:735
 msgid "Chère"
-msgstr "Estimad@"
+msgstr "Estimada"
 
 #: agir/people/models.py:728 agir/people/models.py:735
 msgid "Chèr⋅e"
@@ -8174,36 +8212,6 @@ msgstr "Con tarjeta de débito"
 #~| msgid "Engagement"
 #~ msgid "règlement"
 #~ msgstr "Activarse"
-
-#, fuzzy
-#~| msgid "View on site"
-#~ msgid "Visiteur"
-#~ msgstr "View on site"
-
-#, fuzzy
-#~| msgid "Animateur⋅ices"
-#~ msgid "Visiteur⋅se"
-#~ msgstr "Facilitadores"
-
-#, fuzzy
-#~| msgid "Données"
-#~ msgid "Abonné"
-#~ msgstr "Datos"
-
-#, fuzzy
-#~| msgid "Données"
-#~ msgid "Abonnée"
-#~ msgstr "Datos"
-
-#, fuzzy
-#~| msgid "Animateur⋅ices"
-#~ msgid "Animateur"
-#~ msgstr "Facilitadores"
-
-#, fuzzy
-#~| msgid "Animateur⋅ices"
-#~ msgid "Animatrice"
-#~ msgstr "Facilitadores"
 
 #, fuzzy
 #~| msgid "Nombre de membres"
