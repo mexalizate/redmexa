@@ -72,7 +72,7 @@ const ContactSuccess = (props) => {
            Agregar nuevo contacto
         </Button>
         <Button link route="events">
-          {_("Fermer")}
+          {"Cerrar"}
         </Button>
       </footer>
     </StyledWrapper>

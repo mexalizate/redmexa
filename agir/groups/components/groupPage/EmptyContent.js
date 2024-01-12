@@ -153,7 +153,7 @@ EmptyContent.propTypes = {
 
 export const MemberEmptyEvents = () => (
   <EmptyContent icon="calendar">
-    <p>Ce groupe n’a pas encore créé d’événement.</p>
+    <p>Este grupo todavía no crea ninguna acción.</p>
   </EmptyContent>
 );
 

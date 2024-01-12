@@ -227,7 +227,7 @@ def follow_activity_link(request, pk):
             settings.PLATFORM_ADMIN_DOMAIN,
             settings.PLATFORM_FRONT_DOMAIN,
             settings.ACTIVIST_DOMAIN,
-            "https://info.preprod.redmexa.com",
+            "https://info.claudializate.com/",
         ]
     }
     url_is_safe = url_has_allowed_host_and_scheme(

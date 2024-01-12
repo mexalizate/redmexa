@@ -28,7 +28,8 @@ const EventAssets = (props) => {
       <StyledTitle>{"Información útil"}</StyledTitle>
       <Spacer size="1rem" />
       <span style={{ color: style.black700 }}>
-      Encuentra información valiosa para ayudarte a organizar mejor tu acción.</span>
+        Encuentra información valiosa para ayudarte a organizar mejor tu acción.
+      </span>
       <Spacer size="1rem" />
       <StyledTitle>{"Centro de ayuda"}</StyledTitle>
       <Spacer size=".5rem" />
@@ -57,9 +58,11 @@ const EventAssets = (props) => {
           ))}
         <FileCard
           title={"Guía para la realización de acciones"}
-          text={"Contiene la información esencial para organizar acciones de todo tipo"}
+          text={
+            "Contiene la información esencial para organizar acciones de todo tipo"
+          }
           icon="file-text"
-          route="attestationAssurance"
+          route="attestationAssuranceEvent"
           downloadLabel={"Bajar la guía"}
         />
       </PageFadeIn>

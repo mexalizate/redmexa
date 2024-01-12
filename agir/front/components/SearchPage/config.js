@@ -5,7 +5,7 @@ export const TABS = {
   all: {
     id: "all",
     label: _("Tout"),
-    searchPlaceholder: _("Rechercher sur Action Populaire"),
+    searchPlaceholder: "Buscar en Claudialízate",
     mapRoute: "eventMap",
     hasFilters: false,
     hasEvents: true,
@@ -14,7 +14,7 @@ export const TABS = {
   groups: {
     id: "groups",
     label: "Grupos",
-    searchPlaceholder: _("Rechercher un groupe"),
+    searchPlaceholder: "Buscar un grupo",
     mapRoute: "groupMap",
     hasFilters: "groups",
     hasGroups: true,
@@ -23,7 +23,7 @@ export const TABS = {
   events: {
     id: "events",
     label: "Acciones",
-    searchPlaceholder: _("Rechercher un événement"),
+    searchPlaceholder: "Buscar una acción",
     mapRoute: "eventMap",
     hasFilters: "events",
     hasEvents: true,

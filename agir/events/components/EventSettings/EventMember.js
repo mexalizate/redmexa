@@ -113,7 +113,7 @@ const Member = styled.div`
 
 const MEMBER_TYPE_CONFIG = {
   organizer: {
-    label: [("Organisateur·ice"), ("Organisatrice"), ("Organisateur")],
+    label: [("Organizador(a)"), ("Organizadora"), ("Organizador")],
     icon: <FaLock />,
   },
   speaker: {
@@ -135,7 +135,7 @@ const EventMember = (props) => {
   const [_, handleCopy] = useCopyToClipboard(
     email,
     2000,
-    "L'adresse e-mail a été copié",
+    "Se copió la dirección email",
   );
 
   const memberTypeConfig = useMemo(() => {

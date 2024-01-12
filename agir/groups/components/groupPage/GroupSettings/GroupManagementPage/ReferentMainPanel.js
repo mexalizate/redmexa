@@ -40,8 +40,8 @@ export const ReferentMainPanel = (props) => {
       </span>
       <Spacer size=".5rem" />
       <span style={{ color: style.black700 }}>
-      Para poder certificar el grupo, debemos respetar 
-        <a href="https://info.preprod.redmexa.com/charte-des-groupes-action-populaire/">
+      Para poder certificar el grupo, debemos respetar &nbsp; 
+        <a href="https://info.claudializate.com/principios/">
         la paridad de género
         </a>
         con dos facilitadores hombre y mujer.
@@ -69,7 +69,7 @@ export const ReferentMainPanel = (props) => {
             style={{ paddingTop: "3px" }}
           />
           <Spacer size="0.5rem" />
-          {"Cambiar de animadores"}
+          {"Cambiar de facilitadores"}
         </a>
       )}
       {routes?.animationChangeRequest && routes?.referentResignmentRequest && (

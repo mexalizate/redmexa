@@ -122,7 +122,8 @@ export const NoResults = ({ name, list }) => {
   return (
     <>
       <Spacer size="1rem" />
-      {_("Aucun")} {name} {_("n'est lié à cette recherche")}
+      {name == "grupo" ? "Ningún" : "Ninguna"} {name} {" encontrad"}
+      {name == "grupo" ? "o" : "a"} {" con esta búsqueda"}
     </>
   );
 };

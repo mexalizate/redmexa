@@ -18,7 +18,7 @@ const Template = (args) => {
 export const Default = Template.bind({});
 Default.args = {
   icon: "calendar",
-  children: "Ce groupe n’a pas encore créé d’événement.",
+  children: "Este grupo todavía no crea ninguna acción.",
 };
 
 export const EventsForMember = () => <MemberEmptyEvents />;

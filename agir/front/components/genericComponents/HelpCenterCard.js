@@ -24,10 +24,6 @@ const HelpCenterCard = (props) => {
       Ir al centro de ayuda
       </Button>
       <Spacer size="0.5rem" />
-      <Button link small route="helpIndex" color="secondary">
-      Ver las guías de acción
-      </Button>
-      <Spacer size="0.5rem" />
       <Button link small route="contact" color="default">
       Contactarnos
       </Button>

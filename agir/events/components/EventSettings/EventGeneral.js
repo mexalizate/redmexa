@@ -226,7 +226,7 @@ const EventGeneral = (props) => {
               value={hasCheckedImageLicence}
               label={
                 <span style={{ color: style.black700 }}>
-                  {_("En important une image, je certifie être le propriétaire des droits et accepte de la partager sous licence libre")}{" "}
+                  {_("Al cargar una imagen, declaro ser propietario de sus derechos y acepto compartirla bajo licencia libre ")}{" "}
                   <a href={I18N.ccLicenseLink}>{_("Creative Commons CC-BY-NC 3.0")}</a>
                   .
                 </span>

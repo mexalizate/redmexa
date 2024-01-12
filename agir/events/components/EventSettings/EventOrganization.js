@@ -75,7 +75,7 @@ const EventOrganization = (props) => {
         <>
           <StyledTitle>{_("Groupes organisateurs")}</StyledTitle>
           <span style={{ color: style.black700 }}>
-            {_("Les animateur·ices de ces groupes peuvent accéder à la gestion de l'événement et la liste des participant·es.")}
+            {" L@s facilitadores de estos grupos pueden acceder a la gestión de la acción y a la lista de participantes."}
           </span>
         </>
       )}
@@ -85,7 +85,7 @@ const EventOrganization = (props) => {
       <GroupList
         groups={groups}
         addButtonLabel={
-          canInviteOrganizerGroups ? _("Ajouter un groupe co-organisateur") : ""
+          canInviteOrganizerGroups ? "Agregar grupo co-organizador" : ""
         }
         onAdd={
           canInviteOrganizerGroups
@@ -106,7 +106,7 @@ const EventOrganization = (props) => {
       </GroupList>
       <Spacer size="1.5rem" />
 
-      <StyledTitle>{_("Participant·es organisateur·ices")}</StyledTitle>
+      <StyledTitle>{"Personas organizadoras"}</StyledTitle>
       <span style={{ color: style.black700 }}>
         {_("Donnez des droits d’accès à des participant·es pour leur permettre de gérer l’événement.")}
       </span>

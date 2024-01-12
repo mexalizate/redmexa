@@ -102,7 +102,7 @@ export const SearchTooShort = ({ search }) => {
   return (
     <>
       <Spacer size="1rem" />
-      {_("Rentrez au moins 3 caractères pour effectuer une recherche")}
+      {"Ingresa al menos 3 letras para buscar"}
     </>
   );
 };
@@ -114,7 +114,7 @@ export const HeaderSearch = ({ querySearch, mapRoute }) => (
   <StyledHeaderSearch>
     <div>
       <h1>
-        <Hide $over>{_("Rechercher")}</Hide>
+        <Hide $over>Buscar</Hide>
         {!querySearch && <Hide $under>Busqueda : "{querySearch}"</Hide>}
       </h1>
       <Hide $under as="div" style={{ marginTop: "0.5rem" }}>
@@ -178,7 +178,7 @@ export const EventFilters = ({ filters, setFilter }) => {
       />
       <SelectField
         label={"Categoría de la acción"}
-        placeholder={_("Categories")}
+        placeholder={"Categorías"}
         name="eventSchedule"
         value={filters?.eventSchedule}
         onChange={(value) => setFilter("eventSchedule", value)}

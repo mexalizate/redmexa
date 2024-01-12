@@ -30,7 +30,7 @@ const GroupMaterielPage = (props) => {
         <>
           <Spacer size=".5rem" />
           <span style={{ color: style.black700 }}>
-            {_("Pour utiliser vos codes, accédez au site matériel :")}
+            {"Podrás usar esos materiales en línea y en tus próximas acciones."}
           </span>
           <Spacer size="1.5rem" />
           <p style={{ textAlign: "center" }}>
@@ -43,7 +43,7 @@ const GroupMaterielPage = (props) => {
               rel="noopener noreferrer"
               wrap
             >
-              {_("Site d’achat de matériel")}
+              {"Página de materiales"}
             </Button>
           </p>
         </>

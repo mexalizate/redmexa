@@ -195,8 +195,8 @@ class ExistingRelatedLabelField(RelatedLabelField):
 class PhoneField(serializers.CharField):
     region = "FR"
     default_error_messages = {
-        "invalid_format": "Saisissez un numéro de téléphone français valide ou un numéro avec un indicatif "
-        "international."
+        "invalid_format": "Ingresa un número de celular válido y con la LADA de país "
+        "correspondiente."
     }
 
     def to_internal_value(self, value):

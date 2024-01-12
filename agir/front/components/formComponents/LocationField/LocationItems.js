@@ -32,7 +32,7 @@ const LocationItems = (props) => {
 
   return (
     <StyledItems>
-      <strong>Lieu</strong>
+      <strong>Lugar</strong>
       {locations.map(({ id, ...locationData }) => (
         <li key={id}>
           <LocationItem

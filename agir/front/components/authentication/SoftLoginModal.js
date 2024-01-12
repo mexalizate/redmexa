@@ -92,10 +92,10 @@ const SoftLoginModalContent = (props) => {
         <h3>{_("Bonjour")} {username}</h3>
         <h6>{user.email}</h6>
         <Spacer size="0.625rem" />
-        <p>{_("Êtes-vous bien")} {username}&nbsp;?</p>
+        <p>{"¿Sí eres "} {username}&nbsp;?</p>
         <p>
-          {_("Vous avez été connecté·e automatiquement car vous avez suivi un lien")}
-          {_("qui lui a été envoyé par email.")}
+          {"Te conectaste automáticamente siguiendo un enlace "}
+          {"enviado por email."}
         </p>
         <Spacer size=".5rem" />
         <div>

@@ -169,8 +169,8 @@ class AcceptCreativeCommonsLicenceField(forms.BooleanField):
     }
 
     default_label = _(
-        "En important une image, je certifie être le propriétaire des droits et accepte de la partager"
-        ' sous licence libre <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/fr/">Creative'
+        "Al cargar una imagen, declaro ser propietario de sus derechos y acepto compartirla"
+        ' bajo licencia libre <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/fr/">Creative'
         " Commons CC-BY-NC 3.0</a>."
     )
 

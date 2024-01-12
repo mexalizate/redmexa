@@ -48,11 +48,13 @@ const TopBar = styled.div`
     margin: 0;
   }
 
+
+
   & ${Hide} {
     &.colorButton {
-      background-color:  #781136;
-      color: #fff;
-      font-weight: bold;
+      background-color:  #781136 !important;
+      color: #fff !important;
+      font-weight: bold !important;
       
     }
   }
@@ -80,7 +82,7 @@ const TopBar = styled.div`
   }
   & ${Button} {
     &[icon="map"] {
-      color: #fff; /* Cambiar el color del icono a blanco */
+      color: #fff !important; /* Cambiar el color del icono a blanco */
     }
   }
 `;
@@ -212,7 +214,14 @@ const Agenda = () => {
           >
             {"Acciones"}
           </h2>
-          <Button small link route="eventMap" icon="map">
+          <Button
+            large
+            className="colorButton"
+            style={{ background: "#4b2c92", color: "#fff", }}
+            link
+            route="groupMap"
+            icon="map"
+          >
             {_("Carte")}
           </Button>
         </Hide>

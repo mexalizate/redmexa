@@ -32,7 +32,7 @@ const EventInfoCard = (props) => {
         )}
         {groups.length > 1 && (
           <IconListItem name="users">
-           {_("Organisé par")}&nbsp;:
+           {"Organizada por"}&nbsp;:
             {groups.map(({ name, id }, key) => (
               <div key={name + id}>
                 {id ? (

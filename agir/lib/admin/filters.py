@@ -81,7 +81,7 @@ class CirconscriptionLegislativeFilter(AutocompleteSelectModelBaseFilter):
 
 
 class ParticipantFilter(AutocompleteSelectModelBaseFilter):
-    title = _("participant·e")
+    title = _("participante")
     filter_model = Person
     parameter_name = "participant_id"
 

@@ -89,8 +89,7 @@ const Home = () => {
           </h5>*/}
 
         <h5 className="secondaryTextColorLightRed SubTittleText">
-           A la red de acción de l@s
-           mexican@s en el mundo
+          A la red de acción de l@s mexican@s en el mundo
         </h5>
         <div>
           <Button color="secondary" link route="signup">

@@ -70,7 +70,7 @@ class ConfirmSubscriptionView(View):
             "Il semble que celui-ci est invalide. Avez-vous bien cliqué sur le bouton, ou copié la totalité du lien ?"
         ),
         "expired": _("Il semble que celui-ci est expiré."),
-        "already_created": "Votre inscription était déjà confirmée.",
+        "already_created": "Tu registro ya estaba confirmado.",
     }
     allowed_fields = [
         "email",

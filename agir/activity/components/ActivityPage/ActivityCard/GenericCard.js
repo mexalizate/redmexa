@@ -16,7 +16,7 @@ const GenericCard = (props) => {
   const [_, copyEmail] = useCopyToClipboard(
     meta?.email,
     2000,
-    "L'adresse e-mail a été copié.",
+    "Se copió la dirección email.",
   );
 
   const { Event, SupportGroup, Individual } = useMemo(
@@ -230,7 +230,7 @@ const GenericCard = (props) => {
     case "event-suggestion":
       return (
         <GenericCardContainer {...props}>
-          Ce{" "}
+          Este {" "}
           {dateFromISOString(event.startTime).toLocaleString({
             weekday: "long",
           })}
@@ -276,13 +276,13 @@ const GenericCard = (props) => {
     case "group-creation-confirmation": {
       return (
         <GenericCardContainer {...props}>
-          {SupportGroup} {("ya está en línea !")}<br />
-          {("Como facilitador(a), puedes gestionar")} {SupportGroup} {("n todo momento mediante el botón  «  Gestión »  o haciendo clic aquí.")}{" "}
+          {SupportGroup} {("ya está en línea")}<br />
+          {("Como facilitador(a), puedes gestionar")} {SupportGroup} {("mediante el botón ‘Gestión’ o haciendo ")}{" "}
           <Link
             to={routeConfig.groupSettings.getLink({ groupPk: group.id })}
             backLink="activities"
           >
-            {("este enlace")}
+            {("clic aquí.")}
           </Link>
           .<br />
           {("Te recomendamos leer los consejos destinados a nuev@s facilitadores ")}

@@ -74,7 +74,7 @@ const OnlineUrlField = (props) => {
           {!!defaultUrl && (
             <CheckboxField
               disabled={disabled}
-              label={_("Utiliser le service de visio-conférence automatique de La France insoumise")}
+              label={_("Utilice el servicio de videoconferencia automático de Claudialízate")}
               value={isAuto && onlineUrl === defaultUrl}
               onChange={handleChangeUrl}
             />

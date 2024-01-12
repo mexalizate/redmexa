@@ -2,7 +2,7 @@
 {% load static %}
 {% load crispy_forms_tags %}
 
-{% block title %}Modifier la localisation de mon groupe{% endblock %}
+{% block title %}Modificar la ubicación del grupo{% endblock %}
 
 {% block main %}
 <div class="row">
@@ -21,18 +21,15 @@
       {{ supportgroup.name }}
     </h2>
     <hr />
-    <h4 class="padbottom">Modification de la localisation du groupe</h4>
+    <h4 class="padbottom">Modificar la ubicación del grupo</h4>
     <p>
-      Si votre groupe n'apparaît au bon endroit sur la carte, vous pouvez utiliser ci-dessous la petite carte pour
-      le localiser correctement. Cliquez-déplacez le point existant, ou cliquez sur le lien « Supprimer toutes les
-      localisations » puis directement sur la carte.
+      Si tu grupo no aparece en el mapa o aparece en un lugar incorrecto, puedes ubicarlo manualmente arrastrando el punto en el mapa o eliminarlo en ‘Borrar todos los elementos’ para indicar nuevas coordenadas.
     </p>
     <p>
-      Si vous souhaitez revenir à une localisation automatique de votre groupe à partir de son adresse,
-      cochez la case correspondante et sauvegardez le formulaire.
+      Podrás reactivar la geolocalización automática regresando a esta página.
     </p>
     <p>
-      <strong>Après sauvegarde de ce formulaire, les modifications peuvent mettre jusqu'à 5 minutes pour apparaître sur la carte.</strong>
+      <strong>Una vez guardados los cambios, la nueva ubicación puede tardar hasta 5 minutos en aparecer en el mapa.</strong>
     </p>
     <div class="row">
       <div class="col-sm-12 form-group">

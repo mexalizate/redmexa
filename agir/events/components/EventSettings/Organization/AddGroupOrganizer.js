@@ -75,13 +75,13 @@ export const AddGroupOrganizer = ({ eventPk, groups, onBack }) => {
     }
     if (res.data.created) {
       sendToast(
-        _("Le groupe, dont vous êtes animateur·ice, a été ajouté à l'organisation de l'événement"),
+        "El grupo del que eres facilitador(a) fue agregado a la organización de la acción",
         "SUCCESS",
         { autoClose: true },
       );
     } else {
       sendToast(
-        _("Une invitation a été envoyée aux animateur·ices du groupe"),
+        "Se envió una invitación a l@s facilitadores del grupo",
         "SUCCESS",
         { autoClose: true },
       );
@@ -126,16 +126,16 @@ export const AddGroupOrganizer = ({ eventPk, groups, onBack }) => {
     <>
       <BackButton onClick={onBack} />
       <StyledTitle>
-        {!selectedGroup
-          ? _("Co-organisation")
-          : _("Ajouter un groupe en co-organisation")}
+        {!selectedGroup ? "Co-organización" : "Agregar un grupo coorganizado"}
       </StyledTitle>
       <Spacer size="1rem" />
 
       {!selectedGroup ? (
         <>
           <span style={{ color: style.black700 }}>
-           {_(" Invitez des groupes à organiser votre événement. Ils s’afficheront sur la page publiquement.")}
+            {
+              " Invita a más grupos a organizar contigo la acción. Aparecerán en la página pública de la acción."
+            }
           </span>
 
           <Spacer size="1rem" />
@@ -146,19 +146,21 @@ export const AddGroupOrganizer = ({ eventPk, groups, onBack }) => {
               type="text"
               value={search}
               onChange={handleChange}
-              placeholder={_("Chercher un groupe...")}
+              placeholder={"Busca un grupo..."}
             />
           </StyledSearch>
           <Spacer size="1rem" />
           <div>
             {search.length < START_SEARCH ? (
-              <span>{_("Ecrivez au moins")} {START_SEARCH} {_("caractères")}</span>
+              <span>
+                {"Escribe al menos "} {START_SEARCH} {" letras"}
+              </span>
             ) : isLoading ? (
-              <span>{_("Recherche en cours...")}</span>
+              <span>{"Busqueda en curso..."}</span>
             ) : groupSearchResults.length === 0 ? (
-              <span>{_("Aucun groupe ne correspond à cette recherche")}</span>
+              <span>{"Ningún grupo coincide con esta búsqueda"}</span>
             ) : (
-              <h4>{_("Résultats")}</h4>
+              <h4>{"Resultados"}</h4>
             )}
             {groupSearchResults.length > 0 && (
               <GroupList
@@ -170,7 +172,7 @@ export const AddGroupOrganizer = ({ eventPk, groups, onBack }) => {
           <Spacer size="1rem" />
           {groupSuggestions.length > 0 && (
             <div>
-              <h4>{_("Derniers groupes co-organisateurs")}</h4>
+              <h4>{"Últimos grupos co-organizadores"}</h4>
               <GroupList
                 groups={groupSuggestions}
                 selectGroup={setSelectedGroup}
@@ -187,17 +189,18 @@ export const AddGroupOrganizer = ({ eventPk, groups, onBack }) => {
           <div>
             <StyledListBlock>
               <div />
-              <b>{_("Si ses animateur·ices acceptent la co-organisation")}</b>, {_("ce groupe s’affichera sur la page publique de l’événement")}
+              <b>{"Si los facilitadores aceptan co-organizar "}</b>,{" "}
+              {"el grupo aparecerá en la página pública de la acción"}
             </StyledListBlock>
             <Spacer size="0.5rem" />
             <StyledListBlock>
               <div />
-              {_("Ces dernier·es")} <b>{_("pourront accéder aux paramètres")}</b> {_("de l’événement.")}
+              <b>{"Podrán acceder a la configuración"}</b> {"de la acción."}
             </StyledListBlock>
           </div>
           <Spacer size="1rem" />
           <Button color="secondary" onClick={onSubmit} disabled={isLoading}>
-            {_("Envoyer l'invitation")}
+            {"Enviar la invitación"}
           </Button>
         </>
       )}
