@@ -62,11 +62,13 @@ export const AddOrganizer = ({ eventPk, participants, onBack }) => {
 
       {!participants.length ? (
         <span style={{ color: style.black700 }}>
-          {_("Accueillez d’abord un·e participant·e à l'événement pour pouvoir lui donner un rôle d'organisateur·ice.")}
+          {
+            "Debes tener más participantes inscritos en la acción para poder darles el rol de co-organizadores."
+          }
         </span>
       ) : (
         <SelectField
-          label={_("Choisir un·e participant·e")}
+          label={"Escoge un participante"}
           placeholder={_("Sélection")}
           options={participants.map((participant) => ({
             label: `${participant.displayName} (${participant.email})`,
@@ -83,7 +85,7 @@ export const AddOrganizer = ({ eventPk, participants, onBack }) => {
           <MemberList members={[selectedParticipant.value]} />
           <Spacer size="1rem" />
           <div>
-            {_("Ce participant pourra :")}
+            {"Tod@ organizador(a) puede :"}
             <Spacer size="0.5rem" />
             <StyledList>
               <div />

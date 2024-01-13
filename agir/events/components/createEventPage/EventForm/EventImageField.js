@@ -64,7 +64,7 @@ const EventImageField = (props) => {
             value={value?.hasLicense || false}
             label={
               <span>
-               {_(" En important une image, je certifie être propriétaire des droits et accepte de la partager sous licence libre")}{" "}
+               {_(" Al cargar una imagen, declaro ser propietario de sus derechos y acepto compartirla bajo licencia libre")}{" "}
                 <a
                   target="_blank"
                   rel="noopener noreferrer"

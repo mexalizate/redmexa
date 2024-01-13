@@ -33,7 +33,7 @@ export default class Modal extends React.Component {
                       <button
                         type="button"
                         className="close"
-                        aria-label="Fermer"
+                        aria-label="Cerrar"
                         onClick={onHide}
                       >
                         <span aria-hidden="true">&times;</span>

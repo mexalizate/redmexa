@@ -92,7 +92,7 @@ const Steps = {
     ({ isLoading, onClose, onReport }) => (
       <>
         <StyledModalBody>
-          <h4>{_("Le message a été supprimé")}</h4>
+          <h4>{"Se suprimió el mensaje"}</h4>
           {onReport ? (
             <p>
               {_("Ce compte enfreint les règles de Action Populaire ?")}
@@ -113,7 +113,7 @@ const Steps = {
             </Button>
           ) : null}
           <Button color="default" onClick={onClose} disabled={isLoading}>
-            {onReport ? "Non merci" : "Terminer"}
+            {onReport ? "No, gracias" : "Finalizar"}
           </Button>
         </StyledModalFooter>
       </>
@@ -135,9 +135,9 @@ const Steps = {
     ({ isLoading, onClose, onReport }) => (
       <>
         <StyledModalBody>
-          <h4>{_("Signaler ce message ?")}</h4>
+          <h4>{"¿Señalar este mensaje?"}</h4>
           <p>
-            <strong>{_("Notre équipe sera notifiée")}</strong> {_("de votre signalement.")}
+            <strong>{"Nuestro equipo será notificado"}</strong> {"de tu señalamiento."}
           </p>
           <p>
             {_("Il n'est pas possible d'annuler cette opération. Tout abus sera sanctionné.")}
@@ -163,14 +163,14 @@ const Steps = {
         <StyledModalBody>
           <h4>{_("Notre équipe a reçu votre signalement")}</h4>
           <p>
-            {_("Si nous constatons que ce message enfreint les règles de Action Populaire, nous prendrons les mesures nécessaire.")}
+            {"Si constatamos que este mensaje viola las reglas de Claudialízate, tomaremos las medidas necesarias."}
           </p>
           {onDelete ? (
             <p>
               <strong>
-                {_("En attendant, en tant que gestionnaire du groupe vous pouvez supprimer le message.")}
+                {"Mientras tanto, como administrador del grupo puedes eliminar el mensaje."}
               </strong>{" "}
-              {_("Il disparaîtra et plus personne ne pourra le voir.")}
+              {" que desaparecerá y ya nadie podrá verlo."}
             </p>
           ) : null}
         </StyledModalBody>
@@ -186,7 +186,7 @@ const Steps = {
             </Button>
           ) : null}
           <Button color="default" onClick={onClose} disabled={isLoading}>
-            {onDelete ? _("Non merci") : _("Terminer")}
+            {onDelete ? "no gracias" : "Cerrar"}
           </Button>
         </StyledModalFooter>
       </>
@@ -194,7 +194,7 @@ const Steps = {
     ({ onClose }) => (
       <>
         <StyledModalBody>
-          <h4>{_("Le message a été supprimé")}</h4>
+          <h4>{"Se suprimió el mensaje"}</h4>
         </StyledModalBody>
         <StyledModalFooter>
           <Button color="default" onClick={onClose}>

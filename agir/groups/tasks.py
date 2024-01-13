@@ -379,7 +379,7 @@ def send_new_group_event_email(group_pk, event_pk):
     }
     formatted_start_date = simple_date
     if start_time - now < timezone.timedelta(days=7):
-        formatted_start_date = f"Ce {_date(start_time, 'l')}"
+        formatted_start_date = f"Este {_date(start_time, 'l')}"
 
     subject = f"{formatted_start_date} : {event.name.capitalize()} de {group.name.capitalize()}"
     send_mosaico_email(
@@ -406,7 +406,7 @@ def send_membership_transfer_sender_confirmation(bindings, recipients_pks):
 
     send_mosaico_email(
         code="TRANSFER_SENDER",
-        subject=f"{bindings['MEMBER_COUNT']} membres ont bien été transférés",
+        subject=f"{bindings['MEMBER_COUNT']} miembros fueron transferidos",
         from_email=settings.EMAIL_FROM,
         recipients=recipients,
         bindings=bindings,
@@ -426,7 +426,7 @@ def send_membership_transfer_receiver_confirmation(bindings, recipients_pks):
 
     send_mosaico_email(
         code="TRANSFER_RECEIVER",
-        subject=f"De nouveaux membres ont été transférés dans {bindings['GROUP_DESTINATION']}",
+        subject=f"Se transfirieron miembros a tu grupo {bindings['GROUP_DESTINATION']}",
         from_email=settings.EMAIL_FROM,
         recipients=recipients,
         bindings=bindings,
@@ -439,7 +439,7 @@ def send_membership_transfer_alert(bindings, recipient_pk):
 
     send_mosaico_email(
         code="TRANSFER_ALERT",
-        subject=f"Notification de changement de groupe",
+        subject=f"Fuiste transferid@ de grupo",
         from_email=settings.EMAIL_FROM,
         recipients=[recipient],
         bindings=bindings,

@@ -101,15 +101,15 @@ export const DownloadApp = ({ onClick }) => (
     <div style={{ paddingRight: "18px" }}>
       <Download
         link
-        href={"iOS" === OS ? CONFIG.apple.href : CONFIG.google.href}
-        aria-label="Salir"
+        href="#"
+        aria-label="Bajar App"
       >
         <ResponsiveLayout
           breakpoint={421}
           MobileLayout={() => (
             <FeatherIcon name="download" color={style.primary500} />
           )}
-          DesktopLayout={() => "Salir"}
+          DesktopLayout={() => "Bajar App"}
         />
       </Download>
     </div>

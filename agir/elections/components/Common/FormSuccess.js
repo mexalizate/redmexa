@@ -52,7 +52,7 @@ const FormSuccess = ({ children }) => {
       <Spacer size="2.5rem" />
       <footer>
         <Button link route="nupes">
-          Fermer
+          Cerrar
         </Button>
       </footer>
     </StyledWrapper>

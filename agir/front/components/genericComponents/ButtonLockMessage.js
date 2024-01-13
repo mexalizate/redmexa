@@ -89,7 +89,11 @@ const ButtonLockMessage = ({ message }) => {
       )}
 
       <ModalConfirmation
-        title= {!isLocked ? "¿Pausar está conversación?" : "Reactivar está conversación?"}
+        title={
+          !isLocked
+            ? "¿Pausar está conversación?"
+            : "Reactivar está conversación?"
+        }
         confirmationLabel={!isLocked ? "Pausar " : "Reactivar"}
         dismissLabel="Regresar"
         shouldShow={isModalOpen}
@@ -102,7 +106,9 @@ const ButtonLockMessage = ({ message }) => {
           <>
             Nadie más podrá escribir en ella.
             <Spacer size="0.5rem" />
-            {_("Les gestionnaires du groupe pourront déverrouiller la conversation n'importe quand.")}
+            {
+              "L@s gestores del grupo podrán reactivar la conversación en cualquier momento."
+            }
           </>
         ) : (
           "Más participantes podrán escribir en ella"

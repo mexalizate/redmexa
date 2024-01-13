@@ -162,6 +162,7 @@ const StyledBanner = styled.div`
 `;
 
 const GroupBanner = (props) => {
+  //si viene el label del type, se puede enviar
   const { name, type, location, iconConfiguration, image } = props;
   const [shouldShowModal, setShouldShowModal] = useState();
 
@@ -216,7 +217,7 @@ const GroupBanner = (props) => {
       {hasLocation && (
         <Modal shouldShow={shouldShowModal} onClose={closeModal} noScroll>
           <StyledModalBody>
-            <button onClick={closeModal} aria-label="Fermer">
+            <button onClick={closeModal} aria-label="Cerrar">
               <RawFeatherIcon name="x" width="1.5rem" heigth="1.5rem" />
             </button>
             <GroupLocation {...props} />

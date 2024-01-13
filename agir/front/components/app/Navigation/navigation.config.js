@@ -57,11 +57,6 @@ const config = {
   ],
   secondaryLinks: [
     {
-      id: "news",
-      title: "Noticias de Claudia",
-      route: "news",
-    },
-    {
       id: "eventMap",
       title: _("Carte des événements"),
       route: "eventMap",

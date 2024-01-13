@@ -18,7 +18,7 @@ const ConnectedUserActions = (props) => {
         <article>
          {_(" Vous recevrez l’actualité de ce groupe.")}
           <Spacer size="0.5rem" />
-         {_(" Vous pouvez le rejoindre en tant que membre pour recevoir les messages destinés aux membres actifs à tout moment.")}
+         {"También puedes unirte como miembro y recibir mensajes destinados a participantes del grupo."}
         </article>
       </StyledDialog>
     </ModalConfirmation>

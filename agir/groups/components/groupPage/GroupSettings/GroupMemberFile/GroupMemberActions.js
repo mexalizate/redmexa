@@ -53,15 +53,15 @@ const GroupMemberActions = (props) => {
 
     return (
       <StyledWrapper>
-        <h4>{_("Modifier les droits")}</h4>
+        <h4>{"Modificar accesos"}</h4>
         <p>
           <Button disabled={isGroupFull} onClick={handleClick}>
-            {_("Passer en membre actif")}
+            {"Convertir en participante activ@"}
           </Button>
         </p>
         {isGroupFull && (
           <p>
-            <strong>{_("Impossible de passer ce contact en membre actif")}</strong>{_(" car le groupe a atteint la limite de membres actifs. Passez des membres actifs en contact ou divisez votre groupe pour renforcer le réseau d'action")}
+            <strong>{_("No se puede convertir este contacto en miembro activo")}</strong>{_(" car le groupe a atteint la limite de membres actifs. Passez des membres actifs en contact ou divisez votre groupe pour renforcer le réseau d'action")}
           </p>
         )}
       </StyledWrapper>
@@ -77,11 +77,11 @@ const GroupMemberActions = (props) => {
     };
     return (
       <StyledWrapper>
-        <h4>{_("Modifier les droits")}</h4>
+        <h4>{"Modificar accesos"}</h4>
         <p>
-          <Button onClick={setAsFollower}>{_("Passer en contact")}</Button>
+          <Button onClick={setAsFollower}>{"Convertir en seguidor(a)"}</Button>
           {isReferent && (
-            <Button onClick={setAsManager}>{_("Passer en gestionnaire")}</Button>
+            <Button onClick={setAsManager}>{"Hacerl@ gestor(a)"}</Button>
           )}
         </p>
       </StyledWrapper>
@@ -95,10 +95,10 @@ const GroupMemberActions = (props) => {
 
     return (
       <StyledWrapper>
-        <h4>{_("Modifier les droits")}</h4>
+        <h4>{"Modificar accesos"}</h4>
         <p>
           <Button onClick={handleClick}>
-            {_("Retirer le droit de gestionnaire")}
+            {"Quitar el permiso de gestión"}
           </Button>
         </p>
       </StyledWrapper>

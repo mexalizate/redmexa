@@ -1,14 +1,11 @@
 import _ from "gettext";
 import PropTypes from "prop-types";
 import React from "react";
-
 import style from "@agir/front/genericComponents/_variables.scss";
-
 import FileCard from "@agir/front/genericComponents/FileCard";
 import HelpCenterCard from "@agir/front/genericComponents/HelpCenterCard";
 import HeaderPanel from "@agir/front/genericComponents/ObjectManagement/HeaderPanel";
 import Spacer from "@agir/front/genericComponents/Spacer";
-
 import { StyledTitle } from "@agir/front/genericComponents/ObjectManagement/styledComponents";
 
 const GroupHelpPage = (props) => {
@@ -20,7 +17,9 @@ const GroupHelpPage = (props) => {
       <StyledTitle>{"Información útil"}</StyledTitle>
       <Spacer size="1rem" />
       <span style={{ color: style.black700 }}>
-      La siguiente información te ayudará a mejorar la facilitación y gestión de tu grupo.      </span>
+        La siguiente información te ayudará a mejorar la facilitación y gestión
+        de tu grupo.{" "}
+      </span>
       <Spacer size="1rem" />
       <StyledTitle>Centro de ayuda</StyledTitle>
       <Spacer size=".5rem" />

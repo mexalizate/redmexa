@@ -62,7 +62,7 @@ class DeleteAccountView(HardLoginRequiredMixin, DeleteView):
 
     def delete(self, request, *args, **kwargs):
         messages.add_message(
-            self.request, messages.SUCCESS, "Votre compte a bien été supprimé !"
+            self.request, messages.SUCCESS, "Tu cuenta fue eliminada !"
         )
         response = super().delete(request, *args, **kwargs)
         logout(self.request)

@@ -131,7 +131,7 @@ export const AgendaRoutePreview = (props) => {
             {nextEvents.length > 0 && (
               <>
                 <h3>
-                  <span>Últimas acciones</span>
+                  <span>Próxima  { nextEvents.length > 1 ? "s" : ""}  acci{nextEvents.length > 1 ? "ones" : "ón"}</span>
                   {goToAgendaTab && (
                     <button onClick={goToAgendaTab}>
                       {_("Agenda")}{" "}
@@ -160,8 +160,8 @@ export const AgendaRoutePreview = (props) => {
               <>
                 <h3>
                   <span>
-                    {_("Dernier")}{lastEvents.length > 1 ? "s" : ""} {_("événement")}
-                    {lastEvents.length > 1 ? "s" : ""}
+                    {"Última"}{lastEvents.length > 1 ? "s" : ""} {" acci"}
+                    {lastEvents.length > 1 ? "ones" : "ón"}
                   </span>
                   {goToAgendaTab && (
                     <button onClick={goToAgendaTab}>

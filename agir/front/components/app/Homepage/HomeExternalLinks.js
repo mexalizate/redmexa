@@ -109,16 +109,16 @@ const HomeExternalLinks = () => {
         <a href="HTTPS://REDMIGRANTE.COM">
           <img
             src={nupesLogo}
-            alt={_("logo de la Nouvelle Union Populaire Écologique et Sociale")}
+            alt={"logo de redmigrante"}
             width="200"
             height="67"
           />
         </a>
         <Spacer size="1rem" />
-        <a href="https://youtube.com/@ClaudiaSheinbaumP?si=LF9lPRkWys1GOttW">
+        <a href="https://www.facebook.com/MiPaisaMx">
           <img
             src={linsoumissionLogo}
-            alt={_("logo de l'insoumission")}
+            alt={"logo de mi paisa"}
             width="176"
             height="48"
           />

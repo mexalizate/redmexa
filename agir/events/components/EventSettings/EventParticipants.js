@@ -60,12 +60,14 @@ const EventParticipants = (props) => {
     <>
       <HeaderPanel onBack={onBack} illustration={illustration} />
       <BlockTitle>
-        <h3>{participants.length} Participant·es</h3>
+        <h3>
+          {participants.length} Participante{participants.length > 1 ? "s" : ""}
+        </h3>
         {!event?.isPast && (
           <div>
             <StyledLink to={organizationLink} style={{ marginLeft: "10px" }}>
               <RawFeatherIcon name="settings" height="13px" />
-              {_("Inviter à co-organiser")}
+              {"Invitar a co-organizar"}
             </StyledLink>
           </div>
         )}
@@ -73,7 +75,7 @@ const EventParticipants = (props) => {
 
       <Spacer size="1rem" />
       <ShareLink
-        label={_("Copier les e-mails des participant·es")}
+        label={"Copiar emails de participantes"}
         color="primary"
         url={participants.map(({ email }) => email).join(", ") || ""}
         $wrap
@@ -87,8 +89,7 @@ const EventParticipants = (props) => {
         <>
           <BlockTitle>
             <h3>
-              {groupsAttendees.length} Groupe{severalGroups && "s"} {_("participant")}
-              {severalGroups && "s"}
+              {groupsAttendees.length} Groupe{severalGroups && "s"} {_("participant")}{severalGroups && "s"}
             </h3>
           </BlockTitle>
           <Spacer size="0.5rem" />

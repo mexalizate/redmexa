@@ -51,7 +51,7 @@ def send_no_account_email(
 
     send_mosaico_email(
         code="UNEXISTING_EMAIL_LOGIN",
-        subject=_("Vous n'avez pas encore de compte sur Action Populaire"),
+        subject=_("No tienes cuenta Claudialízate"),
         from_email=settings.EMAIL_FROM,
         recipients=[email],
         bindings={"SUBSCRIPTION_URL": confirm_subscription_url},

@@ -172,12 +172,11 @@ class GroupTypeStep extends FormStep {
               }}
             >
               <button
-                className={`btn btn-default ${fields.type === type.id ? "active" : ""
-                  }`.trim()}
+                className={`btn btn-  ${
+                  fields.type === type.id ? "active" : ""
+                }`.trim()}
                 style={{
                   whiteSpace: "normal",
-                  backgroundColor: type.disabled ? "transparent" : undefined,
-                  opacity: type.disabled ? ".5" : undefined,
                 }}
                 onClick={type.disabled ? undefined : this.setType(type.id)}
                 disabled={type.disabled}
@@ -312,7 +311,7 @@ class ValidateStep extends FormStep {
     return (
       <div className="row padtopmore padbottommore">
         <div className="col-md-6">
-          <p>Verifica la información para tu grupo:&nbsp;:</p>
+          <p>Verifica la información para tu grupo &nbsp; :</p>
           <dl className="well confirmation-data-list">
             <dt>Tipo&nbsp;:</dt> <dd>{groupType.label}</dd>
             <dt>Número de celular&nbsp;:</dt>
@@ -366,7 +365,7 @@ class ValidateStep extends FormStep {
                 <input onChange={this.toggleMaySubmit} type="checkbox" />
                 Me comprometo a respetar los{" "}
                 <a
-                  href="https://info.preprod.redmexa.com/charte-des-groupes-action-populaire/"
+                  href="https://info.claudializate.com/principios"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

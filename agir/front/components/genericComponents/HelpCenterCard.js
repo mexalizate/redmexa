@@ -10,7 +10,7 @@ const HelpCenterCard = (props) => {
   const { type } = props;
 
   const route =
-    type === "group" ? "groupHelp" : type === "event" ? "eventHelp" : "help";
+    type === "group" ? "lafranceinsoumise" : type === "event" ? "lafranceinsoumise" : "lafranceinsoumise";
 
   return (
     <Card>
@@ -22,10 +22,6 @@ const HelpCenterCard = (props) => {
       <Spacer size="0.5rem" />
       <Button link small route={route} color="secondary">
       Ir al centro de ayuda
-      </Button>
-      <Spacer size="0.5rem" />
-      <Button link small route="helpIndex" color="secondary">
-      Ver las guías de acción
       </Button>
       <Spacer size="0.5rem" />
       <Button link small route="contact" color="default">

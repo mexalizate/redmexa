@@ -68,7 +68,7 @@ const SearchPageTab = (props) => {
         {tab.hasEvents && (
           <>
             <ListTitle
-              name="acciones"
+              name="Acciones"
               length={tab.id === "events" ? events.length : 0}
               onShowMore={
                 tab.id !== "events" ? () => onTabChange("events") : undefined

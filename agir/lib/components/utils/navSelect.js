@@ -4,24 +4,21 @@ import PropTypes from "prop-types";
 class NavSelect extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { choices: [], error: false };
+    this.state = { choices: [], selectedValue: null, error: false };
   }
 
   setChoice(choice) {
     return (e) => {
       e.preventDefault();
-      let previousChoices = this.props.value;
-      let newChoices;
 
-      if (!previousChoices.includes(choice)) {
-        newChoices = previousChoices.concat(choice);
+      // Si el valor seleccionado es diferente al actual, actualiza el estado
+      if (this.state.selectedValue !== choice.value) {
+        this.setState({ selectedValue: choice.value });
+        this.props.onChange([choice.value]);
       } else {
-        previousChoices.splice(previousChoices.indexOf(choice), 1);
-        newChoices = previousChoices;
-      }
-
-      if (newChoices.length <= this.props.max) {
-        this.props.onChange(newChoices);
+        // Si el valor seleccionado es el mismo, deselecciónalo
+        this.setState({ selectedValue: null });
+        this.props.onChange([]);
       }
     };
   }
@@ -35,13 +32,15 @@ class NavSelect extends React.Component {
           {choices.map((choice) => (
             <li
               key={choice.value}
-              className={value.includes(choice.value) ? "active" : ""}
+              className={
+                this.state.selectedValue === choice.value ? "active" : ""
+              }
             >
-              <a href="#" onClick={this.setChoice(choice.value)}>
+              <a href="#" onClick={this.setChoice(choice)}>
                 <i
                   className={
                     "fa " +
-                    (value.includes(choice.value)
+                    (this.state.selectedValue === choice.value
                       ? "fa-check-circle"
                       : "fa-circle-o")
                   }
@@ -55,11 +54,11 @@ class NavSelect extends React.Component {
     );
   }
 }
+
 NavSelect.propTypes = {
   choices: PropTypes.array,
   value: PropTypes.array,
   onChange: PropTypes.func,
-  max: PropTypes.number,
 };
 
 export default NavSelect;

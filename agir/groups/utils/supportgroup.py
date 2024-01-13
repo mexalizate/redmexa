@@ -84,7 +84,7 @@ def get_supportgroup_routes(supportgroup, membership=None, user=None):
         "animation": front_url(
             "view_group_settings_management", kwargs={"pk": supportgroup.pk}
         ),
-        "animationChangeRequest": "https://preprod.redmexa.com/formulaires/demande-changement-animation-ga/",
+        "animationChangeRequest": "https://preprod.redmexa.com/formulaires/eliminar-grupo/",
         "calendarExport": front_url("ics_group", kwargs={"pk": supportgroup.pk}),
         "createEvent": f'{front_url("create_event")}?group={str(supportgroup.pk)}',
         "createSpendingRequest": front_url(
@@ -122,7 +122,7 @@ def get_supportgroup_routes(supportgroup, membership=None, user=None):
         ),
         "orders": "https://materiales.preprod.redmexa.com/",
         "quit": front_url("quit_group", kwargs={"pk": supportgroup.pk}),
-        "referentResignmentRequest": "https://info.preprod.redmexa.com/contact/",
+        "referentResignmentRequest": "https://info.claudializate.com/contacto/",
         "settings": front_url("view_group_settings", kwargs={"pk": supportgroup.pk}),
         "downloadMemberList": front_url(
             "download_member_list", kwargs={"pk": supportgroup.pk}

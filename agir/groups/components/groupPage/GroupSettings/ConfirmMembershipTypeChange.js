@@ -52,28 +52,28 @@ const ConfirmPanel = (props) => {
       <>
         <BackButton disabled={isLoading} onClick={onBack} />
         <StyledTitle>
-          {_("Retirer")} {selectedMember.displayName} {_("des membres actifs ?")}
+          {"¿Quitar a "} {selectedMember.displayName} {"como participante activ@ ? "}
         </StyledTitle>
         <Spacer size="0.5rem" />
         <StyledContent>
           <p>
-            {_("Cette personne ne sera plus considérée comme un membre actif de votre groupe.")}
+            {"Esta persona dejará de aparecer como participante activ@ del grupo."}
           </p>
           <p>
-            {getGenderedWord(selectedMember.gender, "Ce membre", "Elle", "Il")}{" "}
-            {_("ne recevra plus les messages postés sur Action Populaire que vous destinez aux membres actifs.")}
+            {getGenderedWord(selectedMember.gender, "Esta persona", "Ella", "Él")}{" "}
+            {"ya no recibirá mensajes de Claudialízate destinados a miembros activ@s."}
           </p>
           <p>
-            {selectedMember.displayName} {_("restera parmi les contacts de votre groupe.")}
+            {selectedMember.displayName} {" permanecerá sólo como seguidor(a) de tu grupo."}
           </p>
         </StyledContent>
         <Spacer size="1rem" />
         <StyledFooter>
           <Button disabled={isLoading} color="danger" onClick={onConfirm}>
-           {_(" Retirer")}
+           {"Convertir en seguidor(a)"}
           </Button>
           <Button disabled={isLoading} onClick={onBack}>
-            {_("Annuler")}
+            {"Cancelar"}
           </Button>
         </StyledFooter>
       </>
@@ -88,21 +88,22 @@ const ConfirmPanel = (props) => {
       <>
         <BackButton disabled={isLoading} onClick={onBack} />
         <StyledTitle>
-          Passer {selectedMember.displayName} {_("en membre actif ?")}
+          ¿Convertir a  {selectedMember.displayName} {"en participante activ@ ?"}
         </StyledTitle>
         <Spacer size="0.5rem" />
         <StyledContent>
           <p>
-           {_(" Ce membre pourra accéder aux messages du groupe destinés aux membres actifs.")}
+            Podrá acceder a los mensajes del grupo destinados a participantes
+            activos.
           </p>
         </StyledContent>
         <Spacer size="1rem" />
         <StyledFooter>
           <Button disabled={isLoading} color="primary" onClick={onConfirm}>
-            {_("Passer en membre actif")}
+            {"Convertir en participante activ@"}
           </Button>
           <Button disabled={isLoading} onClick={onBack}>
-            {_("Annuler")}
+            {"Cancelar"}
           </Button>
         </StyledFooter>
       </>
@@ -117,21 +118,23 @@ const ConfirmPanel = (props) => {
       <>
         <BackButton disabled={isLoading} onClick={onBack} />
         <StyledTitle>
-         {_(" Passer")} {selectedMember.displayName} {_("en gestionnaire ?")}
+          {" Hacer gestor(a) a "} {selectedMember.displayName} {" ?"}
         </StyledTitle>
         <Spacer size="0.5rem" />
         <StyledContent>
           <p>
-           {_(" Ce membre pourra avoir accès à la liste et aux informations des membres du groupe, modifier les informations du groupe et créer des événements au nom du groupe")}
+            {
+              " Este participante podrá acceder a la lista de participantes del grupo, modificar la información del grupo y crear acciones a nombre del grupo."
+            }
           </p>
         </StyledContent>
         <Spacer size="1rem" />
         <StyledFooter>
           <Button disabled={isLoading} color="primary" onClick={onConfirm}>
-            {_("Passer en gestionnaire")}
+            {"Hacer gestor(a)"}
           </Button>
           <Button disabled={isLoading} onClick={onBack}>
-            {_("Annuler")}
+            {"Cancelar"}
           </Button>
         </StyledFooter>
       </>
@@ -146,24 +149,24 @@ const ConfirmPanel = (props) => {
       <>
         <BackButton disabled={isLoading} onClick={onBack} />
         <StyledTitle>
-         {_(" Retirer à ")}{selectedMember.displayName}{_(" le droit de gestionnaire ?")}
+         {" ¿Quitar a "}{selectedMember.displayName}{_(" el permiso de gestión ?")}
         </StyledTitle>
         <Spacer size="0.5rem" />
         <StyledContent>
           <p>
-           {_(" Ce membre n'aura plus accès à la liste et aux informations des membres du groupe, ne pourra plus modifier les informations du groupe ni créer des événements au nom du groupe")}
+           {" No tendrá más acceso a la lista de participantes del grupo, ni modificar la información del grupo, ni crear acciones a nombre del grupo"}
           </p>
           <p>
-            {selectedMember.displayName} {_("restera parmi les membres actifs de votre groupe.")}
+            {selectedMember.displayName} { "permanecerá entre los miembros activos de su grupo."}
           </p>
         </StyledContent>
         <Spacer size="1rem" />
         <StyledFooter>
           <Button disabled={isLoading} color="danger" onClick={onConfirm}>
-            {_("Retirer le droit de gestionnaire")}
+            {"Quitar permiso de gestión"}
           </Button>
           <Button disabled={isLoading} onClick={onBack}>
-            {_("Annuler")}
+            {"Cancelar"}
           </Button>
         </StyledFooter>
       </>

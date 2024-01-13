@@ -123,7 +123,11 @@ export const Footer = (props) => {
             <p>
               <Link className="primaryTextColorPurple" route="eventMap">{_("Carte des événements")}</Link>
               <Link className="primaryTextColorPurple" route="groupMap">{_("Carte des groupes")}</Link>
-              <Link className="primaryTextColorPurple" route="materiel" target="_blank">
+              <Link
+                className="primaryTextColorPurple"
+                route="materiel"
+                target="_blank"
+              >
                 {"Bajar material"}
               </Link>
             </p>
@@ -143,35 +147,35 @@ export const Footer = (props) => {
             </p>
           </div>
 
-          <div>
-            <h3 className="secondaryTextColorLightRed">{/*_("Le programme")*/}EL PROGRAMA</h3>
+          {/*<div>
+            <h3 className="secondaryTextColorLightRed">EL PROGRAMA</h3>
             <p>
-              <Link className="primaryTextColorPurple" route="nupesPlatform" target="_blank">
-                {/*_("Le programme de la")*/}El programa de la{" "}
+              {/*<Link className="primaryTextColorPurple" route="nupesPlatform" target="_blank">
+                El programa de la{" "}
                 <abbr title="Nouvelle Union Populaire Écologique et sociale">
-                  {/*_("NUPES")*/}4T
+                  4T
                 </abbr>
               </Link>
               <Link className="primaryTextColorPurple" route="programme" target="_blank">
-                {/*_("Le programme l'Avenir en commun")*/} La visión de Claudia
+                 La visión de Claudia
               </Link>
             </p>
-          </div>
+              </div> */}
 
           <div>
             <h3 className="secondaryTextColorLightRed">{/*_("Les autres sites")*/} OTROS SITIOS</h3>
             <p>
-              <Link className="primaryTextColorPurple" route="nupes" target="_blank">
-                {/*_("La")*/}{" "}
+              {/*<Link className="primaryTextColorPurple" route="nupes" target="_blank">
+               {" "}
                 <abbr
                   title="Claudializate"
                 >
-                  {/*_("NUPES")*/}Claudialízate
+                  Claudialízate
                 </abbr>
               </Link>
-              <Link className="primaryTextColorPurple" route="lafranceinsoumise">{/*_("La France insoumise")*/}Morena</Link>
-              <Link className="primaryTextColorPurple" route="linsoumission">{/*_("L'insoumission")*/}Youtube</Link>
-              <Link className="primaryTextColorPurple" route="jlmBlog">{/*_("Le blog de Jean-Luc Mélenchon")*/}TikTok</Link>
+              <Link className="primaryTextColorPurple" route="lafranceinsoumise">Morena</Link>
+              <Link className="primaryTextColorPurple" route="linsoumission">Youtube</Link>*/}
+              <Link className="primaryTextColorPurple" route="jlmBlog">TikTok</Link>
             </p>
           </div>
 

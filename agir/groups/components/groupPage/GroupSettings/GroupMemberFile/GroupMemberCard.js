@@ -130,7 +130,7 @@ const GroupMemberCard = (props) => {
   const [_, handleCopy] = useCopyToClipboard(
     email,
     2000,
-    ("L'adresse e-mail a été copié."),
+    ("Se copió la dirección email"),
   );
 
   const role = useMemo(
@@ -169,7 +169,7 @@ const GroupMemberCard = (props) => {
             </span>
           ) : null}
           {email ? (
-            <button type="button" title={("Copier l'adresse")} onClick={handleCopy}>
+            <button type="button" title={("Copiar dirección")} onClick={handleCopy}>
               <FeatherIcon small name="mail" />
               <strong>{email}</strong>
             </button>
@@ -188,10 +188,9 @@ const GroupMemberCard = (props) => {
             <FeatherIcon small name="clock" />
 
             {membershipType === MEMBERSHIP_TYPES.FOLLOWER
-              ? `Contact ${subscriber ? ("ajouté") : ("depuis")} ${timeAgo(created, "day").split(" à ")[0]
-              }
+              ? `Seguidor(a)  ${subscriber ? ("desde") : ("desde")} ${timeAgo(created, "día").split(" à ")[0]}
             ${subscriber ? ` par ${subscriber}` : ""}`
-              : `Membre du groupe depuis ${timeAgo(created, "day").split(" à ")[0]
+              : `Miembro del grupo desde ${timeAgo(created, "día").split(" à ")[0]
               }`}
           </span>
         </p>

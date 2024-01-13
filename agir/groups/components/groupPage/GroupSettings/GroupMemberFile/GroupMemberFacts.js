@@ -28,11 +28,11 @@ const GroupMemberFacts = (props) => {
     (i) => typeof i === "boolean",
   ) ? (
     <StyledList>
-      <h4>À propos</h4>
+      <h4>Detalles</h4>
       <li>
         {isPoliticalSupport
           ? _("Soutien politique de la France insoumise")
-          : _("N’est pas encore soutien politique de la France insoumise")}
+          : "Todavía no registra su apoyo a Claudialízate"}
       </li>
       <li>
         {hasGroupNotifications

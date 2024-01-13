@@ -1,4 +1,4 @@
-{{ GREETINGS }}
+{{ greetings }}
 Participa en la acción del grupo {{ GROUP }}.  
 
 >> {{ EVENT_NAME }}

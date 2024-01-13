@@ -16,7 +16,7 @@ const GenericCard = (props) => {
   const [_, copyEmail] = useCopyToClipboard(
     meta?.email,
     2000,
-    "L'adresse e-mail a été copié.",
+    "Se copió la dirección email.",
   );
 
   const { Event, SupportGroup, Individual } = useMemo(
@@ -115,9 +115,9 @@ const GenericCard = (props) => {
             {("Ya no eres un miembro activo del grupo")} {SupportGroup}
           </strong>
           <br />
-          {("Los administradores de esté grupo de han etiquetado como  \"suscriptor\" .")}
+          {("L@s facilitadores del grupo te indicaron como \"seguidor\" .")}
           <br />
-          {("Continuará recibiendo la mayor parte de la información del grupo, excepto los mensajes destinados únicamente a miembros activos.")}
+          {("Seguirás recibiendo información del grupo, excepto mensajes destinados a miembros activ@s.")}
         </GenericCardContainer>
       );
     }
@@ -147,7 +147,7 @@ const GenericCard = (props) => {
     case "group-coorganization-invite": {
       return (
         <GenericCardContainer {...props}>
-          {Individual || "Alguien"} {("propuesta a ")} {SupportGroup} {("de coorganizar")}{" "}
+          {Individual || "Alguien"} {("está proponiendo a tu grupo ")} {SupportGroup} {("ser co-organizador de")}{" "}
           {Event}
         </GenericCardContainer>
       );
@@ -155,20 +155,20 @@ const GenericCard = (props) => {
     case "group-coorganization-accepted":
       return (
         <GenericCardContainer {...props}>
-          {SupportGroup} {("a accepté de co-organiser votre événement")} {Event}
+          {SupportGroup} {("aceptó ser co-organizador de tu acción")} {Event}
         </GenericCardContainer>
       );
     case "group-coorganization-accepted-from":
       return (
         <GenericCardContainer {...props}>
-          Le groupe {SupportGroup} {("a accepté de co-organiser votre événement")}{" "}
+          Le groupe {SupportGroup} {("aceptó ser co-organizador de tu acción")}{" "}
           {Event}
         </GenericCardContainer>
       );
     case "group-coorganization-accepted-to":
       return (
         <GenericCardContainer {...props}>
-          Votre groupe {SupportGroup} {("a accepté de co-organiser l'événement")}{" "}
+          Tu grupo {SupportGroup} {("aceptó co-organizar la acción")}{" "}
           {Event}
         </GenericCardContainer>
       );
@@ -218,7 +218,7 @@ const GenericCard = (props) => {
     case "new-event-participation-mygroups":
       return (
         <GenericCardContainer {...props}>
-          {SupportGroup} {("participar en la acción")} {Event}
+          {SupportGroup} {("participa en la acción")} {Event}
         </GenericCardContainer>
       );
     case "new-report":
@@ -230,7 +230,7 @@ const GenericCard = (props) => {
     case "event-suggestion":
       return (
         <GenericCardContainer {...props}>
-          Ce{" "}
+          Este {" "}
           {dateFromISOString(event.startTime).toLocaleString({
             weekday: "long",
           })}
@@ -253,8 +253,8 @@ const GenericCard = (props) => {
     case "transferred-group-member":
       return (
         <GenericCardContainer {...props}>
-          {("Has sido transferido de")} &laquo;&nbsp;{meta && meta.oldGroup}
-          &nbsp;&raquo; {("y se unió")} {SupportGroup}.<br />
+          {("Fuiste transferid@ desde el grupo")} &laquo;&nbsp;{meta && meta.oldGroup}
+          &nbsp;&raquo; {("hacia el grupo")} {SupportGroup}.<br />
           {("¡Tu nuevo grupo te está esperando!")}
         </GenericCardContainer>
       );
@@ -262,27 +262,27 @@ const GenericCard = (props) => {
       return (
         <GenericCardContainer {...props}>
           {meta && meta.transferredMemberships} {"Participantes"}
-          {meta && meta.transferredMemberships > 0 ? "s" : ""} {("nos unimos")}{" "}
+          {meta && meta.transferredMemberships > 0 ? "s" : ""} {("se unieron al grupo ")}{" "}
           <Link
             to={routeConfig.groupSettings.getLink({ groupPk: group.id })}
             backLink="activities"
           >
             {group.name}
           </Link>{" "}
-          {(" tras una transferencia de ")} &laquo;&nbsp;
+          {(" transferidos desde el grupo ")} &laquo;&nbsp;
           {meta && meta.oldGroup}&nbsp;&raquo;.
         </GenericCardContainer>
       );
     case "group-creation-confirmation": {
       return (
         <GenericCardContainer {...props}>
-          {SupportGroup} {("ya está en línea !")}<br />
-          {("Como facilitador(a), puedes gestionar")} {SupportGroup} {("n todo momento mediante el botón  «  Gestión »  o haciendo clic aquí.")}{" "}
+          {SupportGroup} {("ya está en línea")}<br />
+          {("Como facilitador(a), puedes gestionar")} {SupportGroup} {("mediante el botón ‘Gestión’ o haciendo ")}{" "}
           <Link
             to={routeConfig.groupSettings.getLink({ groupPk: group.id })}
             backLink="activities"
           >
-            {("este enlace")}
+            {("clic aquí.")}
           </Link>
           .<br />
           {("Te recomendamos leer los consejos destinados a nuev@s facilitadores ")}

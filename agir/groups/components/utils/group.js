@@ -15,10 +15,10 @@ export const MEMBERSHIP_TYPE_ICON = {
 };
 
 export const MEMBERSHIP_TYPE_LABEL = {
-  [MEMBERSHIP_TYPES.FOLLOWER]: "Contact du groupe",
-  [MEMBERSHIP_TYPES.MEMBER]: "Membre actif",
-  [MEMBERSHIP_TYPES.MANAGER]: "Gestionnaire",
-  [MEMBERSHIP_TYPES.REFERENT]: ["Animateur·ice", "Animatrice", "Animateur"],
+  [MEMBERSHIP_TYPES.FOLLOWER]: "Seguidor(a) del grupo",
+  [MEMBERSHIP_TYPES.MEMBER]: "Miembro activo",
+  [MEMBERSHIP_TYPES.MANAGER]: "Gestor(a)",
+  [MEMBERSHIP_TYPES.REFERENT]: ["Facilitador(a)", "Facilitadora", "Facilitador"],
 };
 
 export const getGenderedMembershipType = (membershipType, gender) => {

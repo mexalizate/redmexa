@@ -125,7 +125,9 @@ const EventFeedback = (props) => {
           : _("Photo")}
       </h4>
       <span style={{ color: style.black700 }}>
-        {_("Cette image apparaîtra en tête de votre compte rendu, et dans les partages que vous ferez du compte rendu sur les réseaux sociaux.")}
+        {_(
+          "Cette image apparaîtra en tête de votre compte rendu, et dans les partages que vous ferez du compte rendu sur les réseaux sociaux.",
+        )}
       </span>
       <Spacer size="0.5rem" />
       <ImageField
@@ -144,8 +146,10 @@ const EventFeedback = (props) => {
             value={hasCheckedImageLicence}
             label={
               <span style={{ color: style.black700 }}>
-                {_("En important une image, je certifie être le propriétaire des droits et accepte de la partager sous licence libre")}{" "}
-                <a href={I18N.ccLicenseLink}>{_("Creative Commons CC-BY-NC 3.0")}</a>.
+                {
+                  "Al cargar una imagen, declaro ser propietario de sus derechos y acepto compartirla bajo licencia libre "
+                }{" "}
+                <a href={I18N.ccLicenseLink}>{"Creative Commons CC-BY-NC 3.0"}</a>.
               </span>
             }
             onChange={handleCheckImageLicence}
@@ -158,7 +162,7 @@ const EventFeedback = (props) => {
         <>
           <Spacer size="0.5rem" />
           <Button link small href={event?.routes.addPhoto}>
-            {_("Ajouter d'autres photos")}
+            {"Agregar más fotos"}
           </Button>
         </>
       )}

@@ -341,7 +341,7 @@ export const ContactForm = (props) => {
           </p>
           <Spacer size=".5rem" />
           <CheckboxField
-            label={_("Devenir correspondant·e de l'immeuble ou du village")}
+            label={"Ser corresponsal de tu edificio o tu barrio"}
             onChange={handleCheckNewsletter}
             value={data.newsletters.includes(LIAISON_NEWSLETTER.value)}
             id={LIAISON_NEWSLETTER.value}

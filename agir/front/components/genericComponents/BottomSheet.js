@@ -96,7 +96,7 @@ export const BottomSheet = (props) => {
           ]}
           footer={
             <StyledBottomSheetFooter>
-              <button onClick={onDismiss}>Fermer</button>
+              <button onClick={onDismiss}>Cerrar</button>
             </StyledBottomSheetFooter>
           }
         >

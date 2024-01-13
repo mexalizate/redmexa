@@ -330,7 +330,7 @@ class CreateEventView(BaseAppSoftAuthView):
 
 
 class SearchView(BaseAppCachedView):
-    meta_title = _("Rechercher")
+    meta_title = "Buscar"
     meta_description = _("Rechercher un groupe, un événement")
 
 

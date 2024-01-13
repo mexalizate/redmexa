@@ -1,6 +1,6 @@
 Recordatorio : Envía comprobantes de la acción de ayer
   
-{{ GREETINGS }},
+{{ greetings }},
 
 Tu acción >> {{ EVENT_NAME }} << tuvo lugar ayer. ¡Felicidades!
 

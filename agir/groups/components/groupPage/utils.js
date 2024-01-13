@@ -13,7 +13,7 @@ export const getGroupTypeWithLocation = (type, location) => {
     return `${type} (${zip})`;
   }
   if (!nameOf) {
-    return `${type} à ${city} (${zip})`;
+    return `${city} (${zip})`;
   }
   return `${type} ${communeNameOfToIn(nameOf)} (${zip})`;
 };

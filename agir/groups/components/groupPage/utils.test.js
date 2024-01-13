@@ -20,7 +20,7 @@ describe("agir.groups.groupPage.utils", function () {
     it("should return arg type, zip and city if commune.nameOf is falsy", function () {
       const groupType = "Groupe local";
       const location = { zip: "75019", city: "Paris" };
-      const expected = `${groupType} à ${location.city} (${location.zip})`;
+      const expected = `${location.city} (${location.zip})`;
       let result = getGroupTypeWithLocation(groupType, location, null);
       expect(result).toEqual(expected);
       result = getGroupTypeWithLocation(groupType, location, { nameOf: null });

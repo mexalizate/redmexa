@@ -2,7 +2,7 @@
 {% load i18n %}
 
 {% block subject %}
-  {%  translate "Merci de votre soutien !" %}
+  {%  translate "¡Gracias por unirte! " %}
 {% endblock %}
 
 {% block html_content %}
@@ -18,7 +18,7 @@
 {% endblocktranslate %}
 
 
-<p>{% translate "Te damos la bienvenida a esta gran aventura.&nbsp;!" %}</p>
+<p>{% translate "Te damos la bienvenida a esta gran aventura.&nbsp;" %}</p>
 
 <p>
   {% translate "Puedes ingresar a Claudialízate con el siguiente botón :" %}
@@ -44,27 +44,11 @@
       font-size: 1.25em;
     "
   >
-    {% translate "Ver claudialízate" %}
+    {% translate "Entrar a Claudialízate" %}
   </a>
 </p>
 
-<p style="font-family: Arial, Helvetica, sans-serif; text-align: center">
-  <a
-    href="https://preprod.redmexa.com/"
-    style="
-      display: inline-block;
-      text-decoration: none;
-      color: #ffffff;
-      font-weight: bold;
-      padding: 14px;
-      background-color: #781136;
-      border-radius: 5px;
-      font-size: 1.25em;
-    "
-  >
-    {% translate "Ver el sitio de claudialízate" %}
-  </a>
-</p>
+
 
 <br />
 
@@ -99,33 +83,17 @@
   <a style="font-weight: bold" href="{{ dashboard_link }}?{{ merge_login }}"
     >Claudialízate </a
   >
-  desde el {{ subscription_date }}&nbsp;: Por seguridad no actualizamos tu información.
+  desde el {{ subscription_date }}. Por seguridad no actualizamos tu información.
 </p>
   {% endblocktranslate %}
 <p>
-  {% translate "Puedes verificar y actualizar tus datos en todo momento, en la sección Configuración de Claudialízate" %}
+  {% translate "Puedes verificar y actualizar tus datos en todo momento, en la sección Configuración de Claudialízate." %}
 </p>
-<p style="font-family: Arial, Helvetica, sans-serif; text-align: center">
-  <a
-    href="{{ account_link }}?{{ merge_login }}"
-    style="
-      display: inline-block;
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-      padding: 14px;
-      background-color: #4b2c92;
-      border-radius: 5px;
-      font-size: 1.25em;
-    "
-  >
-    {% translate "Ver mis datos en Claudialízate" %}
-  </a>
-</p>
+
 {% endif %}
 <br />
 {% blocktranslate %}
-  <p>Saludos<br />
+  <p>Saludos,<br />
   <br />
   El equipo de Claudialízate</p>
 {% endblocktranslate %}

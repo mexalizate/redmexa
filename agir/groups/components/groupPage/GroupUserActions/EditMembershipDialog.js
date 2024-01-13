@@ -59,7 +59,7 @@ const EditMembershipDialog = (props) => {
             block
             wrap
           >
-            {_(" Mettre à jour")}
+            Actualizar
           </Button>
         </footer>
       </StyledDialog>

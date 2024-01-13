@@ -56,7 +56,7 @@ const ONBOARDING_TYPE = {
         <p>
          {_(" Besoin d’inspiration pour animer votre groupe ?")}{" "}
           <a
-            href="https://info.preprod.redmexa.com/"
+            href="https://info.claudializate.com/"
             target="_blank"
             rel="noopener noreferrer"
           >

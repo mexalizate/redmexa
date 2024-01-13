@@ -287,7 +287,7 @@ const EventCard = (props) => {
                   : ""
               }${
                 location && distance && !isNaN(distance)
-                  ? ` ⟷ ${Math.round(distance) / 1000} Km`.replace(".", ",")
+                  ? ` ⟷ ${(Math.round(distance) / 1000).toFixed(2)} Km`
                   : ""
               }`.trim()}
           </h4>

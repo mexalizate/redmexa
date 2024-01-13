@@ -397,7 +397,7 @@
                                       color: #919191;
                                     "
                                     target="_new"
-                                    href="[preferences_link]"
+                                    href="{{ preferences_link }}"
                                     >Escoge los emails que recibes</a>
                                   <span
                                     style="
@@ -463,7 +463,7 @@
                                         color: #919191;
                                       "
                                       target="_new"
-                                      href="[unsubscribe_link]"
+                                      href="{{ unsubscribe_link }}"
                                       >No recibir más emails</a
                                     >
                                   </span>
@@ -705,8 +705,7 @@
                             text-align: center;
                           "
                         >
-                          {{ EVENT_SCHEDULE }}<br />{{ LOCATION_NAME }}<br />{{
-                          LOCATION_ADDRESS }}
+                          {{ EVENT_SCHEDULE }}<br />{{ LOCATION_NAME }}<br />{{ LOCATION_ADDRESS }}
                         </p>
                       </td>
                     </tr>
@@ -1238,7 +1237,7 @@
                                               font-weight: normal;
                                             "
                                             target="_new"
-                                            href=""
+                                            href="{{ MANAGE_EVENT_LINK }}"
                                             ><strong
                                               >Agregar información a la acción</strong
                                             ></a
@@ -1677,7 +1676,7 @@
                                               font-weight: normal;
                                             "
                                             target="_new"
-                                            href="https://info.claudializate.com/acciones"
+                                            href="https://info.claudializate.com/"
                                             >Ir al centro de ayuda</a>
                                         </td>
                                       </tr>
@@ -1920,7 +1919,7 @@
                         <div class="longText">
                           Quieres recibir menos correos electrónicos nuestros:
                           <a
-                            href="[preferences_link]"
+                            href="{{ preferences_link }}"
                             style="
                               color: #919191;
                               color: #919191;

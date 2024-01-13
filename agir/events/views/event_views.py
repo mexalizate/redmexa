@@ -471,7 +471,7 @@ class AcceptEventCoorganizationInvitationView(
     ).exclude(group__published=False)
 
     def get_success_message(self):
-        return "Votre groupe est maintenant coorganisateur de l'événement"
+        return "Tu grupo ahora es co-organizador de la acción"
 
     def reply_to_invitation(self, invitation, person):
         actions.respond_to_coorganization_invitation(invitation, person, accepted=True)

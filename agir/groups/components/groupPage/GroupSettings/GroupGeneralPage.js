@@ -124,7 +124,7 @@ const GroupGeneralPage = (props) => {
       <TextField
         id="name"
         name="name"
-        label= "Nombre del grupo"
+        label="Nombre del grupo"
         onChange={handleChange}
         value={formData.name}
         error={errors?.name}
@@ -135,7 +135,7 @@ const GroupGeneralPage = (props) => {
       <RichTextField
         id="description"
         name="description"
-        label= "Descripción del grupo"
+        label="Descripción del grupo"
         placeholder=""
         onChange={handleDescriptionChange}
         value={formData.description}
@@ -144,9 +144,11 @@ const GroupGeneralPage = (props) => {
 
       <h4>{_("Image de la bannière")}</h4>
       <span style={{ color: style.black700 }}>
-      La imagen estará en la página y en redes sociales.
+        La imagen estará en la página y en redes sociales.
         <br />
-        {_("Utilisez une image à peu près deux fois plus large que haute. Elle doit faire au minimum 1200 pixeles de large et 630 pixeles de haut pour une qualité optimale.")}
+        {
+          "Usa de preferencia una imagen en horizontal (acostada), que tenga el doble de ancho que de alto. La calidad óptima se obtiene a partir de 1,200 x 630 pixeles."
+        }
       </span>
 
       <Spacer size="1.5rem" />
@@ -165,8 +167,13 @@ const GroupGeneralPage = (props) => {
             value={hasCheckedImageLicence}
             label={
               <span style={{ color: style.black700 }}>
-                {_("En important une image, je certifie être le propriétaire des droits et accepte de la partager sous licence libre")}{" "}
-                <a href={I18N.ccLicenseLink}>{_("Creative Commons CC-BY-NC 3.0")}</a>.
+                {_(
+                  "Al cargar una imagen, declaro ser propietario de sus derechos y acepto compartirla bajo licencia libre ",
+                )}{" "}
+                <a href={I18N.ccLicenseLink}>
+                  {_("Creative Commons CC-BY-NC 3.0")}
+                </a>
+                .
               </span>
             }
             onChange={handleCheckImageLicence}
