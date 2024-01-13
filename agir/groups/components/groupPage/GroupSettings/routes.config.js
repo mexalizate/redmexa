@@ -179,6 +179,7 @@ export const routeConfig = {
     label: "Información útil",
     icon: "more-horizontal",
     Component: GroupSettingsHelp,
+    externalLink: "https://info.claudializate.com/",
     illustration: illustrationHelp,
     isActive: true,
     menuGroup: 3,

@@ -10,7 +10,7 @@ const HelpCenterCard = (props) => {
   const { type } = props;
 
   const route =
-    type === "group" ? "groupHelp" : type === "event" ? "eventHelp" : "help";
+    type === "group" ? "lafranceinsoumise" : type === "event" ? "lafranceinsoumise" : "lafranceinsoumise";
 
   return (
     <Card>

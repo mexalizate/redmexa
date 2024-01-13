@@ -114,7 +114,7 @@ const EventOrganization = (props) => {
       <MemberList
         members={organizers}
         addButtonLabel={
-          canAddOrganizers ? _("Ajouter un·e autre organisateur·ice") : ""
+          canAddOrganizers ? "Añadir otro organizador" : ""
         }
         onAdd={
           canAddOrganizers ? () => setSubmenuOpen(MENU_ORGANIZER) : undefined

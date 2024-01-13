@@ -363,7 +363,7 @@ export const routeConfig = {
     exact: true,
     neededAuthentication: AUTHENTICATION.NONE,
     Component: RouteComponents.SearchPage,
-    label: _("Rechercher"),
+    label: "Buscar",
     hasLayout: false,
     hideFeedbackButton: true,
   }),
