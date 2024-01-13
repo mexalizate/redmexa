@@ -195,7 +195,7 @@ export const AddGroupOrganizer = ({ eventPk, groups, onBack }) => {
             <Spacer size="0.5rem" />
             <StyledListBlock>
               <div />
-              <b>{"Podrán acceder a la configuración"}</b> {"de la acción."}
+              <b>{"Podrán acceder a la gestión "}</b> {"de la acción."}
             </StyledListBlock>
           </div>
           <Spacer size="1rem" />

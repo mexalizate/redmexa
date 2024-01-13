@@ -2,7 +2,7 @@
   
 Notificación de cambio de grupo
   
-{{ GREETINGS }},
+{{ greetings }},
 
 [{{ GROUP_SENDER }}]({{ GROUP_SENDER_URL }}) del que formas parte, sobrepasó el número ideal de miembros. Por ello l@s facilitadores decidieron dividirlo en varios grupos.
 

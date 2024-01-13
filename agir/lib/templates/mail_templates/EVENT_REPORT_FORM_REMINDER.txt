@@ -9,7 +9,7 @@ Completa la información por favor:
 Este mensaje se envió a {{ EMAIL }}. Es personal y no debería ser reenviado.
 
 >> Escoge los emails que recibes
-{{ PREFERENCES_LINK }}
+{{ preferences_link }}
 
 >> No recibir más emails
 {{ UNSUBSCRIBE_LINK }}

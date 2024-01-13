@@ -144,13 +144,13 @@ const CertificationStatus = (props) => {
           progress={checkedCriteria.length / criteria.length}
         />
         <p>
-          <strong>{_("Certification du groupe")}</strong>
+          <strong>{"Certificación del grupo"}</strong>
           <br />
           <span>
             {checkedCriteria.length}/{criteria.length}{" "}
             {checkedCriteria.length <= 1
-              ? _("condition remplie")
-              : _("conditions remplies")}
+              ? "requisito cumplido"
+              : "requisitos cumplidos"}
           </span>
         </p>
       </div>

@@ -70,7 +70,10 @@ export default class LocationStep extends FormStep {
         <div className="col-md-6">
           <h4>Lugar de reunión</h4>
           <p>
-          Por favor indica una dirección exacta, con calle y número, para que aparezca en el mapa de grupos. Si se trata de una dirección personal y no quieres que aparezca, indica la dirección de un lugar muy cercano que sirva de referencia.
+            Por favor indica una dirección exacta, con calle y número, para que
+            aparezca en el mapa de grupos. Si se trata de una dirección personal
+            y no quieres que aparezca, indica la dirección de un lugar muy
+            cercano que sirva de referencia.
           </p>
           {helpText ? <p>{helpText}</p> : null}
         </div>

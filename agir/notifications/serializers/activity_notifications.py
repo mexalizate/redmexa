@@ -329,7 +329,7 @@ class GroupCoorganizationAcceptedActivityNotificationSerializer(
     title = serializers.ReadOnlyField(default="Invitation acceptée ✨")
 
     def get_body(self, activity):
-        return f"{activity.supportgroup.name} a accepté de co-organiser {activity.event.name}"
+        return f"{activity.supportgroup.name} aceptó ser co-organizador de {activity.event.name}"
 
     def get_url(self, activity):
         return activity_notification_url(

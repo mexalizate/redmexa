@@ -53,7 +53,7 @@ const FollowerActions = ({ isLoading, onJoin, onEdit, onQuit }) => {
             <li>
               <button type="button" onClick={onQuit}>
                 <RawFeatherIcon name="x" width="1rem" height="1rem" />
-                {_("Arrêter d’être abonné·e")}
+                {" Dejar de seguir "}
               </button>
             </li>
           </StyledMenuList>

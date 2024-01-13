@@ -1,4 +1,4 @@
-{{ GREETINGS }}
+{{ greetings }}
 {{ TITLE }}
 
 >> {{ EVENT_NAME }}

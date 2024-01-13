@@ -13,7 +13,7 @@ export default function MultiStepForm({ steps, startAtStep }) {
         nextButtonText="Siguiente&nbsp;&rarr;"
         backButtonText="&larr;&nbsp;Regresar"
         nextButtonCls="btn btn-primary pull-right"
-        backButtonCls="btn btn-default pull-left"
+        backButtonCls="btn btn-default whiteText pull-left"
       />
     </div>
   );

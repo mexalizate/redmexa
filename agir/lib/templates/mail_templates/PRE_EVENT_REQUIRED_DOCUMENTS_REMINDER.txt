@@ -1,6 +1,6 @@
 Tu acción será mañana: no olvides los comprobantes
   
-{{ GREETINGS }},
+{{ greetings }},
 
 ¡Tu acción >> {{ EVENT_NAME }} << ya casi empieza!
 

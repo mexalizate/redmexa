@@ -272,7 +272,7 @@ class TransferSupportGroupMembersView(
         messages.add_message(
             self.request,
             messages.SUCCESS,
-            "Le transfert de %d membre(s) vers « %s » a été effectué. Ces dernier·ère·s ainsi que les animateur·ices de leur nouveau groupe ont été prévenu·es par e-mail."
+            "Se transfirió a %d miembro(s) desde  « %s ». Se notificó a las personas transferidas y a l@s facilitadores del nuevo grupo."
             % (p["transferred_memberships"].count(), p["target_group"].name),
         )
 

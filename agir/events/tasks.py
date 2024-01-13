@@ -640,7 +640,7 @@ def send_group_coorganization_invitation_notification(invitation_pk):
     group = invitation.group
     member = invitation.person_sender
 
-    subject = f"Tu grupo {group.name} participa {event.name}"
+    subject = f"Tu grupo {group.name} participa en {event.name}"
     recipients = group.referents
 
     bindings = {
@@ -745,7 +745,7 @@ def send_accepted_group_coorganization_invitation_notification(invitation_id):
         send_post_save_signal=True,
     )
 
-    subject = f"{group.name} a accepté de co-organiser {event.name}"
+    subject = f"{group.name} aceptó ser co-organizador de {event.name}"
 
     bindings = {
         "TITLE": subject,

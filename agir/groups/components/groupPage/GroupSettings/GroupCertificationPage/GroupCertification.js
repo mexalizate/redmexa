@@ -108,15 +108,13 @@ const GroupCertification = (props) => {
 
   return (
     <>
-      <StyledTitle>{_("Certification du groupe")}</StyledTitle>
+      <StyledTitle>{"Certificación del grupo"}</StyledTitle>
       <Spacer size="0.5rem" />
       <StyledContent>
+        <p>{"La certificación del grupo da más valor a tu grupo. "}</p>
         <p>
-          {_("La certification du groupe permet de recevoir un code mensuel de 30 euros afin de ")}<Link route="materiel">{_("commander du matériel")}</Link>.
-        </p>
-        <p>
-          {_("Par ailleurs, la certification permet de témoigner du respect de la")}{" "}
-          <Link route="charteEquipes">{_("charte des groupes d’action")}</Link>.
+          {"Un grupo certificado respeta plenamente"}{" "}
+          <Link route="charteEquipes">{"los principios de grupos."}</Link>.
         </p>
         {isCertified && !isCertifiable && <MissingCriteriaWarning />}
         <Spacer size="1rem" />
@@ -172,7 +170,7 @@ const GroupCertification = (props) => {
                     <>
                       {_("Je confirme avoir pris connaissance de la")}{" "}
                       <Link route="charteEquipes">
-                        {_("charte des groupes d’action")}
+                        {"los principios de grupos"}
                       </Link>{" "}
                       {_("et m'engage à la respecter dans l'animation de mon groupe")}
                     </>
@@ -189,7 +187,7 @@ const GroupCertification = (props) => {
               }
               disabled={!hasConsent || !isCertifiable}
             >
-              {_("Demander la certification")}
+              {"Solicitar certificación"}
             </Button>
             <Spacer size="1rem" />
             <span>
@@ -197,9 +195,9 @@ const GroupCertification = (props) => {
                 ? "Aucune"
                 : `${checkedCriteria.length}/${criteria.length}`}{" "}
               {checkedCriteria.length <= 1
-                ? "condition remplie"
-                : "conditions remplies"}{" "}
-              {_("pour demander la certification")}
+                ? "requisito cumplido"
+                : "requisitos cumplidos"}{" "}
+              {"para solicitar la certificación"}
             </span>
           </footer>
         )}
