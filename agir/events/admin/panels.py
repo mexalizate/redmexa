@@ -946,9 +946,9 @@ class EventSubtypeAdmin(admin.ModelAdmin):
             return "Aucun événement de ce type n'a pas encore été créé"
 
         url = admin_url("events_event_changelist", query={"subtype_id": obj.id})
-        text = ngettext(
-            "Voir l'événement de ce type",
-            f"Voir les {humanize.apnumber(count)} événements de ce type",
+        text = (
+            "Ver evento de este tipo",
+            f"Ver los {humanize.apnumber(count)} eventos de este tipo",
             count,
         )
 

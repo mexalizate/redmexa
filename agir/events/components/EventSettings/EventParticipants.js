@@ -89,7 +89,7 @@ const EventParticipants = (props) => {
         <>
           <BlockTitle>
             <h3>
-              {groupsAttendees.length} Groupe{severalGroups && "s"} {_("participant")}{severalGroups && "s"}
+              {groupsAttendees.length} Grupo{severalGroups && "s"} participante{severalGroups && "s"}
             </h3>
           </BlockTitle>
           <Spacer size="0.5rem" />
