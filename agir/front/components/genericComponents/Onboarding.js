@@ -105,7 +105,7 @@ const ONBOARDING_TYPE = {
     },
     secondaryLink: {
       href: "groupes/creer/",
-      label: "Crear una acción",
+      label: "Crear un grupo",
     },
   },
 };

@@ -117,7 +117,7 @@ export const ErrorPage = (props) => {
           ) : null}
           <Spacer size="1rem" />
           <span>
-            o consultar el <Link route="helpIndex">centro de ayuda</Link>
+            o consultar el <Link route="https://info.claudializate.com/">centro de ayuda</Link>
           </span>
         </StyledContainer>
       )}

@@ -132,7 +132,7 @@ def send_confirmation_merge_account(user_pk_requester, user_pk_merge, **kwargs):
 
     send_mosaico_email(
         code="MERGE_ACCOUNT_CONFIRMATION",
-        subject="Veuillez confirmer la fusion de compte",
+        subject="Confirma fusión de tus cuentas",
         from_email=settings.EMAIL_FROM,
         recipients=[merge_email],
         bindings={
@@ -161,7 +161,7 @@ def send_confirmation_change_email(new_email, user_pk, **kwargs):
 
     send_mosaico_email(
         code="CHANGE_MAIL_CONFIRMATION",
-        subject="Confirmez votre changement d'adresse",
+        subject="Confirma cambio de email",
         from_email=settings.EMAIL_FROM,
         recipients=[new_email],
         bindings={"CONFIRMATION_URL": confirm_change_mail_url},

@@ -84,13 +84,13 @@ def get_supportgroup_routes(supportgroup, membership=None, user=None):
         "animation": front_url(
             "view_group_settings_management", kwargs={"pk": supportgroup.pk}
         ),
-        "animationChangeRequest": "https://preprod.redmexa.com/formulaires/eliminar-grupo/",
+        "animationChangeRequest": "https://preprod.redmexa.com/formulaires/cambiar-facilitadores/",
         "calendarExport": front_url("ics_group", kwargs={"pk": supportgroup.pk}),
         "createEvent": f'{front_url("create_event")}?group={str(supportgroup.pk)}',
         "createSpendingRequest": front_url(
             "create_group_spending_request", kwargs={"pk": supportgroup.pk}
         ),
-        "deleteGroup": "https://preprod.redmexa.com/formulaires/demande-suppression-ga/",
+        "deleteGroup": "https://preprod.redmexa.com/formulaires/eliminar-grupo",
         "details": front_url("view_group", kwargs={"pk": supportgroup.pk}),
         "donations": front_url("supportgroup_donation", kwargs={"pk": supportgroup.pk}),
         "contributions": front_url(
@@ -122,7 +122,7 @@ def get_supportgroup_routes(supportgroup, membership=None, user=None):
         ),
         "orders": "https://materiales.preprod.redmexa.com/",
         "quit": front_url("quit_group", kwargs={"pk": supportgroup.pk}),
-        "referentResignmentRequest": "https://info.claudializate.com/contacto/",
+        "referentResignmentRequest": "/formulaires/cambiar-facilitadores",
         "settings": front_url("view_group_settings", kwargs={"pk": supportgroup.pk}),
         "downloadMemberList": front_url(
             "download_member_list", kwargs={"pk": supportgroup.pk}

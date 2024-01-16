@@ -114,7 +114,7 @@ const GroupCertification = (props) => {
         <p>{"La certificación del grupo da más valor a tu grupo. "}</p>
         <p>
           {"Un grupo certificado respeta plenamente"}{" "}
-          <Link route="charteEquipes">{"los principios de grupos."}</Link>.
+          <Link route="info.claudializate.com/principios">{"los principios de grupos"}</Link>.
         </p>
         {isCertified && !isCertifiable && <MissingCriteriaWarning />}
         <Spacer size="1rem" />

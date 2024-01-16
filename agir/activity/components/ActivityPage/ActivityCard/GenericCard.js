@@ -75,7 +75,7 @@ const GenericCard = (props) => {
     case "waiting-payment": {
       return (
         <GenericCardContainer {...props}>
-          {("Vous n'avez pas encore réglé votre place pour l'événément")} {Event}
+          Aún no has reservado tu lugar para el evento {Event}
         </GenericCardContainer>
       );
     }
@@ -161,7 +161,7 @@ const GenericCard = (props) => {
     case "group-coorganization-accepted-from":
       return (
         <GenericCardContainer {...props}>
-          Le groupe {SupportGroup} {("aceptó ser co-organizador de tu acción")}{" "}
+          El grupo {SupportGroup} {("aceptó ser co-organizador de tu acción")}{" "}
           {Event}
         </GenericCardContainer>
       );
@@ -261,7 +261,7 @@ const GenericCard = (props) => {
     case "new-members-through-transfer":
       return (
         <GenericCardContainer {...props}>
-          {meta && meta.transferredMemberships} {"Participantes"}
+          {meta && meta.transferredMemberships} {"Participante"}
           {meta && meta.transferredMemberships > 0 ? "s" : ""} {("se unieron al grupo ")}{" "}
           <Link
             to={routeConfig.groupSettings.getLink({ groupPk: group.id })}
@@ -284,7 +284,7 @@ const GenericCard = (props) => {
           >
             {("clic aquí.")}
           </Link>
-          .<br />
+          <br />
           {("Te recomendamos leer los consejos destinados a nuev@s facilitadores ")}
         </GenericCardContainer>
       );

@@ -24,7 +24,7 @@ export const EVENT_DEFAULT_DURATIONS = [
   },
   {
     value: null,
-    label: "Personnalisée",
+    label: "Personalizada",
   },
 ];
 

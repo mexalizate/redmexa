@@ -152,9 +152,9 @@ class ConfirmMergeAccountView(View):
     success_url = reverse_lazy("dashboard")
     error_template = "people/confirmation_mail_change_error.html"
     error_messages = {
-        "invalid": "Quelque chose d'étrange c'est produit",
-        "expired": "Il semble que le lien soit expiré.",
-        "same_person": "Il semble que l'opération de fusion à déjà été effectué.",
+        "invalid": "Sucedió algo inesperado",
+        "expired": "Parece que el enlace caducó.",
+        "same_person": "Parece que la fusión ya fue realizada.",
     }
 
     def error_page(self, key_error):

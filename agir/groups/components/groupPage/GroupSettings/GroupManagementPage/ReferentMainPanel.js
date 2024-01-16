@@ -40,11 +40,8 @@ export const ReferentMainPanel = (props) => {
       </span>
       <Spacer size=".5rem" />
       <span style={{ color: style.black700 }}>
-      Para poder certificar el grupo, debemos respetar &nbsp; 
-        <a href="https://info.claudializate.com/principios/">
-        la paridad de género
-        </a>
-        con dos facilitadores hombre y mujer.
+      Para poder certificar el grupo, debemos respetar&nbsp; 
+        <a href="https://info.claudializate.com/principios/">la paridad de género</a>&nbsp;con dos facilitadores hombre y mujer.
       </span>
       <Spacer size="1.5rem" />
       <GroupMemberList

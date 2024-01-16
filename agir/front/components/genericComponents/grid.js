@@ -27,7 +27,7 @@ export const SROnly = styled.span`
  * Text
  */
 export const Center = styled.div`
-  text-align: center;
+  text-align: center; 
 `;
 
 export const Right = styled.div`
@@ -68,6 +68,7 @@ const gutter = 16;
 
 export const GrayBackground = styled.div`
   background-color: ${style.black25};
+  color: "#fff";
 `;
 
 export const Column = styled.div.withConfig({
