@@ -210,7 +210,7 @@ const ACTIVITY_CONFIG = {
       routes?.newGroupHelp
         ? {
             href: routes.newGroupHelp,
-            label: _("Lire l'article"),
+            label: "Ayuda para grupos",
           }
         : null,
   },
@@ -220,7 +220,7 @@ const ACTIVITY_CONFIG = {
       routes?.newGroupHelp
         ? {
             href: routes.newGroupHelp,
-            label: _("Lire l'article"),
+            label: "Ayuda para grupos",
           }
         : null,
   },

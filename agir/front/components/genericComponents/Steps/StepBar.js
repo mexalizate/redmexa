@@ -93,7 +93,7 @@ const StepBar = (props) => {
             type="submit"
             color="danger"
           >
-            {_("Envoyer")}
+            Enviar
           </Button>
         )}
       </footer>

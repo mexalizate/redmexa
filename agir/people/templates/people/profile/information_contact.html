@@ -36,31 +36,30 @@
                 <td>
                   {% if email.address == person.email %}
                     <span class="hidden-xs hidden-sm label label-info">
-                      L'adresse utilisée pour me contacter
+                      Email principal de contacto
                     </span>
                     <span class="hidden-md hidden-lg label label-info">
-                      Adresse utilisée
+                      Email principal
                     </span>
                   {% elif not email.bounced %}
-                    <a class="hidden-xs hidden-sm btn btn-sm btn-default " href="{% url "change_primary_mail" email.pk %}">
-                      Utiliser cette adresse pour me contacter
+                    <a class="hidden-xs hidden-sm btn btn-sm btn-default " style="color: white !important;" href="{% url "change_primary_mail" email.pk %}">
+                      Convertir en contacto primario
                     </a>
-                    <a class="hidden-md hidden-lg btn btn-sm btn-default " href="{% url "change_primary_mail" email.pk %}">
-                      Utiliser cette adresse
+                    <a class="hidden-md hidden-lg btn btn-sm btn-default "  style="color: white !important;" href="{% url "change_primary_mail" email.pk %}">
+                      Usar este email
                     </a>
                   {% elif email.bounced %}
                     <p class="text-danger small">
-                      Cette adresse n'est plus utilisée car elle a mal fonctionné plusieurs fois. Cela peut être
-                      du à une boîte pleine ou à une erreur de votre fournisseur.
+                      Este email no puede usarse porque funcionó mal varias veces (correo saturado u otro problema para recibir emails)
                     </p><p class="small">
-                      <a href="{% url "change_primary_mail" email.pk %}">J'ai réglé le problème, utiliser cette adresse à nouveau</a>
+                      <a href="{% url "change_primary_mail" email.pk %}">Resolví el problema, usar este email de nuevo</a>
                     </p>
                   {% endif %}
                 </td>
                 <td>
                   {% if can_delete %}
                     <a class="btn btn-sm btn-primary" href="{% url "delete_email" email.pk %}">
-                      Supprimer
+                      Quitar
                     </a>
                   {% endif %}
                 </td>

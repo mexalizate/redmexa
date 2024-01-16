@@ -1,6 +1,6 @@
 Hola,
 
-Estas a punto de aceptar una fusión entre la cuenta {{ EMAIL }} y la cuenta {{ REQUESTER_EMAIL }}.
+Estás a punto de aceptar una fusión entre la cuenta {{ EMAIL }} y la cuenta {{ REQUESTER_EMAIL }}.
 
 Une vez efectuada, los derechos de gestión y administración de grupos y acciones de ambas cuentas serán combinados.
 

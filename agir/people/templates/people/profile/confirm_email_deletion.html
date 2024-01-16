@@ -22,21 +22,21 @@
         <form method="POST">
           <div class="col-sm-12">
             <h3>
-              Supprimer l'adresse {{ email.address }}
+              Quitar el email {{ email.address }}
             </h3>
             <p>
-              Souhaitez-vous vraiment supprimer l'adresse <strong class="text-info">{{ email.address }}</strong> ?
+              ¿Segur@ que deseas eliminar de tu cuenta el email <strong class="text-info">{{ email.address }}</strong> ?
             </p>
             {% csrf_token %}
             <div class="row">
               <div class="col-xs-12 col-md-2 margintop">
-                <a href="{{ success_url }}" class="btn btn-default btn-block">
+                <a href="{{ success_url }}" class="btn btn-default btn-block"  style="color: white !important;" >
                   Regresar
                 </a>
               </div>
               <div class="col-xs-12 col-md-3 margintop">
                 <button type="submit" class="btn btn-danger btn-block">
-                  Supprimer l'adresse
+                  Quitar el email
                 </button>
               </div>
             </div>

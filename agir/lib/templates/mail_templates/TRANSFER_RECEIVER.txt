@@ -5,7 +5,7 @@ Nuev@s miembros se unieron a tu grupo mediante transferencia.
 Una nueva persona se unió a tu grupo mediante transferencia.
 {% endif %}
   
-{{ greetings }},  
+
 
 {{ GROUP_SENDER }} ({{ GROUP_SENDER_URL }})
 transfirió {{ MEMBER_COUNT }} miembros {{ MEMBER_COUNT|pluralize:"s" }} hacia

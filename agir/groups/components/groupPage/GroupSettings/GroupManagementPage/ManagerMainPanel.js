@@ -13,7 +13,7 @@ export const ManagerMainPanel = (props) => {
     <>
       <StyledTitle>{_("Gestion et animation")}</StyledTitle>
       <span>
-        {_("Vous êtes gestionnaire du groupe")} <strong>{group.name}</strong>.
+      Eres gestor(a) del grupo <strong>{group.name}</strong>.
       </span>
 
       <>
@@ -23,7 +23,7 @@ export const ManagerMainPanel = (props) => {
           <Spacer size="0.5rem" />
           {_("Votre rôle et d’aider les animateur·ices à faire vivre votre groupe sur Action Populaire.")}
           <Spacer size="0.5rem" />
-          {_("En tant que gestionnaire, vous avez accès à la liste des membres. Vous pouvez modifier les informations du groupe, et créer des événements du du groupe.")}
+          {"Como gestor(a): tienes acceso a la lista de miembros, puedes modificar la información del grupo y puedes crear acciones a nombre del grupo"}
         </span>
       </>
 
@@ -34,7 +34,7 @@ export const ManagerMainPanel = (props) => {
           <Spacer size="0.5rem" />
           {_("En tant que gestionnaire, vous ne pouvez pas modifier le rôle d’un membre, y compris le vôtre.")}
           <Spacer size="0.5rem" />
-          {_("Pour quitter la gestion de ce groupe, demandez à un·e des animateur·ices de vous retirer de la liste des gestionnaires.")}
+          {"Para dejar de ser gestor(a) del grupo, pide a l@s facilitadores que te eliminen de la lista de gestores."}
         </span>
       </>
     </>
