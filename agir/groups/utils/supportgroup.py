@@ -122,7 +122,7 @@ def get_supportgroup_routes(supportgroup, membership=None, user=None):
         ),
         "orders": "https://materiales.preprod.redmexa.com/",
         "quit": front_url("quit_group", kwargs={"pk": supportgroup.pk}),
-        "referentResignmentRequest": "https://info.claudializate.com/contacto/",
+        "referentResignmentRequest": "/formulaires/cambiar-facilitadores",
         "settings": front_url("view_group_settings", kwargs={"pk": supportgroup.pk}),
         "downloadMemberList": front_url(
             "download_member_list", kwargs={"pk": supportgroup.pk}

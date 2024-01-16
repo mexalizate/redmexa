@@ -303,7 +303,7 @@ const Modal = (props) => {
               disabled={!maySend}
               onClick={handleSend}
             >
-              {_("Envoyer")}
+              Enviar
             </Button>
           )}
         </StyledModalHeader>

@@ -75,13 +75,13 @@ SUBSCRIPTIONS_EMAILS = {
         ),
         "welcome": SubscriptionMessageInfo(
             "SUBSCRIPTION__CAMPAIGN__WELCOME_MESSAGE",
-            "Bienvenue sur la plateforme de la France insoumise",
+            "Bienvenid@ a Claudialízate",
         ),
     },
     SUBSCRIPTION_TYPE_ACTIVIST: {
         "confirmation": SubscriptionMessageInfo(
             code="SUBSCRIPTION__ACTIVIST__CONFIRMATION_MESSAGE",
-            subject="Confirmez votre e-mail pour valider votre signature !",
+            subject="Confirma tu email para registrarte en Claudialízate!",
             from_email=settings.EMAIL_FROM_ACTIVIST,
         )
     },

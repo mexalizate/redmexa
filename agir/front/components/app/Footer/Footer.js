@@ -119,7 +119,7 @@ export const Footer = (props) => {
             <LogoAPFoot/>
           </div>
           <div>
-            <h3 className="secondaryTextColorLightRed">{"CLAUDIALÍZATE"} </h3>
+            <h3 className="secondaryTextColorLightRed">CLAUDIALÍZATE</h3>
             <p>
               <Link className="primaryTextColorPurple" route="eventMap">{_("Carte des événements")}</Link>
               <Link className="primaryTextColorPurple" route="groupMap">{_("Carte des groupes")}</Link>
@@ -134,7 +134,7 @@ export const Footer = (props) => {
           </div>
 
           <div>
-            <h3 className="secondaryTextColorLightRed">{/*_("Liens utiles")*/} ENLACES ÚTILES</h3>
+            <h3 className="secondaryTextColorLightRed">ENLACES ÚTILES</h3>
             <p>
               {isSignedIn ? (
                 <Link className="primaryTextColorPurple" route="logout">{_("Se déconnecter")}</Link>
@@ -163,7 +163,7 @@ export const Footer = (props) => {
               </div> */}
 
           <div>
-            <h3 className="secondaryTextColorLightRed">{/*_("Les autres sites")*/} OTROS SITIOS</h3>
+            <h3 className="secondaryTextColorLightRed">OTROS SITIOS</h3>
             <p>
               {/*<Link className="primaryTextColorPurple" route="nupes" target="_blank">
                {" "}

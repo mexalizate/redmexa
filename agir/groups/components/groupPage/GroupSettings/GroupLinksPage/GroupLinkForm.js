@@ -49,7 +49,7 @@ const GroupLinkForm = (props) => {
       </StyledTitle>
       <Spacer size="1rem" />
       <div>
-        "Ojo : Estos enlaces serán " <strong>públicos </strong>{" "}
+        Ojo : estos enlaces serán<strong> públicos </strong>{" "}
         {_("et tout le monde pourra y accéder. Ne partagez pas de boucles privées.")}
       </div>
       <Spacer size="1.5rem" />

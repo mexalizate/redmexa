@@ -44,8 +44,8 @@ const CodeSignup = () => {
       </h1>
       <div style={{ marginTop: "2rem" }}>
         <p>
-            Haz clic en el enlace que te enviamos a{" "}
-          <strong>{location.state?.email}</strong> para validar tu registro
+            Haz clic en el enlace que te enviamos {" "}
+          <strong>a tu email {location.state?.email}</strong> para validar tu registro.
         </p>
         <p style={{ marginBottom: "0" }}>
           Si no reconocemos tu email, te invitaremos a registrarte.

@@ -49,10 +49,10 @@ export const EventGroupsAttendees = ({ groupsAttendees, isPast }) => {
       {userGroupsAttendees.length > 1 ? (
         <>
           y {userGroupsAttendees.length - 1} otros grupos &nbsp;
-          {isPast ? "participó" : "participan"}
+          {isPast ? " participó" : " participan"}
         </>
       ) : (
-        <>{isPast ? "participó" : "participa"}</>
+        <>{isPast ? " participó" : " participa"}</>
       )}
     </StyledGroupsAttendees>
   );

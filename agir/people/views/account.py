@@ -88,7 +88,7 @@ class ConfirmChangeMailView(View):
         messages.add_message(
             self.request,
             messages.SUCCESS,
-            "Votre changement de email à été effectué avec succès",
+            "Se agregó tu nuevo email exitosamente",
         )
 
         return HttpResponseRedirect(self.success_url)
