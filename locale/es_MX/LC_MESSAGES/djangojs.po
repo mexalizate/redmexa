@@ -5287,8 +5287,6 @@ msgstr ""
 
 #: agir/groups/components/groupPage/GroupSettings/GroupCertificationPage/CertificationStatus.js:147
 #: agir/groups/components/groupPage/GroupSettings/GroupCertificationPage/GroupCertification.js:111
-#, fuzzy
-#| msgid "Carte des groupes"
 msgid "Certification du groupe"
 msgstr "Certificación del grupo"
 
@@ -5299,10 +5297,8 @@ msgid "condition remplie"
 msgstr "Acción pública"
 
 #: agir/groups/components/groupPage/GroupSettings/GroupCertificationPage/CertificationStatus.js:153
-#, fuzzy
-#| msgid "actions jeunes"
 msgid "conditions remplies"
-msgstr "acciones jóvenes"
+msgstr "requisitos cumplidos"
 
 #: agir/groups/components/groupPage/GroupSettings/GroupCertificationPage/GroupCertification.js:83
 msgid ""
@@ -5354,10 +5350,8 @@ msgid "charte des groupes d’action"
 msgstr "reglamento de Grupos"
 
 #: agir/groups/components/groupPage/GroupSettings/GroupCertificationPage/GroupCertification.js:149
-#, fuzzy
-#| msgid "Votre groupe participe à l’évémenent&nbsp;!"
 msgid "Votre groupe est certifié&nbsp;!"
-msgstr "Tu grupo participa en la acción."
+msgstr "¡Tu grupo está certificado!"
 
 #: agir/groups/components/groupPage/GroupSettings/GroupCertificationPage/GroupCertification.js:173
 msgid "Je confirme avoir pris connaissance de la"
@@ -5368,10 +5362,8 @@ msgid "et m'engage à la respecter dans l'animation de mon groupe"
 msgstr ""
 
 #: agir/groups/components/groupPage/GroupSettings/GroupCertificationPage/GroupCertification.js:192
-#, fuzzy
-#| msgid "pour demander la certification"
 msgid "Demander la certification"
-msgstr "para poder solicitar la certificación"
+msgstr "Solicitar certificación"
 
 #: agir/groups/components/groupPage/GroupSettings/GroupCertificationPage/GroupCertification.js:202
 msgid "pour demander la certification"

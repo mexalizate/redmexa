@@ -91,7 +91,7 @@ SUBSCRIPTIONS_EMAILS = {
 # Here we set the URL of the page to which the user will be redirected right after entering his/her data
 # This page should warn the user that he/she will receive an email to validate his/her email address
 SUBSCRIPTION_EMAIL_SENT_REDIRECT = {
-    SUBSCRIPTION_TYPE_CAMPAIGN: f"{settings.CAMPAIGN_DOMAIN}/consulter-vos-emails/",
+    SUBSCRIPTION_TYPE_CAMPAIGN: f"{settings.CAMPAIGN_DOMAIN}/inscription/code/",
     SUBSCRIPTION_TYPE_ACTIVIST: f"{settings.ACTIVIST_DOMAIN}/validez-votre-e-mail/",
     SUBSCRIPTION_TYPE_PLATFORM: f"{settings.PLATFORM_FRONT_DOMAIN}/inscription/code/",
 }

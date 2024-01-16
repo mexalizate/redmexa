@@ -675,7 +675,7 @@ msgstr ""
 
 #: agir/authentication/tasks.py:54
 msgid "Vous n'avez pas encore de compte sur Action Populaire"
-msgstr ""
+msgstr "Aún no tienes una cuenta en Claudialízate"
 
 #: agir/authentication/templates/authentication/link_error.html:8
 msgid "Votre lien est incorrect ou expiré"
@@ -4974,10 +4974,8 @@ msgid "Dépublier les groupes"
 msgstr "Despublicar los grupos"
 
 #: agir/groups/admin/actions.py:51
-#, fuzzy
-#| msgid "Certification"
 msgid "Certification du groupe"
-msgstr "Certificación"
+msgstr "Certificación del grupo"
 
 #: agir/groups/admin/actions.py:70
 #, python-brace-format
@@ -5761,7 +5759,7 @@ msgstr "Crear un grupo"
 
 #: agir/groups/utils/certification.py:13
 msgid "Animation paritaire"
-msgstr ""
+msgstr "Facilitadores en igualdad de género"
 
 #: agir/groups/utils/certification.py:14
 msgid "Le groupe est animé par au moins deux personnes de genre différent"
@@ -5778,7 +5776,7 @@ msgstr ""
 
 #: agir/groups/utils/certification.py:23
 msgid "Un mois d’existence"
-msgstr ""
+msgstr "Un mes de existencia"
 
 #: agir/groups/utils/certification.py:24
 #, fuzzy
@@ -5789,7 +5787,7 @@ msgstr "El grupo fue certificado"
 
 #: agir/groups/utils/certification.py:27
 msgid "Trois membres actifs"
-msgstr ""
+msgstr "Al menos 3 participantes"
 
 #: agir/groups/utils/certification.py:29
 #, fuzzy
@@ -5805,7 +5803,7 @@ msgstr ""
 
 #: agir/groups/utils/certification.py:33
 msgid "Un seul groupe certifié par animateur·ice"
-msgstr ""
+msgstr "1 solo grupo certificado por facilitator(a)"
 
 #: agir/groups/utils/certification.py:35
 msgid ""
