@@ -44,7 +44,7 @@ export const EventGroupsAttendees = ({ groupsAttendees, isPast }) => {
         height="1rem"
         style={{ marginRight: "0.5rem" }}
       />
-      Tu grupo <strong>{userGroupsAttendees[0].name}</strong>
+      Tu grupo &nbsp; <strong>{userGroupsAttendees[0].name}</strong>
       &nbsp;
       {userGroupsAttendees.length > 1 ? (
         <>
