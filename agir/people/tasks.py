@@ -23,7 +23,7 @@ from agir.lib.google_sheet import (
 )
 from agir.lib.mailing import send_mosaico_email, send_template_email
 from agir.lib.sms import send_sms
-from agir.lib.utils import front_url
+from agir.lib.utils import front_url, generate_token_params
 from .actions.subscription import (
     SUBSCRIPTIONS_EMAILS,
     SUBSCRIPTION_TYPE_PLATFORM,
@@ -279,9 +279,12 @@ def notify_contact(person_pk, is_new=False):
     bindings = {
         "is_new": is_new,
         "subscription_date": person.created.strftime("%d/%m/%Y"),
-        "dashboard_link": front_url("dashboard", absolute=True),
-        "account_link": front_url("contact", absolute=True),
-        "delete_link": front_url("delete_account", absolute=True),
+        "dashboard_link": front_url("dashboard"),
+        "account_link": front_url("contact"),
+        "delete_link": front_url("delete_account"),
+        "FORENAME": person.first_name,
+        "CREATION_DATE": person.created.strftime("%d/%m/%Y"),
+        "params_login": mark_safe(urlencode(generate_token_params(person))),
     }
 
     send_template_email(
