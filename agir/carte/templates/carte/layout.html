@@ -1,3 +1,4 @@
+{% load i18n %}
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -29,6 +30,11 @@
 </head>
 <body>
 <div id="map"></div>
+
+<!-- JavaScript I18N -->
+{% get_current_language as LANGUAGE_CODE %}
+<script src="{% url 'javascript-catalog' %}?LANG={{LANGUAGE_CODE}}"></script>
+
 {% block map_script %}
 {% endblock %}
 </body>

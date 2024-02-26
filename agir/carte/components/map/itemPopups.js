@@ -1,4 +1,5 @@
 import _ from "gettext";
+
 const formatEvent = (types, subtypes) => (event) => {
   const subtype = subtypes[event.subtype];
   const type = types[subtype.type];
