@@ -180,7 +180,9 @@ class GeocodingBaseForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        self.fields["coordinates"].widget = OSMWidget()
+        self.fields["coordinates"].widget = OSMWidget(attrs={
+            'default_lon': -99.133209,
+            'default_lat': 19.432608})
 
         self.helper = FormHelper()
         self.helper.form_method = "POST"
