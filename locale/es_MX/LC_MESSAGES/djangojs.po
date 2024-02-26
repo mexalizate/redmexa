@@ -1677,7 +1677,7 @@ msgstr "País de nacimiento"
 #: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/PollingStationOfficerForm.js:397
 #: agir/front/components/allPages/PushModal/UpdateAddressModal.js:78
 msgid "Adresse"
-msgstr "Dirección"
+msgstr "Calle y número (opcional)"
 
 #: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/PollingStationOfficerForm.js:409
 msgid "Complément d'adresse (facultatif)"
@@ -1688,13 +1688,13 @@ msgstr "Dirección adicional (opcional)"
 #: agir/front/components/authentication/Connexion/TellMore/TellMore.js:266
 #: agir/front/components/formComponents/LocationField/Field.js:144
 msgid "Code postal"
-msgstr "Código postal o ZIP"
+msgstr "Código postal o ZIP (OBLIGATORIO)"
 
 #: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/PollingStationOfficerForm.js:433
 #: agir/front/components/allPages/PushModal/UpdateAddressModal.js:111
 #: agir/front/components/formComponents/LocationField/Field.js:155
 msgid "Commune"
-msgstr "Ciudad"
+msgstr "Ciudad o Municipio (opcional)"
 
 #: agir/elections/components/PollingStationOfficer/NewPollingStationOfficer/PollingStationOfficerForm.js:462
 msgid "Commune ou ambassade d'inscription aux listes électorales"
@@ -3027,16 +3027,17 @@ msgid ""
 "Entrez votre adresse pour que nous puissions vous suggérer les événements à "
 "proximité de chez vous."
 msgstr ""
-"Ingresa tu dirección para que podamos sugerirte eventos cerca de tu zona."
+"Ingresa tu ubicación para poder sugerirte eventos cercanos. Los únicos datos "
+"obligatorios son el código postal o ZIP, y el país."
 
 #: agir/front/components/allPages/PushModal/UpdateAddressModal.js:89
 msgid "Complément d'adresse"
-msgstr "Dirección, segunda línea"
+msgstr "Colonia y/o Alcaldía (opcional)"
 
 #: agir/front/components/allPages/PushModal/UpdateAddressModal.js:204
 msgid "Entrez une adresse. Seul le code postal est obligatoire pour continuer."
 msgstr ""
-"Ingresa una dirección. El único dato obligatorio es el código postal o ZIP."
+"Completa tu dirección. Recuerda que los únicos datos obligatorios son código postal o ZIP, y país."
 
 #: agir/front/components/app/FacebookLoginAd.js:48
 msgid "Facilitez vos prochaines connexions"
@@ -6020,7 +6021,7 @@ msgstr "Ver los grupos"
 #~ msgstr "Ayuda"
 
 #~ msgid "Pays"
-#~ msgstr "País"
+#~ msgstr "País donde vives"
 
 #~ msgid "Saisissez une adresse e-mail valide."
 #~ msgstr "Indica una dirección email válida"
