@@ -53,7 +53,7 @@ const MobileActionToolsPage = (props) => {
         <PageFadeIn ready={typeof hasGroups !== "undefined"}>
           {!hasGroups && (
             <>
-              <h2>{_("Conseillé pour")} {firstName || "vous"}</h2>
+             <h2>{_("Recomendado para")} {firstName || "ti"}</h2>
               <JoinAGroupCard city={city} commune={commune} />
             </>
           )}

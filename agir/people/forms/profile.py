@@ -307,7 +307,7 @@ class InformationConfidentialityForm(Form):
             format_html(
                 """<p>{description}<a href="{link_url}">{link_text}</a></p>""",
                 description="Puedes saber más sobre el uso de tus datos personales consultando ",
-                link_url="https://info.preprod.redmexa.com/mentions-legales/",
+                link_url="https://info.claudializate.com/aviso-legal/",
                 link_text="el aviso legal.",
             )
         )
