@@ -86,7 +86,7 @@ const SignUp = () => {
   const [error, setError] = useState({});
 
   const showCountryField = useCallback(() => {
-    setHasCountryField(true);
+    setHasCountryField(false);
   }, []);
 
   const handleRgpdCheck = useCallback(() => {
@@ -177,7 +177,7 @@ const SignUp = () => {
             value={formData.postalCode}
             disabled={isLoading}
           />
-          {hasCountryField === false ? (
+          {hasCountryField === true ? (
             <CountryToggle
               type="button"
               onClick={showCountryField}
@@ -187,10 +187,10 @@ const SignUp = () => {
             </CountryToggle>
           ) : null}
         </div>
-        {hasCountryField && (
+        {!hasCountryField && (
           <div>
             <CountryField
-              label={"País"}
+              label={"País donde vives"}
               name="country"
               error={error && error.country}
               placeholder=""

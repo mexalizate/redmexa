@@ -210,7 +210,7 @@ class PersonForm(TimeStampedModel):
 
     @property
     def submit_label(self):
-        return self.config.get("submit_label", "Envoyer")
+        return self.config.get("submit_label", "Enviar")
 
     @property
     def main_question_fields(self):

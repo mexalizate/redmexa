@@ -111,7 +111,7 @@ export const ErrorPage = (props) => {
             <>
               <Spacer size="1rem" />
               <Button onClick={() => window.location.reload()} block>
-                {_("Recharger la page")}
+                {_("Actualizar página")}
               </Button>
             </>
           ) : null}

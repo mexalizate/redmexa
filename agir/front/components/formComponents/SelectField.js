@@ -113,6 +113,7 @@ const StyledField = styled.label`
     @media (max-width: ${style.collapse}px) {
       position: fixed;
       bottom: 0;
+      height:100vh;
       top: unset;
       left: 0;
       right: 0;
