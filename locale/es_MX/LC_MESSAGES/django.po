@@ -710,15 +710,6 @@ msgstr ""
 "Acabas de solicitar acceso a Claudialízate. Usa el siguiente código para "
 "conectarte:"
 
-#: agir/authentication/templates/authentication/login_email.html:18
-#, python-format
-msgid ""
-"<p>Remarque : ce code est valable jusqu'à %(expiry_time)s et ne peut être "
-"utilisé qu'une seule fois.</p>"
-msgstr ""
-"<p>Ojo: este código expira a las {{ expiry_time }} y solo puede usarse una vez."
-"</p>"
-
 #: agir/authentication/templates/authentication/login_email.html:19
 #: agir/events/templates/events/email/rsvp_confirmation.html:72
 msgid "<p>Amitiés<br>L'équipe d'Action Populaire</p>"

@@ -3032,7 +3032,7 @@ msgstr ""
 
 #: agir/front/components/allPages/PushModal/UpdateAddressModal.js:89
 msgid "Complément d'adresse"
-msgstr "Colonia y/o Alcaldía (opcional)"
+msgstr "Colonia y/o Alcaldía"
 
 #: agir/front/components/allPages/PushModal/UpdateAddressModal.js:204
 msgid "Entrez une adresse. Seul le code postal est obligatoire pour continuer."
