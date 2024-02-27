@@ -39,7 +39,7 @@ export const SearchEventPage = () => {
       <InputSearch
         inputSearch={search}
         updateSearch={(e) => setSearch(e.target.value)}
-        placeholder={_("Rechercher un événement")}
+        placeholder="Buscar una acción"
       />
 
       <SearchTooShort search={search} />

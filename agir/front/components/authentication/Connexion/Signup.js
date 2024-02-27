@@ -190,7 +190,7 @@ const SignUp = () => {
         {!hasCountryField && (
           <div>
             <CountryField
-              label={"País"}
+              label={"País donde vives"}
               name="country"
               error={error && error.country}
               placeholder=""

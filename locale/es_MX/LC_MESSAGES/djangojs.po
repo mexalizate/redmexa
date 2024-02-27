@@ -6020,8 +6020,8 @@ msgstr "Ver los grupos"
 #~ msgid "centre d'aide"
 #~ msgstr "Ayuda"
 
-#~ msgid "Pays"
-#~ msgstr "País donde vives"
+msgid "Pays"
+msgstr "País donde vives"
 
 #~ msgid "Saisissez une adresse e-mail valide."
 #~ msgstr "Indica una dirección email válida"
