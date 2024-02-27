@@ -245,7 +245,7 @@ MERGE_STRATEGIES = {
     "invitation_response": merge_reassign_related,
     "invitation": merge_reassign_related,
     "_email": None,
-    "voting_proxy": None,
+    # "voting_proxy": None,
     "polling_station_officer": None,
     "crp": merge_comments,
     "person_qualification": merge_reassign_related,

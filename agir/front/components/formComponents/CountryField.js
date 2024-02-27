@@ -8,14 +8,16 @@ import SelectField from "@agir/front/formComponents/SelectField";
 const FIRST_COUNTRY_CODES = [
   "MX",
   "US",
+  "CA",
+  "ES",
+  "DE",
   "FR",
+  "GB",
   "PT",
   "DZ",
   "MA",
   "TR",
   "IT",
-  "GB",
-  "ES",
 ];
 
 const FIRST_COUNTRIES = FIRST_COUNTRY_CODES.map((countryCode) => ({
