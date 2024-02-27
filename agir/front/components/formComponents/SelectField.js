@@ -101,6 +101,11 @@ const StyledField = styled.label`
       text-overflow: ellipsis;
       overflow: hidden;
     }
+    .select__value-container{
+      .select__single-value{
+        grid-area: 1/1/1/2 !important;
+      }
+    }
   }
 
   .select__menu {
@@ -111,18 +116,7 @@ const StyledField = styled.label`
     padding: 0;
 
     @media (max-width: ${style.collapse}px) {
-      position: fixed;
-      bottom: 0;
-      height:100vh;
-      top: unset;
-      left: 0;
-      right: 0;
-      width: 100%;
-      margin: 0;
-      border-radius: ${style.borderRadius} ${style.borderRadius} 0 0;
-      overflow-x: hidden;
-      overflow-y: auto;
-      animation: ${slideIn} 200ms ease-out;
+      height:220px;
     }
   }
 
