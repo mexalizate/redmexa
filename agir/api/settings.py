@@ -855,7 +855,7 @@ LOAN_MAXIMUM_THANK_YOU_PAGE = (
 )
 
 # France + most numerous communities in France
-COUNTRIES_FIRST = ["FR", "PT", "DZ", "MA", "TR", "IT", "GB", "ES"]
+COUNTRIES_FIRST = ["MX", "US", "CA", "ES", "DE", "FR", "GB"]
 COUNTRIES_FIRST_REPEAT = True
 
 # allows the administrator to temporarily disable sending to specific domains
