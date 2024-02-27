@@ -54,7 +54,7 @@ const ONBOARDING_TYPE = {
         Actívate desde hoy para apoyar la misión de <em>{"Claudialízate"}</em>.
         </p>
         <p>
-         {_(" Besoin d’inspiration pour animer votre groupe ?")}{" "}
+         {_(" ¿Necesitas inspiración?")}{" "}
           <a
             href="https://info.claudializate.com/"
             target="_blank"
@@ -75,7 +75,7 @@ const ONBOARDING_TYPE = {
     title: <>{_("Ou bien animez votre propre groupe et invitez-y vos amis !")}</>,
     body: ({ routes }) => [
       <span key="text">
-        {_("Créez votre groupe en quelques clics, et commencez dès aujourd’hui à organiser des actions pour soutenir les propositions de la France insoumise et de la")} <em>{_("NUPES")}</em>{_(". Besoin d’inspiration pour animer votre groupe ?")}{" "}
+        {_("Créez votre groupe en quelques clics, et commencez dès aujourd’hui à organiser des actions pour soutenir les propositions de la France insoumise et de la")} <em>{_("NUPES")}</em>{_(". ¿Necesitas inspiración?")}{" "}
       </span>,
       routes.newGroupHelp && (
         <a key="link" href={routes.newGroupHelp}>

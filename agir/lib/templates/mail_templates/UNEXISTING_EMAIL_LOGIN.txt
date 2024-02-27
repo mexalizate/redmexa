@@ -10,7 +10,7 @@ No encontrarmos ninguna cuenta Claudialízate ligada a {{ EMAIL }}.
 O BIEN 
   
 >> Conectarme con otro email
-https://preprod.redmexa.com/connexion/
+https://claudializate.com/connexion/
   
 Saludos,   
 El equipo Claudialízate
