@@ -120,7 +120,7 @@ def get_supportgroup_routes(supportgroup, membership=None, user=None):
         "membershipTransfer": front_url(
             "transfer_group_members", kwargs={"pk": supportgroup.pk}
         ),
-        "orders": "https://materiales.preprod.redmexa.com/",
+        "orders": "https://materiales.claudializate.com/",
         "quit": front_url("quit_group", kwargs={"pk": supportgroup.pk}),
         "referentResignmentRequest": "/formulaires/cambiar-facilitadores",
         "settings": front_url("view_group_settings", kwargs={"pk": supportgroup.pk}),
