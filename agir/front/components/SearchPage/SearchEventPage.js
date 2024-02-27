@@ -76,9 +76,9 @@ export const SearchEventPage = () => {
             </>
           )}
 
-          <ListTitle name="Evénements" length={events.length} />
+          <ListTitle name="Acciones" length={events.length} />
           <EventList events={events} />
-          <NoResults name="événement" list={events} />
+          <NoResults name="acción" list={events} />
         </>
       )}
     </StyledContainer>
