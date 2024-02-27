@@ -28,7 +28,7 @@
   "newGroupHelp": "https://info.claudializate.com/guias/grupos/",
   "publicMeetingRequest": "https://preprod.redmexa.com/formulaires/demande-de-reunion-publique/",
   "publicMeetingHelp": "https://info.preprod.redmexa.com/fiches/organiser-une-reunion-publique/",
-  "cafePopulaireRequest": "https://preprod.redmexa.com/formulaires/demande-cafe-populaire/",
+  "cafePopulaireRequest": "https://claudializate.com/formulaires/demande-cafe-populaire/",
   "livretAnimateurice": "https://info.claudializate.com/principios/",
   "attestationAssurance": "https://info.claudializate.com/guias/grupos/",
   "attestationAssuranceEvent": "https://info.claudializate.com/guias/acciones/",
@@ -49,7 +49,7 @@
 
   "jlmBlog": "https://www.tiktok.com/@claudializate",
   "linsoumission": "https://linsoumission.fr",
-  "feedbackForm": "https://preprod.redmexa.com/formulaires/votre-avis/",
+  "feedbackForm": "https://claudializate.com/formulaires/votre-avis/",
   "noussommespour": { "home": "https://noussommespour.fr" },
 
   "discordInsoumis": "https://discord-insoumis.fr/",

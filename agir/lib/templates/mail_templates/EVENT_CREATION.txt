@@ -39,7 +39,7 @@ Agregar información a la acción : {{ MANAGE_EVENT_LINK }}
   
 2. Invita a tus amig@s a participar en la acción:
 [➡ Compartir en Facebook](https://www.facebook.com/sharer.php?u={{ EVENT_LINK_ENCODED }})  
-[➡ Compartir en X](https://twitter.com/intent/tweet?text=Participez%20à%20{{ EVENT_NAME_ENCODED }}%20{{ EVENT_LINK_ENCODED }})  
+[➡ Compartir en X](https://twitter.com/intent/tweet?text=Participa%20en%20{{ EVENT_NAME_ENCODED }}%20{{ EVENT_LINK_ENCODED }})  
 [➡ Compartir por Whatsapp](https://api.whatsapp.com/send?text={{ EVENT_LINK_ENCODED }})  
 
 3. Descubre la información útil para tu acción:

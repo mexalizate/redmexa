@@ -52,7 +52,7 @@ const TopBar = styled.div`
 
   & ${Hide} {
     &.colorButton {
-      background-color:  #781136 !important;
+      background-color:  #F60833 !important;
       color: #fff !important;
       font-weight: bold !important;
       
@@ -217,7 +217,7 @@ const Agenda = () => {
           <Button
             large
             className="colorButton"
-            style={{ background: "#4b2c92", color: "#fff", }}
+            style={{ background: "#F60833", color: "#fff", }}
             link
             route="groupMap"
             icon="map"

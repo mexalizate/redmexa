@@ -127,7 +127,7 @@ const MessageThreadMenu = (props) => {
       <Hide $under>
         <header>
           <h2>
-            Mensajes{typeof writeNewMessage !== "function" ? " reçus" : ""}
+            Mensajes{typeof writeNewMessage !== "function" ? " recibidos" : ""}
           </h2>
           <MessageOptions />
         </header>
